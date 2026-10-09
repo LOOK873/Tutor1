@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เฉลยแบบฝึกหัดในคลาส</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#fbfaf7; --fg:#1f2328; --muted:#5b6370; --card:#fff; --line:#e3e0d8; --accent:#2f6fde; --ok:#1a7f4b; --bad:#c2410c; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16181c; --fg:#e6e6e6; --muted:#9aa3ad; --card:#1f2227; --line:#30343b; --accent:#7aa7ff; --ok:#4ade80; --bad:#fb923c; } }
+  body { background:var(--bg); color:var(--fg); font-family:'Sarabun',sans-serif; font-size:17px; line-height:1.7; margin:0; }
+  main { max-width:820px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:1.7rem; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 24px; }
+  .q { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:0 0 16px; }
+  .q h2 { font-size:1.15rem; margin:0 0 8px; }
+  .ans { font-weight:700; color:var(--ok); }
+  .div { font-weight:700; color:var(--bad); }
+  .tip { color:var(--muted); font-size:.95rem; border-left:3px solid var(--accent); padding-left:10px; margin-top:10px; }
+  details summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  .katex-display { overflow-x:auto; overflow-y:hidden; }
+  @media print { details { display:block } details > * { display:block } body { background:#fff } }
+</style>
+<style id="readability-fix">
+body{line-height:2!important;word-break:normal;overflow-wrap:anywhere;line-break:loose}
+p,li{margin-bottom:12px} li>p{margin-bottom:6px}
+.katex-display{margin:14px 0!important;padding:4px 0}
+h2{margin-top:56px!important} h3{margin-top:32px!important}
+.box,.q,.ex,.warn,.panel,section,blockquote{line-height:2}
+td,th{line-height:1.8}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script></head>
+<body>
+<main>
+<h1>เฉลยแบบฝึกหัดในคลาส (9 ข้อ)</h1>
+<p class="sub">จากแผ่นโจทย์ในคลาส (1791039073733.jpg<details open style="display:block;margin:.4em 0"><summary style="cursor:pointer">🖼 ภาพโน้ต 1791039073733.jpg</summary><img loading="lazy" src="img/notes/n10.jpg" alt="1791039073733.jpg" style="display:block;max-width:100%;width:620px;height:auto;margin:.5em 0;border:1px solid #8884;border-radius:4px;background:#fff"></details>) · ตรวจกับโน้ตลายมือแล้ว · ลองทำเองก่อนแล้วค่อยกดดูวิธีทำ</p>
+
+<div class="q">
+<h2>ข้อ 1 · $\displaystyle\int_1^{\infty}\frac{1}{x^{3/2}}\,dx$ <small>(อินทิกรัลไม่ตรงแบบ แบบที่ 1: ขอบเขตเป็นอนันต์)</small></h2>
+<p>คำตอบ: <span class="ans">$2$ (ลู่เข้า)</span></p>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เปลี่ยนขอบเขตอนันต์เป็นลิมิต</div><p>อินทิกรัลไม่ตรงแบบแบบที่ 1 (ขอบบนเป็น $\infty$) ให้แทน $\infty$ ด้วยตัวแปร $t$ แล้วค่อยให้ $t\to\infty$ ภายหลัง</p>
+$$\int_1^{\infty}\frac{1}{x^{3/2}}\,dx=\lim_{t\to\infty}\int_1^{t}x^{-3/2}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอินทิกรัลไม่จำกัดเขต</div><p>ใช้กฎกำลัง $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$ โดย $n=-\tfrac32$ จะได้ $n+1=-\tfrac12$</p>
+$$\int x^{-3/2}\,dx=\frac{x^{-1/2}}{-1/2}$$
+$$=-2x^{-1/2}=-\frac{2}{\sqrt{x}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนขอบเขตบนและขอบเขตล่าง</div><p>ใช้ทฤษฎีบทหลักมูล $\int_a^b F'(x)\,dx=F(b)-F(a)$ ด้วย $F(x)=-\frac{2}{\sqrt x}$</p>
+$$\int_1^{t}x^{-3/2}\,dx=\left[-\frac{2}{\sqrt{x}}\right]_1^{t}$$
+$$=-\frac{2}{\sqrt{t}}-\left(-\frac{2}{\sqrt{1}}\right)$$
+$$=2-\frac{2}{\sqrt{t}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาค่าลิมิตเมื่อ $t\to\infty$</div><p>เมื่อ $t\to\infty$ จะได้ $\sqrt t\to\infty$ ดังนั้น $\frac{2}{\sqrt t}\to0$</p>
+$$\lim_{t\to\infty}\left(2-\frac{2}{\sqrt{t}}\right)=2-0=2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int_1^{\infty}\frac{1}{x^{3/2}}\,dx=2\quad\text{(ลู่เข้า)}$$</div>
+<p class="check">ตรวจ: ลิมิตมีค่าเป็นจำนวนจำกัด จึงลู่เข้า (สอดคล้องกับ $p=\frac32\gt1$)</p>
+</div>
+</details>
+<p class="tip">จำ: $\int_1^\infty \frac{dx}{x^p}$ ลู่เข้าเมื่อ $p&gt;1$ (ได้ $\frac{1}{p-1}$) และลู่ออกเมื่อ $p\le 1$</p>
+</div>
+
+<div class="q">
+<h2>ข้อ 2 · $\displaystyle\int(1-x)e^{-x}\,dx$ <small>(by parts)</small></h2>
+<p>คำตอบ: <span class="ans">$xe^{-x}+C$</span></p>
+<details><summary>ดูวิธีทำ (แบบในโน้ต: แยกเป็น 2 ก้อน)</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกอินทิกรัลเป็น 2 ก้อน</div><p>กระจาย $(1-x)e^{-x}$ แล้วใช้สมบัติ $\int(f-g)=\int f-\int g$</p>
+$$\int(1-x)e^{-x}\,dx=\int e^{-x}\,dx-\int xe^{-x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาก้อนแรก</div><p>$\int e^{ax}dx=\frac1a e^{ax}$ โดย $a=-1$</p>
+$$\int e^{-x}\,dx=-e^{-x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาก้อนที่สองด้วย by parts</div><p>ใช้ $\int u\,dv=uv-\int v\,du$ เลือก $u=x$ (ดิฟแล้วง่ายขึ้น) และ $dv=e^{-x}dx$ ดังนั้น $du=dx,\ v=-e^{-x}$</p>
+$$\int xe^{-x}\,dx=x\left(-e^{-x}\right)-\int\left(-e^{-x}\right)dx$$
+$$=-xe^{-x}+\int e^{-x}\,dx$$
+$$=-xe^{-x}-e^{-x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: รวมผลของสองก้อน</div><p>นำก้อนแรกลบก้อนที่สอง ระวังเครื่องหมายลบหน้าวงเล็บ</p>
+$$\int(1-x)e^{-x}\,dx=-e^{-x}-\left(-xe^{-x}-e^{-x}\right)$$
+$$=-e^{-x}+xe^{-x}+e^{-x}$$
+$$=xe^{-x}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$xe^{-x}+C$$</div>
+<p class="check">ตรวจ: $\frac{d}{dx}(xe^{-x})=e^{-x}-xe^{-x}=(1-x)e^{-x}$ ตรงกับโจทย์</p>
+</div>
+</details>
+</div>
+
+<div class="q">
+<h2>ข้อ 3 · $\displaystyle\int_1^{2}\frac{dx}{1-x}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบล่าง)</small></h2>
+<p>คำตอบ: <span class="div">ลู่ออก (diverges)</span></p>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาจุดที่ฟังก์ชันมีปัญหา</div><p>ตัวส่วน $1-x=0$ เมื่อ $x=1$ ซึ่งเป็นขอบล่างของช่วง $[1,2]$ จึงเป็นอินทิกรัลไม่ตรงแบบแบบที่ 2</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนเป็นลิมิต</div><p>ขอบล่างมีปัญหา จึงเข้าหา $1$ จากทางขวา ($t\to1^+$) เพราะช่วงอยู่ทางขวาของ $1$</p>
+$$\int_1^{2}\frac{dx}{1-x}=\lim_{t\to1^+}\int_t^{2}\frac{dx}{1-x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลไม่จำกัดเขตด้วย u-sub</div><p>ให้ $u=1-x$ ดังนั้น $du=-dx$ หรือ $dx=-du$</p>
+$$\int\frac{dx}{1-x}=\int\frac{-du}{u}=-\ln|u|$$
+$$=-\ln|1-x|$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนขอบเขต</div><p>แทน $x=2$ และ $x=t$ ใน $-\ln|1-x|$ โดย $|1-2|=1$ และ $\ln1=0$</p>
+$$\Big[-\ln|1-x|\Big]_t^{2}=-\ln|1-2|-\left(-\ln|1-t|\right)$$
+$$=-\ln1+\ln|1-t|=\ln|1-t|$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาค่าลิมิต</div><p>เมื่อ $t\to1^+$ จะได้ $|1-t|\to0^+$ และ $\ln$ ของจำนวนที่เข้าใกล้ $0$ จะมีค่าเข้าใกล้ $-\infty$</p>
+$$\lim_{t\to1^+}\ln|1-t|=-\infty$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int_1^{2}\frac{dx}{1-x}\ \text{ลู่ออก (diverges)}$$
+<p class="alt">(ลิมิตไม่เป็นจำนวนจำกัด คือ $-\infty$ จึงสรุปว่าลู่ออก)</p></div>
+</div>
+</details>
+<p class="tip">เช็กเสมอว่าตัวส่วนเป็น 0 ที่ไหนในช่วง ถ้าตรงขอบล่างใช้ $t\to a^+$ ถ้าตรงขอบบนใช้ $t\to b^-$</p>
+</div>
+
+<div class="q">
+<h2>ข้อ 4 · $\displaystyle\int_0^{1}\frac{dx}{\sqrt{1-x}}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบบน)</small></h2>
+<p>คำตอบ: <span class="ans">$2$ (ลู่เข้า)</span></p>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาจุดที่ฟังก์ชันมีปัญหา</div><p>ตัวส่วน $\sqrt{1-x}=0$ เมื่อ $x=1$ ซึ่งเป็นขอบบนของช่วง $[0,1]$ จึงเป็นอินทิกรัลไม่ตรงแบบแบบที่ 2</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนเป็นลิมิต</div><p>ขอบบนมีปัญหา จึงเข้าหา $1$ จากทางซ้าย ($t\to1^-$)</p>
+$$\int_0^{1}\frac{dx}{\sqrt{1-x}}=\lim_{t\to1^-}\int_0^{t}(1-x)^{-1/2}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กำหนดตัวแปร u</div><p>ให้ $u=1-x$ ดังนั้น $du=-dx$ หรือ $dx=-du$</p>
+$$\int(1-x)^{-1/2}\,dx=\int u^{-1/2}\,(-du)=-\int u^{-1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง: $\int u^{-1/2}du=\dfrac{u^{1/2}}{1/2}=2u^{1/2}$</p>
+$$-\int u^{-1/2}\,du=-2u^{1/2}$$
+$$=-2\sqrt{1-x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนขอบเขต</div><p>แทน $x=t$ และ $x=0$</p>
+$$\Big[-2\sqrt{1-x}\Big]_0^{t}=-2\sqrt{1-t}-\left(-2\sqrt{1-0}\right)$$
+$$=-2\sqrt{1-t}+2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: หาค่าลิมิต</div><p>เมื่อ $t\to1^-$ จะได้ $1-t\to0$ ดังนั้น $\sqrt{1-t}\to0$</p>
+$$\lim_{t\to1^-}\left(-2\sqrt{1-t}+2\right)=0+2=2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int_0^{1}\frac{dx}{\sqrt{1-x}}=2\quad\text{(ลู่เข้า)}$$</div>
+</div>
+</details>
+</div>
+
+<div class="q">
+<h2>ข้อ 5 · $\displaystyle\int\frac{dx}{\sqrt x\,(x+1)}$ <small>(เปลี่ยนตัวแปร → $\tan^{-1}$)</small></h2>
+<p>คำตอบ: <span class="ans">$2\tan^{-1}\sqrt{x}+C$</span></p>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>มี $\sqrt x$ อยู่ จึงให้ $u=\sqrt x$ ดังนั้น $x=u^2$ และดิฟทั้งสองข้างได้ $dx=2u\,du$</p>
+$$u=\sqrt{x}\ \Rightarrow\ x=u^2\ \Rightarrow\ dx=2u\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>แทน $\sqrt x=u,\ x+1=u^2+1,\ dx=2u\,du$</p>
+$$\int\frac{dx}{\sqrt{x}\,(x+1)}=\int\frac{2u\,du}{u\,(u^2+1)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ตัดทอนแล้วหาอินทิกรัล</div><p>ตัด $u$ ที่เหมือนกันในเศษและส่วน แล้วใช้สูตร $\int\frac{du}{1+u^2}=\tan^{-1}u+C$</p>
+$$=2\int\frac{du}{u^2+1}$$
+$$=2\tan^{-1}u+C$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน u กลับเป็น x</div><p>แทน $u=\sqrt x$</p>
+$$=2\tan^{-1}\sqrt{x}+C$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$2\tan^{-1}\sqrt{x}+C$$</div>
+<p class="check">ตรวจ: $\frac{d}{dx}\left(2\tan^{-1}\sqrt x\right)=2\cdot\frac{1}{1+x}\cdot\frac{1}{2\sqrt x}=\frac{1}{\sqrt x\,(x+1)}$</p>
+</div>
+</details>
+<p class="tip">สูตรที่ใช้: $\int\frac{du}{1+u^2}=\tan^{-1}u+C$</p>
+</div>
+
+<div class="q">
+<h2>ข้อ 6 · เขียนจุด $(-2,\,-\tfrac{\pi}{4})$ ในรูปพิกัดเชิงขั้วแบบอื่น</h2>
+<p>คำตอบ:</p>
+<ol>
+<li>$r&gt;0,\ 0\le\theta&lt;2\pi$: <span class="ans">$(2,\ \tfrac{3\pi}{4})$</span></li>
+<li>$r&gt;0,\ -2\pi&lt;\theta&lt;0$: <span class="ans">$(2,\ -\tfrac{5\pi}{4})$</span></li>
+<li>$r&lt;0,\ 0&lt;\theta&lt;2\pi$: <span class="ans">$(-2,\ \tfrac{7\pi}{4})$</span></li>
+</ol>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดูตำแหน่งจุดจากมุมก่อน</div><p>มุมบวกหมุนทวนเข็มนาฬิกา มุมลบหมุนตามเข็ม $\theta=-\frac\pi4$ คือหมุนตามเข็ม $45^\circ$ จากแกน $x$ บวก ไปอยู่ทิศจตุภาคที่ 4</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดูเครื่องหมายของ r</div><p>$r=-2$ เป็นลบ แปลว่าให้วัดระยะ $2$ หน่วยไปทาง<b>ตรงข้าม</b>ทิศของมุม (ต่างกัน $\pi$) จุดจึงอยู่จตุภาคที่ 2 ที่ทิศ $135^\circ$ หรือ $\frac{3\pi}{4}$</p>
+$$-\frac\pi4+\pi=\frac{3\pi}{4}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ตรวจด้วยพิกัดฉาก</div><p>แปลงจุดเดิมเป็นพิกัดฉากด้วย $x=r\cos\theta,\ y=r\sin\theta$ ไว้เทียบกับคำตอบทุกแบบ</p>
+$$x=-2\cos\left(-\tfrac\pi4\right)=-2\cdot\frac{\sqrt2}{2}=-\sqrt2$$
+$$y=-2\sin\left(-\tfrac\pi4\right)=-2\cdot\left(-\frac{\sqrt2}{2}\right)=\sqrt2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แบบที่ 1: $r&gt;0,\ 0\le\theta&lt;2\pi$</div><p>เปลี่ยน $r$ เป็นบวก ($-2\to2$) ต้องเลื่อนมุมไป $\pi$ ได้มุม $\frac{3\pi}{4}$ ซึ่งอยู่ในช่วง $[0,2\pi)$</p>
+$$\left(-2,\,-\tfrac\pi4\right)=\left(2,\,-\tfrac\pi4+\pi\right)=\left(2,\,\tfrac{3\pi}{4}\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แบบที่ 2: $r&gt;0,\ -2\pi&lt;\theta&lt;0$</div><p>เริ่มจาก $\frac{3\pi}{4}$ แล้วลบ $2\pi$ (หมุนครบรอบตามเข็ม) เพื่อให้อยู่ในช่วง $(-2\pi,0)$</p>
+$$\tfrac{3\pi}{4}-2\pi=-\tfrac{5\pi}{4}$$
+$$\left(2,\,-\tfrac{5\pi}{4}\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: แบบที่ 3: $r&lt;0,\ 0&lt;\theta&lt;2\pi$</div><p>คง $r=-2$ ไว้ แล้วเลื่อนมุมเดิมไปหนึ่งรอบเต็ม ($+2\pi$) เพื่อให้อยู่ในช่วง $(0,2\pi)$</p>
+$$-\tfrac\pi4+2\pi=\tfrac{7\pi}{4}$$
+$$\left(-2,\,\tfrac{7\pi}{4}\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\left(2,\ \tfrac{3\pi}{4}\right),\qquad\left(2,\ -\tfrac{5\pi}{4}\right),\qquad\left(-2,\ \tfrac{7\pi}{4}\right)$$</div>
+<p class="check">ตรวจ: ทั้งสามจุดแปลงเป็นพิกัดฉากได้ $(-\sqrt2,\ \sqrt2)$ เหมือนจุดเดิม (อยู่จตุภาคที่ 2)</p>
+</div>
+</details>
+</div>
+
+<div class="q">
+<h2>ข้อ 7 · $r=\dfrac{4}{2\cos\theta+3\sin\theta}$ เปลี่ยนเป็นพิกัดฉากแล้ววาดกราฟ</h2>
+<p>คำตอบ: <span class="ans">$2x+3y=4$</span> (เส้นตรง ตัดแกน $x$ ที่ $(2,0)$ ตัดแกน $y$ ที่ $(0,\tfrac43)$)</p>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: คูณตัวส่วนขึ้นไป</div><p>คูณทั้งสองข้างด้วย $2\cos\theta+3\sin\theta$ เพื่อกำจัดเศษส่วน</p>
+$$r\,(2\cos\theta+3\sin\theta)=4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กระจาย r เข้าไป</div><p>ใช้สมบัติการแจกแจงให้ $r$ คูณแต่ละเทอม</p>
+$$2r\cos\theta+3r\sin\theta=4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนด้วยพิกัดฉาก</div><p>ใช้ $x=r\cos\theta$ และ $y=r\sin\theta$</p>
+$$2x+3y=4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาจุดตัดแกนเพื่อวาดกราฟ</div><p>สมการเป็นเส้นตรง หาจุดตัดแกน $x$ โดยให้ $y=0$ และจุดตัดแกน $y$ โดยให้ $x=0$</p>
+$$y=0:\ 2x=4\Rightarrow x=2\quad\Rightarrow\ (2,0)$$
+$$x=0:\ 3y=4\Rightarrow y=\tfrac43\quad\Rightarrow\ (0,\tfrac43)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$2x+3y=4$$
+<p class="alt">(เป็นเส้นตรงผ่านจุด $(2,0)$ และ $(0,\tfrac43)$ ลากเส้นตรงผ่านสองจุดนี้เพื่อวาดกราฟ)</p></div>
+</div>
+</details>
+<p class="tip">สูตรแปลง: $x=r\cos\theta,\ y=r\sin\theta,\ x^2+y^2=r^2,\ \tan\theta=\frac yx$</p>
+</div>
+
+<div class="q">
+<h2>ข้อ 8 · ตารางแปลงพิกัดฉาก $(x,y)$ ↔ พิกัดเชิงขั้ว $(r,\theta)$</h2>
+<p>NotebookLM ยืนยันว่าข้อนี้เป็นตารางแปลงพิกัดระหว่างพิกัดฉากกับพิกัดเชิงขั้ว (ตัวเลขในตารางลายมืออ่านไม่ชัด จึงยังเฉลยรายช่องไม่ได้)</p>
+<p><b>วิธีแปลง:</b> เชิงขั้ว → ฉาก ใช้ $x=r\cos\theta,\ y=r\sin\theta$ · ฉาก → เชิงขั้ว ใช้ $r=\sqrt{x^2+y^2}$ และ $\tan\theta=\frac yx$ (ดูจตุภาคด้วย)</p>
+<p>ตัวอย่าง: $(r,\theta)=(2,\frac{2\pi}3)$ → $x=2(-\frac12)=-1,\ y=2(\frac{\sqrt3}2)=\sqrt3$ · และ $(x,y)=(-1,-1)$ → $r=\sqrt2$, อยู่ Q3 จึงได้ $\theta=\frac{5\pi}4$</p>
+<p>ค่าที่ต้องใช้ในการแปลงคือค่า $(\cos\theta,\sin\theta)$ บนวงกลมหนึ่งหน่วย:</p>
+<table style="border-collapse:collapse;width:100%">
+<tr><th style="text-align:left">มุม</th><th style="text-align:left">เรเดียน</th><th style="text-align:left">$(\cos\theta,\ \sin\theta)$</th></tr>
+<tr><td>30°</td><td>$\frac{\pi}{6}$</td><td>$(\frac{\sqrt3}{2},\frac12)$</td></tr>
+<tr><td>45°</td><td>$\frac{\pi}{4}$</td><td>$(\frac{1}{\sqrt2},\frac{1}{\sqrt2})$</td></tr>
+<tr><td>60°</td><td>$\frac{\pi}{3}$</td><td>$(\frac12,\frac{\sqrt3}{2})$</td></tr>
+<tr><td>90°</td><td>$\frac{\pi}{2}$</td><td>$(0,1)$</td></tr>
+<tr><td>120°</td><td>$\frac{2\pi}{3}$</td><td>$(-\frac12,\frac{\sqrt3}{2})$</td></tr>
+<tr><td>150°</td><td>$\frac{5\pi}{6}$</td><td>$(-\frac{\sqrt3}{2},\frac12)$</td></tr>
+<tr><td>180°</td><td>$\pi$</td><td>$(-1,0)$</td></tr>
+<tr><td>210°</td><td>$\frac{7\pi}{6}$</td><td>$(-\frac{\sqrt3}{2},-\frac12)$</td></tr>
+<tr><td>240°</td><td>$\frac{4\pi}{3}$</td><td>$(-\frac12,-\frac{\sqrt3}{2})$</td></tr>
+<tr><td>270°</td><td>$\frac{3\pi}{2}$</td><td>$(0,-1)$</td></tr>
+<tr><td>300°</td><td>$\frac{5\pi}{3}$</td><td>$(\frac12,-\frac{\sqrt3}{2})$</td></tr>
+<tr><td>330°</td><td>$\frac{11\pi}{6}$</td><td>$(\frac{\sqrt3}{2},-\frac12)$</td></tr>
+</table>
+<p class="tip">เครื่องหมายตามจตุภาค: Q1 $(+,+)$ · Q2 $(-,+)$ · Q3 $(-,-)$ · Q4 $(+,-)$</p>
+</div>
+
+<div class="q">
+<h2>ข้อ 9 · หาจุดตัดของ $r_1=1+\cos\theta$ กับ $r_2=3\cos\theta$</h2>
+<p>คำตอบ: <span class="ans">$(\tfrac32,\ \tfrac{\pi}{3})$, $(\tfrac32,\ -\tfrac{\pi}{3})$ และจุดกำเนิด (ขั้ว)</span></p>
+<details><summary>ดูวิธีทำ</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งสมการ $r_1=r_2$</div><p>จุดตัดส่วนใหญ่หาได้โดยให้ค่า $r$ ของสองกราฟเท่ากันที่มุมเดียวกัน</p>
+$$1+\cos\theta=3\cos\theta$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้สมการหา $\cos\theta$</div><p>ย้าย $\cos\theta$ มารวมกันฝั่งเดียว</p>
+$$1=3\cos\theta-\cos\theta$$
+$$1=2\cos\theta\ \Rightarrow\ \cos\theta=\frac12$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หามุม $\theta$</div><p>$\cos\theta=\frac12$ เมื่อ $\theta=60^\circ$ หรือ $\theta=300^\circ$ (คือ $-60^\circ$)</p>
+$$\theta=\frac{\pi}{3}\quad\text{หรือ}\quad\theta=-\frac{\pi}{3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนหา r</div><p>แทน $\theta$ ลงใน $r_2=3\cos\theta$ (และตรวจกับ $r_1$ ด้วย)</p>
+$$r=3\cos\frac{\pi}{3}=3\cdot\frac12=\frac32$$
+$$r_1=1+\cos\frac{\pi}{3}=1+\frac12=\frac32\ \checkmark$$
+$$\cos\left(-\tfrac\pi3\right)=\tfrac12\ \Rightarrow\ r=\tfrac32$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ตรวจจุดกำเนิด (ขั้ว) แยกต่างหาก</div><p>จุดกำเนิดมี $r=0$ ซึ่งเกิดที่มุมต่างกันในแต่ละกราฟ จึงหาไม่เจอจากการตั้ง $r_1=r_2$ ต้องตรวจเอง</p>
+$$r_1=0:\ 1+\cos\theta=0\Rightarrow\theta=\pi$$
+$$r_2=0:\ 3\cos\theta=0\Rightarrow\theta=\frac{\pi}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: สรุปว่าทั้งสองกราฟผ่านจุดกำเนิด</div><p>เพราะกราฟทั้งสองผ่านจุดกำเนิดทั้งคู่ (แม้คนละมุม) จุดกำเนิดจึงเป็นจุดตัดด้วย</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\left(\tfrac32,\ \tfrac{\pi}{3}\right),\qquad\left(\tfrac32,\ -\tfrac{\pi}{3}\right),\qquad\text{จุดกำเนิด }(0,0)$$</div>
+</div>
+</details>
+<p class="tip">โน้ตในคลาสหาไว้แค่ $\theta=60^\circ$ ถ้าข้อสอบถามจุดตัด<b>ทั้งหมด</b> ให้ตอบครบทั้ง 3 จุด</p>
+</div>
+
+</main>
+</body>
+</html>

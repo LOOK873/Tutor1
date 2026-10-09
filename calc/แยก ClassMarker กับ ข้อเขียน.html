@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClassMarker vs ข้อเขียน</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#fbfaf7; --fg:#1f2328; --muted:#5b6370; --card:#fff; --line:#e3e0d8; --accent:#2f6fde;
+          --cm:#c0367a; --cmbg:#fdf0f6; --wr:#2f6fde; --wrbg:#eef4ff; --ok:#1a7f4b; --warn:#b45309; --warnbg:#fff7ed; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16181c; --fg:#e6e6e6; --muted:#9aa3ad; --card:#1f2227; --line:#30343b; --accent:#7aa7ff;
+          --cm:#f472b6; --cmbg:#2a1822; --wr:#7aa7ff; --wrbg:#17202f; --ok:#4ade80; --warn:#fbbf24; --warnbg:#2a2214; } }
+  body { background:var(--bg); color:var(--fg); font-family:'Sarabun',sans-serif; font-size:17px; line-height:1.75; margin:0; }
+  main { max-width:880px; margin:0 auto; padding:24px 16px 80px; }
+  h1 { font-size:1.8rem; margin:0 0 4px; }
+  h2 { font-size:1.45rem; margin:48px 0 12px; padding:8px 14px; border-radius:10px; }
+  h2.cm { background:var(--cmbg); color:var(--cm); } h2.wr { background:var(--wrbg); color:var(--wr); }
+  h3 { font-size:1.15rem; margin:28px 0 10px; }
+  .sub { color:var(--muted); margin:0 0 20px; }
+  .split { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0; }
+  @media (max-width:640px) { .split { grid-template-columns:1fr; } }
+  .panel { border-radius:12px; padding:14px 18px; border:1px solid var(--line); background:var(--card); }
+  .panel.cm { border-top:5px solid var(--cm); } .panel.wr { border-top:5px solid var(--wr); }
+  .panel h4 { margin:0 0 6px; font-size:1.1rem; }
+  .panel ul { margin:6px 0; padding-left:20px; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .warn { background:var(--warnbg); border-left:4px solid var(--warn); border-radius:8px; padding:10px 14px; margin:12px 0; }
+  .q { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 20px; margin:0 0 12px; }
+  .q h4 { font-size:1.05rem; margin:0 0 6px; font-weight:600; }
+  .src { display:inline-block; font-size:.78rem; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:0 8px; margin-left:6px; font-weight:400; }
+  .ch { display:grid; grid-template-columns:1fr 1fr; gap:2px 18px; margin:6px 0; }
+  @media (max-width:560px) { .ch { grid-template-columns:1fr; } }
+  .ans { font-weight:700; color:var(--ok); }
+  details summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  table { border-collapse:collapse; width:100%; } td, th { border-bottom:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  .katex-display { overflow-x:auto; overflow-y:hidden; }
+  @media print { body { background:#fff; font-size:14px } details > * { display:block } .q { break-inside:avoid } h2 { break-before:page } }
+</style>
+<style id="readability-fix">
+body{line-height:2!important;word-break:normal;overflow-wrap:anywhere;line-break:loose}
+p,li{margin-bottom:12px} li>p{margin-bottom:6px}
+.katex-display{margin:14px 0!important;padding:4px 0}
+h2{margin-top:56px!important} h3{margin-top:32px!important}
+.box,.q,.ex,.warn,.panel,section,blockquote{line-height:2}
+td,th{line-height:1.8}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script></head>
+<body>
+<main>
+<h1>แยกส่วน ClassMarker กับ ข้อเขียน</h1>
+<p class="sub">ดูจากหัวสไลด์ในไฟล์ของคุณ: <b>MTH11102 for CM.pdf</b> เขียนว่า "MTH11102 · CLASSMARKER 2" และ <b>2.ติวMTH11101-Derivative Part1.pdf</b> เขียนว่า "ติวMTH11101 ข้อเขียน DERIVATIVE" · โจทย์ทุกข้อในไฟล์นี้เฉลยและตรวจคำตอบซ้ำแล้ว</p>
+
+<div class="split">
+  <div class="panel cm">
+    <h4 style="color:var(--cm)">ClassMarker 2 (MTH11102)</h4>
+    <p style="margin:0">สอบออนไลน์ เลือกคำตอบ · เรื่อง<b>อินทิกรัล</b></p>
+    <ul>
+      <li><b>เน้น</b>: สัปดาห์ 1–2 คืออินทิกรัลพื้นฐาน, ทฤษฎีบทหลักมูล, อินทิกรัลจำกัดเขต และ<b>การเปลี่ยนตัวแปร (u-sub)</b></li>
+      <li><b>เผื่อออก</b>: <b>by parts</b> (สไลด์บอกว่าสอนไว้กันแผนเปลี่ยน)</li>
+      <li>สัปดาห์ 3 ในแผนการสอน: by parts และเศษส่วนย่อย</li>
+    </ul>
+  </div>
+  <div class="panel wr">
+    <h4 style="color:var(--wr)">ข้อเขียน (MTH11101)</h4>
+    <p style="margin:0">เขียนแสดงวิธีทำ · เรื่อง<b>อนุพันธ์</b></p>
+    <ul>
+      <li>อนุพันธ์โดยใช้นิยาม</li>
+      <li>กฎลูกโซ่ (ทั้งแบบตาราง และหลายชั้น)</li>
+      <li>โลปิตาล (รวมรูป $1^\infty$)</li>
+      <li>อนุพันธ์อันดับ $n$ · Implicit</li>
+      <li>ประมาณค่าเชิงเส้น</li>
+      <li>ดิฟฟังก์ชันซับซ้อน (ตรีโกณผกผัน, ไฮเพอร์โบลิก, $a^u$) · อนุพันธ์เชิงลอการิทึม ($x^{4x}$)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="warn"><b>ยังไม่รู้ว่าอยู่ส่วนไหน:</b> เรื่อง<b>อินทิกรัลไม่ตรงแบบ</b> และ<b>พิกัดเชิงขั้ว</b> (ในแผ่นโจทย์ในคลาส) กับ<b>ลิมิตและความต่อเนื่อง</b> (โน้ตหน้าแรก) ไม่มีในสไลด์ทั้งสองไฟล์ เป็นเนื้อหา Calculus II ช่วงหลัง จึงอาจอยู่ในสอบอีกรอบ · สไลด์บอกว่า "หากมีอัพเดตจะแจ้งในกลุ่มรวม Facebook" ควรเข้าไปเช็กในกลุ่ม</div>
+
+<div class="split">
+  <div class="panel cm"><h4 style="color:var(--cm)">เทคนิคสอบ ClassMarker</h4>
+  <ul>
+    <li><b>ตรวจคำตอบด้วยการดิฟ</b>: เลือกช้อยส์มาดิฟ ถ้าได้ตัวในอินทิกรัลก็คือข้อถูก (เร็วกว่าอินทิเกรตเองหลายเท่า)</li>
+    <li>ดูสัมประสิทธิ์หน้าคำตอบ: ช้อยส์หลอกมักต่างกันแค่ $\frac12,\ 2,\ \frac13$ หรือเครื่องหมาย</li>
+    <li>อินทิกรัลจำกัดเขต: เปลี่ยนขอบเขตตาม $u$ ด้วย หรือแทน $u$ กลับก่อนแล้วค่อยแทนขอบเขต</li>
+    <li>ตอบไม่จำกัดเขตไม่ต้องห่วง $+C$ (ช้อยส์มีหรือไม่มีเหมือนกันหมด)</li>
+  </ul></div>
+  <div class="panel wr"><h4 style="color:var(--wr)">เทคนิคสอบข้อเขียน</h4>
+  <ul>
+    <li><b>เขียนทุกขั้นตอน</b>: ระบุสูตรที่ใช้ ($u=\dots$, $du=\dots$, "ใช้โลปิตาล")</li>
+    <li>เขียน $\lim$ ทุกบรรทัดจนกว่าจะแทนค่า</li>
+    <li>กฎลูกโซ่หลายชั้น: เขียนเป็นตารางแยกดิฟทีละชั้นก่อน แล้วค่อยคูณ</li>
+    <li>ตีกรอบคำตอบสุดท้าย · ไม่ต้องจัดรูปจนสวย ถ้าโจทย์ไม่ได้สั่ง</li>
+  </ul></div>
+</div>
+
+<!-- ===================================================== -->
+<h2 class="cm" id="cm">ส่วน ClassMarker · อินทิกรัล (MTH11102)</h2>
+
+<h3>C. โจทย์จากสไลด์ ClassMarker (14 ข้อ)</h3>
+<p class="sub">ในสไลด์ไม่มีเฉลย ผมเฉลยเองและตรวจด้วยการดิฟกลับทุกข้อ</p>
+
+<div class="q"><h4>C1. $\displaystyle\int3x^{1/3}(x^3+2)^2dx$ <span class="src">สไลด์ 6 · กระจายก่อน</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจาย $(x^3+2)^2$</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$ ด้วย $a=x^3,\ b=2$</p>
+$$(x^3+2)^2=x^6+4x^3+4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณ $3x^{1/3}$ เข้าไปทีละเทอม</div><p>ใช้กฎเลขชี้กำลัง $x^a\cdot x^b=x^{a+b}$: $\frac13+6=\frac{19}{3}$, $\frac13+3=\frac{10}{3}$</p>
+$$3x^{1/3}(x^6+4x^3+4)=3x^{19/3}+12x^{10/3}+12x^{1/3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: อินทิเกรตทีละเทอมด้วยกฎกำลัง</div><p>$\int x^n\,dx=\frac{x^{n+1}}{n+1}$ โดยเลขชี้กำลังใหม่คือ $\frac{22}{3},\ \frac{13}{3},\ \frac43$</p>
+$$\int=3\cdot\frac{x^{22/3}}{22/3}+12\cdot\frac{x^{13/3}}{13/3}+12\cdot\frac{x^{4/3}}{4/3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณสัมประสิทธิ์</div><p>หารด้วยเศษส่วน คือคูณด้วยส่วนกลับ</p>
+$$3\cdot\frac{3}{22}=\frac{9}{22},\qquad12\cdot\frac{3}{13}=\frac{36}{13},\qquad12\cdot\frac34=9$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{9}{22}x^{22/3}+\frac{36}{13}x^{13/3}+9x^{4/3}+C$$
+<p class="alt">(ข้อนี้ใช้ $u=x^3+2$ ไม่ได้ เพราะ $du=3x^2dx$ แต่ในโจทย์เป็น $x^{1/3}$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>C2. $\displaystyle\int(e^x+1)^2dx$ <span class="src">สไลด์ 7 · กระจายก่อน</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจายกำลังสอง</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$ ด้วย $a=e^x,\ b=1$ และ $(e^x)^2=e^{2x}$</p>
+$$(e^x+1)^2=e^{2x}+2e^x+1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อินทิเกรตทีละเทอม</div><p>$\int e^{2x}dx=\frac12e^{2x}$, $\int e^x dx=e^x$, $\int1\,dx=x$</p>
+$$\int(e^x+1)^2\,dx=\int e^{2x}\,dx+2\int e^x\,dx+\int1\,dx$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac12e^{2x}+2e^x+x+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C3. $\displaystyle\int\frac{x+1}{x^2+2x+5}dx$ <span class="src">สไลด์ 8</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ดิฟตัวส่วนได้ $2x+2=2(x+1)$ ซึ่งเป็นสองเท่าของเศษ จึงให้ $u=x^2+2x+5$</p>
+$$u=x^2+2x+5,\qquad du=(2x+2)\,dx=2(x+1)\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $2$ เพื่อให้ได้ส่วนที่เป็นเศษของโจทย์</p>
+$$(x+1)\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>ตัวส่วนเป็น $u$ และเศษ $(x+1)dx$ เป็น $\frac12du$</p>
+$$\int\frac{x+1}{x^2+2x+5}\,dx=\frac12\int\frac{du}{u}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$ และ $x^2+2x+5=(x+1)^2+4gt0$ เสมอ จึงไม่ต้องใส่ค่าสัมบูรณ์</p>
+$$=\frac12\ln|u|=\frac12\ln\left(x^2+2x+5\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac12\ln(x^2+2x+5)+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C4. $\displaystyle\int\cos^22x\,\sin2x\,dx$ <span class="src">สไลด์ 9</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\cos2x$ เพราะดิฟแล้วได้ $\sin2x$ ที่คูณอยู่ (ลูกโซ่: ดิฟ $2x$ ได้ $2$)</p>
+$$u=\cos2x,\qquad du=-2\sin2x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $-2$</p>
+$$\sin2x\,dx=-\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\cos^22x=u^2$</p>
+$$\int\cos^22x\,\sin2x\,dx=-\frac12\int u^2\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^2du=\frac{u^3}{3}$</p>
+$$=-\frac12\cdot\frac{u^3}{3}=-\frac{u^3}{6}$$
+$$=-\frac16\cos^32x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$-\frac16\cos^32x+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C5. $\displaystyle\int\sin2x\sqrt{1-\cos2x}\,dx$ <span class="src">สไลด์ 10</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u$ เป็นของที่อยู่ใต้รากที่สอง เพราะดิฟแล้วได้ $\sin2x$ ที่คูณอยู่</p>
+$$u=1-\cos2x,\qquad du=2\sin2x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $2$</p>
+$$\sin2x\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\sqrt{1-\cos2x}=u^{1/2}$</p>
+$$\int\sin2x\sqrt{1-\cos2x}\,dx=\frac12\int u^{1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^{1/2}du=\frac{u^{3/2}}{3/2}=\frac23u^{3/2}$</p>
+$$=\frac12\cdot\frac23u^{3/2}=\frac13u^{3/2}$$
+$$=\frac13(1-\cos2x)^{3/2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac13(1-\cos2x)^{3/2}+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C6. $\displaystyle\int\frac{13\sqrt{1-\ln x}}{9x}dx$ <span class="src">สไลด์ 11</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงค่าคงที่ออก</div><p>$\frac{13}{9}$ เป็นค่าคงที่ ดึงออกนอกอินทิกรัลได้</p>
+$$\int\frac{13\sqrt{1-\ln x}}{9x}\,dx=\frac{13}{9}\int\sqrt{1-\ln x}\cdot\frac{dx}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u=1-\ln x$ เพราะดิฟแล้วได้ $\frac1x$ ที่คูณอยู่</p>
+$$u=1-\ln x,\qquad du=-\frac{1}{x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\frac{dx}{x}=-du$</p>
+$$\frac{13}{9}\int u^{1/2}(-du)=-\frac{13}{9}\int u^{1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int u^{1/2}du=\frac23u^{3/2}$ แล้วคูณสัมประสิทธิ์ $\frac{13}{9}\cdot\frac23=\frac{26}{27}$</p>
+$$=-\frac{13}{9}\cdot\frac23u^{3/2}=-\frac{26}{27}u^{3/2}$$
+$$=-\frac{26}{27}(1-\ln x)^{3/2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$-\frac{26}{27}(1-\ln x)^{3/2}+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C7. $\displaystyle\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}dx$ <span class="src">สไลด์ 12</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\sqrt{3x+8}=(3x+8)^{1/2}$ ดิฟโดยลูกโซ่ได้ $\frac12(3x+8)^{-1/2}\cdot3$</p>
+$$u=\sqrt{3x+8},\qquad du=\frac{3}{2\sqrt{3x+8}}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>ย้ายค่าคงที่ให้ได้ $\frac{dx}{\sqrt{3x+8}}$ ซึ่งตรงกับที่อยู่ในโจทย์</p>
+$$\frac{dx}{\sqrt{3x+8}}=\tfrac23\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$e^{\sqrt{3x+8}}=e^u$</p>
+$$\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}\,dx=\frac23\int e^u\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int e^udu=e^u$</p>
+$$=\frac23e^u=\frac23e^{\sqrt{3x+8}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac23e^{\sqrt{3x+8}}+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C8. $\displaystyle\int\frac{\cos(5x-1)}{7\sin(5x-1)}dx$ <span class="src">สไลด์ 13</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงค่าคงที่ออก</div><p>$\frac17$ เป็นค่าคงที่ ดึงออกนอกอินทิกรัลได้</p>
+$$\int\frac{\cos(5x-1)}{7\sin(5x-1)}\,dx=\frac17\int\frac{\cos(5x-1)}{\sin(5x-1)}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u$ เป็นตัวส่วน เพราะดิฟแล้วได้ $\cos(5x-1)$ ที่อยู่ในเศษ (ลูกโซ่ ดิฟ $5x-1$ ได้ $5$)</p>
+$$u=\sin(5x-1),\qquad du=5\cos(5x-1)\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป $du$ แล้วแทนค่า</div><p>$\cos(5x-1)dx=\frac15du$</p>
+$$\frac17\int\frac{\frac15\,du}{u}=\frac17\cdot\frac15\int\frac{du}{u}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$</p>
+$$=\frac{1}{35}\ln|u|=\frac{1}{35}\ln|\sin(5x-1)|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac1{35}\ln|\sin(5x-1)|+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C9. $\displaystyle\int_4^8\frac{2x}{\sqrt{x^2-9}}dx$ <span class="src">สไลด์ 14 · จำกัดเขต</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2-9$ (ใต้ราก) ดิฟแล้วได้ $2x\,dx$ ซึ่งตรงกับเศษ</p>
+$$u=x^2-9,\qquad du=2x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขตให้เป็นของ $u$</div><p>อินทิกรัลจำกัดเขตต้องเปลี่ยนขอบเขตตาม $u$ ด้วย</p>
+$$x=4\Rightarrow u=4^2-9=7$$
+$$x=8\Rightarrow u=8^2-9=55$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\sqrt{x^2-9}=u^{1/2}$ และ $2x\,dx=du$</p>
+$$\int_4^8\frac{2x}{\sqrt{x^2-9}}\,dx=\int_7^{55}u^{-1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลและแทนขอบเขต</div><p>กฎกำลัง $\int u^{-1/2}du=\frac{u^{1/2}}{1/2}=2\sqrt u$</p>
+$$=\Big[2\sqrt{u}\Big]_7^{55}=2\sqrt{55}-2\sqrt{7}$$
+$$=2\left(\sqrt{55}-\sqrt7\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$2\left(\sqrt{55}-\sqrt7\right)\approx9.54$$</div>
+<p class="check">ตรวจ: $\sqrt{55}\approx7.416,\ \sqrt7\approx2.646$ ได้ $2(4.770)\approx9.54$</p>
+</div>
+</details></div>
+
+<div class="q"><h4>C10. $\displaystyle\int x^2\ln x\,dx$ <span class="src">สไลด์ 16 · by parts</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv ด้วย LIATE</div><p>$\ln$ (L) มาก่อน Algebraic (A) จึงให้ $u=\ln x$ และ $dv=x^2dx$</p>
+$$u=\ln x\Rightarrow du=\frac{dx}{x},\qquad dv=x^2\,dx\Rightarrow v=\frac{x^3}{3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x^2\ln x\,dx=\frac{x^3}{3}\ln x-\int\frac{x^3}{3}\cdot\frac1x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปอินทิกรัลที่เหลือ</div><p>$\frac{x^3}{3}\cdot\frac1x=\frac{x^2}{3}$</p>
+$$=\frac{x^3}{3}\ln x-\frac13\int x^2\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลที่เหลือ</div><p>$\int x^2dx=\frac{x^3}{3}$</p>
+$$=\frac{x^3}{3}\ln x-\frac13\cdot\frac{x^3}{3}=\frac{x^3}{3}\ln x-\frac{x^3}{9}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{x^3}{3}\ln x-\frac{x^3}{9}+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C11. $\displaystyle\int x\tan^{-1}x\,dx$ <span class="src">สไลด์ 17 · by parts</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv ด้วย LIATE</div><p>ตรีโกณผกผัน (I) มาก่อน Algebraic (A) จึงให้ $u=\tan^{-1}x$ และ $dv=x\,dx$</p>
+$$u=\tan^{-1}x\Rightarrow du=\frac{dx}{1+x^2},\qquad dv=x\,dx\Rightarrow v=\frac{x^2}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x\tan^{-1}x\,dx=\frac{x^2}{2}\tan^{-1}x-\frac12\int\frac{x^2}{1+x^2}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปเศษส่วนที่เหลือ</div><p>บวกลบ $1$ ในเศษ: $\frac{x^2}{1+x^2}=\frac{(x^2+1)-1}{1+x^2}=1-\frac{1}{1+x^2}$</p>
+$$\int\frac{x^2}{1+x^2}\,dx=\int\left(1-\frac{1}{1+x^2}\right)dx=x-\tan^{-1}x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนกลับและกระจาย</div><p>คูณ $-\frac12$ เข้าไปในวงเล็บ</p>
+$$=\frac{x^2}{2}\tan^{-1}x-\frac12\left(x-\tan^{-1}x\right)$$
+$$=\frac{x^2}{2}\tan^{-1}x-\frac x2+\frac12\tan^{-1}x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{x^2}{2}\tan^{-1}x-\frac x2+\frac12\tan^{-1}x+C$$
+<p class="alt">(หรือเขียนในรูปอื่นได้เป็น $\frac12(x^2+1)\tan^{-1}x-\frac x2+C$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>C12. $\displaystyle\int x^2e^{-3x}dx$ <span class="src">สไลด์ 18 · วิธีตาราง</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: by parts รอบแรก</div><p>ให้ $u=x^2$ (ดิฟแล้วลดดีกรี) และ $dv=e^{-3x}dx$ ได้ $du=2x\,dx,\ v=-\frac13e^{-3x}$</p>
+$$\int x^2e^{-3x}\,dx=-\frac{x^2}{3}e^{-3x}+\frac23\int xe^{-3x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: by parts รอบสอง</div><p>สำหรับ $\int xe^{-3x}dx$ ให้ $u=x$, $dv=e^{-3x}dx$ ได้ $du=dx,\ v=-\frac13e^{-3x}$</p>
+$$\int xe^{-3x}\,dx=-\frac{x}{3}e^{-3x}+\frac13\int e^{-3x}\,dx$$
+$$=-\frac{x}{3}e^{-3x}-\frac19e^{-3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมผล</div><p>แทนผลรอบสองกลับเข้าไปแล้วคูณ $\frac23$</p>
+$$=-\frac{x^2}{3}e^{-3x}+\frac23\left(-\frac{x}{3}e^{-3x}-\frac19e^{-3x}\right)$$
+$$=-\frac{x^2}{3}e^{-3x}-\frac{2x}{9}e^{-3x}-\frac{2}{27}e^{-3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ดึงตัวร่วม</div><p>ดึง $-e^{-3x}$ ออกเป็นตัวร่วม</p>
+$$=-e^{-3x}\left(\frac{x^2}{3}+\frac{2x}{9}+\frac{2}{27}\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$-e^{-3x}\left(\frac{x^2}{3}+\frac{2x}{9}+\frac{2}{27}\right)+C$$
+<p class="alt">(วิธีตารางให้ผลเดียวกัน: ดิฟ $x^2\to2x\to2\to0$ · อินทิเกรต $e^{-3x}\to-\frac13e^{-3x}\to\frac19e^{-3x}\to-\frac1{27}e^{-3x}$ · เครื่องหมาย $+,-,+$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>C13. $\displaystyle\int(x+3)\cos3x\,dx$ <span class="src">สไลด์ 19 · by parts</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=x+3$ (ดิฟแล้วเป็นค่าคงที่) และ $dv=\cos3x\,dx$</p>
+$$du=dx,\qquad v=\frac13\sin3x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int(x+3)\cos3x\,dx=\frac{x+3}{3}\sin3x-\frac13\int\sin3x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int\sin3x\,dx=-\frac13\cos3x$ ลบซ้อนลบจึงเป็นบวก</p>
+$$=\frac{x+3}{3}\sin3x-\frac13\left(-\frac13\cos3x\right)$$
+$$=\frac{x+3}{3}\sin3x+\frac19\cos3x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{x+3}{3}\sin3x+\frac19\cos3x+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>C14. $\displaystyle\int(2x-1)e^{3x}dx$ <span class="src">สไลด์ 20 · by parts</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=2x-1$ และ $dv=e^{3x}dx$</p>
+$$du=2\,dx,\qquad v=\frac13e^{3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int(2x-1)e^{3x}\,dx=\frac{2x-1}{3}e^{3x}-\frac23\int e^{3x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int e^{3x}dx=\frac13e^{3x}$</p>
+$$=\frac{2x-1}{3}e^{3x}-\frac29e^{3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: รวมเศษส่วนที่ตัวส่วน 9</div><p>ดึง $e^{3x}$ ออกเป็นตัวร่วม และ $\frac{2x-1}{3}=\frac{3(2x-1)}{9}$</p>
+$$=\frac{3(2x-1)-2}{9}e^{3x}$$
+$$=\frac{(6x-5)e^{3x}}{9}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{(6x-5)e^{3x}}{9}+C$$</div>
+</div>
+</details></div>
+
+<h3>M. แบบฝึกเพิ่มแนว ClassMarker (เลือกตอบ 12 ข้อ)</h3>
+<p class="sub">ลองใช้ทริก "ดิฟช้อยส์" ดู · ข้อ M11–M12 เป็นเรื่องสัปดาห์ 3 (เผื่อออก)</p>
+
+<div class="q"><h4>M1. $\displaystyle\int x\sqrt{x^2+1}\,dx=$</h4>
+<div class="ch"><div>(ก) $\frac13(x^2+1)^{3/2}+C$</div><div>(ข) $\frac23(x^2+1)^{3/2}+C$</div><div>(ค) $\frac12(x^2+1)^{1/2}+C$</div><div>(ง) $\frac{(x^2+1)^{3/2}}{3x}+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2+1$ (ใต้ราก) ดิฟแล้วได้ $2x\,dx$ ซึ่งสัมพันธ์กับ $x\,dx$ ที่คูณอยู่</p>
+$$u=x^2+1,\qquad du=2x\,dx\ \Rightarrow\ x\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$\sqrt{x^2+1}=u^{1/2}$</p>
+$$\int x\sqrt{x^2+1}\,dx=\frac12\int u^{1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^{1/2}du=\frac23u^{3/2}$ แล้วคูณ $\frac12$</p>
+$$=\frac12\cdot\frac23u^{3/2}=\frac13u^{3/2}$$
+$$=\frac13(x^2+1)^{3/2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ \frac13(x^2+1)^{3/2}+C$$
+<p class="alt">(ตัวลวง (ข) คือลืมคูณ $\frac12$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>M2. $\displaystyle\int\sec^2(3x)\,dx=$</h4>
+<div class="ch"><div>(ก) $\tan3x+C$</div><div>(ข) $3\tan3x+C$</div><div>(ค) $\frac13\tan3x+C$</div><div>(ง) $-\frac13\tan3x+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ข้างในเป็นเชิงเส้น $3x$ จึงให้ $u=3x$</p>
+$$u=3x,\qquad du=3\,dx\ \Rightarrow\ dx=\tfrac13\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$\int\sec^2u\,du=\tan u$ จึงเหลือแค่คูณ $\frac13$</p>
+$$\int\sec^2(3x)\,dx=\frac13\int\sec^2u\,du=\frac13\tan u$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน u กลับ</div><p>แทน $u=3x$</p>
+$$=\frac13\tan3x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ค)}\ \ \frac13\tan3x+C$$</div>
+<p class="check">ตรวจ: $\frac{d}{dx}\left(\frac13\tan3x\right)=\frac13\cdot3\sec^23x=\sec^23x$</p>
+</div>
+</details></div>
+
+<div class="q"><h4>M3. $\displaystyle\int_0^1xe^{x^2}dx=$</h4>
+<div class="ch"><div>(ก) $e-1$</div><div>(ข) $\frac12(e-1)$</div><div>(ค) $\frac e2$</div><div>(ง) $2(e-1)$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2$ เพราะดิฟแล้วได้ $2x\,dx$</p>
+$$u=x^2,\qquad du=2x\,dx\ \Rightarrow\ x\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขต</div><p>เปลี่ยนขอบเขตตาม $u$</p>
+$$x=0\Rightarrow u=0,\qquad x=1\Rightarrow u=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int e^udu=e^u$</p>
+$$\int_0^1xe^{x^2}\,dx=\frac12\int_0^1e^u\,du=\frac12\Big[e^u\Big]_0^1$$
+$$=\frac12\left(e^1-e^0\right)=\frac12(e-1)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \tfrac12(e-1)$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>M4. $\displaystyle\int\frac{e^x}{1+e^x}dx=$</h4>
+<div class="ch"><div>(ก) $\ln(1+e^x)+C$</div><div>(ข) $\tan^{-1}(e^x)+C$</div><div>(ค) $e^x\ln(1+e^x)+C$</div><div>(ง) $\frac{1}{1+e^x}+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=1+e^x$ (ตัวส่วน) ดิฟแล้วได้ $e^x\,dx$ ซึ่งตรงกับเศษ</p>
+$$u=1+e^x,\qquad du=e^x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>เศษ $e^xdx$ กลายเป็น $du$</p>
+$$\int\frac{e^x}{1+e^x}\,dx=\int\frac{du}{u}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$ และ $1+e^xgt0$ เสมอ</p>
+$$=\ln|u|=\ln\left(1+e^x\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ \ln(1+e^x)+C$$
+<p class="alt">(ตัวลวง (ข) $\tan^{-1}(e^x)$ จะถูกถ้าโจทย์เป็น $\frac{e^x}{1+e^{2x}}$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>M5. $\displaystyle\int\frac{(\ln x)^2}{x}dx=$</h4>
+<div class="ch"><div>(ก) $\frac{(\ln x)^3}{3}+C$</div><div>(ข) $2\ln x+C$</div><div>(ค) $\frac{(\ln x)^3}{3x}+C$</div><div>(ง) $(\ln x)^3+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\ln x$ เพราะดิฟแล้วได้ $\frac{dx}{x}$ ที่คูณอยู่</p>
+$$u=\ln x,\qquad du=\frac{dx}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$(\ln x)^2=u^2$</p>
+$$\int\frac{(\ln x)^2}{x}\,dx=\int u^2\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^2du=\frac{u^3}{3}$</p>
+$$=\frac{u^3}{3}=\frac{(\ln x)^3}{3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ \frac{(\ln x)^3}{3}+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>M6. $\displaystyle\int\frac{dx}{1+4x^2}=$</h4>
+<div class="ch"><div>(ก) $\tan^{-1}2x+C$</div><div>(ข) $\frac12\tan^{-1}2x+C$</div><div>(ค) $\frac14\tan^{-1}2x+C$</div><div>(ง) $2\tan^{-1}2x+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: จัดตัวส่วนให้อยู่ในรูป $1+u^2$</div><p>$4x^2=(2x)^2$ จึงให้ $u=2x$</p>
+$$1+4x^2=1+(2x)^2,\qquad u=2x,\qquad dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>คูณ $\frac12$ ออกมาหน้าอินทิกรัล</p>
+$$\int\frac{dx}{1+4x^2}=\frac12\int\frac{du}{1+u^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้สูตร $\tan^{-1}$ แล้วแทน u กลับ</div><p>$\int\frac{du}{1+u^2}=\tan^{-1}u$</p>
+$$=\frac12\tan^{-1}u=\frac12\tan^{-1}(2x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \frac12\tan^{-1}2x+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>M7. $\displaystyle\int\tan x\,dx=$</h4>
+<div class="ch"><div>(ก) $\sec^2x+C$</div><div>(ข) $\ln|\cos x|+C$</div><div>(ค) $\ln|\sec x|+C$</div><div>(ง) $-\ln|\sec x|+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียน $\tan x$ เป็น $\frac{\sin x}{\cos x}$</div><p>เพื่อให้เห็นรูป $\frac{du}{u}$</p>
+$$\int\tan x\,dx=\int\frac{\sin x}{\cos x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u=\cos x$ ดังนั้น $du=-\sin x\,dx$ หรือ $\sin x\,dx=-du$</p>
+$$u=\cos x,\qquad du=-\sin x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int\frac{du}{u}=\ln|u|$</p>
+$$\int\frac{\sin x}{\cos x}\,dx=-\int\frac{du}{u}=-\ln|u|=-\ln|\cos x|$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เขียนให้อยู่ในรูปของตัวเลือก</div><p>ใช้สมบัติ $-\ln a=\ln a^{-1}$ และ $\frac{1}{\cos x}=\sec x$</p>
+$$-\ln|\cos x|=\ln\left|\frac{1}{\cos x}\right|=\ln|\sec x|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ค)}\ \ \ln|\sec x|+C$$
+<p class="alt">(เป็นสูตรข้อ 12 ในตารางสไลด์ และเท่ากับ $-\ln|\cos x|$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>M8. $\displaystyle\int_1^e\frac{\ln x}{x}dx=$</h4>
+<div class="ch"><div>(ก) $1$</div><div>(ข) $\frac12$</div><div>(ค) $e$</div><div>(ง) $\frac{e^2}{2}$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\ln x$ เพราะดิฟแล้วได้ $\frac{dx}{x}$</p>
+$$u=\ln x,\qquad du=\frac{dx}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขต</div><p>$\ln1=0$ และ $\ln e=1$</p>
+$$x=1\Rightarrow u=0,\qquad x=e\Rightarrow u=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int u\,du=\frac{u^2}{2}$</p>
+$$\int_1^e\frac{\ln x}{x}\,dx=\int_0^1u\,du=\Big[\frac{u^2}{2}\Big]_0^1$$
+$$=\frac12-0=\frac12$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \frac12$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>M9. $\displaystyle\int\ln x\,dx=$</h4>
+<div class="ch"><div>(ก) $\frac1x+C$</div><div>(ข) $x\ln x+x+C$</div><div>(ค) $x\ln x-x+C$</div><div>(ง) $\frac{(\ln x)^2}{2}+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>เขียนเป็น $\int\ln x\cdot1\,dx$ ให้ $u=\ln x$ และ $dv=dx$</p>
+$$du=\frac{dx}{x},\qquad v=x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int\ln x\,dx=x\ln x-\int x\cdot\frac1x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$x\cdot\frac1x=1$ และ $\int1\,dx=x$</p>
+$$=x\ln x-\int1\,dx=x\ln x-x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ค)}\ \ x\ln x-x+C$$
+<p class="alt">(อยู่ในตารางสูตรข้อ 9 ของสไลด์ด้วย)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>M10. $\displaystyle\int x\sin x\,dx=$</h4>
+<div class="ch"><div>(ก) $x\cos x-\sin x+C$</div><div>(ข) $-x\cos x+\sin x+C$</div><div>(ค) $-x\cos x-\sin x+C$</div><div>(ง) $\frac{x^2}{2}\sin x+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=x$ (ดิฟแล้วเป็น $1$) และ $dv=\sin x\,dx$</p>
+$$du=dx,\qquad v=-\cos x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x\sin x\,dx=x(-\cos x)-\int(-\cos x)\,dx$$
+$$=-x\cos x+\int\cos x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int\cos x\,dx=\sin x$</p>
+$$=-x\cos x+\sin x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ -x\cos x+\sin x+C$$</div>
+<p class="check">ตรวจ: ดิฟ (ข): $-\cos x+x\sin x+\cos x=x\sin x$</p>
+</div>
+</details></div>
+
+<div class="q"><h4>M11. $\displaystyle\int\frac{dx}{x^2-1}=$ <span class="src">สัปดาห์ 3</span></h4>
+<div class="ch"><div>(ก) $\ln|x^2-1|+C$</div><div>(ข) $\frac12\ln\left|\frac{x-1}{x+1}\right|+C$</div><div>(ค) $\frac12\ln\left|\frac{x+1}{x-1}\right|+C$</div><div>(ง) $\tan^{-1}x+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกตัวส่วนเป็นตัวประกอบ</div><p>ใช้ผลต่างกำลังสอง $a^2-b^2=(a-b)(a+b)$</p>
+$$\frac{1}{x^2-1}=\frac{1}{(x-1)(x+1)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งเศษส่วนย่อยและคูณตลอด</div><p>ตั้ง $\frac{A}{x-1}+\frac{B}{x+1}$ แล้วคูณด้วย $(x-1)(x+1)$</p>
+$$1=A(x+1)+B(x-1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A$ และ $B$ โดยแทนค่าราก</div><p>แทน $x=1$ ตัดเทอมของ $B$ และแทน $x=-1$ ตัดเทอมของ $A$</p>
+$$x=1:\ 1=2A\Rightarrow A=\tfrac12$$
+$$x=-1:\ 1=-2B\Rightarrow B=-\tfrac12$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตทีละเทอม</div><p>$\int\frac{dx}{x\pm1}=\ln|x\pm1|$ แล้วรวมด้วยสมบัติ $\ln a-\ln b=\ln\frac ab$</p>
+$$\int\left(\frac{1/2}{x-1}-\frac{1/2}{x+1}\right)dx=\frac12\ln|x-1|-\frac12\ln|x+1|$$
+$$=\frac12\ln\left|\frac{x-1}{x+1}\right|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \frac12\ln\left|\frac{x-1}{x+1}\right|+C$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>M12. $\displaystyle\int\frac{x+5}{(x-1)(x+2)}dx=$ <span class="src">สัปดาห์ 3</span></h4>
+<div class="ch"><div>(ก) $2\ln|x-1|-\ln|x+2|+C$</div><div>(ข) $\ln|x-1|+2\ln|x+2|+C$</div><div>(ค) $2\ln|x-1|+\ln|x+2|+C$</div><div>(ง) $\ln|(x-1)(x+2)|+C$</div></div>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งเศษส่วนย่อย</div><p>ตัวส่วนเป็นตัวประกอบเชิงเส้นสองตัวที่ต่างกัน</p>
+$$\frac{x+5}{(x-1)(x+2)}=\frac{A}{x-1}+\frac{B}{x+2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณตลอดด้วยตัวส่วน</div><p>คูณด้วย $(x-1)(x+2)$</p>
+$$x+5=A(x+2)+B(x-1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A$ และ $B$ โดยแทนค่าราก</div><p>แทน $x=1$ ตัดเทอมของ $B$ และแทน $x=-2$ ตัดเทอมของ $A$</p>
+$$x=1:\ 6=3A\Rightarrow A=2$$
+$$x=-2:\ 3=-3B\Rightarrow B=-1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตทีละเทอม</div><p>$\int\frac{dx}{x+c}=\ln|x+c|$</p>
+$$\int\left(\frac{2}{x-1}-\frac{1}{x+2}\right)dx=2\ln|x-1|-\ln|x+2|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ 2\ln|x-1|-\ln|x+2|+C$$</div>
+</div>
+</details></div>
+
+<!-- ===================================================== -->
+<h2 class="wr" id="wr">ส่วนข้อเขียน · อนุพันธ์ (MTH11101)</h2>
+
+<h3>W. โจทย์จากสไลด์ข้อเขียนที่ยังไม่มีในไฟล์อื่น (8 ข้อ)</h3>
+<p class="sub">อีก 9 ข้อในสไลด์ (นิยามอนุพันธ์, ตาราง $f(g(x))$, ลูกโซ่หลายชั้น, โลปิตาล 2 ข้อ, $e^{5x+1}$, implicit 2 ข้อ, $(1.01)^6$) มีเฉลยอยู่แล้วใน <b>สรุปติวสอบ Calculus.html</b> ส่วนที่ 1 และ <b>แบบฝึกหัดเพิ่มเติม.html</b> ส่วน A</p>
+
+<div class="q"><h4>W1. ประมาณค่า $\sin(46^\circ)$ ด้วยการประมาณค่าเชิงเส้น <span class="src">สไลด์ 20</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง</div><p>$46^\circ$ ใกล้ $45^\circ$ ซึ่งรู้ค่าไซน์พอดี ใช้ $f(x)=\sin x$, $x_0=45^\circ=\frac\pi4$ และสูตร $f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แปลง $\Delta x$ เป็นเรเดียน</div><p>การดิฟตรีโกณใช้ได้เฉพาะเมื่อมุมเป็นเรเดียน จึงต้องแปลง $1^\circ$ ก่อน</p>
+$$\Delta x=1^\circ=\frac{\pi}{180}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $f(x_0)$ และ $f'(x_0)$</div><p>$f'(x)=\cos x$</p>
+$$f\left(\tfrac\pi4\right)=\frac{\sqrt2}{2},\qquad f'\left(\tfrac\pi4\right)=\cos\frac\pi4=\frac{\sqrt2}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนในสูตรประมาณค่า</div><p>ดึง $\frac{\sqrt2}{2}$ เป็นตัวร่วม</p>
+$$\sin46^\circ\approx\frac{\sqrt2}{2}+\frac{\sqrt2}{2}\cdot\frac{\pi}{180}$$
+$$=\frac{\sqrt2}{2}\left(1+\frac{\pi}{180}\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณเป็นตัวเลข</div><p>$\frac{\sqrt2}{2}\approx0.7071$ และ $\frac\pi{180}\approx0.01745$</p>
+$$\approx0.7071\times1.01745\approx0.7194$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\sin46^\circ\approx0.7194$$
+<p class="alt">(ค่าจริง $0.7193$ · ถ้าใช้ $\Delta x=1$ หน่วยองศา จะผิดทันที)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>W2. $f(x)=5^{(x^2-1)\sin(x^2+5.5)}$ <span class="src">สไลด์ 21</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุรูปของฟังก์ชัน</div><p>เป็นรูป $a^u$ ฐานคงที่ $a=5$ ใช้สูตร $(a^u)'=a^u\ln a\cdot u'$ โดย $u=(x^2-1)\sin(x^2+5.5)$</p>
+$$f'(x)=5^{u}\,\ln5\cdot u'$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $u'$ ด้วยกฎผลคูณ</div><p>$(PQ)'=P'Q+PQ'$ โดย $P=x^2-1$ และ $Q=\sin(x^2+5.5)$</p>
+$$P'=2x,\qquad Q'=\cos(x^2+5.5)\cdot2x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมเป็น $u'$</div><p>แทนลงในกฎผลคูณ แล้วดึง $2x$ เป็นตัวร่วม</p>
+$$u'=2x\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\cdot2x$$
+$$=2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $u'$ ในสูตร</div><p>นำ $u'$ ไปคูณกับ $5^u\ln5$</p>
+$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\ln5\cdot2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\ln5\cdot2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>W3. $h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$ <span class="src">สไลด์ 22</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุว่าเป็นผลคูณ</div><p>$h=P\cdot Q$ โดย $P=\ln t+1$ และ $Q=10^{\ln(t^2+5)}$ ใช้ $h'=P'Q+PQ'$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $P'$</div><p>$(\ln t)'=\frac1t$ และค่าคงที่ $1$ ดิฟได้ $0$</p>
+$$P'=\frac1t$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $Q'$</div><p>รูป $a^w$ ฐาน $10$: $(10^w)'=10^w\ln10\cdot w'$ โดย $w=\ln(t^2+5)$ ซึ่ง $w'=\frac{2t}{t^2+5}$</p>
+$$Q'=10^{\ln(t^2+5)}\ln10\cdot\frac{2t}{t^2+5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนในกฎผลคูณ</div><p>ดึง $10^{\ln(t^2+5)}$ เป็นตัวร่วม</p>
+$$h'(t)=\frac1t\cdot10^{\ln(t^2+5)}+(\ln t+1)\cdot10^{\ln(t^2+5)}\ln10\cdot\frac{2t}{t^2+5}$$
+$$=10^{\ln(t^2+5)}\left[\frac1t+\frac{2t\ln10\,(\ln t+1)}{t^2+5}\right]$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$h'(t)=10^{\ln(t^2+5)}\left[\frac1t+\frac{2t\ln10\,(\ln t+1)}{t^2+5}\right]$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>W4. $y=(1+\cos^2x)^6$ <span class="src">สไลด์ 23</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>ลอกทีละชั้น: ชั้นนอกคือยกกำลัง $6$ ถัดมาคือ $\cos^2x=(\cos x)^2$ และชั้นในสุดคือ $\cos x$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟชั้นนอก</div><p>กฎกำลัง: $\frac{d}{dw}w^6=6w^5$ โดย $w=1+\cos^2x$</p>
+$$y'=6(1+\cos^2x)^5\cdot\frac{d}{dx}\left(1+\cos^2x\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟชั้นกลางและชั้นใน</div><p>$\frac{d}{dx}\cos^2x=2\cos x\cdot(-\sin x)$</p>
+$$\frac{d}{dx}\left(1+\cos^2x\right)=2\cos x\cdot(-\sin x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คูณกัน</div><p>นำมาคูณแล้วรวมเป็นตัวเลขข้างหน้า</p>
+$$y'=6(1+\cos^2x)^5\cdot2\cos x\cdot(-\sin x)$$
+$$=-12\sin x\cos x\,(1+\cos^2x)^5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ใช้มุมสองเท่า</div><p>$2\sin x\cos x=\sin2x$</p>
+$$-12\sin x\cos x=-6\cdot2\sin x\cos x=-6\sin2x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=-12\sin x\cos x\,(1+\cos^2x)^5$$
+<p class="alt">(หรือเขียนในรูปอื่นได้เป็น $-6\sin2x\,(1+\cos^2x)^5$)</p></div>
+</div>
+</details></div>
+
+<div class="q"><h4>W5. $y=\sin\big(\tan\sqrt{\sin x}\big)$ <span class="src">สไลด์ 24</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>4 ชั้น: $\sin(\cdot)$ แล้ว $\tan(\cdot)$ แล้ว $\sqrt{\cdot}$ แล้ว $\sin x$ ดิฟจากนอกเข้าใน แล้วคูณกัน</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทีละชั้น</div><p>$(\sin A)'=\cos A$, $(\tan B)'=\sec^2B$, $(\sqrt C)'=\frac{1}{2\sqrt C}$ และ $(\sin x)'=\cos x$</p>
+$$y'=\cos\big(\tan\sqrt{\sin x}\big)\cdot\sec^2\sqrt{\sin x}\cdot\frac{1}{2\sqrt{\sin x}}\cdot\cos x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปเป็นเศษส่วนเดียว</div><p>รวมทุกตัวที่เป็นตัวคูณไว้ที่เศษ</p>
+$$y'=\frac{\cos x\,\sec^2\!\sqrt{\sin x}\,\cos\!\big(\tan\sqrt{\sin x}\big)}{2\sqrt{\sin x}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=\frac{\cos x\,\sec^2\!\sqrt{\sin x}\,\cos\!\big(\tan\sqrt{\sin x}\big)}{2\sqrt{\sin x}}$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>W6. $f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$ <span class="src">สไลด์ 25</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุกฎที่ต้องใช้</div><p>เทอมแรกเป็นผลคูณ $x\cdot\csc^{-1}(\frac5x)$ ใช้กฎผลคูณ เทอมหลัง $\sqrt{5+x^2}$ ใช้ลูกโซ่</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ $\csc^{-1}$ ด้วยสูตร</div><p>$(\csc^{-1}u)'=-\dfrac{u'}{|u|\sqrt{u^2-1}}$ โดย $u=\frac5x$ และ $u'=-\frac{5}{x^2}$</p>
+$$\big(\csc^{-1}\tfrac5x\big)'=-\frac{-5/x^2}{\frac5{|x|}\sqrt{\frac{25}{x^2}-1}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>$\sqrt{\frac{25}{x^2}-1}=\frac{\sqrt{25-x^2}}{|x|}$ และ $|x|\cdot|x|=x^2$</p>
+$$=\frac{5/x^2}{\frac5{|x|}\cdot\frac{\sqrt{25-x^2}}{|x|}}=\frac{5/x^2}{5\sqrt{25-x^2}/x^2}=\frac{1}{\sqrt{25-x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ใช้กฎผลคูณกับเทอมแรก</div><p>$(x\cdot F)'=1\cdot F+x\cdot F'$ โดย $F=\csc^{-1}\frac5x$</p>
+$$\left(x\csc^{-1}\tfrac5x\right)'=\csc^{-1}\tfrac5x+\frac{x}{\sqrt{25-x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ดิฟเทอมหลัง</div><p>$\left(\sqrt{5+x^2}\right)'=\dfrac{2x}{2\sqrt{5+x^2}}$</p>
+$$\left(\sqrt{5+x^2}\right)'=\frac{x}{\sqrt{5+x^2}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=\csc^{-1}\!\left(\frac5x\right)+\frac{x}{\sqrt{25-x^2}}+\frac{x}{\sqrt{5+x^2}}$$</div>
+<p class="check">ตรวจ: $\csc^{-1}\frac5x=\sin^{-1}\frac x5$ ซึ่งดิฟได้ $\frac{1}{\sqrt{25-x^2}}$ เหมือนกัน</p>
+</div>
+</details></div>
+
+<div class="q"><h4>W7. $y=\sinh\big(\tan^{-1}e^{5x-1}\big)$ <span class="src">สไลด์ 26</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>ชั้นนอก $\sinh$ ถัดมา $\tan^{-1}$ ถัดมา $e^{(\cdot)}$ และชั้นในสุด $5x-1$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟจากนอกเข้าใน</div><p>$(\sinh A)'=+\cosh A$ (ไม่มีลบ), $(\tan^{-1}B)'=\frac{1}{1+B^2}$, $(e^C)'=e^C$ และ $(5x-1)'=5$</p>
+$$y'=\cosh\big(\tan^{-1}e^{5x-1}\big)\cdot\frac{1}{1+(e^{5x-1})^2}\cdot e^{5x-1}\cdot5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>$(e^{5x-1})^2=e^{10x-2}$ แล้วรวมตัวคูณไว้ที่เศษ</p>
+$$y'=\frac{5e^{5x-1}\cosh\big(\tan^{-1}e^{5x-1}\big)}{1+e^{10x-2}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=\frac{5e^{5x-1}\cosh\big(\tan^{-1}e^{5x-1}\big)}{1+e^{10x-2}}$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>W8. $y=x^{4x}$ <span class="src">สไลด์ 28 · อนุพันธ์เชิงลอการิทึม</span></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ ทั้งสองข้าง</div><p>ทั้งฐานและเลขชี้กำลังมี $x$ จึงใช้ $(x^n)'$ หรือ $(a^x)'$ ไม่ได้ ใช้ $\ln a^b=b\ln a$ ดึงเลขชี้กำลังลงมา</p>
+$$y=x^{4x}\ \Rightarrow\ \ln y=\ln x^{4x}=4x\ln x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $x$</div><p>ซ้ายใช้ลูกโซ่ $(\ln y)'=\frac{y'}{y}$ ขวาใช้กฎผลคูณ $(4x\cdot\ln x)'=4\ln x+4x\cdot\frac1x$</p>
+$$\frac{y'}{y}=4\ln x+4x\cdot\frac1x$$
+$$\frac{y'}{y}=4\ln x+4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ แล้วแทน $y=x^{4x}$ กลับ</div><p>คูณทั้งสองข้างด้วย $y$ และดึง $4$ เป็นตัวร่วม</p>
+$$y'=y\,(4\ln x+4)=x^{4x}\cdot4(\ln x+1)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=4x^{4x}(\ln x+1)$$</div>
+<p class="check">ตรวจ: สูตรในสไลด์ $(u^v)'=v\,u^{v-1}u'+u^v\ln u\cdot v'=4x\cdot x^{4x-1}+x^{4x}\ln x\cdot4=4x^{4x}(1+\ln x)$ ได้ผลเท่ากัน</p>
+</div>
+</details></div>
+
+<h3>X. แบบฝึกเพิ่มแนวข้อเขียน (8 ข้อ)</h3>
+
+<div class="q"><h4>X1. หา $f'(x)$ ของ $f(x)=\sqrt x$ โดยใช้นิยาม</h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนนิยามอนุพันธ์</div><p>แทน $f(x)=\sqrt x$</p>
+$$f'(x)=\lim_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt x}{\Delta x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณสังยุค</div><p>เจอรากที่ต้องการให้หายไป จึงคูณทั้งเศษและส่วนด้วยสังยุค $\sqrt{x+\Delta x}+\sqrt x$</p>
+$$=\lim_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt x}{\Delta x}\cdot\frac{\sqrt{x+\Delta x}+\sqrt x}{\sqrt{x+\Delta x}+\sqrt x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้ผลต่างกำลังสองที่เศษ</div><p>$(a-b)(a+b)=a^2-b^2$ จึงได้ $(x+\Delta x)-x=\Delta x$</p>
+$$=\lim_{\Delta x\to0}\frac{\Delta x}{\Delta x\left(\sqrt{x+\Delta x}+\sqrt x\right)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตัด $\Delta x$ แล้วแทนค่าลิมิต</div><p>ตัด $\Delta x$ บนล่าง แล้วให้ $\Delta x\to0$</p>
+$$=\lim_{\Delta x\to0}\frac{1}{\sqrt{x+\Delta x}+\sqrt x}=\frac{1}{\sqrt x+\sqrt x}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=\frac{1}{2\sqrt x}$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>X2. จากตารางในสไลด์ ($f(0)=1,\ f'(0)=-1,\ g(0)=1,\ g'(0)=5,\ f(1)=\pi,\ f'(1)=4,\ g(1)=2\pi,\ g'(1)=-1$) จงหา<br>(ก) $(f\circ g)'(0)$ &nbsp; (ข) $(g\circ f)'(0)$ &nbsp; (ค) $\frac{d}{dx}[f(x)g(x)]$ ที่ $x=1$</h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ข้อ (ก): $(f\circ g)'(0)$</div><p>กฎลูกโซ่ $(f\circ g)'(x)=f'(g(x))\,g'(x)$ และ $g(0)=1$</p>
+$$(f\circ g)'(0)=f'(g(0))\,g'(0)=f'(1)\cdot g'(0)=4\cdot5=20$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ข้อ (ข): $(g\circ f)'(0)$</div><p>$(g\circ f)'(x)=g'(f(x))\,f'(x)$ และ $f(0)=1$</p>
+$$(g\circ f)'(0)=g'(f(0))\,f'(0)=g'(1)\cdot f'(0)=(-1)(-1)=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ข้อ (ค): ผลคูณที่ $x=1$</div><p>กฎผลคูณ $(fg)'=f'g+fg'$</p>
+$$\frac{d}{dx}[f(x)g(x)]\Big|_{x=1}=f'(1)g(1)+f(1)g'(1)$$
+$$=4(2\pi)+\pi(-1)=8\pi-\pi=7\pi$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก) }20,\qquad\text{(ข) }1,\qquad\text{(ค) }7\pi$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>X3. $y=x^{\sin x}$ จงหา $y'$</h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ ทั้งสองข้าง</div><p>ฐานและเลขชี้กำลังมี $x$ ทั้งคู่ จึงใช้ $\ln a^b=b\ln a$</p>
+$$y=x^{\sin x}\ \Rightarrow\ \ln y=\sin x\cdot\ln x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $x$</div><p>ซ้ายได้ $\frac{y'}{y}$ ขวาใช้กฎผลคูณ $(\sin x\cdot\ln x)'=\cos x\ln x+\sin x\cdot\frac1x$</p>
+$$\frac{y'}{y}=\cos x\ln x+\frac{\sin x}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ แล้วแทนกลับ</div><p>แทน $y=x^{\sin x}$</p>
+$$y'=x^{\sin x}\left(\cos x\ln x+\frac{\sin x}{x}\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=x^{\sin x}\left(\cos x\ln x+\dfrac{\sin x}{x}\right)$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>X4. $x^2+y^2=25$ จงหา $\frac{dy}{dx}$ และความชันเส้นสัมผัสที่จุด $(3,4)$</h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดิฟทั้งสองข้างเทียบ $x$ (implicit)</div><p>ดิฟ $y^2$ ได้ $2y\,y'$ (ลูกโซ่)</p>
+$$2x+2y\,y'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้หา $y'$</div><p>ย้าย $2x$ ไปขวา แล้วหารด้วย $2y$</p>
+$$2y\,y'=-2x$$
+$$y'=-\frac{x}{y}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนจุด $(3,4)$</div><p>ความชันเส้นสัมผัสคือค่า $y'$ ที่จุดนั้น</p>
+$$y'\Big|_{(3,4)}=-\frac34$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{dy}{dx}=-\frac xy,\qquad\text{ความชัน}=-\frac34$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>X5. $\displaystyle\lim_{x\to0^+}x\ln x$ <small>(รูป $0\cdot\infty$)</small></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูป</div><p>$x\to0^+$ ได้ $0\cdot(-\infty)$ ซึ่งเป็นรูป $0\cdot\infty$ ยังใช้โลปิตาลตรงๆ ไม่ได้</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนเป็นเศษส่วน</div><p>ย้าย $x$ ลงไปเป็น $\frac{1}{1/x}$ ให้เป็นรูป $\frac{-\infty}{\infty}$</p>
+$$x\ln x=\frac{\ln x}{1/x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้โลปิตาล</div><p>ดิฟเศษ $\frac1x$ และดิฟส่วน $-\frac{1}{x^2}$</p>
+$$\lim_{x\to0^+}\frac{\ln x}{1/x}=\lim_{x\to0^+}\frac{1/x}{-1/x^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: จัดรูปแล้วแทนค่า</div><p>$\frac1x\cdot\left(-x^2\right)=-x$</p>
+$$=\lim_{x\to0^+}(-x)=0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\lim_{x\to0^+}x\ln x=0$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>X6. $\displaystyle\lim_{x\to\infty}\left(1+\frac3x\right)^x$ <small>(รูป $1^\infty$)</small></h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งตัวแปรและใส่ $\ln$</div><p>$x\to\infty$ ได้ $1^\infty$ ให้ $y=\left(1+\frac3x\right)^x$ แล้ว $\ln y=x\ln\left(1+\frac3x\right)$</p>
+$$\ln y=x\ln\left(1+\frac3x\right)=\frac{\ln(1+3/x)}{1/x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตรวจรูปและใช้โลปิตาล</div><p>เป็นรูป $\frac00$ ดิฟเศษ $\frac{1}{1+3/x}\cdot\left(-\frac{3}{x^2}\right)$ และดิฟส่วน $-\frac{1}{x^2}$</p>
+$$\lim_{x\to\infty}\frac{\frac{-3/x^2}{1+3/x}}{-1/x^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปแล้วหาค่า</div><p>ตัด $-\frac{1}{x^2}$ ออก เหลือ $\frac{3}{1+3/x}$ และ $\frac3x\to0$</p>
+$$=\lim_{x\to\infty}\frac{3}{1+3/x}=\frac{3}{1+0}=3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แปลงกลับด้วย $e$</div><p>เพราะ $\ln y\to3$ จึงได้ $y\to e^3$</p>
+$$\lim_{x\to\infty}y=e^{3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$e^3$$</div>
+</div>
+</details></div>
+
+<div class="q"><h4>X7. $y=\dfrac{1}{2x+1}$ จงหา $y^{(n)}$</h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนเป็นเลขชี้กำลังลบ</div><p>เพื่อใช้กฎกำลังและลูกโซ่ได้</p>
+$$y=(2x+1)^{-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟหลายครั้ง</div><p>ทุกครั้งต้องคูณ $2$ จากการดิฟข้างใน $2x+1$</p>
+$$y'=-1\cdot2\,(2x+1)^{-2}=-2(2x+1)^{-2}$$
+$$y''=-2\cdot(-2)\cdot2\,(2x+1)^{-3}=2!\cdot2^2(2x+1)^{-3}$$
+$$y'''=8\cdot(-3)\cdot2\,(2x+1)^{-4}=-3!\cdot2^3(2x+1)^{-4}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาแบบรูป</div><p>เครื่องหมายสลับโดยเริ่มที่ $-$ ตอน $n=1$ จึงเป็น $(-1)^n$ · ตัวเลขคือ $n!$ · มี $2^n$ · ตัวส่วนเป็น $(2x+1)^{n+1}$</p>
+$$y^{(n)}=\frac{(-1)^n\,n!\,2^n}{(2x+1)^{n+1}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y^{(n)}=\frac{(-1)^n\,n!\,2^n}{(2x+1)^{n+1}}$$</div>
+<p class="check">ตรวจ: $n=1$ ได้ $\frac{-2}{(2x+1)^2}$ ตรงกับ $y'$</p>
+</div>
+</details></div>
+
+<div class="q"><h4>X8. ประมาณค่า $\cos(61^\circ)$ ด้วยการประมาณค่าเชิงเส้น</h4>
+<details><summary>ดูเฉลย</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง</div><p>$61^\circ$ ใกล้ $60^\circ$ ใช้ $f(x)=\cos x$, $x_0=60^\circ=\frac\pi3$ และ $\Delta x=1^\circ=\frac{\pi}{180}$ (ต้องเป็นเรเดียน)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $f(x_0)$ และ $f'(x_0)$</div><p>$f'(x)=-\sin x$</p>
+$$f\left(\tfrac\pi3\right)=\frac12,\qquad f'\left(\tfrac\pi3\right)=-\sin\frac\pi3=-\frac{\sqrt3}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนในสูตรประมาณค่า</div><p>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p>
+$$\cos61^\circ\approx\frac12-\frac{\sqrt3}{2}\cdot\frac{\pi}{180}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณเป็นตัวเลข</div><p>$\frac{\sqrt3}{2}\approx0.8660$ และ $\frac\pi{180}\approx0.017453$ ได้ $0.8660\times0.017453\approx0.01511$</p>
+$$\approx0.5-0.0151=0.4849$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\cos61^\circ\approx0.4849$$
+<p class="alt">(ค่าจริง $0.4848$)</p></div>
+</div>
+</details></div>
+
+</main>
+</body>
+</html>

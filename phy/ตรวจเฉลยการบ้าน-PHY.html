@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ตรวจเฉลยการบ้านฟิสิกส์</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+ onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b6370;--card:#fff;--line:#e3e0d8;--accent:#2f6fde;--accentbg:#eef4ff;
+ --ok:#1a7f4b;--okbg:#effaf3;--warn:#b45309;--warnbg:#fff7ed;--why:#7c3aed;--whybg:#f5f0ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e6e6;--muted:#9aa3ad;--card:#1f2227;--line:#30343b;
+ --accent:#7aa7ff;--accentbg:#17202f;--ok:#4ade80;--okbg:#122119;--warn:#fbbf24;--warnbg:#2a2214;--why:#c4b5fd;--whybg:#221a33}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e6e6;--muted:#9aa3ad;--card:#1f2227;--line:#30343b;
+ --accent:#7aa7ff;--accentbg:#17202f;--ok:#4ade80;--okbg:#122119;--warn:#fbbf24;--warnbg:#2a2214;--why:#c4b5fd;--whybg:#221a33}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:'Sarabun',sans-serif;font-size:18px;line-height:2;margin:0;
+ word-break:normal;overflow-wrap:anywhere;line-break:loose;-webkit-text-size-adjust:100%}
+main{max-width:820px;margin:0 auto;padding:28px 16px 120px}
+p{margin:0 0 14px} li{margin:0 0 10px} ul,ol{padding-left:26px;margin:0 0 16px}
+h1{font-size:1.8rem;line-height:1.5;margin:0 0 16px}
+header.lead blockquote{margin:0 0 16px;padding:14px 18px;background:var(--warnbg);border-left:4px solid var(--warn);border-radius:10px}
+header.lead blockquote p{margin:0 0 6px}
+nav{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px;margin:24px 0 8px}
+nav ol{margin:4px 0 10px;columns:2;column-gap:28px} @media(max-width:640px){nav ol{columns:1}}
+nav li{margin:0 0 4px;break-inside:avoid} .tocpart{margin:12px 0 2px;font-weight:700;color:var(--muted)}
+a{color:var(--accent);text-decoration:none}
+h2.part{margin:72px 0 8px;font-size:1.55rem;color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:8px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 24px 18px;margin:32px 0}
+@media(max-width:640px){section{padding:6px 16px 14px}}
+section>h2{font-size:1.35rem;line-height:1.5;margin:18px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--line)}
+section h3{font-size:1.08rem;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+section h3::before{content:"";width:6px;height:22px;border-radius:3px;background:var(--accent)}
+.concept{background:var(--whybg);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.concept p:last-child{margin:0}
+.formula{border:1px dashed var(--line);border-radius:12px;padding:6px 16px;margin:0 0 16px}
+.example{background:var(--okbg);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.example ol>li{margin-bottom:16px}
+.why{display:block;color:var(--why);font-size:.95em;margin-top:2px}
+.why::before{content:"→ เหตุผล: ";font-weight:700}
+.traps{background:var(--warnbg);border-radius:12px;padding:14px 18px 6px;margin:0 0 16px}
+.traps ul{margin:0}
+.lvl{display:inline-block;font-size:.8rem;font-weight:700;border-radius:999px;padding:0 10px;margin-right:8px;line-height:1.8}
+.easy{background:#dcfce7;color:#166534}.mid{background:#fef3c7;color:#92400e}.hard{background:#fee2e2;color:#991b1b}
+.prob{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:0 0 14px}
+.prob>p:first-child{margin-bottom:8px}
+details>summary{cursor:pointer;color:var(--accent);font-weight:600}
+details[open]>summary{margin-bottom:10px}
+.ans{font-weight:700;color:var(--ok)}
+.src{color:var(--muted);font-size:.85rem}
+table{border-collapse:collapse;width:100%;margin:12px 0 18px;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;line-height:1.7}
+th{background:var(--accentbg)}
+code{background:var(--accentbg);padding:1px 6px;border-radius:5px;font-size:.88em}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:10px 0}
+.hint{color:var(--muted);font-size:.95rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+details.card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+details.card summary{color:var(--fg);list-style:none} details.card summary::-webkit-details-marker{display:none}
+details.card[open]{border-color:var(--ok)}
+details.card div{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);color:var(--ok)}
+ul.checks{list-style:none;padding-left:4px} ul.checks input{width:18px;height:18px;margin-right:8px;vertical-align:-3px}
+@media print{body{background:#fff;font-size:14px}details>*{display:block}section{break-inside:avoid-page}}
+</style><style>.slides{margin:.8em 0;border:1px solid #8884;border-radius:8px;padding:.4em .8em}.slides summary{cursor:pointer;font-weight:600}.slides img{display:block;max-width:100%;height:auto;margin:.8em auto;border:1px solid #8884;border-radius:4px;background:#fff}</style><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script></head><body><main>
+<header class="lead"><h1>ตรวจเฉลยการบ้านฟิสิกส์ 16 ข้อ</h1>
+<blockquote>
+<p><strong>ไฟล์ที่ตรวจ:</strong> <code>ข้อ1-2.pdf</code> <code>ข้อ3-4.pdf</code> <code>ข้อ5-6.pdf</code> <code>ข้อ7-8.pdf</code> <code>11-12.pdf</code> (ข้อ 9–10) <code>13-14.pdf</code> (ข้อ 11–12) <code>15-16.pdf</code> (ข้อ 13–14) <code>17-18.pdf</code> (ข้อ 15–16)  </p>
+<p><strong>ผลตรวจ:</strong> คำตอบถูก 15 ข้อ · <strong>ผิด 1 จุด (ข้อ 2c)</strong> · มีจุดเขียนพลาดเล็กน้อยที่ควรแก้ก่อนสอบ 5 จุด  </p>
+<p><strong>NotebookLM ตรวจซ้ำแล้ว:</strong> ยืนยันว่าข้อ 2c ในไฟล์ผิด (ควรเป็น $\sin\phi$) และเนื้อหาในเอกสารติวทุกบทตรงกับสไลด์  </p>
+<p>ผมคิดคำตอบใหม่ทุกข้อและให้โปรแกรมคำนวณตรวจตัวเลขแล้ว · ข้อสอบเป็นแนว "อธิบาย + จงแสดงว่า + คำนวณ" จึงต้องเขียนเหตุผลให้ครบทุกขั้น</p>
+</blockquote></header>
+<h2 class="part" id="g1">สรุปผลตรวจ</h2>
+<section class="topic" id="t2"><h2>ตารางผลตรวจทุกข้อ</h2><table>
+<thead>
+<tr>
+<th>ข้อ</th>
+<th>เรื่อง</th>
+<th>คำตอบในไฟล์</th>
+<th>ผล</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>โปรเจกไทล์จากภูเขาไฟ</td>
+<td>$t=3.7$ s, $H=26$ m, $v=30.3$ m/s</td>
+<td>✓ ($H\approx25$ m ถ้าไม่ปัด $t$)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>โปรเจกไทล์บนพื้นเอียง</td>
+<td>$d$, $\theta=45^\circ+\frac\phi2$, $d_{max}$</td>
+<td><strong>✗ ข้อ c ผิด</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>ไถลลงพื้นเอียง</td>
+<td>$a=1.8$, $f=9.7$ N, $\mu=0.37$</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ลูกบอลหมุนเป็นวงกลมบนพื้น</td>
+<td>$\omega&lt;\sqrt{g/H}$</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>5</td>
+<td>วงลูปแนวดิ่ง</td>
+<td>$h=2.5R$</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ลูกบอลแกว่งวงกลมแนวดิ่ง</td>
+<td>$T_A-T_B=6mg$, $v_B\ge\sqrt{gR}$</td>
+<td>✓ (มีเครื่องหมายพลาดระหว่างทาง)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ชนติดกันแล้วอัดสปริง</td>
+<td>$v=2.7$ m/s, $x=33$ cm</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ชนยืดหยุ่น / ลูกบอลซ้อน</td>
+<td>$v_{ball}=\frac{3M-m}{M+m}\sqrt{2gH}$, $h=9H$</td>
+<td>✓ (มีเครื่องหมายพลาด 1 บรรทัด)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>โมเมนต์ความเฉื่อยล้อเกวียน</td>
+<td>$I=0.165$ kg·m²</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>10</td>
+<td>จานกลิ้งลงพื้นเอียง</td>
+<td>$v=\sqrt{4gH/3}$, $a=\frac23g\sin\theta$, 3.18 รอบ</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>11</td>
+<td>บันไดพิงกำแพง (สมดุล)</td>
+<td>$N_y=220$ N, $T=73.1$ N, $d=2.88$ m</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>12</td>
+<td>อุโมงค์ (ความเค้น-ความเครียด)</td>
+<td>$W=1.46\times10^9$ N, 77 ต้น</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>13</td>
+<td>SHM มวลซ้อนบนสปริง</td>
+<td>$\omega=9.13$, $A_{max}=11.8$ cm</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ลูกตุ้มแท่ง</td>
+<td>$x=\frac{L}{\sqrt{12}}$</td>
+<td>✓ (ควรเขียนพิสูจน์ค่าต่ำสุด)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>คลื่นนิ่งในเส้นเชือก</td>
+<td>$v=60$ m/s, $m=0.47$ kg</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>16</td>
+<td>เสียงในหัววาฬ</td>
+<td>$B$, $L=3.8$ m, $\lambda=70$ m</td>
+<td>✓ (เช็กเลขยกกำลังของ $B$)</td>
+</tr>
+</tbody>
+</table></section>
+<h2 class="part" id="g3">จุดที่ต้องแก้</h2>
+<section class="topic" id="t4"><h2>ข้อ 2c · ระยะไกลสุดบนพื้นเอียง (คำตอบผิด)</h2><div class="concept">
+<p><strong>โจทย์:</strong> ยิงวัตถุด้วย $u$ ทำมุม $\theta$ กับแนวราบ ขึ้นไปตามพื้นเอียงมุม $\phi$ หาระยะ $d$ ไกลสุดตามพื้นเอียง</p>
+<p><strong>ในไฟล์เขียนว่า:</strong> $d_{max}=\dfrac{u^2(1-\cos\phi)}{g\cos^2\phi}$ — <strong>ผิด</strong> ต้องเป็น $\sin\phi$</p>
+</div>
+<h3>ที่ถูกต้อง</h3>
+<div class="example">
+<p><strong>คำตัดสิน:</strong> บรรทัดแรกของไฟล์ถูก แต่คำตอบ $d_{max}$ ในไฟล์ผิด (ใช้ $\cos\phi$ แทน $\sin\phi$) และมีบรรทัดหนึ่งพิมพ์ $-\sin\theta$ แทน $-\sin\phi$ ด้านล่างเขียนที่ถูกต้องทีละขั้น</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สิ่งที่กำหนดและสิ่งที่ต้องหา</div><p>จากข้อ a ได้ระยะตามพื้นเอียง $d$ ที่ขึ้นกับมุมยิง $\theta$ ต้องหา $\theta$ ที่ทำให้ $d$ มากสุด แล้วหา $d_{max}$ (บรรทัดนี้ในไฟล์ถูก ✓)</p>
+$$d=\frac{2u^2\sin(\theta-\phi)\cos\theta}{g\cos^2\phi}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตรที่ทำให้ $\theta$ เหลือในพจน์เดียว</div><p>ใช้สูตรผลคูณเป็นผลบวก $2\sin A\cos B=\sin(A+B)+\sin(A-B)$ โดยให้ $A=\theta-\phi,\ B=\theta$</p>
+$$2\sin(\theta-\phi)\cos\theta=\sin\big[(\theta-\phi)+\theta\big]+\sin\big[(\theta-\phi)-\theta\big]$$
+$$=\sin(2\theta-\phi)+\sin(-\phi)=\sin(2\theta-\phi)-\sin\phi$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนกลับใน $d$</div><p>ตอนนี้ $\theta$ อยู่เฉพาะใน $\sin(2\theta-\phi)$ (ในไฟล์เขียนบรรทัดนี้เป็น $-\sin\theta$ ซึ่งพิมพ์ผิด ต้องเป็น $-\sin\phi$)</p>
+$$d=\frac{u^2\big[\sin(2\theta-\phi)-\sin\phi\big]}{g\cos^2\phi}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หามุมที่ให้ $d$ มากสุด</div><p>ส่วนอื่นเป็นค่าคงที่ ดังนั้น $d$ มากสุดเมื่อ $\sin(2\theta-\phi)$ มีค่ามากสุดคือ $1$ (ในไฟล์ถูก ✓)</p>
+$$\sin(2\theta-\phi)=1\ \Rightarrow\ 2\theta-\phi=90^\circ$$
+$$\theta=45^\circ+\frac\phi2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่า $\sin(2\theta-\phi)=1$</div><p>แทนในสูตรของ $d$</p>
+$$d_{max}=\frac{u^2(1-\sin\phi)}{g\cos^2\phi}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: ลดรูป</div><p>ใช้ $\cos^2\phi=1-\sin^2\phi$ แล้วแยกตัวประกอบผลต่างกำลังสอง จากนั้นตัด $(1-\sin\phi)$</p>
+$$\cos^2\phi=1-\sin^2\phi=(1-\sin\phi)(1+\sin\phi)$$
+$$d_{max}=\frac{u^2(1-\sin\phi)}{g(1-\sin\phi)(1+\sin\phi)}=\frac{u^2}{g(1+\sin\phi)}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$d_{max}=\frac{u^2(1-\sin\phi)}{g\cos^2\phi}=\frac{u^2}{g(1+\sin\phi)}$$</div>
+<p class="check">ตรวจ: ถ้าพื้นราบ $\phi=0$ ได้ $d_{max}=\frac{u^2}{g}$ ซึ่งตรงกับพิสัยสูงสุดบนพื้นราบ ✓ (ถ้าใช้ $\cos\phi$ แบบในไฟล์ จะได้ $0$ ซึ่งเป็นไปไม่ได้)</p>
+</div>
+</div></section>
+<section class="topic" id="t5"><h2>ข้อ 6c · เครื่องหมายพลาดระหว่างทาง</h2><div class="traps">
+<ul>
+<li>ในไฟล์เขียนว่า $T_A-T_B=2mg+\frac mR\left(v_A^2\,\mathbf{+}\,v_B^2\right)$ — ต้องเป็น <strong>ลบ</strong>: $2mg+\frac mR\left(v_A^2-v_B^2\right)$</li>
+<li>มีบรรทัดหนึ่งเขียน $\frac{v^2}{2R}$ — ต้องเป็น $\frac{v^2}{gR}$</li>
+<li>คำตอบสุดท้าย $6mg$ ถูก เพราะแทน $v_A^2-v_B^2=4gR$ ได้ $2mg+4mg$</li>
+</ul>
+</div>
+<div class="example">
+<p><strong>เขียนให้ครบ:</strong></p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สิ่งที่กำหนดและสิ่งที่ต้องหา</div><p>ลูกบอลมวล $m$ แกว่งวงกลมแนวดิ่งรัศมี $R$ จุดต่ำสุด A ($\theta=0$) และจุดสูงสุด B ($\theta=180^\circ$) ต้องหา $T_A-T_B$ โดยโจทย์ไม่ให้ตัวเลขความเร็ว</p>
+$$T_A-T_B=\ ?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกหลักการ</div><p>ใช้กฎของนิวตันตามแนวรัศมี ($\sum F=\frac{mv^2}{R}$ ทิศเข้าหาจุดศูนย์กลาง) ที่แต่ละจุด และอนุรักษ์พลังงานเชื่อมความเร็วทั้งสองจุด</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนสมการแรงที่จุด A และ B</div><p>ที่ A แรงตึงชี้ขึ้น (เข้าศูนย์กลาง) น้ำหนักชี้ลง ที่ B แรงตึงและน้ำหนักชี้ลงทั้งคู่ (เข้าศูนย์กลาง)</p>
+$$A:\ T_A-mg=\frac{mv_A^2}{R}\ \Rightarrow\ T_A=mg\left(\frac{v_A^2}{gR}+1\right)$$
+$$B:\ T_B+mg=\frac{mv_B^2}{R}\ \Rightarrow\ T_B=mg\left(\frac{v_B^2}{gR}-1\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ลบสมการ</div><p>ลบ $T_B$ ออกจาก $T_A$ (ใช้ $T=\frac{mv^2}{R}\pm mg$ ตรงกับด้านบน) ระวังเครื่องหมายหน้า $v_B^2$ ต้องเป็น <b>ลบ</b></p>
+$$T_A-T_B=\left(\frac{mv_A^2}{R}+mg\right)-\left(\frac{mv_B^2}{R}-mg\right)$$
+$$T_A-T_B=\frac mR\left(v_A^2-v_B^2\right)+2mg$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หา $v_A^2-v_B^2$ ด้วยอนุรักษ์พลังงาน</div><p>จาก A ไป B สูงขึ้น $2R$ พลังงานจลน์ลดเป็นพลังงานศักย์ โจทย์ไม่ให้ตัวเลขจึงต้องใช้พลังงานหาความต่างของความเร็ว</p>
+$$\tfrac12mv_A^2=\tfrac12mv_B^2+mg(2R)$$
+$$v_A^2-v_B^2=4gR$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: แทนค่า</div><p>แทน $v_A^2-v_B^2=4gR$ ลงในผลต่างของแรงตึง</p>
+$$T_A-T_B=\frac mR(4gR)+2mg=4mg+2mg$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$T_A-T_B=6mg$$</div>
+</div>
+</div></section>
+<section class="topic" id="t6"><h2>ข้อ 8a · เครื่องหมายในสมการชนยืดหยุ่น</h2><div class="traps">
+<ul>
+<li>ในไฟล์เขียน $v_1-v_2=(u_1-u_2)$ — ต้องเป็น $v_1-v_2=-(u_1-u_2)$ (ความเร็วสัมพัทธ์กลับทิศหลังชน)</li>
+<li>บรรทัดถัดไปเขียน $v_2=v_1+u_1-u_2$ ซึ่งถูก และคำตอบสุดท้าย $v_1=\frac{(m_1-m_2)u_1+2m_2u_2}{m_1+m_2}$ ถูก</li>
+<li>ถ้าข้อเขียนให้คะแนนรายบรรทัด บรรทัดแรกจะถูกหัก</li>
+</ul>
+</div></section>
+<section class="topic" id="t7"><h2>ข้อ 1c · ปัดเวลาก่อนคำนวณ</h2><div class="traps">
+<ul>
+<li>ในไฟล์ปัด $t=3.7$ s แล้วได้ $H=26$ m</li>
+<li>ถ้าใช้ $t=\frac{60}{16.38}=3.66$ s ได้ $H=5(3.66)^2-11.47(3.66)=25.0$ m</li>
+<li>ทั้งสองค่าน่าจะได้คะแนน แต่ควรปัดเฉพาะคำตอบสุดท้าย เก็บทศนิยมระหว่างทางไว้</li>
+</ul>
+</div></section>
+<section class="topic" id="t8"><h2>ข้อ 14c · ควรพิสูจน์ว่าเป็นค่าต่ำสุด</h2><div class="traps">
+<ul>
+<li>ในไฟล์หา $f'(x)=0$ ได้ $x=\frac{L}{\sqrt{12}}$ แล้วจบ</li>
+<li>ข้อเขียนควรเพิ่ม: $f''(x)=\frac{2L^2}{x^3}&gt;0$ จึงเป็นค่า<strong>ต่ำสุด</strong></li>
+<li>ทอร์กควรเขียนด้วย $\tau$ เพราะ $T$ ซ้ำกับตัวแปรคาบ</li>
+</ul>
+</div></section>
+<section class="topic" id="t9"><h2>ข้อ 16b · เช็กเลขยกกำลังของ bulk modulus</h2><div class="traps">
+<ul>
+<li>ค่าที่ถูก: ไขในหัววาฬ $B=\rho v^2=900(2500)^2=5.63\times10^9$ Pa · น้ำทะเล $B=1020(1400)^2=2.00\times10^9$ Pa</li>
+<li>NotebookLM อ่านลายมือในไฟล์ว่าบางบรรทัดเขียนเป็น $\times10^8$ หรือ $2.80$ — ลายมือไม่ชัด <strong>ไม่แน่ใจ ควรตรวจกับต้นฉบับ</strong> ว่าเขียนเลขยกกำลังเป็น 9</li>
+</ul>
+</div></section>
+<h2 class="part" id="g10">เรื่องใหม่ที่ไม่มีในสไลด์ 7 บท</h2>
+<section class="topic" id="t11"><h2>สมดุลสถิต (ข้อ 11 บันได)</h2><div class="concept">
+<p><strong>วัตถุอยู่นิ่ง ต้องครบ 2 เงื่อนไข</strong></p>
+<p>$\sum\vec F=0$ (ไม่เลื่อนที่) <strong>และ</strong> $\sum\vec\tau=0$ (ไม่หมุน)</p>
+<p><strong>เทคนิคเลือกจุดหมุน</strong></p>
+<p>เลือกจุดที่มีแรงที่ไม่รู้ค่าผ่านหลายแรงที่สุด แรงพวกนั้นมีแขนเป็นศูนย์ หายไปจากสมการทอร์ก</p>
+<p>โจทย์บันได: เลือกปลายล่าง แรง $N_y$ และ $T$ หายไป เหลือแค่ $N_x$ กับน้ำหนัก</p>
+</div>
+<div class="example">
+<p><strong>โจทย์ (ข้อ 11):</strong> บันได $W_L=120$ N ยาว 3 m เอียง $60^\circ$ ถังสี $W_b=100$ N ที่ระยะ $d$ จากปลายล่าง ผนังและพื้นลื่น เชือกผูกปลายล่างรับได้สูงสุด 90 N</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สิ่งที่กำหนดและสิ่งที่ต้องหา</div><p>บันไดน้ำหนัก $W_L=120$ N ยาว $L=3$ m เอียง $60^\circ$ ถังสี $W_b=100$ N อยู่ห่างปลายล่าง $d$ ผนังและพื้นลื่น (แรงจากผนัง $N_x$ แนวราบ แรงจากพื้น $N_y$ แนวดิ่ง) เชือกที่ปลายล่างดึงด้วย $T$ ต้องหา $N_y$, $T$ เมื่อ $d=2$ m และ $d$ เมื่อ $T=90$ N</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกหลักการ</div><p>บันไดอยู่นิ่ง ต้องครบ 2 เงื่อนไข คือ $\sum\vec F=0$ และ $\sum\vec\tau=0$ เลือกจุดหมุนที่ปลายล่าง ทำให้แรง $N_y$ และ $T$ มีแขนเป็นศูนย์ หายไปจากสมการทอร์ก</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: สมดุลแรงแนวดิ่ง (ข้อ b)</div><p>พื้นลื่นจึงมีแต่แรงตั้งฉาก $N_y$ ดันขึ้นสมดุลกับน้ำหนักทั้งสอง</p>
+$$\sum F_y=0:\quad N_y=W_L+W_b=120+100$$
+$$N_y=220\text{ N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: สมดุลแรงแนวราบ</div><p>ผนังดันแนวราบ ($N_x$) และเชือกดึงแนวราบสวนกัน</p>
+$$\sum F_x=0:\quad T=N_x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: สมดุลทอร์กรอบปลายล่าง</div><p>แขนของแรงแนวราบ $N_x$ คือความสูง $L\sin60^\circ$ ส่วนแขนของน้ำหนักคือระยะแนวราบ $\cos60^\circ$ คูณระยะตามบันได (น้ำหนักบันไดอยู่กึ่งกลาง $\frac L2$)</p>
+$$N_x(L\sin60^\circ)=W_L\left(\frac L2\cos60^\circ\right)+W_b(d\cos60^\circ)$$
+$$N_x(3\sin60^\circ)=120(1.5)(0.5)+100(d)(0.5)$$
+$$N_x(2.598)=90+50d$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: แทนค่าข้อ c ($d=2$ m)</div><p>ใช้ $T=N_x$ แล้วแทน $d=2$</p>
+$$T(2.598)=90+50(2)=190$$
+$$T=\frac{190}{2.598}=73.1\text{ N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 7: แทนค่าข้อ d ($T=90$ N)</div><p>เชือกรับได้สูงสุด $90$ N จึงให้ $T=N_x=90$ แล้วแก้หา $d$</p>
+$$90(2.598)=90+50d$$
+$$233.8-90=50d$$
+$$d=\frac{143.8}{50}=2.88\text{ m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$N_y=220\text{ N}$$
+$$T=73.1\text{ N}\quad(d=2\text{ m})$$
+$$d=2.88\text{ m}\quad(T=90\text{ N})$$</div>
+<p class="check">ตรวจ: $T=73.1<90$ N เชือกไม่ขาด ✓ และ $d=2.88\le L=3$ m อยู่บนบันไดจริง ✓</p>
+</div>
+</div></section>
+<section class="topic" id="t12"><h2>ความเค้น ความเครียด (ข้อ 12 อุโมงค์)</h2><div class="concept">
+<p><strong>ความเค้น (stress)</strong> $\sigma=\frac FA$ (Pa) — แรงต่อพื้นที่</p>
+<p><strong>ความเครียด (strain)</strong> $\varepsilon=\frac{\Delta L}{L}$ (ไม่มีหน่วย) — สัดส่วนที่ยืด/หด</p>
+<p><strong>ยืดหยุ่น (elastic)</strong> — ถูกแรงแล้วเปลี่ยนรูป เมื่อเอาแรงออกกลับรูปเดิม (ช่วงเส้นตรงในกราฟ)</p>
+<p><strong>มอดุลัสของยัง</strong> $Y=\frac{\sigma}{\varepsilon}$</p>
+</div>
+<div class="example">
+<p><strong>โจทย์ (ข้อ 12):</strong> ดินเหนืออุโมงค์ $150\times5.8$ m หนา 60 m ความหนาแน่น 2.8 g/cm³ เสาต้นละ 960 cm² ให้รับไม่เกินครึ่งของความเค้นที่พัง (400 MPa)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สิ่งที่กำหนดและสิ่งที่ต้องหา</div><p>ดินเหนืออุโมงค์ขนาด $150\times5.8$ m หนา $60$ m ความหนาแน่น $2.8$ g/cm³ เสาแต่ละต้นพื้นที่หน้าตัด $960$ cm² ให้รับความเค้นไม่เกินครึ่งหนึ่งของความเค้นที่พัง ($400$ MPa) ต้องหาน้ำหนักดินและจำนวนเสาที่น้อยที่สุด</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>ความเค้น $\sigma=\frac FA$ น้ำหนักดิน $W=\rho Vg$ และเสา $N$ ต้นรับแรงรวมโดยมีพื้นที่รวม $NA$</p>
+$$\sigma=\frac FA,\qquad W=\rho Vg$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แปลงหน่วย</div><p>$1\text{ g/cm}^3=1000\text{ kg/m}^3$ และ $1\text{ cm}^2=10^{-4}\text{ m}^2$ ความเค้นที่ยอมให้คือครึ่งหนึ่งของ $400$ MPa</p>
+$$\rho=2.8\times10^3\text{ kg/m}^3=2800\text{ kg/m}^3$$
+$$A=960\times10^{-4}=0.096\text{ m}^2$$
+$$\sigma_{allow}=\frac{400}{2}=200\text{ MPa}=200\times10^6\text{ Pa}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณน้ำหนักดิน</div><p>หาปริมาตรดินก่อน แล้วคูณ $\rho$ และ $g=10$ m/s²</p>
+$$V=150\times5.8\times60=52200\text{ m}^3$$
+$$W=\rho Vg=2800\times52200\times10=1.46\times10^9\text{ N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ตั้งสมการความเค้นของเสา $N$ ต้น</div><p>แรงรวม $W$ กระจายบนพื้นที่รวม $NA$ และความเค้นต้องไม่เกิน $\sigma_{allow}$</p>
+$$200\times10^6=\frac{1.46\times10^9}{N(0.096)}$$
+$$N=\frac{1.46\times10^9}{(200\times10^6)(0.096)}=\frac{1.46\times10^9}{1.92\times10^7}=76.1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: ปัดจำนวนเสา</div><p>จำนวนเสาต้องเป็นจำนวนเต็มและต้อง<strong>ปัดขึ้น</strong> เพราะ $76$ ต้นจะรับความเค้นเกิน $200$ MPa ไปนิดหนึ่ง</p>
+$$N=77$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$W=1.46\times10^9\text{ N}$$
+$$N=77\text{ ต้น}$$</div>
+<p class="check">ตรวจ: ถ้าใช้ 77 ต้น $\sigma=\frac{1.46\times10^9}{77(0.096)}=1.98\times10^8$ Pa $<2\times10^8$ Pa ✓ ส่วน 76 ต้นได้ $2.00\times10^8$ Pa เกินเล็กน้อย</p>
+</div>
+</div></section>
+</main>
+<script>
+const nav=document.createElement('nav');nav.innerHTML='<p class="tocpart">สรุปผลตรวจ</p><ol><li><a href="#t2">ตารางผลตรวจทุกข้อ</a></li></ol><p class="tocpart">จุดที่ต้องแก้</p><ol><li><a href="#t4">ข้อ 2c · ระยะไกลสุดบนพื้นเอียง (คำตอบผิด)</a></li><li><a href="#t5">ข้อ 6c · เครื่องหมายพลาดระหว่างทาง</a></li><li><a href="#t6">ข้อ 8a · เครื่องหมายในสมการชนยืดหยุ่น</a></li><li><a href="#t7">ข้อ 1c · ปัดเวลาก่อนคำนวณ</a></li><li><a href="#t8">ข้อ 14c · ควรพิสูจน์ว่าเป็นค่าต่ำสุด</a></li><li><a href="#t9">ข้อ 16b · เช็กเลขยกกำลังของ bulk modulus</a></li></ol><p class="tocpart">เรื่องใหม่ที่ไม่มีในสไลด์ 7 บท</p><ol><li><a href="#t11">สมดุลสถิต (ข้อ 11 บันได)</a></li><li><a href="#t12">ความเค้น ความเครียด (ข้อ 12 อุโมงค์)</a></li></ol>'.replace(/^/, '<b>สารบัญ</b>');
+document.querySelector('header.lead').after(nav);
+</script><h2>ภาพการบ้านที่ใช้ตรวจ</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 1–2 (6 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/a_01.jpg" alt="ข้อ 1–2 หน้า 1"><img loading="lazy" src="img/hw/a_02.jpg" alt="ข้อ 1–2 หน้า 2"><img loading="lazy" src="img/hw/a_03.jpg" alt="ข้อ 1–2 หน้า 3"><img loading="lazy" src="img/hw/a_04.jpg" alt="ข้อ 1–2 หน้า 4"><img loading="lazy" src="img/hw/a_05.jpg" alt="ข้อ 1–2 หน้า 5"><img loading="lazy" src="img/hw/a_06.jpg" alt="ข้อ 1–2 หน้า 6"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 3–4 (2 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/b_01.jpg" alt="ข้อ 3–4 หน้า 1"><img loading="lazy" src="img/hw/b_02.jpg" alt="ข้อ 3–4 หน้า 2"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 5–6 (3 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/c_01.jpg" alt="ข้อ 5–6 หน้า 1"><img loading="lazy" src="img/hw/c_02.jpg" alt="ข้อ 5–6 หน้า 2"><img loading="lazy" src="img/hw/c_03.jpg" alt="ข้อ 5–6 หน้า 3"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 7–8 (4 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/d_01.jpg" alt="ข้อ 7–8 หน้า 1"><img loading="lazy" src="img/hw/d_02.jpg" alt="ข้อ 7–8 หน้า 2"><img loading="lazy" src="img/hw/d_03.jpg" alt="ข้อ 7–8 หน้า 3"><img loading="lazy" src="img/hw/d_04.jpg" alt="ข้อ 7–8 หน้า 4"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 11–12 (3 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/e_01.jpg" alt="ข้อ 11–12 หน้า 1"><img loading="lazy" src="img/hw/e_02.jpg" alt="ข้อ 11–12 หน้า 2"><img loading="lazy" src="img/hw/e_03.jpg" alt="ข้อ 11–12 หน้า 3"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 13–14 (4 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/f_01.jpg" alt="ข้อ 13–14 หน้า 1"><img loading="lazy" src="img/hw/f_02.jpg" alt="ข้อ 13–14 หน้า 2"><img loading="lazy" src="img/hw/f_03.jpg" alt="ข้อ 13–14 หน้า 3"><img loading="lazy" src="img/hw/f_04.jpg" alt="ข้อ 13–14 หน้า 4"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 15–16 (4 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/g_01.jpg" alt="ข้อ 15–16 หน้า 1"><img loading="lazy" src="img/hw/g_02.jpg" alt="ข้อ 15–16 หน้า 2"><img loading="lazy" src="img/hw/g_03.jpg" alt="ข้อ 15–16 หน้า 3"><img loading="lazy" src="img/hw/g_04.jpg" alt="ข้อ 15–16 หน้า 4"></details><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: ข้อ 17–18 (3 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/hw/h_01.jpg" alt="ข้อ 17–18 หน้า 1"><img loading="lazy" src="img/hw/h_02.jpg" alt="ข้อ 17–18 หน้า 2"><img loading="lazy" src="img/hw/h_03.jpg" alt="ข้อ 17–18 หน้า 3"></details></body></html>

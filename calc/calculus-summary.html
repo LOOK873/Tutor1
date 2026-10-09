@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>สรุปติวสอบ Calculus</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#fbfaf7; --fg:#1f2328; --muted:#5b6370; --card:#fff; --line:#e3e0d8; --accent:#2f6fde; --warn:#b45309; --warnbg:#fff7ed; --ok:#1a7f4b; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16181c; --fg:#e6e6e6; --muted:#9aa3ad; --card:#1f2227; --line:#30343b; --accent:#7aa7ff; --warn:#fbbf24; --warnbg:#2a2214; --ok:#4ade80; } }
+  body { background:var(--bg); color:var(--fg); font-family:'Sarabun',sans-serif; font-size:17px; line-height:1.75; margin:0; }
+  main { max-width:860px; margin:0 auto; padding:24px 16px 80px; }
+  h1 { font-size:1.8rem; margin:0 0 4px; }
+  h2 { font-size:1.45rem; margin:48px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--accent); }
+  h3 { font-size:1.15rem; margin:28px 0 8px; }
+  .sub { color:var(--muted); margin:0 0 20px; }
+  nav { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 20px; }
+  nav ol { margin:6px 0; padding-left:22px; } nav a { color:var(--accent); text-decoration:none; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .warn { background:var(--warnbg); border-left:4px solid var(--warn); border-radius:8px; padding:10px 14px; margin:10px 0; }
+  .warn b:first-child { color:var(--warn); }
+  .ex { border-left:4px solid var(--ok); padding:4px 14px; margin:12px 0; }
+  .ex .t { font-weight:700; color:var(--ok); }
+  table { border-collapse:collapse; width:100%; margin:8px 0; }
+  td, th { border-bottom:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  .katex-display { overflow-x:auto; overflow-y:hidden; padding:2px 0; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:4px 24px; }
+  @media (max-width:600px) { .grid2 { grid-template-columns:1fr; } }
+  @media print { body { background:#fff; font-size:14px } h2 { break-before:page } .box,.ex,.warn { break-inside:avoid } }
+</style>
+<style id="readability-fix">
+body{line-height:2!important;word-break:normal;overflow-wrap:anywhere;line-break:loose}
+p,li{margin-bottom:12px} li>p{margin-bottom:6px}
+.katex-display{margin:14px 0!important;padding:4px 0}
+h2{margin-top:56px!important} h3{margin-top:32px!important}
+.box,.q,.ex,.warn,.panel,section,blockquote{line-height:2}
+td,th{line-height:1.8}
+</style>
+<style>.slides{margin:.8em 0;border:1px solid #8884;border-radius:8px;padding:.4em .8em}.slides summary{cursor:pointer;font-weight:600}.slides img{display:block;max-width:100%;height:auto;margin:.8em auto;border:1px solid #8884;border-radius:4px;background:#fff}</style><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script></head>
+<body>
+<main>
+<h1>สรุปติวสอบ Calculus (MTH11101 + MTH11102)</h1>
+<p class="sub">สรุปจากไฟล์ 19 ไฟล์ในโฟลเดอร์นี้ (สไลด์ MTH11101, เอกสาร MTH11102 และโน้ตลายมือ) ผ่าน NotebookLM แล้วตรวจกับโน้ตต้นฉบับอีกรอบ · ในโน้ตลิมิตเขียนวันที่ไว้ว่า <b>14 ต.ค. 69 เวลา 13–16.00 น.</b></p>
+
+<nav><b>สารบัญ</b>
+<ol>
+<li><a href="#p1">MTH11101: ลิมิต · ความต่อเนื่อง · โลปิตาล · อนุพันธ์</a></li>
+<li><a href="#p2">MTH11102: เทคนิคการอินทิเกรต</a></li>
+<li><a href="#p3">อินทิกรัลไม่ตรงแบบ (Improper Integrals)</a></li>
+<li><a href="#p4">วงกลมหนึ่งหน่วย และพิกัดเชิงขั้ว (Polar)</a></li>
+<li><a href="#p5">เช็กลิสต์ก่อนเข้าห้องสอบ</a></li>
+</ol>
+<p style="margin:4px 0 0">แบบฝึกหัดพร้อมเฉลย: <b>เฉลยแบบฝึกหัดในคลาส.html</b> และ <b>แบบฝึกหัดเพิ่มเติม.html</b></p>
+</nav>
+
+<!-- ============================ PART 1 ============================ -->
+<h2 id="p1">ส่วนที่ 1 · MTH11101 (Calculus I)</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: MTH11101 Derivative (29 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/mth11101/d_01.jpg" alt="MTH11101 Derivative หน้า 1"><img loading="lazy" src="img/mth11101/d_02.jpg" alt="MTH11101 Derivative หน้า 2"><img loading="lazy" src="img/mth11101/d_03.jpg" alt="MTH11101 Derivative หน้า 3"><img loading="lazy" src="img/mth11101/d_04.jpg" alt="MTH11101 Derivative หน้า 4"><img loading="lazy" src="img/mth11101/d_05.jpg" alt="MTH11101 Derivative หน้า 5"><img loading="lazy" src="img/mth11101/d_06.jpg" alt="MTH11101 Derivative หน้า 6"><img loading="lazy" src="img/mth11101/d_07.jpg" alt="MTH11101 Derivative หน้า 7"><img loading="lazy" src="img/mth11101/d_08.jpg" alt="MTH11101 Derivative หน้า 8"><img loading="lazy" src="img/mth11101/d_09.jpg" alt="MTH11101 Derivative หน้า 9"><img loading="lazy" src="img/mth11101/d_10.jpg" alt="MTH11101 Derivative หน้า 10"><img loading="lazy" src="img/mth11101/d_11.jpg" alt="MTH11101 Derivative หน้า 11"><img loading="lazy" src="img/mth11101/d_12.jpg" alt="MTH11101 Derivative หน้า 12"><img loading="lazy" src="img/mth11101/d_13.jpg" alt="MTH11101 Derivative หน้า 13"><img loading="lazy" src="img/mth11101/d_14.jpg" alt="MTH11101 Derivative หน้า 14"><img loading="lazy" src="img/mth11101/d_15.jpg" alt="MTH11101 Derivative หน้า 15"><img loading="lazy" src="img/mth11101/d_16.jpg" alt="MTH11101 Derivative หน้า 16"><img loading="lazy" src="img/mth11101/d_17.jpg" alt="MTH11101 Derivative หน้า 17"><img loading="lazy" src="img/mth11101/d_18.jpg" alt="MTH11101 Derivative หน้า 18"><img loading="lazy" src="img/mth11101/d_19.jpg" alt="MTH11101 Derivative หน้า 19"><img loading="lazy" src="img/mth11101/d_20.jpg" alt="MTH11101 Derivative หน้า 20"><img loading="lazy" src="img/mth11101/d_21.jpg" alt="MTH11101 Derivative หน้า 21"><img loading="lazy" src="img/mth11101/d_22.jpg" alt="MTH11101 Derivative หน้า 22"><img loading="lazy" src="img/mth11101/d_23.jpg" alt="MTH11101 Derivative หน้า 23"><img loading="lazy" src="img/mth11101/d_24.jpg" alt="MTH11101 Derivative หน้า 24"><img loading="lazy" src="img/mth11101/d_25.jpg" alt="MTH11101 Derivative หน้า 25"><img loading="lazy" src="img/mth11101/d_26.jpg" alt="MTH11101 Derivative หน้า 26"><img loading="lazy" src="img/mth11101/d_27.jpg" alt="MTH11101 Derivative หน้า 27"><img loading="lazy" src="img/mth11101/d_28.jpg" alt="MTH11101 Derivative หน้า 28"><img loading="lazy" src="img/mth11101/d_29.jpg" alt="MTH11101 Derivative หน้า 29"></details>
+
+<h3>1.1 ลิมิต และลิมิตข้างเดียว</h3>
+<div class="box">
+$$\lim_{x\to a}f(x)=L \iff \lim_{x\to a^-}f(x)=L \ \text{ และ }\ \lim_{x\to a^+}f(x)=L$$
+<p><b>ลิมิตซ้ายต้องเท่ากับลิมิตขวา</b> ลิมิตจึงจะมีค่า</p>
+<p>สมบัติ: $\lim_{x\to a}[f(x)\,g(x)]=\lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)$ (เช่นเดียวกับ $+,-,\div$ เมื่อลิมิตแต่ละตัวมีค่า)</p>
+<p><b>ลิมิตที่อนันต์ ($x\to\pm\infty$) ของเศษส่วนพหุนาม:</b> เอา $x$ ที่มีกำลังสูงสุดของตัวส่วนไปหารทั้งเศษและส่วน</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต)</p>
+<p>หา $\lim_{x\to\infty}\dfrac{x^2+1}{2x^2-5x+3}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบของลิมิต</div><p>แทน $x\to\infty$ ทั้งเศษและส่วนเป็น $\infty$ จึงเป็นรูป $\frac\infty\infty$ ใช้วิธีหารด้วย $x$ ที่มีกำลังสูงสุดของตัวส่วน ซึ่งคือ $x^2$</p>
+$$\lim_{x\to\infty}\frac{x^2+1}{2x^2-5x+3}\ \to\ \frac{\infty}{\infty}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หารเศษและส่วนด้วย $x^2$</div><p>หารทั้งเศษและส่วนด้วยค่าเดียวกัน ค่าของเศษส่วนจึงไม่เปลี่ยน</p>
+$$=\lim_{x\to\infty}\frac{\dfrac{x^2+1}{x^2}}{\dfrac{2x^2-5x+3}{x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แยกหารทีละพจน์</div><p>หาร $x^2$ เข้าไปทีละพจน์ในเศษและส่วน</p>
+$$=\lim_{x\to\infty}\frac{1+\dfrac{1}{x^2}}{2-\dfrac{5}{x}+\dfrac{3}{x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่าลิมิต</div><p>ใช้สมบัติ $\lim_{x\to\infty}\frac{1}{x^k}=0$ เมื่อ $k>0$ แล้วแทนค่าลิมิตของแต่ละพจน์</p>
+$$\lim_{x\to\infty}\frac1{x}=0,\quad\lim_{x\to\infty}\frac1{x^2}=0$$
+$$=\frac{1+0}{2-0+0}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\lim_{x\to\infty}\frac{x^2+1}{2x^2-5x+3}=\frac12$$</div>
+</div>
+<p>ทางลัด: ดีกรีเศษ = ดีกรีส่วน ได้คำตอบเป็นสัมประสิทธิ์หน้า $x$ กำลังสูงสุดหารกัน $\frac{1}{2}$ · ถ้าดีกรีเศษน้อยกว่าส่วน คำตอบเป็น $0$ · ถ้ามากกว่า คำตอบเป็น $\pm\infty$</p>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> แทนค่า $x=a$ ทันทีโดยไม่เช็กว่าได้ $\frac00$ หรือไม่ · เจอฟังก์ชันแบ่งช่วงหรือ $|x|$ แล้วลืมหาลิมิตซ้ายกับขวาแยกกัน</div>
+
+<h3>1.2 ความต่อเนื่อง</h3>
+<div class="box">
+<p>$f$ ต่อเนื่องที่ $x=a$ เมื่อครบ <b>3 ข้อ</b></p>
+<ol>
+<li>$\lim_{x\to a}f(x)=L$ หาค่าได้ (ลิมิตซ้าย = ลิมิตขวา)</li>
+<li>$f(a)$ หาค่าได้</li>
+<li>ข้อ 1 = ข้อ 2 คือ $\lim_{x\to a}f(x)=f(a)$</li>
+</ol>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> เห็นว่า $f(a)$ มีค่าแล้วสรุปเลยว่าต่อเนื่อง โดยลืมเช็กว่าลิมิตมีค่าและเท่ากับ $f(a)$ จริงหรือไม่</div>
+
+<h3>1.3 ทฤษฎีบทการบีบ (Squeeze Theorem)</h3>
+<div class="box">
+<p>ถ้า $h(x)\le f(x)\le g(x)$ รอบจุด $a$ และ $\lim_{x\to a}h(x)=\lim_{x\to a}g(x)=L$ จะได้ $\lim_{x\to a}f(x)=L$</p>
+<p>ตัวบีบที่ใช้บ่อย: $-1\le\sin\theta\le1$ และ $-1\le\cos\theta\le1$</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่างแบบที่ออกบ่อย</p>
+<p>หา $\lim_{x\to0}x^2\sin\frac1x$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาขอบเขตของส่วนที่แกว่ง</div><p>ฟังก์ชัน $\sin\frac1x$ ไม่มีลิมิตที่ $0$ แต่ถูกบีบอยู่ระหว่าง $-1$ กับ $1$ เสมอ (เมื่อ $x\ne0$)</p>
+$$-1\le\sin\frac1x\le1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณด้วย $x^2$ ตลอดอสมการ</div><p>$x^2\ge0$ จึงคูณแล้วไม่ต้องกลับเครื่องหมายอสมการ</p>
+$$-x^2\le x^2\sin\frac1x\le x^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาลิมิตของตัวบีบบนและล่าง</div><p>ใช้ทฤษฎีบทการบีบ ต้องหาลิมิตของฟังก์ชันขอบทั้งสองข้าง</p>
+$$\lim_{x\to0}(-x^2)=0$$
+$$\lim_{x\to0}x^2=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: สรุปด้วยทฤษฎีบทการบีบ</div><p>ลิมิตของตัวบีบทั้งสองเท่ากัน (เป็น $0$ ทั้งคู่) ดังนั้นฟังก์ชันตรงกลางมีลิมิตเท่ากัน</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\lim_{x\to0}x^2\sin\frac1x=0$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ลิมิตของตัวบีบบนกับตัวบีบล่างไม่เท่ากัน แบบนี้สรุปด้วยทฤษฎีบทการบีบไม่ได้</div>
+
+<h3>1.4 รูปแบบยังไม่กำหนด 7 แบบ และกฎของโลปิตาล</h3>
+<div class="box">
+<p>7 รูปแบบ: $\ \frac00,\ \frac{\infty}{\infty},\ 0\cdot\infty,\ \infty-\infty,\ 1^{\infty},\ 0^0,\ \infty^0$</p>
+<p><b>กฎของโลปิตาล</b> (ใช้ได้เฉพาะกับ $\frac00$ หรือ $\frac\infty\infty$ เท่านั้น):</p>
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+<table>
+<tr><th>รูปแบบ</th><th>วิธีจัดการ</th></tr>
+<tr><td>$\frac00,\ \frac\infty\infty$</td><td>ใช้โลปิตาลได้ทันที (ใช้ซ้ำได้ถ้ายังเป็น $\frac00$)</td></tr>
+<tr><td>$0\cdot\infty$</td><td>เขียน $f\cdot g=\dfrac{f}{1/g}$ ให้กลายเป็น $\frac00$ หรือ $\frac\infty\infty$</td></tr>
+<tr><td>$\infty-\infty$</td><td>รวมเป็นเศษส่วนเดียว (หา ค.ร.น.) หรือคูณด้วยสังยุค</td></tr>
+<tr><td>$1^\infty,\ 0^0,\ \infty^0$</td><td><b>วิธี ln</b>: ให้ $y=f(x)^{g(x)}$ แล้วได้ $\ln y=g(x)\ln f(x)$ จากนั้นหา $\lim\ln y=L$ จะได้คำตอบ $=e^{L}$</td></tr>
+</table>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 1 ($\frac00$ ใช้โลปิตาล 2 ครั้ง)</p>
+$$\lim_{x\to0}\frac{x(\cos x-1)}{\sin x-x}$$
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบ</div><p>แทน $x=0$ ในเศษและส่วน</p>
+$$\text{เศษ}=0\cdot(\cos0-1)=0,\qquad\text{ส่วน}=\sin0-0=0$$
+$$\Rightarrow\ \frac00\ \text{ใช้โลปิตาลได้}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: โลปิตาลครั้งที่ 1</div><p>ดิฟเศษกับส่วนแยกกัน (ไม่ใช้กฎผลหาร) โดยเศษ $x(\cos x-1)$ ดิฟด้วยกฎผลคูณ</p>
+$$\frac{d}{dx}\big[x(\cos x-1)\big]=(\cos x-1)+x(-\sin x)$$
+$$\frac{d}{dx}(\sin x-x)=\cos x-1$$
+$$=\lim_{x\to0}\frac{\cos x-1-x\sin x}{\cos x-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ตรวจรูปแบบอีกครั้ง</div><p>แทน $x=0$ ได้เศษ $1-1-0=0$ และส่วน $1-1=0$ ยังเป็น $\frac00$ จึงใช้โลปิตาลอีกรอบ</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: โลปิตาลครั้งที่ 2</div><p>ดิฟเศษและส่วนอีกครั้ง (เศษมีพจน์ $x\sin x$ ใช้กฎผลคูณ)</p>
+$$\frac{d}{dx}\big[\cos x-1-x\sin x\big]=-\sin x-\sin x-x\cos x=-2\sin x-x\cos x$$
+$$\frac{d}{dx}(\cos x-1)=-\sin x$$
+$$=\lim_{x\to0}\frac{-2\sin x-x\cos x}{-\sin x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แยกเศษส่วนให้ลิมิตหาง่าย</div><p>หาร $-\sin x$ เข้าทีละพจน์ของเศษ</p>
+$$=\lim_{x\to0}\left(2+\frac{x\cos x}{\sin x}\right)=2+\lim_{x\to0}\frac{x\cos x}{\sin x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: หาลิมิตก้อนที่เหลือ</div><p>ก้อน $\frac{x\cos x}{\sin x}$ เป็น $\frac00$ อีก จึงใช้โลปิตาลอีกครั้ง</p>
+$$\lim_{x\to0}\frac{x\cos x}{\sin x}=\lim_{x\to0}\frac{\cos x-x\sin x}{\cos x}=\frac{1-0}{1}=1$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\lim_{x\to0}\frac{x(\cos x-1)}{\sin x-x}=2+1=3$$</div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 2 ($1^\infty$ ใช้วิธี ln)</p>
+<p>หา $\lim_{x\to\infty}(1-e^{-x})^{e^x}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุรูปแบบยังไม่กำหนด</div><p>ฐาน $1-e^{-x}\to1$ และเลขชี้กำลัง $e^x\to\infty$ จึงเป็นรูป $1^\infty$ ต้องใช้วิธี ln</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้ง $y$ แล้วใส่ ln</div><p>ให้ $y$ เป็นฟังก์ชันที่ต้องการ แล้วใช้สมบัติ $\ln a^b=b\ln a$ ดึงเลขชี้กำลังลงมา</p>
+$$y=(1-e^{-x})^{e^x}$$
+$$\ln y=e^x\ln(1-e^{-x})$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนให้เป็นเศษส่วน</div><p>ใช้ $e^x=\dfrac1{e^{-x}}$ เพื่อให้เป็นรูปที่ใช้โลปิตาลได้</p>
+$$\ln y=\frac{\ln(1-e^{-x})}{e^{-x}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตรวจรูปแบบ</div><p>เมื่อ $x\to\infty$ เศษ $\ln(1-e^{-x})\to\ln1=0$ และส่วน $e^{-x}\to0$ จึงเป็นรูป $\frac00$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: โลปิตาล</div><p>ดิฟเศษด้วยกฎลูกโซ่ ($\frac{d}{dx}\ln u=\frac{u'}{u}$ และ $\frac{d}{dx}(1-e^{-x})=e^{-x}$) และดิฟส่วน $\frac{d}{dx}e^{-x}=-e^{-x}$</p>
+$$\lim_{x\to\infty}\ln y=\lim_{x\to\infty}\frac{\dfrac{e^{-x}}{1-e^{-x}}}{-e^{-x}}$$
+$$=\lim_{x\to\infty}\frac{-1}{1-e^{-x}}$$
+$$=\frac{-1}{1-0}=-1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: แปลงกลับเป็นค่า $y$</div><p>ได้ $\lim\ln y=L=-1$ ดังนั้น $\lim y=e^{L}$ (อย่าลืมขั้นนี้)</p>
+$$\lim_{x\to\infty}y=e^{-1}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\lim_{x\to\infty}(1-e^{-x})^{e^x}=\frac1e$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> (1) ดิฟเศษส่วนทั้งก้อนด้วยกฎผลหาร ซึ่งผิด โลปิตาลคือ<b>ดิฟเศษกับส่วนแยกกัน</b> (2) ใช้โลปิตาลกับลิมิตที่ไม่ใช่ $\frac00$ หรือ $\frac\infty\infty$ (3) ใช้วิธี ln หาได้ $L$ แล้วลืมแปลงกลับเป็น $e^L$</div>
+
+<h3>1.5 นิยามของอนุพันธ์</h3>
+<div class="box">
+$$f'(x)=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากสไลด์)</p>
+<p>หา $f'(x)$ ของ $f(x)=\pi x^2+ex-3$ โดยใช้นิยาม</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนนิยามของอนุพันธ์</div><p>ใช้นิยาม $f'(x)=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$ ต้องหา $f(x+\Delta x)$ ก่อน</p>
+$$f(x+\Delta x)=\pi(x+\Delta x)^2+e(x+\Delta x)-3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กระจายกำลังสอง</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$</p>
+$$f(x+\Delta x)=\pi(x^2+2x\Delta x+\Delta x^2)+ex+e\Delta x-3$$
+$$f(x+\Delta x)=\pi x^2+2\pi x\Delta x+\pi\Delta x^2+ex+e\Delta x-3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $f(x+\Delta x)-f(x)$</div><p>ลบ $f(x)=\pi x^2+ex-3$ พจน์ที่ซ้ำกันหักล้างกัน</p>
+$$f(x+\Delta x)-f(x)=\pi x^2+2\pi x\Delta x+\pi\Delta x^2+ex+e\Delta x-3-\pi x^2-ex+3$$
+$$=2\pi x\Delta x+\pi\Delta x^2+e\Delta x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ใส่ในนิยามและดึงตัวร่วม</div><p>ดึง $\Delta x$ ออกจากเศษ แล้วตัดกับตัวส่วน (ยังต้องเขียน $\lim$ ทุกบรรทัด)</p>
+$$f'(x)=\lim_{\Delta x\to0}\frac{2\pi x\Delta x+\pi\Delta x^2+e\Delta x}{\Delta x}$$
+$$=\lim_{\Delta x\to0}\frac{\Delta x(2\pi x+\pi\Delta x+e)}{\Delta x}$$
+$$=\lim_{\Delta x\to0}(2\pi x+\pi\Delta x+e)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่าลิมิต</div><p>เมื่อ $\Delta x\to0$ พจน์ $\pi\Delta x$ เป็น $0$</p>
+$$=2\pi x+\pi(0)+e$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=2\pi x+e$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> กระจาย $(x+\Delta x)^2=x^2+\Delta x^2$ ซึ่งผิด ที่ถูกคือ $x^2+2x\Delta x+\Delta x^2$ · และอย่าลืมเขียน $\lim$ ทุกบรรทัดจนกว่าจะแทนค่าลิมิตจริง</div>
+
+<h3>1.6 กฎการหาอนุพันธ์ และตารางสูตร</h3>
+<div class="box">
+<p><b>กฎพื้นฐาน</b> (ให้ $u,v$ เป็นฟังก์ชันของ $x$)</p>
+<div class="grid2">
+<div>$\frac{d}{dx}(c)=0$</div><div>$\frac{d}{dx}(cu)=c\,u'$</div>
+<div>$\frac{d}{dx}(u^n)=n\,u^{n-1}u'$</div><div>$\frac{d}{dx}(u\pm v)=u'\pm v'$</div>
+</div>
+<p><b>ผลคูณ</b> "หน้าดิฟหลัง + หลังดิฟหน้า": $\ (uv)'=u\,v'+v\,u'$</p>
+<p><b>ผลหาร</b> "ล่างดิฟบน − บนดิฟล่าง ส่วนล่างกำลังสอง": $\ \left(\dfrac uv\right)'=\dfrac{v\,u'-u\,v'}{v^2}$</p>
+</div>
+
+<div class="box">
+<p><b>ตรีโกณมิติ</b> (ทุกสูตรคูณ $u'$ ตามกฎลูกโซ่)</p>
+<div class="grid2">
+<div>$(\sin u)'=\cos u\cdot u'$</div><div>$(\cos u)'=-\sin u\cdot u'$</div>
+<div>$(\tan u)'=\sec^2u\cdot u'$</div><div>$(\cot u)'=-\csc^2u\cdot u'$</div>
+<div>$(\sec u)'=\sec u\tan u\cdot u'$</div><div>$(\csc u)'=-\csc u\cot u\cdot u'$</div>
+</div>
+<p><b>ตรีโกณผกผัน</b></p>
+<div class="grid2">
+<div>$(\sin^{-1}u)'=\dfrac{u'}{\sqrt{1-u^2}}$</div><div>$(\cos^{-1}u)'=-\dfrac{u'}{\sqrt{1-u^2}}$</div>
+<div>$(\tan^{-1}u)'=\dfrac{u'}{1+u^2}$</div><div>$(\cot^{-1}u)'=-\dfrac{u'}{1+u^2}$</div>
+<div>$(\sec^{-1}u)'=\dfrac{u'}{|u|\sqrt{u^2-1}}$</div><div>$(\csc^{-1}u)'=-\dfrac{u'}{|u|\sqrt{u^2-1}}$</div>
+</div>
+<p><b>เอกซ์โพเนนเชียล / ลอการิทึม</b></p>
+<div class="grid2">
+<div>$(e^u)'=e^u\cdot u'$</div><div>$(a^u)'=a^u\ln a\cdot u'$</div>
+<div>$(\ln u)'=\dfrac{u'}{u}$</div><div>$(\log_a u)'=\dfrac{u'}{u\ln a}$</div>
+</div>
+<p>$(u^v)'=v\,u^{v-1}u'+u^v\ln u\cdot v'$ (กรณีฐานและเลขชี้กำลังมี $x$ ทั้งคู่)</p>
+<p><b>ไฮเพอร์โบลิก</b></p>
+<div class="grid2">
+<div>$(\sinh u)'=\cosh u\cdot u'$</div><div>$(\cosh u)'=\sinh u\cdot u'$ <small>(ไม่มีลบ!)</small></div>
+<div>$(\tanh u)'=\text{sech}^2u\cdot u'$</div><div>$(\coth u)'=-\text{csch}^2u\cdot u'$</div>
+<div>$(\text{sech}\,u)'=-\text{sech}\,u\tanh u\cdot u'$</div><div>$(\text{csch}\,u)'=-\text{csch}\,u\coth u\cdot u'$</div>
+</div>
+<p><b>ไฮเพอร์โบลิกผกผัน</b></p>
+<div class="grid2">
+<div>$(\sinh^{-1}u)'=\dfrac{u'}{\sqrt{u^2+1}}$</div><div>$(\cosh^{-1}u)'=\dfrac{u'}{\sqrt{u^2-1}}$</div>
+<div>$(\tanh^{-1}u)'=\dfrac{u'}{1-u^2}$</div><div>$(\coth^{-1}u)'=\dfrac{u'}{1-u^2}$</div>
+<div>$(\text{sech}^{-1}u)'=-\dfrac{u'}{u\sqrt{1-u^2}}$</div><div>$(\text{csch}^{-1}u)'=-\dfrac{u'}{|u|\sqrt{1+u^2}}$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> $(\cos u)'=-\sin u$ แต่ $(\cosh u)'=+\sinh u$ · ตัวที่ขึ้นต้นด้วย "co" ($\cos,\cot,\csc$ และตัวผกผัน) มักมีเครื่องหมายลบ · ลืมคูณ $u'$ เมื่อข้างในไม่ใช่ $x$ เฉยๆ</div>
+
+<h3>1.7 กฎลูกโซ่ (Chain Rule)</h3>
+<div class="box">
+$$\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx}\qquad\text{หลายชั้น: }\ \frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dv}\cdot\frac{dv}{dt}\cdots\frac{ds}{dx}$$
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต)</p>
+<p>$y=u^2,\ u=\sin x,\ x=t^5$ หา $\frac{dy}{dt}$ ที่ $t=1$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนกฎลูกโซ่</div><p>ตัวแปรต่อกันเป็นโซ่ $y\to u\to x\to t$ จึงคูณอนุพันธ์ทีละชั้น</p>
+$$\frac{dy}{dt}=\frac{dy}{du}\cdot\frac{du}{dx}\cdot\frac{dx}{dt}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟแต่ละชั้น</div><p>ใช้กฎเลขยกกำลังกับ $u^2$ และ $t^5$ และ $(\sin x)'=\cos x$</p>
+$$\frac{dy}{du}=2u,\qquad\frac{du}{dx}=\cos x,\qquad\frac{dx}{dt}=5t^4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณกัน</div><p>นำอนุพันธ์ทุกชั้นมาคูณ</p>
+$$\frac{dy}{dt}=[2u][\cos x][5t^4]$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาค่าตัวแปรทุกชั้นที่ $t=1$</div><p>ต้องแปลง $t$ ไปเป็น $x$ และ $u$ ให้ครบก่อนแทนค่า</p>
+$$x=t^5=1^5=1$$
+$$u=\sin x=\sin1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่า</div><p>แทน $u=\sin1,\ x=1,\ t=1$</p>
+$$\frac{dy}{dt}=2\sin1\cdot\cos1\cdot5(1)^4$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{dy}{dt}=10\sin1\cos1$$
+<p class="alt">(หรือเขียนในรูปอื่นได้เป็น $5\sin2$ เพราะ $\sin2A=2\sin A\cos A$)</p></div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ดิฟชั้นนอกแล้วลืมคูณอนุพันธ์ของชั้นใน · แทนค่า $t$ แล้วลืมแปลงเป็น $x$ และ $u$ ให้ครบก่อนแทนค่า</div>
+
+<h3>1.8 อนุพันธ์ฟังก์ชันโดยปริยาย (Implicit)</h3>
+<div class="box">
+<p>ดิฟทั้งสองข้างเทียบกับ $x$ โดยมอง $y$ เป็นฟังก์ชันของ $x$ ทุกครั้งที่ดิฟ $y$ ต้องคูณ $y'$: $\ \frac{d}{dx}(y^n)=ny^{n-1}y'$ · จากนั้นรวมเทอมที่มี $y'$ ไว้ข้างเดียวแล้วแก้หา $y'$</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต)</p>
+<p>$x^2y+y=5$ หา $y'$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดิฟทั้งสองข้างเทียบ $x$</div><p>มอง $y$ เป็นฟังก์ชันของ $x$ จึงทุกครั้งที่ดิฟ $y$ ต้องคูณ $y'$</p>
+$$\frac{d}{dx}\left(x^2y+y\right)=\frac{d}{dx}(5)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทีละเทอม</div><p>เทอม $x^2y$ เป็นผลคูณ ใช้กฎผลคูณ "หน้าดิฟหลัง + หลังดิฟหน้า" ส่วน $\frac{d}{dx}(5)=0$</p>
+$$\frac{d}{dx}(x^2y)=x^2y'+y(2x)$$
+$$x^2y'+2xy+y'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมเทอมที่มี $y'$ ไว้ข้างเดียว</div><p>ย้าย $2xy$ ไปอีกข้าง แล้วดึง $y'$ เป็นตัวร่วม</p>
+$$x^2y'+y'=-2xy$$
+$$(x^2+1)y'=-2xy$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แก้หา $y'$</div><p>หารทั้งสองข้างด้วย $x^2+1$</p>
+$$y'=\frac{-2xy}{x^2+1}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=\frac{-2xy}{x^2+1}$$</div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากสไลด์)</p>
+<p>$x^2+3xy^2+2y-5=0$ หา $y'$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดิฟทั้งสองข้างเทียบ $x$</div><p>ดิฟทุกเทอมของสมการ ค่าคงที่ดิฟแล้วเป็น $0$</p>
+$$\frac{d}{dx}\left(x^2+3xy^2+2y-5\right)=\frac{d}{dx}(0)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟเทอมผลคูณ $3xy^2$</div><p>ใช้กฎผลคูณ และเมื่อดิฟ $y^2$ ต้องคูณ $y'$ (กฎลูกโซ่)</p>
+$$\frac{d}{dx}(3xy^2)=3\left[x\cdot2yy'+y^2\cdot1\right]=6xyy'+3y^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมทุกเทอม</div><p>ดิฟ $x^2\to2x$ และ $2y\to2y'$</p>
+$$2x+6xyy'+3y^2+2y'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: จัดเทอมที่มี $y'$ ไว้ข้างเดียว</div><p>ย้ายเทอมที่ไม่มี $y'$ ไปอีกข้าง แล้วดึง $y'$ เป็นตัวร่วม</p>
+$$6xyy'+2y'=-2x-3y^2$$
+$$(6xy+2)y'=-(2x+3y^2)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แก้หา $y'$</div><p>หารด้วย $6xy+2$</p>
+$$y'=-\frac{2x+3y^2}{6xy+2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=-\frac{2x+3y^2}{6xy+2}$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ดิฟ $y$ แล้วลืมติด $y'$ · เทอมที่มี $x$ กับ $y$ คูณกันต้องใช้กฎผลคูณเสมอ</div>
+
+<h3>1.9 อนุพันธ์อันดับ $n$</h3>
+<div class="box">
+<p>$n!=n(n-1)(n-2)\cdots2\cdot1$ · $(-1)^n$ ให้เครื่องหมาย $-,+,-,+,\dots$ (เริ่มที่ $n=1$) · $(-1)^{n+1}$ ให้ $+,-,+,-,\dots$</p>
+<p>วิธีทำ: ดิฟ 3–4 ครั้งแล้วสังเกต <b>เครื่องหมาย · ตัวเลขหน้า (มักเป็น $n!$) · กำลังของตัวส่วน</b></p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต)</p>
+<p>$y=\dfrac{1}{x-1}$ หา $y^{(n)}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนให้อยู่ในรูปเลขยกกำลัง</div><p>เพื่อให้ใช้กฎ $\frac{d}{dx}u^n=nu^{n-1}u'$ ได้</p>
+$$y=(x-1)^{-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟครั้งที่ 1 และ 2</div><p>ลดกำลังลง 1 ทุกครั้ง และคูณกำลังเดิมลงมาข้างหน้า</p>
+$$y'=(-1)(x-1)^{-2}=\frac{-1}{(x-1)^2}$$
+$$y''=(-1)(-2)(x-1)^{-3}=\frac{2}{(x-1)^3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟครั้งที่ 3 และ 4</div><p>ทำต่อด้วยวิธีเดิม และสังเกตตัวเลขหน้าที่เป็นแฟกทอเรียล</p>
+$$y'''=(2)(-3)(x-1)^{-4}=\frac{-6}{(x-1)^4}$$
+$$y^{(4)}=(-6)(-4)(x-1)^{-5}=\frac{24}{(x-1)^5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เขียนตัวเลขหน้าเป็นแฟกทอเรียล</div><p>ใช้ $1=1!,\ 2=2!,\ 6=3!,\ 24=4!$ แล้วสังเกตเครื่องหมายที่สลับ</p>
+$$y'=\frac{-1!}{(x-1)^2},\ \ y''=\frac{2!}{(x-1)^3},\ \ y'''=\frac{-3!}{(x-1)^4},\ \ y^{(4)}=\frac{4!}{(x-1)^5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: สรุปแบบรูป</div><p>ดูสามส่วน: เครื่องหมาย $-,+,-,+$ คือ $(-1)^n$ · ตัวเลขหน้าคือ $n!$ · กำลังของส่วนคือ $n+1$</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y^{(n)}=\frac{(-1)^n\,n!}{(x-1)^{n+1}}$$</div>
+</div>
+<p>อีกตัวอย่าง: $f(x)=e^{5x+1}$ หา $f^{(n)}(x)$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดิฟหลายครั้ง</div><p>ใช้ $(e^u)'=e^u\cdot u'$ โดย $u=5x+1$ และ $u'=5$ ดังนั้นดิฟทีไรมี $5$ คูณเพิ่มทีละตัว</p>
+$$f'(x)=5e^{5x+1}$$
+$$f''(x)=5\cdot5e^{5x+1}=5^2e^{5x+1}$$
+$$f'''(x)=5^3e^{5x+1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: สรุปแบบรูป</div><p>กำลังของ $5$ เท่ากับอันดับของอนุพันธ์</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f^{(n)}(x)=5^ne^{5x+1}$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ดิฟแค่ 1–2 ครั้งแล้วรีบสรุปแบบรูป · สับสน $f^{(n)}(x)$ (อนุพันธ์อันดับ $n$) กับ $f^n(x)$ (ยกกำลัง)</div>
+
+<h3>1.10 การประมาณค่าเชิงเส้น</h3>
+<div class="box">
+$$f(x+\Delta x)\approx f(x)+f'(x)\,\Delta x\qquad\text{หรือ}\qquad f(x)\approx f(x_0)+f'(x_0)(x-x_0)$$
+<p>เลือก $x_0$ ที่ใกล้ค่าที่ต้องการและคิดเลขง่าย (เช่น $\sqrt4$ หรือ $1^6$)</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต): ประมาณ $\sqrt{4.01}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดฟังก์ชันและจุดอ้างอิง</div><p>$\sqrt{4.01}$ ใกล้ $\sqrt4=2$ ซึ่งคิดง่าย จึงเลือก $x=4$ และ $\Delta x=4.01-4=0.01$</p>
+$$f(x)=\sqrt x,\qquad x=4,\qquad\Delta x=0.01$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนสูตรประมาณเชิงเส้น</div><p>ใช้ $f(x+\Delta x)\approx f(x)+f'(x)\Delta x$</p>
+$$\sqrt{4.01}=f(4+0.01)\approx f(4)+f'(4)(0.01)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $f(4)$ และ $f'(4)$</div><p>ดิฟ $\sqrt x=x^{1/2}$ ด้วยกฎเลขยกกำลัง</p>
+$$f(4)=\sqrt4=2$$
+$$f'(x)=\frac{1}{2\sqrt x}\ \Rightarrow\ f'(4)=\frac{1}{2\cdot2}=\frac14$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่า</div><p>แทน $f(4)=2$ และ $f'(4)=\frac14$</p>
+$$\sqrt{4.01}\approx2+\tfrac14(0.01)=2+0.0025$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\sqrt{4.01}\approx2.0025$$</div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากสไลด์): ประมาณ $(1.01)^6+3(1.01)^{4/3}-1$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดฟังก์ชันและจุดอ้างอิง</div><p>$1.01$ ใกล้ $1$ ซึ่งแทนค่าง่าย จึงให้ $x_0=1$ และ $\Delta x=0.01$</p>
+$$f(x)=x^6+3x^{4/3}-1,\qquad x_0=1,\qquad\Delta x=0.01$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนสูตรประมาณเชิงเส้น</div><p>ใช้ $f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p>
+$$f(1.01)\approx f(1)+f'(1)(0.01)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $f(1)$</div><p>แทน $x=1$ ใน $f(x)$</p>
+$$f(1)=1^6+3(1)^{4/3}-1=1+3-1=3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $f'(1)$</div><p>ดิฟด้วยกฎเลขยกกำลังทีละพจน์ แล้วแทน $x=1$</p>
+$$f'(x)=6x^5+3\cdot\frac43x^{1/3}=6x^5+4x^{1/3}$$
+$$f'(1)=6+4=10$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่า</div><p>แทน $f(1)=3$ และ $f'(1)=10$</p>
+$$f(1.01)\approx3+10(0.01)=3+0.1$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$(1.01)^6+3(1.01)^{4/3}-1\approx3.1$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> คิด $\Delta x=x-x_0$ ผิดเครื่องหมาย (เช่นประมาณ $\sqrt{3.98}$ ต้องได้ $\Delta x=-0.02$)</div>
+
+<!-- ============================ PART 2 ============================ -->
+<h2 id="p2">ส่วนที่ 2 · MTH11102 (Calculus II): เทคนิคการอินทิเกรต</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: MTH11102 for CM (21 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/mth11102/cm_01.jpg" alt="MTH11102 for CM หน้า 1"><img loading="lazy" src="img/mth11102/cm_02.jpg" alt="MTH11102 for CM หน้า 2"><img loading="lazy" src="img/mth11102/cm_03.jpg" alt="MTH11102 for CM หน้า 3"><img loading="lazy" src="img/mth11102/cm_04.jpg" alt="MTH11102 for CM หน้า 4"><img loading="lazy" src="img/mth11102/cm_05.jpg" alt="MTH11102 for CM หน้า 5"><img loading="lazy" src="img/mth11102/cm_06.jpg" alt="MTH11102 for CM หน้า 6"><img loading="lazy" src="img/mth11102/cm_07.jpg" alt="MTH11102 for CM หน้า 7"><img loading="lazy" src="img/mth11102/cm_08.jpg" alt="MTH11102 for CM หน้า 8"><img loading="lazy" src="img/mth11102/cm_09.jpg" alt="MTH11102 for CM หน้า 9"><img loading="lazy" src="img/mth11102/cm_10.jpg" alt="MTH11102 for CM หน้า 10"><img loading="lazy" src="img/mth11102/cm_11.jpg" alt="MTH11102 for CM หน้า 11"><img loading="lazy" src="img/mth11102/cm_12.jpg" alt="MTH11102 for CM หน้า 12"><img loading="lazy" src="img/mth11102/cm_13.jpg" alt="MTH11102 for CM หน้า 13"><img loading="lazy" src="img/mth11102/cm_14.jpg" alt="MTH11102 for CM หน้า 14"><img loading="lazy" src="img/mth11102/cm_15.jpg" alt="MTH11102 for CM หน้า 15"><img loading="lazy" src="img/mth11102/cm_16.jpg" alt="MTH11102 for CM หน้า 16"><img loading="lazy" src="img/mth11102/cm_17.jpg" alt="MTH11102 for CM หน้า 17"><img loading="lazy" src="img/mth11102/cm_18.jpg" alt="MTH11102 for CM หน้า 18"><img loading="lazy" src="img/mth11102/cm_19.jpg" alt="MTH11102 for CM หน้า 19"><img loading="lazy" src="img/mth11102/cm_20.jpg" alt="MTH11102 for CM หน้า 20"><img loading="lazy" src="img/mth11102/cm_21.jpg" alt="MTH11102 for CM หน้า 21"></details>
+
+<div class="box">
+<p><b>แผนผังเลือกวิธี</b> (ไล่ถามตามลำดับ)</p>
+<ol>
+<li>ตรงกับสูตรในตารางเลยไหม ถ้าใช่ <b>อินทิเกรตตรงๆ</b></li>
+<li>มีฟังก์ชันซ้อน $f(g(x))$ และมี $g'(x)$ คูณอยู่ หรือมี $\sqrt x$ ไหม ถ้าใช่ <b>เปลี่ยนตัวแปร ($u$-sub)</b></li>
+<li>เป็นผลคูณของฟังก์ชันต่างชนิดกัน เช่น $x\cdot e^x$, $x^2\sin x$, $\ln x$ ไหม ถ้าใช่ <b>by parts</b></li>
+<li>เป็นเศษส่วนพหุนาม $\frac{f(x)}{g(x)}$ ไหม ถ้าใช่ ให้เช็กดีกรีก่อน ถ้าดีกรีเศษ $\ge$ ส่วน ต้อง<b>หารยาว</b>ก่อน จากนั้นจึง<b>แยกเศษส่วนย่อย</b></li>
+</ol>
+</div>
+
+<h3>2.1 ตารางสูตรอินทิเกรตพื้นฐาน</h3>
+<div class="box">
+<div class="grid2">
+<div>$\int u^n\,du=\dfrac{u^{n+1}}{n+1}+C\ \ (n\ne-1)$</div><div>$\int\dfrac{du}{u}=\ln|u|+C$</div>
+<div>$\int e^u\,du=e^u+C$</div><div>$\int a^u\,du=\dfrac{a^u}{\ln a}+C$</div>
+<div>$\int\sin u\,du=-\cos u+C$</div><div>$\int\cos u\,du=\sin u+C$</div>
+<div>$\int\sec^2u\,du=\tan u+C$</div><div>$\int\csc^2u\,du=-\cot u+C$</div>
+<div>$\int\sec u\tan u\,du=\sec u+C$</div><div>$\int\csc u\cot u\,du=-\csc u+C$</div>
+<div>$\int\dfrac{du}{1+u^2}=\tan^{-1}u+C$</div><div>$\int\dfrac{du}{\sqrt{1-u^2}}=\sin^{-1}u+C$</div>
+</div>
+<p>อินทิกรัลจำกัดเขต: $\displaystyle\int_a^b f(x)\,dx=\Big[F(x)\Big]_a^b=F(b)-F(a)$</p>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ลืม $+C$ ในอินทิกรัลไม่จำกัดเขต · $\int\sin u\,du=-\cos u$ (มีลบ) แต่ $\int\cos u\,du=+\sin u$ · $\int\frac1{x^5}dx$ ต้องเขียนเป็น $\int x^{-5}dx$ ก่อน</div>
+
+<h3>2.2 ผลบวกรีมันน์ และพื้นที่ใต้กราฟ</h3>
+<div class="box">
+$$\lim\sum f(x)\,dx=\int_a^b f(x)\,dx\qquad(\text{พื้นที่สี่เหลี่ยมเล็กๆ กว้าง }dx\text{ สูง }f(x))$$
+<p>เมื่อ $f(x)\ge0$ บน $[a,b]$ อินทิกรัลนี้ก็คือ<b>พื้นที่ใต้กราฟ</b></p>
+<p>กราฟพาราโบลาที่ต้องจำ: $y=x^2$ หงาย · $y=-x^2$ คว่ำ · $x=y^2$ ตะแคงขวา · $x=-y^2$ ตะแคงซ้าย</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต)</p>
+<p>หาพื้นที่ใต้ $y=x^2$ จาก $x=0$ ถึง $x=1$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งอินทิกรัลพื้นที่</div><p>เมื่อ $f(x)=x^2\ge0$ บน $[0,1]$ พื้นที่ใต้กราฟคืออินทิกรัลจำกัดเขต</p>
+$$A=\int_0^1x^2\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาปฏิยานุพันธ์</div><p>ใช้สูตรเลขยกกำลัง $\int u^n\,du=\frac{u^{n+1}}{n+1}$</p>
+$$\int x^2\,dx=\frac{x^3}{3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนขอบเขต</div><p>ใช้ $\int_a^bf\,dx=F(b)-F(a)$</p>
+$$A=\Big[\frac{x^3}{3}\Big]_0^1=\frac{1^3}{3}-\frac{0^3}{3}=\frac13-0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$A=\frac13\ \text{ตารางหน่วย}$$</div>
+</div>
+</div>
+
+<h3>2.3 การเปลี่ยนตัวแปร ($u$-substitution)</h3>
+<div class="box">
+<p>ให้ $u=g(x)$ จะได้ $du=g'(x)\,dx$ และ $\int f(g(x))\,g'(x)\,dx=\int f(u)\,du$</p>
+<p><b>สูตรลัดจากโน้ต:</b> ถ้าข้างในเป็นเชิงเส้น $ax+b$ ให้อินทิเกรตตามปกติแล้ว<b>หารด้วย $a$</b></p>
+<div class="grid2">
+<div>$\int e^{3x}dx=\dfrac13e^{3x}+C$</div><div>$\int\dfrac{dx}{2x-9}=\dfrac12\ln|2x-9|+C$</div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต): รูป $\tan^{-1}$</p>
+<p>$\displaystyle\int\frac{dx}{\sqrt x(x+1)}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร $u$</div><p>มี $\sqrt x$ จึงให้ $u=\sqrt x$ แล้วหา $x$ และ $dx$ ในรูปของ $u$</p>
+$$u=\sqrt x\ \Rightarrow\ u^2=x$$
+$$2u\,du=dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>แทน $\sqrt x=u$, $x+1=u^2+1$ และ $dx=2u\,du$</p>
+$$\int\frac{2u\,du}{u(u^2+1)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ตัดทอนแล้วจัดรูป</div><p>ตัด $u$ ที่อยู่ทั้งเศษและส่วน แล้วดึงค่าคงที่ $2$ ออกมา</p>
+$$=\int\frac{2\,du}{u^2+1}=2\int\frac{du}{u^2+1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัล</div><p>ใช้สูตร $\int\frac{du}{1+u^2}=\tan^{-1}u+C$</p>
+$$=2\tan^{-1}u+C$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทน $u$ กลับคืน</div><p>แทน $u=\sqrt x$ กลับให้เป็นตัวแปร $x$</p>
+$$=2\tan^{-1}\sqrt x+C$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int\frac{dx}{\sqrt x(x+1)}=2\tan^{-1}\sqrt x+C$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ลืมหารสัมประสิทธิ์ที่ได้จากการดิฟ $u$ (เช่น $u=3x$ ต้องมี $\frac13$ ข้างหน้า) · อินทิเกรตเสร็จแล้วลืมแทน $u$ กลับเป็น $x$</div>
+
+<h3>2.4 การอินทิเกรตทีละส่วน (By Parts)</h3>
+<div class="box">
+$$\int u\,dv=uv-\int v\,du$$
+<p><b>เลือก $u$ ตามลำดับ LIATE</b> (ตัวที่มาก่อนให้เป็น $u$): <b>L</b>og ($\ln x$) → <b>I</b>nverse trig ($\tan^{-1}x$) → <b>A</b>lgebraic ($x^n$) → <b>T</b>rig ($\sin,\cos$) → <b>E</b>xponential ($e^x$)</p>
+<p>$u$ คือตัวที่ดิฟแล้วง่ายขึ้น · $dv$ คือตัวที่อินทิเกรตได้ง่าย</p>
+<p><b>วิธีตาราง (Tabular)</b> ใช้เมื่อ $u=x^n$ คูณกับ $e^{kx}$ หรือ $\sin kx,\cos kx$: ดิฟ $u$ ไปเรื่อยๆ จนได้ $0$ อินทิเกรต $dv$ ไปเรื่อยๆ แล้วคูณ<b>ทแยง</b>โดยใส่เครื่องหมายสลับ $+,-,+,-$</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 1 (จากโน้ต)</p>
+<p>$\int xe^x\,dx$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก $u$ และ $dv$</div><p>เรียงตาม LIATE: พีชคณิต ($x$) มาก่อนเอกซ์โพเนนเชียล ($e^x$) จึงให้ $u=x$ และ $dv=e^x\,dx$</p>
+$$u=x,\qquad dv=e^x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $du$ และ $v$</div><p>ดิฟ $u$ และอินทิเกรต $dv$</p>
+$$du=dx,\qquad v=e^x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนในสูตร by parts</div><p>ใช้ $\int u\,dv=uv-\int v\,du$ (ระวังเครื่องหมายลบ)</p>
+$$\int xe^x\,dx=xe^x-\int e^x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตก้อนที่เหลือ</div><p>ใช้ $\int e^x\,dx=e^x+C$</p>
+$$=xe^x-e^x+C$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int xe^x\,dx=xe^x-e^x+C$$
+<p class="alt">(หรือเขียนในรูปอื่นได้เป็น $e^x(x-1)+C$)</p></div>
+<p class="check">ตรวจ: ดิฟคำตอบ $(xe^x-e^x)'=e^x+xe^x-e^x=xe^x$ ✓</p>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 2 (จากโน้ต): $\int x^3e^{2x}dx$ ด้วยวิธีตาราง</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งตาราง</div><p>ใช้วิธีตารางเพราะ $u=x^3$ ดิฟแล้วหมดไป ฝั่ง $u$ ดิฟไปเรื่อยๆ จนได้ $0$ ฝั่ง $dv=e^{2x}$ อินทิเกรตไปเรื่อยๆ (หาร $2$ ทุกครั้ง) และใส่เครื่องหมาย $+,-,+,-$ สลับกัน</p><table>
+<tr><th>เครื่องหมาย</th><th>$u$ (ดิฟ)</th><th>$dv$ (อินทิเกรต)</th></tr>
+<tr><td>$+$</td><td>$x^3$</td><td>$e^{2x}$</td></tr>
+<tr><td>$-$</td><td>$3x^2$</td><td>$\frac12e^{2x}$</td></tr>
+<tr><td>$+$</td><td>$6x$</td><td>$\frac14e^{2x}$</td></tr>
+<tr><td>$-$</td><td>$6$</td><td>$\frac18e^{2x}$</td></tr>
+<tr><td></td><td>$0$</td><td>$\frac1{16}e^{2x}$</td></tr>
+</table></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณทแยงทีละคู่</div><p>ตัว $u$ แถวที่ $k$ คูณกับตัว $dv$ แถวที่ $k+1$ พร้อมเครื่องหมายของแถวที่ $k$</p>
+$$(+)\,x^3\cdot\tfrac12e^{2x}=\tfrac12x^3e^{2x}$$
+$$(-)\,3x^2\cdot\tfrac14e^{2x}=-\tfrac34x^2e^{2x}$$
+$$(+)\,6x\cdot\tfrac18e^{2x}=\tfrac68xe^{2x}$$
+$$(-)\,6\cdot\tfrac1{16}e^{2x}=-\tfrac6{16}e^{2x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมทุกพจน์</div><p>บวกผลคูณทุกคู่ แล้วเติม $+C$</p>
+$$\int x^3e^{2x}dx=\tfrac12x^3e^{2x}-\tfrac34x^2e^{2x}+\tfrac68xe^{2x}-\tfrac6{16}e^{2x}+C$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ลดรูปเศษส่วนและดึง $e^{2x}$ ออก</div><p>$\frac68=\frac34$ และ $\frac6{16}=\frac38$ แล้วดึง $e^{2x}$ เป็นตัวร่วม</p>
+$$=e^{2x}\left(\tfrac12x^3-\tfrac34x^2+\tfrac34x-\tfrac38\right)+C$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int x^3e^{2x}dx=e^{2x}\left(\tfrac12x^3-\tfrac34x^2+\tfrac34x-\tfrac38\right)+C$$</div>
+<p class="check">ตรวจ: ดิฟคำตอบ: $\frac{d}{dx}\big[e^{2x}P\big]=e^{2x}(2P+P')$ เมื่อ $P=\frac12x^3-\frac34x^2+\frac34x-\frac38$ จะได้ $2P+P'=x^3-\frac32x^2+\frac32x-\frac34+\frac32x^2-\frac32x+\frac34=x^3$ ✓</p>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> จำสูตรเป็น $uv+\int v\,du$ ซึ่งผิด ต้องเป็น<b>ลบ</b> · วิธีตารางลืมสลับเครื่องหมาย · คูณแถวเดียวกันแทนที่จะคูณทแยงลง</div>
+
+<h3>2.5 การหารยาวพหุนาม</h3>
+<div class="box">
+<p>ใช้เมื่อ <b>ดีกรีเศษ $\ge$ ดีกรีส่วน</b>: $\ \dfrac{f(x)}{g(x)}=\text{ผลหาร}+\dfrac{\text{เศษ}}{g(x)}$ · เวลาตั้งหารยาว ต้องเติมพจน์ที่หายไปด้วย $0$ ให้ครบ ($0x^2,\ 0x$)</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง (จากโน้ต)</p>
+<p>หา $\displaystyle\int\frac{x^3}{x^2-1}\,dx$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เช็กดีกรี</div><p>ดีกรีเศษ $3\ge$ ดีกรีส่วน $2$ จึงต้องหารยาวก่อน เติมพจน์ที่หายไปให้ครบ $x^3+0x^2+0x+0$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หารพจน์หน้า</div><p>นำ $x^3\div x^2=x$ เป็นผลหาร แล้วคูณกลับกับตัวหาร</p>
+$$x^3\div x^2=x$$
+$$x\,(x^2-1)=x^3-x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ลบเพื่อหาเศษ</div><p>นำไปลบออกจากเศษเดิม</p>
+$$x^3+0x-(x^3-x)=x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หยุดหาร</div><p>เศษที่เหลือ $x$ ดีกรี $1<2$ ซึ่งต่ำกว่าตัวหารแล้ว จึงเขียนผลหารบวกเศษส่วนได้</p>
+$$\frac{x^3}{x^2-1}=x+\frac{x}{x^2-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: อินทิเกรตผลหาร</div><p>ใช้สูตรเลขยกกำลังกับ $x$</p>
+$$\int x\,dx=\frac{x^2}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: อินทิเกรตเศษส่วนที่เหลือ</div><p>ให้ $u=x^2-1$ จะได้ $du=2x\,dx$ ดังนั้น $x\,dx=\frac12du$</p>
+$$\int\frac{x}{x^2-1}dx=\frac12\int\frac{du}{u}=\frac12\ln|u|=\frac12\ln|x^2-1|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int\frac{x^3}{x^2-1}dx=\frac{x^2}{2}+\frac12\ln|x^2-1|+C$$</div>
+</div>
+</div>
+
+<h3>2.6 การแยกเศษส่วนย่อย (Partial Fractions)</h3>
+<div class="box">
+<p>เงื่อนไข: ดีกรีเศษ <b>&lt;</b> ดีกรีส่วนแล้วเท่านั้น</p>
+<table>
+<tr><th>ตัวส่วน $g(x)$</th><th>ตั้งรูป</th></tr>
+<tr><td>เชิงเส้นไม่ซ้ำ $x(x-3)(2x+5)$</td><td>$\dfrac Ax+\dfrac B{x-3}+\dfrac C{2x+5}$</td></tr>
+<tr><td>เชิงเส้นซ้ำ $(2x-9)^3$</td><td>$\dfrac A{2x-9}+\dfrac B{(2x-9)^2}+\dfrac C{(2x-9)^3}$</td></tr>
+<tr><td>กำลังสองแยกไม่ได้ $(x^2+1)(x^2+3)$</td><td>$\dfrac{Ax+B}{x^2+1}+\dfrac{Cx+D}{x^2+3}$</td></tr>
+<tr><td>กำลังสองซ้ำ $(x^2+1)^2$</td><td>$\dfrac{Ax+B}{x^2+1}+\dfrac{Cx+D}{(x^2+1)^2}$</td></tr>
+<tr><td>ผสม $(x+3)(x^2+4)$</td><td>$\dfrac A{x+3}+\dfrac{Bx+C}{x^2+4}$</td></tr>
+</table>
+<p><b>หาค่าคงที่ 2 วิธี:</b> (1) <b>แทนค่าราก</b>: แทน $x$ ที่ทำให้วงเล็บเป็น 0 (2) <b>เทียบสัมประสิทธิ์</b>: กระจายแล้วเทียบสัมประสิทธิ์ของ $x^1,\ x^0,\dots$</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่างเต็ม (จากโน้ต)</p>
+<p>$\displaystyle\int\frac{5x-3}{(x+1)(x-3)}dx$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เช็กดีกรีและตั้งรูป</div><p>ดีกรีเศษ $1<$ ดีกรีส่วน $2$ จึงแยกเศษส่วนย่อยได้ ตัวส่วนเป็นเชิงเส้นไม่ซ้ำ จึงตั้งตัวตั้งเป็นค่าคงที่</p>
+$$\frac{5x-3}{(x+1)(x-3)}=\frac{A}{x+1}+\frac{B}{x-3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณตลอดด้วย $(x+1)(x-3)$</div><p>เพื่อกำจัดตัวส่วน</p>
+$$5x-3=A(x-3)+B(x+1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A,B$ วิธีที่ 1: แทนค่าราก</div><p>แทน $x$ ที่ทำให้วงเล็บหนึ่งเป็น $0$ จะเหลือค่าคงที่เพียงตัวเดียว</p>
+$$x=3:\quad5(3)-3=B(4)\ \Rightarrow\ 12=4B\ \Rightarrow\ B=3$$
+$$x=-1:\quad5(-1)-3=A(-4)\ \Rightarrow\ -8=-4A\ \Rightarrow\ A=2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $A,B$ วิธีที่ 2: เทียบสัมประสิทธิ์ (ใช้ตรวจ)</div><p>กระจายขวามือแล้วจัดตามกำลังของ $x$ จากนั้นเทียบสัมประสิทธิ์</p>
+$$5x-3=(A+B)x+(-3A+B)$$
+$$x^1:\ 5=A+B\quad(1),\qquad x^0:\ -3=-3A+B\quad(2)$$
+$$(1)-(2):\ 8=4A\ \Rightarrow\ A=2,\ B=3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: อินทิเกรตทีละก้อน</div><p>แทน $A=2,\ B=3$ แล้วใช้ $\int\frac{du}{u}=\ln|u|$</p>
+$$\int\frac{5x-3}{(x+1)(x-3)}dx=\int\frac{2}{x+1}dx+\int\frac{3}{x-3}dx$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$2\ln|x+1|+3\ln|x-3|+C$$</div>
+<p class="check">ตรวจ: รวมกลับ $2(x-3)+3(x+1)=5x-3$ ✓</p>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ตัวส่วนกำลังสองแต่ให้เศษเป็น $A$ ตัวเดียว ซึ่งผิด ต้องเป็น $Ax+B$ · ตัวส่วนซ้ำกำลัง 3 ต้องแยก<b>ครบ 3 ก้อน</b> · ข้ามขั้นหารยาวทั้งที่ดีกรีเศษ $\ge$ ส่วน</div>
+
+<!-- ============================ PART 3 ============================ -->
+<h2 id="p3">ส่วนที่ 3 · อินทิกรัลไม่ตรงแบบ (Improper Integrals)</h2>
+
+<div class="box">
+<p><b>แบบที่ 1: ขอบเขตเป็นอนันต์</b></p>
+$$\int_a^\infty f\,dx=\lim_{t\to\infty}\int_a^t f\,dx\qquad\int_{-\infty}^b f\,dx=\lim_{t\to-\infty}\int_t^b f\,dx$$
+$$\int_{-\infty}^{\infty}f\,dx=\lim_{t_1\to-\infty}\int_{t_1}^{c}f\,dx+\lim_{t_2\to\infty}\int_{c}^{t_2}f\,dx\quad(\text{ผ่าเป็น 2 ก้อนที่จุด }c\text{ ใดก็ได้})$$
+<p><b>แบบที่ 2: ตัวส่วนเป็นศูนย์ (มีเส้นกำกับแนวดิ่ง)</b></p>
+<table>
+<tr><td>ปัญหาที่ขอบบน $b$</td><td>$\displaystyle\lim_{t\to b^-}\int_a^t f\,dx$</td></tr>
+<tr><td>ปัญหาที่ขอบล่าง $a$</td><td>$\displaystyle\lim_{t\to a^+}\int_t^b f\,dx$</td></tr>
+<tr><td>ปัญหาที่จุด $c$ ข้างใน</td><td>$\displaystyle\lim_{t_1\to c^-}\int_a^{t_1}f\,dx+\lim_{t_2\to c^+}\int_{t_2}^b f\,dx$</td></tr>
+</table>
+<p><b>แบบที่ 3: ผสม</b> ผ่าทุกจุดที่มีปัญหา ($\pm\infty$ และจุดที่ตัวส่วนเป็น 0) ให้แต่ละก้อนมีปัญหาแค่ปลายเดียว</p>
+<p><b>ลู่เข้า</b> = ลิมิตทุกก้อนได้ค่าเป็นตัวเลข · <b>ลู่ออก</b> = มีแค่ก้อนเดียวที่ได้ $\pm\infty$ หรือหาค่าไม่ได้ ก็ลู่ออกทั้งข้อ</p>
+<p><b>สูตรลัด</b>: $\int_1^\infty\frac{dx}{x^p}$ ลู่เข้า (ได้ $\frac1{p-1}$) เมื่อ $p&gt;1$ และลู่ออกเมื่อ $p\le1$</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 1 (แบบที่ 1 จากโน้ต)</p>
+<p>หา $\displaystyle\int_1^\infty\frac{dx}{x^2}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เปลี่ยนเป็นลิมิต</div><p>ขอบบนเป็น $\infty$ จึงแทนด้วยตัวแปร $t$ แล้วให้ $t\to\infty$</p>
+$$\int_1^\infty\frac{dx}{x^2}=\lim_{t\to\infty}\int_1^t x^{-2}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาปฏิยานุพันธ์</div><p>ใช้สูตรเลขยกกำลัง $\int x^{-2}dx=\frac{x^{-1}}{-1}$</p>
+$$=\lim_{t\to\infty}\Big[-\frac1x\Big]_1^t$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนขอบเขต</div><p>ใช้ $F(t)-F(1)$</p>
+$$=\lim_{t\to\infty}\left(-\frac1t-\Big(-\frac11\Big)\right)=\lim_{t\to\infty}\left(1-\frac1t\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาลิมิต</div><p>เมื่อ $t\to\infty$ ได้ $\frac1t\to0$</p>
+$$=1-0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int_1^\infty\frac{dx}{x^2}=1\ \text{(ลู่เข้า)}$$</div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 2 (แบบที่ 2 ปัญหาอยู่ข้างใน จากโน้ต)</p>
+<p>$\displaystyle\int_{-3}^3\frac{dx}{x^2}$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาจุดที่มีปัญหา</div><p>ตัวส่วนเป็น $0$ ที่ $x=0$ ซึ่งอยู่ในช่วง $[-3,3]$ จึงต้องผ่าอินทิกรัลที่ $0$ ห้ามอินทิเกรตตรงๆ</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ผ่าเป็นลิมิตสองก้อน</div><p>แต่ละก้อนมีปัญหาปลายเดียว ($0^-$ ฝั่งซ้าย และ $0^+$ ฝั่งขวา)</p>
+$$\int_{-3}^3\frac{dx}{x^2}=\lim_{t_1\to0^-}\Big[-\frac1x\Big]_{-3}^{t_1}+\lim_{t_2\to0^+}\Big[-\frac1x\Big]_{t_2}^{3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คำนวณก้อนแรก</div><p>แทนขอบเขต $F(t_1)-F(-3)$</p>
+$$\Big[-\frac1x\Big]_{-3}^{t_1}=-\frac1{t_1}-\Big(-\frac1{-3}\Big)=-\frac1{t_1}-\frac13$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาลิมิตก้อนแรก</div><p>เมื่อ $t_1\to0^-$ ค่า $t_1$ เป็นลบเล็กๆ ทำให้ $\frac1{t_1}\to-\infty$</p>
+$$\lim_{t_1\to0^-}\left(-\frac1{t_1}-\frac13\right)=-(-\infty)-\frac13=\infty$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: สรุป</div><p>ก้อนแรกลู่ออก เพียงก้อนเดียวก็ทำให้อินทิกรัลทั้งข้อลู่ออก ไม่ต้องคำนวณก้อนที่สอง</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\int_{-3}^3\frac{dx}{x^2}\ \text{ลู่ออก}$$</div>
+<p class="check">ตรวจ: ⚠ ถ้าอินทิเกรตตรงๆ โดยไม่ผ่า จะได้ $\big[-\frac1x\big]_{-3}^3=-\frac23$ ซึ่ง<b>ผิด</b> (ฟังก์ชันเป็นบวกตลอด พื้นที่ติดลบไม่ได้)</p>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 3: การผ่าช่วง (Ex 2-18 จากโน้ต)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: อินทิกรัลที่ 1: $\int_{-3}^{\infty}\frac{dx}{x+2}$</div><p>ตัวส่วนเป็น $0$ ที่ $x=-2$ (อยู่ข้างใน) และขอบบนเป็น $\infty$ จึงผ่าเป็น 3 ก้อนที่แต่ละก้อนมีปัญหาปลายเดียว</p>
+$$\int_{-3}^{\infty}=\int_{-3}^{-2}+\int_{-2}^{0}+\int_0^\infty$$
+$$=\lim_{t_1\to-2^-}\int_{-3}^{t_1}+\lim_{t_2\to-2^+}\int_{t_2}^{0}+\lim_{t_3\to\infty}\int_0^{t_3}$$
+$$\text{ก้อนแรก: }\lim_{t_1\to-2^-}\ln|x+2|\Big|_{-3}^{t_1}=\ln|t_1+2|-\ln1\to-\infty\ \Rightarrow\ \text{ลู่ออก}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อินทิกรัลที่ 2: $\int_{-\infty}^{0}\frac{dx}{(x+3)^2}$</div><p>ตัวส่วนเป็น $0$ ที่ $x=-3$ และขอบล่างเป็น $-\infty$ จึงผ่าที่ $-10$ (จุดใดก็ได้ซ้ายของ $-3$) และที่ $-3$</p>
+$$\lim_{t_1\to-\infty}\int_{t_1}^{-10}+\lim_{t_2\to-3^-}\int_{-10}^{t_2}+\lim_{t_3\to-3^+}\int_{t_3}^{0}$$
+$$\text{ก้อนที่ 2: }\Big[-\frac1{x+3}\Big]_{-10}^{t_2}=-\frac1{t_2+3}-\frac17\to\infty\ \Rightarrow\ \text{ลู่ออก}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: อินทิกรัลที่ 3: $\int_{-\infty}^{\infty}\frac{dx}{x^3}$</div><p>ตัวส่วนเป็น $0$ ที่ $x=0$ และมี $\pm\infty$ ทั้งสองขอบ จึงผ่าที่ $-1,\ 0,\ 1$</p>
+$$\lim_{t_1\to-\infty}\int_{t_1}^{-1}+\lim_{t_2\to0^-}\int_{-1}^{t_2}+\lim_{t_3\to0^+}\int_{t_3}^{1}+\lim_{t_4\to\infty}\int_1^{t_4}$$
+$$\text{ก้อนที่ 2: }\Big[-\frac1{2x^2}\Big]_{-1}^{t_2}=-\frac1{2t_2^2}+\frac12\to-\infty\ \Rightarrow\ \text{ลู่ออก}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิกรัลที่ 4: $\int_0^{\infty}\frac{dx}{\sqrt x}$</div><p>ตัวส่วนเป็น $0$ ที่ขอบล่าง $x=0$ และขอบบนเป็น $\infty$ จึงผ่าที่ $1$</p>
+$$\lim_{t_1\to0^+}\int_{t_1}^1+\lim_{t_2\to\infty}\int_1^{t_2}$$
+$$\int_{t_1}^1x^{-1/2}dx=\Big[2\sqrt x\Big]_{t_1}^1=2-2\sqrt{t_1}\to2\ \text{(ลู่เข้า)}$$
+$$\int_1^{t_2}x^{-1/2}dx=2\sqrt{t_2}-2\to\infty\ \text{(ลู่ออก)}$$</div>
+<div class="step final"><div class="step-h">สรุป:</div>
+$$\text{ทั้ง 4 อินทิกรัลลู่ออก (ก้อนเดียวลู่ออกก็ลู่ออกทั้งข้อ)}$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> (1) ไม่เช็กว่าตัวส่วนเป็น 0 <b>ข้างใน</b>ช่วงหรือไม่ แล้วอินทิเกรตตรงๆ (2) แทน $\infty$ ลงไปตรงๆ เช่นเขียน $\frac1\infty$ ต้องเขียนเป็น $\lim_{t\to\infty}\frac1t$ (3) ก้อนหนึ่งลู่ออกแต่ยังสรุปว่าลู่เข้า</div>
+
+<!-- ============================ PART 4 ============================ -->
+<h2 id="p4">ส่วนที่ 4 · วงกลมหนึ่งหน่วย และพิกัดเชิงขั้ว</h2>
+
+<h3>4.1 วงกลมหนึ่งหน่วย</h3>
+<div class="box">
+<p>จุดบนวงกลมหนึ่งหน่วยคือ $(x,y)=(\cos\theta,\sin\theta)$ · $180^\circ=\pi$ เรเดียน</p>
+<table>
+<tr><th>มุม</th><th>$(\cos,\sin)$</th><th>มุม</th><th>$(\cos,\sin)$</th></tr>
+<tr><td>$30^\circ=\frac\pi6$</td><td>$(\frac{\sqrt3}2,\frac12)$</td><td>$210^\circ=\frac{7\pi}6$</td><td>$(-\frac{\sqrt3}2,-\frac12)$</td></tr>
+<tr><td>$45^\circ=\frac\pi4$</td><td>$(\frac1{\sqrt2},\frac1{\sqrt2})$</td><td>$225^\circ=\frac{5\pi}4$</td><td>$(-\frac1{\sqrt2},-\frac1{\sqrt2})$</td></tr>
+<tr><td>$60^\circ=\frac\pi3$</td><td>$(\frac12,\frac{\sqrt3}2)$</td><td>$240^\circ=\frac{4\pi}3$</td><td>$(-\frac12,-\frac{\sqrt3}2)$</td></tr>
+<tr><td>$90^\circ=\frac\pi2$</td><td>$(0,1)$</td><td>$270^\circ=\frac{3\pi}2$</td><td>$(0,-1)$</td></tr>
+<tr><td>$120^\circ=\frac{2\pi}3$</td><td>$(-\frac12,\frac{\sqrt3}2)$</td><td>$300^\circ=\frac{5\pi}3$</td><td>$(\frac12,-\frac{\sqrt3}2)$</td></tr>
+<tr><td>$135^\circ=\frac{3\pi}4$</td><td>$(-\frac1{\sqrt2},\frac1{\sqrt2})$</td><td>$315^\circ=\frac{7\pi}4$</td><td>$(\frac1{\sqrt2},-\frac1{\sqrt2})$</td></tr>
+<tr><td>$150^\circ=\frac{5\pi}6$</td><td>$(-\frac{\sqrt3}2,\frac12)$</td><td>$330^\circ=\frac{11\pi}6$</td><td>$(\frac{\sqrt3}2,-\frac12)$</td></tr>
+<tr><td>$180^\circ=\pi$</td><td>$(-1,0)$</td><td>$0^\circ,360^\circ$</td><td>$(1,0)$</td></tr>
+</table>
+<p>เครื่องหมาย: Q1 $(+,+)$ · Q2 $(-,+)$ · Q3 $(-,-)$ · Q4 $(+,-)$ · มุมบวกคือหมุน<b>ทวน</b>เข็มนาฬิกา มุมลบคือหมุน<b>ตาม</b>เข็มนาฬิกา</p>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> สลับ $x$ กับ $y$ ($x=\cos$, $y=\sin$) · สับสน $30^\circ$ กับ $60^\circ$: ที่ $30^\circ$ ค่า $\cos$ เป็นตัวยาว $\frac{\sqrt3}2$ ส่วนที่ $60^\circ$ ค่า $\sin$ เป็นตัวยาว</div>
+
+<h3>4.2 พิกัดเชิงขั้ว $(r,\theta)$</h3>
+<div class="box">
+<p>$r$ = ระยะจากจุดกำเนิด · $\theta$ = มุมจากแกน $x$ ด้านบวก</p>
+<div class="grid2">
+<div><b>เชิงขั้ว → ฉาก</b><br>$x=r\cos\theta,\quad y=r\sin\theta$</div>
+<div><b>ฉาก → เชิงขั้ว</b><br>$r^2=x^2+y^2,\quad\tan\theta=\dfrac yx$</div>
+</div>
+<p><b>จุดเดียวกันเขียนได้หลายแบบ:</b> $(r,\theta)=(r,\theta+2k\pi)=(-r,\theta+\pi)$</p>
+<p><b>วิธีจากโน้ต:</b> Step 1 หมุนมุมก่อน (ทวนเข็ม $+$ ตามเข็ม $-$) · Step 2 ดู $r$ ถ้า $r$ เป็นบวกให้เดินตามทิศมุม ถ้าเป็นลบให้เดิน<b>ถอยหลัง</b>ไปฝั่งตรงข้าม</p>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 1 (จากโน้ต): จุด $(-2,-\frac\pi4)$</p>
+<p>จุด $(-2,-\frac\pi4)$ เขียนในรูปอื่นตามเงื่อนไข</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาตำแหน่งจุด</div><p>มุม $-\frac\pi4$ (หมุนตามเข็ม) ชี้ไปจตุภาค 4 แต่ $r=-2$ เป็นลบ จึงต้องถอยไปฝั่งตรงข้าม จุดจึงอยู่จตุภาค 2 ที่มุม $\frac{3\pi}4$ ระยะ $2$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แบบ $r>0,\ 0\le\theta<2\pi$</div><p>เปลี่ยน $r$ เป็นบวกโดยใช้ $(-r,\theta)=(r,\theta+\pi)$</p>
+$$\left(-2,-\tfrac\pi4\right)=\left(2,-\tfrac\pi4+\pi\right)=\left(2,\tfrac{3\pi}4\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แบบ $r>0,\ -2\pi<\theta<0$</div><p>จากข้อก่อนลบ $2\pi$ ออกจากมุมเพื่อให้ติดลบ</p>
+$$\left(2,\tfrac{3\pi}4-2\pi\right)=\left(2,-\tfrac{5\pi}4\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แบบ $r<0,\ 0<\theta<2\pi$</div><p>คง $r=-2$ แล้วบวก $2\pi$ เข้ามุมเดิมให้เป็นบวก</p>
+$$\left(-2,-\tfrac\pi4+2\pi\right)=\left(-2,\tfrac{7\pi}4\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\left(2,\tfrac{3\pi}4\right),\qquad\left(2,-\tfrac{5\pi}4\right),\qquad\left(-2,\tfrac{7\pi}4\right)$$</div>
+</div>
+<p>อีกตัวอย่างจากโน้ต</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: จุด $(-2,30^\circ)$</div><p>เปลี่ยน $r$ เป็นบวกโดยบวก $\pi$ ที่มุม แล้วลบ $360^\circ$ เพื่อได้มุมลบ</p>
+$$(-2,30^\circ)=(2,30^\circ+180^\circ)=\left(2,\pi+\tfrac\pi6\right)$$
+$$(2,210^\circ)=(2,210^\circ-360^\circ)=(2,-150^\circ)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จุด $(3,\frac\pi2)$</div><p>เปลี่ยน $r$ เป็นลบโดยลบ $\pi$ ที่มุม และอีกแบบลบ $360^\circ$ จากมุมเดิม</p>
+$$\left(3,\tfrac\pi2\right)=\left(-3,\tfrac\pi2-\pi\right)=\left(-3,-\tfrac\pi2\right)$$
+$$\left(3,90^\circ\right)=\left(3,90^\circ-360^\circ\right)=(3,-270^\circ)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$(-2,30^\circ)=\left(2,\pi+\tfrac\pi6\right)=(2,-150^\circ)$$
+$$\left(3,\tfrac\pi2\right)=\left(-3,-\tfrac\pi2\right)=(3,-270^\circ)$$</div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 2 (จากโน้ต): แปลงสมการเชิงขั้วเป็นพิกัดฉาก</p>
+<p>แปลง $r=\dfrac{4}{2\cos\theta+3\sin\theta}$ เป็นพิกัดฉาก</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: คูณตัวส่วนขึ้นไป</div><p>ย้ายตัวส่วนมาคูณทางซ้าย</p>
+$$r(2\cos\theta+3\sin\theta)=4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กระจาย $r$ เข้าไป</div><p>ให้ $r$ ติดกับ $\cos\theta$ และ $\sin\theta$ ตรงๆ</p>
+$$2(r\cos\theta)+3(r\sin\theta)=4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน $x=r\cos\theta$ และ $y=r\sin\theta$</div><p>ใช้สูตรแปลงเชิงขั้วเป็นฉาก</p>
+$$2x+3y=4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ระบุรูปกราฟ</div><p>เป็นเส้นตรง หาจุดตัดแกนได้จากการแทน $y=0$ และ $x=0$</p>
+$$y=0:\ 2x=4\Rightarrow x=2$$
+$$x=0:\ 3y=4\Rightarrow y=\tfrac43$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$2x+3y=4$$
+<p class="alt">เป็นเส้นตรงผ่านจุด $(2,0)$ และ $(0,\frac43)$</p></div>
+</div>
+</div>
+<div class="ex"><p class="t">ตัวอย่าง 3 (จากโน้ต): จุดตัดของ $r_1=1+\cos\theta$ กับ $r_2=3\cos\theta$</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งสมการ $r_1=r_2$</div><p>จุดตัดทั่วไปหาได้จากการให้ค่า $r$ ของสองกราฟที่มุมเดียวกันเท่ากัน</p>
+$$1+\cos\theta=3\cos\theta$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้หา $\cos\theta$</div><p>ย้าย $\cos\theta$ มารวมกัน</p>
+$$1=2\cos\theta$$
+$$\cos\theta=\tfrac12$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หามุม $\theta$</div><p>$\cos\theta=\frac12$ ที่จตุภาค 1 และ 4 ในช่วง $0\le\theta<2\pi$</p>
+$$\theta=\frac\pi3\ \ \text{หรือ}\ \ \theta=\frac{5\pi}3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $r$</div><p>แทนในสมการใดก็ได้ เช่น $r_2=3\cos\theta$ (ตรวจกับ $r_1=1+\frac12=\frac32$ ได้ค่าเท่ากัน)</p>
+$$r=3\cos\theta=3\cdot\frac12=\frac32$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: เช็กจุดกำเนิด</div><p>จุดกำเนิดไม่ได้มาจาก $r_1=r_2$ เพราะกราฟทั้งสองผ่าน $r=0$ แต่ที่คนละมุม ต้องเช็กแยก</p>
+$$r_1=0\Rightarrow1+\cos\theta=0\Rightarrow\theta=\pi$$
+$$r_2=0\Rightarrow3\cos\theta=0\Rightarrow\theta=\tfrac\pi2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\left(\tfrac32,\tfrac\pi3\right),\qquad\left(\tfrac32,\tfrac{5\pi}3\right),\qquad\text{และจุดกำเนิด }(0,0)$$</div>
+</div>
+</div>
+<div class="warn"><b>พลาดบ่อย:</b> ลืมว่า $r$ ติดลบแปลว่าต้องไปฝั่งตรงข้าม · ใช้ $\theta=\tan^{-1}\frac yx$ โดยไม่ดูว่าจุดอยู่จตุภาคไหน · หาจุดตัดจาก $r_1=r_2$ แล้ว<b>ลืมจุดกำเนิด</b></div>
+
+<!-- ============================ PART 5 ============================ -->
+<h2 id="p5">ส่วนที่ 5 · เช็กลิสต์ก่อนเข้าห้องสอบ</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: โน้ตมือจากห้องเรียน (17 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/notes/n01.jpg" alt="โน้ตมือจากห้องเรียน หน้า 1"><img loading="lazy" src="img/notes/n02.jpg" alt="โน้ตมือจากห้องเรียน หน้า 2"><img loading="lazy" src="img/notes/n03.jpg" alt="โน้ตมือจากห้องเรียน หน้า 3"><img loading="lazy" src="img/notes/n04.jpg" alt="โน้ตมือจากห้องเรียน หน้า 4"><img loading="lazy" src="img/notes/n05.jpg" alt="โน้ตมือจากห้องเรียน หน้า 5"><img loading="lazy" src="img/notes/n06.jpg" alt="โน้ตมือจากห้องเรียน หน้า 6"><img loading="lazy" src="img/notes/n07.jpg" alt="โน้ตมือจากห้องเรียน หน้า 7"><img loading="lazy" src="img/notes/n08.jpg" alt="โน้ตมือจากห้องเรียน หน้า 8"><img loading="lazy" src="img/notes/n09.jpg" alt="โน้ตมือจากห้องเรียน หน้า 9"><img loading="lazy" src="img/notes/n10.jpg" alt="โน้ตมือจากห้องเรียน หน้า 10"><img loading="lazy" src="img/notes/n11.jpg" alt="โน้ตมือจากห้องเรียน หน้า 11"><img loading="lazy" src="img/notes/n12.jpg" alt="โน้ตมือจากห้องเรียน หน้า 12"><img loading="lazy" src="img/notes/n13.jpg" alt="โน้ตมือจากห้องเรียน หน้า 13"><img loading="lazy" src="img/notes/n14.jpg" alt="โน้ตมือจากห้องเรียน หน้า 14"><img loading="lazy" src="img/notes/n15.jpg" alt="โน้ตมือจากห้องเรียน หน้า 15"><img loading="lazy" src="img/notes/n16.jpg" alt="โน้ตมือจากห้องเรียน หน้า 16"><img loading="lazy" src="img/notes/n17.jpg" alt="โน้ตมือจากห้องเรียน หน้า 17"></details>
+<div class="box">
+<ul>
+<li>ลิมิต: แทนค่าก่อน ถ้าได้ $\frac00$ ให้แยกตัวประกอบหรือใช้โลปิตาล · รูปเลขยกกำลังใช้วิธี ln แล้ว<b>อย่าลืม $e^L$</b></li>
+<li>ต่อเนื่อง: เช็ก<b>ครบ 3 ข้อ</b></li>
+<li>อนุพันธ์: <b>คูณ $u'$</b> ทุกครั้ง (กฎลูกโซ่) · ผลหารคือ "ล่างดิฟบน − บนดิฟล่าง"</li>
+<li>Implicit: ดิฟ $y$ แล้ว<b>ติด $y'$</b></li>
+<li>อันดับ $n$: ดิฟอย่างน้อย 3–4 ครั้งก่อนสรุปแบบรูป</li>
+<li>อินทิกรัลไม่จำกัดเขต: <b>$+C$</b></li>
+<li>by parts: $uv\ \mathbf{-}\int v\,du$ · เลือก $u$ ตาม LIATE</li>
+<li>เศษส่วนพหุนาม: เช็กดีกรีก่อน (หารยาวหรือไม่) · กำลังสองใช้ $Ax+B$ · ตัวซ้ำต้องแยกครบทุกกำลัง</li>
+<li>Improper: หาจุดที่ตัวส่วนเป็น 0 <b>ทั้งที่ขอบและข้างใน</b> · ใส่ $\lim$ ทุกบรรทัด · มีก้อนเดียวลู่ออกก็ลู่ออกทั้งข้อ</li>
+<li>Polar: $r$ ติดลบต้องไปฝั่งตรงข้าม · จุดตัดต้องเช็กจุดกำเนิดด้วย</li>
+</ul>
+</div>
+</main>
+</body>
+</html>

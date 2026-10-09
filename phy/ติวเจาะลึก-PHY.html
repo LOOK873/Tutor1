@@ -1,0 +1,2802 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ติวเจาะลึก ฟิสิกส์</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+ onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b6370;--card:#fff;--line:#e3e0d8;--accent:#2f6fde;--accentbg:#eef4ff;
+ --ok:#1a7f4b;--okbg:#effaf3;--warn:#b45309;--warnbg:#fff7ed;--why:#7c3aed;--whybg:#f5f0ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e6e6;--muted:#9aa3ad;--card:#1f2227;--line:#30343b;
+ --accent:#7aa7ff;--accentbg:#17202f;--ok:#4ade80;--okbg:#122119;--warn:#fbbf24;--warnbg:#2a2214;--why:#c4b5fd;--whybg:#221a33}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e6e6;--muted:#9aa3ad;--card:#1f2227;--line:#30343b;
+ --accent:#7aa7ff;--accentbg:#17202f;--ok:#4ade80;--okbg:#122119;--warn:#fbbf24;--warnbg:#2a2214;--why:#c4b5fd;--whybg:#221a33}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:'Sarabun',sans-serif;font-size:18px;line-height:2;margin:0;
+ word-break:normal;overflow-wrap:anywhere;line-break:loose;-webkit-text-size-adjust:100%}
+main{max-width:820px;margin:0 auto;padding:28px 16px 120px}
+p{margin:0 0 14px} li{margin:0 0 10px} ul,ol{padding-left:26px;margin:0 0 16px}
+h1{font-size:1.8rem;line-height:1.5;margin:0 0 16px}
+header.lead blockquote{margin:0 0 16px;padding:14px 18px;background:var(--warnbg);border-left:4px solid var(--warn);border-radius:10px}
+header.lead blockquote p{margin:0 0 6px}
+nav{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px;margin:24px 0 8px}
+nav ol{margin:4px 0 10px;columns:2;column-gap:28px} @media(max-width:640px){nav ol{columns:1}}
+nav li{margin:0 0 4px;break-inside:avoid} .tocpart{margin:12px 0 2px;font-weight:700;color:var(--muted)}
+a{color:var(--accent);text-decoration:none}
+h2.part{margin:72px 0 8px;font-size:1.55rem;color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:8px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 24px 18px;margin:32px 0}
+@media(max-width:640px){section{padding:6px 16px 14px}}
+section>h2{font-size:1.35rem;line-height:1.5;margin:18px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--line)}
+section h3{font-size:1.08rem;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+section h3::before{content:"";width:6px;height:22px;border-radius:3px;background:var(--accent)}
+.concept{background:var(--whybg);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.concept p:last-child{margin:0}
+.formula{border:1px dashed var(--line);border-radius:12px;padding:6px 16px;margin:0 0 16px}
+.example{background:var(--okbg);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.example ol>li{margin-bottom:16px}
+.why{display:block;color:var(--why);font-size:.95em;margin-top:2px}
+.why::before{content:"→ เหตุผล: ";font-weight:700}
+.traps{background:var(--warnbg);border-radius:12px;padding:14px 18px 6px;margin:0 0 16px}
+.traps ul{margin:0}
+.lvl{display:inline-block;font-size:.8rem;font-weight:700;border-radius:999px;padding:0 10px;margin-right:8px;line-height:1.8}
+.easy{background:#dcfce7;color:#166534}.mid{background:#fef3c7;color:#92400e}.hard{background:#fee2e2;color:#991b1b}
+.prob{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:0 0 14px}
+.prob>p:first-child{margin-bottom:8px}
+details>summary{cursor:pointer;color:var(--accent);font-weight:600}
+details[open]>summary{margin-bottom:10px}
+.ans{font-weight:700;color:var(--ok)}
+.src{color:var(--muted);font-size:.85rem}
+table{border-collapse:collapse;width:100%;margin:12px 0 18px;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;line-height:1.7}
+th{background:var(--accentbg)}
+code{background:var(--accentbg);padding:1px 6px;border-radius:5px;font-size:.88em}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:10px 0}
+.hint{color:var(--muted);font-size:.95rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+details.card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+details.card summary{color:var(--fg);list-style:none} details.card summary::-webkit-details-marker{display:none}
+details.card[open]{border-color:var(--ok)}
+details.card div{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);color:var(--ok)}
+ul.checks{list-style:none;padding-left:4px} ul.checks input{width:18px;height:18px;margin-right:8px;vertical-align:-3px}
+@media print{body{background:#fff;font-size:14px}details>*{display:block}section{break-inside:avoid-page}}
+</style><style>.slides{margin:.8em 0;border:1px solid #8884;border-radius:8px;padding:.4em .8em}.slides summary{cursor:pointer;font-weight:600}.slides img{display:block;max-width:100%;height:auto;margin:.8em auto;border:1px solid #8884;border-radius:4px;background:#fff}</style><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script></head><body><main>
+<header class="lead"><h1>ฟิสิกส์ — ติวเจาะลึกทีละหัวข้อ</h1>
+<blockquote>
+<p><strong>ใช้ไฟล์นี้ยังไง:</strong> อ่านทีละหัวข้อตามลำดับ  </p>
+<p>แต่ละหัวข้อมี 5 ส่วน: <strong>แนวคิด (ทำไมใช้วิธีนี้)</strong> → <strong>สูตร</strong> → <strong>ตัวอย่างที่ทำให้ดู</strong> → <strong>กับดัก</strong> → <strong>โจทย์ฝึก ง่าย/กลาง/ยาก</strong>  </p>
+<p>ลองทำโจทย์ฝึกเองก่อน แล้วค่อยกด "ดูเฉลยทีละขั้น"</p>
+<p><strong>ค่าที่ใช้:</strong> $g=10\ \text{m/s}^2$ ตามสไลด์ (ยกเว้นโจทย์ที่ระบุ 9.8)  </p>
+<p><strong>แหล่ง:</strong> สไลด์บท 1, 2, 3, 4, 5, 7, 8 ในโฟลเดอร์ PHY (ไม่มีบท 6) + <code>15-16.pdf</code>  </p>
+<p><strong>วิธีคิดที่ใช้ได้ทุกบท:</strong> (1) วาดรูป/เขียนแรง (2) เขียนสิ่งที่รู้และสิ่งที่ต้องหาพร้อมหน่วย (3) เลือกสูตรที่มีตัวที่ต้องหาและตัวที่รู้ครบ (4) แทนค่า (5) ตรวจหน่วยและความสมเหตุสมผล</p>
+</blockquote></header>
+<h2 class="part" id="g1">บทที่ 1 · การเคลื่อนที่</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 1 (34 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch1/ch1_01.jpg" alt="บทที่ 1 หน้า 1"><img loading="lazy" src="img/ch1/ch1_02.jpg" alt="บทที่ 1 หน้า 2"><img loading="lazy" src="img/ch1/ch1_03.jpg" alt="บทที่ 1 หน้า 3"><img loading="lazy" src="img/ch1/ch1_04.jpg" alt="บทที่ 1 หน้า 4"><img loading="lazy" src="img/ch1/ch1_05.jpg" alt="บทที่ 1 หน้า 5"><img loading="lazy" src="img/ch1/ch1_06.jpg" alt="บทที่ 1 หน้า 6"><img loading="lazy" src="img/ch1/ch1_07.jpg" alt="บทที่ 1 หน้า 7"><img loading="lazy" src="img/ch1/ch1_08.jpg" alt="บทที่ 1 หน้า 8"><img loading="lazy" src="img/ch1/ch1_09.jpg" alt="บทที่ 1 หน้า 9"><img loading="lazy" src="img/ch1/ch1_10.jpg" alt="บทที่ 1 หน้า 10"><img loading="lazy" src="img/ch1/ch1_11.jpg" alt="บทที่ 1 หน้า 11"><img loading="lazy" src="img/ch1/ch1_12.jpg" alt="บทที่ 1 หน้า 12"><img loading="lazy" src="img/ch1/ch1_13.jpg" alt="บทที่ 1 หน้า 13"><img loading="lazy" src="img/ch1/ch1_14.jpg" alt="บทที่ 1 หน้า 14"><img loading="lazy" src="img/ch1/ch1_15.jpg" alt="บทที่ 1 หน้า 15"><img loading="lazy" src="img/ch1/ch1_16.jpg" alt="บทที่ 1 หน้า 16"><img loading="lazy" src="img/ch1/ch1_17.jpg" alt="บทที่ 1 หน้า 17"><img loading="lazy" src="img/ch1/ch1_18.jpg" alt="บทที่ 1 หน้า 18"><img loading="lazy" src="img/ch1/ch1_19.jpg" alt="บทที่ 1 หน้า 19"><img loading="lazy" src="img/ch1/ch1_20.jpg" alt="บทที่ 1 หน้า 20"><img loading="lazy" src="img/ch1/ch1_21.jpg" alt="บทที่ 1 หน้า 21"><img loading="lazy" src="img/ch1/ch1_22.jpg" alt="บทที่ 1 หน้า 22"><img loading="lazy" src="img/ch1/ch1_23.jpg" alt="บทที่ 1 หน้า 23"><img loading="lazy" src="img/ch1/ch1_24.jpg" alt="บทที่ 1 หน้า 24"><img loading="lazy" src="img/ch1/ch1_25.jpg" alt="บทที่ 1 หน้า 25"><img loading="lazy" src="img/ch1/ch1_26.jpg" alt="บทที่ 1 หน้า 26"><img loading="lazy" src="img/ch1/ch1_27.jpg" alt="บทที่ 1 หน้า 27"><img loading="lazy" src="img/ch1/ch1_28.jpg" alt="บทที่ 1 หน้า 28"><img loading="lazy" src="img/ch1/ch1_29.jpg" alt="บทที่ 1 หน้า 29"><img loading="lazy" src="img/ch1/ch1_30.jpg" alt="บทที่ 1 หน้า 30"><img loading="lazy" src="img/ch1/ch1_31.jpg" alt="บทที่ 1 หน้า 31"><img loading="lazy" src="img/ch1/ch1_32.jpg" alt="บทที่ 1 หน้า 32"><img loading="lazy" src="img/ch1/ch1_33.jpg" alt="บทที่ 1 หน้า 33"><img loading="lazy" src="img/ch1/ch1_34.jpg" alt="บทที่ 1 หน้า 34"></details>
+<section class="topic" id="t2"><h2>1. การเคลื่อนที่ด้วยความเร่งคงที่ และกราฟ</h2><div class="concept">
+<p><strong>ความเร็วและความเร่งคืออะไร</strong></p>
+<p>ความเร็ว = การกระจัดเปลี่ยนไปเร็วแค่ไหน ($\frac{dx}{dt}$) · ความเร่ง = ความเร็วเปลี่ยนไปเร็วแค่ไหน ($\frac{dv}{dt}$)</p>
+<p><strong>ทำไมมี 5 สูตร</strong></p>
+<p>ทุกสูตรเกี่ยวข้องกับ 5 ปริมาณ $u, v, a, s, t$ และแต่ละสูตร<strong>ขาดไป 1 ตัว</strong></p>
+<p>วิธีเลือก: ดูว่าปริมาณไหนที่โจทย์ไม่ให้และไม่ถาม → ใช้สูตรที่ไม่มีตัวนั้น</p>
+<p><strong>ทำไมพื้นที่ใต้กราฟ $v$–$t$ คือระยะทาง</strong></p>
+<p>ระยะ = ความเร็ว × เวลา = สูง × กว้าง ของแถบสี่เหลี่ยมเล็กๆ รวมกันคือพื้นที่</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<table>
+<thead>
+<tr>
+<th>สูตร</th>
+<th>ไม่มีตัวนี้</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$v=u+at$</td>
+<td>$s$</td>
+</tr>
+<tr>
+<td>$s=\frac{u+v}{2}t$</td>
+<td>$a$</td>
+</tr>
+<tr>
+<td>$s=ut+\frac12at^2$</td>
+<td>$v$</td>
+</tr>
+<tr>
+<td>$s=vt-\frac12at^2$</td>
+<td>$u$</td>
+</tr>
+<tr>
+<td>$v^2=u^2+2as$</td>
+<td>$t$</td>
+</tr>
+</tbody>
+</table>
+<p>ใช้ได้เฉพาะเมื่อ<strong>ความเร่งคงที่</strong> · ถ้า $a$ เปลี่ยนตามเวลา ต้องใช้แคลคูลัส</p>
+<p>$$v=\frac{dx}{dt}\qquad a=\frac{dv}{dt}\qquad x=\int v\,dt\qquad v=\int a\,dt$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> รถวิ่ง 20 m/s เบรกจนหยุดในระยะ 40 m หาความหน่วงและเวลาที่ใช้</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องหา</div><p>รถวิ่งแล้วเบรกจนหยุด คำว่า "หยุด" แปลว่า $v=0$ ซึ่งเป็นข้อมูลที่ซ่อนอยู่ในคำพูด ต้องหา $a$ และ $t$</p>
+$$u=20\ \text{m/s},\quad v=0,\quad s=40\ \text{m}$$
+$$\text{หา } a=?\ ,\ t=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตรหา $a$</div><p>ยังไม่รู้ $t$ จึงเลือกสูตรที่ไม่มี $t$ คือ $v^2=u^2+2as$ (ความเร่งคงที่)</p>
+$$v^2=u^2+2as$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div><p>แทน $v=0,\ u=20,\ s=40$ ลงในสูตร</p>
+$$0^2=20^2+2a(40)$$
+$$0=400+80a$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณหา $a$</div><p>ย้ายข้างแล้วหารด้วย 80</p>
+$$80a=-400$$
+$$a=-5\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาเวลา $t$</div><p>ตอนนี้รู้ $a$ แล้ว จึงใช้ $v=u+at$ ซึ่งไม่ต้องใช้ $s$ (เครื่องหมายลบของ $a$ หมายถึงหน่วง)</p>
+$$0=20+(-5)t$$
+$$5t=20$$
+$$t=4\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=-5\ \text{m/s}^2\ \text{(ความหน่วง } 5\ \text{m/s}^2\text{)},\qquad t=4\ \text{s}$$
+<p class="check">ตรวจ: ใช้ $s=\frac{u+v}{2}t=\frac{20+0}{2}(4)=40$ m ตรงกับโจทย์</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ไม่แปลง km/h เป็น m/s (หาร 3.6)</li>
+<li>ใช้ 5 สูตรกับโจทย์ที่ $a$ ไม่คงที่ (เช่น $x=2.4t^2-0.12t^3$)</li>
+<li>ความเร็วเฉลี่ยเอาความเร็วมาบวกหาร 2 — ใช้ได้เฉพาะ $a$ คงที่ ทั่วไปต้องใช้ การกระจัดรวม ÷ เวลารวม</li>
+<li>ลืมเครื่องหมาย: เบรกต้องได้ $a$ ติดลบ</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> รถออกตัวจากหยุดนิ่ง เร่ง 3 m/s² นาน 4 s หาความเร็วและระยะทาง</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ออกตัวจากหยุดนิ่งจึง $u=0$ ต้องหา $v$ และ $s$</p>
+$$u=0,\quad a=3\ \text{m/s}^2,\quad t=4\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความเร็วด้วย $v=u+at$</div><p>รู้ $u,a,t$ จึงใช้สูตรนี้ได้ทันที</p>
+$$v=0+3(4)$$
+$$v=12\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาระยะทางด้วย $s=ut+\frac12at^2$</div><p>รู้ $u,a,t$ จึงใช้สูตรที่ไม่ต้องรู้ $v$</p>
+$$s=0(4)+\tfrac12(3)(4)^2$$
+$$s=\tfrac12(3)(16)$$
+$$s=24\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=12\ \text{m/s},\qquad s=24\ \text{m}$$
+<p class="check">ตรวจ: $s=\frac{u+v}{2}t=\frac{0+12}{2}(4)=24$ m ตรงกัน</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> รถเร่งจาก 0 ถึง 90 km/h ใน 2.6 s (F1, สไลด์หน้า 12) หาความเร่ง</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>โจทย์ให้ความเร็วเป็น km/h แต่เวลาเป็นวินาที ต้องแปลงเป็นหน่วย SI ก่อนคำนวณ</p>
+$$u=0,\quad v=90\ \text{km/h},\quad t=2.6\ \text{s}$$
+$$\text{หา } a=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แปลงหน่วย</div><p>หน่วย SI ต้องเป็น m/s ก่อนคำนวณ จึงหาร 90 ด้วย 3.6</p>
+$$v=\frac{90}{3.6}=25\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เลือกสูตร</div><p>รู้ $u,v,t$ ต้องหา $a$ จึงใช้ $v=u+at$ จัดรูปเป็น $a=\frac{v-u}{t}$</p>
+$$a=\frac{v-u}{t}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่าและคำนวณ</div><p>แทน $v=25,\ u=0,\ t=2.6$</p>
+$$a=\frac{25-0}{2.6}$$
+$$a=9.6\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a\approx9.6\ \text{m/s}^2$$
+<p class="check">ตรวจ: $9.6\ \text{m/s}^2$ ใกล้เคียง $g$ จึงสมเหตุสมผลสำหรับรถแข่ง</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> รถเคลื่อนที่ตาม $x(t)=2.4t^2-0.12t^3$ หาความเร็วเฉลี่ยช่วง 0–9 s และความเร็วที่ $t=9$ s (สไลด์หน้า 19)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องหา</div><p>ตำแหน่งเป็นฟังก์ชันของเวลา ต้องหาความเร็วเฉลี่ยช่วง 0–9 s และความเร็วขณะหนึ่งที่ $t=9$ s</p>
+$$x(t)=2.4t^2-0.12t^3$$
+$$\text{หา } v_{av}\ (0\to9\ \text{s})\ ,\ v(9)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาตำแหน่งที่ $t=0$ และ $t=9$</div><p>แทนค่า $t$ ลงในสมการตำแหน่ง</p>
+$$x(0)=0$$
+$$x(9)=2.4(81)-0.12(729)$$
+$$x(9)=194.4-87.48=106.9\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร็วเฉลี่ย</div><p>ความเร็วเฉลี่ย = การกระจัด ÷ เวลา (ใช้ได้เสมอ)</p>
+$$v_{av}=\frac{x(9)-x(0)}{9-0}$$
+$$v_{av}=\frac{106.9-0}{9}$$
+$$v_{av}=11.9\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาสมการความเร็วขณะหนึ่ง</div><p>ความเร่งไม่คงที่ (มี $t^3$) จึงใช้ 5 สูตรไม่ได้ ต้องหา $v=\frac{dx}{dt}$ โดยการดิฟ</p>
+$$v(t)=\frac{dx}{dt}=\frac{d}{dt}\left(2.4t^2-0.12t^3\right)$$
+$$v(t)=4.8t-0.36t^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทน $t=9$ s</div><p>ใช้สมการ $v(t)$ ที่ได้</p>
+$$v(9)=4.8(9)-0.36(81)$$
+$$v(9)=43.2-29.16$$
+$$v(9)=14.0\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_{av}=11.9\ \text{m/s},\qquad v(9)=14.0\ \text{m/s}$$
+<p class="check">ตรวจ: ความเร็วขณะ $t=9$ s มากกว่าความเร็วเฉลี่ย เพราะรถยังเร่งอยู่ในช่วงนั้น</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 1 หน้า 4–21</p></section>
+<section class="topic" id="t3"><h2>2. การเคลื่อนที่แบบโปรเจกไทล์</h2><div class="concept">
+<p><strong>ทำไมต้องแยกแกน</strong></p>
+<p>แรงที่กระทำมีแค่น้ำหนัก ซึ่งชี้ลงตรงๆ</p>
+<p>แนวราบจึง<strong>ไม่มีความเร่ง</strong> (ความเร็วคงที่) · แนวดิ่งมีความเร่ง $g$ ชี้ลง</p>
+<p>สองแกนเป็นอิสระต่อกัน เชื่อมกันด้วย<strong>เวลา</strong>เท่านั้น</p>
+<p><strong>กลยุทธ์</strong></p>
+<p>หาเวลาจากแนวดิ่งก่อน (มักรู้ความสูง) แล้วเอาเวลาไปหาระยะในแนวราบ</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$u_x=u\cos\theta\ (\text{คงที่})\qquad u_y=u\sin\theta$$</p>
+<p>$$x=u_xt\qquad y=u_yt-\tfrac12gt^2\qquad v_y=u_y-gt$$</p>
+<p>เฉพาะกรณีขึ้นและตกที่ระดับเดียวกัน</p>
+<p>$$t_{\text{บิน}}=\frac{2u\sin\theta}{g}\qquad R=\frac{u^2\sin2\theta}{g}\qquad H=\frac{(u\sin\theta)^2}{2g}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ขว้างวัตถุในแนวราบด้วย 30 m/s จากที่สูง 80 m (สไลด์หน้า 27)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ขว้างในแนวราบ จึง $u_y=0$ และ $u_x=30$ m/s ใช้ $g=10$ m/s² ต้องหาระยะตกและความเร็วตอนถึงพื้น</p>
+$$u_x=30\ \text{m/s},\quad u_y=0,\quad h=80\ \text{m},\quad g=10\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาเวลาจากแนวดิ่ง</div><p>แยกแกนก่อน แล้วหาเวลาจากแกนที่รู้ระยะทาง (ตกลง 80 m จากความเร็วต้น 0)</p>
+$$80=\tfrac12(10)t^2$$
+$$t^2=16$$
+$$t=4\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาระยะในแนวราบ</div><p>แนวราบความเร็วคงที่ ระยะ = ความเร็ว × เวลา</p>
+$$x=u_xt=30\times4$$
+$$x=120\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาความเร็วตอนถึงพื้น</div><p>แนวราบ $v_x=30$ คงเดิม แนวดิ่ง $v_y=gt$ แล้วรวมเวกเตอร์สองแกนด้วยพีทาโกรัส</p>
+$$v_x=30\ \text{m/s},\quad v_y=10\times4=40\ \text{m/s}$$
+$$v=\sqrt{30^2+40^2}=\sqrt{2500}$$
+$$v=50\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาทิศทางของความเร็ว</div><p>มุมใต้แนวราบหาจาก $\tan\theta=\frac{v_y}{v_x}$</p>
+$$\theta=\tan^{-1}\frac{40}{30}$$
+$$\theta=53^\circ\ \text{ใต้แนวราบ}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$x=120\ \text{m},\qquad v=50\ \text{m/s}\ \text{ทำมุม }53^\circ\text{ ใต้แนวราบ}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ใช้สูตร $R=\frac{u^2\sin2\theta}{g}$ กับการขว้างจากที่สูง (ใช้ไม่ได้)</li>
+<li>คิดว่าที่จุดสูงสุดความเร็วเป็น 0 — ความเร็วแนวราบยังอยู่ แค่ $v_y=0$</li>
+<li>ใส่ $g$ ในแนวราบ</li>
+<li>ลืมว่าวัตถุที่ขว้างแนวราบกับที่ปล่อยตกจากความสูงเดียวกัน ถึงพื้นพร้อมกัน</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ปล่อยลูกบอลจากที่สูง 45 m ใช้เวลาเท่าไรถึงพื้น และความเร็วตอนถึงพื้น</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ปล่อยตกจึง $u=0$ ใช้ $g=10$ m/s² ต้องหาเวลาและความเร็วตอนถึงพื้น</p>
+$$u=0,\quad s=45\ \text{m},\quad a=g=10\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาเวลา</div><p>รู้ $u,a,s$ ไม่รู้ $v$ จึงใช้ $s=ut+\frac12at^2$</p>
+$$45=\tfrac12(10)t^2$$
+$$t^2=9$$
+$$t=3\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร็วตอนถึงพื้น</div><p>ใช้ $v=u+gt$ ซึ่ง $u=0$</p>
+$$v=gt=10\times3$$
+$$v=30\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$t=3\ \text{s},\qquad v=30\ \text{m/s}$$
+<p class="check">ตรวจ: $v^2=2gs=2(10)(45)=900$ ได้ $v=30$ m/s ตรงกัน</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> เตะบอล 20 m/s ทำมุม 30° กับพื้น หาเวลาลอย พิสัย และความสูงสูงสุด</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เตะบอลขึ้นแล้วตกที่ระดับเดิม ต้องหาเวลาลอย พิสัย และความสูงสูงสุด</p>
+$$u=20\ \text{m/s},\quad \theta=30^\circ,\quad g=10\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แยกความเร็วต้นเป็นสองแกน</div><p>แนวราบใช้ $\cos$ แนวดิ่งใช้ $\sin$ (มุมวัดจากแนวราบ)</p>
+$$u_y=20\sin30^\circ=20(0.5)=10\ \text{m/s}$$
+$$u_x=20\cos30^\circ=20(0.866)=17.3\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาเวลาลอย</div><p>ขึ้นและตกระดับเดียวกัน จึงใช้สูตรลัด $t=\frac{2u_y}{g}$ ได้</p>
+$$t=\frac{2(10)}{10}$$
+$$t=2\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาพิสัย</div><p>แนวราบความเร็วคงที่ ระยะ = $u_xt$</p>
+$$R=u_xt=17.3\times2$$
+$$R=34.6\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาความสูงสูงสุด</div><p>ที่จุดสูงสุด $v_y=0$ ใช้ $H=\frac{u_y^2}{2g}$</p>
+$$H=\frac{10^2}{2(10)}$$
+$$H=5\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$t=2\ \text{s},\qquad R=34.6\ \text{m},\qquad H=5\ \text{m}$$
+<p class="check">ตรวจ: ใช้ $R=\frac{u^2\sin2\theta}{g}=\frac{400(0.866)}{10}=34.6$ m ตรงกัน</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> ขว้างหิน 20 m/s ทำมุม 37° เหนือแนวราบ จากหน้าผาสูง 25 m ($\sin37^\circ=0.6$) หินตกห่างฐานหน้าผาเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ขว้างจากหน้าผา จุดตกต่ำกว่าจุดขว้าง 25 m ต้องหาระยะแนวราบที่หินตกห่างจากฐาน</p>
+$$u=20\ \text{m/s},\quad\theta=37^\circ,\quad h=25\ \text{m},\quad g=10\ \text{m/s}^2,\quad\sin37^\circ=0.6$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แยกความเร็วต้น</div><p>โจทย์ให้ $\sin37^\circ=0.6$ จึง $\cos37^\circ=0.8$</p>
+$$u_y=20(0.6)=12\ \text{m/s}$$
+$$u_x=20(0.8)=16\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนสมการแนวดิ่ง</div><p>ให้ทิศขึ้นเป็นบวก จุดตกต่ำกว่าจุดขว้าง 25 m จึงมี $y=-25$ ใช้สูตรลัดไม่ได้เพราะตกคนละระดับ</p>
+$$y=u_yt-\tfrac12gt^2$$
+$$-25=12t-5t^2$$
+$$5t^2-12t-25=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แก้สมการกำลังสองหา $t$</div><p>ใช้สูตร $t=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ เลือกรากบวกเพราะเวลาติดลบไม่มีความหมาย</p>
+$$t=\frac{12\pm\sqrt{144+500}}{10}$$
+$$t=\frac{12+25.4}{10}$$
+$$t=3.74\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาระยะในแนวราบ</div><p>แนวราบความเร็วคงที่</p>
+$$x=u_xt=16\times3.74$$
+$$x=59.8\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$x\approx60\ \text{m}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 1 หน้า 24–27</p></section>
+<section class="topic" id="t4"><h2>3. การเคลื่อนที่แบบวงกลม และแรงเข้าสู่ศูนย์กลาง</h2><div class="concept">
+<p><strong>ทำไมวิ่งเร็วคงที่ก็ยังมีความเร่ง</strong></p>
+<p>ความเร่งคือการเปลี่ยนแปลงของ<strong>เวกเตอร์</strong>ความเร็ว ซึ่งรวมทิศด้วย</p>
+<p>บนวงกลมทิศเปลี่ยนตลอด จึงมีความเร่งชี้เข้าหาศูนย์กลาง</p>
+<p><strong>แรงเข้าสู่ศูนย์กลางไม่ใช่แรงชนิดใหม่</strong></p>
+<p>มันคือแรงจริงที่ทำหน้าที่ดึงเข้า เช่น แรงตึงเชือก แรงเสียดทานที่ล้อ แรงโน้มถ่วง</p>
+<p>ต้องระบุว่าเป็นแรงอะไรเสมอ</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$v=\omega r\qquad T=\frac{2\pi}{\omega}=\frac{2\pi r}{v}\qquad f=\frac1T$$</p>
+<p>$$a_c=\frac{v^2}{r}=\omega^2r\qquad F_c=\frac{mv^2}{r}$$</p>
+<table>
+<thead>
+<tr>
+<th>สถานการณ์</th>
+<th>แรงที่เป็น $F_c$</th>
+<th>ผลลัพธ์</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>รถเลี้ยวบนถนนราบ</td>
+<td>แรงเสียดทาน</td>
+<td>$v_{max}=\sqrt{\mu_sgr}$</td>
+</tr>
+<tr>
+<td>ถนนเอียง / เครื่องบินเอียงเลี้ยว</td>
+<td>ส่วนประกอบของ $N$ หรือแรงยก</td>
+<td>$\tan\theta=\frac{v^2}{rg}$</td>
+</tr>
+<tr>
+<td>ขึ้นสะพานโค้ง (เกือบลอย)</td>
+<td>น้ำหนัก</td>
+<td>$v_{max}=\sqrt{gr}$</td>
+</tr>
+<tr>
+<td>ถังหมุน (rotor)</td>
+<td>$N$ จากผนัง</td>
+<td>$\omega\ge\sqrt{\frac{g}{\mu R}}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ดาวเทียมโคจรสูง 640 km คาบ 98.0 นาที (รัศมีโลก 6400 km) หาอัตราเร็วและความเร่ง (สไลด์หน้า 33)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ดาวเทียมโคจรเป็นวงกลม ต้องหาอัตราเร็วและความเร่งเข้าสู่ศูนย์กลาง ข้อมูลความสูงและคาบอยู่คนละหน่วยกับ SI</p>
+$$h=640\ \text{km},\quad R_{\text{โลก}}=6400\ \text{km},\quad T=98.0\ \text{นาที}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หารัศมีวงโคจร</div><p>$r$ วัดจากศูนย์กลางโลก ไม่ใช่จากผิวโลก จึงต้องบวกรัศมีโลก แล้วแปลงเป็นเมตร</p>
+$$r=6400+640=7040\ \text{km}$$
+$$r=7.04\times10^6\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แปลงคาบเป็นวินาที</div><p>1 นาที = 60 วินาที</p>
+$$T=98\times60=5880\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอัตราเร็ว</div><p>หนึ่งรอบเดินได้เส้นรอบวง $2\pi r$ ในเวลา $T$</p>
+$$v=\frac{2\pi r}{T}$$
+$$v=\frac{2\pi(7.04\times10^6)}{5880}$$
+$$v=7.52\times10^3\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาความเร่งเข้าสู่ศูนย์กลาง</div><p>ใช้ $a_c=\frac{v^2}{r}$</p>
+$$a_c=\frac{(7.52\times10^3)^2}{7.04\times10^6}$$
+$$a_c=8.03\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=7.52\times10^3\ \text{m/s},\qquad a_c=8.03\ \text{m/s}^2$$
+<p class="alt">(แรงที่ทำหน้าที่เป็นแรงเข้าสู่ศูนย์กลางคือแรงโน้มถ่วง)</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ใช้ความสูงแทนรัศมีวงโคจร</li>
+<li>เขียน "แรงหนีศูนย์กลาง" เป็นแรงใน free body diagram</li>
+<li>ลืมแปลงนาทีเป็นวินาที หรือรอบ/นาทีเป็น rad/s</li>
+<li>คิดว่าความเร่งเป็น 0 เพราะอัตราเร็วคงที่</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> แกว่งลูกบอลเป็นวงกลมรัศมี 0.5 m ครบรอบใน 0.5 s หาอัตราเร็วและความเร่งเข้าสู่ศูนย์กลาง</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ลูกบอลเคลื่อนที่เป็นวงกลม ครบหนึ่งรอบใช้เวลาเท่ากับคาบ</p>
+$$r=0.5\ \text{m},\quad T=0.5\ \text{s}$$
+$$\text{หา } v=?\ ,\ a_c=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอัตราเร็ว</div><p>หนึ่งรอบเดินได้ $2\pi r$ ในเวลา $T$</p>
+$$v=\frac{2\pi r}{T}=\frac{2\pi(0.5)}{0.5}$$
+$$v=2\pi=6.28\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร่งเข้าสู่ศูนย์กลาง</div><p>ใช้ $a_c=\frac{v^2}{r}$</p>
+$$a_c=\frac{(6.28)^2}{0.5}$$
+$$a_c=\frac{39.4}{0.5}=79\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=6.28\ \text{m/s},\qquad a_c=79\ \text{m/s}^2$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ถนนราบโค้งรัศมี 50 m, $\mu_s=0.5$ ความเร็วสูงสุดที่เลี้ยวได้</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>รถเลี้ยวบนถนนราบ แรงที่ทำให้รถเลี้ยวได้คือแรงเสียดทานสถิต (ล้อไม่ไถลไปทางข้าง)</p>
+$$r=50\ \text{m},\quad\mu_s=0.5,\quad g=10\ \text{m/s}^2$$
+$$\text{หา } v_{max}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งสมการ</div><p>แรงเสียดทานสถิตสูงสุดเป็นแรงเข้าสู่ศูนย์กลาง และบนถนนราบ $N=mg$</p>
+$$f_{s,max}=F_c$$
+$$\mu_smg=\frac{mv^2}{r}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>มวล $m$ ตัดกัน จึงไม่ขึ้นกับมวลรถ</p>
+$$v^2=\mu_sgr$$
+$$v=\sqrt{\mu_sgr}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่า</div><p>แทน $\mu_s=0.5,\ g=10,\ r=50$</p>
+$$v=\sqrt{0.5(10)(50)}$$
+$$v=\sqrt{250}$$
+$$v=15.8\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_{max}=15.8\ \text{m/s}$$
+<p class="alt">(≈ 57 km/h ไม่ขึ้นกับมวลรถ)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> ออกแบบถนนเอียงรัศมี 100 m ให้รถวิ่ง 20 m/s เลี้ยวได้โดยไม่ต้องพึ่งแรงเสียดทาน ต้องเอียงกี่องศา</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ถนนเอียงให้รถเลี้ยวได้โดยไม่ต้องใช้แรงเสียดทาน ต้องหามุมเอียง $\theta$</p>
+$$r=100\ \text{m},\quad v=20\ \text{m/s},\quad g=10\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: วิเคราะห์แรงบนรถ</div><p>มีแค่แรงตั้งฉากผิวถนน $N$ และน้ำหนัก $mg$ ส่วนประกอบแนวราบของ $N$ ชี้เข้าหาศูนย์กลางโค้ง จึงเป็น $F_c$</p>
+$$N\cos\theta=mg\quad\text{(แนวดิ่งสมดุล)}$$
+$$N\sin\theta=\frac{mv^2}{r}\quad\text{(แนวราบเป็น }F_c\text{)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หารสองสมการ</div><p>หารสมการล่างด้วยสมการบน ทำให้ $N$ และ $m$ ตัดกัน</p>
+$$\tan\theta=\frac{v^2}{rg}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่า</div><p>แทน $v=20,\ r=100,\ g=10$</p>
+$$\tan\theta=\frac{20^2}{100(10)}=\frac{400}{1000}$$
+$$\tan\theta=0.4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หามุม</div><p>ใช้ฟังก์ชันผกผันของ $\tan$</p>
+$$\theta=\tan^{-1}(0.4)=21.8^\circ$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\theta\approx22^\circ$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 1 หน้า 29–33 · บท 2 หน้า 34–41</p></section>
+<h2 class="part" id="g5">บทที่ 2 · แรงและกฎของนิวตัน</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 2 (42 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch2/ch2_01.jpg" alt="บทที่ 2 หน้า 1"><img loading="lazy" src="img/ch2/ch2_02.jpg" alt="บทที่ 2 หน้า 2"><img loading="lazy" src="img/ch2/ch2_03.jpg" alt="บทที่ 2 หน้า 3"><img loading="lazy" src="img/ch2/ch2_04.jpg" alt="บทที่ 2 หน้า 4"><img loading="lazy" src="img/ch2/ch2_05.jpg" alt="บทที่ 2 หน้า 5"><img loading="lazy" src="img/ch2/ch2_06.jpg" alt="บทที่ 2 หน้า 6"><img loading="lazy" src="img/ch2/ch2_07.jpg" alt="บทที่ 2 หน้า 7"><img loading="lazy" src="img/ch2/ch2_08.jpg" alt="บทที่ 2 หน้า 8"><img loading="lazy" src="img/ch2/ch2_09.jpg" alt="บทที่ 2 หน้า 9"><img loading="lazy" src="img/ch2/ch2_10.jpg" alt="บทที่ 2 หน้า 10"><img loading="lazy" src="img/ch2/ch2_11.jpg" alt="บทที่ 2 หน้า 11"><img loading="lazy" src="img/ch2/ch2_12.jpg" alt="บทที่ 2 หน้า 12"><img loading="lazy" src="img/ch2/ch2_13.jpg" alt="บทที่ 2 หน้า 13"><img loading="lazy" src="img/ch2/ch2_14.jpg" alt="บทที่ 2 หน้า 14"><img loading="lazy" src="img/ch2/ch2_15.jpg" alt="บทที่ 2 หน้า 15"><img loading="lazy" src="img/ch2/ch2_16.jpg" alt="บทที่ 2 หน้า 16"><img loading="lazy" src="img/ch2/ch2_17.jpg" alt="บทที่ 2 หน้า 17"><img loading="lazy" src="img/ch2/ch2_18.jpg" alt="บทที่ 2 หน้า 18"><img loading="lazy" src="img/ch2/ch2_19.jpg" alt="บทที่ 2 หน้า 19"><img loading="lazy" src="img/ch2/ch2_20.jpg" alt="บทที่ 2 หน้า 20"><img loading="lazy" src="img/ch2/ch2_21.jpg" alt="บทที่ 2 หน้า 21"><img loading="lazy" src="img/ch2/ch2_22.jpg" alt="บทที่ 2 หน้า 22"><img loading="lazy" src="img/ch2/ch2_23.jpg" alt="บทที่ 2 หน้า 23"><img loading="lazy" src="img/ch2/ch2_24.jpg" alt="บทที่ 2 หน้า 24"><img loading="lazy" src="img/ch2/ch2_25.jpg" alt="บทที่ 2 หน้า 25"><img loading="lazy" src="img/ch2/ch2_26.jpg" alt="บทที่ 2 หน้า 26"><img loading="lazy" src="img/ch2/ch2_27.jpg" alt="บทที่ 2 หน้า 27"><img loading="lazy" src="img/ch2/ch2_28.jpg" alt="บทที่ 2 หน้า 28"><img loading="lazy" src="img/ch2/ch2_29.jpg" alt="บทที่ 2 หน้า 29"><img loading="lazy" src="img/ch2/ch2_30.jpg" alt="บทที่ 2 หน้า 30"><img loading="lazy" src="img/ch2/ch2_31.jpg" alt="บทที่ 2 หน้า 31"><img loading="lazy" src="img/ch2/ch2_32.jpg" alt="บทที่ 2 หน้า 32"><img loading="lazy" src="img/ch2/ch2_33.jpg" alt="บทที่ 2 หน้า 33"><img loading="lazy" src="img/ch2/ch2_34.jpg" alt="บทที่ 2 หน้า 34"><img loading="lazy" src="img/ch2/ch2_35.jpg" alt="บทที่ 2 หน้า 35"><img loading="lazy" src="img/ch2/ch2_36.jpg" alt="บทที่ 2 หน้า 36"><img loading="lazy" src="img/ch2/ch2_37.jpg" alt="บทที่ 2 หน้า 37"><img loading="lazy" src="img/ch2/ch2_38.jpg" alt="บทที่ 2 หน้า 38"><img loading="lazy" src="img/ch2/ch2_39.jpg" alt="บทที่ 2 หน้า 39"><img loading="lazy" src="img/ch2/ch2_40.jpg" alt="บทที่ 2 หน้า 40"><img loading="lazy" src="img/ch2/ch2_41.jpg" alt="บทที่ 2 หน้า 41"><img loading="lazy" src="img/ch2/ch2_42.jpg" alt="บทที่ 2 หน้า 42"></details>
+<section class="topic" id="t6"><h2>4. กฎของนิวตัน แรงเสียดทาน และ Free Body Diagram</h2><div class="concept">
+<p><strong>ทำไมต้องวาด free body diagram ก่อน</strong></p>
+<p>$\sum F=ma$ ต้องรวม<strong>ทุก</strong>แรงที่กระทำต่อวัตถุ ถ้าลืมแรงเดียวคำตอบผิดทั้งข้อ</p>
+<p><strong>ทำไม $N$ ไม่เท่ากับ $mg$ เสมอ</strong></p>
+<p>$N$ คือแรงที่พื้นดันขึ้นเท่าที่จำเป็น ถ้ามีแรงอื่นช่วยดึงขึ้น (เช่นดึงเชือกเป็นมุม) พื้นก็ดันน้อยลง</p>
+<p>ต้องหาจากสมดุลแนวดิ่งทุกครั้ง</p>
+<p><strong>แรงเสียดทานสถิต vs จลน์</strong></p>
+<p>สถิต: วัตถุยังไม่ไถล ปรับขนาดตามแรงดึงได้ สูงสุด $\mu_sN$ · จลน์: ไถลแล้ว คงที่ $\mu_kN$</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$\sum\vec F=m\vec a\qquad\vec F=\frac{d\vec p}{dt}\qquad W=mg$$</p>
+<p>$$f_s\le\mu_sN\qquad f_k=\mu_kN$$</p>
+<p>ดึงด้วยแรง $F$ ทำมุม $\theta$ เหนือแนวราบ</p>
+<p>$$N=mg-F\sin\theta\qquad ma=F\cos\theta-\mu_kN$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ลากรถเลื่อน 10 kg ด้วย 40 N ทำมุม 30°, $\mu_k=0.40$ หาความเร่ง และเวลาที่ใช้ไป 10 m จากหยุดนิ่ง (สไลด์หน้า 18)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องหา</div><p>รถเลื่อนเริ่มจากหยุดนิ่ง ต้องหาความเร่งและเวลาที่ใช้เคลื่อนที่ 10 m ใช้ $g=10$ m/s² ดังนั้นน้ำหนัก $mg=100$ N</p>
+$$m=10\ \text{kg},\quad F=40\ \text{N},\quad\theta=30^\circ,\quad\mu_k=0.40,\quad s=10\ \text{m},\quad u=0$$
+$$\text{หา } a=?\ ,\ t=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แยกแรงดึง $F$ เป็นสองแกน</div><p>แรงทำมุมต้องแตกเป็นสองแกนก่อนใช้กฎนิวตัน แนวราบใช้ $\cos$ แนวดิ่งใช้ $\sin$</p>
+$$F_x=40\cos30^\circ=34.6\ \text{N}$$
+$$F_y=40\sin30^\circ=20\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาแรงปฏิกิริยา $N$ จากสมดุลแนวดิ่ง</div><p>เชือกช่วยดึงขึ้น 20 N พื้นจึงดันแค่ส่วนที่เหลือ ไม่ใช่ 100 N ($\sum F_y=0$ เพราะไม่ลอยและไม่จมพื้น)</p>
+$$N+F_y=mg$$
+$$N+20=100$$
+$$N=80\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาแรงเสียดทานจลน์</div><p>รถกำลังไถล จึงใช้ $f_k=\mu_kN$</p>
+$$f=0.40\times80$$
+$$f=32\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ใช้กฎข้อ 2 ของนิวตันแนวราบ</div><p>แรงลัพธ์แนวราบ = แรงดึงแนวราบ − แรงเสียดทาน</p>
+$$\sum F_x=ma$$
+$$34.64-32=10a$$
+$$a=\frac{2.64}{10}=0.264\approx0.26\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: หาเวลาที่ใช้เคลื่อนที่ 10 m</div><p>เริ่มจากหยุดนิ่ง ความเร่งคงที่ ใช้ $s=ut+\frac12at^2$ ด้วย $u=0$ (ใช้ $a=0.264$)</p>
+$$10=\tfrac12(0.264)t^2$$
+$$t^2=\frac{20}{0.264}=75.8$$
+$$t=8.7\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=0.26\ \text{m/s}^2,\qquad t=8.7\ \text{s}$$
+<p class="check">ตรวจ: $N<mg$ เพราะแรงดึงมีส่วนยกขึ้น และ $a>0$ เพราะแรงดึงแนวราบมากกว่าแรงเสียดทาน</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ใช้ $N=mg$ ทั้งที่มีแรงทำมุม</li>
+<li>ใช้ $\mu_s$ กับวัตถุที่กำลังไถล (ต้องใช้ $\mu_k$)</li>
+<li>ถ้าแรงดึงน้อยกว่า $f_{s,max}$ วัตถุไม่ขยับ — แรงเสียดทานเท่ากับแรงดึง ไม่ใช่ $\mu_sN$</li>
+<li>สับสนกฎข้อ 3: แรงคู่กิริยา-ปฏิกิริยากระทำต่อ<strong>คนละ</strong>วัตถุ จึงไม่หักล้างกัน</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ผลักกล่อง 5 kg บนพื้นลื่นด้วย 20 N หาความเร่ง</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>พื้นลื่น จึงไม่มีแรงเสียดทาน แรงลัพธ์แนวราบคือแรงผลักอย่างเดียว</p>
+$$m=5\ \text{kg},\quad F=20\ \text{N}$$
+$$\text{หา } a=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกกฎข้อ 2 ของนิวตัน</div><p>$\sum F=ma$ จัดรูปเป็น $a=\frac{F}{m}$</p>
+$$a=\frac{F}{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$a=\frac{20}{5}$$
+$$a=4\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=4\ \text{m/s}^2$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> คน 60 kg ยืนบนตาชั่งในลิฟต์ที่เร่งขึ้น 2 m/s² ตาชั่งอ่านได้เท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ตาชั่งอ่านค่าแรง $N$ ที่ดันคน ไม่ใช่น้ำหนักจริง ลิฟต์เร่งขึ้น (ทิศขึ้นเป็นบวก)</p>
+$$m=60\ \text{kg},\quad a=+2\ \text{m/s}^2,\quad g=10\ \text{m/s}^2$$
+$$mg=600\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนแรงที่กระทำต่อคน</div><p>มี $N$ ดันขึ้น และน้ำหนัก $mg$ ลง</p>
+$$\sum F=N-mg=ma$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>
+$$N-600=60(2)$$
+$$N-600=120$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณ $N$</div>
+$$N=720\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$N=720\ \text{N}$$
+<p class="alt">(รู้สึกหนักขึ้น เพราะลิฟต์เร่งขึ้น $N$ จึงมากกว่า $mg$)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> มีกล่อง 10 kg อยู่นิ่ง $\mu_s=0.5$, $\mu_k=0.3$ ผลักแนวราบด้วย 40 N แล้วด้วย 60 N แต่ละกรณีความเร่งเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>กล่องอยู่นิ่ง ต้องเช็กก่อนว่าแรงผลักชนะแรงเสียดทานสถิตสูงสุดหรือไม่ ถ้าชนะจึงไถลและใช้แรงเสียดทานจลน์</p>
+$$m=10\ \text{kg},\quad\mu_s=0.5,\quad\mu_k=0.3,\quad F=40\ \text{N},\ 60\ \text{N}$$
+$$N=mg=100\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาแรงเสียดทานสถิตสูงสุด</div><p>พื้นราบ ไม่มีแรงแนวดิ่งอื่น จึง $N=mg$</p>
+$$f_{s,max}=\mu_sN=0.5(100)$$
+$$f_{s,max}=50\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กรณีผลัก 40 N</div><p>$40<50$ แรงผลักไม่ชนะแรงเสียดทานสถิต กล่องจึงไม่ขยับ แรงเสียดทานสถิตปรับตัวเท่ากับแรงผลัก</p>
+$$40\ \text{N}<50\ \text{N}\ \Rightarrow\ \text{ไม่ขยับ}$$
+$$f_s=40\ \text{N},\qquad a=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: กรณีผลัก 60 N</div><p>$60>50$ กล่องไถล จึงใช้แรงเสียดทานจลน์ซึ่งคงที่</p>
+$$f_k=\mu_kN=0.3(100)=30\ \text{N}$$
+$$a=\frac{F-f_k}{m}=\frac{60-30}{10}$$
+$$a=3\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$F=40\ \text{N}:\ a=0\qquad\qquad F=60\ \text{N}:\ a=3\ \text{m/s}^2$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 2 หน้า 4–20</p></section>
+<section class="topic" id="t7"><h2>5. พื้นเอียง และระบบรอก</h2><div class="concept">
+<p><strong>ทำไมพื้นเอียงต้องหมุนแกน</strong></p>
+<p>วัตถุเคลื่อนที่ไปตามผิวเอียง ถ้าตั้งแกนขนานกับผิวเอียง ความเร่งจะอยู่แกนเดียว</p>
+<p>น้ำหนักแตกเป็น $mg\sin\theta$ (ดึงลงตามพื้น) และ $mg\cos\theta$ (กดตั้งฉากพื้น)</p>
+<p><strong>ทำไมรอกคิดแบบ "ระบบ" ได้</strong></p>
+<p>เชือกยาวคงที่ มวลทุกก้อนจึงมีความเร่งขนาดเท่ากัน</p>
+<p>รวมทุกก้อนเป็นระบบเดียว แรงตึงเชือกเป็นแรงภายใน หักล้างกันเอง</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>พื้นเอียง</p>
+<p>$$N=mg\cos\theta\qquad a=g(\sin\theta-\mu_k\cos\theta)\qquad\mu_s=\tan\theta_{\text{เริ่มไถล}}$$</p>
+<p>รอกแขวน 2 มวล (Atwood)</p>
+<p>$$a=\frac{(m_1-m_2)g}{m_1+m_2}\qquad T=m_2(g+a)$$</p>
+<p>ระบบทั่วไป</p>
+<p>$$a=\frac{\text{แรงที่ขับระบบ}-\text{แรงต้าน}}{\text{มวลรวมทั้งระบบ}}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> รอกแขวน $m_1=5$ kg และ $m_2=3$ kg หาความเร่งและแรงตึงเชือก</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>รอกแขวนสองมวลด้วยเชือกยาวคงที่ มวลทั้งสองมีขนาดความเร่งเท่ากัน ใช้ $g=10$ m/s²</p>
+$$m_1=5\ \text{kg},\quad m_2=3\ \text{kg}$$
+$$\text{หา } a=?\ ,\ T=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: มองเป็นระบบเดียวเพื่อหาความเร่ง</div><p>แรงตึงเชือกเป็นแรงภายใน หักล้างกันเอง เหลือแค่น้ำหนักฝั่ง 5 kg ดึงลง กับน้ำหนักฝั่ง 3 kg ต้านอยู่</p>
+$$F_{\text{ขับ}}=m_1g-m_2g=50-30$$
+$$F_{\text{ขับ}}=20\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้กฎข้อ 2 กับมวลรวม</div><p>มวลรวมของระบบคือ $5+3=8$ kg</p>
+$$a=\frac{F_{\text{ขับ}}}{m_1+m_2}=\frac{20}{8}$$
+$$a=2.5\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แยกพิจารณาก้อน 3 kg เพื่อหา $T$</div><p>ต้องการแรงตึงซึ่งเป็นแรงภายใน จึงแยกพิจารณาก้อนเดียว ก้อน 3 kg เคลื่อนที่ขึ้นด้วย $a=2.5$ ดังนั้น $T$ ต้องมากกว่าน้ำหนัก</p>
+$$T-m_2g=m_2a$$
+$$T-30=3(2.5)$$
+$$T-30=7.5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณ $T$</div>
+$$T=37.5\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=2.5\ \text{m/s}^2,\qquad T=37.5\ \text{N}$$
+<p class="check">ตรวจ: ก้อน 5 kg: $m_1g-T=m_1a\Rightarrow50-37.5=5(2.5)=12.5$ ✓</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>สลับ $\sin$ กับ $\cos$ บนพื้นเอียง (ตามพื้นใช้ $\sin$, ตั้งฉากใช้ $\cos$)</li>
+<li>ใช้ $T=mg$ ทั้งที่ระบบมีความเร่ง</li>
+<li>รอก: หารด้วยมวลก้อนเดียวแทนมวลรวม</li>
+<li>ใช้ $N=mg$ บนพื้นเอียง</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> กล่องไถลลงพื้นเอียงลื่น 30° ความเร่งเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>พื้นเอียงลื่น ไม่มีแรงเสียดทาน แรงที่ทำให้ไถลมีแค่ส่วนประกอบของน้ำหนักตามพื้นเอียง ($mg\sin\theta$)</p>
+$$\theta=30^\circ,\quad\mu=0,\quad g=10\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใช้กฎข้อ 2 ตามแนวพื้นเอียง</div><p>มวลตัดกัน ทุกก้อนไถลด้วยความเร่งเท่ากัน</p>
+$$mg\sin\theta=ma$$
+$$a=g\sin\theta$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>
+$$a=10\sin30^\circ=10(0.5)$$
+$$a=5\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=5\ \text{m/s}^2$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> กล่องไถลลงพื้นเอียง 37°, $\mu_k=0.25$ ($\sin37^\circ=0.6,\ \cos37^\circ=0.8$)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>กล่องไถลลงพื้นเอียงที่มีแรงเสียดทานจลน์</p>
+$$\theta=37^\circ,\quad\mu_k=0.25,\quad\sin37^\circ=0.6,\quad\cos37^\circ=0.8,\quad g=10\ \text{m/s}^2$$
+$$\text{หา } a=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>แรงเสียดทานต้านการไถล จึงหักออกจากส่วนประกอบของน้ำหนักตามพื้นเอียง ($N=mg\cos\theta$ ตั้งฉากพื้นเอียง)</p>
+$$ma=mg\sin\theta-\mu_kmg\cos\theta$$
+$$a=g(\sin\theta-\mu_k\cos\theta)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>
+$$a=10(0.6-0.25\times0.8)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณ</div>
+$$a=10(0.6-0.2)$$
+$$a=10(0.4)$$
+$$a=4\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=4\ \text{m/s}^2$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> กล่อง 4 kg บนโต๊ะลื่น ผูกเชือกข้ามรอกที่ขอบโต๊ะไปแขวนมวล 1 kg หาความเร่งและแรงตึงเชือก</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>กล่องบนโต๊ะลื่นถูกดึงด้วยเชือกที่ผูกกับมวลแขวน มวลทั้งสองมีความเร่งขนาดเท่ากัน</p>
+$$m_1=4\ \text{kg}\ (\text{บนโต๊ะ}),\quad m_2=1\ \text{kg}\ (\text{แขวน}),\quad g=10\ \text{m/s}^2$$
+$$\text{หา } a=?\ ,\ T=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาแรงที่ขับระบบ</div><p>น้ำหนักกล่องบนโต๊ะถูกโต๊ะรับไว้ ไม่ได้ขับระบบ มีเพียงน้ำหนักก้อนแขวนที่ขับ</p>
+$$F_{\text{ขับ}}=m_2g=1\times10=10\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้กฎข้อ 2 กับมวลรวม</div><p>มวลรวม $4+1=5$ kg</p>
+$$a=\frac{F_{\text{ขับ}}}{m_1+m_2}=\frac{10}{4+1}$$
+$$a=2\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาแรงตึงเชือก</div><p>แรงตึงคือแรงเดียวที่ลากกล่องบนโต๊ะ (โต๊ะลื่น) จึงใช้กฎข้อ 2 กับกล่อง 4 kg</p>
+$$T=m_1a=4\times2$$
+$$T=8\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=2\ \text{m/s}^2,\qquad T=8\ \text{N}$$
+<p class="check">ตรวจ: ก้อนแขวน: $m_2g-T=m_2a\Rightarrow10-8=1\times2$ ✓</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 2 หน้า 14–17</p></section>
+<section class="topic" id="t8"><h2>6. แรงต้านอากาศ และความเร็วสุดท้าย</h2><div class="concept">
+<p><strong>ทำไมวัตถุตกไม่เร็วขึ้นเรื่อยๆ</strong></p>
+<p>แรงต้านอากาศโตขึ้นตามความเร็ว ยิ่งตกเร็ว แรงต้านยิ่งมาก</p>
+<p>จนแรงต้านเท่ากับน้ำหนัก แรงลัพธ์เป็นศูนย์ ความเร่งเป็นศูนย์ → ความเร็วคงที่ เรียกว่า<strong>ความเร็วสุดท้าย</strong></p>
+<p><strong>ร่มชูชีพ:</strong> กางร่มทำให้ $k$ ใหญ่ขึ้นมาก ความเร็วสุดท้ายใหม่จึงต่ำลง</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$m\frac{dv}{dt}=mg-kv\qquad v(t)=\frac{mg}{k}\left(1-e^{-kt/m}\right)\qquad v_t=\frac{mg}{k}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ลูกบอล 0.1 kg ตกในอากาศ $k=0.05$ kg/s หาความเร็วสุดท้าย และความเร่งขณะความเร็ว 10 m/s</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แรงต้านอากาศแปรผันตามความเร็ว $kv$ ใช้ $g=10$ m/s²</p>
+$$m=0.1\ \text{kg},\quad k=0.05\ \text{kg/s}$$
+$$\text{หา } v_t=?\ ,\ a\ \text{เมื่อ }v=10\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งเงื่อนไขความเร็วสุดท้าย</div><p>ที่ความเร็วสุดท้าย ความเร่งเป็นศูนย์ แรงลัพธ์ต้องเป็นศูนย์ แรงต้าน = น้ำหนัก</p>
+$$kv_t=mg$$
+$$v_t=\frac{mg}{k}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าหา $v_t$</div>
+$$v_t=\frac{0.1\times10}{0.05}=\frac{1}{0.05}$$
+$$v_t=20\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เขียนกฎข้อ 2 ขณะ $v=10$ m/s</div><p>ลง = ทิศบวก แรงลัพธ์ = น้ำหนัก − แรงต้าน</p>
+$$ma=mg-kv$$
+$$a=g-\frac{k}{m}v$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่าหา $a$</div><p>แรงต้านกินไปครึ่งหนึ่งของน้ำหนัก ความเร่งจึงเหลือครึ่งหนึ่งของ $g$</p>
+$$a=10-\frac{0.05}{0.1}(10)$$
+$$a=10-5$$
+$$a=5\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_t=20\ \text{m/s},\qquad a=5\ \text{m/s}^2$$
+<p class="check">ตรวจ: $v=10$ เป็นครึ่งหนึ่งของ $v_t$ จึงได้ $a=\frac g2=5$ ✓</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>คิดว่าวัตถุหนักตกเร็วกว่าในสุญญากาศ (ไม่จริง ทุกวัตถุตกด้วย $g$)</li>
+<li>คิดว่าที่ความเร็วสุดท้ายไม่มีแรงกระทำ — มีสองแรงที่หักล้างกัน</li>
+<li>ลืมว่าความเร่งเริ่มต้นยังเป็น $g$ (ตอน $v=0$ ยังไม่มีแรงต้าน)</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> นักดิ่งพสุธา 80 kg, $k=16$ kg/s ความเร็วสุดท้ายเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ใช้ $g=10$ m/s²</p>
+$$m=80\ \text{kg},\quad k=16\ \text{kg/s}$$
+$$\text{หา } v_t=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>ความเร็วสุดท้ายเกิดเมื่อแรงต้านเท่ากับน้ำหนัก $kv_t=mg$</p>
+$$v_t=\frac{mg}{k}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$v_t=\frac{80\times10}{16}=\frac{800}{16}$$
+$$v_t=50\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_t=50\ \text{m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> นักดิ่งคนเดิม ขณะความเร็ว 25 m/s ความเร่งเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>นักดิ่งคนเดิมคือ $m=80$ kg, $k=16$ kg/s ใช้ $g=10$ m/s²</p>
+$$v=25\ \text{m/s}$$
+$$\text{หา } a=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนกฎข้อ 2</div><p>ลง = ทิศบวก แรงลัพธ์ = น้ำหนัก − แรงต้าน</p>
+$$ma=mg-kv$$
+$$a=g-\frac{k}{m}v$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>
+$$a=10-\frac{16}{80}(25)$$
+$$a=10-0.2(25)$$
+$$a=10-5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณ</div><p>ความเร็วเป็นครึ่งหนึ่งของ $v_t=50$ แรงต้านจึงเป็นครึ่งหนึ่งของน้ำหนัก</p>
+$$a=5\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=5\ \text{m/s}^2$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> นักดิ่งคนเดิม ใช้เวลาเท่าไรจึงถึงครึ่งหนึ่งของความเร็วสุดท้าย</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ต้องการเวลาที่ความเร็วเป็นครึ่งหนึ่งของความเร็วสุดท้าย ใช้ $v(t)=v_t\left(1-e^{-kt/m}\right)$</p>
+$$m=80\ \text{kg},\quad k=16\ \text{kg/s}$$
+$$v=\tfrac12v_t,\quad\text{หา } t=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งสมการ</div><p>ต้องการ $v=\frac12v_t$ จึงตั้ง $v_t(1-e^{-kt/m})=\frac12v_t$ ตัด $v_t$ ออก</p>
+$$1-e^{-kt/m}=\frac12$$
+$$e^{-kt/m}=\frac12$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใส่ลอการิทึมธรรมชาติ</div><p>take ln ทั้งสองข้างเพื่อดึงเลขชี้กำลังลงมา</p>
+$$-\frac{k}{m}t=\ln\frac12=-\ln2$$
+$$\frac{k}{m}t=\ln2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่าและคำนวณ</div>
+$$t=\frac{m}{k}\ln2=\frac{80}{16}\ln2$$
+$$t=5\ln2=5(0.693)$$
+$$t=3.47\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$t=5\ln2\approx3.47\ \text{s}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 2 หน้า 27–32</p></section>
+<h2 class="part" id="g9">บทที่ 3 · งานและพลังงาน</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 3 (34 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch3/ch3_01.jpg" alt="บทที่ 3 หน้า 1"><img loading="lazy" src="img/ch3/ch3_02.jpg" alt="บทที่ 3 หน้า 2"><img loading="lazy" src="img/ch3/ch3_03.jpg" alt="บทที่ 3 หน้า 3"><img loading="lazy" src="img/ch3/ch3_04.jpg" alt="บทที่ 3 หน้า 4"><img loading="lazy" src="img/ch3/ch3_05.jpg" alt="บทที่ 3 หน้า 5"><img loading="lazy" src="img/ch3/ch3_06.jpg" alt="บทที่ 3 หน้า 6"><img loading="lazy" src="img/ch3/ch3_07.jpg" alt="บทที่ 3 หน้า 7"><img loading="lazy" src="img/ch3/ch3_08.jpg" alt="บทที่ 3 หน้า 8"><img loading="lazy" src="img/ch3/ch3_09.jpg" alt="บทที่ 3 หน้า 9"><img loading="lazy" src="img/ch3/ch3_10.jpg" alt="บทที่ 3 หน้า 10"><img loading="lazy" src="img/ch3/ch3_11.jpg" alt="บทที่ 3 หน้า 11"><img loading="lazy" src="img/ch3/ch3_12.jpg" alt="บทที่ 3 หน้า 12"><img loading="lazy" src="img/ch3/ch3_13.jpg" alt="บทที่ 3 หน้า 13"><img loading="lazy" src="img/ch3/ch3_14.jpg" alt="บทที่ 3 หน้า 14"><img loading="lazy" src="img/ch3/ch3_15.jpg" alt="บทที่ 3 หน้า 15"><img loading="lazy" src="img/ch3/ch3_16.jpg" alt="บทที่ 3 หน้า 16"><img loading="lazy" src="img/ch3/ch3_17.jpg" alt="บทที่ 3 หน้า 17"><img loading="lazy" src="img/ch3/ch3_18.jpg" alt="บทที่ 3 หน้า 18"><img loading="lazy" src="img/ch3/ch3_19.jpg" alt="บทที่ 3 หน้า 19"><img loading="lazy" src="img/ch3/ch3_20.jpg" alt="บทที่ 3 หน้า 20"><img loading="lazy" src="img/ch3/ch3_21.jpg" alt="บทที่ 3 หน้า 21"><img loading="lazy" src="img/ch3/ch3_22.jpg" alt="บทที่ 3 หน้า 22"><img loading="lazy" src="img/ch3/ch3_23.jpg" alt="บทที่ 3 หน้า 23"><img loading="lazy" src="img/ch3/ch3_24.jpg" alt="บทที่ 3 หน้า 24"><img loading="lazy" src="img/ch3/ch3_25.jpg" alt="บทที่ 3 หน้า 25"><img loading="lazy" src="img/ch3/ch3_26.jpg" alt="บทที่ 3 หน้า 26"><img loading="lazy" src="img/ch3/ch3_27.jpg" alt="บทที่ 3 หน้า 27"><img loading="lazy" src="img/ch3/ch3_28.jpg" alt="บทที่ 3 หน้า 28"><img loading="lazy" src="img/ch3/ch3_29.jpg" alt="บทที่ 3 หน้า 29"><img loading="lazy" src="img/ch3/ch3_30.jpg" alt="บทที่ 3 หน้า 30"><img loading="lazy" src="img/ch3/ch3_31.jpg" alt="บทที่ 3 หน้า 31"><img loading="lazy" src="img/ch3/ch3_32.jpg" alt="บทที่ 3 หน้า 32"><img loading="lazy" src="img/ch3/ch3_33.jpg" alt="บทที่ 3 หน้า 33"><img loading="lazy" src="img/ch3/ch3_34.jpg" alt="บทที่ 3 หน้า 34"></details>
+<section class="topic" id="t10"><h2>7. งาน</h2><div class="concept">
+<p><strong>งานคือการถ่ายโอนพลังงานด้วยแรง</strong></p>
+<p>นับเฉพาะส่วนของแรงที่<strong>อยู่ในแนวการเคลื่อนที่</strong> จึงมี $\cos\theta$</p>
+<p><strong>ทำไมงานติดลบได้</strong></p>
+<p>แรงที่สวนทางการเคลื่อนที่ (เช่นแรงเสียดทาน) <strong>ดึงพลังงานออก</strong>จากวัตถุ</p>
+<p>แรงที่ตั้งฉากการเคลื่อนที่ (เช่น $N$ บนพื้นราบ) ไม่ทำงานเลย</p>
+<p><strong>แรงไม่คงที่</strong> ใช้พื้นที่ใต้กราฟ $F$–$x$ หรือ $\int F\,dx$</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$W=Fd\cos\theta\qquad W=\int_{x_1}^{x_2}F\,dx$$</p>
+<ul>
+<li>แรงไปทางเดียวกับการเคลื่อนที่ ($\theta=0$): $W=Fd$</li>
+<li>แรงตั้งฉากกับการเคลื่อนที่ ($\theta=90^\circ$): $W=0$</li>
+<li>แรงสวนทางการเคลื่อนที่ ($\theta=180^\circ$): $W=-Fd$</li>
+</ul>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ดึงกล่อง 12 kg ด้วย 50 N ทำมุม 25° ไป 8.0 m, $\mu_k=0.2$ หางานของแรงดึงและของแรงเสียดทาน (สไลด์หน้า 7)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องหา</div><p>ต้องหางานของแรงดึงและงานของแรงเสียดทาน ใช้ $g=10$ m/s² ดังนั้นน้ำหนัก $mg=120$ N</p>
+$$m=12\ \text{kg},\quad F=50\ \text{N},\quad\theta=25^\circ,\quad d=8.0\ \text{m},\quad\mu_k=0.2$$
+$$\text{หา } W_F=?\ ,\ W_f=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หางานของแรงดึง</div><p>$W=Fd\cos\theta$ นับเฉพาะส่วนประกอบแนวราบของแรง เพราะกล่องเคลื่อนที่แนวราบ</p>
+$$W_F=50\cos25^\circ\times8$$
+$$W_F=50(0.9063)(8)$$
+$$W_F=363\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาแรงปฏิกิริยา $N$</div><p>แรงดึงมีส่วนยกขึ้น $N$ จึงน้อยกว่า $mg$ (สมดุลแนวดิ่ง $N+F\sin\theta=mg$)</p>
+$$N=mg-F\sin25^\circ=120-50(0.423)$$
+$$N=120-21.1=98.9\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาแรงเสียดทานจลน์</div><p>กล่องไถล จึงใช้ $f_k=\mu_kN$</p>
+$$f=0.2\times98.9$$
+$$f=19.8\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หางานของแรงเสียดทาน</div><p>แรงเสียดทานสวนทางการเคลื่อนที่ $\theta=180^\circ$ ซึ่ง $\cos180^\circ=-1$ งานจึงติดลบ</p>
+$$W_f=fd\cos180^\circ=-19.8\times8$$
+$$W_f=-158\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$W_F=363\ \text{J},\qquad W_f=-158\ \text{J}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ลืมเครื่องหมายลบของงานแรงเสียดทาน</li>
+<li>ใช้ $\sin$ แทน $\cos$ (มุมวัดจากแนวการเคลื่อนที่)</li>
+<li>คิดว่าถือของเดินแนวราบมีงาน — แรงยกตั้งฉากการเคลื่อนที่ งาน = 0</li>
+<li>แรงแปรผัน ใช้ $F\times d$ ตรงๆ — ต้องอินทิเกรต</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ผลักกล่องแนวราบด้วย 20 N ไป 5 m งานเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แรงอยู่ในแนวเดียวกับการเคลื่อนที่ $\theta=0$ จึงใช้ $W=Fd$</p>
+$$F=20\ \text{N},\quad d=5\ \text{m},\quad\theta=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าและคำนวณ</div>
+$$W=Fd\cos0^\circ=20\times5$$
+$$W=100\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$W=100\ \text{J}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ลากกระเป๋าด้วย 30 N ทำมุม 60° กับพื้น ไป 10 m งานเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แรงทำมุมกับแนวการเคลื่อนที่ จึงต้องมี $\cos\theta$</p>
+$$F=30\ \text{N},\quad\theta=60^\circ,\quad d=10\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>$W=Fd\cos\theta$ นับเฉพาะส่วนของแรงที่อยู่ในแนวการเคลื่อนที่</p>
+$$W=Fd\cos\theta$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>
+$$W=30\cos60^\circ\times10$$
+$$W=30(0.5)(10)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณ</div><p>ครึ่งหนึ่งของแรงเท่านั้นที่อยู่แนวการเคลื่อนที่</p>
+$$W=150\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$W=150\ \text{J}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> แรง $F(x)=6x^2+2x$ N ทำให้อนุภาคเคลื่อนที่จาก $x=2$ ถึง $x=4$ m หางาน (สไลด์หน้า 9)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แรงเปลี่ยนตามตำแหน่ง $x$ จึงใช้ $F\times d$ ตรงๆ ไม่ได้ ต้องอินทิเกรต</p>
+$$F(x)=6x^2+2x\ \text{N},\quad x_1=2\ \text{m},\ x_2=4\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>งานจากแรงแปรผัน = พื้นที่ใต้กราฟ $F$–$x$ คือ $W=\int F\,dx$</p>
+$$W=\int_{x_1}^{x_2}F\,dx=\int_2^4(6x^2+2x)\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาปฏิยานุพันธ์</div><p>อินทิเกรตทีละพจน์ด้วย $\int x^n\,dx=\frac{x^{n+1}}{n+1}$</p>
+$$\int(6x^2+2x)\,dx=2x^3+x^2$$
+$$W=\Big[2x^3+x^2\Big]_2^4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนขอบเขตบนและล่าง</div>
+$$W=\big(2(4)^3+(4)^2\big)-\big(2(2)^3+(2)^2\big)$$
+$$W=(128+16)-(16+4)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณ</div>
+$$W=144-20$$
+$$W=124\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$W=124\ \text{J}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 3 หน้า 4–9</p></section>
+<section class="topic" id="t11"><h2>8. พลังงาน และกฎอนุรักษ์พลังงาน</h2><div class="concept">
+<p><strong>ทำไมใช้พลังงานแทนแรง</strong></p>
+<p>พลังงานเป็นสเกลาร์ ไม่ต้องแยกแกน และ<strong>ไม่ต้องรู้เส้นทาง</strong> สนใจแค่จุดเริ่มกับจุดสุดท้าย</p>
+<p><strong>เมื่อไรพลังงานกลคงที่</strong></p>
+<p>เมื่อไม่มีงานจากแรงภายนอก (เช่นแรงเสียดทาน แรงคนผลัก)</p>
+<p>ถ้ามี งานนั้นคือพลังงานที่เพิ่มหรือหายไป</p>
+<p><strong>ทำไมขว้างจากที่สูงมุมไหนก็ได้ ความเร็วตอนถึงพื้นเท่ากัน</strong></p>
+<p>$mgh+\frac12mu^2=\frac12mv^2$ ไม่มีมุมอยู่ในสมการเลย</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$E_k=\tfrac12mv^2\qquad E_p=mgh\qquad E_s=\tfrac12kx^2$$</p>
+<p>ทฤษฎีบทงาน-พลังงาน ($W$ = งานจากแรงภายนอก ไม่รวมแรงโน้มถ่วงและแรงสปริง)</p>
+<p>$$W=E_2-E_1$$</p>
+<p>ถ้า $W=0$</p>
+<p>$$\tfrac12mu^2+mgh_1+\tfrac12kx_1^2=\tfrac12mv^2+mgh_2+\tfrac12kx_2^2$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ปาบอลด้วย 3.0 m/s จากเขื่อนสูง 180 m ความเร็วตอนกระทบพื้น (สไลด์หน้า 26)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ไม่คิดแรงต้านอากาศ ใช้ $g=10$ m/s² ต้องหาความเร็วตอนกระทบพื้น</p>
+$$u=3.0\ \text{m/s},\quad h=180\ \text{m}$$
+$$\text{หา } v=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกหลักการ</div><p>ไม่มีงานจากแรงภายนอก มีแค่แรงโน้มถ่วงซึ่งคิดเป็น $E_p$ แล้ว พลังงานกลจึงคงที่ ($E_1=E_2$) โดยไม่ต้องสนใจทิศที่ปา</p>
+$$mgh+\tfrac12mu^2=\tfrac12mv^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ตัดมวลและจัดรูป</div><p>$m$ ตัดกันทุกพจน์ คูณทั้งสมการด้วย 2/m</p>
+$$2gh+u^2=v^2$$
+$$v^2=2gh+u^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่า</div>
+$$v^2=2(10)(180)+3^2$$
+$$v^2=3600+9=3609$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ถอดรากที่สอง</div>
+$$v=\sqrt{3609}=60\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=60\ \text{m/s}$$
+<p class="alt">(ไม่ขึ้นกับทิศที่ปา)</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>$x$ ในสปริงคือ<strong>ระยะยืด/หด</strong> ไม่ใช่ความยาวสปริง</li>
+<li>ลืมเปลี่ยนกรัมเป็นกิโลกรัม</li>
+<li>ใช้อนุรักษ์พลังงานทั้งที่มีแรงเสียดทาน</li>
+<li>ตั้งระดับอ้างอิง $h=0$ ไม่เหมือนกันระหว่างจุดเริ่มกับจุดสุดท้าย</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ปล่อยวัตถุจากที่สูง 5 m ความเร็วตอนถึงพื้น</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ปล่อยจากนิ่ง ไม่มีแรงต้านอากาศ ใช้ $g=10$ m/s²</p>
+$$u=0,\quad h=5\ \text{m}$$
+$$\text{หา } v=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งสมการอนุรักษ์พลังงาน</div><p>พลังงานศักย์ที่สูญเสียกลายเป็นพลังงานจลน์ทั้งหมด</p>
+$$mgh=\tfrac12mv^2$$
+$$v=\sqrt{2gh}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>
+$$v=\sqrt{2(10)(5)}=\sqrt{100}$$
+$$v=10\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=10\ \text{m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ปืนของเล่น: สปริง $k=2$ kN/m ถูกอัดจาก 110 mm เหลือ 50 mm ยิงลูก 25 g (สไลด์หน้า 27)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ต้องแปลงหน่วยเป็น SI ก่อน (kN/m เป็น N/m, mm เป็น m, g เป็น kg) และหาความเร็วที่ลูกกระสุนออกจากปืน</p>
+$$k=2\ \text{kN/m}=2000\ \text{N/m},\quad m=25\ \text{g}=0.025\ \text{kg}$$
+$$\text{สปริงอัดจาก }110\ \text{mm}\ \text{เหลือ }50\ \text{mm}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาระยะหดของสปริง</div><p>$E_s$ ใช้ระยะที่หดไป ไม่ใช่ความยาวสปริงที่เหลือ</p>
+$$x=110-50=60\ \text{mm}$$
+$$x=0.060\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ตั้งสมการอนุรักษ์พลังงาน</div><p>พลังงานศักย์สปริงทั้งหมดเปลี่ยนเป็นพลังงานจลน์ของลูกกระสุน</p>
+$$\tfrac12kx^2=\tfrac12mv^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่า</div>
+$$\tfrac12(2000)(0.06)^2=\tfrac12(0.025)v^2$$
+$$3.6=0.0125v^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณ $v$</div>
+$$v^2=\frac{3.6}{0.0125}=288$$
+$$v=\sqrt{288}=17\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v\approx17\ \text{m/s}$$
+<p class="alt">(อ่านขนาดจากรูปในสไลด์ ไม่แน่ใจ ควรตรวจกับต้นฉบับ)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> เด็ก 2 kg ไถลลงสไลเดอร์สูง 5 m จากหยุดนิ่ง ถึงล่างด้วย 8 m/s แรงเสียดทานทำงานเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เด็กไถลลงสไลเดอร์จากนิ่ง ต้องหางานของแรงเสียดทาน ใช้ $g=10$ m/s²</p>
+$$m=2\ \text{kg},\quad h=5\ \text{m},\quad u=0,\quad v=8\ \text{m/s}$$
+$$\text{หา } W_f=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกหลักการ</div><p>มีแรงเสียดทาน พลังงานกลไม่คงที่ ส่วนที่หายไปคืองานของแรงเสียดทาน ใช้ทฤษฎีบทงาน-พลังงาน $W_f=E_2-E_1$</p>
+$$W_f=E_2-E_1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาพลังงานเริ่มต้น</div><p>เริ่มจากนิ่ง จึงมีเฉพาะพลังงานศักย์</p>
+$$E_1=mgh=2(10)(5)=100\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาพลังงานสุดท้าย</div><p>ที่ล่างสุด $h=0$ จึงมีเฉพาะพลังงานจลน์</p>
+$$E_2=\tfrac12mv^2=\tfrac12(2)(8)^2=64\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณงานของแรงเสียดทาน</div>
+$$W_f=64-100$$
+$$W_f=-36\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$W_f=-36\ \text{J}$$
+<p class="alt">(เครื่องหมายลบ = ดึงพลังงานออก พลังงาน 36 J กลายเป็นความร้อน)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 3 หน้า 11–29</p></section>
+<section class="topic" id="t12"><h2>9. กำลัง</h2><div class="concept">
+<p><strong>กำลังบอกว่าทำงานได้เร็วแค่ไหน</strong></p>
+<p>งานเท่ากัน แต่ทำเสร็จเร็วกว่า = กำลังมากกว่า</p>
+<p><strong>ทำไม $P=Fv$</strong></p>
+<p>$P=\frac Wt=\frac{Fd}{t}=F\cdot\frac dt=Fv$ สะดวกเมื่อวัตถุเคลื่อนที่ด้วยความเร็วคงที่ต้านแรงหนึ่ง</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$P=\frac Wt=\frac{\Delta E}{\Delta t}=Fv\qquad1\text{ แรงม้า}=735.5\text{ W}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> บันไดเลื่อนยาว 10 m เอียง 30° ส่งคน 60 คนต่อนาที คนละ 60 kg หากำลังเครื่องยนต์ (สไลด์หน้า 33)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>บันไดเลื่อนต้องทำงานยกคนขึ้นต้านแรงโน้มถ่วง ใช้ $g=10$ m/s²</p>
+$$L=10\ \text{m},\quad\theta=30^\circ,\quad 60\ \text{คน/นาที},\quad m=60\ \text{kg/คน}$$
+$$\text{หากำลัง } P=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความสูงที่ยก</div><p>งานต้านแรงโน้มถ่วงขึ้นกับความสูง ไม่ใช่ความยาวบันได</p>
+$$h=L\sin30^\circ=10(0.5)$$
+$$h=5\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาพลังงานที่ใช้ต่อคน</div><p>พลังงานที่ต้องให้คือพลังงานศักย์ที่เพิ่มขึ้น</p>
+$$E=mgh=60(10)(5)$$
+$$E=3000\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาพลังงานรวมใน 1 นาที</div><p>60 คนใน 60 s</p>
+$$E_{\text{รวม}}=60\times3000=180{,}000\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หากำลัง</div><p>กำลัง = งาน ÷ เวลา ($P=\frac{W}{t}$)</p>
+$$P=\frac{180000}{60}$$
+$$P=3000\ \text{W}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$P=3.0\ \text{kW}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ใช้ความยาวทางเอียงแทนความสูง</li>
+<li>ลืมหารด้วยเวลา (ตอบเป็นงาน J แทนกำลัง W)</li>
+<li>ใช้ km/h ใน $P=Fv$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ยกของ 50 kg ขึ้น 2 m ใน 4 s กำลังเฉลี่ยเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ใช้ $g=10$ m/s²</p>
+$$m=50\ \text{kg},\quad h=2\ \text{m},\quad t=4\ \text{s}$$
+$$\text{หา } P=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>งานที่ทำคือพลังงานศักย์ที่เพิ่มขึ้น กำลังเฉลี่ย = งาน ÷ เวลา</p>
+$$P=\frac{W}{t}=\frac{mgh}{t}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$P=\frac{50(10)(2)}{4}=\frac{1000}{4}$$
+$$P=250\ \text{W}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$P=250\ \text{W}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> รถ 1000 kg เร่งจาก 0 ถึง 20 m/s ใน 10 s กำลังเฉลี่ยเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>รถเร่งจากนิ่ง งานของเครื่องยนต์กลายเป็นพลังงานจลน์</p>
+$$m=1000\ \text{kg},\quad u=0,\quad v=20\ \text{m/s},\quad t=10\ \text{s}$$
+$$\text{หา } P_{av}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หางาน (พลังงานจลน์ที่เพิ่มขึ้น)</div><p>งานของเครื่องยนต์ = $\Delta E_k$</p>
+$$W=\Delta E_k=\tfrac12mv^2-0$$
+$$W=\tfrac12(1000)(400)$$
+$$W=200{,}000\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หากำลังเฉลี่ย</div>
+$$P=\frac{W}{t}=\frac{200000}{10}$$
+$$P=20{,}000\ \text{W}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$P=20\ \text{kW}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> รถไฟวิ่งคงที่ 290 km/h แรงต้าน $1.03\times10^5$ N หากำลังเครื่องยนต์ (สไลด์หน้า 32)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>รถไฟวิ่งความเร็วคงที่ ต้องแปลงความเร็วเป็น m/s ก่อนใช้ $P=Fv$</p>
+$$v=290\ \text{km/h},\quad f=1.03\times10^5\ \text{N}$$
+$$\text{หา } P=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาแรงขับ</div><p>ความเร็วคงที่ ความเร่งเป็นศูนย์ แรงลัพธ์ต้องเป็นศูนย์ แรงขับ = แรงต้าน</p>
+$$F=f=1.03\times10^5\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แปลงหน่วยความเร็ว</div><p>หารด้วย 3.6</p>
+$$v=\frac{290}{3.6}=80.6\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เลือกสูตรกำลัง</div><p>แรงขับขนานกับความเร็ว ใช้ $P=Fv$</p>
+$$P=Fv$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่าและคำนวณ</div>
+$$P=1.03\times10^5\times80.6$$
+$$P=8.30\times10^6\ \text{W}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$P=8.30\times10^6\ \text{W}$$
+<p class="alt">(≈ 8.3 MW)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 3 หน้า 30–33</p></section>
+<h2 class="part" id="g13">บทที่ 4 · โมเมนตัมและการชน</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 4 (39 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch4/ch4_01.jpg" alt="บทที่ 4 หน้า 1"><img loading="lazy" src="img/ch4/ch4_02.jpg" alt="บทที่ 4 หน้า 2"><img loading="lazy" src="img/ch4/ch4_03.jpg" alt="บทที่ 4 หน้า 3"><img loading="lazy" src="img/ch4/ch4_04.jpg" alt="บทที่ 4 หน้า 4"><img loading="lazy" src="img/ch4/ch4_05.jpg" alt="บทที่ 4 หน้า 5"><img loading="lazy" src="img/ch4/ch4_06.jpg" alt="บทที่ 4 หน้า 6"><img loading="lazy" src="img/ch4/ch4_07.jpg" alt="บทที่ 4 หน้า 7"><img loading="lazy" src="img/ch4/ch4_08.jpg" alt="บทที่ 4 หน้า 8"><img loading="lazy" src="img/ch4/ch4_09.jpg" alt="บทที่ 4 หน้า 9"><img loading="lazy" src="img/ch4/ch4_10.jpg" alt="บทที่ 4 หน้า 10"><img loading="lazy" src="img/ch4/ch4_11.jpg" alt="บทที่ 4 หน้า 11"><img loading="lazy" src="img/ch4/ch4_12.jpg" alt="บทที่ 4 หน้า 12"><img loading="lazy" src="img/ch4/ch4_13.jpg" alt="บทที่ 4 หน้า 13"><img loading="lazy" src="img/ch4/ch4_14.jpg" alt="บทที่ 4 หน้า 14"><img loading="lazy" src="img/ch4/ch4_15.jpg" alt="บทที่ 4 หน้า 15"><img loading="lazy" src="img/ch4/ch4_16.jpg" alt="บทที่ 4 หน้า 16"><img loading="lazy" src="img/ch4/ch4_17.jpg" alt="บทที่ 4 หน้า 17"><img loading="lazy" src="img/ch4/ch4_18.jpg" alt="บทที่ 4 หน้า 18"><img loading="lazy" src="img/ch4/ch4_19.jpg" alt="บทที่ 4 หน้า 19"><img loading="lazy" src="img/ch4/ch4_20.jpg" alt="บทที่ 4 หน้า 20"><img loading="lazy" src="img/ch4/ch4_21.jpg" alt="บทที่ 4 หน้า 21"><img loading="lazy" src="img/ch4/ch4_22.jpg" alt="บทที่ 4 หน้า 22"><img loading="lazy" src="img/ch4/ch4_23.jpg" alt="บทที่ 4 หน้า 23"><img loading="lazy" src="img/ch4/ch4_24.jpg" alt="บทที่ 4 หน้า 24"><img loading="lazy" src="img/ch4/ch4_25.jpg" alt="บทที่ 4 หน้า 25"><img loading="lazy" src="img/ch4/ch4_26.jpg" alt="บทที่ 4 หน้า 26"><img loading="lazy" src="img/ch4/ch4_27.jpg" alt="บทที่ 4 หน้า 27"><img loading="lazy" src="img/ch4/ch4_28.jpg" alt="บทที่ 4 หน้า 28"><img loading="lazy" src="img/ch4/ch4_29.jpg" alt="บทที่ 4 หน้า 29"><img loading="lazy" src="img/ch4/ch4_30.jpg" alt="บทที่ 4 หน้า 30"><img loading="lazy" src="img/ch4/ch4_31.jpg" alt="บทที่ 4 หน้า 31"><img loading="lazy" src="img/ch4/ch4_32.jpg" alt="บทที่ 4 หน้า 32"><img loading="lazy" src="img/ch4/ch4_33.jpg" alt="บทที่ 4 หน้า 33"><img loading="lazy" src="img/ch4/ch4_34.jpg" alt="บทที่ 4 หน้า 34"><img loading="lazy" src="img/ch4/ch4_35.jpg" alt="บทที่ 4 หน้า 35"><img loading="lazy" src="img/ch4/ch4_36.jpg" alt="บทที่ 4 หน้า 36"><img loading="lazy" src="img/ch4/ch4_37.jpg" alt="บทที่ 4 หน้า 37"><img loading="lazy" src="img/ch4/ch4_38.jpg" alt="บทที่ 4 หน้า 38"><img loading="lazy" src="img/ch4/ch4_39.jpg" alt="บทที่ 4 หน้า 39"></details>
+<section class="topic" id="t14"><h2>10. โมเมนตัม และการดล</h2><div class="concept">
+<p><strong>โมเมนตัม $p=mv$ คือ "ความยากในการหยุด"</strong></p>
+<p>รถบรรทุกช้าๆ หยุดยากพอกับรถเล็กวิ่งเร็ว</p>
+<p><strong>การดล = แรง × เวลา = การเปลี่ยนโมเมนตัม</strong></p>
+<p>จะหยุดวัตถุ (เปลี่ยน $p$ เท่าเดิม) ถ้า<strong>ยืดเวลา</strong>ได้ แรงก็<strong>น้อยลง</strong></p>
+<p>นี่คือหลักของถุงลมนิรภัย การย่อเข่าตอนกระโดดลง</p>
+<p><strong>ทำไมกระดอนกลับเจ็บกว่าหยุดนิ่ง</strong></p>
+<p>ต้องเปลี่ยนโมเมนตัมจาก $+mv$ เป็น $-mv$ คือเปลี่ยนไป $2mv$</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$p=mv\qquad J=\int F\,dt=F_{av}\Delta t=\Delta p$$</p>
+<p>การดล = พื้นที่ใต้กราฟ $F$–$t$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ลูกเทนนิส 60 g เข้ามา 30 m/s กระดอนกลับ 30 m/s กราฟแรงเป็นสามเหลี่ยมกว้าง 5 ms หา $F_{max}$ (สไลด์หน้า 8)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องหา</div><p>ต้องแปลงหน่วยเป็น SI ก่อน (g เป็น kg, ms เป็น s) และกำหนดทิศขาเข้าเป็นบวก เพราะโมเมนตัมเป็นเวกเตอร์ ต้องใส่เครื่องหมายทิศ</p>
+$$m=60\ \text{g}=0.06\ \text{kg},\quad u=+30\ \text{m/s},\quad v=-30\ \text{m/s},\quad\Delta t=5\ \text{ms}=0.005\ \text{s}$$
+$$\text{หา } F_{max}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาการเปลี่ยนโมเมนตัม</div><p>การดล = การเปลี่ยนโมเมนตัม $\Delta p=m(v-u)$ ลูกกระดอนกลับ ความเร็วเปลี่ยนไปเกือบสองเท่า</p>
+$$\Delta p=0.06\big(-30-30\big)$$
+$$\Delta p=-3.6\ \text{N·s}$$
+$$|J|=3.6\ \text{N·s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เชื่อมกับพื้นที่ใต้กราฟแรง-เวลา</div><p>การดลคือพื้นที่ใต้กราฟ $F$–$t$ กราฟเป็นสามเหลี่ยม พื้นที่ $=\frac12\times$ ฐาน $\times$ สูง</p>
+$$J=\tfrac12F_{max}\Delta t$$
+$$\tfrac12F_{max}(0.005)=3.6$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แก้สมการหา $F_{max}$</div>
+$$F_{max}=\frac{3.6\times2}{0.005}=\frac{7.2}{0.005}$$
+$$F_{max}=1440\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$F_{max}=1440\ \text{N}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ลูกกระดอนกลับ คิด $\Delta v=0$ เพราะอัตราเร็วเท่าเดิม — ต้องเป็น $2v$</li>
+<li>ลืมแปลงกรัมเป็นกิโลกรัม หรือ ms เป็น s</li>
+<li>กราฟสามเหลี่ยม ลืม $\frac12$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> บอล 0.5 kg วิ่ง 10 m/s มีโมเมนตัมเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>โมเมนตัม $p=mv$</p>
+$$m=0.5\ \text{kg},\quad v=10\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าและคำนวณ</div>
+$$p=mv=0.5\times10$$
+$$p=5\ \text{kg·m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$p=5\ \text{kg·m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> บอล 0.5 kg พุ่งชนผนัง 10 m/s กระดอนกลับ 8 m/s สัมผัส 0.02 s หาแรงเฉลี่ย</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>กำหนดทิศเข้าหาผนังเป็นบวก ลูกกระดอนกลับจึงมีความเร็วเป็นลบ</p>
+$$m=0.5\ \text{kg},\quad u=+10\ \text{m/s},\quad v=-8\ \text{m/s},\quad\Delta t=0.02\ \text{s}$$
+$$\text{หา } F_{av}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาการเปลี่ยนโมเมนตัม</div><p>ทิศกลับ จึงรวมขนาดของทั้งสองความเร็ว</p>
+$$\Delta p=m(v-u)=0.5\big(-8-10\big)$$
+$$\Delta p=0.5(-18)=-9\ \text{N·s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้การดล</div><p>$J=F_{av}\Delta t=\Delta p$ จัดรูปหาแรงเฉลี่ย (ขนาด)</p>
+$$F_{av}=\frac{|\Delta p|}{\Delta t}=\frac{9}{0.02}$$
+$$F_{av}=450\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$F_{av}=450\ \text{N}$$
+<p class="alt">(ทิศของแรงชี้ออกจากผนัง)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> คน 70 kg ในรถ 20 m/s ชนกระแทกหยุด ถ้าไม่มีถุงลม หยุดใน 0.01 s ถ้ามีถุงลม หยุดใน 0.1 s แรงต่างกันเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>คนหยุดนิ่งจากความเร็ว 20 m/s เปรียบเทียบสองกรณี ต่างกันที่เวลาที่ใช้หยุด</p>
+$$m=70\ \text{kg},\quad u=20\ \text{m/s},\quad v=0$$
+$$t_1=0.01\ \text{s}\ (\text{ไม่มีถุงลม}),\quad t_2=0.1\ \text{s}\ (\text{มีถุงลม})$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาการเปลี่ยนโมเมนตัม</div><p>ความเร็วเริ่มและสุดท้ายเหมือนกัน ถุงลมเปลี่ยนแค่เวลา $\Delta p$ จึงเท่ากันทั้งสองกรณี</p>
+$$|\Delta p|=m|v-u|=70\times20$$
+$$|\Delta p|=1400\ \text{N·s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กรณีไม่มีถุงลม</div><p>ใช้ $F=\frac{\Delta p}{\Delta t}$</p>
+$$F_1=\frac{1400}{0.01}$$
+$$F_1=140{,}000\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: กรณีมีถุงลม</div>
+$$F_2=\frac{1400}{0.1}$$
+$$F_2=14{,}000\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: เปรียบเทียบ</div>
+$$\frac{F_2}{F_1}=\frac{14000}{140000}=\frac1{10}$$
+$$F_1-F_2=126{,}000\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$F:\ 140\ \text{kN}\ \longrightarrow\ 14\ \text{kN}$$
+<p class="alt">(ถุงลมยืดเวลาเป็น 10 เท่า ลดแรงเหลือ $\frac1{10}$ แรงต่างกัน 126 kN)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 4 หน้า 6–8 · บท 2 หน้า 24</p></section>
+<section class="topic" id="t15"><h2>11. การชน และการระเบิด</h2><div class="concept">
+<p><strong>ทำไมโมเมนตัมคงที่ในการชน</strong></p>
+<p>ระหว่างชน แรงที่วัตถุกระทำต่อกันเป็นคู่กิริยา-ปฏิกิริยา (ขนาดเท่ากัน ทิศตรงข้าม เวลาเท่ากัน)</p>
+<p>การดลจึงหักล้างกัน โมเมนตัม<strong>รวม</strong>ไม่เปลี่ยน</p>
+<p><strong>แต่พลังงานจลน์ไม่จำเป็นต้องคงที่</strong></p>
+<p>พลังงานอาจกลายเป็นเสียง ความร้อน การบุบ</p>
+<p>คงที่เฉพาะการชนแบบยืดหยุ่น</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$m_1u_1+m_2u_2=m_1v_1+m_2v_2$$</p>
+<table>
+<thead>
+<tr>
+<th>ชนิด</th>
+<th>โมเมนตัม</th>
+<th>พลังงานจลน์</th>
+<th>สมการเพิ่ม</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ยืดหยุ่น</td>
+<td>คงที่</td>
+<td>คงที่</td>
+<td>$u_1+v_1=u_2+v_2$</td>
+</tr>
+<tr>
+<td>ไม่ยืดหยุ่น</td>
+<td>คงที่</td>
+<td>ลดลง</td>
+<td>—</td>
+</tr>
+<tr>
+<td>ชนแล้วติดกัน</td>
+<td>คงที่</td>
+<td>ลดลง</td>
+<td>$v_1=v_2=v$</td>
+</tr>
+<tr>
+<td>ระเบิดจากหยุดนิ่ง</td>
+<td>รวม = 0</td>
+<td>เพิ่มขึ้น</td>
+<td>$0=m_1v_1+m_2v_2$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> รถ 4.0 kg (2.0 m/s ขวา) ชนรถ 6.0 kg (4.0 m/s ซ้าย) แบบยืดหยุ่น หาความเร็วหลังชน (สไลด์หน้า 20–22)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>กำหนดขวาเป็นบวก ไม่อย่างนั้นเครื่องหมายผิด รถคันที่สองไปทางซ้าย จึงติดลบ</p>
+$$m_1=4.0\ \text{kg},\ u_1=+2\ \text{m/s}\qquad m_2=6.0\ \text{kg},\ u_2=-4\ \text{m/s}$$
+$$\text{ชนแบบยืดหยุ่น หา } v_1=?\ ,\ v_2=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนสมการอนุรักษ์โมเมนตัม</div><p>โมเมนตัมรวมคงที่ในทุกการชน</p>
+$$m_1u_1+m_2u_2=m_1v_1+m_2v_2$$
+$$4(2)+6(-4)=4v_1+6v_2$$
+$$-16=4v_1+6v_2$$
+$$-8=2v_1+3v_2\qquad\cdots(1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนสมการเพิ่มของการชนยืดหยุ่น</div><p>มีตัวแปร 2 ตัว ต้องการ 2 สมการ สมการ $u_1+v_1=u_2+v_2$ ใช้แทนอนุรักษ์พลังงานจลน์ได้ (ง่ายกว่ามาก)</p>
+$$u_1+v_1=u_2+v_2$$
+$$2+v_1=-4+v_2$$
+$$v_2=v_1+6\qquad\cdots(2)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน (2) ลงใน (1)</div>
+$$-8=2v_1+3(v_1+6)$$
+$$-8=5v_1+18$$
+$$5v_1=-26$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณ $v_1$ และ $v_2$</div><p>เครื่องหมายลบหมายถึงไปทางซ้าย</p>
+$$v_1=-5.2\ \text{m/s}$$
+$$v_2=-5.2+6=0.8\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: ตรวจด้วยพลังงานจลน์</div><p>ชนยืดหยุ่นต้องมีพลังงานจลน์รวมเท่าเดิม</p>
+$$E_{\text{ก่อน}}=\tfrac12(4)(2)^2+\tfrac12(6)(4)^2=8+48=56\ \text{J}$$
+$$E_{\text{หลัง}}=\tfrac12(4)(5.2)^2+\tfrac12(6)(0.8)^2=54.1+1.9=56\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_1=5.2\ \text{m/s}\ \text{ไปทางซ้าย},\qquad v_2=0.8\ \text{m/s}\ \text{ไปทางขวา}$$
+<p class="check">ตรวจ: พลังงานจลน์ก่อนและหลังเท่ากัน (56 J) ✓</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ลืมเครื่องหมายทิศ (ไปซ้ายต้องเป็นลบ)</li>
+<li>ใช้อนุรักษ์พลังงานจลน์กับการชนแบบติดกัน</li>
+<li>ลูกตุ้มขีปนะ: ใช้พลังงานตอนชน — ต้องใช้โมเมนตัมตอนชน แล้วค่อยใช้พลังงานตอนเหวี่ยงขึ้น</li>
+<li>ชน 2 มิติ: รวมความเร็วเป็นตัวเลขเดียว ทั้งที่ต้องแยกแกน $x$ และ $y$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> รถ 2 kg (3 m/s) ชนรถ 1 kg ที่จอดนิ่งแล้วติดกัน หาความเร็วหลังชนและพลังงานที่เสีย</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ชนแล้วติดกัน (ไม่ยืดหยุ่นสมบูรณ์) ทั้งสองคันมีความเร็วเท่ากันหลังชน</p>
+$$m_1=2\ \text{kg},\ u_1=3\ \text{m/s}\qquad m_2=1\ \text{kg},\ u_2=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อนุรักษ์โมเมนตัม</div><p>ใช้สูตรชนแล้วติดกัน $m_1u_1+m_2u_2=(m_1+m_2)v$</p>
+$$2(3)+1(0)=(2+1)v$$
+$$6=3v$$
+$$v=2\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาพลังงานจลน์ก่อนชน</div>
+$$E_{\text{ก่อน}}=\tfrac12(2)(3)^2=9\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาพลังงานจลน์หลังชน</div>
+$$E_{\text{หลัง}}=\tfrac12(3)(2)^2=6\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาพลังงานที่เสีย</div><p>พลังงานจลน์ลดลง กลายเป็นเสียง ความร้อน และการบุบ</p>
+$$\Delta E=9-6=3\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=2\ \text{m/s},\qquad\Delta E=3\ \text{J}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> นักบินอวกาศ 75 kg ขว้างถัง 12 kg ออกไป 8.0 m/s เพื่อกลับสถานีที่ห่าง 100 m ใช้เวลาเท่าไร (สไลด์หน้า 25)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>นักบินอวกาศและถังเริ่มนิ่ง ในอวกาศไม่มีแรงภายนอก การขว้างจึงเหมือนการระเบิด โมเมนตัมรวม = 0 ให้ทิศไปหาสถานีเป็นบวก ถังพุ่งไปทางตรงข้าม</p>
+$$M=75\ \text{kg},\quad m=12\ \text{kg},\quad v_{\text{ถัง}}=8.0\ \text{m/s},\quad d=100\ \text{m}$$
+$$\text{หา } t=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อนุรักษ์โมเมนตัม</div><p>โมเมนตัมรวมก่อนขว้างเป็น 0 ถังไปทางลบ ตัวนักบินไปทางบวก</p>
+$$0=Mv-m(8)$$
+$$0=75v-12(8)$$
+$$75v=96$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คำนวณความเร็วนักบิน</div>
+$$v=\frac{96}{75}=1.28\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาเวลา</div><p>ความเร็วคงที่ ใช้ $t=\frac{d}{v}$</p>
+$$t=\frac{100}{1.28}$$
+$$t=78\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$t\approx78\ \text{s}$$
+<p class="alt">(สไลด์ปัด $v$ เป็น 1.3 m/s ได้ 77 s)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> กระสุน 10 g ความเร็ว 400 m/s ฝังในก้อนไม้ 1.99 kg ที่แขวนอยู่ ก้อนไม้เหวี่ยงขึ้นสูงเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แยกเป็นสองขั้น ขั้นชนใช้โมเมนตัม ขั้นเหวี่ยงขึ้นใช้พลังงาน ใช้ $g=10$ m/s²</p>
+$$m=10\ \text{g}=0.01\ \text{kg},\quad u=400\ \text{m/s},\quad M=1.99\ \text{kg}$$
+$$\text{หาความสูง } h=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ขั้นชน: อนุรักษ์โมเมนตัม</div><p>ตอนชนพลังงานหายไปเป็นความร้อน จึงใช้พลังงานไม่ได้ กระสุนฝังในไม้ จึงเคลื่อนที่ไปด้วยกัน มวลรวม $0.01+1.99=2.00$ kg</p>
+$$mu=(m+M)v$$
+$$0.01(400)=2.00\,v$$
+$$v=\frac{4}{2.00}=2\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ขั้นเหวี่ยง: อนุรักษ์พลังงาน</div><p>หลังชนไม่มีแรงเสียดทาน พลังงานจลน์เปลี่ยนเป็นศักย์ทั้งหมด</p>
+$$\tfrac12(m+M)v^2=(m+M)gh$$
+$$\tfrac12v^2=gh$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่าและคำนวณ</div>
+$$h=\frac{v^2}{2g}=\frac{2^2}{2(10)}=\frac{4}{20}$$
+$$h=0.2\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$h=0.2\ \text{m}=20\ \text{cm}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 4 หน้า 10–35</p></section>
+<section class="topic" id="t16"><h2>12. จุดศูนย์กลางมวล และจรวด</h2><div class="concept">
+<p><strong>จุดศูนย์กลางมวลคือ "ค่าเฉลี่ยถ่วงน้ำหนัก" ของตำแหน่ง</strong></p>
+<p>มวลมากดึงจุด CM เข้าหาตัวมากกว่า</p>
+<p>ระบบทั้งหมดเคลื่อนที่เหมือนมวลทั้งหมดรวมอยู่ที่ CM</p>
+<p><strong>จรวดเร่งได้โดยไม่ต้องดันอะไร</strong></p>
+<p>ปล่อยแก๊สออกไปข้างหลัง (โมเมนตัมไปข้างหลัง) จรวดจึงได้โมเมนตัมไปข้างหน้าเท่ากัน</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$x_{CM}=\frac{\sum m_ix_i}{\sum m_i}\qquad y_{CM}=\frac{\sum m_iy_i}{\sum m_i}$$</p>
+<p>$$F_T=-c\frac{dm}{dt}\qquad v=c\ln\frac{m_0}{m}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> อนุภาค A(1,2) 0.1 kg, B(3,4) 0.2 kg, C(4.5,0) 0.3 kg หาจุด CM (สไลด์หน้า 5)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ใช้สูตรจุดศูนย์กลางมวลของระบบอนุภาค หารด้วยมวลรวม ไม่ใช่จำนวนอนุภาค</p>
+$$A(1,2),\ m_A=0.1\ \text{kg}\qquad B(3,4),\ m_B=0.2\ \text{kg}\qquad C(4.5,0),\ m_C=0.3\ \text{kg}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หามวลรวม</div>
+$$\sum m_i=0.1+0.2+0.3=0.6\ \text{kg}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $x_{CM}$</div><p>คูณมวลกับตำแหน่ง $x$ ของแต่ละตัว แล้วหารด้วยมวลรวม</p>
+$$x_{CM}=\frac{\sum m_ix_i}{\sum m_i}=\frac{0.1(1)+0.2(3)+0.3(4.5)}{0.6}$$
+$$x_{CM}=\frac{0.1+0.6+1.35}{0.6}=\frac{2.05}{0.6}$$
+$$x_{CM}=3.4\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $y_{CM}$</div><p>ทำเหมือนกันกับพิกัด $y$</p>
+$$y_{CM}=\frac{0.1(2)+0.2(4)+0.3(0)}{0.6}=\frac{1.0}{0.6}$$
+$$y_{CM}=1.7\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$(x_{CM},\,y_{CM})=(3.4,\ 1.7)\ \text{m}$$
+<p class="alt">(ใกล้ C เพราะ C หนักสุด)</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>หารด้วยจำนวนอนุภาคแทนมวลรวม</li>
+<li>จรวด: ใช้ $\ln\frac{m}{m_0}$ กลับด้าน ได้ความเร็วติดลบ</li>
+<li>คิดว่ามวลจรวดตอนท้ายรวมเชื้อเพลิง</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> มวล 2 kg ที่ $x=0$ และ 3 kg ที่ $x=5$ m จุด CM อยู่ที่ไหน</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>มวลสองก้อนบนแกน $x$</p>
+$$m_1=2\ \text{kg}\ \text{ที่ }x_1=0\qquad m_2=3\ \text{kg}\ \text{ที่ }x_2=5\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในสูตร CM</div>
+$$x_{CM}=\frac{m_1x_1+m_2x_2}{m_1+m_2}=\frac{2(0)+3(5)}{2+3}$$
+$$x_{CM}=\frac{15}{5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คำนวณ</div>
+$$x_{CM}=3\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$x_{CM}=3\ \text{m}$$
+<p class="alt">(ใกล้มวล 3 kg)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> จรวด 500 kg บรรจุเชื้อเพลิง 400 kg ปล่อยแก๊สที่ $c=250$ m/s เริ่มนิ่ง ความเร็วเมื่อเชื้อเพลิงหมด (สไลด์หน้า 38–39)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>จรวดเริ่มนิ่ง ปล่อยแก๊สออกต่อเนื่อง มวลเริ่มต้นรวมเชื้อเพลิง ตามที่โจทย์ให้จรวด 500 kg บรรจุเชื้อเพลิง 400 kg ตีความว่าเป็นมวลจรวด 500 kg บวกเชื้อเพลิง 400 kg</p>
+$$m_{\text{จรวดเปล่า}}=500\ \text{kg},\quad m_{\text{เชื้อเพลิง}}=400\ \text{kg},\quad c=250\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หามวลเริ่มต้นและมวลสุดท้าย</div><p>เมื่อเชื้อเพลิงหมด เหลือแต่จรวดเปล่า</p>
+$$m_0=500+400=900\ \text{kg}$$
+$$m=500\ \text{kg}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เลือกสูตรจรวด</div><p>มวลลดลง อัตราส่วน $\frac{m_0}{m}>1$ ทำให้ $\ln$ เป็นบวก</p>
+$$v=c\ln\frac{m_0}{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนค่าและคำนวณ</div>
+$$v=250\ln\frac{900}{500}=250\ln1.8$$
+$$v=250(0.588)$$
+$$v=147\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v\approx147\ \text{m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> $^{238}$U สลายเป็น $^{234}$Th + α จากหยุดนิ่ง หาอัตราส่วนพลังงานจลน์ $\frac{E_\alpha}{E_{Th}}$ (สไลด์หน้า 26)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>นิวเคลียส $^{238}$U เริ่มนิ่ง สลายเป็น $^{234}$Th กับอนุภาคแอลฟา (มวลมากกว่ากันประมาณ 234 : 4)</p>
+$$m_{Th}=234,\quad m_\alpha=4,\quad\text{เริ่มนิ่ง}$$
+$$\text{หา }\frac{E_\alpha}{E_{Th}}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อนุรักษ์โมเมนตัม</div><p>โมเมนตัมรวมก่อนสลายเป็น 0 ทั้งสองอนุภาคจึงมีโมเมนตัมขนาดเท่ากัน ทิศตรงข้าม</p>
+$$0=p_\alpha+p_{Th}$$
+$$|p_\alpha|=|p_{Th}|=p$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนพลังงานจลน์ในรูปโมเมนตัม</div><p>จาก $E_k=\frac12mv^2=\frac{p^2}{2m}$ เมื่อ $p$ เท่ากัน พลังงานจลน์แปรผกผันกับมวล</p>
+$$E_k=\frac{p^2}{2m}$$
+$$E_\alpha=\frac{p^2}{2m_\alpha},\qquad E_{Th}=\frac{p^2}{2m_{Th}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอัตราส่วน</div>
+$$\frac{E_\alpha}{E_{Th}}=\frac{p^2/2m_\alpha}{p^2/2m_{Th}}=\frac{m_{Th}}{m_\alpha}$$
+$$\frac{E_\alpha}{E_{Th}}=\frac{234}{4}=58.5$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{E_\alpha}{E_{Th}}=58.5$$
+<p class="alt">(อนุภาคเบาได้พลังงานไปเกือบหมด)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 4 หน้า 4–5, 26, 36–39</p></section>
+<h2 class="part" id="g17">บทที่ 5 · การเคลื่อนที่แบบหมุน</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 5 (43 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch5/ch5_01.jpg" alt="บทที่ 5 หน้า 1"><img loading="lazy" src="img/ch5/ch5_02.jpg" alt="บทที่ 5 หน้า 2"><img loading="lazy" src="img/ch5/ch5_03.jpg" alt="บทที่ 5 หน้า 3"><img loading="lazy" src="img/ch5/ch5_04.jpg" alt="บทที่ 5 หน้า 4"><img loading="lazy" src="img/ch5/ch5_05.jpg" alt="บทที่ 5 หน้า 5"><img loading="lazy" src="img/ch5/ch5_06.jpg" alt="บทที่ 5 หน้า 6"><img loading="lazy" src="img/ch5/ch5_07.jpg" alt="บทที่ 5 หน้า 7"><img loading="lazy" src="img/ch5/ch5_08.jpg" alt="บทที่ 5 หน้า 8"><img loading="lazy" src="img/ch5/ch5_09.jpg" alt="บทที่ 5 หน้า 9"><img loading="lazy" src="img/ch5/ch5_10.jpg" alt="บทที่ 5 หน้า 10"><img loading="lazy" src="img/ch5/ch5_11.jpg" alt="บทที่ 5 หน้า 11"><img loading="lazy" src="img/ch5/ch5_12.jpg" alt="บทที่ 5 หน้า 12"><img loading="lazy" src="img/ch5/ch5_13.jpg" alt="บทที่ 5 หน้า 13"><img loading="lazy" src="img/ch5/ch5_14.jpg" alt="บทที่ 5 หน้า 14"><img loading="lazy" src="img/ch5/ch5_15.jpg" alt="บทที่ 5 หน้า 15"><img loading="lazy" src="img/ch5/ch5_16.jpg" alt="บทที่ 5 หน้า 16"><img loading="lazy" src="img/ch5/ch5_17.jpg" alt="บทที่ 5 หน้า 17"><img loading="lazy" src="img/ch5/ch5_18.jpg" alt="บทที่ 5 หน้า 18"><img loading="lazy" src="img/ch5/ch5_19.jpg" alt="บทที่ 5 หน้า 19"><img loading="lazy" src="img/ch5/ch5_20.jpg" alt="บทที่ 5 หน้า 20"><img loading="lazy" src="img/ch5/ch5_21.jpg" alt="บทที่ 5 หน้า 21"><img loading="lazy" src="img/ch5/ch5_22.jpg" alt="บทที่ 5 หน้า 22"><img loading="lazy" src="img/ch5/ch5_23.jpg" alt="บทที่ 5 หน้า 23"><img loading="lazy" src="img/ch5/ch5_24.jpg" alt="บทที่ 5 หน้า 24"><img loading="lazy" src="img/ch5/ch5_25.jpg" alt="บทที่ 5 หน้า 25"><img loading="lazy" src="img/ch5/ch5_26.jpg" alt="บทที่ 5 หน้า 26"><img loading="lazy" src="img/ch5/ch5_27.jpg" alt="บทที่ 5 หน้า 27"><img loading="lazy" src="img/ch5/ch5_28.jpg" alt="บทที่ 5 หน้า 28"><img loading="lazy" src="img/ch5/ch5_29.jpg" alt="บทที่ 5 หน้า 29"><img loading="lazy" src="img/ch5/ch5_30.jpg" alt="บทที่ 5 หน้า 30"><img loading="lazy" src="img/ch5/ch5_31.jpg" alt="บทที่ 5 หน้า 31"><img loading="lazy" src="img/ch5/ch5_32.jpg" alt="บทที่ 5 หน้า 32"><img loading="lazy" src="img/ch5/ch5_33.jpg" alt="บทที่ 5 หน้า 33"><img loading="lazy" src="img/ch5/ch5_34.jpg" alt="บทที่ 5 หน้า 34"><img loading="lazy" src="img/ch5/ch5_35.jpg" alt="บทที่ 5 หน้า 35"><img loading="lazy" src="img/ch5/ch5_36.jpg" alt="บทที่ 5 หน้า 36"><img loading="lazy" src="img/ch5/ch5_37.jpg" alt="บทที่ 5 หน้า 37"><img loading="lazy" src="img/ch5/ch5_38.jpg" alt="บทที่ 5 หน้า 38"><img loading="lazy" src="img/ch5/ch5_39.jpg" alt="บทที่ 5 หน้า 39"><img loading="lazy" src="img/ch5/ch5_40.jpg" alt="บทที่ 5 หน้า 40"><img loading="lazy" src="img/ch5/ch5_41.jpg" alt="บทที่ 5 หน้า 41"><img loading="lazy" src="img/ch5/ch5_42.jpg" alt="บทที่ 5 หน้า 42"><img loading="lazy" src="img/ch5/ch5_43.jpg" alt="บทที่ 5 หน้า 43"></details>
+<section class="topic" id="t18"><h2>13. จลนศาสตร์การหมุน และโมเมนต์ความเฉื่อย</h2><div class="concept">
+<p><strong>การหมุนมีสูตรคู่ขนานกับการเคลื่อนที่เส้นตรงทุกตัว</strong></p>
+<p>เปลี่ยน $s\to\theta$, $v\to\omega$, $a\to\alpha$, $m\to I$, $F\to\tau$</p>
+<p><strong>โมเมนต์ความเฉื่อย $I$ คือ "มวลของการหมุน"</strong></p>
+<p>ไม่ได้ขึ้นกับมวลอย่างเดียว แต่ขึ้นกับว่า<strong>มวลอยู่ห่างแกนแค่ไหน</strong> (ยกกำลังสอง)</p>
+<p>ถือไม้ตรงกลางหมุนง่าย ถือปลายหมุนยาก แม้เป็นไม้อันเดิม</p>
+<p><strong>ทฤษฎีบทแกนขนาน</strong>: ย้ายแกนออกจาก CM ไป $d$ ต้องบวก $md^2$ เสมอ (หมุนยากขึ้นเสมอ)</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$v=\omega r\qquad a_t=\alpha r\qquad\omega=\omega_0+\alpha t\qquad\Delta\theta=\tfrac{\omega_0+\omega}{2}t\qquad\omega^2=\omega_0^2+2\alpha\Delta\theta$$</p>
+<p>$$I=\sum m_ir_i^2=\int r^2\,dm\qquad I=I_{cm}+md^2\qquad I_z=I_x+I_y$$</p>
+<table>
+<thead>
+<tr>
+<th>วัตถุ</th>
+<th>$I$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>แท่ง แกนกลาง / แกนปลาย</td>
+<td>$\frac1{12}ML^2$ / $\frac13ML^2$</td>
+</tr>
+<tr>
+<td>วงแหวน / จานตัน</td>
+<td>$MR^2$ / $\frac12MR^2$</td>
+</tr>
+<tr>
+<td>ทรงกลมตัน / กลวง</td>
+<td>$\frac25MR^2$ / $\frac23MR^2$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ล้อจักรยานหมุน 10.0 rad/s ออกแรงเบรกจนหยุดใน 5.0 s หาความเร่งเชิงมุมและจำนวนรอบที่หมุน (สไลด์หน้า 8)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ล้อหมุนช้าลงจนหยุด ความเร่งเชิงมุมจึงเป็นลบ การหมุนมีสูตรคู่ขนานกับการเคลื่อนที่เส้นตรง ($v\to\omega$, $a\to\alpha$, $s\to\theta$)</p>
+$$\omega_0=10.0\ \text{rad/s},\quad\omega=0,\quad t=5.0\ \text{s}$$
+$$\text{หา }\alpha=?\ ,\ \text{จำนวนรอบ}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความเร่งเชิงมุม</div><p>ใช้ $\omega=\omega_0+\alpha t$ เหมือน $v=u+at$ ทุกอย่าง</p>
+$$0=10+\alpha(5)$$
+$$5\alpha=-10$$
+$$\alpha=-2.0\ \text{rad/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หามุมที่หมุนไป</div><p>ใช้ $\Delta\theta=\frac{\omega_0+\omega}{2}t$ (เหมือน $s=\frac{u+v}{2}t$)</p>
+$$\Delta\theta=\frac{10+0}{2}(5)$$
+$$\Delta\theta=25\ \text{rad}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แปลงเป็นรอบ</div><p>1 รอบ = $2\pi$ เรเดียน</p>
+$$N=\frac{\Delta\theta}{2\pi}=\frac{25}{2\pi}$$
+$$N=4.0\ \text{รอบ}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\alpha=-2.0\ \text{rad/s}^2,\qquad N=4.0\ \text{รอบ}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ลืมแปลงรอบเป็นเรเดียน หรือ rpm เป็น rad/s</li>
+<li>ใช้ $I_{cm}$ ทั้งที่แกนไม่ผ่าน CM</li>
+<li>คิดว่า $I$ ขึ้นกับมวลอย่างเดียว</li>
+<li>ระยะ $r$ ใน $mr^2$ วัดจาก<strong>แกนหมุน</strong> ไม่ใช่จากจุดกำเนิด</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> จุดบนขอบจานรัศมี 0.3 m หมุน 10 rad/s มีอัตราเร็วเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>จุดบนขอบจานมีอัตราเร็วเชิงเส้นสัมพันธ์กับความเร็วเชิงมุมด้วย $v=\omega r$</p>
+$$r=0.3\ \text{m},\quad\omega=10\ \text{rad/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าและคำนวณ</div>
+$$v=\omega r=10\times0.3$$
+$$v=3\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=3\ \text{m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> มวล 4, 2, 3 kg อยู่บนแกน $y$ ที่ $y=3,-2,-4$ m หา $I$ รอบแกน $x$ และรอบแกน $y$ (สไลด์หน้า 14)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>มวลทุกก้อนอยู่บนแกน $y$ ใช้ $I=\sum m_ir_i^2$ โดย $r_i$ คือระยะตั้งฉากจากมวลถึงแกนหมุน</p>
+$$m_1=4\ \text{kg}\ (y=3),\quad m_2=2\ \text{kg}\ (y=-2),\quad m_3=3\ \text{kg}\ (y=-4)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $I$ รอบแกน $x$</div><p>ระยะจากมวลถึงแกน $x$ คือ $|y|$</p>
+$$I_x=m_1(3)^2+m_2(2)^2+m_3(4)^2$$
+$$I_x=4(9)+2(4)+3(16)$$
+$$I_x=36+8+48=92\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $I$ รอบแกน $y$</div><p>ทุกมวลอยู่<strong>บน</strong>แกน $y$ ระยะถึงแกน = 0 มวลที่อยู่บนแกนหมุนไม่มีส่วนต่อ $I$</p>
+$$I_y=4(0)^2+2(0)^2+3(0)^2$$
+$$I_y=0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$I_x=92\ \text{kg·m}^2,\qquad I_y=0$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> แท่ง 2 kg ยาว 1 m หมุนรอบแกนที่ห่างปลายข้างหนึ่ง 0.25 m หา $I$</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แกนหมุนไม่ผ่านจุดศูนย์กลางมวล (CM) จึงต้องใช้ทฤษฎีบทแกนขนาน</p>
+$$M=2\ \text{kg},\quad L=1\ \text{m},\quad\text{แกนห่างปลายหนึ่ง }0.25\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $I$ รอบแกนที่ผ่าน CM</div><p>แท่งสม่ำเสมอ แกนผ่านกลาง $I_{cm}=\frac1{12}ML^2$</p>
+$$I_{cm}=\frac1{12}(2)(1)^2=0.167\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาระยะแกนห่างจาก CM</div><p>แกนขนานต้องใช้ระยะจาก CM ไม่ใช่จากปลาย CM อยู่กลางแท่งที่ 0.5 m จากปลาย</p>
+$$d=0.5-0.25=0.25\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ใช้ทฤษฎีบทแกนขนาน</div><p>ย้ายแกนออกจาก CM ไป $d$ ต้องบวก $Md^2$</p>
+$$I=I_{cm}+Md^2$$
+$$I=0.167+2(0.25)^2$$
+$$I=0.167+0.125$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณ</div>
+$$I=0.292\ \text{kg·m}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$I\approx0.29\ \text{kg·m}^2$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 5 หน้า 5–21</p></section>
+<section class="topic" id="t19"><h2>14. ทอร์ก และ $\tau=I\alpha$</h2><div class="concept">
+<p><strong>ทอร์กคือ "แรงหมุน"</strong></p>
+<p>ขึ้นกับแรง และ<strong>ระยะจากแกน</strong> (แขน) และมุม</p>
+<p>ประแจยาวขันง่ายกว่า · ผลักประตูใกล้บานพับแทบไม่ขยับ</p>
+<p><strong>ทำไม $\sin\theta$</strong></p>
+<p>นับเฉพาะส่วนของแรงที่ตั้งฉากกับแขน ส่วนที่ขนานกับแขนแค่ดึงหรือดันแกน ไม่ทำให้หมุน</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$\tau=rF\sin\theta\qquad\sum\tau=I\alpha\qquad\tau=\frac{dL}{dt}$$</p>
+<p>รอกที่มีมวล: แต่ละก้อนใช้ $F=ma$ และรอกใช้ $\tau=I\alpha$ เชื่อมด้วย $a=\alpha r$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> รอกเป็นจานมวล $m$ รัศมี $r$ พันเชือกแขวนวัตถุมวล $m$ แสดงว่า $a=\frac{2g}{3}$ (สไลด์หน้า 29)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>รอกเป็นจานตัน ($I=\frac12mr^2$) มวล $m$ รัศมี $r$ เชือกพันรอบไม่ไถล วัตถุแขวนมวล $m$ ต้องแสดงว่า $a=\frac{2g}{3}$</p>
+$$M_{\text{รอก}}=m,\quad I=\tfrac12mr^2,\quad m_{\text{วัตถุ}}=m$$
+$$\text{แสดงว่า } a=\tfrac23g$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎข้อ 2 กับวัตถุ</div><p>วัตถุเคลื่อนลง (ลง = บวก) แรงตึงเชือกต้านการตก</p>
+$$mg-T=ma\qquad\cdots(1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กฎการหมุนกับรอก</div><p>แรงตึงที่ขอบรอกสร้างทอร์ก $\tau=Tr$ และ $a=\alpha r$ เพราะเชือกไม่ไถล</p>
+$$\sum\tau=I\alpha$$
+$$Tr=\tfrac12mr^2\cdot\frac{a}{r}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: จัดรูป $T$</div><p>ตัด $r$ ออกทั้งสองข้าง</p>
+$$T=\tfrac12ma\qquad\cdots(2)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทน (2) ลงใน (1)</div>
+$$mg-\tfrac12ma=ma$$
+$$mg=\tfrac32ma$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: แก้หา $a$</div><p>$m$ ตัดกัน</p>
+$$a=\frac{2}{3}g$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$a=\frac23g$$
+<p class="alt">(น้อยกว่า $g$ เพราะต้องแบ่งไปหมุนรอก)</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ใช้ $T=mg$ กับรอกที่มีมวล</li>
+<li>ใช้ $I$ ของวงแหวนแทนจาน (หรือกลับกัน)</li>
+<li>ลืม $\sin\theta$ เมื่อแรงไม่ตั้งฉากกับแขน</li>
+<li>ระยะ $r$ วัดจากจุดหมุน ไม่ใช่จากปลายวัตถุ</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ออกแรง 40 N ที่ปลายประแจยาว 0.3 m (ก) ตั้งฉาก (ข) ทำมุม 30° กับประแจ หาทอร์ก</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ทอร์ก $\tau=rF\sin\theta$ โดย $\theta$ คือมุมระหว่างแรงกับประแจ ใช้เฉพาะส่วนของแรงที่ตั้งฉากกับแขน</p>
+$$r=0.3\ \text{m},\quad F=40\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: (ก) แรงตั้งฉากกับประแจ</div><p>$\theta=90^\circ$ ซึ่ง $\sin90^\circ=1$</p>
+$$\tau=0.3\times40\times\sin90^\circ$$
+$$\tau=12\ \text{N·m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: (ข) แรงทำมุม 30° กับประแจ</div><p>ส่วนตั้งฉากของแรงเหลือครึ่งหนึ่ง</p>
+$$\tau=0.3\times40\times\sin30^\circ=12\times0.5$$
+$$\tau=6\ \text{N·m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$(\text{ก})\ \tau=12\ \text{N·m},\qquad(\text{ข})\ \tau=6\ \text{N·m}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> จานตัน 2 kg รัศมี 0.5 m ได้รับทอร์ก 1 N·m หาความเร่งเชิงมุม</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>จานตันหมุนรอบแกนกลาง ใช้ $\sum\tau=I\alpha$ ต้องหา $I$ ก่อน</p>
+$$m=2\ \text{kg},\quad R=0.5\ \text{m},\quad\tau=1\ \text{N·m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาโมเมนต์ความเฉื่อยของจานตัน</div><p>$I=\frac12MR^2$</p>
+$$I=\tfrac12(2)(0.5)^2$$
+$$I=0.25\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร่งเชิงมุม</div><p>$\alpha=\frac{\tau}{I}$</p>
+$$\alpha=\frac{1}{0.25}$$
+$$\alpha=4\ \text{rad/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\alpha=4\ \text{rad/s}^2$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> แท่ง 3 kg ยาว 1 m หมุนรอบปลายข้างหนึ่ง ปล่อยจากแนวราบ หาความเร่งเชิงมุมและความเร่งของปลายแท่งขณะเริ่มปล่อย</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แท่งหมุนรอบปลายข้างหนึ่ง ปล่อยจากแนวราบ ขณะเริ่มปล่อยมีแค่น้ำหนักที่ให้ทอร์ก ใช้ $g=10$ m/s²</p>
+$$M=3\ \text{kg},\quad L=1\ \text{m}$$
+$$\text{หา }\alpha=?\ ,\ a_{\text{ปลาย}}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาทอร์กจากน้ำหนัก</div><p>น้ำหนักกระทำที่ CM (กลางแท่ง) ห่างจุดหมุน $\frac L2$ แท่งอยู่แนวราบ น้ำหนักตั้งฉากกับแขน $\sin90^\circ=1$</p>
+$$\tau=Mg\cdot\frac{L}{2}=30(0.5)$$
+$$\tau=15\ \text{N·m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาโมเมนต์ความเฉื่อยรอบปลายแท่ง</div><p>แกนปลาย $I=\frac13ML^2$</p>
+$$I=\tfrac13(3)(1)^2=1\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาความเร่งเชิงมุม</div><p>$\alpha=\frac{\tau}{I}$</p>
+$$\alpha=\frac{15}{1}$$
+$$\alpha=15\ \text{rad/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาความเร่งของปลายแท่ง</div><p>ปลายแท่งอยู่ห่างจุดหมุน $L$ ความเร่งเชิงสัมผัส $a_t=\alpha r$</p>
+$$a=\alpha L=15\times1$$
+$$a=15\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\alpha=15\ \text{rad/s}^2,\qquad a_{\text{ปลาย}}=15\ \text{m/s}^2$$
+<p class="alt">(ปลายแท่งเร่งลงมากกว่า $g$ !)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 5 หน้า 24–29</p></section>
+<section class="topic" id="t20"><h2>15. โมเมนตัมเชิงมุม และการอนุรักษ์</h2><div class="concept">
+<p><strong>ถ้าไม่มีทอร์กภายนอก $L=I\omega$ คงที่</strong></p>
+<p>ลด $I$ (หุบแขน) → $\omega$ ต้องเพิ่ม (หมุนเร็วขึ้น)</p>
+<p><strong>ทำไมพลังงานจลน์เพิ่มขึ้นได้</strong></p>
+<p>$E_k=\frac{L^2}{2I}$ ถ้า $L$ คงที่แต่ $I$ ลด พลังงานเพิ่ม</p>
+<p>พลังงานส่วนนั้นมาจาก<strong>งานที่คนทำ</strong>ตอนดึงแขนเข้า</p>
+<p>จึงห้ามใช้อนุรักษ์พลังงานในโจทย์แบบนี้</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$L=I\omega=mvr\qquad\tau_{\text{ภายนอก}}=0\ \Rightarrow\ I_1\omega_1=I_2\omega_2$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> จาน $I=0.55$ kg·m² (นิ่ง) ถูกวางลงบนจาน $I=2.05$ kg·m² ที่หมุน 2.0 rad/s แล้วหมุนไปด้วยกัน หาความเร็วเชิงมุมสุดท้าย (สไลด์หน้า 34)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>จานนิ่งถูกวางลงบนจานที่หมุน แล้วหมุนไปด้วยกัน ต้องหา $\omega$ สุดท้าย</p>
+$$I_1=0.55\ \text{kg·m}^2,\ \omega_1=0\qquad I_2=2.05\ \text{kg·m}^2,\ \omega_2=2.0\ \text{rad/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกหลักการ</div><p>แรงเสียดทานระหว่างจานเป็นแรงภายในระบบ ไม่มีทอร์กภายนอก จึงอนุรักษ์โมเมนตัมเชิงมุม $L=I\omega$ (ห้ามใช้อนุรักษ์พลังงาน เพราะมีการเสียดสี)</p>
+$$L_{\text{ก่อน}}=L_{\text{หลัง}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนสมการ</div><p>หลังติดกัน โมเมนตัมเชิงมุมคือ $(I_1+I_2)\omega$</p>
+$$I_1\omega_1+I_2\omega_2=(I_1+I_2)\omega$$
+$$0.55(0)+2.05(2.0)=(0.55+2.05)\omega$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณ</div>
+$$4.1=2.6\,\omega$$
+$$\omega=\frac{4.1}{2.6}=1.6\ \text{rad/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega=1.6\ \text{rad/s}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ใช้อนุรักษ์พลังงานจลน์การหมุน (ใช้ไม่ได้ เพราะมีงานภายในหรือการเสียดทาน)</li>
+<li>ลืมรวม $I$ ของคน/วัตถุที่มาเกาะเพิ่ม</li>
+<li>คนยืนที่ขอบ ใช้ $I=mR^2$ (คิดเป็นอนุภาค) ไม่ใช่ $\frac12mR^2$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> นักสเก็ต $I$ ลดจาก 4 เป็น 1.6 kg·m² เดิมหมุน 2 rad/s ตอนนี้หมุนเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>นักสเก็ตไม่มีทอร์กภายนอก จึงอนุรักษ์ $L=I\omega$</p>
+$$I_1=4\ \text{kg·m}^2,\quad\omega_1=2\ \text{rad/s},\quad I_2=1.6\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนสมการ</div>
+$$I_1\omega_1=I_2\omega_2$$
+$$4(2)=1.6\,\omega_2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คำนวณ</div><p>ลด $I$ ลง $\omega$ ต้องเพิ่มขึ้น</p>
+$$\omega_2=\frac{8}{1.6}$$
+$$\omega_2=5\ \text{rad/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega_2=5\ \text{rad/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> คนยืนบนแท่นหมุนถือดัมเบล $I=6$ kg·m² หมุน 1 rad/s หุบแขนจน $I=3$ หาความเร็วเชิงมุมใหม่ และพลังงานจลน์ก่อน-หลัง</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ไม่มีทอร์กภายนอก $L$ คงที่ แต่พลังงานจลน์ไม่คงที่ เพราะคนทำงานตอนดึงแขนเข้า</p>
+$$I_1=6\ \text{kg·m}^2,\quad\omega_1=1\ \text{rad/s},\quad I_2=3\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $\omega$ ใหม่ด้วยการอนุรักษ์ $L$</div>
+$$I_1\omega_1=I_2\omega_2$$
+$$6(1)=3\omega_2$$
+$$\omega_2=2\ \text{rad/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาพลังงานจลน์ก่อน</div>
+$$E_1=\tfrac12I_1\omega_1^2=\tfrac12(6)(1)^2=3\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาพลังงานจลน์หลัง</div>
+$$E_2=\tfrac12I_2\omega_2^2=\tfrac12(3)(2)^2=6\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: เปรียบเทียบ</div><p>พลังงานเพิ่ม 3 J มาจากงานที่คนออกแรงดึงดัมเบลเข้า</p>
+$$E_2-E_1=6-3=3\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega_2=2\ \text{rad/s},\qquad E:\ 3\ \text{J}\ \to\ 6\ \text{J}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> ม้าหมุนเป็นจาน 100 kg รัศมี 2 m หมุน 1 rad/s เด็ก 30 kg กระโดดเกาะขอบ (ไม่มีความเร็วตามแนวสัมผัส) หาความเร็วเชิงมุมใหม่</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เด็กกระโดดเกาะขอบโดยไม่มีความเร็วตามแนวสัมผัส ไม่มีทอร์กภายนอก จึงอนุรักษ์ $L$</p>
+$$M=100\ \text{kg},\quad R=2\ \text{m},\quad\omega_1=1\ \text{rad/s},\quad m=30\ \text{kg}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $I$ ของม้าหมุน (จานตัน)</div><p>$I=\frac12MR^2$</p>
+$$I_{\text{จาน}}=\tfrac12(100)(2)^2=200\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $I$ ของเด็กที่ขอบ</div><p>เด็กตัวเล็กเทียบกับรัศมี จึงคิดเป็นมวลจุด $I=mr^2$</p>
+$$I_{\text{เด็ก}}=30(2)^2=120\ \text{kg·m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อนุรักษ์โมเมนตัมเชิงมุม</div><p>ก่อน: เด็กนิ่ง ไม่มีส่วนต่อ $L$ หลัง: จานกับเด็กหมุนไปด้วยกัน</p>
+$$I_{\text{จาน}}\omega_1=(I_{\text{จาน}}+I_{\text{เด็ก}})\omega_2$$
+$$200(1)=(200+120)\omega_2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณ</div>
+$$\omega_2=\frac{200}{320}$$
+$$\omega_2=0.625\ \text{rad/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega_2=0.625\ \text{rad/s}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 5 หน้า 27–34</p></section>
+<section class="topic" id="t21"><h2>16. การกลิ้งโดยไม่ไถล</h2><div class="concept">
+<p><strong>กลิ้ง = เลื่อนที่ + หมุนพร้อมกัน</strong></p>
+<p>จุดที่แตะพื้นมีความเร็ว $v_{cm}-\omega R$ ถ้าไม่ไถลจุดนี้ต้องนิ่ง จึงได้ $v_{cm}=\omega R$</p>
+<p><strong>ทำไมวัตถุกลิ้งช้ากว่าไถลบนพื้นลื่น</strong></p>
+<p>พลังงานศักย์ต้องแบ่งไปเป็นพลังงานหมุนด้วย เหลือให้พลังงานเลื่อนที่น้อยลง</p>
+<p>วัตถุที่ $I$ น้อย (มวลอยู่ใกล้แกน) เสียพลังงานไปหมุนน้อย จึง<strong>ถึงก่อน</strong></p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$v_{cm}=\omega R\qquad E_k=\tfrac12mv^2+\tfrac12I\omega^2$$</p>
+<p>ถ้า $I=kmR^2$</p>
+<p>$$v=\sqrt{\frac{2gH}{1+k}}\qquad a=\frac{g\sin\theta}{1+k}$$</p>
+<p>ทรงกลมตัน $k=\frac25$ · จาน/ทรงกระบอกตัน $k=\frac12$ · วงแหวน $k=1$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ทรงกลมตันกลิ้งลงจากความสูง $H$ แสดงว่า $v=\sqrt{\frac{10gH}{7}}$ (สไลด์หน้า 40)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องแสดง</div><p>ทรงกลมตันกลิ้งลงโดยไม่ไถล ต้องแสดงว่า $v=\sqrt{\frac{10gH}{7}}$ ที่ล่างสุด</p>
+$$I=\tfrac25mR^2,\quad\text{เริ่มนิ่งที่ความสูง }H,\quad v=\omega R$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนสมการอนุรักษ์พลังงาน</div><p>กลิ้งไม่ไถล แรงเสียดทานไม่ทำงาน (จุดสัมผัสไม่เคลื่อน) พลังงานจึงคงที่ พลังงานศักย์กลายเป็นทั้งพลังงานเลื่อนที่และหมุน</p>
+$$mgH=\tfrac12mv^2+\tfrac12I\omega^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน $I$ และ $\omega$</div><p>แทน $I=\frac25mR^2$ และ $\omega=\frac vR$ เพื่อให้พลังงานหมุนอยู่ในรูป $v$</p>
+$$\tfrac12I\omega^2=\tfrac12\cdot\tfrac25mR^2\cdot\frac{v^2}{R^2}$$
+$$\tfrac12I\omega^2=\tfrac15mv^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: รวมพจน์พลังงาน</div>
+$$mgH=\tfrac12mv^2+\tfrac15mv^2$$
+$$mgH=\tfrac{7}{10}mv^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แก้หา $v$</div><p>$m$ ตัดกัน ไม่ขึ้นกับมวลและรัศมี</p>
+$$v^2=\frac{10gH}{7}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=\sqrt{\frac{10gH}{7}}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ลืมพลังงานจลน์การหมุน ได้ $v=\sqrt{2gH}$ (ผิด)</li>
+<li>คิดว่าวัตถุหนักกลิ้งถึงก่อน — ขึ้นกับ $k$ (รูปร่าง) เท่านั้น</li>
+<li>คิดว่าแรงเสียดทานทำงานเสียพลังงาน (ไม่จริงถ้าไม่ไถล)</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> จานตัน 2 kg กลิ้งด้วย 2 m/s มีพลังงานจลน์รวมเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>พลังงานจลน์รวมของวัตถุกลิ้ง = พลังงานเลื่อนที่ + พลังงานหมุน และ $\omega=\frac vR$</p>
+$$m=2\ \text{kg},\quad v=2\ \text{m/s},\quad I=\tfrac12mR^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาพลังงานเลื่อนที่</div>
+$$E_{\text{เลื่อน}}=\tfrac12mv^2=\tfrac12(2)(2)^2=4\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาพลังงานหมุน</div><p>$R$ ตัดกันหมด ไม่ต้องรู้รัศมี</p>
+$$E_{\text{หมุน}}=\tfrac12I\omega^2=\tfrac12\cdot\tfrac12mR^2\cdot\frac{v^2}{R^2}=\tfrac14mv^2$$
+$$E_{\text{หมุน}}=\tfrac14(2)(4)=2\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: รวมพลังงาน</div>
+$$E_k=4+2=6\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$E_k=6\ \text{J}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ปล่อยวงแหวน จานตัน และทรงกลมตัน ให้กลิ้งลงพื้นเอียงพร้อมกัน เรียงลำดับการถึงพื้น</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ปล่อยวงแหวน จานตัน และทรงกลมตันกลิ้งลงพื้นเอียงพร้อมกัน ต้องเรียงลำดับการถึงพื้น เขียน $I=kmR^2$</p>
+$$a=\frac{g\sin\theta}{1+k}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปรียบเทียบความเร่ง</div><p>$k$ น้อย $a$ มาก ถึงก่อน</p>
+$$k_{\text{ทรงกลมตัน}}=0.4,\quad k_{\text{จานตัน}}=0.5,\quad k_{\text{วงแหวน}}=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คำนวณอัตราส่วนความเร่ง</div><p>เทียบ $\frac{1}{1+k}$ ของแต่ละวัตถุ</p>
+$$\frac{1}{1.4}=0.71\ >\ \frac{1}{1.5}=0.67\ >\ \frac{1}{2}=0.5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: สรุปลำดับ</div><p>มวลของวงแหวนอยู่ไกลแกนทั้งหมด ต้องใช้พลังงานไปหมุนมากที่สุด จึงช้าที่สุด</p>
+$$a_{\text{ทรงกลม}}>a_{\text{จาน}}>a_{\text{วงแหวน}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{ทรงกลมตัน}\ \to\ \text{จานตัน}\ \to\ \text{วงแหวน}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> ทรงกระบอกตันกลิ้งลงจากความสูง 1.5 m หาความเร็วที่ล่างสุด เทียบกับกล่องไถลบนพื้นลื่น</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เปรียบเทียบทรงกระบอกตันที่กลิ้งกับกล่องที่ไถลบนพื้นลื่น ใช้ $g=10$ m/s²</p>
+$$H=1.5\ \text{m},\quad k=\tfrac12\ (\text{ทรงกระบอกตัน})$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความเร็วของทรงกระบอกที่กลิ้ง</div><p>ใช้ $v=\sqrt{\frac{2gH}{1+k}}$ ด้วย $1+k=1.5$</p>
+$$v=\sqrt{\frac{2gH}{1.5}}=\sqrt{\frac{4gH}{3}}$$
+$$v=\sqrt{\frac{4(10)(1.5)}{3}}=\sqrt{20}$$
+$$v=4.47\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร็วของกล่องที่ไถล</div><p>กล่องไม่ต้องแบ่งพลังงานไปหมุน $mgH=\frac12mv^2$</p>
+$$v=\sqrt{2gH}=\sqrt{2(10)(1.5)}=\sqrt{30}$$
+$$v=5.48\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_{\text{ทรงกระบอก}}=4.47\ \text{m/s},\qquad v_{\text{กล่อง}}=5.48\ \text{m/s}$$
+<p class="check">ตรวจ: กล่องเร็วกว่า เพราะไม่ต้องใช้พลังงานไปหมุน</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 5 หน้า 35–42</p></section>
+<h2 class="part" id="g22">บทที่ 7 · การสั่น</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 7 (39 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch7/ch7_01.jpg" alt="บทที่ 7 หน้า 1"><img loading="lazy" src="img/ch7/ch7_02.jpg" alt="บทที่ 7 หน้า 2"><img loading="lazy" src="img/ch7/ch7_03.jpg" alt="บทที่ 7 หน้า 3"><img loading="lazy" src="img/ch7/ch7_04.jpg" alt="บทที่ 7 หน้า 4"><img loading="lazy" src="img/ch7/ch7_05.jpg" alt="บทที่ 7 หน้า 5"><img loading="lazy" src="img/ch7/ch7_06.jpg" alt="บทที่ 7 หน้า 6"><img loading="lazy" src="img/ch7/ch7_07.jpg" alt="บทที่ 7 หน้า 7"><img loading="lazy" src="img/ch7/ch7_08.jpg" alt="บทที่ 7 หน้า 8"><img loading="lazy" src="img/ch7/ch7_09.jpg" alt="บทที่ 7 หน้า 9"><img loading="lazy" src="img/ch7/ch7_10.jpg" alt="บทที่ 7 หน้า 10"><img loading="lazy" src="img/ch7/ch7_11.jpg" alt="บทที่ 7 หน้า 11"><img loading="lazy" src="img/ch7/ch7_12.jpg" alt="บทที่ 7 หน้า 12"><img loading="lazy" src="img/ch7/ch7_13.jpg" alt="บทที่ 7 หน้า 13"><img loading="lazy" src="img/ch7/ch7_14.jpg" alt="บทที่ 7 หน้า 14"><img loading="lazy" src="img/ch7/ch7_15.jpg" alt="บทที่ 7 หน้า 15"><img loading="lazy" src="img/ch7/ch7_16.jpg" alt="บทที่ 7 หน้า 16"><img loading="lazy" src="img/ch7/ch7_17.jpg" alt="บทที่ 7 หน้า 17"><img loading="lazy" src="img/ch7/ch7_18.jpg" alt="บทที่ 7 หน้า 18"><img loading="lazy" src="img/ch7/ch7_19.jpg" alt="บทที่ 7 หน้า 19"><img loading="lazy" src="img/ch7/ch7_20.jpg" alt="บทที่ 7 หน้า 20"><img loading="lazy" src="img/ch7/ch7_21.jpg" alt="บทที่ 7 หน้า 21"><img loading="lazy" src="img/ch7/ch7_22.jpg" alt="บทที่ 7 หน้า 22"><img loading="lazy" src="img/ch7/ch7_23.jpg" alt="บทที่ 7 หน้า 23"><img loading="lazy" src="img/ch7/ch7_24.jpg" alt="บทที่ 7 หน้า 24"><img loading="lazy" src="img/ch7/ch7_25.jpg" alt="บทที่ 7 หน้า 25"><img loading="lazy" src="img/ch7/ch7_26.jpg" alt="บทที่ 7 หน้า 26"><img loading="lazy" src="img/ch7/ch7_27.jpg" alt="บทที่ 7 หน้า 27"><img loading="lazy" src="img/ch7/ch7_28.jpg" alt="บทที่ 7 หน้า 28"><img loading="lazy" src="img/ch7/ch7_29.jpg" alt="บทที่ 7 หน้า 29"><img loading="lazy" src="img/ch7/ch7_30.jpg" alt="บทที่ 7 หน้า 30"><img loading="lazy" src="img/ch7/ch7_31.jpg" alt="บทที่ 7 หน้า 31"><img loading="lazy" src="img/ch7/ch7_32.jpg" alt="บทที่ 7 หน้า 32"><img loading="lazy" src="img/ch7/ch7_33.jpg" alt="บทที่ 7 หน้า 33"><img loading="lazy" src="img/ch7/ch7_34.jpg" alt="บทที่ 7 หน้า 34"><img loading="lazy" src="img/ch7/ch7_35.jpg" alt="บทที่ 7 หน้า 35"><img loading="lazy" src="img/ch7/ch7_36.jpg" alt="บทที่ 7 หน้า 36"><img loading="lazy" src="img/ch7/ch7_37.jpg" alt="บทที่ 7 หน้า 37"><img loading="lazy" src="img/ch7/ch7_38.jpg" alt="บทที่ 7 หน้า 38"><img loading="lazy" src="img/ch7/ch7_39.jpg" alt="บทที่ 7 หน้า 39"></details>
+<section class="topic" id="t23"><h2>17. การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย (SHM)</h2><div class="concept">
+<p><strong>SHM เกิดเมื่อมีแรงดึงกลับแปรผันตรงกับการกระจัด</strong></p>
+<p>ดึงสปริงออกไปมาก แรงดึงกลับก็มาก ($F=-kx$) จึงได้ $a=-\omega^2x$</p>
+<p><strong>ทำไมความเร็วสูงสุดที่จุดสมดุล ความเร่งสูงสุดที่ปลาย</strong></p>
+<p>ที่ปลาย: สปริงยืดมากสุด แรงมากสุด แต่วัตถุกำลังกลับตัว ความเร็ว 0</p>
+<p>ที่สมดุล: ไม่มีแรง แต่วัตถุถูกเร่งมาตลอดทาง จึงเร็วที่สุด</p>
+<p><strong>ทำไมคาบไม่ขึ้นกับแอมพลิจูด</strong></p>
+<p>ดึงออกไกลขึ้น ระยะทางมากขึ้น แต่แรงก็มากขึ้นตาม ทั้งสองหักล้างกันพอดี</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$a=-\omega^2x\qquad\omega=\sqrt{\frac km}\qquad T=2\pi\sqrt{\frac mk}\qquad f=\frac1T$$</p>
+<p>$$x=A\sin(\omega t+\phi)\qquad v_{max}=\omega A\qquad a_{max}=\omega^2A$$</p>
+<p>$$E=\tfrac12kA^2\qquad v=\omega\sqrt{A^2-x^2}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> อนุภาค SHM มี $a=-2.65x$, แอมพลิจูด 0.35 m เริ่มที่ $x=0$ หา $\omega$, อัตราเร็วสูงสุด และ $x$ ที่ $t=2.5$ s (สไลด์หน้า 13)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>อนุภาค SHM เริ่มที่จุดสมดุล ($x=0$ ที่ $t=0$) ต้องหา $\omega$, อัตราเร็วสูงสุด และ $x$ ที่ $t=2.5$ s</p>
+$$a=-2.65x,\quad A=0.35\ \text{m},\quad x(0)=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $\omega$</div><p>เทียบกับรูปทั่วไป $a=-\omega^2x$ ตัวเลขหน้า $x$ คือ $\omega^2$ ไม่ใช่ $\omega$</p>
+$$\omega^2=2.65$$
+$$\omega=\sqrt{2.65}=1.63\ \text{rad/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอัตราเร็วสูงสุด</div><p>อัตราเร็วสูงสุดที่จุดสมดุล $v_{max}=\omega A$</p>
+$$v_{max}=1.63\times0.35$$
+$$v_{max}=0.570\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เลือกรูปสมการตำแหน่ง</div><p>เริ่มที่สมดุล จึงใช้ $x=A\sin\omega t$ เพราะตอน $t=0$ ต้องได้ $x=0$ ซึ่ง $\sin0=0$</p>
+$$x=A\sin\omega t$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่า $t=2.5$ s</div><p>มุม $\omega t$ เป็นเรเดียน ต้องตั้งเครื่องคิดเลขโหมด RAD</p>
+$$\omega t=1.63\times2.5=4.07\ \text{rad}$$
+$$x=0.35\sin(4.07)$$
+$$x=0.35(-0.800)$$
+$$x=-0.280\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega=1.63\ \text{rad/s},\quad v_{max}=0.570\ \text{m/s},\quad x=-0.280\ \text{m}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>เครื่องคิดเลขโหมดองศา</li>
+<li>สับสน $\omega$ (rad/s) กับ $f$ (Hz): $\omega=2\pi f$</li>
+<li>สลับ $m$ กับ $k$ ใต้ราก</li>
+<li>คิดว่าความเร่งมากสุดที่สมดุล (กลับกัน)</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> มวล 0.5 kg ติดสปริง $k=200$ N/m หา $\omega$ และคาบ</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>มวลติดสปริงเป็น SHM</p>
+$$m=0.5\ \text{kg},\quad k=200\ \text{N/m}$$
+$$\text{หา }\omega=?\ ,\ T=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $\omega$</div><p>ใช้ $\omega=\sqrt{\frac km}$</p>
+$$\omega=\sqrt{\frac{200}{0.5}}=\sqrt{400}$$
+$$\omega=20\ \text{rad/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาคาบ</div><p>ใช้ $T=\frac{2\pi}{\omega}$</p>
+$$T=\frac{2\pi}{20}$$
+$$T=0.314\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega=20\ \text{rad/s},\qquad T=0.314\ \text{s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ระบบเดิม แอมพลิจูด 5 cm หา $v_{max}$, $a_{max}$, พลังงานรวม และความเร็วที่ $x=3$ cm</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ระบบเดิม ต้องแปลง cm เป็น m ก่อนคำนวณ</p>
+$$\omega=20\ \text{rad/s},\quad k=200\ \text{N/m},\quad m=0.5\ \text{kg},\quad A=0.05\ \text{m}$$
+$$x=0.03\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอัตราเร็วสูงสุด (ที่สมดุล)</div><p>$v_{max}=\omega A$</p>
+$$v_{max}=20(0.05)=1\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร่งสูงสุด (ที่ปลาย)</div><p>$a_{max}=\omega^2A$</p>
+$$a_{max}=20^2(0.05)=400(0.05)=20\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาพลังงานรวม</div><p>ที่ปลาย พลังงานทั้งหมดเป็นพลังงานศักย์สปริง</p>
+$$E=\tfrac12kA^2=\tfrac12(200)(0.05)^2$$
+$$E=0.25\ \text{J}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาความเร็วที่ $x=3$ cm</div><p>ใช้ $v=\omega\sqrt{A^2-x^2}$ ซึ่งมาจากอนุรักษ์พลังงาน $\frac12mv^2+\frac12kx^2=\frac12kA^2$</p>
+$$v=20\sqrt{0.05^2-0.03^2}=20\sqrt{0.0025-0.0009}$$
+$$v=20\sqrt{0.0016}=20(0.04)$$
+$$v=0.8\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v_{max}=1\ \text{m/s},\quad a_{max}=20\ \text{m/s}^2,\quad E=0.25\ \text{J},\quad v(0.03)=0.8\ \text{m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> มวล 2 kg ติดสปริงแนวดิ่ง $k=250$ N/m มีมวล 1 kg วางทับ หาแอมพลิจูดมากสุดที่ก้อนบนไม่ลอยหลุด ($g=9.8$) (จาก 15-16.pdf ข้อ 13)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>มวลสองก้อนซ้อนกันสั่นขึ้นลงไปด้วยกัน ต้องหาแอมพลิจูดมากสุดที่ก้อนบนไม่ลอยหลุด ใช้ $g=9.8$ m/s² ตามโจทย์</p>
+$$M=2\ \text{kg},\quad m=1\ \text{kg}\ (\text{ก้อนบน}),\quad k=250\ \text{N/m},\quad g=9.8\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $\omega^2$ ของระบบ</div><p>สั่นไปด้วยกัน ใช้มวลรวม 3 kg</p>
+$$\omega^2=\frac{k}{M+m}=\frac{250}{3}=83.3\ \text{s}^{-2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: วิเคราะห์ก้อนบนที่จุดสูงสุด</div><p>ที่จุดสูงสุด ความเร่งชี้ลงขนาด $\omega^2A$ ก้อนบนมีน้ำหนัก $mg$ ลง และ $N$ ขึ้น</p>
+$$mg-N=m\omega^2A$$
+$$N=m(g-\omega^2A)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตั้งเงื่อนไขไม่หลุด</div><p>ถ้าระบบต้องเร่งลงมากกว่า $g$ ก้อนบนจะตามไม่ทัน ลอยหลุด จุดวิกฤตคือ $N=0$ ดังนั้นต้องมี $N\ge0$</p>
+$$N\ge0\ \Rightarrow\ \omega^2A\le g$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: แทนค่า</div>
+$$A\le\frac{g}{\omega^2}=\frac{9.8}{83.3}$$
+$$A\le0.118\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$A_{max}=0.118\ \text{m}=11.8\ \text{cm}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 7 หน้า 4–16 · 15-16.pdf</p></section>
+<section class="topic" id="t24"><h2>18. ลูกตุ้ม</h2><div class="concept">
+<p><strong>ทำไมลูกตุ้มเป็น SHM ได้</strong></p>
+<p>แรงดึงกลับคือ $mg\sin\theta$ ไม่ได้แปรผันตรงกับ $\theta$</p>
+<p>แต่ถ้า<strong>มุมเล็ก</strong> $\sin\theta\approx\theta$ จึงกลายเป็น SHM</p>
+<p><strong>ทำไมคาบลูกตุ้มอย่างง่ายไม่ขึ้นกับมวล</strong></p>
+<p>มวลมาก แรงดึงกลับมาก แต่ก็เร่งยากเท่ากัน หักล้างกัน</p>
+<p><strong>Physical pendulum</strong> ใช้ $I$ รอบจุดหมุน และ $h$ = ระยะจากจุดหมุนถึง CM</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>ลูกตุ้มอย่างง่าย</p>
+<p>$$\omega=\sqrt{\frac gL}\qquad T=2\pi\sqrt{\frac Lg}$$</p>
+<p>ลูกตุ้มกายภาพ</p>
+<p>$$\omega=\sqrt{\frac{mgh}{I}}\qquad T=2\pi\sqrt{\frac{I}{mgh}}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> แท่งยาว $\ell$ หมุนรอบปลาย แกว่งมุมเล็ก หาคาบ (สไลด์หน้า 35)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แท่งหมุนรอบปลายเป็นลูกตุ้มกายภาพ มุมเล็กจึงเป็น SHM ใช้ $\omega=\sqrt{\frac{Mgh}{I}}$</p>
+$$M,\ \ell\ \text{(แท่งสม่ำเสมอ)},\quad\text{แกนอยู่ที่ปลาย}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $I$ รอบแกนที่ปลาย</div><p>แกนหมุนอยู่ที่ปลาย ไม่ใช่ CM</p>
+$$I=\tfrac13M\ell^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $h$</div><p>$h$ คือระยะจากจุดหมุนถึง CM ซึ่งอยู่กลางแท่ง</p>
+$$h=\frac{\ell}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $\omega$</div><p>แทน $I$ และ $h$ ลงในสูตร</p>
+$$\omega=\sqrt{\frac{Mgh}{I}}=\sqrt{\frac{Mg\ell/2}{M\ell^2/3}}$$
+$$\omega=\sqrt{\frac{3g}{2\ell}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาคาบ</div><p>ใช้ $T=\frac{2\pi}{\omega}$</p>
+$$T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{2\ell}{3g}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$T=2\pi\sqrt{\frac{2\ell}{3g}}$$
+<p class="alt">(สั้นกว่าลูกตุ้มอย่างง่ายยาว $\ell$ ซึ่งมี $T=2\pi\sqrt{\ell/g}$)</p></div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>คิดว่าคาบขึ้นกับมวล</li>
+<li>ใช้ $I_{cm}$ แทน $I$ รอบจุดหมุน</li>
+<li>ใช้ $h$ เป็นความยาวทั้งแท่ง</li>
+<li>สลับเป็น $2\pi\sqrt{g/L}$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ลูกตุ้มยาว 1 m คาบบนโลกเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ลูกตุ้มอย่างง่าย คาบไม่ขึ้นกับมวล ใช้ $g=10$ m/s²</p>
+$$L=1\ \text{m},\quad g=10\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>$T=2\pi\sqrt{\frac Lg}$</p>
+$$T=2\pi\sqrt{\frac{L}{g}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$T=2\pi\sqrt{\frac{1}{10}}=2\pi(0.316)$$
+$$T=1.99\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$T=1.99\ \text{s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ตุ้มหูห่วงรัศมี $R$ แกว่งรอบจุดแขวน หาคาบ (สไลด์หน้า 33–34)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ตุ้มหูห่วงแกว่งรอบจุดแขวนที่อยู่บนห่วง เป็นลูกตุ้มกายภาพ</p>
+$$\text{ห่วงรัศมี }R,\ \text{มวล }M,\quad I_{cm}=MR^2,\quad\text{จุดแขวนห่าง CM เป็น }R$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $I$ รอบจุดแขวนด้วยทฤษฎีบทแกนขนาน</div><p>ย้ายแกนจาก CM ไป $d=R$ ต้องบวก $MR^2$</p>
+$$I=I_{cm}+Md^2=MR^2+MR^2$$
+$$I=2MR^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $h$</div><p>ระยะจากจุดหมุนถึง CM</p>
+$$h=R$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $\omega$</div>
+$$\omega=\sqrt{\frac{Mgh}{I}}=\sqrt{\frac{MgR}{2MR^2}}$$
+$$\omega=\sqrt{\frac{g}{2R}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาคาบ</div>
+$$T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{2R}{g}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$T=2\pi\sqrt{\frac{2R}{g}}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> แท่งยาว $L$ หมุนรอบจุดที่ห่าง CM เป็น $x$ หา $x$ ที่ทำให้คาบสั้นที่สุด (15-16.pdf ข้อ 14)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แท่งยาว $L$ หมุนรอบจุดที่ห่างจาก CM เป็น $x$ ต้องหา $x$ ที่ทำให้ $T$ น้อยที่สุด</p>
+$$I_{cm}=\tfrac1{12}mL^2,\quad h=x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $I$ ด้วยทฤษฎีบทแกนขนาน</div>
+$$I=\tfrac1{12}mL^2+mx^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาคาบในรูปของ $x$</div><p>ใช้ $T=2\pi\sqrt{\frac{I}{mgh}}$ ด้วย $h=x$</p>
+$$T=2\pi\sqrt{\frac{\tfrac1{12}mL^2+mx^2}{mgx}}$$
+$$T=2\pi\sqrt{\frac{L^2+12x^2}{12gx}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เปลี่ยนโจทย์เป็นหาค่าต่ำสุดของฟังก์ชัน</div><p>ค่าคงที่และรากไม่เปลี่ยนตำแหน่งจุดต่ำสุด จึงหาค่าต่ำสุดของ $f(x)$ ที่อยู่ในรากแทนได้</p>
+$$T\ \text{น้อยสุด}\ \Longleftrightarrow\ f(x)=\frac{L^2}{x}+12x\ \text{น้อยสุด}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ดิฟแล้วตั้งเท่ากับศูนย์</div><p>ที่จุดต่ำสุด ความชันเป็นศูนย์</p>
+$$f^{\prime}(x)=-\frac{L^2}{x^2}+12=0$$
+$$x^2=\frac{L^2}{12}$$
+$$x=\frac{L}{\sqrt{12}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: ยืนยันว่าเป็นค่าต่ำสุด</div><p>ข้อเขียนควรแสดงว่าเป็นค่าต่ำสุด ไม่ใช่สูงสุด ด้วยอนุพันธ์อันดับสอง ($x>0$)</p>
+$$f^{\prime\prime}(x)=\frac{2L^2}{x^3}>0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$x=\frac{L}{\sqrt{12}}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 7 หน้า 29–39 · 15-16.pdf</p></section>
+<section class="topic" id="t25"><h2>19. การสั่นแบบมีแรงต้าน และเรโซแนนซ์</h2><div class="concept">
+<p><strong>ทำไมแอมพลิจูดลดลง</strong></p>
+<p>แรงต้าน $-bv$ ดึงพลังงานออกทุกรอบ แอมพลิจูดจึงลดแบบเอกซ์โพเนนเชียล</p>
+<p><strong>3 แบบ</strong></p>
+<p>underdamped: แรงต้านน้อย ยังสั่นแต่ค่อยๆ เบาลง</p>
+<p>critical: กลับสู่สมดุล<strong>เร็วที่สุดโดยไม่สั่น</strong> (โช้คอัพที่ดี)</p>
+<p>overdamped: แรงต้านมากเกิน ค่อยๆ คืบกลับ ช้า</p>
+<p><strong>เรโซแนนซ์</strong></p>
+<p>ผลักด้วยความถี่ที่ตรงกับความถี่ธรรมชาติ ทุกครั้งที่ผลักจะเติมพลังงานในจังหวะเดียวกัน แอมพลิจูดจึงโตมาก (เหมือนไกวชิงช้าให้ถูกจังหวะ)</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$m\ddot x+b\dot x+kx=0\qquad x=A_0e^{-bt/2m}\sin(\omega t+\delta)\qquad\omega=\sqrt{\frac km-\frac{b^2}{4m^2}}$$</p>
+<p>critical damping เมื่อ</p>
+<p>$$\frac{b^2}{4m^2}=\frac km\quad\Longleftrightarrow\quad b=2\sqrt{km}$$</p>
+<p>ความถี่ธรรมชาติ</p>
+<p>$$f_0=\frac1{2\pi}\sqrt{\frac km}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> มวล 0.1 kg สปริง $k=10$ N/m แรงต้าน $b=0.2$ kg/s หาความถี่เชิงมุม และเวลาที่แอมพลิจูดลดเหลือครึ่ง</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>การสั่นมีแรงต้าน $bv$ ต้องเช็กชนิดการสั่นก่อน เพราะถ้าไม่ใช่ underdamped จะไม่มีการสั่น</p>
+$$m=0.1\ \text{kg},\quad k=10\ \text{N/m},\quad b=0.2\ \text{kg/s}$$
+$$\text{หา }\omega=?\ ,\ t_{1/2}=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เช็กชนิดของการสั่น</div><p>เทียบ $\frac{k}{m}$ กับ $\frac{b^2}{4m^2}$ ถ้าตัวหลังน้อยกว่า คือ underdamped</p>
+$$\frac{k}{m}=\frac{10}{0.1}=100$$
+$$\frac{b^2}{4m^2}=\frac{0.04}{0.04}=1<100\ \Rightarrow\ \text{underdamped}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความถี่เชิงมุม</div><p>ใช้ $\omega=\sqrt{\frac km-\frac{b^2}{4m^2}}$ (เกือบเท่าตอนไม่มีแรงต้าน)</p>
+$$\omega=\sqrt{100-1}$$
+$$\omega=9.95\ \text{rad/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตั้งสมการแอมพลิจูดลดเหลือครึ่ง</div><p>ส่วน $A_0e^{-bt/2m}$ คือแอมพลิจูดที่ลดลงตามเวลา</p>
+$$A_0e^{-bt/2m}=\tfrac12A_0$$
+$$e^{-bt/2m}=\tfrac12$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ใส่ลอการิทึมธรรมชาติ</div>
+$$\frac{b}{2m}t=\ln2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: แทนค่าและคำนวณ</div><p>$\frac{b}{2m}=\frac{0.2}{0.2}=1$</p>
+$$t=\frac{\ln2}{1}$$
+$$t=0.69\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\omega=9.95\ \text{rad/s},\qquad t_{1/2}=0.69\ \text{s}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>คิดว่าโช้คอัพควรเป็น overdamped (ที่ดีที่สุดคือ critical)</li>
+<li>คิดว่าเรโซแนนซ์เกิดที่ความถี่ใดก็ได้ที่แรงมาก — ต้องตรงกับ $f_0$</li>
+<li>ลืมว่าแรงขับทำให้ระบบสั่นด้วยความถี่ของ<strong>แรงขับ</strong> ไม่ใช่ $f_0$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> มวล 0.2 kg ติดสปริง $k=80$ N/m ต้องเขย่าด้วยความถี่เท่าไรจึงเกิดเรโซแนนซ์</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เรโซแนนซ์เกิดเมื่อความถี่แรงขับเท่ากับความถี่ธรรมชาติ $f_0$</p>
+$$m=0.2\ \text{kg},\quad k=80\ \text{N/m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>$f_0=\frac1{2\pi}\sqrt{\frac km}$</p>
+$$f_0=\frac{1}{2\pi}\sqrt{\frac{k}{m}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$f_0=\frac{1}{2\pi}\sqrt{\frac{80}{0.2}}=\frac{20}{2\pi}$$
+$$f_0=3.18\ \text{Hz}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f_0=3.18\ \text{Hz}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> มวล 0.1 kg สปริง $k=10$ N/m ต้องใช้ $b$ เท่าไรจึงเป็น critical damping</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>critical damping คือกลับสู่สมดุลเร็วที่สุดโดยไม่สั่น เกิดเมื่อ $\frac{b^2}{4m^2}=\frac km$</p>
+$$m=0.1\ \text{kg},\quad k=10\ \text{N/m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>จัดรูปเงื่อนไขเป็น $b=2\sqrt{km}$</p>
+$$b=2\sqrt{km}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$b=2\sqrt{10\times0.1}=2\sqrt1$$
+$$b=2\ \text{kg/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$b=2\ \text{kg/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> มวล 0.100 kg แอมพลิจูดลดจาก 5.0 cm เหลือ 3.0 cm ใน 10 s หา $b$ (แนวสไลด์หน้า 23)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แอมพลิจูดลดแบบเอกซ์โพเนนเชียล ต้องหาค่า $b$</p>
+$$m=0.100\ \text{kg},\quad A_0=5.0\ \text{cm},\quad A(10\ \text{s})=3.0\ \text{cm}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งสมการอัตราส่วนแอมพลิจูด</div><p>$A=A_0e^{-bt/2m}$ จึงหารด้วย $A_0$ ได้ ซึ่งหน่วย cm ตัดกัน</p>
+$$\frac{A}{A_0}=e^{-b(10)/2m}=\frac{3}{5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใส่ลอการิทึมธรรมชาติ</div>
+$$-\frac{b}{2m}(10)=\ln\frac35$$
+$$\frac{b}{2m}(10)=\ln\frac53=0.511$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แก้หา $b$</div>
+$$b=\frac{2m(0.511)}{10}=\frac{2(0.1)(0.511)}{10}$$
+$$b=0.0102\ \text{kg/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$b\approx0.010\ \text{kg/s}$$
+<p class="alt">(ตัวเลขอ่านจากกราฟในสไลด์ ไม่แน่ใจ ควรตรวจกับต้นฉบับ)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 7 หน้า 17–28</p></section>
+<h2 class="part" id="g26">บทที่ 8 · คลื่นและเสียง</h2><details class="slides"><summary>🖼 ภาพสไลด์ประกอบ: บทที่ 8 (50 หน้า, กดเพื่อเปิด)</summary><img loading="lazy" src="img/ch8/ch8_01.jpg" alt="บทที่ 8 หน้า 1"><img loading="lazy" src="img/ch8/ch8_02.jpg" alt="บทที่ 8 หน้า 2"><img loading="lazy" src="img/ch8/ch8_03.jpg" alt="บทที่ 8 หน้า 3"><img loading="lazy" src="img/ch8/ch8_04.jpg" alt="บทที่ 8 หน้า 4"><img loading="lazy" src="img/ch8/ch8_05.jpg" alt="บทที่ 8 หน้า 5"><img loading="lazy" src="img/ch8/ch8_06.jpg" alt="บทที่ 8 หน้า 6"><img loading="lazy" src="img/ch8/ch8_07.jpg" alt="บทที่ 8 หน้า 7"><img loading="lazy" src="img/ch8/ch8_08.jpg" alt="บทที่ 8 หน้า 8"><img loading="lazy" src="img/ch8/ch8_09.jpg" alt="บทที่ 8 หน้า 9"><img loading="lazy" src="img/ch8/ch8_10.jpg" alt="บทที่ 8 หน้า 10"><img loading="lazy" src="img/ch8/ch8_11.jpg" alt="บทที่ 8 หน้า 11"><img loading="lazy" src="img/ch8/ch8_12.jpg" alt="บทที่ 8 หน้า 12"><img loading="lazy" src="img/ch8/ch8_13.jpg" alt="บทที่ 8 หน้า 13"><img loading="lazy" src="img/ch8/ch8_14.jpg" alt="บทที่ 8 หน้า 14"><img loading="lazy" src="img/ch8/ch8_15.jpg" alt="บทที่ 8 หน้า 15"><img loading="lazy" src="img/ch8/ch8_16.jpg" alt="บทที่ 8 หน้า 16"><img loading="lazy" src="img/ch8/ch8_17.jpg" alt="บทที่ 8 หน้า 17"><img loading="lazy" src="img/ch8/ch8_18.jpg" alt="บทที่ 8 หน้า 18"><img loading="lazy" src="img/ch8/ch8_19.jpg" alt="บทที่ 8 หน้า 19"><img loading="lazy" src="img/ch8/ch8_20.jpg" alt="บทที่ 8 หน้า 20"><img loading="lazy" src="img/ch8/ch8_21.jpg" alt="บทที่ 8 หน้า 21"><img loading="lazy" src="img/ch8/ch8_22.jpg" alt="บทที่ 8 หน้า 22"><img loading="lazy" src="img/ch8/ch8_23.jpg" alt="บทที่ 8 หน้า 23"><img loading="lazy" src="img/ch8/ch8_24.jpg" alt="บทที่ 8 หน้า 24"><img loading="lazy" src="img/ch8/ch8_25.jpg" alt="บทที่ 8 หน้า 25"><img loading="lazy" src="img/ch8/ch8_26.jpg" alt="บทที่ 8 หน้า 26"><img loading="lazy" src="img/ch8/ch8_27.jpg" alt="บทที่ 8 หน้า 27"><img loading="lazy" src="img/ch8/ch8_28.jpg" alt="บทที่ 8 หน้า 28"><img loading="lazy" src="img/ch8/ch8_29.jpg" alt="บทที่ 8 หน้า 29"><img loading="lazy" src="img/ch8/ch8_30.jpg" alt="บทที่ 8 หน้า 30"><img loading="lazy" src="img/ch8/ch8_31.jpg" alt="บทที่ 8 หน้า 31"><img loading="lazy" src="img/ch8/ch8_32.jpg" alt="บทที่ 8 หน้า 32"><img loading="lazy" src="img/ch8/ch8_33.jpg" alt="บทที่ 8 หน้า 33"><img loading="lazy" src="img/ch8/ch8_34.jpg" alt="บทที่ 8 หน้า 34"><img loading="lazy" src="img/ch8/ch8_35.jpg" alt="บทที่ 8 หน้า 35"><img loading="lazy" src="img/ch8/ch8_36.jpg" alt="บทที่ 8 หน้า 36"><img loading="lazy" src="img/ch8/ch8_37.jpg" alt="บทที่ 8 หน้า 37"><img loading="lazy" src="img/ch8/ch8_38.jpg" alt="บทที่ 8 หน้า 38"><img loading="lazy" src="img/ch8/ch8_39.jpg" alt="บทที่ 8 หน้า 39"><img loading="lazy" src="img/ch8/ch8_40.jpg" alt="บทที่ 8 หน้า 40"><img loading="lazy" src="img/ch8/ch8_41.jpg" alt="บทที่ 8 หน้า 41"><img loading="lazy" src="img/ch8/ch8_42.jpg" alt="บทที่ 8 หน้า 42"><img loading="lazy" src="img/ch8/ch8_43.jpg" alt="บทที่ 8 หน้า 43"><img loading="lazy" src="img/ch8/ch8_44.jpg" alt="บทที่ 8 หน้า 44"><img loading="lazy" src="img/ch8/ch8_45.jpg" alt="บทที่ 8 หน้า 45"><img loading="lazy" src="img/ch8/ch8_46.jpg" alt="บทที่ 8 หน้า 46"><img loading="lazy" src="img/ch8/ch8_47.jpg" alt="บทที่ 8 หน้า 47"><img loading="lazy" src="img/ch8/ch8_48.jpg" alt="บทที่ 8 หน้า 48"><img loading="lazy" src="img/ch8/ch8_49.jpg" alt="บทที่ 8 หน้า 49"><img loading="lazy" src="img/ch8/ch8_50.jpg" alt="บทที่ 8 หน้า 50"></details>
+<section class="topic" id="t27"><h2>20. คลื่น และคลื่นนิ่งในเส้นเชือก</h2><div class="concept">
+<p><strong>คลื่นส่งพลังงานโดยไม่ส่งมวล</strong></p>
+<p>อนุภาคแค่สั่นอยู่กับที่ แต่รูปคลื่นเดินทางไป</p>
+<p><strong>ทำไมความเร็วคลื่นในเชือกขึ้นกับเชือก ไม่ใช่มือ</strong></p>
+<p>$v=\sqrt{T/\mu}$ เชือกตึงมาก (ดึงกลับแรง) คลื่นเร็ว · เชือกหนัก (เฉื่อยมาก) คลื่นช้า</p>
+<p>สั่นมือเร็วขึ้นได้ $f$ มากขึ้น แต่ $\lambda$ จะสั้นลงจน $v$ เท่าเดิม</p>
+<p><strong>ทำไมเชือกตรึงสองปลายมีได้แค่บางความถี่</strong></p>
+<p>ปลายตรึงต้องเป็นบัพ (ไม่ขยับ) ความยาวเชือกจึงต้องเป็นจำนวนเต็มของครึ่งความยาวคลื่น</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$v=f\lambda\qquad f=\frac1T\qquad v=\sqrt{\frac{T}{\mu}}\qquad\mu=\frac{m}{L}$$</p>
+<p>เชือกตรึงสองปลาย</p>
+<p>$$\lambda_n=\frac{2L}{n}\qquad f_n=\frac{nv}{2L}\qquad n=1,2,3,\dots$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> สายกีตาร์ยาว 60 cm มวล 10.0 g ให้โน้ต A 220 Hz (fundamental) หาแรงตึง และตำแหน่งที่ต้องกดเพื่อให้ได้ C 260 Hz (สไลด์หน้า 23)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนดและสิ่งที่ต้องหา</div><p>สายกีตาร์ตรึงสองปลาย สั่นที่ความถี่มูลฐาน ต้องหาแรงตึงและตำแหน่งที่ต้องกดเพื่อให้ได้ความถี่ใหม่ โดยเปลี่ยนความยาวส่วนที่สั่น</p>
+$$L=60\ \text{cm}=0.60\ \text{m},\quad m=10.0\ \text{g}=0.010\ \text{kg}$$
+$$f_A=220\ \text{Hz},\quad f_C=260\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หามวลต่อหน่วยความยาว</div><p>ต้องใช้มวลต่อความยาว หน่วย kg/m</p>
+$$\mu=\frac{m}{L}=\frac{0.010}{0.60}$$
+$$\mu=0.0167\ \text{kg/m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความเร็วคลื่นบนสาย</div><p>ความถี่มูลฐานของเชือกตรึงสองปลาย $\lambda_1=2L$ แล้วใช้ $v=f\lambda$</p>
+$$\lambda_1=2L=1.2\ \text{m}$$
+$$v=f\lambda=220\times1.2$$
+$$v=264\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาแรงตึง</div><p>จัดรูปจาก $v=\sqrt{T/\mu}$ เป็น $T=\mu v^2$</p>
+$$T=\mu v^2=0.0167\times264^2$$
+$$T=1.16\times10^3\ \text{N}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: หาความยาวที่สั่นสำหรับโน้ต C</div><p>สายเส้นเดิม แรงตึงเดิม $v$ จึงเท่าเดิม กดสายทำให้ส่วนที่สั่นสั้นลง ความถี่จึงสูงขึ้น ใช้ $f=\frac{v}{2L'}$</p>
+$$L'=\frac{v}{2f_C}=\frac{264}{2(260)}=\frac{264}{520}$$
+$$L'=0.508\ \text{m}=50.8\ \text{cm}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 6: หาตำแหน่งที่ต้องกด</div><p>วัดจากปลายสาย ส่วนที่ไม่สั่นคือ $L-L'$</p>
+$$60-50.8=9.2\ \text{cm}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$T=1.16\times10^3\ \text{N},\qquad\text{กดที่ }9.2\ \text{cm}\ \text{จากปลายสาย}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>คิดว่าสั่นมือเร็วขึ้นแล้วคลื่นเร็วขึ้น</li>
+<li>ลืม $\lambda_1=2L$ (ใช้ $\lambda=L$)</li>
+<li>ใช้มวลรวมแทน $\mu$</li>
+<li>คิดว่าคลื่นหักเหแล้วความถี่เปลี่ยน</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> คลื่นความถี่ 50 Hz ความยาวคลื่น 0.4 m มีความเร็วเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div>
+$$f=50\ \text{Hz},\quad\lambda=0.4\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตร</div><p>ทุกคลื่นใช้ $v=f\lambda$</p>
+$$v=f\lambda$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$v=50\times0.4$$
+$$v=20\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=20\ \text{m/s}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> เชือกตรึงสองปลายยาว 1.5 m คลื่นเร็ว 60 m/s หาความถี่มูลฐานและฮาร์มอนิกที่ 3</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เชือกตรึงสองปลาย ความถี่ $f_n=\frac{nv}{2L}$</p>
+$$L=1.5\ \text{m},\quad v=60\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความถี่มูลฐาน</div><p>มูลฐานคือ $n=1$</p>
+$$f_1=\frac{v}{2L}=\frac{60}{2(1.5)}=\frac{60}{3}$$
+$$f_1=20\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาฮาร์มอนิกที่ 3</div><p>เชือกตรึงสองปลายมีทุกฮาร์มอนิก เป็นจำนวนเต็มเท่าของ $f_1$</p>
+$$f_3=3f_1=3(20)$$
+$$f_3=60\ \text{Hz}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f_1=20\ \text{Hz},\qquad f_3=60\ \text{Hz}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> ถ้าเพิ่มแรงตึงสายเป็น 4 เท่า ความถี่มูลฐานเปลี่ยนอย่างไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แรงตึงเพิ่มเป็น 4 เท่า ความยาวและ $\mu$ เท่าเดิม ต้องหาว่าความถี่มูลฐานเปลี่ยนอย่างไร</p>
+$$T_2=4T_1,\quad L,\ \mu\ \text{คงเดิม}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความเร็วคลื่นใหม่</div><p>จาก $v=\sqrt{T/\mu}$</p>
+$$\frac{v_2}{v_1}=\sqrt{\frac{T_2}{T_1}}=\sqrt4$$
+$$v_2=2v_1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความถี่มูลฐานใหม่</div><p>$f_1=\frac{v}{2L}$ ความยาวเท่าเดิม ความถี่แปรผันตรงกับความเร็ว ซึ่งแปรผันตาม $\sqrt T$</p>
+$$\frac{f_2}{f_1}=\frac{v_2}{v_1}=2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f_2=2f_1$$
+<p class="alt">(ความถี่เพิ่มเป็น 2 เท่า สูงขึ้น 1 อ็อกเทฟ)</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 8 หน้า 4–23</p></section>
+<section class="topic" id="t28"><h2>21. ความเร็วเสียง และความเข้มเสียง (dB)</h2><div class="concept">
+<p><strong>ทำไมเสียงเดินทางในของแข็งเร็วที่สุด</strong></p>
+<p>อนุภาคอยู่ชิดกันและยึดกันแน่น (แข็งมาก) ส่งการสั่นต่อกันได้เร็ว</p>
+<p><strong>ทำไมใช้เดซิเบล (log)</strong></p>
+<p>หูได้ยินความเข้มตั้งแต่ $10^{-12}$ ถึง $1$ W/m² (ต่างกันล้านล้านเท่า)</p>
+<p>log ย่อช่วงนี้ให้เป็น 0–120 dB และหูรับรู้ความดังแบบ log อยู่แล้ว</p>
+<p><strong>ทำไมความเข้มลดตาม $\frac1{r^2}$</strong></p>
+<p>พลังงานกระจายออกเป็นทรงกลม พื้นที่ผิว $4\pi r^2$ โตตามระยะกำลังสอง</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>$$v=331+0.6t_c\qquad v_{\text{ของแข็ง}}=\sqrt{\frac Y\rho}\qquad v_{\text{ของไหล}}=\sqrt{\frac B\rho}$$</p>
+<p>$$I=\frac{P}{4\pi r^2}\qquad\beta=10\log\frac{I}{I_0}\quad(I_0=10^{-12}\text{ W/m}^2)$$</p>
+<p>$$\beta_2-\beta_1=10\log\frac{I_2}{I_1}\qquad\text{โซนาร์: ความลึก}=\frac{vt}{2}$$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> แหล่งเสียงกำลัง $1.00\times10^{-6}$ W ส่งเสียงทุกทิศ จุด A ห่าง 3.00 m หาความเข้มและระดับเสียงที่ A (สไลด์หน้า 40)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แหล่งเสียงส่งเสียงทุกทิศ พลังงานกระจายบนผิวทรงกลม</p>
+$$P=1.00\times10^{-6}\ \text{W},\quad r=3.00\ \text{m},\quad I_0=10^{-12}\ \text{W/m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความเข้มเสียง</div><p>ส่งทุกทิศ พลังงานกระจายบนผิวทรงกลมรัศมี 3 m พื้นที่ผิว $4\pi r^2$</p>
+$$I=\frac{P}{4\pi r^2}=\frac{10^{-6}}{4\pi(3)^2}=\frac{10^{-6}}{113.1}$$
+$$I=8.84\times10^{-9}\ \text{W/m}^2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนในสูตรระดับเสียง</div><p>$\beta=10\log\frac{I}{I_0}$</p>
+$$\beta=10\log\frac{8.84\times10^{-9}}{10^{-12}}$$
+$$\beta=10\log(8840)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณลอการิทึม</div>
+$$\log8840=3.95$$
+$$\beta=10(3.95)=39.5\ \text{dB}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$I=8.84\times10^{-9}\ \text{W/m}^2,\qquad\beta=39.5\ \text{dB}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>โซนาร์ลืมหาร 2 (เสียงเดินทางไปกลับ)</li>
+<li>คิดว่า dB บวกกันได้ตรงๆ (2 ลำโพง 60 dB ไม่ได้ 120 dB แต่ได้ 63 dB)</li>
+<li>ใช้ $\log$ ฐาน $e$ แทนฐาน 10</li>
+<li>ลืมยกกำลังสองระยะใน $I\propto\frac{1}{r^2}$</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ที่ 25°C เสียงเร็วเท่าไร และเสียง 1000 Hz มีความยาวคลื่นเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เสียงในอากาศความเร็วขึ้นกับอุณหภูมิ</p>
+$$t_c=25^\circ\text{C},\quad f=1000\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความเร็วเสียง</div><p>ใช้ $v=331+0.6t_c$</p>
+$$v=331+0.6(25)=331+15$$
+$$v=346\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความยาวคลื่น</div><p>ใช้ $v=f\lambda$ จัดรูปเป็น $\lambda=\frac vf$</p>
+$$\lambda=\frac{346}{1000}$$
+$$\lambda=0.346\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$v=346\ \text{m/s},\qquad\lambda=0.346\ \text{m}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> เรือปล่อยเสียงลงทะเล ได้ยินเสียงสะท้อนหลัง 4 s เสียงในน้ำเร็ว 1500 m/s ทะเลลึกเท่าไร</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เวลา 4 s คือเวลาเสียงไปถึงพื้นทะเลแล้วสะท้อนกลับมา</p>
+$$v=1500\ \text{m/s},\quad t_{\text{ไปกลับ}}=4\ \text{s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เลือกสูตรโซนาร์</div><p>เสียงเดินทางไปและกลับ ระยะจริงจึงเป็นครึ่งเดียวของระยะทางรวม</p>
+$$d=\frac{vt}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและคำนวณ</div>
+$$d=\frac{1500\times4}{2}=\frac{6000}{2}$$
+$$d=3000\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$d=3000\ \text{m}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> เครื่องวัดเสียงห่างแหล่งเสียง 1.2 m วัดได้ 75 dB ถ้าย้ายเข้าไปที่ 0.5 m จะวัดได้เท่าไร (สไลด์หน้า 43)</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>แหล่งเดิม กำลังเดิม ความเข้มแปรผกผันกับระยะกำลังสอง ($I\propto\frac{1}{r^2}$)</p>
+$$r_1=1.2\ \text{m},\quad\beta_1=75\ \text{dB},\quad r_2=0.5\ \text{m}$$
+$$\text{หา }\beta_2=?$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอัตราส่วนความเข้ม</div>
+$$\frac{I_2}{I_1}=\frac{r_1^2}{r_2^2}=\frac{1.2^2}{0.5^2}=\frac{1.44}{0.25}$$
+$$\frac{I_2}{I_1}=5.76$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาผลต่างระดับเสียง</div><p>ใช้ $\beta_2-\beta_1=10\log\frac{I_2}{I_1}$</p>
+$$\beta_2-\beta_1=10\log5.76$$
+$$\beta_2-\beta_1=10(0.760)=7.6\ \text{dB}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาระดับเสียงใหม่</div>
+$$\beta_2=75+7.6$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\beta_2=82.6\ \text{dB}$$</div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 8 หน้า 25–43</p></section>
+<section class="topic" id="t29"><h2>22. คลื่นนิ่งในท่อ</h2><div class="concept">
+<p><strong>ปลายเปิด vs ปลายปิด</strong></p>
+<p>ปลายเปิด อากาศขยับได้อิสระ → เป็น<strong>ปฏิบัพ</strong></p>
+<p>ปลายปิด อากาศขยับไม่ได้ → เป็น<strong>บัพ</strong></p>
+<p><strong>ทำไมท่อปิดมีแค่ฮาร์มอนิกคี่</strong></p>
+<p>ปลายหนึ่งต้องเป็นบัพ อีกปลายต้องเป็นปฏิบัพ ความยาวท่อจึงต้องเป็น $\frac14,\frac34,\frac54,\dots$ ของความยาวคลื่น — เศษส่วนคี่เท่านั้น</p>
+</div>
+<h3>สูตรที่ต้องใช้</h3>
+<div class="formula">
+<p>ท่อเปิดสองปลาย (เหมือนเชือก)</p>
+<p>$$f_n=\frac{nv}{2L}\qquad n=1,2,3,\dots$$</p>
+<p>ท่อปิดหนึ่งปลาย</p>
+<p>$$f_n=\frac{nv}{4L}\qquad n=1,3,5,\dots$$</p>
+<p>ท่อปรับความยาวได้ (ความถี่คงที่): เรโซแนนซ์ถัดไปห่างกัน $\frac\lambda2$</p>
+</div>
+<h3>ตัวอย่างที่ทำให้ดู</h3>
+<div class="example">
+<p><strong>โจทย์:</strong> ท่อเปิดสองปลายยาว 45.7 cm เสียงเร็ว 344 m/s แหล่งเสียงปรับได้ 1000–2000 Hz ความถี่ใดเกิดเรโซแนนซ์ (สไลด์หน้า 49)</p>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ท่อเปิดสองปลายเรโซแนนซ์ที่ความถี่ $f_n=\frac{nv}{2L}$ ต้องหาว่าความถี่ใดอยู่ในช่วงที่แหล่งเสียงปรับได้</p>
+$$L=45.7\ \text{cm}=0.457\ \text{m},\quad v=344\ \text{m/s},\quad 1000\le f\le2000\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความถี่มูลฐาน</div><p>ท่อเปิดสองปลายใช้ $\frac{v}{2L}$</p>
+$$f_1=\frac{v}{2L}=\frac{344}{2(0.457)}$$
+$$f_1=376.4\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เขียนฮาร์มอนิกต่างๆ</div><p>ท่อเปิดมีทุกฮาร์มอนิก $f_n=376.4n$</p>
+$$f_n=376.4n:\quad 376,\ 753,\ 1129,\ 1505,\ 1882,\ 2258,\dots$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คัดเฉพาะที่อยู่ในช่วง 1000–2000 Hz</div><p>$n=1,2$ ต่ำเกินไป และ $n=6$ สูงเกินไป</p>
+$$n=3,\ 4,\ 5$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f=1129\ \text{Hz},\quad 1505\ \text{Hz},\quad 1882\ \text{Hz}$$</div>
+</div>
+</div>
+<h3>กับดักที่พลาดบ่อย</h3>
+<div class="traps">
+<ul>
+<li>ท่อปิดใช้ $n$ คู่</li>
+<li>สลับสูตร $2L$ กับ $4L$</li>
+<li>ลืมว่าปลายเปิดเป็นปฏิบัพ ไม่ใช่บัพ</li>
+<li>ใช้เสียงในอากาศ 331 ทั้งที่โจทย์กำหนดค่าอื่น</li>
+</ul>
+</div>
+<h3>โจทย์ฝึก</h3>
+<div class="prob">
+<p><span class="lvl easy">ง่าย</span> ท่อปิดหนึ่งปลายยาว 25 cm ($v=340$ m/s) หาสองความถี่แรก</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ท่อปิดหนึ่งปลาย ปลายปิดเป็นบัพ ปลายเปิดเป็นปฏิบัพ จึงมีเฉพาะฮาร์มอนิกคี่ $f_n=\frac{nv}{4L}$ ($n=1,3,5,\dots$)</p>
+$$L=25\ \text{cm}=0.25\ \text{m},\quad v=340\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความถี่แรก</div><p>$n=1$</p>
+$$f_1=\frac{340}{4(0.25)}=\frac{340}{1}$$
+$$f_1=340\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาความถี่ที่สอง</div><p>ท่อปิดไม่มี $2f_1$ ถัดไปคือ $n=3$</p>
+$$f_3=3f_1=3(340)$$
+$$f_3=1020\ \text{Hz}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f=340\ \text{Hz},\quad 1020\ \text{Hz}$$</div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl mid">กลาง</span> ท่อเปิดสองปลายยาว 0.5 m ($v=340$ m/s) หาสองความถี่แรก เทียบกับท่อเดียวกันแต่ปิดหนึ่งปลาย</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>เทียบท่อยาวเท่ากันสองแบบ คือเปิดสองปลายกับปิดหนึ่งปลาย</p>
+$$L=0.5\ \text{m},\quad v=340\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ท่อเปิดสองปลาย</div><p>$f_n=\frac{nv}{2L}$ มีทุก $n$</p>
+$$f_1=\frac{340}{2(0.5)}=\frac{340}{1}=340\ \text{Hz}$$
+$$f_2=2f_1=680\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ท่อปิดหนึ่งปลาย</div><p>$f_n=\frac{nv}{4L}$ มีเฉพาะ $n$ คี่ ความถี่ถัดไปคือ $3f_1$</p>
+$$f_1=\frac{340}{4(0.5)}=\frac{340}{2}=170\ \text{Hz}$$
+$$f_3=3f_1=510\ \text{Hz}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{เปิด: }340,\ 680\ \text{Hz}\qquad\text{ปิด: }170,\ 510\ \text{Hz}$$
+<p class="alt">(ท่อปิดมีความถี่มูลฐานต่ำกว่าท่อเปิดยาวเท่ากันครึ่งหนึ่ง)</p></div>
+</div>
+</details>
+</div>
+<div class="prob">
+<p><span class="lvl hard">ยาก</span> ท่อเรโซแนนซ์ปิดหนึ่งปลาย ปรับความยาวได้ ใช้เสียง 500 Hz ($v=340$ m/s) หาความยาวท่อที่ได้ยินเสียงดังครั้งแรกและครั้งที่สอง</p>
+<details>
+<summary>ดูเฉลยทีละขั้น</summary>
+<div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนสิ่งที่โจทย์กำหนด</div><p>ท่อปิดหนึ่งปลายปรับความยาวได้ ความถี่เสียงคงที่ เรโซแนนซ์เกิดเมื่อ $L=\frac\lambda4,\frac{3\lambda}{4},\dots$</p>
+$$f=500\ \text{Hz},\quad v=340\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาความยาวคลื่น</div>
+$$\lambda=\frac{v}{f}=\frac{340}{500}$$
+$$\lambda=0.68\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เรโซแนนซ์ครั้งแรก</div><p>ท่อปิดสั้นที่สุดที่เกิดเรโซแนนซ์คือหนึ่งในสี่ความยาวคลื่น</p>
+$$L_1=\frac{\lambda}{4}=\frac{0.68}{4}$$
+$$L_1=0.17\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เรโซแนนซ์ครั้งที่สอง</div><p>ถัดไปคือสามในสี่ความยาวคลื่น</p>
+$$L_2=\frac{3\lambda}{4}=\frac{3(0.68)}{4}$$
+$$L_2=0.51\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$L_1=17\ \text{cm},\qquad L_2=51\ \text{cm}$$
+<p class="check">ตรวจ: เลื่อนลูกสูบไป $L_2-L_1=\frac\lambda2=0.34$ m ✓</p></div>
+</div>
+</details>
+</div>
+<p class="src">อ้างอิง: บท 8 หน้า 44–49</p></section>
+<h2 class="part" id="app">ภาคผนวก (จากเอกสารติวฉบับก่อน)</h2><p class="hint">ข้อสอบจำลองพร้อมเฉลยแบบตัวเลือก อยู่ในไฟล์ <code>*-ติวก่อนสอบ.html</code> ฉบับก่อน</p>
+<section class="appendix" id="a0"><h2>2. สูตร · คำนิยาม · คำศัพท์สำคัญ</h2><table>
+<thead>
+<tr>
+<th>รายการ</th>
+<th>ความหมาย/สูตร</th>
+<th>ใช้เมื่อไหร่</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUVAT</td>
+<td>$v=u+at,\ s=ut+\frac12at^2,\ v^2=u^2+2as,\ s=\frac{u+v}2t$</td>
+<td>ความเร่ง<strong>คงที่</strong>เท่านั้น</td>
+</tr>
+<tr>
+<td>พิสัยโปรเจกไทล์</td>
+<td>$R=\frac{u^2\sin2\theta}g$</td>
+<td>ขึ้นและตกที่ระดับเดียวกัน</td>
+</tr>
+<tr>
+<td>ความเร่งเข้าสู่ศูนย์กลาง</td>
+<td>$a_c=\frac{v^2}r=\omega^2r$</td>
+<td>วงกลม</td>
+</tr>
+<tr>
+<td>กฎข้อ 2</td>
+<td>$\sum F=ma$, $F=\frac{dp}{dt}$</td>
+<td>ทุกโจทย์แรง</td>
+</tr>
+<tr>
+<td>แรงเสียดทาน</td>
+<td>$f_{s,max}=\mu_sN$, $f_k=\mu_kN$</td>
+<td>ผิวขรุขระ</td>
+</tr>
+<tr>
+<td>Atwood</td>
+<td>$a=\frac{(m_1-m_2)g}{m_1+m_2}$</td>
+<td>รอก 2 มวล</td>
+</tr>
+<tr>
+<td>พื้นเอียง</td>
+<td>$N=mg\cos\theta$, $a=g(\sin\theta-\mu_k\cos\theta)$</td>
+<td>ไถลลงพื้นเอียง</td>
+</tr>
+<tr>
+<td>ความเร็วสุดท้าย</td>
+<td>$v_t=\frac{mg}k$</td>
+<td>แรงต้าน $kv$</td>
+</tr>
+<tr>
+<td>โค้งราบ / ถนนเอียง</td>
+<td>$v_{max}=\sqrt{\mu_sgr}$ / $\tan\theta=\frac{v^2}{rg}$</td>
+<td>รถเลี้ยวโค้ง</td>
+</tr>
+<tr>
+<td>งาน</td>
+<td>$W=Fd\cos\theta=\int F\,dx$</td>
+<td>แรงทำให้เคลื่อนที่</td>
+</tr>
+<tr>
+<td>พลังงาน</td>
+<td>$\frac12mv^2,\ mgh,\ \frac12kx^2$ · $W_{\text{ภายนอก}}=\Delta E$</td>
+<td>ไม่ต้องรู้เส้นทาง</td>
+</tr>
+<tr>
+<td>กำลัง</td>
+<td>$P=\frac Wt=Fv$</td>
+<td>อัตราการทำงาน</td>
+</tr>
+<tr>
+<td>การดล</td>
+<td>$J=\int F\,dt=\Delta p$</td>
+<td>แรงกระทบช่วงสั้น</td>
+</tr>
+<tr>
+<td>ชนยืดหยุ่น 1 มิติ</td>
+<td>$u_1+v_1=u_2+v_2$ (ใช้คู่กับอนุรักษ์ $p$)</td>
+<td>KE คงที่</td>
+</tr>
+<tr>
+<td>ชนติดกัน</td>
+<td>$m_1v_1+m_2v_2=(m_1+m_2)v$</td>
+<td>ไม่ยืดหยุ่นสมบูรณ์</td>
+</tr>
+<tr>
+<td>จรวด</td>
+<td>$v=c\ln\frac{m_0}m$</td>
+<td>ปล่อยมวลออกต่อเนื่อง</td>
+</tr>
+<tr>
+<td>โมเมนต์ความเฉื่อย</td>
+<td>$I=\sum mr^2=\int r^2dm$</td>
+<td>ความยากในการหมุน</td>
+</tr>
+<tr>
+<td>แกนขนาน / ตั้งฉาก</td>
+<td>$I=I_{cm}+md^2$ / $I_z=I_x+I_y$</td>
+<td>แกนไม่ผ่าน CM / แผ่นบาง</td>
+</tr>
+<tr>
+<td>ทอร์ก</td>
+<td>$\tau=rF\sin\theta=I\alpha$</td>
+<td>หมุนเร่ง</td>
+</tr>
+<tr>
+<td>โมเมนตัมเชิงมุม</td>
+<td>$L=I\omega$, $I_1\omega_1=I_2\omega_2$</td>
+<td>ไม่มีทอร์กภายนอก</td>
+</tr>
+<tr>
+<td>กลิ้งไม่ไถล</td>
+<td>$v=\omega R$, $E_k=\frac12mv^2+\frac12I\omega^2$, $a=\frac{g\sin\theta}{1+k}$</td>
+<td>ลูกบอล/ทรงกระบอกกลิ้ง</td>
+</tr>
+<tr>
+<td>SHM สปริง</td>
+<td>$\omega=\sqrt{\frac km}$, $T=2\pi\sqrt{\frac mk}$</td>
+<td>มวลติดสปริง</td>
+</tr>
+<tr>
+<td>SHM ค่าสูงสุด</td>
+<td>$v_{max}=\omega A$ (ที่สมดุล), $a_{max}=\omega^2A$ (ที่ปลาย)</td>
+<td>ถาม $v,a$</td>
+</tr>
+<tr>
+<td>ลูกตุ้ม</td>
+<td>อย่างง่าย $T=2\pi\sqrt{\frac Lg}$ · กายภาพ $\omega=\sqrt{\frac{mgh}I}$</td>
+<td>มุมเล็กเท่านั้น</td>
+</tr>
+<tr>
+<td>Underdamped</td>
+<td>$\omega=\sqrt{\frac km-\frac{b^2}{4m^2}}$, แอมพลิจูด $A_0e^{-bt/2m}$</td>
+<td>มีแรงต้าน $bv$</td>
+</tr>
+<tr>
+<td>คลื่น</td>
+<td>$v=f\lambda$, $f=\frac1T$</td>
+<td>ทุกคลื่น</td>
+</tr>
+<tr>
+<td>เชือก</td>
+<td>$v=\sqrt{T/\mu}$, $f_n=\frac{nv}{2L}$</td>
+<td>เครื่องสาย</td>
+</tr>
+<tr>
+<td>เสียงในอากาศ</td>
+<td>$v=331+0.6t_c$</td>
+<td>โจทย์อุณหภูมิ</td>
+</tr>
+<tr>
+<td>ความเข้ม / dB</td>
+<td>$I=\frac P{4\pi r^2}$, $\beta=10\log\frac I{I_0}$, $I_0=10^{-12}$</td>
+<td>ความดังเสียง</td>
+</tr>
+<tr>
+<td>ท่อเปิด / ปิด</td>
+<td>$f_n=\frac{nv}{2L}$ ($n$ ทุกตัว) / $f_n=\frac{nv}{4L}$ ($n$ คี่)</td>
+<td>เครื่องเป่า</td>
+</tr>
+</tbody>
+</table>
+<hr /></section>
+<section class="appendix" id="a1"><h2>3. จุดที่ออกสอบบ่อย + กับดักที่คนพลาด</h2><ul>
+<li><strong>จุดที่ออกบ่อย (ดูจากตัวอย่างในสไลด์):</strong> แต่ละบทมีตัวอย่าง "Example" 2–4 ข้อ ส่วนใหญ่ไม่มีเฉลย มักเป็นโจทย์ที่ใช้แคลคูลัส ($x(t)$ แล้วดิฟหา $v$, $a(t)$ แล้วอินทิเกรตหา $v$), โจทย์ "จงแสดงว่า" (พิสูจน์สูตร) และโจทย์ชีวิตจริง (ดาวเทียม, บันไดเลื่อน, สายกีตาร์, โซนาร์)</li>
+<li><strong>ข้อผิดพลาดที่พบบ่อย:</strong></li>
+<li>ไม่แปลงหน่วย: km/h เป็น m/s (หาร 3.6), g เป็น kg, cm เป็น m, นาทีเป็นวินาที</li>
+<li>ใช้ $R=\frac{u^2\sin2\theta}g$ กับการขว้างจากที่สูง (ใช้ไม่ได้)</li>
+<li>ดึงเชือกเป็นมุมแล้วใช้ $N=mg$ (ที่ถูกคือ $N=mg-F\sin\theta$)</li>
+<li>ลืมเครื่องหมายทิศในโจทย์โมเมนตัม · ลูกบอลกระดอน $\Delta v=v+u$</li>
+<li>ใช้อนุรักษ์พลังงานจลน์กับการชนแบบติดกัน · ลูกตุ้มขีปนะ: ต้องแยกขั้นชน (โมเมนตัม) กับขั้นเหวี่ยง (พลังงาน)</li>
+<li>ใช้ $I_{cm}$ ทั้งที่แกนหมุนไม่ผ่าน CM</li>
+<li>ลืมพลังงานจลน์การหมุนเวลาวัตถุกลิ้ง</li>
+<li>เครื่องคิดเลขโหมดองศาตอนคำนวณ $\sin\omega t$ (ต้องเป็นเรเดียน)</li>
+<li>คิดว่าคาบลูกตุ้มขึ้นกับมวล</li>
+<li>โซนาร์ลืมหาร 2 · ท่อปิดใช้ $n$ คู่ · dB เพิ่มเป็นเส้นตรง (ที่จริงความเข้ม ×10 ได้ +10 dB)</li>
+</ul>
+<hr /></section>
+<section class="appendix" id="a2"><h2>6. Flashcards (คำถาม | คำตอบ)</h2><p class="hint">แตะที่การ์ดเพื่อดูคำตอบ</p><div class="cards"><details class="card"><summary>ระยะทาง vs การกระจัด</summary><div>สเกลาร์ (ความยาวทาง) vs เวกเตอร์ (จุดเริ่มถึงจุดปลาย)</div></details><details class="card"><summary>ความชันกราฟ $x$–$t$ / $v$–$t$</summary><div>ความเร็ว / ความเร่ง</div></details><details class="card"><summary>พื้นที่ใต้กราฟ $v$–$t$ / $F$–$t$ / $F$–$x$</summary><div>การกระจัด / การดล / งาน</div></details><details class="card"><summary>พิสัยโปรเจกไทล์มากสุดที่มุม</summary><div>45°</div></details><details class="card"><summary>มวล vs น้ำหนัก</summary><div>มวลคงที่ทุกที่ (kg) vs $W=mg$ เปลี่ยนตามดาว (N)</div></details><details class="card"><summary>$f_s$ vs $f_k$</summary><div>สถิต $\le\mu_sN$ (ปรับตามแรงดึง) vs จลน์ $=\mu_kN$ (คงที่)</div></details><details class="card"><summary>มุมที่วัตถุเริ่มไถล</summary><div>$\mu_s=\tan\theta$</div></details><details class="card"><summary>ถุงลมนิรภัยลดแรงได้อย่างไร</summary><div>ยืดเวลาที่ความเร็วเปลี่ยน ทำให้ $a$ และ $F$ ลดลง</div></details><details class="card"><summary>ความเร็วสุดท้าย (terminal)</summary><div>$v_t=\frac{mg}k$ เกิดเมื่อแรงต้าน = น้ำหนัก</div></details><details class="card"><summary>แรงหนีศูนย์กลางเป็นแรงจริงไหม</summary><div>ไม่ใช่ ต้องระบุแรงจริงที่ทำหน้าที่เข้าสู่ศูนย์กลาง</div></details><details class="card"><summary>งานเป็นลบเมื่อไร</summary><div>แรงทำมุม &gt; 90° กับการเคลื่อนที่ (เช่นแรงเสียดทาน)</div></details><details class="card"><summary>1 แรงม้า</summary><div>735.5 W</div></details><details class="card"><summary>ทฤษฎีบทงาน-พลังงาน</summary><div>$W_{\text{ภายนอก}}=E_2-E_1$</div></details><details class="card"><summary>ชนยืดหยุ่น vs ไม่ยืดหยุ่น</summary><div>อนุรักษ์ $p$ ทั้งคู่ · KE คงที่เฉพาะยืดหยุ่น</div></details><details class="card"><summary>มวลเท่ากันชนยืดหยุ่นกับมวลนิ่ง (2 มิติ)</summary><div>แยกกันทำมุม 90°</div></details><details class="card"><summary>การดล</summary><div>$J=F\Delta t=\Delta p$</div></details><details class="card"><summary>$I$ แท่ง: แกนกลาง vs แกนปลาย</summary><div>$\frac1{12}ML^2$ vs $\frac13ML^2$</div></details><details class="card"><summary>$I$ วงแหวน vs จาน vs ทรงกลมตัน</summary><div>$MR^2$ vs $\frac12MR^2$ vs $\frac25MR^2$</div></details><details class="card"><summary>ทฤษฎีบทแกนขนาน</summary><div>$I=I_{cm}+md^2$</div></details><details class="card"><summary>ทอร์กมากสุด / เป็นศูนย์เมื่อ</summary><div>แรงตั้งฉากกับแขน / แรงขนานกับแขน</div></details><details class="card"><summary>นักสเก็ตหุบแขนแล้วหมุนเร็วขึ้นเพราะ</summary><div>$I\omega$ คงที่ $I$ ลดลง $\omega$ จึงเพิ่มขึ้น</div></details><details class="card"><summary>กลิ้งไม่ไถล</summary><div>$v_{cm}=\omega R$ จุดสัมผัสพื้นหยุดนิ่ง</div></details><details class="card"><summary>SHM: $v$ มากสุด / $a$ มากสุดที่ไหน</summary><div>ที่สมดุล / ที่ปลาย</div></details><details class="card"><summary>คาบลูกตุ้มขึ้นกับอะไร</summary><div>ความยาวเชือกและ $g$ (ไม่ขึ้นกับมวล)</div></details><details class="card"><summary>critical damping</summary><div>กลับสู่สมดุลเร็วที่สุดโดยไม่สั่น</div></details><details class="card"><summary>เรโซแนนซ์</summary><div>แรงขับมีความถี่ใกล้ความถี่ธรรมชาติ แอมพลิจูดจึงสูงสุด</div></details><details class="card"><summary>คลื่นตามขวาง vs ตามยาว</summary><div>สั่นตั้งฉาก (เชือก, แสง) vs สั่นขนาน (เสียง, slinky)</div></details><details class="card"><summary>หักเหแล้วอะไรไม่เปลี่ยน</summary><div>ความถี่ $f$</div></details><details class="card"><summary>ปลายตรึง vs ปลายอิสระ</summary><div>สะท้อนกลับเฟส $\pi$ vs ไม่กลับเฟส</div></details><details class="card"><summary>ท่อเปิด vs ท่อปิด</summary><div>$\frac{nv}{2L}$ ทุก $n$ vs $\frac{nv}{4L}$ เฉพาะ $n$ คี่</div></details><details class="card"><summary>เสียงดัง vs เสียงสูง</summary><div>แอมพลิจูดมาก vs ความถี่สูง</div></details><details class="card"><summary>ความเข้ม ×10 / ระยะ ×2</summary><div>+10 dB / −6 dB</div></details></div></section>
+<section class="appendix" id="a3"><h2>7. เช็กลิสต์ทวน 24 ชม. ก่อนสอบ</h2><ul class="checks"><li><label><input type="checkbox"> ท่องแผ่นสูตรรวม (ท้ายไฟล์ <code>สรุปติวสอบ PHY.html</code>) ให้ได้ทุกบรรทัด</label></li><li><label><input type="checkbox"> ท่องตารางโมเมนต์ความเฉื่อย — บท 5 หน้า 17</label></li><li><label><input type="checkbox"> ทำ Example ในสไลด์ใหม่โดยไม่ดูเฉลย บทละอย่างน้อย 2 ข้อ (ข้อ 22–29 ด้านบนคือชุดที่สไลด์ไม่มีเฉลย)</label></li><li><label><input type="checkbox"> ฝึกโจทย์ "จงแสดงว่า": $v_t=\frac{mg}k$, $\omega\ge\sqrt{g/\mu R}$, $h$ ลูกตุ้มขีปนะ, $a=\frac{2g}3$ (รอกจาน), $v=\sqrt{10gH/7}$, $a=\frac{g\sin\theta}{1+k}$, $v=\omega\sqrt{A^2-x^2}$</label></li><li><label><input type="checkbox"> ฝึกโจทย์ที่ใช้แคลคูลัส: $x(t)$ ไปหา $v,a$ (บท 1 หน้า 19), $a(t)$ ไปหา $v,x$ (บท 1 หน้า 21), $F(t)$ ไปหา $v$ (บท 2 หน้า 20), $\int F\,dx$ (บท 3 หน้า 9)</label></li><li><label><input type="checkbox"> เช็กหน่วยทุกข้อ: km/h, g, cm, นาที</label></li><li><label><input type="checkbox"> ตั้งเครื่องคิดเลขโหมด<strong>เรเดียน</strong>สำหรับบท 7</label></li><li><label><input type="checkbox"> ทำข้อสอบจำลองตอนที่ 1 ทั้ง 21 ข้อแบบจับเวลา (ข้อละไม่เกิน 1.5 นาที)</label></li></ul></section>
+<section class="appendix" id="a4"><h2>8. หัวข้อที่ควรทวนเพิ่ม</h2><ul>
+<li><strong>บทที่ 6 ไม่มีในโฟลเดอร์</strong>: ถ้าอยู่ในขอบเขตสอบ ต้องหาสไลด์มาเพิ่ม (มักเป็นเรื่องแรงโน้มถ่วง หรือของไหล/สมดุล แต่ไม่แน่ใจ ควรตรวจกับประมวลรายวิชา)</li>
+<li><strong>ตัวเลขที่อ่านจากรูป (ไม่แน่ใจ ควรตรวจกับต้นฉบับ):</strong></li>
+<li>ปืนสปริง บท 3 หน้า 27: ตีความว่าสปริงถูกอัดจาก 110 mm เหลือ 50 mm ได้คำตอบ 17 m/s</li>
+<li>กราฟการสั่นมีแรงต้าน บท 7 หน้า 23: อ่าน $T=2.5$ s และ $A(10\text{ s})\approx3.0$ cm ได้ $b\approx0.010$ kg/s, $k\approx0.63$ N/m</li>
+<li>โมเมนต์ความเฉื่อยลูกตุ้มแท่ง+จาน บท 5 หน้า 22: สมมติว่าจุดศูนย์กลางจานอยู่ที่ระยะ $L+R$ จากจุดหมุน</li>
+<li><strong>ชน 2 มิติ</strong>: สไลด์มีตัวอย่างเดียว (บท 4 หน้า 33–35) ควรฝึกเพิ่ม โดยเฉพาะแบบชนแล้วติดกันในแนวตั้งฉาก (หน้า 32 มีแค่สมการ ไม่มีตัวเลข)</li>
+<li><strong>การหาสมการ $v(t)$ ของแรงต้านอากาศ</strong> (บท 2 หน้า 30) ใช้การอินทิเกรตแยกตัวแปร ถ้าออก "จงแสดงว่า" ควรฝึกเขียนจนจบ</li>
+<li><strong>ค่า Young's/Bulk modulus</strong> (บท 8 หน้า 29): ไม่แน่ใจว่าต้องจำตัวเลขหรือไม่ น่าจะให้มาในโจทย์ ควรถามอาจารย์</li>
+<li><strong>กิจกรรมในสไลด์</strong> (การวัดแรงเสียดทาน บท 2 หน้า 12, การกระดอนของลูกบอล บท 3 หน้า 24–25, แมวบนชิงช้า บท 7 หน้า 39): เป็นการทดลองที่ต้องใช้ข้อมูลจากคลาส วัสดุไม่มีตัวเลข</li>
+</ul></section>
+</main>
+<script>
+const nav=document.createElement('nav');nav.innerHTML='<p class="tocpart">บทที่ 1 · การเคลื่อนที่</p><ol><li><a href="#t2">1. การเคลื่อนที่ด้วยความเร่งคงที่ และกราฟ</a></li><li><a href="#t3">2. การเคลื่อนที่แบบโปรเจกไทล์</a></li><li><a href="#t4">3. การเคลื่อนที่แบบวงกลม และแรงเข้าสู่ศูนย์กลาง</a></li></ol><p class="tocpart">บทที่ 2 · แรงและกฎของนิวตัน</p><ol><li><a href="#t6">4. กฎของนิวตัน แรงเสียดทาน และ Free Body Diagram</a></li><li><a href="#t7">5. พื้นเอียง และระบบรอก</a></li><li><a href="#t8">6. แรงต้านอากาศ และความเร็วสุดท้าย</a></li></ol><p class="tocpart">บทที่ 3 · งานและพลังงาน</p><ol><li><a href="#t10">7. งาน</a></li><li><a href="#t11">8. พลังงาน และกฎอนุรักษ์พลังงาน</a></li><li><a href="#t12">9. กำลัง</a></li></ol><p class="tocpart">บทที่ 4 · โมเมนตัมและการชน</p><ol><li><a href="#t14">10. โมเมนตัม และการดล</a></li><li><a href="#t15">11. การชน และการระเบิด</a></li><li><a href="#t16">12. จุดศูนย์กลางมวล และจรวด</a></li></ol><p class="tocpart">บทที่ 5 · การเคลื่อนที่แบบหมุน</p><ol><li><a href="#t18">13. จลนศาสตร์การหมุน และโมเมนต์ความเฉื่อย</a></li><li><a href="#t19">14. ทอร์ก และ $\\tau=I\\alpha$</a></li><li><a href="#t20">15. โมเมนตัมเชิงมุม และการอนุรักษ์</a></li><li><a href="#t21">16. การกลิ้งโดยไม่ไถล</a></li></ol><p class="tocpart">บทที่ 7 · การสั่น</p><ol><li><a href="#t23">17. การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย (SHM)</a></li><li><a href="#t24">18. ลูกตุ้ม</a></li><li><a href="#t25">19. การสั่นแบบมีแรงต้าน และเรโซแนนซ์</a></li></ol><p class="tocpart">บทที่ 8 · คลื่นและเสียง</p><ol><li><a href="#t27">20. คลื่น และคลื่นนิ่งในเส้นเชือก</a></li><li><a href="#t28">21. ความเร็วเสียง และความเข้มเสียง (dB)</a></li><li><a href="#t29">22. คลื่นนิ่งในท่อ</a></li></ol><p class="tocpart">ภาคผนวก</p><ol><li><a href="#a0">2. สูตร · คำนิยาม · คำศัพท์สำคัญ</a></li><li><a href="#a1">3. จุดที่ออกสอบบ่อย + กับดักที่คนพลาด</a></li><li><a href="#a2">6. Flashcards (คำถาม | คำตอบ)</a></li><li><a href="#a3">7. เช็กลิสต์ทวน 24 ชม. ก่อนสอบ</a></li><li><a href="#a4">8. หัวข้อที่ควรทวนเพิ่ม</a></li></ol>'.replace(/^/, '<b>สารบัญ</b>');
+document.querySelector('header.lead').after(nav);
+</script></body></html>

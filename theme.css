@@ -1,0 +1,50 @@
+/* ธีมร่วม (ตรงกับหน้าแรก) — override ตัวแปรสีของแต่ละไฟล์ */
+html:root[data-theme="dark"]{
+  --bg:#0b0f1a;--fg:#e8ecf5;--muted:#8b93a7;--card:#131a2a;--line:#26304a;--link:#7cc4f8;
+  --ok:#4ade80;--okbg:#10281c;--warn:#fbbf24;--warnbg:#2a2214;--bad:#fb923c;
+  --cm:#f472b6;--cmbg:#2a1822;--wr:#7cc4f8;--wrbg:#17202f;--note:#2a2214;--notel:#fbbf24;--why:#c4b5fd;--whybg:#1f1a33;
+  --hglow1:rgba(56,189,248,.09);--hglow2:rgba(167,139,250,.09);--bar:rgba(11,15,26,.78)}
+html:root[data-theme="light"]{
+  --bg:#f4f6fb;--fg:#1a2233;--muted:#5b6478;--card:#fff;--line:#dfe4f0;--link:#1d4ed8;
+  --ok:#1a7f4b;--okbg:#effaf3;--warn:#b45309;--warnbg:#fff7ed;--bad:#c2410c;
+  --cm:#c0367a;--cmbg:#fdf0f6;--wr:#1d4ed8;--wrbg:#eef4ff;--note:#fff7ed;--notel:#b45309;--why:#7c3aed;--whybg:#f5f0ff;
+  --hglow1:rgba(56,189,248,.10);--hglow2:rgba(167,139,250,.10);--bar:rgba(244,246,251,.78)}
+html:root[data-theme="dark"][data-subject="math"]{--accent:#38bdf8;--accentbg:rgba(56,189,248,.12)}
+html:root[data-theme="dark"][data-subject="phy"]{--accent:#a78bfa;--accentbg:rgba(167,139,250,.12)}
+html:root[data-theme="light"][data-subject="math"]{--accent:#0369a1;--accentbg:rgba(29,143,206,.10)}
+html:root[data-theme="light"][data-subject="phy"]{--accent:#7c3aed;--accentbg:rgba(139,92,246,.10)}
+
+html:root body{
+  font-family:'Anuphan','Sarabun',sans-serif;background-color:var(--bg);color:var(--fg);
+  background-image:radial-gradient(60rem 30rem at 12% -8%,var(--hglow1),transparent 60%),radial-gradient(50rem 28rem at 95% 0,var(--hglow2),transparent 55%);
+  background-repeat:no-repeat}
+html:root h1,html:root h2,html:root h3{font-family:'Bai Jamjuree','Anuphan',sans-serif}
+html:root h1{background:linear-gradient(95deg,#38bdf8,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;letter-spacing:-.01em}
+html:root h2{border:1px solid var(--line);border-left:4px solid var(--accent)}
+html:root nav,html:root .box,html:root .q,html:root .card{box-shadow:0 1px 2px rgba(0,0,0,.18),0 8px 24px rgba(0,0,0,.12)}
+html:root h2,html:root h3,html:root :target{scroll-margin-top:4rem}
+html:root{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html:root{scroll-behavior:auto}}
+
+/* แถบบนสุด */
+.xt-bar{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:var(--bar);border-bottom:1px solid var(--line);font-family:'Anuphan',sans-serif;line-height:1.4}
+.xt-in{max-width:880px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.xt-home{color:var(--fg)!important;font-weight:600;font-size:.95rem;text-decoration:none}
+.xt-home:hover{color:var(--accent)!important}
+.xt-chip{margin-left:auto;display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .85rem;border-radius:999px;font-size:.82rem;font-weight:600;color:#0b1020;background:linear-gradient(100deg,#38bdf8,#a78bfa);white-space:nowrap}
+.xt-dot{width:.45rem;height:.45rem;border-radius:50%;background:#0b1020;opacity:.8;animation:xtp 1.6s ease-in-out infinite}
+@keyframes xtp{50%{opacity:.25;transform:scale(.7)}}
+.xt-toggle{display:grid;place-items:center;width:2.4rem;height:2.4rem;border:1px solid var(--line);border-radius:.5rem;background:var(--card);color:var(--muted);cursor:pointer}
+.xt-toggle:hover{color:var(--fg);border-color:var(--accent)}
+@media print{.xt-bar{display:none}}
+
+/* ===== รูปแบบเฉลยละเอียดทีละขั้น (.steps) ===== */
+.steps{margin:14px 0;display:grid;gap:12px}
+.steps .step{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:10px 16px 6px}
+.steps .step-h{font-family:'Bai Jamjuree','Anuphan',sans-serif;font-weight:700;color:var(--accent);margin:0 0 4px}
+.steps .step p{margin:.35em 0}
+.steps .step .katex-display{margin:.6em 0}
+.steps .step.final{border-left-color:var(--ok);background:var(--okbg)}
+.steps .step.final .step-h{color:var(--ok)}
+.steps .alt{color:var(--muted);font-size:.92em}
+.steps .check{color:var(--muted);font-size:.92em;border-top:1px dashed var(--line);margin-top:.5em;padding-top:.4em}
