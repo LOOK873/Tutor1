@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เฉลย Tutorial Class M1</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],strict:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+<style>  :root{--bg:#fbfaf7}
+  main{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 16px}
+  body{line-height:2;font-size:17px;margin:0}
+  h2{margin-top:44px!important}
+
+  .q h3{font-size:1.1rem;margin:0 0 8px!important}
+  .q h3 small{font-weight:500;font-size:.8rem;margin-left:.5em}
+  .q h3 small a{color:var(--accent,#2f6fde);text-decoration:none;border:1px solid var(--line,#ddd);padding:1px 8px;border-radius:99px}
+  .prob{font-size:1.05rem}
+  .toc{margin:0 0 20px;line-height:2.1}
+  .toc a{display:inline-block;margin:0 4px 4px 0;padding:0 10px;border:1px solid var(--line,#ddd);border-radius:99px;text-decoration:none;color:var(--link,var(--accent,#2f6fde));font-size:.92rem}
+  .atable{background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:12px;padding:10px 16px;margin:0 0 24px}
+  .atable summary{cursor:pointer;font-weight:700}
+  .atable table,.ft{width:100%;border-collapse:collapse;margin-top:10px;font-size:.95rem}
+  .atable td,.atable th,.ft td{border-top:1px solid var(--line,#ddd);padding:6px 8px;text-align:left;vertical-align:top}
+  .div{font-weight:700;color:var(--bad,#c2410c)}
+  .ans{font-weight:700;color:var(--ok,#1a7f4b)}
+  .tip{color:var(--muted,#5b6370);font-size:.95rem;border-left:3px solid var(--accent,#2f6fde);padding-left:10px;margin-top:10px}
+  .alt{color:var(--muted,#5b6370);font-size:.92rem}
+  details summary{cursor:pointer;color:var(--accent,#2f6fde);font-weight:600}
+  .katex-display{overflow-x:auto;overflow-y:hidden}
+  @media print{details{display:block}details>*{display:block}}
+</style>
+<link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script>
+</head>
+<body>
+<main>
+<h1>เฉลย Tutorial Class M1 (55 ข้อ)</h1>
+<p class="sub">แบบฝึกหัดจากไฟล์ <a href="Tutorial-Class-M1.pdf" target="_blank" rel="noopener">Tutorial-Class-M1.pdf</a> (25 หน้า: โจทย์ 20 หน้า + ตารางสูตร 5 หน้า) · เฉลยทุกข้อพร้อมวิธีทำ · ลองทำเองก่อนแล้วค่อยกดดูวิธีทำ · ตรวจคำตอบด้วยโปรแกรมคำนวณแล้ว</p>
+<nav class="toc"><b>ไปที่:</b> <a href="#sec1">โดเมนและเรนจ์</a> <a href="#sec2">สมบัติของลิมิต และลิมิตจากกราฟ</a> <a href="#sec4">การคำนวณลิมิต</a> <a href="#sec9">ความต่อเนื่อง</a> <a href="#sec11">อนุพันธ์</a> <a href="#sec18">ผลต่างเชิงอนุพันธ์ และการประมาณค่า</a> <a href="#sec20">กฎของ L'Hôpital</a> <a href="#formulas">ตารางสูตร</a></nav>
+<details class="atable"><summary>สรุปคำตอบทั้งหมด (ตรวจเร็ว)</summary><table><thead><tr><th>#</th><th>ข้อ</th><th>คำตอบ</th></tr></thead><tbody>
+<tr><td><a href="#t1">1</a></td><td>หน้า 1 · ข้อ 1</td><td>$(-\infty,-\sqrt2\,]\cup[\sqrt2,\infty)$</td></tr>
+<tr><td><a href="#t2">2</a></td><td>หน้า 1 · ข้อ 17.1 / ข้อ 6.1 (โจทย์เดียวกัน)</td><td>$D_f=\mathbb R\setminus\{\pm1\},\quad R_f=(-\infty,-1]\cup(1,\infty)$</td></tr>
+<tr><td><a href="#t3">3</a></td><td>หน้า 1 · ข้อ 10.1</td><td>$D_f=\mathbb R\setminus\{\pm3\},\quad R_f=\left(-\infty,\tfrac{16}{9}\right]\cup(4,\infty)$</td></tr>
+<tr><td><a href="#t4">4</a></td><td>หน้า 2 · ข้อ 1.1</td><td>$-\dfrac52$</td></tr>
+<tr><td><a href="#t5">5</a></td><td>หน้า 2 · ข้อ 1.2</td><td>$\dfrac{3^{2\sqrt2}}{9}=3^{2\sqrt2-2}$</td></tr>
+<tr><td><a href="#t6">6</a></td><td>หน้า 2 · ข้อ 2 (ก–จ)</td><td>$\text{ก) }13\quad\text{ข) }25\quad\text{ค) }2\quad\text{ง) }+\infty\quad\text{จ) }-\sqrt[3]{42}$</td></tr>
+<tr><td><a href="#t7">7</a></td><td>หน้า 3 · ข้อ 1 (ก–จ) อ่านจากกราฟ</td><td>$\text{ก) }0\quad\text{ข) หาค่าไม่ได้}\quad\text{ค) }0\quad\text{ง) }0\quad\text{จ) }1$</td></tr>
+<tr><td><a href="#t8">8</a></td><td>หน้า 3 · ข้อ 1.4 อ่านจากกราฟ</td><td>$\lim_{x\to-3}f=4,\qquad \lim_{x\to7}f\ \text{ ไม่มีค่า (DNE)}$</td></tr>
+<tr><td><a href="#t9">9</a></td><td>หน้า 4 · ข้อ 3.1</td><td>$\dfrac{1}{2\sqrt2}=\dfrac{\sqrt2}{4}$</td></tr>
+<tr><td><a href="#t10">10</a></td><td>หน้า 4 · ข้อ 3.2</td><td>$2$</td></tr>
+<tr><td><a href="#t11">11</a></td><td>หน้า 4 · ข้อ 3.3</td><td>$1$</td></tr>
+<tr><td><a href="#t12">12</a></td><td>หน้า 5 · ข้อ 7.1</td><td>$e^{10}$</td></tr>
+<tr><td><a href="#t13">13</a></td><td>หน้า 5 · ข้อ 7.2</td><td>$1$</td></tr>
+<tr><td><a href="#t14">14</a></td><td>หน้า 5 · ข้อ 7.3</td><td>$-\sqrt5$</td></tr>
+<tr><td><a href="#t15">15</a></td><td>หน้า 6 · ข้อ 8</td><td>$r=-3,\qquad s=\dfrac{15}{2}$</td></tr>
+<tr><td><a href="#t16">16</a></td><td>หน้า 6 · ข้อ 3.4</td><td>$2$</td></tr>
+<tr><td><a href="#t17">17</a></td><td>หน้า 6 · ข้อ 2</td><td>$\dfrac12$</td></tr>
+<tr><td><a href="#t18">18</a></td><td>หน้า 7 · ข้อ 3</td><td>$-1$</td></tr>
+<tr><td><a href="#t19">19</a></td><td>หน้า 7 · ข้อ 4</td><td>$e^{\frac{1+\ln2}{2}}=\sqrt{2e}$</td></tr>
+<tr><td><a href="#t20">20</a></td><td>หน้า 8 · ข้อ 1</td><td>$-\sqrt3$</td></tr>
+<tr><td><a href="#t21">21</a></td><td>หน้า 8 · ข้อ 2 (Squeeze)</td><td>$0$</td></tr>
+<tr><td><a href="#t22">22</a></td><td>หน้า 9 · ข้อ 9</td><td>$k=3$</td></tr>
+<tr><td><a href="#t23">23</a></td><td>หน้า 9 · ข้อ 2</td><td>$a=2$</td></tr>
+<tr><td><a href="#t24">24</a></td><td>หน้า 9 · ข้อ 7</td><td>$a=-2,\qquad b=-4$</td></tr>
+<tr><td><a href="#t25">25</a></td><td>หน้า 10 · ข้อ 3</td><td>$a=1,\qquad b=10$</td></tr>
+<tr><td><a href="#t26">26</a></td><td>หน้า 10 · ข้อ 2.1</td><td>$b=-1$</td></tr>
+<tr><td><a href="#t27">27</a></td><td>หน้า 11 · ข้อ 11.1</td><td>$f'(x)=\dfrac{2x-\dfrac{\sin(\ln2x)}{x}}{\sqrt{1-\left(x^2+\cos(\ln2x)\right)^2}}$</td></tr>
+<tr><td><a href="#t28">28</a></td><td>หน้า 11 · ข้อ 11.2</td><td>$f'(x)=e^{(x^2+1)\tan\sqrt{x^2+1}}\left[2x\tan\sqrt{x^2+1}+x\sqrt{x^2+1}\,\sec^2\sqrt{x^2+1}\right]$</td></tr>
+<tr><td><a href="#t29">29</a></td><td>หน้า 11 · ข้อ 11.3</td><td>$f'(x)=\cos(x\sec4x)\cdot\sec4x\,(1+4x\tan4x)$</td></tr>
+<tr><td><a href="#t30">30</a></td><td>หน้า 11 · ข้อ 11.4</td><td>$f'(x)=-\dfrac{2x\tan\sqrt{x^2+4}}{\sqrt{x^2+4}}$</td></tr>
+<tr><td><a href="#t31">31</a></td><td>หน้า 11 · ข้อ 11.5</td><td>$f'(x)=-\dfrac{x\,\sin\left(\ln(x^2+4)\right)}{x^2+4}$</td></tr>
+<tr><td><a href="#t32">32</a></td><td>หน้า 12 · ข้อ 6.1</td><td>$f'(x)=\dfrac{\sqrt{2\pi}}{2\pi+x^2}\cdot\dfrac{x}{|x|}\quad(x\ne0)$</td></tr>
+<tr><td><a href="#t33">33</a></td><td>หน้า 12 · ข้อ 6.2</td><td>$g'(x)=g(x)\left[\dfrac{4}{2x-1}+\dfrac{2x-1}{2}-\dfrac{6}{x}\right]$</td></tr>
+<tr><td><a href="#t34">34</a></td><td>หน้า 12 · ข้อ 4.1</td><td>$f'(x)=-3\ln2\,\sin3x\cdot2^{\cos3x}$</td></tr>
+<tr><td><a href="#t35">35</a></td><td>หน้า 12 · ข้อ 4.2</td><td>$f'(x)=e^{(x^2-1)\sin3x}\left[2x\sin3x+3(x^2-1)\cos3x\right]$</td></tr>
+<tr><td><a href="#t36">36</a></td><td>หน้า 13 · ข้อ 4.3</td><td>$f'(x)=-\dfrac{4x\cot(x^2)}{\ln3}$</td></tr>
+<tr><td><a href="#t37">37</a></td><td>หน้า 13 · ข้อ 4.4</td><td>$g'(t)=\dfrac{\left[2t-\frac12\ln(1+t^2)\right]\left[\ln(1+t^2)-\frac{2t^2}{1+t^2}\right]}{t^3}$</td></tr>
+<tr><td><a href="#t38">38</a></td><td>หน้า 13 · ข้อ 12</td><td>$\dfrac{dy}{dx}=-4x(2-x^2)=4x^3-8x$</td></tr>
+<tr><td><a href="#t39">39</a></td><td>หน้า 14 · ข้อ 9</td><td>$48$</td></tr>
+<tr><td><a href="#t40">40</a></td><td>หน้า 14 · ข้อ 5.1</td><td>$0$</td></tr>
+<tr><td><a href="#t41">41</a></td><td>หน้า 15 · ข้อ 7</td><td>$\dfrac{dy}{dx}=\dfrac{1-2(x-y)^2}{1+2y(x-y)^2}$</td></tr>
+<tr><td><a href="#t42">42</a></td><td>หน้า 15 · ข้อ 4</td><td>$\left.\dfrac{dy}{dx}\right|_{(0,1)}=-2,\qquad\left.\dfrac{dx}{dy}\right|_{(0,1)}=-\dfrac12$</td></tr>
+<tr><td><a href="#t43">43</a></td><td>หน้า 16 · ข้อ 1.2.1</td><td>$\dfrac{dy}{dx}=-\dfrac{2x+y}{x+2y}$</td></tr>
+<tr><td><a href="#t44">44</a></td><td>หน้า 16 · ข้อ 1.2.2</td><td>$y'=(\cos x)^{\sin x}\left[\cos x\ln(\cos x)-\sin x\tan x\right]$</td></tr>
+<tr><td><a href="#t45">45</a></td><td>หน้า 17 · ข้อ 5.2</td><td>$\dfrac{dy}{dx}=\dfrac{2y(3y+2t)}{x(6y+t)},\qquad\dfrac{d^2y}{dx^2}=\dfrac{6ty\left(2t^2-3ty-36y^2\right)}{x^2(t+6y)^3}$</td></tr>
+<tr><td><a href="#t46">46</a></td><td>หน้า 17 · ข้อ 13</td><td>$-\dfrac23$</td></tr>
+<tr><td><a href="#t47">47</a></td><td>หน้า 17 · ข้อ 8</td><td>$f^{(49)}(x)=(x+50)e^x$</td></tr>
+<tr><td><a href="#t48">48</a></td><td>หน้า 18 · ข้อ 2</td><td>$\text{ดูในข้อ}$</td></tr>
+<tr><td><a href="#t49">49</a></td><td>หน้า 18 · ข้อ 3</td><td>$dy=\dfrac{3-3x^2-y}{x-1}\,dx$</td></tr>
+<tr><td><a href="#t50">50</a></td><td>หน้า 19 · ข้อ 4</td><td>$\sqrt[3]{1.1}\approx1.0333$</td></tr>
+<tr><td><a href="#t51">51</a></td><td>หน้า 19 · ข้อ 1</td><td>$\approx36.14$</td></tr>
+<tr><td><a href="#t52">52</a></td><td>หน้า 19 · ข้อ 14</td><td>$\approx-0.004$</td></tr>
+<tr><td><a href="#t53">53</a></td><td>หน้า 20 · ข้อ 4</td><td>$1$</td></tr>
+<tr><td><a href="#t54">54</a></td><td>หน้า 20 · ข้อ 6.1</td><td>$0$</td></tr>
+<tr><td><a href="#t55">55</a></td><td>หน้า 20 · ข้อ 6.2</td><td>$e^3$</td></tr>
+</tbody></table></details>
+<h2 id="sec1">โดเมนและเรนจ์</h2>
+<div class="q" id="t1">
+<h3>1 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" target="_blank" rel="noopener">PDF หน้า 1</a></small></h3>
+<p class="prob">$\text{โดเมนของ } f(x)=\sqrt{\ln(x^2-1)}$</p>
+<p>คำตอบ: <span class="ans">$(-\infty,-\sqrt2\,]\cup[\sqrt2,\infty)$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เงื่อนไขของรากที่สอง</div>ในรากต้องไม่ติดลบ $\ln(x^2-1)\ge0$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้อสมการของ ln</div>$\ln A\ge0\iff A\ge1$ (ซึ่งทำให้ $A&gt;0$ ตามเงื่อนไขของ $\ln$ ไปด้วยแล้ว)$$x^2-1\ge1\ \Rightarrow\ x^2\ge2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ถอดกำลังสอง</div>$x^2\ge2\iff |x|\ge\sqrt2$ จึงได้ $x\le-\sqrt2$ หรือ $x\ge\sqrt2$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$(-\infty,-\sqrt2\,]\cup[\sqrt2,\infty)$$</div>
+</div></details>
+<p class="tip">ฟังก์ชันซ้อนกัน ให้เขียนเงื่อนไข "จากนอกเข้าใน" ทีละชั้น: ราก → ln → ข้างใน</p>
+</div>
+<div class="q" id="t2">
+<h3>2 · ข้อ 17.1 / ข้อ 6.1 (โจทย์เดียวกัน) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" target="_blank" rel="noopener">PDF หน้า 1</a></small></h3>
+<p class="prob">$f(x)=\dfrac{x^2+1}{x^2-1}\ \text{ หาโดเมนและเรนจ์}$</p>
+<p>คำตอบ: <span class="ans">$D_f=\mathbb R\setminus\{\pm1\},\quad R_f=(-\infty,-1]\cup(1,\infty)$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: โดเมน</div>ตัวส่วนต้องไม่เป็น $0$: $x^2-1\ne0\Rightarrow x\ne\pm1$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้ง $y=f(x)$ แล้วแก้หา $x^2$</div>$$y(x^2-1)=x^2+1\ \Rightarrow\ x^2(y-1)=y+1\ \Rightarrow\ x^2=\frac{y+1}{y-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ให้ $x^2\ge0$</div>ต้องการ $\dfrac{y+1}{y-1}\ge0$ และ $y\ne1$ เพราะตัวส่วนเป็น $0$ ไม่ได้$$y\le-1\ \text{ หรือ }\ y&gt;1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตรวจค่า $x=\pm1$ ที่ถูกตัดออก</div>ถ้า $x^2=1$ จะได้ $\frac{y+1}{y-1}=1\Rightarrow y+1=y-1$ เป็นไปไม่ได้ จึงไม่มีค่า $y$ ใดถูกตัดเพิ่ม</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$D_f=\mathbb R\setminus\{\pm1\},\quad R_f=(-\infty,-1]\cup(1,\infty)$$</div>
+<p class="check">ตรวจ: $x=0$ ได้ $f(0)=-1$ (อยู่ขอบของ $y\le-1$) · $x=2$ ได้ $f(2)=\frac53&gt;1$</p>
+</div></details>
+<p class="tip">เรนจ์ของฟังก์ชันตรรกยะ: แก้สมการให้ $x$ (หรือ $x^2$) อยู่ทางซ้าย แล้วใส่เงื่อนไขว่า $x$ ต้องมีค่าจริง</p>
+</div>
+<div class="q" id="t3">
+<h3>3 · ข้อ 10.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" target="_blank" rel="noopener">PDF หน้า 1</a></small></h3>
+<p class="prob">$f(x)=\dfrac{4x^2-16}{x^2-9}\ \text{ หาโดเมนและเรนจ์}$</p>
+<p>คำตอบ: <span class="ans">$D_f=\mathbb R\setminus\{\pm3\},\quad R_f=\left(-\infty,\tfrac{16}{9}\right]\cup(4,\infty)$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: โดเมน</div>$x^2-9\ne0\Rightarrow x\ne\pm3$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้หา $x^2$ ในรูปของ $y$</div>$$y(x^2-9)=4x^2-16\ \Rightarrow\ x^2(y-4)=9y-16\ \Rightarrow\ x^2=\frac{9y-16}{y-4}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ให้ $x^2\ge0$ (ตารางเครื่องหมาย)</div>จุดวิกฤต $y=\frac{16}{9}$ (ตัวเศษเป็น 0) และ $y=4$ (ตัวส่วนเป็น 0)$$\begin{array}{c|ccc}y&amp;y&lt;\frac{16}{9}&amp;\frac{16}{9}&lt;y&lt;4&amp;y&gt;4\\\hline\frac{9y-16}{y-4}&amp;+&amp;-&amp;+\end{array}$$จึงได้ $y\le\frac{16}{9}$ (รวมจุด $\frac{16}{9}$ เพราะได้ $x=0$) หรือ $y&gt;4$ (ไม่รวม $y=4$)</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตรวจค่า $x=\pm3$</div>ถ้า $x^2=9$ จะได้ $9y-16=9y-36$ เป็นไปไม่ได้ จึงไม่ตัดค่า $y$ เพิ่ม</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$D_f=\mathbb R\setminus\{\pm3\},\quad R_f=\left(-\infty,\tfrac{16}{9}\right]\cup(4,\infty)$$</div>
+<p class="check">ตรวจ: $f(0)=\frac{-16}{-9}=\frac{16}{9}$ ✓ และ $x\to\pm\infty$ ให้ $f\to4^+$ (ค่าเข้าใกล้ $4$ จากด้านบน)</p>
+</div></details>
+</div>
+<h2 id="sec2">สมบัติของลิมิต และลิมิตจากกราฟ</h2>
+<div class="q" id="t4">
+<h3>4 · ข้อ 1.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" target="_blank" rel="noopener">PDF หน้า 2</a></small></h3>
+<p class="prob">$\lim_{x\to a}f=3,\ \lim g=5,\ \lim h=1\ \Rightarrow\ \lim_{x\to a}\left[\dfrac{2f(x)+1}{1-f(x)g(x)}\right]g(x)$</p>
+<p>คำตอบ: <span class="ans">$-\dfrac52$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใช้สมบัติลิมิต</div>ลิมิตของผลคูณ/ผลหาร/ผลบวก = ผลคูณ/ผลหาร/ผลบวกของลิมิต (เมื่อตัวส่วนไม่เป็น 0)</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่า</div>$$\frac{2(3)+1}{1-(3)(5)}\cdot5=\frac{7}{-14}\cdot5=-\frac12\cdot5=-\frac52$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$-\dfrac52$$</div>
+<p class="check">ตัวส่วนหลังแทนค่า $=-14\ne0$ จึงใช้สมบัติผลหารได้</p>
+</div></details>
+</div>
+<div class="q" id="t5">
+<h3>5 · ข้อ 1.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" target="_blank" rel="noopener">PDF หน้า 2</a></small></h3>
+<p class="prob">$\lim_{x\to a}\dfrac{[f(x)]^{\sqrt{g(x)+3}}}{g(x)+4h(x)}$</p>
+<p>คำตอบ: <span class="ans">$\dfrac{3^{2\sqrt2}}{9}=3^{2\sqrt2-2}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาลิมิตของเลขชี้กำลัง</div>$\sqrt{g(x)+3}\to\sqrt{5+3}=\sqrt8=2\sqrt2$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาลิมิตของฐานและตัวส่วน</div>ฐาน $f(x)\to3$ ; ตัวส่วน $g+4h\to5+4(1)=9$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวม</div>$$\frac{3^{2\sqrt2}}{9}=3^{2\sqrt2-2}\approx 3^{0.828}\approx2.48$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac{3^{2\sqrt2}}{9}=3^{2\sqrt2-2}$$</div>
+</div></details>
+</div>
+<div class="q" id="t6">
+<h3>6 · ข้อ 2 (ก–จ) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" target="_blank" rel="noopener">PDF หน้า 2</a></small></h3>
+<p class="prob">$\text{กำหนด }\lim_{x\to a}g=-4,\ \lim_{x\to a}h=0,\ \lim_{x\to+\infty}p=3,\ \lim_{x\to+\infty}q=-5,\ \lim_{x\to+\infty}r=0,\ \lim_{x\to-\infty}u=7,\ \lim_{x\to-\infty}v=-6$</p>
+<p>คำตอบ: <span class="ans">$\text{ก) }13\quad\text{ข) }25\quad\text{ค) }2\quad\text{ง) }+\infty\quad\text{จ) }-\sqrt[3]{42}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ก) $\lim_{x\to a}[h-3g+1]$</div>$=0-3(-4)+1=13$</div>
+<div class="step"><div class="step-h">ข) $\lim_{x\to+\infty}[q(x)]^2$</div>$=(-5)^2=25$</div>
+<div class="step"><div class="step-h">ค) $\lim_{x\to+\infty}\sqrt[3]{5+p(x)}$</div>$=\sqrt[3]{5+3}=\sqrt[3]{8}=2$</div>
+<div class="step"><div class="step-h">ง) $\lim_{x\to-\infty}[x^2+v(x)]$</div>$x^2\to+\infty$ ส่วน $v\to-6$ (จำนวนจำกัด) ดังนั้น $\infty+(-6)=+\infty$</div>
+<div class="step"><div class="step-h">จ) $\lim_{x\to-\infty}\sqrt[3]{u(x)v(x)}$</div>$=\sqrt[3]{(7)(-6)}=\sqrt[3]{-42}=-\sqrt[3]{42}\approx-3.48$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ก) }13\quad\text{ข) }25\quad\text{ค) }2\quad\text{ง) }+\infty\quad\text{จ) }-\sqrt[3]{42}$$</div>
+</div></details>
+<p class="tip">รากที่ 3 ของจำนวนลบหาได้ (ต่างจากรากที่ 2)</p>
+</div>
+<div class="q" id="t7">
+<h3>7 · ข้อ 1 (ก–จ) อ่านจากกราฟ <small><a class="pg" href="Tutorial-Class-M1.pdf#page=3" target="_blank" rel="noopener">PDF หน้า 3</a></small></h3>
+<p class="prob">$\text{ใช้กราฟ } f,\ g \text{ หาลิมิต}$</p>
+<p>คำตอบ: <span class="ans">$\text{ก) }0\quad\text{ข) หาค่าไม่ได้}\quad\text{ค) }0\quad\text{ง) }0\quad\text{จ) }1$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">อ่านค่าจากกราฟก่อน</div>$f$: ฝั่งซ้ายของ $0$ เป็นเส้นตรงที่เข้าใกล้ $1$ (วงกลมโปร่งที่ $(0,1)$) ; ฝั่งขวาเริ่มที่ $-2$ แล้วขึ้นผ่านวงกลมโปร่ง $(2,0)$ ; มีจุดทึบ $f(2)=1$<br>$g$: เป็นเส้นตรงต่อเนื่อง ผ่าน $(-1,0),(0,2),(2,0)$ ดังนั้น $g(0)=2,\ g(2)=0$</div>
+<div class="step"><div class="step-h">ก) $\lim_{x\to2}[f+g]$</div>$\lim_{x\to2}f=0$ (ไม่สนใจจุดทึบ $f(2)=1$) และ $\lim_{x\to2}g=0$ → $0+0=\mathbf{0}$</div>
+<div class="step"><div class="step-h">ข) $\lim_{x\to0}[f+g]$</div>$f$ ซ้าย $\to1$, ขวา $\to-2$ ไม่เท่ากัน ดังนั้น $\lim_{x\to0}f$ ไม่มี ส่วน $g$ มีลิมิต $2$ → ผลรวม <b>หาค่าไม่ได้ (DNE)</b></div>
+<div class="step"><div class="step-h">ค) $\lim_{x\to0^+}[f+g]$</div>$(-2)+2=\mathbf{0}$</div>
+<div class="step"><div class="step-h">ง) $\lim_{x\to2}\dfrac{f(x)}{1+g(x)}$</div>$\dfrac{0}{1+0}=\mathbf{0}$</div>
+<div class="step"><div class="step-h">จ) $\lim_{x\to0^-}\sqrt{f(x)}$</div>$f\to1$ จากซ้าย → $\sqrt1=\mathbf{1}$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ก) }0\quad\text{ข) หาค่าไม่ได้}\quad\text{ค) }0\quad\text{ง) }0\quad\text{จ) }1$$</div>
+</div></details>
+<p class="tip">ลิมิตไม่สนค่าของฟังก์ชันที่จุดนั้น (จุดทึบ) สนเฉพาะค่าที่เส้นกราฟ "เข้าไปหา"</p>
+</div>
+<div class="q" id="t8">
+<h3>8 · ข้อ 1.4 อ่านจากกราฟ <small><a class="pg" href="Tutorial-Class-M1.pdf#page=3" target="_blank" rel="noopener">PDF หน้า 3</a></small></h3>
+<p class="prob">$\lim_{x\to-3}f(x)\ \text{ และ }\ \lim_{x\to7}f(x)$</p>
+<p>คำตอบ: <span class="ans">$\lim_{x\to-3}f=4,\qquad \lim_{x\to7}f\ \text{ ไม่มีค่า (DNE)}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">$x\to-3$</div>ทั้งจากซ้ายและจากขวา กราฟเข้าใกล้ $y=4$ (วงกลมโปร่งที่ $(-3,4)$) ส่วนจุดทึบ $f(-3)=2$ ไม่เกี่ยวกับลิมิต$$\lim_{x\to-3^-}f=\lim_{x\to-3^+}f=4\ \Rightarrow\ \lim_{x\to-3}f=4$$</div>
+<div class="step"><div class="step-h">$x\to7$</div>จากซ้ายกราฟเข้าใกล้ $3$ (วงกลมโปร่งบน) แต่จากขวาเข้าใกล้ $2$ (วงกลมโปร่งล่าง) ส่วนจุดทึบ $f(7)=1$$$\lim_{x\to7^-}f=3\ne2=\lim_{x\to7^+}f$$ลิมิตสองข้างไม่เท่ากัน จึง <b>ไม่มีลิมิต</b></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\lim_{x\to-3}f=4,\qquad \lim_{x\to7}f\ \text{ ไม่มีค่า (DNE)}$$</div>
+</div></details>
+<p class="tip">เหตุผลที่ต้องเขียนตอบ: "ลิมิตซ้าย = ลิมิตขวา" จึงมีลิมิต / "ลิมิตซ้าย ≠ ลิมิตขวา" จึงไม่มี</p>
+</div>
+<h2 id="sec4">การคำนวณลิมิต (พีชคณิต · อนันต์ · L'Hôpital · Squeeze)</h2>
+<div class="q" id="t9">
+<h3>9 · ข้อ 3.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" target="_blank" rel="noopener">PDF หน้า 4</a></small></h3>
+<p class="prob">$\lim_{x\to0}\dfrac{\sqrt{2+x}-\sqrt2}{x}$</p>
+<p>คำตอบ: <span class="ans">$\dfrac{1}{2\sqrt2}=\dfrac{\sqrt2}{4}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบ</div>แทน $x=0$ ได้ $\frac00$ จึงต้องกำจัดราก</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณคอนจูเกต</div>$$\frac{\sqrt{2+x}-\sqrt2}{x}\cdot\frac{\sqrt{2+x}+\sqrt2}{\sqrt{2+x}+\sqrt2}=\frac{(2+x)-2}{x\left(\sqrt{2+x}+\sqrt2\right)}=\frac{1}{\sqrt{2+x}+\sqrt2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>$$\lim_{x\to0}\frac{1}{\sqrt{2+x}+\sqrt2}=\frac1{2\sqrt2}=\frac{\sqrt2}{4}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac{1}{2\sqrt2}=\dfrac{\sqrt2}{4}$$</div>
+</div></details>
+<p class="tip">เห็น √ลบ√ ที่ให้ 0/0 → คูณคอนจูเกต</p>
+</div>
+<div class="q" id="t10">
+<h3>10 · ข้อ 3.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" target="_blank" rel="noopener">PDF หน้า 4</a></small></h3>
+<p class="prob">$\lim_{x\to-\infty}\dfrac{\sqrt{4x^4+x}}{x^2-8}$</p>
+<p>คำตอบ: <span class="ans">$2$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึง $x^2$ ออกจากราก</div>$x^2&gt;0$ เสมอ จึงไม่ต้องกังวลเครื่องหมาย: $\sqrt{4x^4+x}=\sqrt{x^4\left(4+\frac1{x^3}\right)}=x^2\sqrt{4+\frac1{x^3}}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตัดกำลังสูงสุด</div>$$\frac{x^2\sqrt{4+1/x^3}}{x^2\left(1-8/x^2\right)}=\frac{\sqrt{4+1/x^3}}{1-8/x^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ให้ $x\to-\infty$</div>$\frac1{x^3}\to0,\ \frac8{x^2}\to0$ → $\dfrac{\sqrt4}{1}=2$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$2$$</div>
+</div></details>
+</div>
+<div class="q" id="t11">
+<h3>11 · ข้อ 3.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" target="_blank" rel="noopener">PDF หน้า 4</a></small></h3>
+<p class="prob">$\lim_{x\to0}x^{\sin x}$</p>
+<p>คำตอบ: <span class="ans">$1$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: รูปแบบ $0^0$</div>$x^{\sin x}$ นิยามเฉพาะ $x&gt;0$ จึงหาลิมิตเมื่อ $x\to0^+$ ; ให้ $y=x^{\sin x}$ แล้วใส่ $\ln$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดัดให้เป็นลิมิตที่รู้จัก</div>$$\ln y=\sin x\cdot\ln x=\frac{\sin x}{x}\cdot x\ln x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาลิมิต</div>$\frac{\sin x}{x}\to1$ และ $x\ln x=\dfrac{\ln x}{1/x}\xrightarrow{\text{L'H}}\dfrac{1/x}{-1/x^2}=-x\to0$$$\lim\ln y=1\cdot0=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ย้อนกลับ</div>$y=e^{\ln y}\to e^0=1$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$1$$</div>
+</div></details>
+<p class="tip">รูป $0^0,\ 1^\infty,\ \infty^0$ → ใส่ $\ln$ ก่อนเสมอ</p>
+</div>
+<div class="q" id="t12">
+<h3>12 · ข้อ 7.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" target="_blank" rel="noopener">PDF หน้า 5</a></small></h3>
+<p class="prob">$\lim_{x\to\infty}\left(1+\dfrac5x\right)^{2x}$</p>
+<p>คำตอบ: <span class="ans">$e^{10}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใช้บทนิยามของ $e$</div>$\displaystyle\lim_{x\to\infty}\left(1+\frac kx\right)^{x}=e^k$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดึงเลขชี้กำลัง</div>$$\left(1+\frac5x\right)^{2x}=\left[\left(1+\frac5x\right)^{x}\right]^2\to\left(e^5\right)^2=e^{10}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$e^{10}$$</div>
+</div></details>
+</div>
+<div class="q" id="t13">
+<h3>13 · ข้อ 7.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" target="_blank" rel="noopener">PDF หน้า 5</a></small></h3>
+<p class="prob">$\lim_{x\to+\infty}\dfrac{e^x+e^{-x}}{e^x-e^{-x}}$</p>
+<p>คำตอบ: <span class="ans">$1$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หารด้วย $e^x$</div>$$\frac{e^x+e^{-x}}{e^x-e^{-x}}=\frac{1+e^{-2x}}{1-e^{-2x}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ให้ $x\to+\infty$</div>$e^{-2x}\to0$ → $\dfrac{1+0}{1-0}=1$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$1$$</div>
+</div></details>
+<p class="tip">นี่คือ $\coth x\to1$ เมื่อ $x\to+\infty$</p>
+</div>
+<div class="q" id="t14">
+<h3>14 · ข้อ 7.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" target="_blank" rel="noopener">PDF หน้า 5</a></small></h3>
+<p class="prob">$\lim_{x\to-\infty}\dfrac{\sqrt{5x^2-1}}{x+3}$</p>
+<p>คำตอบ: <span class="ans">$-\sqrt5$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระวังเครื่องหมาย</div>เมื่อ $x\to-\infty$ จะได้ $x&lt;0$ ดังนั้น $\sqrt{x^2}=|x|=-x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดึง $|x|$ ออกจากราก</div>$$\sqrt{5x^2-1}=|x|\sqrt{5-\frac1{x^2}}=-x\sqrt{5-\frac1{x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนแล้วตัด</div>$$\frac{-x\sqrt{5-1/x^2}}{x\left(1+3/x\right)}=\frac{-\sqrt{5-1/x^2}}{1+3/x}\to\frac{-\sqrt5}{1}=-\sqrt5$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$-\sqrt5$$</div>
+</div></details>
+<p class="tip">ถ้า $x\to-\infty$ แล้วหารด้วยรากของ $x^2$ → ต้องได้เครื่องหมายลบออกมา (กับดักข้อสอบ)</p>
+</div>
+<div class="q" id="t15">
+<h3>15 · ข้อ 8 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" target="_blank" rel="noopener">PDF หน้า 6</a></small></h3>
+<p class="prob">$\text{หา } r,s \text{ ที่ทำให้ }\lim_{x\to0}\left(x^{-3}\sin3x+rx^{-2}+s\right)=3$</p>
+<p>คำตอบ: <span class="ans">$r=-3,\qquad s=\dfrac{15}{2}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: รวมเป็นเศษส่วนเดียว</div>$$x^{-3}\sin3x+rx^{-2}+s=\frac{\sin3x+rx}{x^3}+s$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $r$</div>ตัวส่วน $x^3\to0$ ถ้าลิมิตมีค่าจำกัด ตัวเศษต้องเป็น $0$ ด้วยอัตราอย่างน้อย $x^3$ แต่ $\sin3x+rx\approx(3+r)x$ ดังนั้นต้อง $3+r=0\Rightarrow r=-3$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาลิมิตที่เหลือด้วย L'Hôpital 3 รอบ</div>$$\lim_{x\to0}\frac{\sin3x-3x}{x^3}\overset{H}{=}\lim\frac{3\cos3x-3}{3x^2}\overset{H}{=}\lim\frac{-9\sin3x}{6x}\overset{H}{=}\lim\frac{-27\cos3x}{6}=-\frac92$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หา $s$</div>$-\frac92+s=3\Rightarrow s=\frac{15}2$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$r=-3,\qquad s=\dfrac{15}{2}$$</div>
+<p class="check">ตรวจด้วยอนุกรม: $\frac{\sin3x}{x^3}=\frac3{x^2}-\frac92+\frac{81}{40}x^2-\cdots$ ดังนั้น $\frac3{x^2}+\frac r{x^2}$ หายไปเมื่อ $r=-3$ เหลือ $-\frac92+s$ ✓</p>
+</div></details>
+</div>
+<div class="q" id="t16">
+<h3>16 · ข้อ 3.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" target="_blank" rel="noopener">PDF หน้า 6</a></small></h3>
+<p class="prob">$\lim_{x\to\infty}x\ln\left(\dfrac{x+1}{x-1}\right)$</p>
+<p>คำตอบ: <span class="ans">$2$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: รูป $\infty\cdot0$ → เปลี่ยนเป็นเศษส่วน</div>ให้ $t=\frac1x\to0^+$ : $\displaystyle x\ln\frac{x+1}{x-1}=\frac{\ln\frac{1+t}{1-t}}{t}=\frac{\ln(1+t)-\ln(1-t)}{t}$ (รูป $\frac00$)</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: L'Hôpital</div>$$\lim_{t\to0^+}\frac{\frac1{1+t}+\frac1{1-t}}{1}=1+1=2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$2$$</div>
+<p class="check">อีกวิธี: $\ln\frac{x+1}{x-1}=\ln\left(1+\frac2{x-1}\right)\approx\frac2{x-1}$ → $x\cdot\frac2{x-1}\to2$</p>
+</div></details>
+</div>
+<div class="q" id="t17">
+<h3>17 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" target="_blank" rel="noopener">PDF หน้า 6</a></small></h3>
+<p class="prob">$\lim_{x\to0}\left(\dfrac1x-\dfrac2{x^2+2x}\right)$</p>
+<p>คำตอบ: <span class="ans">$\dfrac12$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกตัวประกอบและรวมเศษส่วน</div>$x^2+2x=x(x+2)$ ตัวส่วนร่วม $=x(x+2)$$$\frac1x-\frac2{x(x+2)}=\frac{(x+2)-2}{x(x+2)}=\frac{x}{x(x+2)}=\frac1{x+2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทน $x=0$</div>$\dfrac1{0+2}=\dfrac12$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac12$$</div>
+</div></details>
+</div>
+<div class="q" id="t18">
+<h3>18 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=7" target="_blank" rel="noopener">PDF หน้า 7</a></small></h3>
+<p class="prob">$\lim_{x\to-\infty}\dfrac{\sqrt{4x^2+1}}{2x-5}$</p>
+<p class="alt">(เส้นขีดในรูปโจทย์เป็นรอยปากกา ไม่ใช่เลขชี้กำลัง)</p>
+<p>คำตอบ: <span class="ans">$-1$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึง $|x|=-x$ ออก</div>$\sqrt{4x^2+1}=|x|\sqrt{4+\frac1{x^2}}=-x\sqrt{4+\frac1{x^2}}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตัด $x$</div>$$\frac{-x\sqrt{4+1/x^2}}{x\left(2-5/x\right)}=\frac{-\sqrt{4+1/x^2}}{2-5/x}\to\frac{-2}{2}=-1$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$-1$$</div>
+</div></details>
+</div>
+<div class="q" id="t19">
+<h3>19 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=7" target="_blank" rel="noopener">PDF หน้า 7</a></small></h3>
+<p class="prob">$\lim_{x\to0}\left(\dfrac{2^x+e^x}{2}\right)^{1/x}$</p>
+<p>คำตอบ: <span class="ans">$e^{\frac{1+\ln2}{2}}=\sqrt{2e}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบ</div>ฐาน $\to\frac{1+1}2=1$ เลขชี้กำลัง $\to\infty$ เป็นรูป $1^\infty$ → ใส่ $\ln$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใส่ $\ln$</div>$$\ln y=\frac{\ln\left(\frac{2^x+e^x}{2}\right)}{x}\quad\left(\tfrac00\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: L'Hôpital</div>$\dfrac{d}{dx}2^x=2^x\ln2$ ดังนั้น$$\lim\ln y=\lim_{x\to0}\frac{2^x\ln2+e^x}{2^x+e^x}=\frac{\ln2+1}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ย้อนกลับ</div>$$y\to e^{(1+\ln2)/2}=e^{1/2}\cdot e^{\frac12\ln2}=\sqrt e\cdot\sqrt2=\sqrt{2e}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$e^{\frac{1+\ln2}{2}}=\sqrt{2e}$$</div>
+</div></details>
+</div>
+<div class="q" id="t20">
+<h3>20 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=8" target="_blank" rel="noopener">PDF หน้า 8</a></small></h3>
+<p class="prob">$\lim_{x\to-\infty}\dfrac{\sqrt{3x^6+4x^5+1}}{x^3-1}$</p>
+<p>คำตอบ: <span class="ans">$-\sqrt3$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึง $|x^3|$ ออกจากราก</div>$\sqrt{x^6}=|x|^3$ และเมื่อ $x&lt;0$: $|x|^3=-x^3$$$\sqrt{3x^6+4x^5+1}=-x^3\sqrt{3+\frac4x+\frac1{x^6}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หารตัดกำลังสูงสุด</div>$$\frac{-x^3\sqrt{3+4/x+1/x^6}}{x^3\left(1-1/x^3\right)}=\frac{-\sqrt{3+4/x+1/x^6}}{1-1/x^3}\to-\sqrt3$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$-\sqrt3$$</div>
+</div></details>
+</div>
+<div class="q" id="t21">
+<h3>21 · ข้อ 2 (Squeeze) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=8" target="_blank" rel="noopener">PDF หน้า 8</a></small></h3>
+<p class="prob">$\lim_{x\to0}x^3e^{\sin(1/x)}$</p>
+<p>คำตอบ: <span class="ans">$0$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ขอบเขตของ $\sin$</div>สำหรับ $x\ne0$: $-1\le\sin\frac1x\le1$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใส่ $e^{(\cdot)}$ (เพิ่มค่าตลอดสาย)</div>$e^{-1}\le e^{\sin(1/x)}\le e$ และ $e^{\sin(1/x)}&gt;0$ เสมอ</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณด้วย $|x|^3$ (ไม่เป็นลบ จึงไม่กลับอสมการ)</div>$$0\le\left|x^3e^{\sin(1/x)}\right|\le e\,|x|^3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: Squeeze</div>$\lim_{x\to0}0=0$ และ $\lim_{x\to0}e|x|^3=0$ จึงได้ $\left|x^3e^{\sin(1/x)}\right|\to0$ ดังนั้น $x^3e^{\sin(1/x)}\to0$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$0$$</div>
+</div></details>
+<p class="tip">ใช้ค่าสัมบูรณ์ครอบ จะไม่ต้องแยกกรณี $x&gt;0,\ x&lt;0$</p>
+</div>
+<h2 id="sec9">ความต่อเนื่อง</h2>
+<div class="q" id="t22">
+<h3>22 · ข้อ 9 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" target="_blank" rel="noopener">PDF หน้า 9</a></small></h3>
+<p class="prob">$f(x)=\begin{cases}7x-2,&amp;x\le2\\kx^2,&amp;x&gt;2\end{cases}\ \text{ ต่อเนื่องทุกจุด หา }k$</p>
+<p>คำตอบ: <span class="ans">$k=3$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: จุดที่ต้องตรวจ</div>แต่ละชิ้นเป็นพหุนาม (ต่อเนื่องอยู่แล้ว) ต้องตรวจเฉพาะรอยต่อ $x=2$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ลิมิตซ้าย = ลิมิตขวา = ค่าฟังก์ชัน</div>$$f(2)=\lim_{x\to2^-}f=7(2)-2=12,\qquad\lim_{x\to2^+}f=k(2)^2=4k$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แก้สมการ</div>$4k=12\Rightarrow k=3$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$k=3$$</div>
+</div></details>
+</div>
+<div class="q" id="t23">
+<h3>23 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" target="_blank" rel="noopener">PDF หน้า 9</a></small></h3>
+<p class="prob">$f(x)=\begin{cases}ax^2+2x,&amp;x&lt;2\\x^3+ax,&amp;x\ge2\end{cases}\ \text{ ต่อเนื่องบน }\mathbb R\text{ หา }a$</p>
+<p>คำตอบ: <span class="ans">$a=2$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ลิมิตซ้ายและขวาที่ $x=2$</div>$$\lim_{x\to2^-}f=a(4)+4=4a+4,\qquad f(2)=\lim_{x\to2^+}f=8+2a$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ให้เท่ากัน</div>$4a+4=8+2a\Rightarrow2a=4\Rightarrow a=2$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$a=2$$</div>
+<p class="check">ตรวจ: $a=2$ → ซ้าย $=12$ ขวา $=8+4=12$ ✓</p>
+</div></details>
+</div>
+<div class="q" id="t24">
+<h3>24 · ข้อ 7 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" target="_blank" rel="noopener">PDF หน้า 9</a></small></h3>
+<p class="prob">$f(x)=\begin{cases}ax+b,&amp;x\le-2\\x^2-4,&amp;-2&lt;x&lt;2\\2x+b,&amp;x\ge2\end{cases}\ \text{ ต่อเนื่องที่ }x=\pm2\text{ หา }a,b$</p>
+<p>คำตอบ: <span class="ans">$a=-2,\qquad b=-4$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ที่ $x=2$</div>ลิมิตซ้าย $=2^2-4=0$ ; ค่า/ลิมิตขวา $=2(2)+b=4+b$$$4+b=0\Rightarrow b=-4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ที่ $x=-2$</div>ค่า/ลิมิตซ้าย $=-2a+b$ ; ลิมิตขวา $=(-2)^2-4=0$$$-2a+b=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน $b=-4$</div>$-2a-4=0\Rightarrow a=-2$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$a=-2,\qquad b=-4$$</div>
+<p class="check">ตรวจ: $x=-2$: $-2(-2)+(-4)=0$ ✓ · $x=2$: $2(2)-4=0$ ✓</p>
+</div></details>
+</div>
+<div class="q" id="t25">
+<h3>25 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=10" target="_blank" rel="noopener">PDF หน้า 10</a></small></h3>
+<p class="prob">$f(x)=\begin{cases}\frac{x^2}{4},&amp;0&lt;x&lt;2\\a,&amp;x=2\\\frac{b-x^3}{2},&amp;x&gt;2\end{cases}\ \text{ ต่อเนื่องที่ }x=2\text{ หา }a,b$</p>
+<p>คำตอบ: <span class="ans">$a=1,\qquad b=10$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ลิมิตซ้าย</div>$\lim_{x\to2^-}\dfrac{x^2}4=\dfrac44=1$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ลิมิตขวา</div>$\lim_{x\to2^+}\dfrac{b-x^3}{2}=\dfrac{b-8}{2}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: เงื่อนไขต่อเนื่อง</div>ลิมิตซ้าย $=$ ลิมิตขวา $=f(2)=a$$$\frac{b-8}{2}=1\Rightarrow b=10,\qquad a=1$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$a=1,\qquad b=10$$</div>
+</div></details>
+</div>
+<div class="q" id="t26">
+<h3>26 · ข้อ 2.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=10" target="_blank" rel="noopener">PDF หน้า 10</a></small></h3>
+<p class="prob">$f(x)=\begin{cases}\dfrac{2-\sqrt{3-x}}{x+1},&amp;x&lt;-1\\bx-\frac34x^2,&amp;-1\le x\le2\end{cases}\ \text{ ต่อเนื่องที่ }x=-1\text{ หา }b$</p>
+<p>คำตอบ: <span class="ans">$b=-1$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ค่าฟังก์ชันที่ $x=-1$</div>$f(-1)=b(-1)-\frac34(1)=-b-\frac34$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ลิมิตซ้าย (รูป $\frac00$ → คูณคอนจูเกต)</div>$$\frac{2-\sqrt{3-x}}{x+1}\cdot\frac{2+\sqrt{3-x}}{2+\sqrt{3-x}}=\frac{4-(3-x)}{(x+1)(2+\sqrt{3-x})}=\frac{x+1}{(x+1)(2+\sqrt{3-x})}=\frac1{2+\sqrt{3-x}}$$$$\lim_{x\to-1^-}=\frac1{2+\sqrt4}=\frac14$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ให้เท่ากัน</div>$-b-\frac34=\frac14\Rightarrow -b=1\Rightarrow b=-1$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$b=-1$$</div>
+</div></details>
+</div>
+<h2 id="sec11">อนุพันธ์ (กฎลูกโซ่ · implicit · ลอการิทึม · อนุพันธ์อันดับสูง)</h2>
+<div class="q" id="t27">
+<h3>27 · ข้อ 11.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" target="_blank" rel="noopener">PDF หน้า 11</a></small></h3>
+<p class="prob">$f(x)=\arcsin\left(x^2+\cos(\ln2x)\right)$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=\dfrac{2x-\dfrac{\sin(\ln2x)}{x}}{\sqrt{1-\left(x^2+\cos(\ln2x)\right)^2}}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎลูกโซ่ชั้นนอก</div>$\dfrac{d}{dx}\arcsin u=\dfrac{u'}{\sqrt{1-u^2}}$ โดย $u=x^2+\cos(\ln2x)$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $u'$</div>$\dfrac d{dx}\ln2x=\dfrac{2}{2x}=\dfrac1x$ ดังนั้น$$u'=2x-\sin(\ln2x)\cdot\frac1x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=\dfrac{2x-\dfrac{\sin(\ln2x)}{x}}{\sqrt{1-\left(x^2+\cos(\ln2x)\right)^2}}$$</div>
+</div></details>
+</div>
+<div class="q" id="t28">
+<h3>28 · ข้อ 11.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" target="_blank" rel="noopener">PDF หน้า 11</a></small></h3>
+<p class="prob">$f(x)=e^{(x^2+1)\tan\sqrt{x^2+1}}$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=e^{(x^2+1)\tan\sqrt{x^2+1}}\left[2x\tan\sqrt{x^2+1}+x\sqrt{x^2+1}\,\sec^2\sqrt{x^2+1}\right]$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ชั้นนอก $e^E$</div>$f'=e^{E}\cdot E'$ โดย $E=(x^2+1)\tan\sqrt{x^2+1}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎผลคูณหา $E'$</div>$$E'=2x\tan\sqrt{x^2+1}+(x^2+1)\sec^2\!\sqrt{x^2+1}\cdot\frac{x}{\sqrt{x^2+1}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ทำให้เรียบ</div>$(x^2+1)\cdot\dfrac{x}{\sqrt{x^2+1}}=x\sqrt{x^2+1}$ จึงได้ผลลัพธ์ตามด้านบน</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=e^{(x^2+1)\tan\sqrt{x^2+1}}\left[2x\tan\sqrt{x^2+1}+x\sqrt{x^2+1}\,\sec^2\sqrt{x^2+1}\right]$$</div>
+</div></details>
+</div>
+<div class="q" id="t29">
+<h3>29 · ข้อ 11.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" target="_blank" rel="noopener">PDF หน้า 11</a></small></h3>
+<p class="prob">$f(x)=\sin(x\sec4x)$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=\cos(x\sec4x)\cdot\sec4x\,(1+4x\tan4x)$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ชั้นนอก</div>$f'=\cos(x\sec4x)\cdot(x\sec4x)'$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎผลคูณ</div>$$(x\sec4x)'=\sec4x+x\cdot4\sec4x\tan4x=\sec4x\,(1+4x\tan4x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=\cos(x\sec4x)\cdot\sec4x\,(1+4x\tan4x)$$</div>
+</div></details>
+</div>
+<div class="q" id="t30">
+<h3>30 · ข้อ 11.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" target="_blank" rel="noopener">PDF หน้า 11</a></small></h3>
+<p class="prob">$f(x)=\ln\left(\cos^2\sqrt{x^2+4}\right)$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=-\dfrac{2x\tan\sqrt{x^2+4}}{\sqrt{x^2+4}}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงกำลังสองออกจาก $\ln$ (ง่ายกว่า)</div>$f=2\ln\left|\cos\sqrt{x^2+4}\right|$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอนุพันธ์</div>$$f'=2\cdot\frac{-\sin\sqrt{x^2+4}}{\cos\sqrt{x^2+4}}\cdot\frac{x}{\sqrt{x^2+4}}=-\frac{2x\tan\sqrt{x^2+4}}{\sqrt{x^2+4}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=-\dfrac{2x\tan\sqrt{x^2+4}}{\sqrt{x^2+4}}$$</div>
+</div></details>
+</div>
+<div class="q" id="t31">
+<h3>31 · ข้อ 11.5 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" target="_blank" rel="noopener">PDF หน้า 11</a></small></h3>
+<p class="prob">$f(x)=\cos^2\left(\ln\sqrt{x^2+4}\right)$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=-\dfrac{x\,\sin\left(\ln(x^2+4)\right)}{x^2+4}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ทำข้างในให้ง่ายก่อน</div>$\ln\sqrt{x^2+4}=\frac12\ln(x^2+4)=:w$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใช้ $\frac d{dx}\cos^2w=-\sin2w\cdot w'$</div>$w'=\dfrac12\cdot\dfrac{2x}{x^2+4}=\dfrac{x}{x^2+4}$ และ $2w=\ln(x^2+4)$$$f'=-\sin(2w)\,w'=-\frac{x\sin\left(\ln(x^2+4)\right)}{x^2+4}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=-\dfrac{x\,\sin\left(\ln(x^2+4)\right)}{x^2+4}$$</div>
+</div></details>
+</div>
+<div class="q" id="t32">
+<h3>32 · ข้อ 6.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" target="_blank" rel="noopener">PDF หน้า 12</a></small></h3>
+<p class="prob">$f(x)=\tan^{-1}\left(\sqrt{\dfrac{x^2}{2\pi}}\right)$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=\dfrac{\sqrt{2\pi}}{2\pi+x^2}\cdot\dfrac{x}{|x|}\quad(x\ne0)$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ทำรากให้ง่ายก่อน</div>$\sqrt{\dfrac{x^2}{2\pi}}=\dfrac{|x|}{\sqrt{2\pi}}$ (ระวังค่าสัมบูรณ์)</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใช้ $\frac d{dx}\tan^{-1}u=\frac{u'}{1+u^2}$</div>$u=\dfrac{|x|}{\sqrt{2\pi}},\ u'=\dfrac{x/|x|}{\sqrt{2\pi}},\ 1+u^2=1+\dfrac{x^2}{2\pi}=\dfrac{2\pi+x^2}{2\pi}$$$f'=\frac{2\pi}{2\pi+x^2}\cdot\frac{x}{|x|\sqrt{2\pi}}=\frac{\sqrt{2\pi}}{2\pi+x^2}\cdot\frac{x}{|x|}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=\dfrac{\sqrt{2\pi}}{2\pi+x^2}\cdot\dfrac{x}{|x|}\quad(x\ne0)$$</div>
+<p class="check">สำหรับ $x&gt;0$: $f'=\dfrac{\sqrt{2\pi}}{2\pi+x^2}$ ; สำหรับ $x&lt;0$: เครื่องหมายลบ ; ที่ $x=0$ ไม่มีอนุพันธ์ (กราฟเป็นมุมแหลม)</p>
+</div></details>
+</div>
+<div class="q" id="t33">
+<h3>33 · ข้อ 6.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" target="_blank" rel="noopener">PDF หน้า 12</a></small></h3>
+<p class="prob">$g(x)=\dfrac{(2x-1)^2\sqrt{e^{(x^2-x)}}}{x^6}$</p>
+<p>คำตอบ: <span class="ans">$g'(x)=g(x)\left[\dfrac{4}{2x-1}+\dfrac{2x-1}{2}-\dfrac{6}{x}\right]$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ (อนุพันธ์แบบลอการิทึม)</div>$$\ln|g|=2\ln|2x-1|+\tfrac12(x^2-x)-6\ln|x|$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอนุพันธ์ทั้งสองข้าง</div>$$\frac{g'}{g}=2\cdot\frac{2}{2x-1}+\frac12(2x-1)-\frac6x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $g$ กลับ</div>$$g'(x)=\frac{(2x-1)^2\sqrt{e^{x^2-x}}}{x^6}\left[\frac4{2x-1}+\frac{2x-1}2-\frac6x\right]$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$g'(x)=g(x)\left[\dfrac{4}{2x-1}+\dfrac{2x-1}{2}-\dfrac{6}{x}\right]$$</div>
+</div></details>
+<p class="tip">ผลคูณ/ผลหาร/ยกกำลังหลายชั้น → ใช้ $\ln$ แล้วหาอนุพันธ์ จะเร็วกว่ากฎผลหารซ้อนกัน</p>
+</div>
+<div class="q" id="t34">
+<h3>34 · ข้อ 4.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" target="_blank" rel="noopener">PDF หน้า 12</a></small></h3>
+<p class="prob">$f(x)=2^{\cos3x}$</p>
+<p>คำตอบ: <span class="ans">$f'(x)=-3\ln2\,\sin3x\cdot2^{\cos3x}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใช้สูตร</div>$\dfrac d{dx}a^u=a^u\ln a\cdot u'$ โดย $a=2,\ u=\cos3x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $u'$</div>$u'=-3\sin3x$ จึงได้ $f'=2^{\cos3x}\ln2\cdot(-3\sin3x)$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=-3\ln2\,\sin3x\cdot2^{\cos3x}$$</div>
+</div></details>
+</div>
+<div class="q" id="t35">
+<h3>35 · ข้อ 4.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" target="_blank" rel="noopener">PDF หน้า 12</a></small></h3>
+<p class="prob">$f(x)=e^{(x^2-1)\sin3x}$</p>
+<p class="alt">(อ่านโจทย์ว่า $\sin3x$ อยู่ในเลขชี้กำลังด้วย: $e^{(x^2-1)\sin3x}$)</p>
+<p>คำตอบ: <span class="ans">$f'(x)=e^{(x^2-1)\sin3x}\left[2x\sin3x+3(x^2-1)\cos3x\right]$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ชั้นนอก</div>$f'=e^{E}E'$ โดย $E=(x^2-1)\sin3x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎผลคูณ</div>$E'=2x\sin3x+(x^2-1)\cdot3\cos3x$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=e^{(x^2-1)\sin3x}\left[2x\sin3x+3(x^2-1)\cos3x\right]$$</div>
+</div></details>
+</div>
+<div class="q" id="t36">
+<h3>36 · ข้อ 4.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" target="_blank" rel="noopener">PDF หน้า 13</a></small></h3>
+<p class="prob">$f(x)=\log_3\left(\dfrac{e}{\sin x^2}\right)^2$</p>
+<p class="alt">(ตีความ $\sin x^2=\sin(x^2)$ ; ถ้าโจทย์หมายถึง $\sin^2x$ คำตอบจะเป็น $-\dfrac{4\cot x}{\ln3}$)</p>
+<p>คำตอบ: <span class="ans">$f'(x)=-\dfrac{4x\cot(x^2)}{\ln3}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใช้สมบัติ log ให้เรียบ</div>$f=2\log_3\dfrac{e}{\sin x^2}=2\left[\log_3e-\log_3\sin(x^2)\right]$ ($\log_3e$ เป็นค่าคงที่)</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอนุพันธ์</div>$\dfrac d{dx}\log_3u=\dfrac{u'}{u\ln3}$$$f'=-2\cdot\frac{\cos(x^2)\cdot2x}{\sin(x^2)\ln3}=-\frac{4x\cot(x^2)}{\ln3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=-\dfrac{4x\cot(x^2)}{\ln3}$$</div>
+</div></details>
+</div>
+<div class="q" id="t37">
+<h3>37 · ข้อ 4.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" target="_blank" rel="noopener">PDF หน้า 13</a></small></h3>
+<p class="prob">$g(t)=\dfrac1{t^2}\left[2t-\ln\left(1+t^2\right)^{1/2}\right]^2$</p>
+<p>คำตอบ: <span class="ans">$g'(t)=\dfrac{\left[2t-\frac12\ln(1+t^2)\right]\left[\ln(1+t^2)-\frac{2t^2}{1+t^2}\right]}{t^3}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ทำให้เรียบ</div>$\ln(1+t^2)^{1/2}=\frac12\ln(1+t^2)$ ให้ $h=2t-\frac12\ln(1+t^2)$ ดังนั้น $g=\dfrac{h^2}{t^2}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $h'$</div>$h'=2-\dfrac{t}{1+t^2}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กฎผลหาร</div>$$g'=\frac{2hh'\cdot t^2-h^2\cdot2t}{t^4}=\frac{2h\,(th'-h)}{t^3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณ $th'-h$</div>$$th'-h=2t-\frac{t^2}{1+t^2}-2t+\tfrac12\ln(1+t^2)=\tfrac12\ln(1+t^2)-\frac{t^2}{1+t^2}$$แทนกลับ: $g'=\dfrac{2h\left[\frac12\ln(1+t^2)-\frac{t^2}{1+t^2}\right]}{t^3}$ ซึ่งเท่ากับรูปคำตอบ</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$g'(t)=\dfrac{\left[2t-\frac12\ln(1+t^2)\right]\left[\ln(1+t^2)-\frac{2t^2}{1+t^2}\right]}{t^3}$$</div>
+</div></details>
+</div>
+<div class="q" id="t38">
+<h3>38 · ข้อ 12 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" target="_blank" rel="noopener">PDF หน้า 13</a></small></h3>
+<p class="prob">$y=u^2+1,\ u=\sqrt{v^2+2},\ v=2-x^2\ \text{ หา }\dfrac{dy}{dx}$</p>
+<p>คำตอบ: <span class="ans">$\dfrac{dy}{dx}=-4x(2-x^2)=4x^3-8x$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎลูกโซ่</div>$\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dv}\cdot\dfrac{dv}{dx}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แต่ละตัว</div>$\dfrac{dy}{du}=2u,\quad\dfrac{du}{dv}=\dfrac{v}{\sqrt{v^2+2}}=\dfrac vu,\quad\dfrac{dv}{dx}=-2x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณกัน</div>$$\frac{dy}{dx}=2u\cdot\frac vu\cdot(-2x)=-4xv=-4x(2-x^2)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac{dy}{dx}=-4x(2-x^2)=4x^3-8x$$</div>
+<p class="check">ตรวจ: $u^2=v^2+2$ ดังนั้น $y=v^2+3=(2-x^2)^2+3$ → $y'=2(2-x^2)(-2x)$ ✓</p>
+</div></details>
+</div>
+<div class="q" id="t39">
+<h3>39 · ข้อ 9 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=14" target="_blank" rel="noopener">PDF หน้า 14</a></small></h3>
+<p class="prob">$w=\dfrac{2t}{2-t^2},\ t=\tan^22\theta\ \text{ หา }\dfrac{dw}{d\theta}\text{ ที่ }\theta=\dfrac\pi8$</p>
+<p>คำตอบ: <span class="ans">$48$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ค่า $t$ ที่ $\theta=\frac\pi8$</div>$t=\tan^2\left(\frac\pi4\right)=1$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $\dfrac{dw}{dt}$</div>$$\frac{dw}{dt}=\frac{2(2-t^2)-2t(-2t)}{(2-t^2)^2}=\frac{4+2t^2}{(2-t^2)^2}\ \Rightarrow\ \left.\frac{dw}{dt}\right|_{t=1}=\frac{6}{1}=6$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: $\dfrac{dt}{d\theta}$</div>$$\frac{dt}{d\theta}=2\tan2\theta\cdot\sec^22\theta\cdot2=4\tan2\theta\sec^22\theta$$ ที่ $\theta=\frac\pi8$: $\tan\frac\pi4=1,\ \sec^2\frac\pi4=2$ → $4\cdot1\cdot2=8$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คูณ</div>$\dfrac{dw}{d\theta}=6\cdot8=48$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$48$$</div>
+</div></details>
+</div>
+<div class="q" id="t40">
+<h3>40 · ข้อ 5.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=14" target="_blank" rel="noopener">PDF หน้า 14</a></small></h3>
+<p class="prob">$w=2z+3,\ z=\sqrt{y^2+5},\ y=1-x^2\ \text{ หา }\dfrac{dw}{dx}\text{ เมื่อ }x=-1$</p>
+<p>คำตอบ: <span class="ans">$0$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ค่าที่ $x=-1$</div>$y=1-1=0,\quad z=\sqrt{0+5}=\sqrt5$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎลูกโซ่</div>$\dfrac{dw}{dx}=\dfrac{dw}{dz}\cdot\dfrac{dz}{dy}\cdot\dfrac{dy}{dx}=2\cdot\dfrac{y}{\sqrt{y^2+5}}\cdot(-2x)$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่า</div>$=2\cdot\dfrac{0}{\sqrt5}\cdot(2)=0$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$0$$</div>
+</div></details>
+<p class="tip">ตัวกลาง $\frac{dz}{dy}=\frac{y}{\sqrt{y^2+5}}$ เป็น $0$ เมื่อ $y=0$ จึงทำให้ทั้งผลคูณเป็น $0$</p>
+</div>
+<div class="q" id="t41">
+<h3>41 · ข้อ 7 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=15" target="_blank" rel="noopener">PDF หน้า 15</a></small></h3>
+<p class="prob">$y^2+\dfrac1{x-y}+2x=0\ \text{ หา }\dfrac{dy}{dx}$</p>
+<p>คำตอบ: <span class="ans">$\dfrac{dy}{dx}=\dfrac{1-2(x-y)^2}{1+2y(x-y)^2}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาอนุพันธ์ทั้งสองข้างเทียบ $x$</div>$\dfrac{d}{dx}\dfrac1{x-y}=-\dfrac{1-y'}{(x-y)^2}$$$2yy'-\frac{1-y'}{(x-y)^2}+2=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณ $(x-y)^2$ ล้างเศษส่วน</div>$$2yy'(x-y)^2-(1-y')+2(x-y)^2=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมพจน์ $y'$</div>$$y'\left[2y(x-y)^2+1\right]=1-2(x-y)^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac{dy}{dx}=\dfrac{1-2(x-y)^2}{1+2y(x-y)^2}$$</div>
+</div></details>
+</div>
+<div class="q" id="t42">
+<h3>42 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=15" target="_blank" rel="noopener">PDF หน้า 15</a></small></h3>
+<p class="prob">$xy^2+x^3\cos\pi y=1-ye^x\ \text{ หา }\left.\dfrac{dy}{dx}\right|_{(0,1)}\text{ และ }\left.\dfrac{dx}{dy}\right|_{(0,1)}$</p>
+<p>คำตอบ: <span class="ans">$\left.\dfrac{dy}{dx}\right|_{(0,1)}=-2,\qquad\left.\dfrac{dx}{dy}\right|_{(0,1)}=-\dfrac12$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 0: ตรวจว่าจุดอยู่บนเส้นโค้ง</div>ซ้าย $=0\cdot1+0=0$ ; ขวา $=1-1\cdot e^0=0$ ✓</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาอนุพันธ์ implicit</div>$$y^2+2xyy'+3x^2\cos\pi y-\pi x^3\sin\pi y\cdot y'=-y'e^x-ye^x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทน $(x,y)=(0,1)$</div>$$1+0+0-0=-y'-1\ \Rightarrow\ y'=-2$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: $\dfrac{dx}{dy}$ คือส่วนกลับ</div>$\dfrac{dx}{dy}=\dfrac1{dy/dx}=-\dfrac12$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\left.\dfrac{dy}{dx}\right|_{(0,1)}=-2,\qquad\left.\dfrac{dx}{dy}\right|_{(0,1)}=-\dfrac12$$</div>
+</div></details>
+</div>
+<div class="q" id="t43">
+<h3>43 · ข้อ 1.2.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=16" target="_blank" rel="noopener">PDF หน้า 16</a></small></h3>
+<p class="prob">$x^2+xy+y^2-3=0\ \text{ หา }\dfrac{dy}{dx}$</p>
+<p>คำตอบ: <span class="ans">$\dfrac{dy}{dx}=-\dfrac{2x+y}{x+2y}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาอนุพันธ์ทั้งสองข้าง</div>$$2x+\left(y+xy'\right)+2yy'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัด $y'$</div>$$y'(x+2y)=-(2x+y)\ \Rightarrow\ y'=-\frac{2x+y}{x+2y}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac{dy}{dx}=-\dfrac{2x+y}{x+2y}$$</div>
+</div></details>
+</div>
+<div class="q" id="t44">
+<h3>44 · ข้อ 1.2.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=16" target="_blank" rel="noopener">PDF หน้า 16</a></small></h3>
+<p class="prob">$y=(\cos x)^{\sin x}$</p>
+<p class="alt">(อ่านโจทย์ $y=\cos x^{\sin x}$ ว่าเป็นเลขยกกำลังที่ฐานคือ $\cos x$)</p>
+<p>คำตอบ: <span class="ans">$y'=(\cos x)^{\sin x}\left[\cos x\ln(\cos x)-\sin x\tan x\right]$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$</div>$\ln y=\sin x\cdot\ln(\cos x)$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หาอนุพันธ์ (กฎผลคูณ)</div>$$\frac{y'}{y}=\cos x\ln(\cos x)+\sin x\cdot\frac{-\sin x}{\cos x}=\cos x\ln(\cos x)-\sin x\tan x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ กลับ</div>$y'=(\cos x)^{\sin x}\left[\cos x\ln(\cos x)-\sin x\tan x\right]$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=(\cos x)^{\sin x}\left[\cos x\ln(\cos x)-\sin x\tan x\right]$$</div>
+</div></details>
+<p class="tip">ฐานและเลขชี้กำลังเป็นฟังก์ชันของ $x$ ทั้งคู่ → ต้องใช้ $\ln$ ทั้งสองข้างเสมอ</p>
+</div>
+<div class="q" id="t45">
+<h3>45 · ข้อ 5.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" target="_blank" rel="noopener">PDF หน้า 17</a></small></h3>
+<p class="prob">$3y^2t+t^2y=1,\ \dfrac{dt}{dx}=-\dfrac{2t}{x}\ \text{ หา }\dfrac{dy}{dx}\text{ และ }\dfrac{d^2y}{dx^2}$</p>
+<p>คำตอบ: <span class="ans">$\dfrac{dy}{dx}=\dfrac{2y(3y+2t)}{x(6y+t)},\qquad\dfrac{d^2y}{dx^2}=\dfrac{6ty\left(2t^2-3ty-36y^2\right)}{x^2(t+6y)^3}$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาอนุพันธ์เทียบ $x$ (ทั้ง $y$ และ $t$ ขึ้นกับ $x$)</div>$$6yt\,y'+3y^2t'+2tt'y+t^2y'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทน $t'=-\frac{2t}{x}$ แล้วแก้หา $y'$</div>$$y'\,t(6y+t)=-t'\,y(3y+2t)=\frac{2t}{x}\,y(3y+2t)\ \Rightarrow\ y'=\frac{2y(3y+2t)}{x(6y+t)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $y''$ ด้วยกฎผลหาร</div>ให้ $N=6y^2+4ty,\ D=x(6y+t)$ โดย $t'=-\frac{2t}x$$$N'=(12y+4t)y'-\frac{8ty}{x},\qquad D'=(6y+t)+x(6y'+t')=6y-t+6xy'$$$$y''=\frac{N'D-ND'}{D^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $y'$ และจัดรูป</div>$$y''=\frac{6ty\left(2t^2-3ty-36y^2\right)}{x^2(t+6y)^3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\dfrac{dy}{dx}=\dfrac{2y(3y+2t)}{x(6y+t)},\qquad\dfrac{d^2y}{dx^2}=\dfrac{6ty\left(2t^2-3ty-36y^2\right)}{x^2(t+6y)^3}$$</div>
+<p class="check">ตรวจด้วยตัวเลข: $x=y=t=1$ ได้ $y'=\frac{10}7$ และ $y''=\frac{-222}{343}$ ตรงกับสูตรทั้งสองวิธี</p>
+</div></details>
+</div>
+<div class="q" id="t46">
+<h3>46 · ข้อ 13 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" target="_blank" rel="noopener">PDF หน้า 17</a></small></h3>
+<p class="prob">$x^2+xy+y^2=3,\ \left.\dfrac{dy}{dx}\right|_{x=1}=-1\text{ ที่ }(1,1)\ \text{ หา }\left.\dfrac{d^2y}{dx^2}\right|_{x=1}$</p>
+<p>คำตอบ: <span class="ans">$-\dfrac23$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: อนุพันธ์ครั้งที่ 1</div>$$2x+y+xy'+2yy'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อนุพันธ์ครั้งที่ 2</div>$$2+y'+y'+xy''+2(y')^2+2yy''=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน $x=1,\ y=1,\ y'=-1$</div>$$2-1-1+y''+2(1)+2y''=0\ \Rightarrow\ 3y''+2=0\ \Rightarrow\ y''=-\frac23$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$-\dfrac23$$</div>
+<p class="check">ตรวจ $y'$ จากสมการแรก: $2+1+y'+2y'=0\Rightarrow y'=-1$ ✓ ตรงกับที่โจทย์ให้</p>
+</div></details>
+</div>
+<div class="q" id="t47">
+<h3>47 · ข้อ 8 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" target="_blank" rel="noopener">PDF หน้า 17</a></small></h3>
+<p class="prob">$f(x)=e^x+xe^x\ \text{ หา }f^{(49)}(x)$</p>
+<p>คำตอบ: <span class="ans">$f^{(49)}(x)=(x+50)e^x$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หารูปแบบจากอนุพันธ์ไม่กี่ตัวแรก</div>$(xe^x)'=(x+1)e^x,\ (xe^x)''=(x+2)e^x,\ (xe^x)'''=(x+3)e^x\ \Rightarrow\ (xe^x)^{(n)}=(x+n)e^x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $e^x$ ดิฟกี่ครั้งก็เท่าเดิม</div>$(e^x)^{(n)}=e^x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมที่ $n=49$</div>$$f^{(49)}=e^x+(x+49)e^x=(x+50)e^x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f^{(49)}(x)=(x+50)e^x$$</div>
+</div></details>
+<p class="tip">สูตรลัด: $\left(xe^{x}\right)^{(n)}=(x+n)e^x$ (จะได้จาก Leibniz rule ก็ได้)</p>
+</div>
+<h2 id="sec18">ผลต่างเชิงอนุพันธ์ และการประมาณค่า</h2>
+<div class="q" id="t48">
+<h3>48 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=18" target="_blank" rel="noopener">PDF หน้า 18</a></small></h3>
+<p class="prob">$f(x)=(ax+b)^{-n}\ \text{ หาอนุพันธ์อันดับ 1–4}$</p>
+<p>คำตอบ:</p><div class="ans">$$\begin{aligned}y'&amp;=-na(ax+b)^{-n-1}\\y''&amp;=n(n+1)a^2(ax+b)^{-n-2}\\y'''&amp;=-n(n+1)(n+2)a^3(ax+b)^{-n-3}\\y^{(4)}&amp;=n(n+1)(n+2)(n+3)a^4(ax+b)^{-n-4}\end{aligned}$$</div>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: อันดับ 1</div>กฎลูกโซ่ $\dfrac d{dx}u^{-n}=-nu^{-n-1}u'$ โดย $u'=a$ → $y'=-na(ax+b)^{-n-1}$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อันดับ 2</div>ลดกำลังลง 1 คูณกำลังเดิม $(-n-1)$ และคูณ $a$ → $(-n)(-n-1)a^2=n(n+1)a^2$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: อันดับ 3 และ 4</div>คูณ $(-n-2)a$ แล้ว $(-n-3)a$ ต่อเนื่อง เครื่องหมายสลับ $-,+,-,+$ ตามที่แสดงด้านบน</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\begin{aligned}y'&amp;=-na(ax+b)^{-n-1}\\y''&amp;=n(n+1)a^2(ax+b)^{-n-2}\\y'''&amp;=-n(n+1)(n+2)a^3(ax+b)^{-n-3}\\y^{(4)}&amp;=n(n+1)(n+2)(n+3)a^4(ax+b)^{-n-4}\end{aligned}$$</div>
+</div></details>
+<p class="tip">รูปทั่วไป: $f^{(k)}=(-1)^k\,n(n+1)\cdots(n+k-1)\,a^k(ax+b)^{-n-k}$</p>
+</div>
+<div class="q" id="t49">
+<h3>49 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=18" target="_blank" rel="noopener">PDF หน้า 18</a></small></h3>
+<p class="prob">$\text{หาผลต่างเชิงอนุพันธ์ (}dy\text{) ของ }xy+x^3=y+3x$</p>
+<p>คำตอบ: <span class="ans">$dy=\dfrac{3-3x^2-y}{x-1}\,dx$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาผลต่างเชิงอนุพันธ์ทั้งสองข้าง</div>$$y\,dx+x\,dy+3x^2\,dx=dy+3\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดพจน์ $dy$ ไปไว้ด้านเดียว</div>$$(x-1)\,dy=\left(3-3x^2-y\right)dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แก้หา $dy$</div>$$dy=\frac{3-3x^2-y}{x-1}\,dx$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$dy=\dfrac{3-3x^2-y}{x-1}\,dx$$</div>
+</div></details>
+</div>
+<div class="q" id="t50">
+<h3>50 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" target="_blank" rel="noopener">PDF หน้า 19</a></small></h3>
+<p class="prob">$\text{ประมาณค่า }\sqrt[3]{1.1}\ \text{ด้วยผลต่างเชิงอนุพันธ์}$</p>
+<p>คำตอบ: <span class="ans">$\sqrt[3]{1.1}\approx1.0333$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก $f$ และจุด $a$</div>$f(x)=x^{1/3},\ a=1$ (ใกล้ $1.1$ และคิดง่าย), $dx=0.1$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใช้ $f(a+dx)\approx f(a)+f'(a)\,dx$</div>$f'(x)=\frac13x^{-2/3}\Rightarrow f'(1)=\frac13$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คำนวณ</div>$$\sqrt[3]{1.1}\approx1+\frac13(0.1)=1.0333$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\sqrt[3]{1.1}\approx1.0333$$</div>
+<p class="check">ค่าจริง $\sqrt[3]{1.1}=1.03228\ldots$ คลาดเคลื่อน $\approx0.001$</p>
+</div></details>
+</div>
+<div class="q" id="t51">
+<h3>51 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" target="_blank" rel="noopener">PDF หน้า 19</a></small></h3>
+<p class="prob">$\text{ประมาณ }2\sqrt{9.02}\left(9.02-\sqrt{9.02}\right)\ \text{โดยการประมาณเชิงเส้น}$</p>
+<p>คำตอบ: <span class="ans">$\approx36.14$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งฟังก์ชัน</div>$f(x)=2\sqrt x\left(x-\sqrt x\right)=2x^{3/2}-2x$ และต้องการ $f(9.02)$ ; เลือก $a=9$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $f(9),\ f'(9)$</div>$f(9)=2\cdot27-18=36$ ; $f'(x)=3x^{1/2}-2\Rightarrow f'(9)=9-2=7$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: $dx=0.02$</div>$$f(9.02)\approx36+7(0.02)=36.14$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\approx36.14$$</div>
+<p class="check">ค่าจริง $\approx36.1400$ ✓</p>
+</div></details>
+</div>
+<div class="q" id="t52">
+<h3>52 · ข้อ 14 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" target="_blank" rel="noopener">PDF หน้า 19</a></small></h3>
+<p class="prob">$\text{ประมาณ }2\sqrt{0.998}\left(1.996-\sqrt{3.992}\right)\ \text{โดยการประมาณเชิงเส้น}$</p>
+<p>คำตอบ: <span class="ans">$\approx-0.004$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: มองหาความสัมพันธ์ของตัวเลข</div>$1.996=2(0.998)$ และ $3.992=4(0.998)$ ให้ $x=0.998$ จะได้ $\sqrt{3.992}=2\sqrt x$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งฟังก์ชัน</div>$$f(x)=2\sqrt x\left(2x-2\sqrt x\right)=4x^{3/2}-4x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้ $a=1$</div>$f(1)=0$ ; $f'(x)=6\sqrt x-4\Rightarrow f'(1)=2$ ; $dx=-0.002$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ประมาณ</div>$$f(0.998)\approx0+2(-0.002)=-0.004$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\approx-0.004$$</div>
+<p class="check">ค่าจริง $\approx-0.003994$ ✓</p>
+</div></details>
+</div>
+<h2 id="sec20">กฎของ L'Hôpital</h2>
+<div class="q" id="t53">
+<h3>53 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" target="_blank" rel="noopener">PDF หน้า 20</a></small></h3>
+<p class="prob">$\lim_{x\to\pi/2}(\tan x)^{\cos x}\ \text{ (ใช้ L'Hôpital)}$</p>
+<p>คำตอบ: <span class="ans">$1$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: รูป $\infty^0$ → ใส่ $\ln$</div>$x\to\frac\pi2^-$ (ฝั่งซ้ายเท่านั้นที่ $\tan x&gt;0$) ให้ $y=(\tan x)^{\cos x}$$$\ln y=\cos x\,\ln\tan x=\frac{\ln\tan x}{\sec x}\quad\left(\tfrac\infty\infty\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: L'Hôpital</div>$\dfrac d{dx}\ln\tan x=\dfrac{\sec^2x}{\tan x}=\dfrac{1}{\sin x\cos x}$ และ $\dfrac d{dx}\sec x=\sec x\tan x=\dfrac{\sin x}{\cos^2x}$$$\lim\frac{1/(\sin x\cos x)}{\sin x/\cos^2x}=\lim_{x\to\pi/2^-}\frac{\cos x}{\sin^2x}=\frac01=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ย้อนกลับ</div>$y\to e^0=1$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$1$$</div>
+</div></details>
+</div>
+<div class="q" id="t54">
+<h3>54 · ข้อ 6.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" target="_blank" rel="noopener">PDF หน้า 20</a></small></h3>
+<p class="prob">$\lim_{x\to0}\left(\dfrac1x-\cot x\right)\ \text{ (ใช้ L'Hôpital)}$</p>
+<p>คำตอบ: <span class="ans">$0$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: รูป $\infty-\infty$ → รวมเป็นเศษส่วน</div>$$\frac1x-\frac{\cos x}{\sin x}=\frac{\sin x-x\cos x}{x\sin x}\quad\left(\tfrac00\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: L'Hôpital รอบที่ 1</div>$$\frac{\cos x-\cos x+x\sin x}{\sin x+x\cos x}=\frac{x\sin x}{\sin x+x\cos x}\quad\left(\tfrac00\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: L'Hôpital รอบที่ 2</div>$$\frac{\sin x+x\cos x}{\cos x+\cos x-x\sin x}=\frac{\sin x+x\cos x}{2\cos x-x\sin x}\to\frac{0}{2}=0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$0$$</div>
+<p class="check">ตรวจด้วยอนุกรม: $\cot x=\frac1x-\frac x3-\cdots$ ดังนั้น $\frac1x-\cot x\approx\frac x3\to0$ ✓</p>
+</div></details>
+</div>
+<div class="q" id="t55">
+<h3>55 · ข้อ 6.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" target="_blank" rel="noopener">PDF หน้า 20</a></small></h3>
+<p class="prob">$\lim_{x\to3}\left(e^{x-3}+2x-6\right)^{\frac1{x-3}}\ \text{ (ใช้ L'Hôpital)}$</p>
+<p>คำตอบ: <span class="ans">$e^3$</span></p>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบ</div>ฐาน $\to e^0+0=1$ และเลขชี้กำลัง $\to\pm\infty$ เป็นรูป $1^\infty$ → ใส่ $\ln$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $\ln y$</div>$$\ln y=\frac{\ln\left(e^{x-3}+2x-6\right)}{x-3}\quad\left(\tfrac00\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: L'Hôpital</div>$$\lim_{x\to3}\frac{\dfrac{e^{x-3}+2}{e^{x-3}+2x-6}}{1}=\frac{1+2}{1+0}=3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ย้อนกลับ</div>$y\to e^3$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$e^3$$</div>
+</div></details>
+</div>
+<h2 id="formulas">ตารางสูตร (หน้า 21–25 ของไฟล์)</h2>
+<div class="q"><p>5 หน้าท้ายของไฟล์เป็นตารางอนุพันธ์และสูตรตรีโกณมิติ (ไม่มีโจทย์) สรุปสูตรที่ใช้บ่อยในชุดนี้:</p>
+<table class="ft"><tbody>
+<tr><td>กฎลูกโซ่</td><td>$\dfrac{d}{dx}f(g(x))=f'(g(x))\,g'(x)$</td></tr>
+<tr><td>ยกกำลัง / ผลคูณ / ผลหาร</td><td>$(u^n)'=nu^{n-1}u'$ · $(uv)'=u'v+uv'$ · $\left(\frac uv\right)'=\frac{u'v-uv'}{v^2}$</td></tr>
+<tr><td>ตรีโกณ</td><td>$(\sin u)'=\cos u\,u'$ · $(\cos u)'=-\sin u\,u'$ · $(\tan u)'=\sec^2u\,u'$ · $(\sec u)'=\sec u\tan u\,u'$</td></tr>
+<tr><td>ตรีโกณผกผัน</td><td>$(\sin^{-1}u)'=\dfrac{u'}{\sqrt{1-u^2}}$ · $(\tan^{-1}u)'=\dfrac{u'}{1+u^2}$</td></tr>
+<tr><td>เลขชี้กำลัง / ลอการิทึม</td><td>$(e^u)'=e^uu'$ · $(a^u)'=a^u\ln a\,u'$ · $(\ln u)'=\dfrac{u'}{u}$ · $(\log_au)'=\dfrac{u'}{u\ln a}$</td></tr>
+<tr><td>ฟังก์ชันไฮเพอร์โบลิก</td><td>$(\sinh u)'=\cosh u\,u'$ · $(\cosh u)'=\sinh u\,u'$ · $(\tanh u)'=\operatorname{sech}^2u\,u'$</td></tr>
+<tr><td>มุมคู่ / ครึ่งมุม</td><td>$\sin2A=2\sin A\cos A$ · $\cos2A=\cos^2A-\sin^2A=2\cos^2A-1$ · $\sin^2A=\frac{1-\cos2A}2$ · $\cos^2A=\frac{1+\cos2A}2$</td></tr>
+<tr><td>ผลต่างเชิงอนุพันธ์</td><td>$f(a+dx)\approx f(a)+f'(a)\,dx$ · $dy=f'(x)\,dx$</td></tr>
+</tbody></table>
+<p class="tip">ตารางเต็มดูได้ที่ <a href="Tutorial-Class-M1.pdf#page=21" target="_blank" rel="noopener">PDF หน้า 21–25</a> (ในข้อสอบจริงมักแนบตารางนี้มาให้)</p></div>
+</main>
+</body>
+</html>
