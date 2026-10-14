@@ -16,6 +16,8 @@
 
   .drill{scroll-margin-top:4.5rem}
   .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
   .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
   .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
   .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
@@ -39,7 +41,7 @@
 <main>
 <h1>ฝึกทำ · ClassMarker + ข้อเขียน (42 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="classmarker-vs-written.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
 <article class="q drill" id="p1" data-idx="0">
-<h3><span class="num">1</span> C1. $\displaystyle\int3x^{1/3}(x^3+2)^2dx$ <span class="src">สไลด์ 6 · กระจายก่อน</span></h3>
+<h3><span class="num">1</span><span class="ttl">C1. $\displaystyle\int3x^{1/3}(x^3+2)^2dx$ <span class="src">สไลด์ 6 · กระจายก่อน</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-0"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลไม่จำกัดเขต $\int3x^{1/3}(x^3+2)^2dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของฟังก์ชันนี้ในรูปผลรวมของกำลังของ $x$ บวก $C$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กระจายกำลังสองของทวินามได้ด้วย $(a+b)^2=a^2+2ab+b^2$</li><li>กฎเลขชี้กำลัง $x^a\cdot x^b=x^{a+b}$ และกฎกำลัง $\int x^n\,dx=\frac{x^{n+1}}{n+1}$</li></ul></div></details>
@@ -75,7 +77,7 @@ $$\frac{9}{22}x^{22/3}+\frac{36}{13}x^{13/3}+9x^{4/3}+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int2x^{1/2}(x^2+3)^2\,dx$</p><details><summary>ใบ้</summary><p>กระจาย $(x^2+3)^2$ ก่อน แล้วคูณ $2x^{1/2}$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{4}{11}x^{11/2}+\frac{24}{7}x^{7/2}+12x^{3/2}+C$</p><p class="alt">$(x^2+3)^2=x^4+6x^2+9$ คูณ $2x^{1/2}$ ได้ $2x^{9/2}+12x^{5/2}+18x^{1/2}$<br>อินทิเกรตทีละเทอม: $\frac{2x^{11/2}}{11/2}+\frac{12x^{7/2}}{7/2}+\frac{18x^{3/2}}{3/2}$</p></details></div>
 </div></article>
 <article class="q drill" id="p2" data-idx="1">
-<h3><span class="num">2</span> C2. $\displaystyle\int(e^x+1)^2dx$ <span class="src">สไลด์ 7 · กระจายก่อน</span></h3>
+<h3><span class="num">2</span><span class="ttl">C2. $\displaystyle\int(e^x+1)^2dx$ <span class="src">สไลด์ 7 · กระจายก่อน</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-1"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int(e^x+1)^2dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของฟังก์ชันนี้</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(a+b)^2=a^2+2ab+b^2$ และ $(e^x)^2=e^{2x}$</li><li>$\int e^{kx}dx=\frac1ke^{kx}+C$</li></ul></div></details>
@@ -102,7 +104,7 @@ $$\frac12e^{2x}+2e^x+x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int(e^{2x}+3)^2\,dx$</p><details><summary>ใบ้</summary><p>กระจายกำลังสอง แล้วระวังตัวหาร $4$ และ $2$ ของเทอมเลขชี้กำลัง</p></details><details><summary>ดูคำตอบ</summary><p>$\frac14e^{4x}+3e^{2x}+9x+C$</p><p class="alt">$(e^{2x}+3)^2=e^{4x}+6e^{2x}+9$<br>$\int e^{4x}dx=\frac14e^{4x}$, $\int6e^{2x}dx=3e^{2x}$, $\int9\,dx=9x$</p></details></div>
 </div></article>
 <article class="q drill" id="p3" data-idx="2">
-<h3><span class="num">3</span> C3. $\displaystyle\int\frac{x+1}{x^2+2x+5}dx$ <span class="src">สไลด์ 8</span></h3>
+<h3><span class="num">3</span><span class="ttl">C3. $\displaystyle\int\frac{x+1}{x^2+2x+5}dx$ <span class="src">สไลด์ 8</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-2"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{x+1}{x^2+2x+5}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ถ้าเศษเป็นผลคูณคงที่ของอนุพันธ์ตัวส่วน จะได้ $\int\frac{du}{u}=\ln|u|$</li></ul></div></details>
@@ -137,7 +139,7 @@ $$\frac12\ln(x^2+2x+5)+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{x-2}{x^2-4x+10}\,dx$</p><details><summary>ใบ้</summary><p>ดิฟตัวส่วนแล้วเทียบกับเศษ</p></details><details><summary>ดูคำตอบ</summary><p>$\frac12\ln(x^2-4x+10)+C$</p><p class="alt">$u=x^2-4x+10,\ du=2(x-2)dx$<br>จะได้ $\frac12\int\frac{du}{u}=\frac12\ln|u|$ และ $x^2-4x+10=(x-2)^2+6\gt0$</p></details></div>
 </div></article>
 <article class="q drill" id="p4" data-idx="3">
-<h3><span class="num">4</span> C4. $\displaystyle\int\cos^22x\,\sin2x\,dx$ <span class="src">สไลด์ 9</span></h3>
+<h3><span class="num">4</span><span class="ttl">C4. $\displaystyle\int\cos^22x\,\sin2x\,dx$ <span class="src">สไลด์ 9</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-3"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\cos^22x\,\sin2x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การแทนค่า $u$ เมื่อมีฟังก์ชันและอนุพันธ์อยู่ด้วยกัน</li><li>กฎลูกโซ่: ดิฟ $\cos2x$ ได้ $-2\sin2x$</li></ul></div></details>
@@ -174,7 +176,7 @@ $$-\frac16\cos^32x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\sin^23x\,\cos3x\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\sin3x$ แล้วดู $du$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac19\sin^33x+C$</p><p class="alt">$u=\sin3x,\ du=3\cos3x\,dx$<br>$\int u^2\cdot\frac13du=\frac{u^3}{9}$</p></details></div>
 </div></article>
 <article class="q drill" id="p5" data-idx="4">
-<h3><span class="num">5</span> C5. $\displaystyle\int\sin2x\sqrt{1-\cos2x}\,dx$ <span class="src">สไลด์ 10</span></h3>
+<h3><span class="num">5</span><span class="ttl">C5. $\displaystyle\int\sin2x\sqrt{1-\cos2x}\,dx$ <span class="src">สไลด์ 10</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-4"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\sin2x\sqrt{1-\cos2x}\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-substitution ให้ $u$ เป็นของข้างในรากที่สอง</li><li>$\int u^{1/2}du=\frac23u^{3/2}$</li></ul></div></details>
@@ -211,7 +213,7 @@ $$\frac13(1-\cos2x)^{3/2}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\sin3x\sqrt{2+\cos3x}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=2+\cos3x$ ระวังเครื่องหมายลบจาก $du$</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac29(2+\cos3x)^{3/2}+C$</p><p class="alt">$u=2+\cos3x,\ du=-3\sin3x\,dx$<br>$-\frac13\int u^{1/2}du=-\frac13\cdot\frac23u^{3/2}$</p></details></div>
 </div></article>
 <article class="q drill" id="p6" data-idx="5">
-<h3><span class="num">6</span> C6. $\displaystyle\int\frac{13\sqrt{1-\ln x}}{9x}dx$ <span class="src">สไลด์ 11</span></h3>
+<h3><span class="num">6</span><span class="ttl">C6. $\displaystyle\int\frac{13\sqrt{1-\ln x}}{9x}dx$ <span class="src">สไลด์ 11</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-5"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-5" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{13\sqrt{1-\ln x}}{9x}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\ln x=\frac1x$</li><li>ค่าคงที่ดึงออกนอกอินทิกรัลได้</li></ul></div></details>
@@ -248,7 +250,7 @@ $$-\frac{26}{27}(1-\ln x)^{3/2}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{5\sqrt{2+\ln x}}{4x}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=2+\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac56(2+\ln x)^{3/2}+C$</p><p class="alt">$u=2+\ln x,\ du=\frac{dx}{x}$<br>$\frac54\int u^{1/2}du=\frac54\cdot\frac23u^{3/2}=\frac56u^{3/2}$</p></details></div>
 </div></article>
 <article class="q drill" id="p7" data-idx="6">
-<h3><span class="num">7</span> C7. $\displaystyle\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}dx$ <span class="src">สไลด์ 12</span></h3>
+<h3><span class="num">7</span><span class="ttl">C7. $\displaystyle\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}dx$ <span class="src">สไลด์ 12</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-6"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-6" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่กับรากที่สอง: $\frac{d}{dx}\sqrt{g}=\frac{g'}{2\sqrt g}$</li></ul></div></details>
@@ -283,7 +285,7 @@ $$\frac23e^{\sqrt{3x+8}}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{e^{\sqrt{2x+1}}}{\sqrt{2x+1}}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\sqrt{2x+1}$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{\sqrt{2x+1}}+C$</p><p class="alt">$u=\sqrt{2x+1},\ du=\frac{dx}{\sqrt{2x+1}}$<br>$\int e^udu=e^u$</p></details></div>
 </div></article>
 <article class="q drill" id="p8" data-idx="7">
-<h3><span class="num">8</span> C8. $\displaystyle\int\frac{\cos(5x-1)}{7\sin(5x-1)}dx$ <span class="src">สไลด์ 13</span></h3>
+<h3><span class="num">8</span><span class="ttl">C8. $\displaystyle\int\frac{\cos(5x-1)}{7\sin(5x-1)}dx$ <span class="src">สไลด์ 13</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-7"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-7" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{\cos(5x-1)}{7\sin(5x-1)}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\frac{du}{u}=\ln|u|+C$</li><li>ดึงค่าคงที่ออกนอกอินทิกรัลได้</li></ul></div></details>
@@ -318,7 +320,7 @@ $$\frac1{35}\ln|\sin(5x-1)|+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{\sin(4x+3)}{5\cos(4x+3)}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\cos(4x+3)$ ระวังเครื่องหมายลบ</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac1{20}\ln|\cos(4x+3)|+C$</p><p class="alt">$u=\cos(4x+3),\ du=-4\sin(4x+3)dx$<br>$\frac15\cdot\left(-\frac14\right)\int\frac{du}{u}=-\frac1{20}\ln|u|$</p></details></div>
 </div></article>
 <article class="q drill" id="p9" data-idx="8">
-<h3><span class="num">9</span> C9. $\displaystyle\int_4^8\frac{2x}{\sqrt{x^2-9}}dx$ <span class="src">สไลด์ 14 · จำกัดเขต</span></h3>
+<h3><span class="num">9</span><span class="ttl">C9. $\displaystyle\int_4^8\frac{2x}{\sqrt{x^2-9}}dx$ <span class="src">สไลด์ 14 · จำกัดเขต</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-8"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-8" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลจำกัดเขต $\int_4^8\frac{2x}{\sqrt{x^2-9}}dx$</li></ul><p><b>ต้องหา:</b> หาค่าของอินทิกรัลจำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-sub กับอินทิกรัลจำกัดเขต ต้องเปลี่ยนขอบเขตเป็นค่าของ $u$ ด้วย</li><li>$\int u^{-1/2}du=2\sqrt u$</li></ul></div></details>
@@ -357,7 +359,7 @@ $$2\left(\sqrt{55}-\sqrt7\right)\approx9.54$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int_0^{\sqrt5}\frac{2x}{\sqrt{x^2+4}}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=x^2+4$ แล้วเปลี่ยนขอบเขต</p></details><details><summary>ดูคำตอบ</summary><p>$2$</p><p class="alt">$u=x^2+4$: $x=0\to4$, $x=\sqrt5\to9$<br>$\int_4^9u^{-1/2}du=[2\sqrt u]_4^9=2(3-2)=2$</p></details></div>
 </div></article>
 <article class="q drill" id="p10" data-idx="9">
-<h3><span class="num">10</span> C10. $\displaystyle\int x^2\ln x\,dx$ <span class="src">สไลด์ 16 · by parts</span></h3>
+<h3><span class="num">10</span><span class="ttl">C10. $\displaystyle\int x^2\ln x\,dx$ <span class="src">สไลด์ 16 · by parts</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-9"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-9" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x^2\ln x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>สูตร by parts $\int u\,dv=uv-\int v\,du$</li><li>LIATE: เลือก $u$ ตามลำดับ Log, Inverse trig, Algebraic, Trig, Exp</li></ul></div></details>
@@ -392,7 +394,7 @@ $$\frac{x^3}{3}\ln x-\frac{x^3}{9}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int x^3\ln x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\ln x$ และ $dv=x^3dx$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{x^4}{4}\ln x-\frac{x^4}{16}+C$</p><p class="alt">$v=\frac{x^4}{4}$, $du=\frac{dx}{x}$<br>$\frac{x^4}{4}\ln x-\frac14\int x^3dx=\frac{x^4}{4}\ln x-\frac{x^4}{16}$</p></details></div>
 </div></article>
 <article class="q drill" id="p11" data-idx="10">
-<h3><span class="num">11</span> C11. $\displaystyle\int x\tan^{-1}x\,dx$ <span class="src">สไลด์ 17 · by parts</span></h3>
+<h3><span class="num">11</span><span class="ttl">C11. $\displaystyle\int x\tan^{-1}x\,dx$ <span class="src">สไลด์ 17 · by parts</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-10"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-10" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x\tan^{-1}x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts กับ LIATE: ตรีโกณผกผันมาก่อน Algebraic</li><li>$\frac{d}{dx}\tan^{-1}x=\frac1{1+x^2}$ และเทคนิคบวกลบ $1$ ในเศษ</li></ul></div></details>
@@ -430,7 +432,7 @@ $$\frac{x^2}{2}\tan^{-1}x-\frac x2+\frac12\tan^{-1}x+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int x^2\tan^{-1}x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\tan^{-1}x,\ dv=x^2dx$ แล้วจัด $\frac{x^3}{1+x^2}$ เป็น $x-\frac{x}{1+x^2}$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{x^3}{3}\tan^{-1}x-\frac{x^2}{6}+\frac16\ln(1+x^2)+C$</p><p class="alt">$\int=\frac{x^3}{3}\tan^{-1}x-\frac13\int\frac{x^3}{1+x^2}dx$<br>$\frac{x^3}{1+x^2}=x-\frac{x}{1+x^2}$ จึงได้ $\frac{x^2}{2}-\frac12\ln(1+x^2)$ แล้วคูณ $-\frac13$</p></details></div>
 </div></article>
 <article class="q drill" id="p12" data-idx="11">
-<h3><span class="num">12</span> C12. $\displaystyle\int x^2e^{-3x}dx$ <span class="src">สไลด์ 18 · วิธีตาราง</span></h3>
+<h3><span class="num">12</span><span class="ttl">C12. $\displaystyle\int x^2e^{-3x}dx$ <span class="src">สไลด์ 18 · วิธีตาราง</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-11"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-11" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x^2e^{-3x}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts ซ้ำ หรือวิธีตาราง (ดิฟพหุนามจนเป็น $0$ อินทิเกรต $e^{kx}$ ลงไปคู่กัน)</li><li>$\int e^{kx}dx=\frac1ke^{kx}$</li></ul></div></details>
@@ -470,7 +472,7 @@ $$-e^{-3x}\left(\frac{x^2}{3}+\frac{2x}{9}+\frac{2}{27}\right)+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int x^2e^{2x}\,dx$</p><details><summary>ใบ้</summary><p>ใช้วิธีตาราง: ดิฟ $x^2,2x,2$ อินทิเกรต $e^{2x},\frac12e^{2x},\frac14e^{2x}$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{2x}\left(\frac{x^2}{2}-\frac x2+\frac14\right)+C$</p><p class="alt">ตาราง เครื่องหมาย $+,-,+$:<br>$x^2\cdot\frac12e^{2x}-2x\cdot\frac14e^{2x}+2\cdot\frac18e^{2x}$</p></details></div>
 </div></article>
 <article class="q drill" id="p13" data-idx="12">
-<h3><span class="num">13</span> C13. $\displaystyle\int(x+3)\cos3x\,dx$ <span class="src">สไลด์ 19 · by parts</span></h3>
+<h3><span class="num">13</span><span class="ttl">C13. $\displaystyle\int(x+3)\cos3x\,dx$ <span class="src">สไลด์ 19 · by parts</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-12"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-12" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int(x+3)\cos3x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts $\int u\,dv=uv-\int v\,du$</li><li>$\int\cos kx\,dx=\frac1k\sin kx$ และ $\int\sin kx\,dx=-\frac1k\cos kx$</li></ul></div></details>
@@ -503,7 +505,7 @@ $$\frac{x+3}{3}\sin3x+\frac19\cos3x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int(x-2)\sin2x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=x-2$ และ $dv=\sin2x\,dx$</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac{x-2}{2}\cos2x+\frac14\sin2x+C$</p><p class="alt">$v=-\frac12\cos2x$<br>$-\frac{x-2}{2}\cos2x+\frac12\int\cos2x\,dx=-\frac{x-2}{2}\cos2x+\frac14\sin2x$</p></details></div>
 </div></article>
 <article class="q drill" id="p14" data-idx="13">
-<h3><span class="num">14</span> C14. $\displaystyle\int(2x-1)e^{3x}dx$ <span class="src">สไลด์ 20 · by parts</span></h3>
+<h3><span class="num">14</span><span class="ttl">C14. $\displaystyle\int(2x-1)e^{3x}dx$ <span class="src">สไลด์ 20 · by parts</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-13"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-13" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int(2x-1)e^{3x}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts กับพหุนามดีกรี $1$ คูณเอกซ์โพเนนเชียล</li><li>$\int e^{kx}dx=\frac1ke^{kx}$</li></ul></div></details>
@@ -540,7 +542,7 @@ $$\frac{(6x-5)e^{3x}}{9}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int(4x+1)e^{-2x}\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=4x+1$ และระวังเครื่องหมายลบจาก $v$</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac{4x+3}{2}e^{-2x}+C$</p><p class="alt">$v=-\frac12e^{-2x},\ du=4dx$<br>$-\frac{4x+1}{2}e^{-2x}+2\int e^{-2x}dx=-\frac{4x+1}{2}e^{-2x}-e^{-2x}$</p></details></div>
 </div></article>
 <article class="q drill" id="p15" data-idx="14">
-<h3><span class="num">15</span> M1. $\displaystyle\int x\sqrt{x^2+1}\,dx=$</h3>
+<h3><span class="num">15</span><span class="ttl">M1. $\displaystyle\int x\sqrt{x^2+1}\,dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-14"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-14" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x\sqrt{x^2+1}\,dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-substitution: $\int u^{1/2}du=\frac23u^{3/2}$</li></ul></div></details>
@@ -574,7 +576,7 @@ $$\text{(ก)}\ \ \frac13(x^2+1)^{3/2}+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int3x\sqrt{x^2+4}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=x^2+4$ แล้วดูตัวคูณ $3$ กับ $\frac12$</p></details><details><summary>ดูคำตอบ</summary><p>$(x^2+4)^{3/2}+C$</p><p class="alt">$u=x^2+4,\ x\,dx=\frac12du$<br>$3\cdot\frac12\int u^{1/2}du=\frac32\cdot\frac23u^{3/2}=u^{3/2}$</p></details></div>
 </div></article>
 <article class="q drill" id="p16" data-idx="15">
-<h3><span class="num">16</span> M2. $\displaystyle\int\sec^2(3x)\,dx=$</h3>
+<h3><span class="num">16</span><span class="ttl">M2. $\displaystyle\int\sec^2(3x)\,dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-15"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-15" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\sec^2(3x)\,dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\sec^2u\,du=\tan u+C$</li><li>อินทิกรัลของฟังก์ชันที่มีข้างในเชิงเส้น ต้องหารด้วยสัมประสิทธิ์ของ $x$</li></ul></div></details>
@@ -605,7 +607,7 @@ $$\text{(ค)}\ \ \frac13\tan3x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\sec^2\!\left(\frac x2\right)dx$</p><details><summary>ใบ้</summary><p>ข้างในคือ $\frac12x$ จึงหารด้วย $\frac12$</p></details><details><summary>ดูคำตอบ</summary><p>$2\tan\frac x2+C$</p><p class="alt">$u=\frac x2,\ dx=2du$<br>$2\int\sec^2u\,du=2\tan u$</p></details></div>
 </div></article>
 <article class="q drill" id="p17" data-idx="16">
-<h3><span class="num">17</span> M3. $\displaystyle\int_0^1xe^{x^2}dx=$</h3>
+<h3><span class="num">17</span><span class="ttl">M3. $\displaystyle\int_0^1xe^{x^2}dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-16"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-16" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลจำกัดเขต $\int_0^1xe^{x^2}dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาค่าของอินทิกรัลจำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-sub กับขอบเขต: ต้องเปลี่ยนขอบเขตตาม $u$</li><li>$\int e^udu=e^u$</li></ul></div></details>
@@ -638,7 +640,7 @@ $$\text{(ข)}\ \ \tfrac12(e-1)$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int_0^1xe^{-x^2}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=-x^2$ แล้วระวังเครื่องหมายลบ</p></details><details><summary>ดูคำตอบ</summary><p>$\frac12\left(1-\frac1e\right)$</p><p class="alt">$u=-x^2,\ x\,dx=-\frac12du$, ขอบเขต $0$ ถึง $-1$<br>$-\frac12\int_0^{-1}e^udu=-\frac12(e^{-1}-1)$</p></details></div>
 </div></article>
 <article class="q drill" id="p18" data-idx="17">
-<h3><span class="num">18</span> M4. $\displaystyle\int\frac{e^x}{1+e^x}dx=$</h3>
+<h3><span class="num">18</span><span class="ttl">M4. $\displaystyle\int\frac{e^x}{1+e^x}dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-17"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-17" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{e^x}{1+e^x}dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\frac{du}{u}=\ln|u|+C$</li></ul></div></details>
@@ -670,7 +672,7 @@ $$\text{(ก)}\ \ \ln(1+e^x)+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{e^{2x}}{3+e^{2x}}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=3+e^{2x}$ แล้วดู $du$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac12\ln(3+e^{2x})+C$</p><p class="alt">$u=3+e^{2x},\ du=2e^{2x}dx$<br>$\frac12\int\frac{du}{u}=\frac12\ln u$</p></details></div>
 </div></article>
 <article class="q drill" id="p19" data-idx="18">
-<h3><span class="num">19</span> M5. $\displaystyle\int\frac{(\ln x)^2}{x}dx=$</h3>
+<h3><span class="num">19</span><span class="ttl">M5. $\displaystyle\int\frac{(\ln x)^2}{x}dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-18"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-18" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{(\ln x)^2}{x}dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\ln x=\frac1x$</li><li>กฎกำลัง $\int u^ndu=\frac{u^{n+1}}{n+1}$</li></ul></div></details>
@@ -701,7 +703,7 @@ $$\text{(ก)}\ \ \frac{(\ln x)^3}{3}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{(\ln x)^3}{x}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{(\ln x)^4}{4}+C$</p><p class="alt">$u=\ln x,\ du=\frac{dx}{x}$<br>$\int u^3du=\frac{u^4}{4}$</p></details></div>
 </div></article>
 <article class="q drill" id="p20" data-idx="19">
-<h3><span class="num">20</span> M6. $\displaystyle\int\frac{dx}{1+4x^2}=$</h3>
+<h3><span class="num">20</span><span class="ttl">M6. $\displaystyle\int\frac{dx}{1+4x^2}=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-19"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-19" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{dx}{1+4x^2}$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\frac{du}{1+u^2}=\tan^{-1}u+C$</li></ul></div></details>
@@ -732,7 +734,7 @@ $$\text{(ข)}\ \ \frac12\tan^{-1}2x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{6\,dx}{1+9x^2}$</p><details><summary>ใบ้</summary><p>ตั้ง $u=3x$ แล้วดูตัวคูณ</p></details><details><summary>ดูคำตอบ</summary><p>$2\tan^{-1}(3x)+C$</p><p class="alt">$u=3x,\ dx=\frac13du$<br>$6\cdot\frac13\int\frac{du}{1+u^2}=2\tan^{-1}u$</p></details></div>
 </div></article>
 <article class="q drill" id="p21" data-idx="20">
-<h3><span class="num">21</span> M7. $\displaystyle\int\tan x\,dx=$</h3>
+<h3><span class="num">21</span><span class="ttl">M7. $\displaystyle\int\tan x\,dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-20"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-20" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\tan x\,dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก (ตัวเลือกเขียนด้วย $\sec$ หรือ $\cos$)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\tan x=\frac{\sin x}{\cos x}$</li><li>$-\ln|a|=\ln|a^{-1}|$</li></ul></div></details>
@@ -768,7 +770,7 @@ $$\text{(ค)}\ \ \ln|\sec x|+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\cot3x\,dx$</p><details><summary>ใบ้</summary><p>เขียน $\cot3x=\frac{\cos3x}{\sin3x}$ แล้วตั้ง $u=\sin3x$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac13\ln|\sin3x|+C$</p><p class="alt">$u=\sin3x,\ du=3\cos3x\,dx$<br>$\frac13\int\frac{du}{u}=\frac13\ln|u|$</p></details></div>
 </div></article>
 <article class="q drill" id="p22" data-idx="21">
-<h3><span class="num">22</span> M8. $\displaystyle\int_1^e\frac{\ln x}{x}dx=$</h3>
+<h3><span class="num">22</span><span class="ttl">M8. $\displaystyle\int_1^e\frac{\ln x}{x}dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-21"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-21" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลจำกัดเขต $\int_1^e \frac{\ln x}{x}dx$</li></ul><p><b>ต้องหา:</b> ค่าของอินทิกรัลจำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การแทนค่าตัวแปร (u-substitution)</li><li>เมื่อเปลี่ยนตัวแปร ต้องเปลี่ยนขอบเขตตามไปด้วย</li></ul></div></details>
@@ -801,7 +803,7 @@ $$\text{(ข)}\ \ \frac12$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหาค่า $\displaystyle\int_1^{e^3}\frac{\ln x}{x}\,dx$</p><details><summary>ใบ้</summary><p>ลองให้ $u=\ln x$ แล้วเปลี่ยนขอบเขต</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac92$</p><p class="alt">$u=\ln x$, $du=dx/x$; $x=1\to u=0$, $x=e^3\to u=3$<br>$\int_0^3u\,du=\left[\frac{u^2}{2}\right]_0^3=\frac92$</p></details></div>
 </div></article>
 <article class="q drill" id="p23" data-idx="22">
-<h3><span class="num">23</span> M9. $\displaystyle\int\ln x\,dx=$</h3>
+<h3><span class="num">23</span><span class="ttl">M9. $\displaystyle\int\ln x\,dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-22"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-22" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลไม่จำกัดเขต $\int\ln x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของ $\ln x$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิเกรตทีละส่วน $\int u\,dv=uv-\int v\,du$</li><li>ฟังก์ชันที่ดิฟแล้วง่ายขึ้นเหมาะเป็น $u$</li></ul></div></details>
@@ -833,7 +835,7 @@ $$\text{(ค)}\ \ x\ln x-x+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int x\ln x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\ln x$ และ $dv=x\,dx$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{x^2}{2}\ln x-\dfrac{x^2}{4}+C$</p><p class="alt">$u=\ln x,\ dv=x\,dx\Rightarrow du=\frac{dx}{x},\ v=\frac{x^2}{2}$<br>$=\frac{x^2}{2}\ln x-\int\frac{x}{2}dx=\frac{x^2}{2}\ln x-\frac{x^2}{4}+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p24" data-idx="23">
-<h3><span class="num">24</span> M10. $\displaystyle\int x\sin x\,dx=$</h3>
+<h3><span class="num">24</span><span class="ttl">M10. $\displaystyle\int x\sin x\,dx=$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-23"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-23" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลไม่จำกัดเขต $\int x\sin x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของ $x\sin x$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิเกรตทีละส่วน $\int u\,dv=uv-\int v\,du$</li><li>เลือก $u$ ให้ดิฟแล้วง่ายลง (LIATE)</li></ul></div></details>
@@ -866,7 +868,7 @@ $$\text{(ข)}\ \ -x\cos x+\sin x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int x\cos 2x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=x$ และ $dv=\cos2x\,dx$ อย่าลืมหาร $2$ ตอนหา $v$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{x\sin2x}{2}+\dfrac{\cos2x}{4}+C$</p><p class="alt">$u=x,\ dv=\cos2x\,dx\Rightarrow v=\frac{\sin2x}{2}$<br>$=\frac{x\sin2x}{2}-\int\frac{\sin2x}{2}dx=\frac{x\sin2x}{2}+\frac{\cos2x}{4}+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p25" data-idx="24">
-<h3><span class="num">25</span> M11. $\displaystyle\int\frac{dx}{x^2-1}=$ <span class="src">สัปดาห์ 3</span></h3>
+<h3><span class="num">25</span><span class="ttl">M11. $\displaystyle\int\frac{dx}{x^2-1}=$ <span class="src">สัปดาห์ 3</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-24"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-24" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัล $\int\frac{dx}{x^2-1}$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของเศษส่วนตัวส่วนกำลังสอง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แยกตัวส่วนเป็นตัวประกอบ</li><li>เศษส่วนย่อย (partial fractions)</li><li>$\int\frac{dx}{x+c}=\ln|x+c|$</li></ul></div></details>
@@ -905,7 +907,7 @@ $$\text{(ข)}\ \ \frac12\ln\left|\frac{x-1}{x+1}\right|+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{dx}{x^2-9}$</p><details><summary>ใบ้</summary><p>แยก $x^2-9=(x-3)(x+3)$ แล้วใช้เศษส่วนย่อย</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac16\ln\left|\dfrac{x-3}{x+3}\right|+C$</p><p class="alt">$\frac{1}{(x-3)(x+3)}=\frac{1/6}{x-3}-\frac{1/6}{x+3}$<br>$\int=\frac16\ln|x-3|-\frac16\ln|x+3|+C=\frac16\ln\left|\frac{x-3}{x+3}\right|+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p26" data-idx="25">
-<h3><span class="num">26</span> M12. $\displaystyle\int\frac{x+5}{(x-1)(x+2)}dx=$ <span class="src">สัปดาห์ 3</span></h3>
+<h3><span class="num">26</span><span class="ttl">M12. $\displaystyle\int\frac{x+5}{(x-1)(x+2)}dx=$ <span class="src">สัปดาห์ 3</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-25"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-25" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัล $\int\frac{x+5}{(x-1)(x+2)}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เศษส่วนย่อยเมื่อดีกรีเศษน้อยกว่าส่วน</li><li>หาค่าคงที่ด้วยการแทนราก</li></ul></div></details>
@@ -942,7 +944,7 @@ $$\text{(ก)}\ \ 2\ln|x-1|-\ln|x+2|+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{5x+1}{(x-1)(x+2)}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $5x+1=A(x+2)+B(x-1)$ แล้วแทน $x=1$ และ $x=-2$</p></details><details><summary>ดูคำตอบ</summary><p>$2\ln|x-1|+3\ln|x+2|+C$</p><p class="alt">$x=1:\ 6=3A\Rightarrow A=2$<br>$x=-2:\ -9=-3B\Rightarrow B=3$<br>$\int=2\ln|x-1|+3\ln|x+2|+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p27" data-idx="26">
-<h3><span class="num">27</span> W1. ประมาณค่า $\sin(46^\circ)$ ด้วยการประมาณค่าเชิงเส้น <span class="src">สไลด์ 20</span></h3>
+<h3><span class="num">27</span><span class="ttl">W1. ประมาณค่า $\sin(46^\circ)$ ด้วยการประมาณค่าเชิงเส้น <span class="src">สไลด์ 20</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-26"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-26" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ต้องการประมาณ $\sin 46^\circ$</li><li>ใช้การประมาณค่าเชิงเส้น</li></ul><p><b>ต้องหา:</b> ค่าประมาณของ $\sin46^\circ$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</li><li>ในแคลคูลัสมุมต้องเป็นเรเดียน</li></ul></div></details>
@@ -982,7 +984,7 @@ $$\sin46^\circ\approx0.7194$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ประมาณ $\tan 44^\circ$ ด้วยการประมาณค่าเชิงเส้น (ใช้ $x_0=45^\circ$)</p><details><summary>ใบ้</summary><p>$\Delta x=-1^\circ=-\frac{\pi}{180}$ และ $\sec^2\frac\pi4=2$</p></details><details><summary>ดูคำตอบ</summary><p>$1-\dfrac{\pi}{90}\approx0.9651$</p><p class="alt">$f=\tan x$, $f(\frac\pi4)=1$, $f'(\frac\pi4)=\sec^2\frac\pi4=2$<br>$\tan44^\circ\approx1+2\cdot\left(-\frac{\pi}{180}\right)=1-\frac\pi{90}\approx0.9651$</p></details></div>
 </div></article>
 <article class="q drill" id="p28" data-idx="27">
-<h3><span class="num">28</span> W2. $f(x)=5^{(x^2-1)\sin(x^2+5.5)}$ <span class="src">สไลด์ 21</span></h3>
+<h3><span class="num">28</span><span class="ttl">W2. $f(x)=5^{(x^2-1)\sin(x^2+5.5)}$ <span class="src">สไลด์ 21</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-27"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-27" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=5^{(x^2-1)\sin(x^2+5.5)}$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(a^u)'=a^u\ln a\cdot u'$</li><li>กฎผลคูณและกฎลูกโซ่</li></ul></div></details>
@@ -1019,7 +1021,7 @@ $$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\ln5\cdot2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=2^{(x^2+1)\cos(x^2)}$</p><details><summary>ใบ้</summary><p>ให้ $u=(x^2+1)\cos(x^2)$ ใช้ $2^u\ln2\cdot u'$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=2^{(x^2+1)\cos(x^2)}\ln2\cdot2x\left[\cos(x^2)-(x^2+1)\sin(x^2)\right]$</p><p class="alt">$u'=2x\cos(x^2)-(x^2+1)\sin(x^2)\cdot2x$<br>$f'=2^u\ln2\cdot2x[\cos(x^2)-(x^2+1)\sin(x^2)]$</p></details></div>
 </div></article>
 <article class="q drill" id="p29" data-idx="28">
-<h3><span class="num">29</span> W3. $h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$ <span class="src">สไลด์ 22</span></h3>
+<h3><span class="num">29</span><span class="ttl">W3. $h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$ <span class="src">สไลด์ 22</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-28"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-28" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$</li></ul><p><b>ต้องหา:</b> หา $h'(t)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎผลคูณ $(PQ)'=P'Q+PQ'$</li><li>$(a^w)'=a^w\ln a\cdot w'$</li></ul></div></details>
@@ -1054,7 +1056,7 @@ $$h'(t)=10^{\ln(t^2+5)}\left[\frac1t+\frac{2t\ln10\,(\ln t+1)}{t^2+5}\right]$$</
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $h'(t)$ เมื่อ $h(t)=(\sin t+2)\,3^{\ln(t^2+1)}$</p><details><summary>ใบ้</summary><p>ใช้กฎผลคูณ และ $Q'=3^{w}\ln3\cdot w'$ โดย $w=\ln(t^2+1)$</p></details><details><summary>ดูคำตอบ</summary><p>$h'(t)=3^{\ln(t^2+1)}\left[\cos t+\dfrac{2t\ln3\,(\sin t+2)}{t^2+1}\right]$</p><p class="alt">$P'=\cos t$, $Q'=3^{\ln(t^2+1)}\ln3\cdot\frac{2t}{t^2+1}$<br>$h'=P'Q+PQ'$ แล้วดึง $3^{\ln(t^2+1)}$ เป็นตัวร่วม</p></details></div>
 </div></article>
 <article class="q drill" id="p30" data-idx="29">
-<h3><span class="num">30</span> W4. $y=(1+\cos^2x)^6$ <span class="src">สไลด์ 23</span></h3>
+<h3><span class="num">30</span><span class="ttl">W4. $y=(1+\cos^2x)^6$ <span class="src">สไลด์ 23</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-29"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-29" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=(1+\cos^2x)^6$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น</li><li>$\frac{d}{dx}\cos^2x=2\cos x\cdot(-\sin x)$</li></ul></div></details>
@@ -1094,7 +1096,7 @@ $$y'=-12\sin x\cos x\,(1+\cos^2x)^5$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=(2+\sin^2x)^5$</p><details><summary>ใบ้</summary><p>ชั้นนอก $5w^4$ แล้วคูณ $2\sin x\cos x$ และใช้ $2\sin x\cos x=\sin2x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=5\sin2x\,(2+\sin^2x)^4$</p><p class="alt">$y'=5(2+\sin^2x)^4\cdot2\sin x\cos x=5\sin2x\,(2+\sin^2x)^4$</p></details></div>
 </div></article>
 <article class="q drill" id="p31" data-idx="30">
-<h3><span class="num">31</span> W5. $y=\sin\big(\tan\sqrt{\sin x}\big)$ <span class="src">สไลด์ 24</span></h3>
+<h3><span class="num">31</span><span class="ttl">W5. $y=\sin\big(\tan\sqrt{\sin x}\big)$ <span class="src">สไลด์ 24</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-30"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-30" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\sin\big(\tan\sqrt{\sin x}\big)$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น</li><li>$(\tan u)'=\sec^2u\cdot u'$, $(\sqrt u)'=\frac{u'}{2\sqrt u}$</li></ul></div></details>
@@ -1123,7 +1125,7 @@ $$y'=\frac{\cos x\,\sec^2\!\sqrt{\sin x}\,\cos\!\big(\tan\sqrt{\sin x}\big)}{2\s
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=\cos\big(\sin\sqrt{x^2+1}\big)$</p><details><summary>ใบ้</summary><p>ไล่ 4 ชั้น: $\cos$, $\sin$, $\sqrt{\ }$, $x^2+1$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=-\sin\big(\sin\sqrt{x^2+1}\big)\cos\sqrt{x^2+1}\cdot\dfrac{x}{\sqrt{x^2+1}}$</p><p class="alt">$y'=-\sin(\sin\sqrt{x^2+1})\cdot\cos\sqrt{x^2+1}\cdot\frac{1}{2\sqrt{x^2+1}}\cdot2x$ จัดรูปได้ดังคำตอบ</p></details></div>
 </div></article>
 <article class="q drill" id="p32" data-idx="31">
-<h3><span class="num">32</span> W6. $f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$ <span class="src">สไลด์ 25</span></h3>
+<h3><span class="num">32</span><span class="ttl">W6. $f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$ <span class="src">สไลด์ 25</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-31"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-31" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎผลคูณ</li><li>อนุพันธ์ของฟังก์ชันตรีโกณผกผัน</li><li>กฎลูกโซ่กับรากที่สอง</li></ul></div></details>
@@ -1160,7 +1162,7 @@ $$f'(x)=\csc^{-1}\!\left(\frac5x\right)+\frac{x}{\sqrt{25-x^2}}+\frac{x}{\sqrt{5
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=x\cos^{-1}\!\left(\frac x3\right)+\sqrt{9-x^2}$ (สำหรับ $-3\lt x\lt3$)</p><details><summary>ใบ้</summary><p>$(\cos^{-1}u)'=-\dfrac{u'}{\sqrt{1-u^2}}$ และ $\sqrt{9-x^2}$ ใช้ลูกโซ่</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\cos^{-1}\!\left(\dfrac x3\right)-\dfrac{2x}{\sqrt{9-x^2}}$</p><p class="alt">$(x\cos^{-1}\frac x3)'=\cos^{-1}\frac x3-\frac{x}{\sqrt{9-x^2}}$<br>$(\sqrt{9-x^2})'=-\frac{x}{\sqrt{9-x^2}}$ รวมกันได้ตามคำตอบ</p></details></div>
 </div></article>
 <article class="q drill" id="p33" data-idx="32">
-<h3><span class="num">33</span> W7. $y=\sinh\big(\tan^{-1}e^{5x-1}\big)$ <span class="src">สไลด์ 26</span></h3>
+<h3><span class="num">33</span><span class="ttl">W7. $y=\sinh\big(\tan^{-1}e^{5x-1}\big)$ <span class="src">สไลด์ 26</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-32"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-32" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\sinh\big(\tan^{-1}e^{5x-1}\big)$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(\sinh u)'=\cosh u\cdot u'$</li><li>$(\tan^{-1}u)'=\frac{u'}{1+u^2}$</li><li>$(e^u)'=e^u u'$</li></ul></div></details>
@@ -1189,7 +1191,7 @@ $$y'=\frac{5e^{5x-1}\cosh\big(\tan^{-1}e^{5x-1}\big)}{1+e^{10x-2}}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=\cosh\big(\tan^{-1}e^{2x+1}\big)$</p><details><summary>ใบ้</summary><p>$(\cosh u)'=\sinh u\cdot u'$ และ $(e^{2x+1})^2=e^{4x+2}$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=\dfrac{2e^{2x+1}\sinh\big(\tan^{-1}e^{2x+1}\big)}{1+e^{4x+2}}$</p><p class="alt">$y'=\sinh(\tan^{-1}e^{2x+1})\cdot\frac{1}{1+e^{4x+2}}\cdot e^{2x+1}\cdot2$</p></details></div>
 </div></article>
 <article class="q drill" id="p34" data-idx="33">
-<h3><span class="num">34</span> W8. $y=x^{4x}$ <span class="src">สไลด์ 28 · อนุพันธ์เชิงลอการิทึม</span></h3>
+<h3><span class="num">34</span><span class="ttl">W8. $y=x^{4x}$ <span class="src">สไลด์ 28 · อนุพันธ์เชิงลอการิทึม</span></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-33"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-33" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=x^{4x}$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อนุพันธ์เชิงลอการิทึม</li><li>$\ln a^b=b\ln a$</li></ul></div></details>
@@ -1222,7 +1224,7 @@ $$y'=4x^{4x}(\ln x+1)$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=x^{x^2}$ ($x\gt0$)</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ จะได้ $\ln y=x^2\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=x^{x^2+1}(2\ln x+1)$</p><p class="alt">$\ln y=x^2\ln x\Rightarrow\frac{y'}{y}=2x\ln x+x$<br>$y'=x^{x^2}\cdot x(2\ln x+1)=x^{x^2+1}(2\ln x+1)$</p></details></div>
 </div></article>
 <article class="q drill" id="p35" data-idx="34">
-<h3><span class="num">35</span> X1. หา $f'(x)$ ของ $f(x)=\sqrt x$ โดยใช้นิยาม</h3>
+<h3><span class="num">35</span><span class="ttl">X1. หา $f'(x)$ ของ $f(x)=\sqrt x$ โดยใช้นิยาม</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-34"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-34" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\sqrt x$</li><li>ต้องใช้นิยามของอนุพันธ์</li></ul><p><b>ต้องหา:</b> หา $f'(x)$ จากนิยามลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f'(x)=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$</li><li>คูณสังยุคเพื่อกำจัดราก</li></ul></div></details>
@@ -1257,7 +1259,7 @@ $$f'(x)=\frac{1}{2\sqrt x}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ จากนิยาม เมื่อ $f(x)=\sqrt{2x+1}$</p><details><summary>ใบ้</summary><p>คูณสังยุค $\sqrt{2x+2h+1}+\sqrt{2x+1}$ เศษจะเหลือ $2h$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{1}{\sqrt{2x+1}}$</p><p class="alt">$\frac{(2x+2h+1)-(2x+1)}{h(\sqrt{2x+2h+1}+\sqrt{2x+1})}=\frac{2}{\sqrt{2x+2h+1}+\sqrt{2x+1}}$<br>ให้ $h\to0$ ได้ $\frac{2}{2\sqrt{2x+1}}$</p></details></div>
 </div></article>
 <article class="q drill" id="p36" data-idx="35">
-<h3><span class="num">36</span> X2. จากตารางในสไลด์ ($f(0)=1,\ f'(0)=-1,\ g(0)=1,\ g'(0)=5,\ f(1)=\pi,\ f'(1)=4,\ g(1)=2\pi,\ g'(1)=-1$) จงหา<br/>(ก) $(f\circ g)'(0)$   (ข) $(g\circ f)'(0)$   (ค) $\frac{d}{dx}[f(x)g(x)]$ ที่ $x=1$</h3>
+<h3><span class="num">36</span><span class="ttl">X2. จากตารางในสไลด์ ($f(0)=1,\ f'(0)=-1,\ g(0)=1,\ g'(0)=5,\ f(1)=\pi,\ f'(1)=4,\ g(1)=2\pi,\ g'(1)=-1$) จงหา<br/>(ก) $(f\circ g)'(0)$   (ข) $(g\circ f)'(0)$   (ค) $\frac{d}{dx}[f(x)g(x)]$ ที่ $x=1$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-35"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-35" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ตารางค่า $f,f',g,g'$ ที่ $x=0$ และ $x=1$</li></ul><p><b>ต้องหา:</b> หา $(f\circ g)'(0)$, $(g\circ f)'(0)$ และ $[fg]'(1)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่ $(f\circ g)'(x)=f'(g(x))\,g'(x)$</li><li>กฎผลคูณ</li></ul></div></details>
@@ -1290,7 +1292,7 @@ $$\text{(ก) }20,\qquad\text{(ข) }1,\qquad\text{(ค) }7\pi$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จากตาราง $f(0)=1,\ f'(0)=4,\ g(0)=1,\ g'(0)=2,\ f(1)=3,\ f'(1)=-2,\ g(1)=3,\ g'(1)=5$ จงหา (ก) $(f\circ g)'(0)$ (ข) $(g\circ f)'(0)$ (ค) $\frac{d}{dx}[f(x)g(x)]$ ที่ $x=1$</p><details><summary>ใบ้</summary><p>ใช้ $g(0)=1$ และ $f(0)=1$ เพื่อเลือกค่าอนุพันธ์ชั้นนอก</p></details><details><summary>ดูคำตอบ</summary><p>(ก) $-4$ (ข) $20$ (ค) $9$</p><p class="alt">(ก) $f'(g(0))g'(0)=f'(1)\cdot2=-4$<br>(ข) $g'(f(0))f'(0)=g'(1)\cdot4=20$<br>(ค) $f'(1)g(1)+f(1)g'(1)=-6+15=9$</p></details></div>
 </div></article>
 <article class="q drill" id="p37" data-idx="36">
-<h3><span class="num">37</span> X3. $y=x^{\sin x}$ จงหา $y'$</h3>
+<h3><span class="num">37</span><span class="ttl">X3. $y=x^{\sin x}$ จงหา $y'$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-36"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-36" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=x^{\sin x}$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อนุพันธ์เชิงลอการิทึม</li><li>กฎผลคูณ</li></ul></div></details>
@@ -1321,7 +1323,7 @@ $$y'=x^{\sin x}\left(\cos x\ln x+\dfrac{\sin x}{x}\right)$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=x^{\cos x}$ ($x\gt0$)</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ ได้ $\ln y=\cos x\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=x^{\cos x}\left(\dfrac{\cos x}{x}-\sin x\ln x\right)$</p><p class="alt">$\frac{y'}{y}=-\sin x\ln x+\frac{\cos x}{x}$ แล้วคูณ $y$</p></details></div>
 </div></article>
 <article class="q drill" id="p38" data-idx="37">
-<h3><span class="num">38</span> X4. $x^2+y^2=25$ จงหา $\frac{dy}{dx}$ และความชันเส้นสัมผัสที่จุด $(3,4)$</h3>
+<h3><span class="num">38</span><span class="ttl">X4. $x^2+y^2=25$ จงหา $\frac{dy}{dx}$ และความชันเส้นสัมผัสที่จุด $(3,4)$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-37"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-37" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$x^2+y^2=25$</li><li>จุด $(3,4)$</li></ul><p><b>ต้องหา:</b> หา $\frac{dy}{dx}$ และความชันเส้นสัมผัสที่จุดนั้น</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การดิฟโดยปริยาย</li><li>$\frac{d}{dx}y^2=2y\,y'$</li></ul></div></details>
@@ -1354,7 +1356,7 @@ $$\frac{dy}{dx}=-\frac xy,\qquad\text{ความชัน}=-\frac34$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> เส้นโค้ง $x^2+4y^2=20$ จงหาความชันเส้นสัมผัสที่จุด $(2,2)$</p><details><summary>ใบ้</summary><p>ดิฟโดยปริยายได้ $2x+8yy'=0$</p></details><details><summary>ดูคำตอบ</summary><p>$-\dfrac14$</p><p class="alt">$2x+8yy'=0\Rightarrow y'=-\frac{x}{4y}$<br>ที่ $(2,2)$: $-\frac{2}{8}=-\frac14$</p></details></div>
 </div></article>
 <article class="q drill" id="p39" data-idx="38">
-<h3><span class="num">39</span> X5. $\displaystyle\lim_{x\to0^+}x\ln x$ <small>(รูป $0\cdot\infty$)</small></h3>
+<h3><span class="num">39</span><span class="ttl">X5. $\displaystyle\lim_{x\to0^+}x\ln x$ <small>(รูป $0\cdot\infty$)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-38"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-38" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0^+}x\ln x$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $0\cdot\infty$ ต้องจัดเป็นเศษส่วนก่อนใช้โลปิตาล</li><li>กฎโลปิตาล</li></ul></div></details>
@@ -1387,7 +1389,7 @@ $$\lim_{x\to0^+}x\ln x=0$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\lim_{x\to\infty}x\sin\frac{\pi}{x}$</p><details><summary>ใบ้</summary><p>เขียนเป็น $\dfrac{\sin(\pi/x)}{1/x}$</p></details><details><summary>ดูคำตอบ</summary><p>$\pi$</p><p class="alt">$\frac{\sin(\pi/x)}{1/x}$ รูป $\frac00$<br>โลปิตาล: $\frac{\cos(\pi/x)\cdot(-\pi/x^2)}{-1/x^2}=\pi\cos(\pi/x)\to\pi$</p></details></div>
 </div></article>
 <article class="q drill" id="p40" data-idx="39">
-<h3><span class="num">40</span> X6. $\displaystyle\lim_{x\to\infty}\left(1+\frac3x\right)^x$ <small>(รูป $1^\infty$)</small></h3>
+<h3><span class="num">40</span><span class="ttl">X6. $\displaystyle\lim_{x\to\infty}\left(1+\frac3x\right)^x$ <small>(รูป $1^\infty$)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-39"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-39" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to\infty}\left(1+\frac3x\right)^x$</li></ul><p><b>ต้องหา:</b> ค่าลิมิตรูป $1^\infty$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูปไม่กำหนด $1^\infty$ ใช้ $\ln$ ช่วย</li><li>$e^{\lim\ln y}$</li></ul></div></details>
@@ -1422,7 +1424,7 @@ $$e^3$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\lim_{x\to\infty}\left(1-\frac2x\right)^x$</p><details><summary>ใบ้</summary><p>$\ln y=\dfrac{\ln(1-2/x)}{1/x}$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{-2}$</p><p class="alt">$\ln y=\frac{\ln(1-2/x)}{1/x}$ รูป $\frac00$<br>โลปิตาล: $\frac{\frac{2/x^2}{1-2/x}}{-1/x^2}=\frac{-2}{1-2/x}\to-2$ ดังนั้น $y\to e^{-2}$</p></details></div>
 </div></article>
 <article class="q drill" id="p41" data-idx="40">
-<h3><span class="num">41</span> X7. $y=\dfrac{1}{2x+1}$ จงหา $y^{(n)}$</h3>
+<h3><span class="num">41</span><span class="ttl">X7. $y=\dfrac{1}{2x+1}$ จงหา $y^{(n)}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-40"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-40" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\dfrac{1}{2x+1}$</li></ul><p><b>ต้องหา:</b> หาสูตรอนุพันธ์อันดับ $n$ คือ $y^{(n)}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เขียนเป็นเลขชี้กำลังลบ</li><li>ดิฟหลายครั้งแล้วหาแบบรูป</li><li>กฎลูกโซ่ทำให้มีตัวคูณ $2$ ทุกครั้ง</li></ul></div></details>
@@ -1457,7 +1459,7 @@ $$y^{(n)}=\frac{(-1)^n\,n!\,2^n}{(2x+1)^{n+1}}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y^{(n)}$ เมื่อ $y=\dfrac1{3x+2}$</p><details><summary>ใบ้</summary><p>ดิฟทุกครั้งต้องคูณ $3$</p></details><details><summary>ดูคำตอบ</summary><p>$y^{(n)}=\dfrac{(-1)^n\,n!\,3^n}{(3x+2)^{n+1}}$</p><p class="alt">$y'=-3(3x+2)^{-2}$, $y''=2\cdot9(3x+2)^{-3}$, $y'''=-6\cdot27(3x+2)^{-4}$<br>แบบรูป: $(-1)^n n!\,3^n(3x+2)^{-(n+1)}$</p></details></div>
 </div></article>
 <article class="q drill" id="p42" data-idx="41">
-<h3><span class="num">42</span> X8. ประมาณค่า $\cos(61^\circ)$ ด้วยการประมาณค่าเชิงเส้น</h3>
+<h3><span class="num">42</span><span class="ttl">X8. ประมาณค่า $\cos(61^\circ)$ ด้วยการประมาณค่าเชิงเส้น</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-41"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="classmarker-41" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ต้องการประมาณ $\cos61^\circ$</li><li>ใช้การประมาณค่าเชิงเส้น</li></ul><p><b>ต้องหา:</b> ค่าประมาณของ $\cos61^\circ$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</li><li>แปลงองศาเป็นเรเดียน</li></ul></div></details>

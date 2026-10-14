@@ -16,6 +16,8 @@
 
   .drill{scroll-margin-top:4.5rem}
   .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
   .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
   .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
   .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
@@ -39,7 +41,7 @@
 <main>
 <h1>ฝึกทำ · แบบฝึกหัดเพิ่มเติม (19 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="extra-exercises.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
 <article class="q drill" id="p1" data-idx="0">
-<h3><span class="num">1</span> <span class="tag">กฎลูกโซ่</span>A1. จากตาราง: $f(0)=1,\ f'(0)=-1,\ g(0)=1,\ g'(0)=5,\ f(1)=\pi,\ f'(1)=4,\ g(1)=2\pi,\ g'(1)=-1$<br/>ให้ $H(x)=\sqrt{f(g(x))+g(f(x))}$ จงหา $H'(0)$</h3>
+<h3><span class="num">1</span><span class="ttl"><span class="tag">กฎลูกโซ่</span>A1. จากตาราง: $f(0)=1,\ f'(0)=-1,\ g(0)=1,\ g'(0)=5,\ f(1)=\pi,\ f'(1)=4,\ g(1)=2\pi,\ g'(1)=-1$<br/>ให้ $H(x)=\sqrt{f(g(x))+g(f(x))}$ จงหา $H'(0)$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-0"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ตารางค่า $f,g,f',g'$ ที่ $x=0$ และ $x=1$ (ตัวเลขอ่านจากสไลด์)</li><li>$H(x)=\sqrt{f(g(x))+g(f(x))}$</li></ul><p><b>ต้องหา:</b> ค่าของ $H'(0)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่: $\big(f(g(x))\big)'=f'(g(x))\,g'(x)$</li><li>$\big(\sqrt{w}\big)'=\dfrac{w'}{2\sqrt w}$</li></ul></div></details>
@@ -81,7 +83,7 @@ $$H'(0)=\frac{21}{2\sqrt{3\pi}}$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จากตาราง $f(1)=2,\ f'(1)=3,\ f(2)=-1,\ f'(2)=5,\ g(1)=1,\ g'(1)=4,\ g(2)=3,\ g'(2)=-2$ ให้ $K(x)=f(g(x))\cdot g(f(x))$ จงหา $K'(1)$</p><details><summary>ใบ้</summary><p>ใช้กฎผลคูณ แล้วดู $g(1)$ และ $f(1)$ ก่อนว่าต้องไปอ่านตารางที่ $x$ ใด</p></details><details><summary>ดูคำตอบ</summary><p>$24$</p><p class="alt">$K'=f'(g)g'\cdot g(f)+f(g)\cdot g'(f)f'$<br>ที่ $x=1$: $g(1)=1,\ f(1)=2$ จึง $f(g(1))=f(1)=2,\ g(f(1))=g(2)=3$<br>$K'(1)=f'(1)g'(1)\,g(2)+f(1)\,g'(2)f'(1)=3\cdot4\cdot3+2\cdot(-2)\cdot3=36-12=24$</p></details></div>
 </div></article>
 <article class="q drill" id="p2" data-idx="1">
-<h3><span class="num">2</span> <span class="tag">กฎลูกโซ่หลายชั้น</span>A2. $y=e^u,\ u=\tan v,\ v=\cot3t+\sin3t,\ t=\ln(2s+1)^2,\ s=\sqrt{5x+3}$ จงหา $\dfrac{dy}{dx}$</h3>
+<h3><span class="num">2</span><span class="ttl"><span class="tag">กฎลูกโซ่หลายชั้น</span>A2. $y=e^u,\ u=\tan v,\ v=\cot3t+\sin3t,\ t=\ln(2s+1)^2,\ s=\sqrt{5x+3}$ จงหา $\dfrac{dy}{dx}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-1"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=e^u,\ u=\tan v,\ v=\cot3t+\sin3t,\ t=\ln(2s+1)^2,\ s=\sqrt{5x+3}$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น: $\dfrac{dy}{dx}=\dfrac{dy}{du}\dfrac{du}{dv}\dfrac{dv}{dt}\dfrac{dt}{ds}\dfrac{ds}{dx}$</li><li>$\ln a^2=2\ln a$ ช่วยลดรูปก่อนดิฟ</li></ul></div></details>
@@ -127,7 +129,7 @@ $$\frac{dy}{dx}=e^u\sec^2v\,\left(-3\csc^23t+3\cos3t\right)\cdot\frac{4}{2s+1}\c
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $y=\sin u,\ u=\ln v,\ v=\sqrt{w},\ w=x^2+4x+1$ จงหาค่า $\dfrac{dy}{dx}$ ที่ $x=0$</p><details><summary>ใบ้</summary><p>ที่ $x=0$ ลองหา $w,v,u$ ก่อนเพื่อรู้ว่าแต่ละชั้นประเมินที่ค่าใด</p></details><details><summary>ดูคำตอบ</summary><p>$2$</p><p class="alt">$\dfrac{dy}{dx}=\cos u\cdot\dfrac1v\cdot\dfrac{1}{2\sqrt w}\cdot(2x+4)$<br>ที่ $x=0$: $w=1,\ v=1,\ u=0$<br>$=\cos0\cdot1\cdot\dfrac12\cdot4=2$</p></details></div>
 </div></article>
 <article class="q drill" id="p3" data-idx="2">
-<h3><span class="num">3</span> <span class="tag">Implicit</span>A3. $5x^3+3xy^2+y^2=11$ จงหา $\dfrac{dx}{dy}$ (ดิฟเทียบ $y$)</h3>
+<h3><span class="num">3</span><span class="ttl"><span class="tag">Implicit</span>A3. $5x^3+3xy^2+y^2=11$ จงหา $\dfrac{dx}{dy}$ (ดิฟเทียบ $y$)</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-2"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$5x^3+3xy^2+y^2=11$</li><li>ให้ดิฟเทียบกับ $y$ (ถือ $x$ เป็นฟังก์ชันของ $y$)</li></ul><p><b>ต้องหา:</b> $\dfrac{dx}{dy}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดิฟโดยปริยาย: พจน์ที่มี $x$ ต้องคูณ $\dfrac{dx}{dy}$ ทุกครั้ง</li><li>กฎผลคูณ $(uv)'=u'v+uv'$</li></ul></div></details>
@@ -168,7 +170,7 @@ $$\frac{dx}{dy}=\frac{-6xy-2y}{15x^2+3y^2}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $x^3+2xy^2+y^3=5$ จงหา $\dfrac{dx}{dy}$</p><details><summary>ใบ้</summary><p>ดิฟเทียบ $y$ โดยเขียน $x'$ แทน $\frac{dx}{dy}$ และใช้กฎผลคูณกับ $2xy^2$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dx}{dy}=-\dfrac{4xy+3y^2}{3x^2+2y^2}$</p><p class="alt">ดิฟเทียบ $y$: $3x^2x'+2x'y^2+4xy+3y^2=0$<br>$(3x^2+2y^2)x'=-(4xy+3y^2)$<br>จึงได้ $x'=-\dfrac{4xy+3y^2}{3x^2+2y^2}$</p></details></div>
 </div></article>
 <article class="q drill" id="p4" data-idx="3">
-<h3><span class="num">4</span> <span class="tag">Improper</span>A4. $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^3}$ ลู่เข้าหรือลู่ออก</h3>
+<h3><span class="num">4</span><span class="ttl"><span class="tag">Improper</span>A4. $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^3}$ ลู่เข้าหรือลู่ออก</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-3"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^3}$</li><li>ช่วงอินทิกรัลเป็นอนันต์ทั้งสองด้าน และตัวส่วนเป็นศูนย์ที่ $x=0$</li></ul><p><b>ต้องหา:</b> สรุปว่าอินทิกรัลลู่เข้าหรือลู่ออก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลไม่ตรงแบบต้องแยกเป็นก้อนที่แต่ละก้อนมีปัญหาเดียว</li><li>จะลู่เข้าได้ ต้องลู่เข้าทุกก้อน</li></ul></div></details>
@@ -212,7 +214,7 @@ $$\int_{-\infty}^{\infty}\frac{dx}{x^3}\ \text{ลู่ออก}$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงพิจารณาว่า $\displaystyle\int_{-\infty}^{\infty}\frac{x}{x^2+1}\,dx$ ลู่เข้าหรือลู่ออก</p><details><summary>ใบ้</summary><p>แยกที่ $x=0$ แล้วเช็กก้อน $\int_0^\infty$ ด้วยลิมิต</p></details><details><summary>ดูคำตอบ</summary><p>ลู่ออก</p><p class="alt">$\int_0^t\frac{x}{x^2+1}dx=\frac12\ln(t^2+1)\to\infty$ เมื่อ $t\to\infty$<br>ก้อน $\int_0^\infty$ ลู่ออก จึงลู่ออกทั้งข้อ แม้ฟังก์ชันจะเป็นฟังก์ชันคี่</p></details></div>
 </div></article>
 <article class="q drill" id="p5" data-idx="4">
-<h3><span class="num">5</span> <span class="tag">โลปิตาล</span>B1. $\displaystyle\lim_{x\to0}\frac{\tan x-x}{x^3}$</h3>
+<h3><span class="num">5</span><span class="ttl"><span class="tag">โลปิตาล</span>B1. $\displaystyle\lim_{x\to0}\frac{\tan x-x}{x^3}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-4"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\lim_{x\to0}\frac{\tan x-x}{x^3}$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎของโลปิตาลเมื่อได้รูป $\frac00$ หรือ $\frac\infty\infty$</li><li>$\sec^2x-1=\tan^2x$ และ $\lim_{x\to0}\frac{\tan x}{x}=1$</li></ul></div></details>
@@ -247,7 +249,7 @@ $$\frac13$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\lim_{x\to0}\frac{x-\sin x}{x^3}$</p><details><summary>ใบ้</summary><p>ใช้โลปิตาลต่อเนื่องกี่ครั้ง จนกว่าส่วนไม่เป็นศูนย์</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac16$</p><p class="alt">รูป $\frac00$: $\frac{1-\cos x}{3x^2}$ ยังเป็น $\frac00$ อีก<br>ดิฟอีก: $\frac{\sin x}{6x}$ ซึ่งเป็น $\frac00$ อีก<br>ดิฟอีก: $\frac{\cos x}{6}\to\frac16$</p></details></div>
 </div></article>
 <article class="q drill" id="p6" data-idx="5">
-<h3><span class="num">6</span> <span class="tag">$1^\infty$</span>B2. $\displaystyle\lim_{x\to0^+}(1+2x)^{1/x}$</h3>
+<h3><span class="num">6</span><span class="ttl"><span class="tag">$1^\infty$</span>B2. $\displaystyle\lim_{x\to0^+}(1+2x)^{1/x}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-5"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-5" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\lim_{x\to0^+}(1+2x)^{1/x}$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $1^\infty$ ใช้ $\ln$ ย้ายเลขชี้กำลังลงมา</li><li>ถ้า $\ln y\to L$ แล้ว $y\to e^L$</li></ul></div></details>
@@ -282,7 +284,7 @@ $$e^2$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\lim_{x\to0^+}(1+3x)^{2/x}$</p><details><summary>ใบ้</summary><p>ให้ $y$ เป็นฟังก์ชันที่โจทย์ให้ หา $\ln y$ แล้วใช้โลปิตาล</p></details><details><summary>ดูคำตอบ</summary><p>$e^{6}$</p><p class="alt">$\ln y=\frac{2\ln(1+3x)}{x}\to\frac00$<br>โลปิตาล: $\dfrac{2\cdot\frac{3}{1+3x}}{1}\to6$<br>จึง $y\to e^6$</p></details></div>
 </div></article>
 <article class="q drill" id="p7" data-idx="6">
-<h3><span class="num">7</span> <span class="tag">นิยามอนุพันธ์</span>B3. หา $f'(x)$ ของ $f(x)=2x^2-3x+1$ โดยใช้นิยาม</h3>
+<h3><span class="num">7</span><span class="ttl"><span class="tag">นิยามอนุพันธ์</span>B3. หา $f'(x)$ ของ $f(x)=2x^2-3x+1$ โดยใช้นิยาม</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-6"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-6" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=2x^2-3x+1$</li><li>ให้หา $f'(x)$ โดยใช้นิยาม (ห้ามใช้สูตรลัด)</li></ul><p><b>ต้องหา:</b> $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f'(x)=\displaystyle\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$</li><li>กระจาย $(x+\Delta x)^2=x^2+2x\Delta x+\Delta x^2$</li></ul></div></details>
@@ -325,7 +327,7 @@ $$f'(x)=4x-3$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ ของ $f(x)=3x^2+x-5$ โดยใช้นิยาม</p><details><summary>ใบ้</summary><p>หาผลต่าง $f(x+\Delta x)-f(x)$ แล้วดึง $\Delta x$ ออก</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=6x+1$</p><p class="alt">$f(x+\Delta x)-f(x)=6x\Delta x+3\Delta x^2+\Delta x$<br>หารด้วย $\Delta x$: $6x+3\Delta x+1$<br>ให้ $\Delta x\to0$ ได้ $6x+1$</p></details></div>
 </div></article>
 <article class="q drill" id="p8" data-idx="7">
-<h3><span class="num">8</span> <span class="tag">Implicit</span>B4. $x^3+y^3=6xy$ จงหา $\dfrac{dy}{dx}$</h3>
+<h3><span class="num">8</span><span class="ttl"><span class="tag">Implicit</span>B4. $x^3+y^3=6xy$ จงหา $\dfrac{dy}{dx}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-7"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-7" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$x^3+y^3=6xy$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดิฟโดยปริยาย: ดิฟ $y$ เป็น $y'$ ตามกฎลูกโซ่</li><li>$6xy$ เป็นผลคูณ ต้องใช้กฎผลคูณ</li></ul></div></details>
@@ -364,7 +366,7 @@ $$y'=\frac{2y-x^2}{y^2-2x}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $x^4+y^4=4xy$ จงหา $\dfrac{dy}{dx}$</p><details><summary>ใบ้</summary><p>ดิฟเทียบ $x$ ทั้งสองข้าง ใช้กฎผลคูณกับ $4xy$ แล้วรวม $y'$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=\dfrac{y-x^3}{y^3-x}$</p><p class="alt">$4x^3+4y^3y'=4y+4xy'$<br>$(4y^3-4x)y'=4y-4x^3$<br>$y'=\dfrac{y-x^3}{y^3-x}$</p></details></div>
 </div></article>
 <article class="q drill" id="p9" data-idx="8">
-<h3><span class="num">9</span> <span class="tag">อันดับ $n$</span>B5. $y=\ln(x+2)$ จงหา $y^{(n)}$</h3>
+<h3><span class="num">9</span><span class="ttl"><span class="tag">อันดับ $n$</span>B5. $y=\ln(x+2)$ จงหา $y^{(n)}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-8"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-8" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\ln(x+2)$</li></ul><p><b>ต้องหา:</b> สูตรทั่วไปของ $y^{(n)}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดิฟหลาย ๆ ครั้งแล้วหารูปแบบของเครื่องหมาย ตัวเศษ และตัวส่วน</li><li>แฟกทอเรียล $(n-1)!$ มักโผล่เมื่อดิฟกำลังลบซ้ำ ๆ</li></ul></div></details>
@@ -399,7 +401,7 @@ $$y^{(n)}=\frac{(-1)^{n-1}(n-1)!}{(x+2)^n}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y^{(n)}$ ของ $y=\ln(2x+1)$</p><details><summary>ใบ้</summary><p>ดิฟสามสี่ครั้ง สังเกตตัวคูณ $2$ ที่ออกมาทุกครั้งจากกฎลูกโซ่</p></details><details><summary>ดูคำตอบ</summary><p>$y^{(n)}=\dfrac{(-1)^{n-1}\,2^n\,(n-1)!}{(2x+1)^n}$</p><p class="alt">$y'=\frac{2}{2x+1},\ y''=-\frac{4}{(2x+1)^2},\ y'''=\frac{16}{(2x+1)^3}$<br>เครื่องหมาย $(-1)^{n-1}$ ตัวเลข $2^n(n-1)!$ ตัวส่วน $(2x+1)^n$</p></details></div>
 </div></article>
 <article class="q drill" id="p10" data-idx="9">
-<h3><span class="num">10</span> <span class="tag">ประมาณค่าเชิงเส้น</span>B6. ประมาณค่า $\sqrt[3]{8.12}$</h3>
+<h3><span class="num">10</span><span class="ttl"><span class="tag">ประมาณค่าเชิงเส้น</span>B6. ประมาณค่า $\sqrt[3]{8.12}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-9"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-9" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ต้องประมาณ $\sqrt[3]{8.12}$ โดยไม่ใช้เครื่องคิดเลข</li></ul><p><b>ต้องหา:</b> ค่าประมาณของ $\sqrt[3]{8.12}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การประมาณเชิงเส้น: $f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</li><li>เลือก $x_0$ ที่ใกล้ที่สุดซึ่งหารากได้สวย</li></ul></div></details>
@@ -436,7 +438,7 @@ $$\sqrt[3]{8.12}\approx2.01$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงประมาณ $\sqrt[4]{16.08}$ ด้วยการประมาณเชิงเส้น</p><details><summary>ใบ้</summary><p>ใช้ $f(x)=x^{1/4}$ และ $x_0=16$</p></details><details><summary>ดูคำตอบ</summary><p>$\approx2.0025$</p><p class="alt">$f(16)=2,\ f'(x)=\frac14x^{-3/4},\ f'(16)=\frac14\cdot\frac18=\frac1{32}$<br>$\approx2+\frac1{32}(0.08)=2+0.0025=2.0025$</p></details></div>
 </div></article>
 <article class="q drill" id="p11" data-idx="10">
-<h3><span class="num">11</span> <span class="tag">$u$-sub</span>B7. $\displaystyle\int\frac{\sin(\ln x)}{x}dx$</h3>
+<h3><span class="num">11</span><span class="ttl"><span class="tag">$u$-sub</span>B7. $\displaystyle\int\frac{\sin(\ln x)}{x}dx$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-10"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-10" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int\frac{\sin(\ln x)}{x}\,dx$</li></ul><p><b>ต้องหา:</b> ปริพันธ์ไม่จำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การแทนค่า $u$-substitution: เลือก $u$ ให้ $du$ ปรากฏอยู่ในโจทย์</li><li>$\int\sin u\,du=-\cos u+C$</li></ul></div></details>
@@ -471,7 +473,7 @@ $$-\cos(\ln x)+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{\cos\sqrt x}{\sqrt x}\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\sqrt x$ แล้ว $\frac{dx}{\sqrt x}=2\,du$</p></details><details><summary>ดูคำตอบ</summary><p>$2\sin\sqrt x+C$</p><p class="alt">$u=\sqrt x,\ du=\frac{dx}{2\sqrt x}$<br>$\int\cos u\cdot2\,du=2\sin u+C=2\sin\sqrt x+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p12" data-idx="11">
-<h3><span class="num">12</span> <span class="tag">by parts</span>B8. $\displaystyle\int x^2\cos x\,dx$</h3>
+<h3><span class="num">12</span><span class="ttl"><span class="tag">by parts</span>B8. $\displaystyle\int x^2\cos x\,dx$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-11"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-11" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int x^2\cos x\,dx$</li></ul><p><b>ต้องหา:</b> ปริพันธ์ไม่จำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลเป็นส่วน: $\int u\,dv=uv-\int v\,du$</li><li>เมื่อ $u$ เป็นพหุนามกำลังสอง ต้องทำซ้ำสองครั้ง</li></ul></div></details>
@@ -507,7 +509,7 @@ $$x^2\sin x+2x\cos x-2\sin x+C$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int x^2e^{x}\,dx$</p><details><summary>ใบ้</summary><p>ทำ by parts สองครั้ง โดยให้ $u$ เป็นกำลังของ $x$ ทุกครั้ง</p></details><details><summary>ดูคำตอบ</summary><p>$e^x(x^2-2x+2)+C$</p><p class="alt">ครั้งที่ 1: $x^2e^x-\int2xe^x\,dx$<br>ครั้งที่ 2: $\int xe^x\,dx=xe^x-e^x$<br>รวม: $x^2e^x-2(xe^x-e^x)=e^x(x^2-2x+2)+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p13" data-idx="12">
-<h3><span class="num">13</span> <span class="tag">หารยาว</span>B9. $\displaystyle\int\frac{x^3+2x}{x^2-4}dx$</h3>
+<h3><span class="num">13</span><span class="ttl"><span class="tag">หารยาว</span>B9. $\displaystyle\int\frac{x^3+2x}{x^2-4}dx$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-12"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-12" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int\frac{x^3+2x}{x^2-4}\,dx$</li></ul><p><b>ต้องหา:</b> ปริพันธ์ไม่จำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ถ้ากำลังของเศษ $\ge$ กำลังของส่วน ให้หารยาวก่อน</li><li>$\int\frac{f'(x)}{f(x)}dx=\ln|f(x)|+C$</li></ul></div></details>
@@ -544,7 +546,7 @@ $$\frac{x^2}{2}+3\ln|x^2-4|+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{2x^3+x}{x^2-1}\,dx$</p><details><summary>ใบ้</summary><p>หารยาวแล้วดูเศษเหลือว่าเป็น $x$ คูณค่าคงที่</p></details><details><summary>ดูคำตอบ</summary><p>$x^2+\tfrac32\ln|x^2-1|+C$</p><p class="alt">$\dfrac{2x^3+x}{x^2-1}=2x+\dfrac{3x}{x^2-1}$<br>$\int2x\,dx=x^2$ และ $\int\frac{3x}{x^2-1}dx=\frac32\ln|x^2-1|$</p></details></div>
 </div></article>
 <article class="q drill" id="p14" data-idx="13">
-<h3><span class="num">14</span> <span class="tag">เศษส่วนย่อย</span>B10. $\displaystyle\int\frac{x+1}{x(x^2+1)}dx$</h3>
+<h3><span class="num">14</span><span class="ttl"><span class="tag">เศษส่วนย่อย</span>B10. $\displaystyle\int\frac{x+1}{x(x^2+1)}dx$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-13"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-13" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int\frac{x+1}{x(x^2+1)}\,dx$</li></ul><p><b>ต้องหา:</b> ปริพันธ์ไม่จำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เศษส่วนย่อยกับตัวส่วนที่มีพจน์เชิงเส้นและพจน์กำลังสองที่แยกไม่ได้: $\frac{A}{x}+\frac{Bx+C}{x^2+1}$</li><li>$\int\frac{dx}{x^2+1}=\tan^{-1}x$</li></ul></div></details>
@@ -593,7 +595,7 @@ $$\ln|x|-\tfrac12\ln(x^2+1)+\tan^{-1}x+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{x+4}{x(x^2+4)}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $\frac{A}{x}+\frac{Bx+C}{x^2+4}$ แล้วเทียบสัมประสิทธิ์</p></details><details><summary>ดูคำตอบ</summary><p>$\ln|x|-\tfrac12\ln(x^2+4)+\tfrac12\tan^{-1}\dfrac x2+C$</p><p class="alt">$A=1,\ B=-1,\ C=1$ ได้ $\frac1x+\frac{-x+1}{x^2+4}$<br>$\int\frac{-x}{x^2+4}=-\frac12\ln(x^2+4)$ และ $\int\frac{1}{x^2+4}=\frac12\tan^{-1}\frac x2$</p></details></div>
 </div></article>
 <article class="q drill" id="p15" data-idx="14">
-<h3><span class="num">15</span> <span class="tag">Improper แบบ 1</span>B11. $\displaystyle\int_0^\infty xe^{-x^2}dx$</h3>
+<h3><span class="num">15</span><span class="ttl"><span class="tag">Improper แบบ 1</span>B11. $\displaystyle\int_0^\infty xe^{-x^2}dx$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-14"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-14" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_0^\infty xe^{-x^2}\,dx$</li></ul><p><b>ต้องหา:</b> ค่าของอินทิกรัล และลู่เข้าหรือไม่</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลไม่ตรงแบบแบบ 1: $\int_a^\infty f=\lim_{t\to\infty}\int_a^tf$</li><li>ใช้ $u=-x^2$ หรือ $u=x^2$</li></ul></div></details>
@@ -630,7 +632,7 @@ $$\frac12\quad\text{(ลู่เข้า)}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int_0^\infty xe^{-3x^2}\,dx$</p><details><summary>ใบ้</summary><p>ใช้ $u=3x^2$ หรือเดาแอนติเดริเวทีฟ $-\frac16e^{-3x^2}$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac16$ (ลู่เข้า)</p><p class="alt">$\int_0^txe^{-3x^2}dx=\left[-\frac16e^{-3x^2}\right]_0^t=\frac16-\frac16e^{-3t^2}$<br>เมื่อ $t\to\infty$ ได้ $\frac16$</p></details></div>
 </div></article>
 <article class="q drill" id="p16" data-idx="15">
-<h3><span class="num">16</span> <span class="tag">Improper แบบ 2</span>B12. $\displaystyle\int_0^2\frac{dx}{\sqrt{2-x}}$</h3>
+<h3><span class="num">16</span><span class="ttl"><span class="tag">Improper แบบ 2</span>B12. $\displaystyle\int_0^2\frac{dx}{\sqrt{2-x}}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-15"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-15" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_0^2\frac{dx}{\sqrt{2-x}}$</li></ul><p><b>ต้องหา:</b> ค่าอินทิกรัล และลู่เข้าหรือไม่</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลไม่ตรงแบบแบบ 2: ตัวส่วนเป็นศูนย์ที่ขอบ ใช้ลิมิตเข้าหาขอบนั้น</li><li>$\int(2-x)^{-1/2}dx=-2(2-x)^{1/2}$</li></ul></div></details>
@@ -669,7 +671,7 @@ $$2\sqrt2\quad\text{(ลู่เข้า)}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int_1^5\frac{dx}{\sqrt{x-1}}$</p><details><summary>ใบ้</summary><p>ตัวส่วนเป็นศูนย์ที่ขอบล่าง ใช้ $t\to1^+$</p></details><details><summary>ดูคำตอบ</summary><p>$4$ (ลู่เข้า)</p><p class="alt">$\int_t^5(x-1)^{-1/2}dx=\left[2\sqrt{x-1}\right]_t^5=4-2\sqrt{t-1}$<br>เมื่อ $t\to1^+$ ได้ $4$</p></details></div>
 </div></article>
 <article class="q drill" id="p17" data-idx="16">
-<h3><span class="num">17</span> <span class="tag">Improper ผ่าช่วง</span>B13. $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$</h3>
+<h3><span class="num">17</span><span class="ttl"><span class="tag">Improper ผ่าช่วง</span>B13. $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-16"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-16" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$</li></ul><p><b>ต้องหา:</b> ค่าอินทิกรัล และลู่เข้าหรือไม่</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ขอบทั้งสองเป็นอนันต์ ต้องผ่าช่วงที่จุดใดจุดหนึ่ง (เช่น $0$) แล้วทำสองลิมิต</li><li>$\int\frac{dx}{1+x^2}=\tan^{-1}x$</li></ul></div></details>
@@ -706,7 +708,7 @@ $$\pi\quad\text{(ลู่เข้า)}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+4}$</p><details><summary>ใบ้</summary><p>แอนติเดริเวทีฟคือ $\frac12\tan^{-1}\frac x2$ แล้วผ่าที่ $0$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac\pi2$ (ลู่เข้า)</p><p class="alt">$\left[\frac12\tan^{-1}\frac x2\right]_{-\infty}^{\infty}=\frac12\left(\frac\pi2-\left(-\frac\pi2\right)\right)=\frac\pi2$</p></details></div>
 </div></article>
 <article class="q drill" id="p18" data-idx="17">
-<h3><span class="num">18</span> <span class="tag">Polar</span>B14. แปลง $r=6\sin\theta$ เป็นพิกัดฉาก และบอกว่าเป็นกราฟอะไร</h3>
+<h3><span class="num">18</span><span class="ttl"><span class="tag">Polar</span>B14. แปลง $r=6\sin\theta$ เป็นพิกัดฉาก และบอกว่าเป็นกราฟอะไร</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-17"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-17" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$r=6\sin\theta$</li></ul><p><b>ต้องหา:</b> สมการในพิกัดฉาก และชนิดของกราฟ</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$x=r\cos\theta,\ y=r\sin\theta,\ r^2=x^2+y^2$</li><li>คูณทั้งสองข้างด้วย $r$ เพื่อให้เกิด $r\sin\theta$ และ $r^2$</li></ul></div></details>
@@ -746,7 +748,7 @@ $$x^2+(y-3)^2=9$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงแปล $r=4\cos\theta-2\sin\theta$ เป็นพิกัดฉาก และบอกชนิดของกราฟ</p><details><summary>ใบ้</summary><p>คูณด้วย $r$ ทั้งสองข้าง แล้วทำกำลังสองสมบูรณ์</p></details><details><summary>ดูคำตอบ</summary><p>$(x-2)^2+(y+1)^2=5$ เป็นวงกลมจุดศูนย์กลาง $(2,-1)$ รัศมี $\sqrt5$</p><p class="alt">คูณ $r$: $x^2+y^2=4x-2y$<br>$(x^2-4x)+(y^2+2y)=0$<br>$(x-2)^2+(y+1)^2=5$</p></details></div>
 </div></article>
 <article class="q drill" id="p19" data-idx="18">
-<h3><span class="num">19</span> <span class="tag">Polar จุดตัด</span>B15. หาจุดตัดทั้งหมดของ $r=2\sin\theta$ และ $r=2\cos\theta$</h3>
+<h3><span class="num">19</span><span class="ttl"><span class="tag">Polar จุดตัด</span>B15. หาจุดตัดทั้งหมดของ $r=2\sin\theta$ และ $r=2\cos\theta$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="extra-18"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="extra-18" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$r=2\sin\theta$ และ $r=2\cos\theta$</li></ul><p><b>ต้องหา:</b> จุดตัดทั้งหมดของสองกราฟ</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>จุดตัดที่ได้จากการเท่ากันของ $r$ อาจไม่ครบ ต้องเช็กจุดกำเนิดแยก</li><li>จุดเดียวกันมีพิกัดเชิงขั้วได้หลายแบบ</li></ul></div></details>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เฉลย · คลิป MTH11101 ลิมิตและความต่อเนื่อง (ข้อเขียน)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],strict:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  main{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 16px}
+  body{line-height:1.95;font-size:17px;margin:0}
+
+  .drill{scroll-margin-top:4.5rem}
+  .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
+  .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
+  .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
+  .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
+  .drill .mine{width:100%;box-sizing:border-box;border:1px dashed var(--line,#ccc);border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 12px;margin:4px 0 8px;resize:vertical}
+  .lv{border:1px solid var(--line,#ddd);border-radius:10px;margin:6px 0;padding:2px 12px}
+  .lv>summary{cursor:pointer;font-weight:600;padding:6px 0;color:var(--accent,#2f6fde)}
+  .lv .lvb{padding:2px 0 8px}
+  .lv.l1{border-left:4px solid #38bdf8}.lv.l2{border-left:4px solid #818cf8}.lv.l3{border-left:4px solid #c084fc}.lv.l4{border-left:4px solid #f59e0b}.lv.l5{border-left:4px solid var(--ok,#1a7f4b)}
+  .stp{margin:6px 0}.stp>summary{cursor:pointer;color:var(--muted,#5b6370)}
+  .after{margin-top:12px;padding-top:8px;border-top:1px dashed var(--line,#ddd)}
+  .prac{background:var(--accentbg,rgba(47,111,222,.08));border-radius:10px;padding:8px 14px;margin-top:8px}
+  .alt{color:var(--muted,#5b6370);font-size:.92rem}
+  .tip{color:var(--muted,#5b6370)}
+  .progress{position:sticky;top:3.2rem;z-index:5;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:999px;padding:4px 14px;display:inline-block;font-size:.9rem;margin:0 0 12px}
+  .katex-display{overflow-x:auto;overflow-y:hidden}
+  @media print{details{display:block}details>*{display:block}.mine{display:none}}
+</style>
+<link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script>
+</head>
+<body>
+<main>
+<h1>เฉลย · คลิป MTH11101 ลิมิตและความต่อเนื่อง (ข้อเขียน) (13 ข้อ)</h1><p class="sub">เฉลยทีละขั้น · ต้นฉบับ: <a href="" target="_blank" rel="noopener"></a> · <a href="drill-video-limit.html">โหมดฝึกทำ</a></p>
+<article class="q" id="p1"><h3><span class="num">1</span><span class="ttl">EX1 (คลิป 00:53) อ่านลิมิตจากกราฟ<br>สำหรับฟังก์ชัน $f$ ในรูป (ดูภาพประกอบ) จงหา<br>(a) $\displaystyle\lim_{x\to-2}f(x)$ &nbsp; (b) $\displaystyle\lim_{x\to0}f(x)$ &nbsp; (c) $\displaystyle\lim_{x\to3}f(x)$<br>(d) $f(-2)$ &nbsp; (e) $\displaystyle\lim_{x\to-\infty}f(x)$ &nbsp; (f) $\displaystyle\lim_{x\to+\infty}f(x)$<br><i>ลักษณะกราฟ:</i> ทางซ้ายกราฟแนบเส้น $y=0$ (จากด้านล่าง) แล้วดิ่งลง $-\infty$ เมื่อ $x\to-2^-$; ทางขวาของ $x=-2$ กราฟเริ่มที่วงกลมโปร่ง $(-2,-1)$ ลงไปต่ำสุดที่ $(0,-5)$ แล้วขึ้นต่อเนื่องถึงจุดทึบ $(3,4)$ จากนั้นเป็นเส้นตรงลาดขึ้นพร้อมลูกศร (เพิ่มขึ้นไม่มีขอบเขต)</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_0.jpg)</summary><img loading="lazy" src="img/vid/mthv0_0.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ข้อ a) ลิมิตซ้าย/ขวาที่ $x=-2$</div><p>เข้าหาจากซ้าย กราฟดิ่งลง: $\displaystyle\lim_{x\to-2^-}f(x)=-\infty$<br>เข้าหาจากขวา กราฟเข้าหาวงกลมโปร่ง: $\displaystyle\lim_{x\to-2^+}f(x)=-1$</p><p>ซ้ายกับขวาไม่เท่ากัน จึงไม่มีลิมิต</p>$$\lim_{x\to-2}f(x)\ \text{DNE}$$</div>
+<div class="step"><div class="step-h">ข้อ b), c) ลิมิตที่ $x=0$ และ $x=3$</div><p>ที่ $x=0$ กราฟต่อเนื่อง ทั้งสองฝั่งเข้าหาจุดต่ำสุด $y=-5$ → $\displaystyle\lim_{x\to0}f(x)=-5$</p><p>ที่ $x=3$ ฝั่งซ้าย (โค้งขึ้น) และฝั่งขวา (เส้นตรง) มาบรรจบที่จุดทึบ $y=4$ → $\displaystyle\lim_{x\to3}f(x)=4$</p></div>
+<div class="step"><div class="step-h">ข้อ d) ค่าฟังก์ชัน $f(-2)$</div><p>ที่ $x=-2$ มีเพียงวงกลมโปร่ง (ไม่มีจุดทึบ) จึงไม่มีค่า $f(-2)$ — $f$ ไม่นิยามที่ $x=-2$ (ผู้สอนเขียน DNE)</p></div>
+<div class="step"><div class="step-h">ข้อ e), f) ลิมิตที่อนันต์</div><p>$x\to-\infty$: กราฟแนบเส้น $y=0$ → $\displaystyle\lim_{x\to-\infty}f(x)=0$</p><p>$x\to+\infty$: เส้นมีลูกศรลาดขึ้นเรื่อย ๆ → $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>(a) DNE &nbsp; (b) $-5$ &nbsp; (c) $4$ &nbsp; (d) ไม่นิยาม (DNE) &nbsp; (e) $0$ &nbsp; (f) $+\infty$</p></div>
+</div></details></article>
+<article class="q" id="p2"><h3><span class="num">2</span><span class="ttl">EX2 ข้อ 1 (คลิป 05:00)<br>กำหนด $\displaystyle\lim_{x\to5}f(x)=5,\ \lim_{x\to5}g(x)=10,\ \lim_{x\to5}h(x)=0,\ \lim_{x\to5}r(x)=0,\ \lim_{x\to5}h'(x)=0,\ \lim_{x\to5}r'(x)=\infty$<br>จงหา $\displaystyle\lim_{x\to5}\big(xf(x)+4g(x)-49\big)$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_1.jpg)</summary><img loading="lazy" src="img/vid/mthv0_1.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจายลิมิตด้วยสมบัติผลบวก/ผลคูณ</div>$$\lim_{x\to5}\big(xf(x)+4g(x)-49\big)=\Big(\lim_{x\to5}x\Big)\Big(\lim_{x\to5}f(x)\Big)+4\lim_{x\to5}g(x)-49$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าลิมิตที่กำหนด</div>$$=(5)(5)+4(10)-49=25+40-49$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$16$$</div>
+</div></details></article>
+<article class="q" id="p3"><h3><span class="num">3</span><span class="ttl">EX2 ข้อ 2 (คลิป 07:07)<br>กำหนด $\displaystyle\lim_{x\to5}f(x)=5,\ \lim_{x\to5}g(x)=10,\ \lim_{x\to5}h(x)=0,\ \lim_{x\to5}r(x)=0,\ \lim_{x\to5}h'(x)=0,\ \lim_{x\to5}r'(x)=\infty$<br>จงหา $\displaystyle\lim_{x\to5}\frac{3x^2f(x)-x^2g(x)+9f(x)-3g(x)}{3f(x)-g(x)}$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_2.jpg)</summary><img loading="lazy" src="img/vid/mthv0_2.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: จับกลุ่มตัวเศษ</div>$$3x^2f-x^2g+9f-3g=x^2(3f-g)+3(3f-g)=(3f-g)(x^2+3)$$<p>(ดึงตัวร่วม: $ab+ac=a(b+c)$)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตัด $3f(x)-g(x)$</div><p>เนื่องจาก $\lim_{x\to5}(3f-g)=15-10=5\ne0$ จึงตัดกันได้ใกล้ $x=5$</p>$$\lim_{x\to5}\frac{(3f-g)(x^2+3)}{3f-g}=\lim_{x\to5}(x^2+3)=25+3$$<p>(ตรวจอีกทาง: แทนตรง $\frac{3(25)(5)-25(10)+45-30}{5}=\frac{140}{5}=28$)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$28$$</div>
+</div></details></article>
+<article class="q" id="p4"><h3><span class="num">4</span><span class="ttl">EX2 ข้อ 3 (คลิป 11:30)<br>กำหนด $\displaystyle\lim_{x\to5}f(x)=5,\ \lim_{x\to5}g(x)=10,\ \lim_{x\to5}h(x)=0,\ \lim_{x\to5}r(x)=0,\ \lim_{x\to5}h'(x)=0,\ \lim_{x\to5}r'(x)=\infty$<br>จงหา $\displaystyle\lim_{x\to5}\frac{h(x)}{r(x)}$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_3.jpg)</summary><img loading="lazy" src="img/vid/mthv0_3.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบ</div>$$\frac{\lim h}{\lim r}=\frac00\quad\text{รูปแบบยังไม่กำหนด}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใช้กฎโลปิตาล</div>$$\lim_{x\to5}\frac{h(x)}{r(x)}=\lim_{x\to5}\frac{h'(x)}{r'(x)}=\frac{0}{\infty}$$<p>$\frac0\infty$ <b>ไม่ใช่</b>รูปแบบยังไม่กำหนด: $0\cdot\frac1\infty=0\cdot0=0$</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$0$$</div>
+</div></details></article>
+<article class="q" id="p5"><h3><span class="num">5</span><span class="ttl">EX2 ข้อ 4 (คลิป 14:40)<br>กำหนด $\displaystyle\lim_{x\to5}f(x)=5,\ \lim_{x\to5}g(x)=10,\ \lim_{x\to5}h(x)=0,\ \lim_{x\to5}r(x)=0,\ \lim_{x\to5}h'(x)=0,\ \lim_{x\to5}r'(x)=\infty$<br>จงหา $\displaystyle\lim_{x\to5}\frac{r(x)}{h(x)}$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_3.jpg)</summary><img loading="lazy" src="img/vid/mthv0_3.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูปแบบ</div><p>$\lim r=0,\ \lim h=0$ ได้ $\frac00$ → ใช้โลปิตาล</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ใช้กฎโลปิตาล</div>$$\lim_{x\to5}\frac{r(x)}{h(x)}=\lim_{x\to5}\frac{r'(x)}{h'(x)}=\frac{\infty}{0}$$<p>ตัวเศษโตไม่จำกัด ตัวส่วนเข้าใกล้ 0 → ขนาดของผลหารโตไม่จำกัด ไม่เป็นจำนวนจริง (ข้อมูลไม่บอกเครื่องหมายของ $h'$ จึงสรุปเป็น $+\infty$ หรือ $-\infty$ ไม่ได้)</p><p>ข้อนี้มีไว้เทียบกับข้อ 3: $\frac0\infty=0$ แต่ $\frac\infty0$ หาค่าไม่ได้</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\lim_{x\to5}\frac{r(x)}{h(x)}\ \text{ไม่มีค่า (DNE)}$$</div>
+</div></details></article>
+<article class="q" id="p6"><h3><span class="num">6</span><span class="ttl">EX3 (คลิป 16:30) จงหา $\displaystyle\lim_{x\to\infty}\frac{\sqrt{5x^6-2x^3+10}}{x^3-1+x^2}$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_5.jpg)</summary><img loading="lazy" src="img/vid/mthv0_5.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงกำลังสูงสุดออกมา</div>$$\sqrt{5x^6-2x^3+10}=\sqrt{x^6}\sqrt{5-\tfrac{2}{x^3}+\tfrac{10}{x^6}}=|x|^3\sqrt{5-\tfrac{2}{x^3}+\tfrac{10}{x^6}}$$$$x^3-1+x^2=x^3\left(1-\tfrac1{x^3}+\tfrac1x\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $x\to\infty$ ทำให้ $x\gt0$</div><p>$|x|^3=x^3$ จึงตัดกับตัวส่วนได้</p>$$\lim_{x\to\infty}\frac{\sqrt{5-\frac{2}{x^3}+\frac{10}{x^6}}}{1-\frac1{x^3}+\frac1x}=\frac{\sqrt{5-0+0}}{1-0+0}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\sqrt5$$</div>
+</div></details></article>
+<article class="q" id="p7"><h3><span class="num">7</span><span class="ttl">EX4 (คลิป 20:40) จงหา $\displaystyle\lim_{x\to\infty}\frac{e^x-e^{-x}}{e^x+e^{-x}}$<br>(ต่อท้ายในคลิป 22:50: ถ้า $x\to-\infty$ จะได้เท่าไร)</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_6.jpg)</summary><img loading="lazy" src="img/vid/mthv0_6.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: $x\to\infty$ ดึง $e^x$ (ตัวที่โต) ออก</div>$$\lim_{x\to\infty}\frac{e^x(1-e^{-2x})}{e^x(1+e^{-2x})}=\lim_{x\to\infty}\frac{1-\frac1{e^{2x}}}{1+\frac1{e^{2x}}}=\frac{1-0}{1+0}=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: $x\to-\infty$ ตัวที่โตคือ $e^{-x}$</div><p>เมื่อ $x\to-\infty$: $e^x\to0$ และ $e^{-x}\to\infty$ จึงดึง $e^{-x}$ ออก</p>$$\lim_{x\to-\infty}\frac{e^{-x}(e^{2x}-1)}{e^{-x}(e^{2x}+1)}=\frac{0-1}{0+1}=-1$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\lim_{x\to\infty}=1,\qquad\lim_{x\to-\infty}=-1$$</div>
+</div></details></article>
+<article class="q" id="p8"><h3><span class="num">8</span><span class="ttl">EX5 (คลิป 27:36) จงหา $$\lim_{x\to-\infty}\frac{\sqrt{8x^2+3}}{3x+5.5}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_101.jpg)</summary><img loading="lazy" src="img/vid/mthv0_101.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระวังเครื่องหมายของ $\sqrt{x^2}$</div><p>$\sqrt{x^2}=|x|$ และเมื่อ $x\to-\infty$ ค่า $x$ ติดลบ จึงได้ $\sqrt{x^2}=|x|=-x$</p><p>เช่น $x=-10$: $\sqrt{100}=10=-(-10)$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดึงกำลังสูงสุดออก</div>$$\frac{\sqrt{x^2}\sqrt{8+\frac{3}{x^2}}}{x\left(3+\frac{5.5}{x}\right)}=\frac{-x\sqrt{8+\frac{3}{x^2}}}{x\left(3+\frac{5.5}{x}\right)}=\frac{-\sqrt{8+\frac{3}{x^2}}}{3+\frac{5.5}{x}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนลิมิต</div><p>$\frac{3}{x^2}\to0,\ \frac{5.5}{x}\to0$</p>$$\lim=\frac{-\sqrt8}{3}=-\frac{2\sqrt2}{3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\lim_{x\to-\infty}\frac{\sqrt{8x^2+3}}{3x+5.5}=-\frac{2\sqrt2}{3}\approx-0.943$$</div>
+</div></details></article>
+<article class="q" id="p9"><h3><span class="num">9</span><span class="ttl">EX6 (คลิป 30:47) จงหา $$\lim_{x\to-\infty}\frac{\sqrt{9x^2-4}}{2x+3}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_102.jpg)</summary><img loading="lazy" src="img/vid/mthv0_102.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: $\sqrt{x^2}=|x|=-x$ เมื่อ $x\to-\infty$</div><p>เหมือน EX5: ค่า $x$ ติดลบ จึงแทน $\sqrt{x^2}$ ด้วย $-x$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดึงกำลังสูงสุดออก</div>$$\frac{\sqrt{x^2}\sqrt{9-\frac{4}{x^2}}}{x\left(2+\frac{3}{x}\right)}=\frac{-x\sqrt{9-\frac{4}{x^2}}}{x\left(2+\frac{3}{x}\right)}=\frac{-\sqrt{9-\frac{4}{x^2}}}{2+\frac{3}{x}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนลิมิต</div>$$\lim=\frac{-\sqrt9}{2}=-\frac32$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\lim_{x\to-\infty}\frac{\sqrt{9x^2-4}}{2x+3}=-\frac32$$</div>
+</div></details></article>
+<article class="q" id="p10"><h3><span class="num">10</span><span class="ttl">EX7 Squeeze Theorem (คลิป 33:27) จงหา $$\lim_{x\to0^+}5\sqrt{x}\cos\left(\frac{1}{\sqrt{x}}\right)$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_103.jpg)</summary><img loading="lazy" src="img/vid/mthv0_103.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เริ่มจากขอบเขตของ $\cos$</div><p>เห็น $\sin/\cos$ ของสิ่งที่แกว่ง (เช่น $\frac{1}{\sqrt x}\to\infty$) ให้นึกถึง Squeeze</p>$$-1\le\cos\left(\frac{1}{\sqrt x}\right)\le1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณ $5\sqrt x$ ตลอดอสมการ</div><p>$x\to0^+$ ทำให้ $5\sqrt x\gt0$ อสมการจึงไม่กลับเครื่องหมาย</p>$$-5\sqrt x\le5\sqrt x\cos\left(\frac{1}{\sqrt x}\right)\le5\sqrt x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: take limit ขอบทั้งสอง</div>$$\lim_{x\to0^+}(-5\sqrt x)=0,\qquad\lim_{x\to0^+}5\sqrt x=0$$<p>ขอบล่างและบนเข้าใกล้ค่าเดียวกัน ฟังก์ชันตรงกลางจึงถูกบีบเข้าหาค่านั้น</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\lim_{x\to0^+}5\sqrt{x}\cos\left(\frac{1}{\sqrt{x}}\right)=0\quad\text{(by Squeeze)}$$</div>
+</div></details></article>
+<article class="q" id="p11"><h3><span class="num">11</span><span class="ttl">EX8 Squeeze Theorem (คลิป 37:03) จงหา $$\lim_{x\to0}x^3e^{\sin\left(\frac{1}{4x^2+1}\right)}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_104.jpg)</summary><img loading="lazy" src="img/vid/mthv0_104.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ขอบเขตของ $\sin$ แล้วยก $e$</div><p>ให้ $u=\sin\left(\frac{1}{4x^2+1}\right)$ จะได้ $-1\le u\le1$</p><p>$e^{u}$ เป็นฟังก์ชันเพิ่ม ($u$ มาก $e^u$ มาก) จึงยก $e$ ทั้งอสมการได้โดยเครื่องหมายไม่เปลี่ยน</p>$$e^{-1}\le e^{\sin\left(\frac{1}{4x^2+1}\right)}\le e$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กรณี $x\to0^+$ ($x^3\gt0$)</div>$$x^3e^{-1}\le x^3e^{\sin(\cdots)}\le x^3e$$<p>ขอบทั้งสอง $\to0\cdot e^{-1}=0$ และ $0\cdot e=0$ จึงได้ $\displaystyle\lim_{x\to0^+}x^3e^{\sin(\cdots)}=0$ (by Squeeze)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กรณี $x\to0^-$ ($x^3\lt0$ อสมการกลับข้าง)</div>$$x^3e^{-1}\ge x^3e^{\sin(\cdots)}\ge x^3e$$<p>ขอบทั้งสองยัง $\to0$ จึงได้ $\displaystyle\lim_{x\to0^-}x^3e^{\sin(\cdots)}=0$</p><p>(หรือใช้ค่าสัมบูรณ์ครอบทีเดียว: $-|x|^3e\le x^3e^{\sin(\cdots)}\le|x|^3e$)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ลิมิตซ้าย = ลิมิตขวา = 0</p>$$\lim_{x\to0}x^3e^{\sin\left(\frac{1}{4x^2+1}\right)}=0$$<p>หมายเหตุ: ฟังก์ชันนี้ต่อเนื่องที่ $x=0$ แทนค่าตรงได้ $0^3e^{\sin1}=0$ ตรงกัน ข้อนี้ผู้สอนใช้ฝึกขั้นตอน Squeeze</p></div>
+</div></details></article>
+<article class="q" id="p12"><h3><span class="num">12</span><span class="ttl">EX9 ความต่อเนื่อง (คลิป 48:22–58:55)<br>จงหาค่า $a,\ b$ ที่ทำให้ฟังก์ชัน $f(x)$ ต่อเนื่องที่จุด $x=0$ เมื่อ$$f(x)=\begin{cases}2a+b & ;\ x=0\\[4pt] \dfrac{10\sqrt{x}}{\sqrt{25+\sqrt{x}}-5} & ;\ x\gt 0\\[4pt] 5x^2+3a-b & ;\ x\lt 0\end{cases}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_200.jpg)</summary><img loading="lazy" src="img/vid/mthv0_200.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_200b.jpg)</summary><img loading="lazy" src="img/vid/mthv0_200b.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: นิยามความต่อเนื่องที่ $x=a$</div><p>$f$ ต่อเนื่องที่ $x=a$ เมื่อครบ 3 ข้อ: (1) $f(a)$ หาค่าได้ (2) $\lim_{x\to a}f(x)$ หาค่าได้ คือ $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)$ (3) $\lim_{x\to a}f(x)=f(a)$</p><p>ข้อนี้ $f(0)=2a+b$ (ใช้ช่อง $x=0$)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ลิมิตขวา ($x	o0^+$) ใช้ conjugate</div><p>แทน $x=0$ ได้ $\frac{0}{5-5}=\frac00$ จึงคูณ conjugate $\sqrt{25+\sqrt x}+5$ ทั้งเศษและส่วน</p>$$\lim_{x\to0^+}\frac{10\sqrt x\,(\sqrt{25+\sqrt x}+5)}{(25+\sqrt x)-25}=\lim_{x\to0^+}\frac{10\sqrt x\,(\sqrt{25+\sqrt x}+5)}{\sqrt x}=\lim_{x\to0^+}10(\sqrt{25+\sqrt x}+5)=10(5+5)=100$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ลิมิตซ้าย ($x	o0^-$)</div>$$\lim_{x\to0^-}(5x^2+3a-b)=3a-b$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตั้งสมการแล้วแก้</div><p>ต้องการ $\lim_{x\to0^+}f=\lim_{x\to0^-}f=f(0)$</p>$$2a+b=100\quad(1)\qquad 3a-b=100\quad(2)$$<p>(1)+(2): $5a=200\Rightarrow a=40$ แทนใน (1): $2(40)+b=100\Rightarrow b=20$</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$a=40,\quad b=20$$</div>
+</div></details></article>
+<article class="q" id="p13"><h3><span class="num">13</span><span class="ttl">EX10 ความต่อเนื่อง (คลิป 58:59–63:50)<br>Find all numbers at which $g$ is continuous (จงหาทุกค่า $x$ ที่ $g$ ต่อเนื่อง) เมื่อ $$g(x)=\sqrt{\frac{x+2}{5-x}}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthv0_201.jpg)</summary><img loading="lazy" src="img/vid/mthv0_201.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาเงื่อนไขที่ $g$ หาค่าได้</div><p>$g$ เป็นรากที่สองของฟังก์ชันตรรกยะ จึงต่อเนื่องทุกจุดในโดเมน โดเมนคือ</p>$$\frac{x+2}{5-x}\ge0,\qquad 5-x\ne0$$<p>เศษส่วนไม่ติดลบได้เมื่อ บวก/บวก หรือ ลบ/ลบ (เศษเป็น 0 ได้ แต่ส่วนห้ามเป็น 0)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กรณีที่ 1 บวกทั้งคู่</div>$$x+2\ge0\ \text{และ}\ 5-x\gt0\ \Rightarrow\ x\ge-2\ \text{และ}\ x\lt5\ \Rightarrow\ -2\le x\lt5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กรณีที่ 2 ลบทั้งคู่</div>$$x+2\le0\ \text{และ}\ 5-x\lt0\ \Rightarrow\ x\le-2\ \text{และ}\ x\gt5$$<p>ไม่มีช่วงที่ซ้อนทับกัน จึงไม่มีคำตอบจากกรณีนี้</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$g\ \text{ต่อเนื่องบน}\ [-2,\,5)$$<p>(ที่ $x=-2$ ต่อเนื่องทางขวา)</p></div>
+</div></details></article>
+</main>
+<script>
+(function(){
+  var st={};function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('[data-done]')),pg=document.getElementById('prog');
+  function upd(){var n=boxes.filter(function(b){return b.checked}).length;if(pg)pg.textContent='ทำเองได้แล้ว '+n+' / '+boxes.length+' ข้อ'}
+  boxes.forEach(function(b){var k='drill-'+b.dataset.done;b.checked=g(k)==='1';b.addEventListener('change',function(){s(k,b.checked?'1':'0');upd()})});
+  [].slice.call(document.querySelectorAll('[data-note]')).forEach(function(t){var k='note-'+t.dataset.note;var v=g(k);if(v)t.value=v;t.addEventListener('input',function(){s(k,t.value)})});
+  upd();
+})();
+</script>
+</body>
+</html>

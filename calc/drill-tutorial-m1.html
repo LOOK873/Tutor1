@@ -16,6 +16,8 @@
 
   .drill{scroll-margin-top:4.5rem}
   .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
   .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
   .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
   .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
@@ -39,7 +41,7 @@
 <main>
 <h1>ฝึกทำ · Tutorial Class M1 (55 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="tutorial-m1.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
 <article class="q drill" id="p1" data-idx="0">
-<h3><span class="num">1</span> 1 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" rel="noopener" target="_blank">PDF หน้า 1</a></small></h3>
+<h3><span class="num">1</span><span class="ttl">1 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" rel="noopener" target="_blank">PDF หน้า 1</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-0"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\sqrt{\ln(x^2-1)}$</li></ul><p><b>ต้องหา:</b> หาโดเมนของ $f$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รากที่สอง: ค่าในรากต้อง $\ge 0$</li><li>$\ln A$ นิยามได้เมื่อ $A\gt 0$</li></ul></div></details>
@@ -63,7 +65,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหาโดเมนของ $f(x)=\sqrt{\ln(x^2-3)}$</p><details><summary>ใบ้</summary><p>ลองเปลี่ยน $\ln A\ge0$ เป็นอสมการของ $A$ ก่อน</p></details><details><summary>ดูคำตอบ</summary><p>$(-\infty,-2]\cup[2,\infty)$</p><p class="alt">ในรากต้อง $\ln(x^2-3)\ge0$<br>$\Rightarrow x^2-3\ge1\Rightarrow x^2\ge4$<br>$\Rightarrow |x|\ge2$ จึงได้ $x\le-2$ หรือ $x\ge2$</p></details></div>
 </div></article>
 <article class="q drill" id="p2" data-idx="1">
-<h3><span class="num">2</span> 2 · ข้อ 17.1 / ข้อ 6.1 (โจทย์เดียวกัน) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" rel="noopener" target="_blank">PDF หน้า 1</a></small></h3>
+<h3><span class="num">2</span><span class="ttl">2 · ข้อ 17.1 / ข้อ 6.1 (โจทย์เดียวกัน) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" rel="noopener" target="_blank">PDF หน้า 1</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-1"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\dfrac{x^2+1}{x^2-1}$</li></ul><p><b>ต้องหา:</b> หาโดเมนและเรนจ์ของ $f$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>โดเมน: ตัวส่วนต้องไม่เป็นศูนย์</li><li>เรนจ์: ตั้ง $y=f(x)$ แล้วแก้หา $x^2$ ในรูปของ $y$ จากนั้นดูว่า $y$ ใดทำให้ $x$ เป็นจำนวนจริงได้</li></ul></div></details>
@@ -89,7 +91,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหาโดเมนและเรนจ์ของ $f(x)=\dfrac{2x^2+1}{x^2-1}$</p><details><summary>ใบ้</summary><p>ตั้ง $y=f(x)$ แล้วแก้หา $x^2$ ในรูปของ $y$ แล้วใช้ $x^2\ge0$</p></details><details><summary>ดูคำตอบ</summary><p>$D_f=\mathbb R\setminus\{\pm1\},\ R_f=(-\infty,-1]\cup(2,\infty)$</p><p class="alt">โดเมน $x\ne\pm1$<br>$y(x^2-1)=2x^2+1\Rightarrow x^2=\dfrac{y+1}{y-2}\ge0$ จึง $y\le-1$ หรือ $y\gt2$<br>ถ้า $x^2=1$ จะได้ $y+1=y-2$ เป็นไปไม่ได้ จึงไม่ตัดเพิ่ม</p></details></div>
 </div></article>
 <article class="q drill" id="p3" data-idx="2">
-<h3><span class="num">3</span> 3 · ข้อ 10.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" rel="noopener" target="_blank">PDF หน้า 1</a></small></h3>
+<h3><span class="num">3</span><span class="ttl">3 · ข้อ 10.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=1" rel="noopener" target="_blank">PDF หน้า 1</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-2"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\dfrac{4x^2-16}{x^2-9}$</li></ul><p><b>ต้องหา:</b> หาโดเมนและเรนจ์ของ $f$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>โดเมน: ตัวส่วนต้องไม่เป็นศูนย์</li><li>เรนจ์: แก้หา $x^2$ ในรูปของ $y$ แล้วใช้ $x^2\ge0$ และเช็กเครื่องหมายด้วยตาราง</li></ul></div></details>
@@ -115,7 +117,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหาโดเมนและเรนจ์ของ $f(x)=\dfrac{x^2-1}{x^2-4}$</p><details><summary>ใบ้</summary><p>แก้หา $x^2$ แล้วทำตารางเครื่องหมายของ $\dfrac{4y-1}{y-1}$</p></details><details><summary>ดูคำตอบ</summary><p>$D_f=\mathbb R\setminus\{\pm2\},\ R_f=\left(-\infty,\tfrac14\right]\cup(1,\infty)$</p><p class="alt">โดเมน $x\ne\pm2$<br>$y(x^2-4)=x^2-1\Rightarrow x^2=\dfrac{4y-1}{y-1}\ge0$<br>จึง $y\le\tfrac14$ หรือ $y\gt1$ ส่วน $x^2=4$ ทำให้ $4y-1=4y-4$ เป็นไปไม่ได้</p></details></div>
 </div></article>
 <article class="q drill" id="p4" data-idx="3">
-<h3><span class="num">4</span> 4 · ข้อ 1.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" rel="noopener" target="_blank">PDF หน้า 2</a></small></h3>
+<h3><span class="num">4</span><span class="ttl">4 · ข้อ 1.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" rel="noopener" target="_blank">PDF หน้า 2</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-3"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to a}f=3,\ \lim_{x\to a}g=5,\ \lim_{x\to a}h=1$</li></ul><p><b>ต้องหา:</b> หา $\lim_{x\to a}\left[\dfrac{2f(x)+1}{1-f(x)g(x)}\right]g(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ลิมิตของผลบวก ผลคูณ ผลหาร เท่ากับผลบวก ผลคูณ ผลหารของลิมิต</li><li>กรณีผลหาร ต้องมีลิมิตของตัวส่วน $\ne0$</li></ul></div></details>
@@ -137,7 +139,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> กำหนด $\lim f=2,\ \lim g=-3,\ \lim h=4$ จงหา $\lim_{x\to a}\left[\dfrac{3f(x)+2}{1+f(x)g(x)}\right]h(x)$</p><details><summary>ใบ้</summary><p>แทน f, g, h ด้วยค่าลิมิตของมัน</p></details><details><summary>ดูคำตอบ</summary><p>$-\dfrac{32}{5}$</p><p class="alt">ตัวเศษ $3(2)+2=8$ ตัวส่วน $1+(2)(-3)=-5$<br>$\dfrac{8}{-5}\cdot4=-\dfrac{32}{5}$</p></details></div>
 </div></article>
 <article class="q drill" id="p5" data-idx="4">
-<h3><span class="num">5</span> 5 · ข้อ 1.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" rel="noopener" target="_blank">PDF หน้า 2</a></small></h3>
+<h3><span class="num">5</span><span class="ttl">5 · ข้อ 1.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" rel="noopener" target="_blank">PDF หน้า 2</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-4"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim f=3,\ \lim g=5,\ \lim h=1$ เมื่อ $x\to a$</li></ul><p><b>ต้องหา:</b> หา $\lim_{x\to a}\dfrac{[f(x)]^{\sqrt{g(x)+3}}}{g(x)+4h(x)}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\lim [f]^{p}=[\lim f]^{\lim p}$ เมื่อฐานเป็นบวก และลิมิตกำลังมีค่า</li><li>ผลหาร: ตัวส่วนต้องไม่เป็น 0</li></ul></div></details>
@@ -161,7 +163,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> กำหนด $\lim f=2,\ \lim g=6,\ \lim h=3$ จงหา $\lim_{x\to a}\dfrac{[f(x)]^{\sqrt{g(x)+3}}}{g(x)-h(x)}$</p><details><summary>ใบ้</summary><p>หาลิมิตของเลขชี้กำลังก่อน</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac83$</p><p class="alt">เลขชี้กำลัง $\to\sqrt{6+3}=3$ ฐาน $\to2$ จึงตัวเศษ $\to2^3=8$<br>ตัวส่วน $\to6-3=3$ ดังนั้นได้ $\dfrac83$</p></details></div>
 </div></article>
 <article class="q drill" id="p6" data-idx="5">
-<h3><span class="num">6</span> 6 · ข้อ 2 (ก–จ) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" rel="noopener" target="_blank">PDF หน้า 2</a></small></h3>
+<h3><span class="num">6</span><span class="ttl">6 · ข้อ 2 (ก–จ) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=2" rel="noopener" target="_blank">PDF หน้า 2</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-5"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-5" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to a}g=-4,\ \lim_{x\to a}h=0$</li><li>$\lim_{x\to+\infty}p=3,\ \lim_{x\to+\infty}q=-5,\ \lim_{x\to+\infty}r=0$</li><li>$\lim_{x\to-\infty}u=7,\ \lim_{x\to-\infty}v=-6$</li></ul><p><b>ต้องหา:</b> หาลิมิตของนิพจน์ ก–จ ที่ประกอบจาก $g,h,p,q,u,v$ เช่น $\lim[h-3g+1]$, $\lim[q(x)]^2$, $\lim_{x\to-\infty}[x^2+v(x)]$ เป็นต้น</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>สมบัติลิมิตใช้ได้เมื่อแต่ละลิมิตเป็นจำนวนจำกัด</li><li>จำนวนจำกัด $+\infty=+\infty$</li><li>รากที่ 3 ของจำนวนลบหาค่าได้</li></ul></div></details>
@@ -189,7 +191,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> กำหนด $\lim_{x\to+\infty}p=2,\ \lim_{x\to+\infty}q=-3,\ \lim_{x\to-\infty}u=4,\ \lim_{x\to-\infty}v=-5$ จงหา (ก) $\lim_{x\to+\infty}[p^2+q]$ (ข) $\lim_{x\to-\infty}\sqrt[3]{u(x)v(x)+12}$ (ค) $\lim_{x\to-\infty}[x^3+v(x)]$</p><details><summary>ใบ้</summary><p>ข้อ (ค) ลองคิดว่า $x^3$ เมื่อ $x\to-\infty$ ไปทางไหน</p></details><details><summary>ดูคำตอบ</summary><p>(ก) $1$ (ข) $-2$ (ค) $-\infty$</p><p class="alt">(ก) $2^2+(-3)=1$<br>(ข) $\sqrt[3]{4(-5)+12}=\sqrt[3]{-8}=-2$<br>(ค) $x^3\to-\infty$ ส่วน $v\to-5$ จึงได้ $-\infty$</p></details></div>
 </div></article>
 <article class="q drill" id="p7" data-idx="6">
-<h3><span class="num">7</span> 7 · ข้อ 1 (ก–จ) อ่านจากกราฟ <small><a class="pg" href="Tutorial-Class-M1.pdf#page=3" rel="noopener" target="_blank">PDF หน้า 3</a></small></h3>
+<h3><span class="num">7</span><span class="ttl">7 · ข้อ 1 (ก–จ) อ่านจากกราฟ <small><a class="pg" href="Tutorial-Class-M1.pdf#page=3" rel="noopener" target="_blank">PDF หน้า 3</a></small></span></h3>
 <p><img src="img/tutorial-p3-fg.png" alt="กราฟโจทย์ (PDF หน้า 3)" style="max-width:100%;width:420px;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></p>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-6"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-6" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
@@ -220,7 +222,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> กำหนด $f(x)=x+2$ เมื่อ $x\lt1$, $f(1)=5$, $f(x)=5-x$ เมื่อ $x\gt1$ จงหา (ก) $\lim_{x\to1^-}f$ (ข) $\lim_{x\to1^+}f$ (ค) $\lim_{x\to1}f$ (ง) $\lim_{x\to1^-}[f(x)]^2$</p><details><summary>ใบ้</summary><p>ลิมิตซ้ายใช้สูตรของช่วง $x\lt1$ ลิมิตขวาใช้สูตรของช่วง $x\gt1$</p></details><details><summary>ดูคำตอบ</summary><p>(ก) $3$ (ข) $4$ (ค) หาค่าไม่ได้ (DNE) (ง) $9$</p><p class="alt">(ก) $1+2=3$ (ข) $5-1=4$<br>(ค) $3\ne4$ จึงไม่มีลิมิต (ไม่ต้องใช้ $f(1)=5$)<br>(ง) $3^2=9$</p></details></div>
 </div></article>
 <article class="q drill" id="p8" data-idx="7">
-<h3><span class="num">8</span> 8 · ข้อ 1.4 อ่านจากกราฟ <small><a class="pg" href="Tutorial-Class-M1.pdf#page=3" rel="noopener" target="_blank">PDF หน้า 3</a></small></h3>
+<h3><span class="num">8</span><span class="ttl">8 · ข้อ 1.4 อ่านจากกราฟ <small><a class="pg" href="Tutorial-Class-M1.pdf#page=3" rel="noopener" target="_blank">PDF หน้า 3</a></small></span></h3>
 <p><img src="img/tutorial-p3-14.png" alt="กราฟโจทย์ (PDF หน้า 3)" style="max-width:100%;width:420px;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></p>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-7"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-7" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
@@ -243,7 +245,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา (ก) $\lim_{x\to2}\dfrac{|x-2|}{x-2}$ (ข) $\lim_{x\to2}\dfrac{x^2-4}{x-2}$</p><details><summary>ใบ้</summary><p>ข้อ (ก) พิจารณาเครื่องหมายของ $x-2$ ทางซ้ายและขวาของ $2$ ส่วนข้อ (ข) แยกตัวประกอบ</p></details><details><summary>ดูคำตอบ</summary><p>(ก) หาค่าไม่ได้ (DNE) (ข) $4$</p><p class="alt">(ก) ซ้าย: $\dfrac{-(x-2)}{x-2}=-1$ ขวา: $\dfrac{x-2}{x-2}=1$ จึงไม่เท่ากัน<br>(ข) $\dfrac{(x-2)(x+2)}{x-2}=x+2\to4$</p></details></div>
 </div></article>
 <article class="q drill" id="p9" data-idx="8">
-<h3><span class="num">9</span> 9 · ข้อ 3.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" rel="noopener" target="_blank">PDF หน้า 4</a></small></h3>
+<h3><span class="num">9</span><span class="ttl">9 · ข้อ 3.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" rel="noopener" target="_blank">PDF หน้า 4</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-8"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-8" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}\dfrac{\sqrt{2+x}-\sqrt2}{x}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แทนค่าแล้วได้ $\frac00$ ต้องจัดรูปก่อน</li><li>คอนจูเกต: $(\sqrt A-\sqrt B)(\sqrt A+\sqrt B)=A-B$</li></ul></div></details>
@@ -267,7 +269,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to0}\dfrac{\sqrt{x+9}-3}{x}$</p><details><summary>ใบ้</summary><p>คูณทั้งเศษและส่วนด้วย $\sqrt{x+9}+3$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac16$</p><p class="alt">คูณคอนจูเกต: $\dfrac{(x+9)-9}{x(\sqrt{x+9}+3)}=\dfrac1{\sqrt{x+9}+3}$<br>แทน $x=0$ ได้ $\dfrac1{3+3}=\dfrac16$</p></details></div>
 </div></article>
 <article class="q drill" id="p10" data-idx="9">
-<h3><span class="num">10</span> 10 · ข้อ 3.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" rel="noopener" target="_blank">PDF หน้า 4</a></small></h3>
+<h3><span class="num">10</span><span class="ttl">10 · ข้อ 3.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" rel="noopener" target="_blank">PDF หน้า 4</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-9"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-9" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to-\infty}\dfrac{\sqrt{4x^4+x}}{x^2-8}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $\frac{\infty}{\infty}$ ให้หารด้วยกำลังสูงสุดของตัวส่วน</li><li>$\sqrt{x^4}=x^2$ เสมอ เพราะ $x^2\ge0$</li></ul></div></details>
@@ -291,7 +293,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to-\infty}\dfrac{\sqrt{9x^4+x}}{2x^2+5}$</p><details><summary>ใบ้</summary><p>ดึง $x^2$ ออกจากรากแล้วหารบนล่างด้วย $x^2$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac32$</p><p class="alt">$\dfrac{x^2\sqrt{9+1/x^3}}{x^2(2+5/x^2)}=\dfrac{\sqrt{9+1/x^3}}{2+5/x^2}$<br>เมื่อ $x\to-\infty$ ได้ $\dfrac{\sqrt9}{2}=\dfrac32$</p></details></div>
 </div></article>
 <article class="q drill" id="p11" data-idx="10">
-<h3><span class="num">11</span> 11 · ข้อ 3.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" rel="noopener" target="_blank">PDF หน้า 4</a></small></h3>
+<h3><span class="num">11</span><span class="ttl">11 · ข้อ 3.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=4" rel="noopener" target="_blank">PDF หน้า 4</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-10"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-10" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}x^{\sin x}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $0^0$, $1^\infty$, $\infty^0$: ใส่ $\ln$</li><li>$\frac{\sin x}{x}\to1$ และ $x\ln x\to0$ เมื่อ $x\to0^+$</li></ul></div></details>
@@ -317,7 +319,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to0^+}x^{3/(1+\ln x)}$</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ แล้วจะได้ $\dfrac{3\ln x}{1+\ln x}$ ลองหารบนล่างด้วย $\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{3}$</p><p class="alt">ให้ $y=x^{3/(1+\ln x)}$: $\ln y=\dfrac{3\ln x}{1+\ln x}=\dfrac{3}{\frac1{\ln x}+1}$<br>เมื่อ $x\to0^+$, $\ln x\to-\infty$ จึง $\ln y\to3$<br>ดังนั้น $y\to e^3$</p></details></div>
 </div></article>
 <article class="q drill" id="p12" data-idx="11">
-<h3><span class="num">12</span> 12 · ข้อ 7.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" rel="noopener" target="_blank">PDF หน้า 5</a></small></h3>
+<h3><span class="num">12</span><span class="ttl">12 · ข้อ 7.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" rel="noopener" target="_blank">PDF หน้า 5</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-11"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-11" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to\infty}\left(1+\dfrac5x\right)^{2x}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\displaystyle\lim_{x\to\infty}\left(1+\frac kx\right)^x=e^k$</li><li>รูป $1^\infty$</li></ul></div></details>
@@ -339,7 +341,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to\infty}\left(1-\dfrac2x\right)^{3x}$</p><details><summary>ใบ้</summary><p>เขียน $\left(1+\frac{-2}{x}\right)^{x}$ แล้วยกกำลัง 3</p></details><details><summary>ดูคำตอบ</summary><p>$e^{-6}$</p><p class="alt">$\left[\left(1+\frac{-2}{x}\right)^x\right]^3\to\left(e^{-2}\right)^3=e^{-6}$</p></details></div>
 </div></article>
 <article class="q drill" id="p13" data-idx="12">
-<h3><span class="num">13</span> 13 · ข้อ 7.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" rel="noopener" target="_blank">PDF หน้า 5</a></small></h3>
+<h3><span class="num">13</span><span class="ttl">13 · ข้อ 7.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" rel="noopener" target="_blank">PDF หน้า 5</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-12"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-12" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to+\infty}\dfrac{e^x+e^{-x}}{e^x-e^{-x}}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เมื่อ $x\to+\infty$: $e^{x}\to\infty$ และ $e^{-x}\to0$</li><li>หารบนล่างด้วยพจน์ที่โตเร็วสุด</li></ul></div></details>
@@ -361,7 +363,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to-\infty}\dfrac{e^x-e^{-x}}{e^x+e^{-x}}$</p><details><summary>ใบ้</summary><p>ครั้งนี้พจน์ที่โตเร็วสุดคือ $e^{-x}$ ให้หารด้วยตัวนั้น</p></details><details><summary>ดูคำตอบ</summary><p>$-1$</p><p class="alt">หารบนล่างด้วย $e^{-x}$: $\dfrac{e^{2x}-1}{e^{2x}+1}$<br>เมื่อ $x\to-\infty$, $e^{2x}\to0$ จึงได้ $\dfrac{-1}{1}=-1$</p></details></div>
 </div></article>
 <article class="q drill" id="p14" data-idx="13">
-<h3><span class="num">14</span> 14 · ข้อ 7.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" rel="noopener" target="_blank">PDF หน้า 5</a></small></h3>
+<h3><span class="num">14</span><span class="ttl">14 · ข้อ 7.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=5" rel="noopener" target="_blank">PDF หน้า 5</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-13"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-13" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to-\infty}\dfrac{\sqrt{5x^2-1}}{x+3}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\sqrt{x^2}=|x|$ และเมื่อ $x\lt0$ จะได้ $|x|=-x$</li><li>หารบนล่างด้วยกำลังสูงสุด</li></ul></div></details>
@@ -385,7 +387,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to-\infty}\dfrac{\sqrt{9x^2+1}}{x-2}$</p><details><summary>ใบ้</summary><p>ใช้ $\sqrt{9x^2+1}=-x\sqrt{9+1/x^2}$ เมื่อ $x\lt0$</p></details><details><summary>ดูคำตอบ</summary><p>$-3$</p><p class="alt">$\dfrac{-x\sqrt{9+1/x^2}}{x(1-2/x)}=\dfrac{-\sqrt{9+1/x^2}}{1-2/x}\to\dfrac{-3}{1}=-3$</p></details></div>
 </div></article>
 <article class="q drill" id="p15" data-idx="14">
-<h3><span class="num">15</span> 15 · ข้อ 8 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" rel="noopener" target="_blank">PDF หน้า 6</a></small></h3>
+<h3><span class="num">15</span><span class="ttl">15 · ข้อ 8 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" rel="noopener" target="_blank">PDF หน้า 6</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-14"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-14" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}\left(x^{-3}\sin3x+rx^{-2}+s\right)=3$</li></ul><p><b>ต้องหา:</b> หาค่าคงที่ $r$ และ $s$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รวมเป็นเศษส่วน $\frac{\sin3x+rx}{x^3}+s$</li><li>ถ้าตัวส่วน $\to0$ และลิมิตจำกัด ตัวเศษต้อง $\to0$ ด้วย</li><li>ใช้ L'Hôpital หลายรอบ หรืออนุกรมเทย์เลอร์</li></ul></div></details>
@@ -411,7 +413,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $r,s$ ที่ทำให้ $\lim_{x\to0}\left(\dfrac{\sin2x}{x^3}+\dfrac r{x^2}+s\right)=1$</p><details><summary>ใบ้</summary><p>ให้เทอม $x$ ในตัวเศษ $\sin2x+rx$ หายไป แล้วใช้ $\sin2x\approx2x-\frac{(2x)^3}{6}$</p></details><details><summary>ดูคำตอบ</summary><p>$r=-2,\ s=\dfrac73$</p><p class="alt">$\sin2x=2x-\frac43x^3+\cdots$ จึงต้อง $2+r=0\Rightarrow r=-2$<br>$\dfrac{\sin2x-2x}{x^3}\to-\dfrac43$<br>$-\dfrac43+s=1\Rightarrow s=\dfrac73$</p></details></div>
 </div></article>
 <article class="q drill" id="p16" data-idx="15">
-<h3><span class="num">16</span> 16 · ข้อ 3.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" rel="noopener" target="_blank">PDF หน้า 6</a></small></h3>
+<h3><span class="num">16</span><span class="ttl">16 · ข้อ 3.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" rel="noopener" target="_blank">PDF หน้า 6</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-15"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-15" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to\infty}x\ln\left(\dfrac{x+1}{x-1}\right)$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $\infty\cdot0$ เปลี่ยนเป็น $\frac00$ หรือ $\frac\infty\infty$</li><li>แทน $t=\frac1x$ ทำให้ $t\to0^+$</li></ul></div></details>
@@ -433,7 +435,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to\infty}x\ln\left(\dfrac{x+2}{x-2}\right)$</p><details><summary>ใบ้</summary><p>แทน $t=\frac1x$ แล้วแยก $\ln(1+2t)-\ln(1-2t)$</p></details><details><summary>ดูคำตอบ</summary><p>$4$</p><p class="alt">$\dfrac{\ln(1+2t)-\ln(1-2t)}{t}\xrightarrow{\text{L'H}}\dfrac{2}{1+2t}+\dfrac{2}{1-2t}\to2+2=4$</p></details></div>
 </div></article>
 <article class="q drill" id="p17" data-idx="16">
-<h3><span class="num">17</span> 17 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" rel="noopener" target="_blank">PDF หน้า 6</a></small></h3>
+<h3><span class="num">17</span><span class="ttl">17 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=6" rel="noopener" target="_blank">PDF หน้า 6</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-16"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-16" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}\left(\dfrac1x-\dfrac2{x^2+2x}\right)$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $\infty-\infty$ ให้รวมเป็นเศษส่วนเดียว</li><li>แยกตัวประกอบตัวส่วนเพื่อหาตัวส่วนร่วม</li></ul></div></details>
@@ -455,7 +457,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to0}\left(\dfrac1x-\dfrac3{x^2+3x}\right)$</p><details><summary>ใบ้</summary><p>แยก $x^2+3x=x(x+3)$ แล้วรวมเศษส่วน</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac13$</p><p class="alt">$\dfrac{(x+3)-3}{x(x+3)}=\dfrac{x}{x(x+3)}=\dfrac1{x+3}\to\dfrac13$</p></details></div>
 </div></article>
 <article class="q drill" id="p18" data-idx="17">
-<h3><span class="num">18</span> 18 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=7" rel="noopener" target="_blank">PDF หน้า 7</a></small></h3>
+<h3><span class="num">18</span><span class="ttl">18 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=7" rel="noopener" target="_blank">PDF หน้า 7</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-17"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-17" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to-\infty}\dfrac{\sqrt{4x^2+1}}{2x-5}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เมื่อ $x\lt0$: $\sqrt{x^2}=-x$</li><li>หารบนล่างด้วยกำลังสูงสุดของ $x$</li></ul></div></details>
@@ -477,7 +479,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to-\infty}\dfrac{\sqrt{16x^2+3}}{2x+1}$</p><details><summary>ใบ้</summary><p>ใช้ $\sqrt{16x^2+3}=-x\sqrt{16+3/x^2}$</p></details><details><summary>ดูคำตอบ</summary><p>$-2$</p><p class="alt">$\dfrac{-x\sqrt{16+3/x^2}}{x(2+1/x)}=\dfrac{-\sqrt{16+3/x^2}}{2+1/x}\to\dfrac{-4}{2}=-2$</p></details></div>
 </div></article>
 <article class="q drill" id="p19" data-idx="18">
-<h3><span class="num">19</span> 19 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=7" rel="noopener" target="_blank">PDF หน้า 7</a></small></h3>
+<h3><span class="num">19</span><span class="ttl">19 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=7" rel="noopener" target="_blank">PDF หน้า 7</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-18"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-18" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}\left(\dfrac{2^x+e^x}{2}\right)^{1/x}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $1^\infty$ ใช้ $\ln$</li><li>$\frac{d}{dx}a^x=a^x\ln a$ และ L'Hôpital</li></ul></div></details>
@@ -503,7 +505,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to0}\left(\dfrac{2^x+8^x}{2}\right)^{1/x}$</p><details><summary>ใบ้</summary><p>ลอง L'Hôpital กับ $\ln y$ แล้วดูผลรวม $\ln2+\ln8$</p></details><details><summary>ดูคำตอบ</summary><p>$4$</p><p class="alt">$\ln y\to\dfrac{2^x\ln2+8^x\ln8}{2^x+8^x}\Big|_{x=0}=\dfrac{\ln2+\ln8}{2}=2\ln2$<br>ดังนั้น $y\to e^{2\ln2}=4$</p></details></div>
 </div></article>
 <article class="q drill" id="p20" data-idx="19">
-<h3><span class="num">20</span> 20 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=8" rel="noopener" target="_blank">PDF หน้า 8</a></small></h3>
+<h3><span class="num">20</span><span class="ttl">20 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=8" rel="noopener" target="_blank">PDF หน้า 8</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-19"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-19" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to-\infty}\dfrac{\sqrt{3x^6+4x^5+1}}{x^3-1}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\sqrt{x^6}=|x|^3$ เมื่อ $x\lt0$ ได้ $-x^3$</li><li>หารบนล่างด้วยกำลังสูงสุด</li></ul></div></details>
@@ -525,7 +527,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to-\infty}\dfrac{\sqrt{4x^6+x^5+2}}{x^3+1}$</p><details><summary>ใบ้</summary><p>ดึง $-x^3$ ออกจากราก</p></details><details><summary>ดูคำตอบ</summary><p>$-2$</p><p class="alt">$\dfrac{-x^3\sqrt{4+1/x+2/x^6}}{x^3(1+1/x^3)}\to\dfrac{-\sqrt4}{1}=-2$</p></details></div>
 </div></article>
 <article class="q drill" id="p21" data-idx="20">
-<h3><span class="num">21</span> 21 · ข้อ 2 (Squeeze) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=8" rel="noopener" target="_blank">PDF หน้า 8</a></small></h3>
+<h3><span class="num">21</span><span class="ttl">21 · ข้อ 2 (Squeeze) <small><a class="pg" href="Tutorial-Class-M1.pdf#page=8" rel="noopener" target="_blank">PDF หน้า 8</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-20"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-20" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}x^3e^{\sin(1/x)}$</li></ul><p><b>ต้องหา:</b> หาค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>Squeeze theorem: ถ้า $g\le f\le h$ และ $\lim g=\lim h=L$ แล้ว $\lim f=L$</li><li>$-1\le\sin\theta\le1$</li></ul></div></details>
@@ -551,7 +553,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to0}x^2\left(3+\cos\dfrac1x\right)$</p><details><summary>ใบ้</summary><p>$-1\le\cos\frac1x\le1$ แล้วคูณด้วย $x^2\ge0$</p></details><details><summary>ดูคำตอบ</summary><p>$0$</p><p class="alt">$2\le3+\cos\frac1x\le4$ คูณ $x^2\ge0$: $2x^2\le x^2(3+\cos\frac1x)\le4x^2$<br>ทั้งสองขอบ $\to0$ จึงได้ $0$ (Squeeze)</p></details></div>
 </div></article>
 <article class="q drill" id="p22" data-idx="21">
-<h3><span class="num">22</span> 22 · ข้อ 9 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" rel="noopener" target="_blank">PDF หน้า 9</a></small></h3>
+<h3><span class="num">22</span><span class="ttl">22 · ข้อ 9 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" rel="noopener" target="_blank">PDF หน้า 9</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-21"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-21" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\begin{cases}7x-2,&x\le2\\kx^2,&x\gt2\end{cases}$</li><li>ต่อเนื่องทุกจุด</li></ul><p><b>ต้องหา:</b> หาค่า $k$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ต่อเนื่องที่จุดหนึ่ง: ลิมิตซ้าย = ลิมิตขวา = ค่าฟังก์ชัน</li><li>แต่ละชิ้นเป็นพหุนามจึงต่อเนื่องอยู่แล้ว</li></ul></div></details>
@@ -575,7 +577,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $f(x)=\begin{cases}5x-4,&x\le2\\kx^2-2,&x\gt2\end{cases}$ ต่อเนื่องทุกจุด จงหา $k$</p><details><summary>ใบ้</summary><p>ให้ลิมิตซ้ายที่ $x=2$ เท่ากับลิมิตขวา</p></details><details><summary>ดูคำตอบ</summary><p>$k=2$</p><p class="alt">ซ้าย $=5(2)-4=6$ ขวา $=4k-2$<br>$4k-2=6\Rightarrow k=2$</p></details></div>
 </div></article>
 <article class="q drill" id="p23" data-idx="22">
-<h3><span class="num">23</span> 23 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" rel="noopener" target="_blank">PDF หน้า 9</a></small></h3>
+<h3><span class="num">23</span><span class="ttl">23 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" rel="noopener" target="_blank">PDF หน้า 9</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-22"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-22" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\begin{cases}ax^2+2x,&x\lt2\\x^3+ax,&x\ge2\end{cases}$</li><li>ต่อเนื่องบน $\mathbb R$</li></ul><p><b>ต้องหา:</b> หาค่า $a$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ต่อเนื่องที่ $x=2$: ลิมิตซ้าย = $f(2)$ = ลิมิตขวา</li></ul></div></details>
@@ -597,7 +599,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $f(x)=\begin{cases}ax^2+x,&x\lt2\\x^3-ax,&x\ge2\end{cases}$ ต่อเนื่องบน $\mathbb R$ จงหา $a$</p><details><summary>ใบ้</summary><p>แทน $x=2$ ในทั้งสองชิ้นแล้วตั้งสมการ</p></details><details><summary>ดูคำตอบ</summary><p>$a=1$</p><p class="alt">ซ้าย $=4a+2$ ขวา $=8-2a$<br>$4a+2=8-2a\Rightarrow6a=6\Rightarrow a=1$</p></details></div>
 </div></article>
 <article class="q drill" id="p24" data-idx="23">
-<h3><span class="num">24</span> 24 · ข้อ 7 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" rel="noopener" target="_blank">PDF หน้า 9</a></small></h3>
+<h3><span class="num">24</span><span class="ttl">24 · ข้อ 7 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=9" rel="noopener" target="_blank">PDF หน้า 9</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-23"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-23" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\begin{cases}ax+b,&x\le-2\\x^2-4,&-2\lt x\lt2\\2x+b,&x\ge2\end{cases}$</li><li>ต่อเนื่องที่ $x=\pm2$</li></ul><p><b>ต้องหา:</b> หาค่า $a,b$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ต้องตั้งเงื่อนไขต่อเนื่องที่ทั้งสองรอยต่อ</li><li>ได้ระบบสมการสองสมการสองตัวแปร</li></ul></div></details>
@@ -621,7 +623,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $f(x)=\begin{cases}ax+b,&x\le-1\\x^2+1,&-1\lt x\lt3\\2x+b,&x\ge3\end{cases}$ ต่อเนื่องที่ $x=-1,3$ จงหา $a,b$</p><details><summary>ใบ้</summary><p>เริ่มจากรอยต่อที่ $x=3$ เพราะมีเพียง $b$</p></details><details><summary>ดูคำตอบ</summary><p>$a=2,\ b=4$</p><p class="alt">ที่ $x=3$: $2(3)+b=3^2+1=10\Rightarrow b=4$<br>ที่ $x=-1$: $-a+b=(-1)^2+1=2\Rightarrow-a+4=2\Rightarrow a=2$</p></details></div>
 </div></article>
 <article class="q drill" id="p25" data-idx="24">
-<h3><span class="num">25</span> 25 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=10" rel="noopener" target="_blank">PDF หน้า 10</a></small></h3>
+<h3><span class="num">25</span><span class="ttl">25 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=10" rel="noopener" target="_blank">PDF หน้า 10</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-24"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-24" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\begin{cases}\frac{x^2}{4},&0\lt x\lt2\\a,&x=2\\\frac{b-x^3}{2},&x\gt2\end{cases}$</li><li>ต่อเนื่องที่ $x=2$</li></ul><p><b>ต้องหา:</b> หาค่า $a,b$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ต่อเนื่องที่ $x=2$: ลิมิตซ้าย = ลิมิตขวา = $f(2)$</li></ul></div></details>
@@ -645,7 +647,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $f(x)=\begin{cases}\dfrac{x^2+3}{2},&x\lt1\\a,&x=1\\\dfrac{b-x^3}{3},&x\gt1\end{cases}$ ต่อเนื่องที่ $x=1$ จงหา $a,b$</p><details><summary>ใบ้</summary><p>หาลิมิตซ้ายก่อน แล้วตั้งให้ลิมิตขวาเท่ากัน</p></details><details><summary>ดูคำตอบ</summary><p>$a=2,\ b=7$</p><p class="alt">ซ้าย $=\dfrac{1+3}{2}=2$<br>ขวา $=\dfrac{b-1}{3}=2\Rightarrow b=7$<br>$a=f(1)=2$</p></details></div>
 </div></article>
 <article class="q drill" id="p26" data-idx="25">
-<h3><span class="num">26</span> 26 · ข้อ 2.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=10" rel="noopener" target="_blank">PDF หน้า 10</a></small></h3>
+<h3><span class="num">26</span><span class="ttl">26 · ข้อ 2.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=10" rel="noopener" target="_blank">PDF หน้า 10</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-25"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-25" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\begin{cases}\dfrac{2-\sqrt{3-x}}{x+1},&x\lt-1\\bx-\frac34x^2,&-1\le x\le2\end{cases}$</li><li>ต่อเนื่องที่ $x=-1$</li></ul><p><b>ต้องหา:</b> หาค่า $b$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แทนแล้วได้ $\frac00$ ใช้คอนจูเกต</li><li>ต่อเนื่อง: ลิมิตซ้าย = $f(-1)$</li></ul></div></details>
@@ -669,7 +671,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $f(x)=\begin{cases}\dfrac{\sqrt{x+2}-1}{x+1},&x\lt-1\\bx+\frac32x^2,&-1\le x\le2\end{cases}$ ต่อเนื่องที่ $x=-1$ จงหา $b$</p><details><summary>ใบ้</summary><p>คูณคอนจูเกต $\sqrt{x+2}+1$ เพื่อหาลิมิตซ้าย</p></details><details><summary>ดูคำตอบ</summary><p>$b=1$</p><p class="alt">ซ้าย: $\dfrac{(x+2)-1}{(x+1)(\sqrt{x+2}+1)}=\dfrac1{\sqrt{x+2}+1}\to\dfrac12$<br>$f(-1)=-b+\dfrac32$<br>$-b+\dfrac32=\dfrac12\Rightarrow b=1$</p></details></div>
 </div></article>
 <article class="q drill" id="p27" data-idx="26">
-<h3><span class="num">27</span> 27 · ข้อ 11.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></h3>
+<h3><span class="num">27</span><span class="ttl">27 · ข้อ 11.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-26"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-26" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\arcsin\left(x^2+\cos(\ln2x)\right)$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\arcsin u=\frac{u'}{\sqrt{1-u^2}}$</li><li>กฎลูกโซ่ และ $\frac{d}{dx}\ln(kx)=\frac1x$</li></ul></div></details>
@@ -691,7 +693,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=\arcsin\left(x^3+\sin(\ln5x)\right)$</p><details><summary>ใบ้</summary><p>ให้ $u=x^3+\sin(\ln5x)$ แล้วหา $u'$ ด้วยกฎลูกโซ่</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{3x^2+\frac{\cos(\ln5x)}{x}}{\sqrt{1-\left(x^3+\sin(\ln5x)\right)^2}}$</p><p class="alt">ให้ $u=x^3+\sin(\ln5x)$<br>$u'=3x^2+\cos(\ln5x)\cdot\dfrac1x$<br>$f'=\dfrac{u'}{\sqrt{1-u^2}}$</p></details></div>
 </div></article>
 <article class="q drill" id="p28" data-idx="27">
-<h3><span class="num">28</span> 28 · ข้อ 11.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></h3>
+<h3><span class="num">28</span><span class="ttl">28 · ข้อ 11.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-27"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-27" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=e^{(x^2+1)\tan\sqrt{x^2+1}}$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}e^{E}=e^{E}E'$</li><li>กฎผลคูณและกฎลูกโซ่</li><li>$\frac{d}{dx}\tan u=\sec^2u\cdot u'$</li></ul></div></details>
@@ -715,7 +717,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=e^{x\tan\sqrt x}$</p><details><summary>ใบ้</summary><p>ให้ $E=x\tan\sqrt x$ แล้วหา $E'$ ด้วยกฎผลคูณ</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=e^{x\tan\sqrt x}\left[\tan\sqrt x+\dfrac{\sqrt x}{2}\sec^2\sqrt x\right]$</p><p class="alt">$E=x\tan\sqrt x$<br>$E'=\tan\sqrt x+x\sec^2\sqrt x\cdot\dfrac1{2\sqrt x}=\tan\sqrt x+\dfrac{\sqrt x}{2}\sec^2\sqrt x$<br>$f'=e^{E}E'$</p></details></div>
 </div></article>
 <article class="q drill" id="p29" data-idx="28">
-<h3><span class="num">29</span> 29 · ข้อ 11.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></h3>
+<h3><span class="num">29</span><span class="ttl">29 · ข้อ 11.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-28"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-28" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\sin(x\sec4x)$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่: $\frac{d}{dx}\sin u=\cos u\cdot u'$</li><li>กฎผลคูณ และ $\frac{d}{dx}\sec kx=k\sec kx\tan kx$</li></ul></div></details>
@@ -737,7 +739,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=\cos(x\sec2x)$</p><details><summary>ใบ้</summary><p>ข้างในเป็นผลคูณ $x\cdot\sec2x$ ใช้กฎผลคูณ</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=-\sin(x\sec2x)\cdot\sec2x\,(1+2x\tan2x)$</p><p class="alt">$f'=-\sin(x\sec2x)\cdot(x\sec2x)'$<br>$(x\sec2x)'=\sec2x+x\cdot2\sec2x\tan2x=\sec2x(1+2x\tan2x)$</p></details></div>
 </div></article>
 <article class="q drill" id="p30" data-idx="29">
-<h3><span class="num">30</span> 30 · ข้อ 11.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></h3>
+<h3><span class="num">30</span><span class="ttl">30 · ข้อ 11.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-29"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-29" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\ln\left(\cos^2\sqrt{x^2+4}\right)$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\ln a^2=2\ln|a|$</li><li>$\frac{d}{dx}\ln u=\frac{u'}{u}$ และกฎลูกโซ่</li></ul></div></details>
@@ -759,7 +761,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=\ln\left(\sin^2\sqrt{x^2+9}\right)$</p><details><summary>ใบ้</summary><p>ดึงกำลังสองออก จะได้ $2\ln|\sin\sqrt{x^2+9}|$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{2x\cot\sqrt{x^2+9}}{\sqrt{x^2+9}}$</p><p class="alt">$f=2\ln|\sin u|,\ u=\sqrt{x^2+9}$<br>$f'=2\cot u\cdot u'$ และ $u'=\dfrac{x}{\sqrt{x^2+9}}$</p></details></div>
 </div></article>
 <article class="q drill" id="p31" data-idx="30">
-<h3><span class="num">31</span> 31 · ข้อ 11.5 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></h3>
+<h3><span class="num">31</span><span class="ttl">31 · ข้อ 11.5 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=11" rel="noopener" target="_blank">PDF หน้า 11</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-30"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-30" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\cos^2\left(\ln\sqrt{x^2+4}\right)$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\ln\sqrt{a}=\tfrac12\ln a$</li><li>$\frac{d}{dx}\cos^2w=-2\cos w\sin w\cdot w'=-\sin2w\cdot w'$</li></ul></div></details>
@@ -781,7 +783,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=\sin^2\left(\ln\sqrt{x^2+1}\right)$</p><details><summary>ใบ้</summary><p>ให้ $w=\frac12\ln(x^2+1)$ ใช้ $\frac{d}{dx}\sin^2w=\sin2w\cdot w'$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{x\,\sin\left(\ln(x^2+1)\right)}{x^2+1}$</p><p class="alt">$w'=\dfrac12\cdot\dfrac{2x}{x^2+1}=\dfrac{x}{x^2+1}$<br>$f'=\sin2w\cdot w'=\sin(\ln(x^2+1))\cdot\dfrac{x}{x^2+1}$</p></details></div>
 </div></article>
 <article class="q drill" id="p32" data-idx="31">
-<h3><span class="num">32</span> 32 · ข้อ 6.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></h3>
+<h3><span class="num">32</span><span class="ttl">32 · ข้อ 6.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-31"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-31" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\tan^{-1}\left(\sqrt{\dfrac{x^2}{2\pi}}\right)$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$ (ระวังค่าสัมบูรณ์)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\tan^{-1}u=\frac{u'}{1+u^2}$</li><li>$\sqrt{x^2}=|x|$ และ $\frac{d}{dx}|x|=\frac{x}{|x|}$ เมื่อ $x\ne0$</li></ul></div></details>
@@ -803,7 +805,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=\tan^{-1}\left(\sqrt{\dfrac{x^2}{3}}\right)$ สำหรับ $x\ne0$</p><details><summary>ใบ้</summary><p>เขียน $u=\dfrac{|x|}{\sqrt3}$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{\sqrt3}{3+x^2}\cdot\dfrac{x}{|x|}$</p><p class="alt">$u=\dfrac{|x|}{\sqrt3},\ u'=\dfrac{x}{\sqrt3|x|},\ 1+u^2=\dfrac{3+x^2}{3}$<br>$f'=\dfrac{3}{3+x^2}\cdot\dfrac{x}{\sqrt3|x|}=\dfrac{\sqrt3}{3+x^2}\cdot\dfrac{x}{|x|}$</p></details></div>
 </div></article>
 <article class="q drill" id="p33" data-idx="32">
-<h3><span class="num">33</span> 33 · ข้อ 6.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></h3>
+<h3><span class="num">33</span><span class="ttl">33 · ข้อ 6.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-32"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-32" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$g(x)=\dfrac{(2x-1)^2\sqrt{e^{x^2-x}}}{x^6}$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $g'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อนุพันธ์แบบลอการิทึม: $g'=g\cdot(\ln|g|)'$</li><li>$\ln$ เปลี่ยนผลคูณ/ผลหาร/กำลัง เป็นบวก/ลบ/คูณ</li></ul></div></details>
@@ -827,7 +829,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $g'(x)$ เมื่อ $g(x)=\dfrac{(3x+1)^2\sqrt{e^{x^2+x}}}{x^4}$</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ แล้วกระจายพจน์</p></details><details><summary>ดูคำตอบ</summary><p>$g'(x)=g(x)\left[\dfrac{6}{3x+1}+\dfrac{2x+1}{2}-\dfrac4x\right]$</p><p class="alt">$\ln|g|=2\ln|3x+1|+\frac12(x^2+x)-4\ln|x|$<br>$\dfrac{g'}{g}=\dfrac{6}{3x+1}+\dfrac{2x+1}{2}-\dfrac4x$ แล้วคูณ $g$</p></details></div>
 </div></article>
 <article class="q drill" id="p34" data-idx="33">
-<h3><span class="num">34</span> 34 · ข้อ 4.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></h3>
+<h3><span class="num">34</span><span class="ttl">34 · ข้อ 4.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-33"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-33" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=2^{\cos3x}$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}a^u=a^u\ln a\cdot u'$</li></ul></div></details>
@@ -849,7 +851,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=3^{\sin2x}$</p><details><summary>ใบ้</summary><p>$a=3,\ u=\sin2x$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=2\ln3\,\cos2x\cdot3^{\sin2x}$</p><p class="alt">$f'=3^{\sin2x}\ln3\cdot(\sin2x)'=3^{\sin2x}\ln3\cdot2\cos2x$</p></details></div>
 </div></article>
 <article class="q drill" id="p35" data-idx="34">
-<h3><span class="num">35</span> 35 · ข้อ 4.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></h3>
+<h3><span class="num">35</span><span class="ttl">35 · ข้อ 4.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=12" rel="noopener" target="_blank">PDF หน้า 12</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-34"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-34" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=e^{(x^2-1)\sin3x}$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}e^u=e^u\cdot u'$</li><li>กฎผลคูณสำหรับ $u=(x^2-1)\sin3x$</li></ul></div></details>
@@ -871,7 +873,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=e^{(x^2+1)\cos2x}$</p><details><summary>ใบ้</summary><p>$u=(x^2+1)\cos2x$ ใช้กฎผลคูณหา $u'$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=e^{(x^2+1)\cos2x}\left[2x\cos2x-2(x^2+1)\sin2x\right]$</p><p class="alt">$u'=2x\cos2x+(x^2+1)(-2\sin2x)$<br>$f'=e^u u'$</p></details></div>
 </div></article>
 <article class="q drill" id="p36" data-idx="35">
-<h3><span class="num">36</span> 36 · ข้อ 4.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" rel="noopener" target="_blank">PDF หน้า 13</a></small></h3>
+<h3><span class="num">36</span><span class="ttl">36 · ข้อ 4.3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" rel="noopener" target="_blank">PDF หน้า 13</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-35"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-35" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\log_3\left(\dfrac{e}{\sin x^2}\right)^2$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $f'(x)$ (ตีความ $\sin x^2=\sin(x^2)$)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\log_a u^k=k\log_a u$ และ $\log_a\frac{p}{q}=\log_a p-\log_a q$</li><li>$\frac{d}{dx}\log_au=\frac{u'}{u\ln a}$</li></ul></div></details>
@@ -893,7 +895,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=3\log_5\left(\dfrac{e}{\cos x^2}\right)$ (ตีความ $\cos x^2=\cos(x^2)$)</p><details><summary>ใบ้</summary><p>$f=3[\log_5e-\log_5\cos(x^2)]$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{6x\tan(x^2)}{\ln5}$</p><p class="alt">$f'=-3\cdot\dfrac{-\sin(x^2)\cdot2x}{\cos(x^2)\ln5}=\dfrac{6x\tan(x^2)}{\ln5}$</p></details></div>
 </div></article>
 <article class="q drill" id="p37" data-idx="36">
-<h3><span class="num">37</span> 37 · ข้อ 4.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" rel="noopener" target="_blank">PDF หน้า 13</a></small></h3>
+<h3><span class="num">37</span><span class="ttl">37 · ข้อ 4.4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" rel="noopener" target="_blank">PDF หน้า 13</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-36"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-36" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$g(t)=\dfrac1{t^2}\left[2t-\ln(1+t^2)^{1/2}\right]^2$</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $g'(t)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\ln(u^{1/2})=\frac12\ln u$</li><li>กฎผลหาร และกฎลูกโซ่กับกำลังสอง</li></ul></div></details>
@@ -919,7 +921,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $g'(t)$ เมื่อ $g(t)=\dfrac1t\left[t+\ln(1+t^2)^{1/2}\right]^2$</p><details><summary>ใบ้</summary><p>ให้ $h=t+\frac12\ln(1+t^2)$ แล้ว $g=h^2/t$</p></details><details><summary>ดูคำตอบ</summary><p>$g'(t)=\dfrac{\left[t+\frac12\ln(1+t^2)\right]\left[t+\frac{2t^2}{1+t^2}-\frac12\ln(1+t^2)\right]}{t^2}$</p><p class="alt">$h'=1+\dfrac{t}{1+t^2}$, $g'=\dfrac{2hh't-h^2}{t^2}=\dfrac{h(2th'-h)}{t^2}$<br>$2th'-h=t+\dfrac{2t^2}{1+t^2}-\frac12\ln(1+t^2)$</p></details></div>
 </div></article>
 <article class="q drill" id="p38" data-idx="37">
-<h3><span class="num">38</span> 38 · ข้อ 12 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" rel="noopener" target="_blank">PDF หน้า 13</a></small></h3>
+<h3><span class="num">38</span><span class="ttl">38 · ข้อ 12 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=13" rel="noopener" target="_blank">PDF หน้า 13</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-37"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-37" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=u^2+1$</li><li>$u=\sqrt{v^2+2}$</li><li>$v=2-x^2$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น: $\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dv}\cdot\frac{dv}{dx}$</li></ul></div></details>
@@ -943,7 +945,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $y=u^2+3$, $u=\sqrt{v^2+5}$, $v=1-x^3$ จงหา $\dfrac{dy}{dx}$</p><details><summary>ใบ้</summary><p>$\frac{du}{dv}=\frac{v}{u}$ ตัดกับ $2u$ ได้</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=-6x^2(1-x^3)$</p><p class="alt">$\frac{dy}{dx}=2u\cdot\frac vu\cdot(-3x^2)=-6x^2v=-6x^2(1-x^3)$</p></details></div>
 </div></article>
 <article class="q drill" id="p39" data-idx="38">
-<h3><span class="num">39</span> 39 · ข้อ 9 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=14" rel="noopener" target="_blank">PDF หน้า 14</a></small></h3>
+<h3><span class="num">39</span><span class="ttl">39 · ข้อ 9 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=14" rel="noopener" target="_blank">PDF หน้า 14</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-38"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-38" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$w=\dfrac{2t}{2-t^2}$</li><li>$t=\tan^22\theta$</li><li>$\theta=\dfrac\pi8$</li></ul><p><b>ต้องหา:</b> $\dfrac{dw}{d\theta}$ ที่ $\theta=\frac\pi8$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{dw}{d\theta}=\frac{dw}{dt}\cdot\frac{dt}{d\theta}$</li><li>$\frac{d}{d\theta}\tan^2k\theta=2\tan k\theta\cdot k\sec^2k\theta$</li></ul></div></details>
@@ -969,7 +971,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $w=\dfrac{t}{3-t^2}$, $t=\tan^23\theta$ จงหา $\dfrac{dw}{d\theta}$ ที่ $\theta=\dfrac\pi{12}$</p><details><summary>ใบ้</summary><p>หา $t$ ที่ $\theta=\pi/12$ ก่อน (ได้ $\tan\frac\pi4$)</p></details><details><summary>ดูคำตอบ</summary><p>$12$</p><p class="alt">$t=1$; $\dfrac{dw}{dt}=\dfrac{3+t^2}{(3-t^2)^2}=\dfrac44=1$<br>$\dfrac{dt}{d\theta}=6\tan3\theta\sec^23\theta=6\cdot1\cdot2=12$<br>$\dfrac{dw}{d\theta}=1\cdot12=12$</p></details></div>
 </div></article>
 <article class="q drill" id="p40" data-idx="39">
-<h3><span class="num">40</span> 40 · ข้อ 5.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=14" rel="noopener" target="_blank">PDF หน้า 14</a></small></h3>
+<h3><span class="num">40</span><span class="ttl">40 · ข้อ 5.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=14" rel="noopener" target="_blank">PDF หน้า 14</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-39"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-39" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$w=2z+3$</li><li>$z=\sqrt{y^2+5}$</li><li>$y=1-x^2$</li><li>$x=-1$</li></ul><p><b>ต้องหา:</b> $\dfrac{dw}{dx}$ ที่ $x=-1$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่สามชั้น $\frac{dw}{dx}=\frac{dw}{dz}\frac{dz}{dy}\frac{dy}{dx}$</li></ul></div></details>
@@ -993,7 +995,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $w=3z+1$, $z=\sqrt{y^2+3}$, $y=x^3$ จงหา $\dfrac{dw}{dx}$ ที่ $x=1$</p><details><summary>ใบ้</summary><p>ที่ $x=1$ ได้ $y=1$ และ $z=2$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac92$</p><p class="alt">$\frac{dw}{dz}=3$, $\frac{dz}{dy}=\frac{y}{z}=\frac12$, $\frac{dy}{dx}=3x^2=3$<br>$\frac{dw}{dx}=3\cdot\frac12\cdot3=\frac92$</p></details></div>
 </div></article>
 <article class="q drill" id="p41" data-idx="40">
-<h3><span class="num">41</span> 41 · ข้อ 7 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=15" rel="noopener" target="_blank">PDF หน้า 15</a></small></h3>
+<h3><span class="num">41</span><span class="ttl">41 · ข้อ 7 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=15" rel="noopener" target="_blank">PDF หน้า 15</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-40"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-40" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y^2+\dfrac1{x-y}+2x=0$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$ (ดิฟโดยปริยาย)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$y$ เป็นฟังก์ชันของ $x$: $\frac{d}{dx}y^2=2yy'$</li><li>$\frac{d}{dx}\frac{1}{u}=-\frac{u'}{u^2}$ โดย $u=x-y$</li></ul></div></details>
@@ -1017,7 +1019,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\dfrac{dy}{dx}$ เมื่อ $y^3+\dfrac1{x+y}=3x$</p><details><summary>ใบ้</summary><p>ดิฟทั้งสองข้างแล้วคูณ $(x+y)^2$ เพื่อล้างเศษส่วน</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=\dfrac{3(x+y)^2+1}{3y^2(x+y)^2-1}$</p><p class="alt">$3y^2y'-\dfrac{1+y'}{(x+y)^2}=3$<br>คูณ $(x+y)^2$: $y'\left[3y^2(x+y)^2-1\right]=3(x+y)^2+1$</p></details></div>
 </div></article>
 <article class="q drill" id="p42" data-idx="41">
-<h3><span class="num">42</span> 42 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=15" rel="noopener" target="_blank">PDF หน้า 15</a></small></h3>
+<h3><span class="num">42</span><span class="ttl">42 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=15" rel="noopener" target="_blank">PDF หน้า 15</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-41"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-41" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$xy^2+x^3\cos\pi y=1-ye^x$</li><li>จุด $(0,1)$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$ และ $\dfrac{dx}{dy}$ ที่จุด $(0,1)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดิฟโดยปริยายด้วยกฎผลคูณ</li><li>$\frac{dx}{dy}=\frac{1}{dy/dx}$ เมื่อ $\frac{dy}{dx}\ne0$</li></ul></div></details>
@@ -1043,7 +1045,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\dfrac{dy}{dx}$ และ $\dfrac{dx}{dy}$ ที่จุด $(1,1)$ เมื่อ $xy^2+x^2\cos\pi y+2ye^{x-1}=2$</p><details><summary>ใบ้</summary><p>ตรวจก่อนว่า $(1,1)$ อยู่บนเส้นโค้ง</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=-\dfrac14,\quad\dfrac{dx}{dy}=-4$</p><p class="alt">$F_x=y^2+2x\cos\pi y+2ye^{x-1}=1-2+2=1$<br>$F_y=2xy-\pi x^2\sin\pi y+2e^{x-1}=2-0+2=4$<br>$y'=-\dfrac{F_x}{F_y}=-\dfrac14$ และ $\dfrac{dx}{dy}=-4$</p></details></div>
 </div></article>
 <article class="q drill" id="p43" data-idx="42">
-<h3><span class="num">43</span> 43 · ข้อ 1.2.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=16" rel="noopener" target="_blank">PDF หน้า 16</a></small></h3>
+<h3><span class="num">43</span><span class="ttl">43 · ข้อ 1.2.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=16" rel="noopener" target="_blank">PDF หน้า 16</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-42"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-42" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$x^2+xy+y^2-3=0$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดิฟโดยปริยาย: $\frac{d}{dx}(xy)=y+xy'$</li><li>รวมพจน์ $y'$ แล้วหาร</li></ul></div></details>
@@ -1065,7 +1067,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\dfrac{dy}{dx}$ เมื่อ $x^2-xy+2y^2=8$</p><details><summary>ใบ้</summary><p>ดิฟแล้วจัดรูปให้ $y'$ อยู่ข้างเดียว</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=\dfrac{y-2x}{4y-x}$</p><p class="alt">$2x-y-xy'+4yy'=0$<br>$y'(4y-x)=y-2x$</p></details></div>
 </div></article>
 <article class="q drill" id="p44" data-idx="43">
-<h3><span class="num">44</span> 44 · ข้อ 1.2.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=16" rel="noopener" target="_blank">PDF หน้า 16</a></small></h3>
+<h3><span class="num">44</span><span class="ttl">44 · ข้อ 1.2.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=16" rel="noopener" target="_blank">PDF หน้า 16</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-43"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-43" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=(\cos x)^{\sin x}$</li></ul><p><b>ต้องหา:</b> $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ฐานและเลขชี้กำลังเป็นฟังก์ชันของ $x$ ทั้งคู่ ใช้ $\ln$ ทั้งสองข้าง</li><li>$\frac{y'}{y}=(\ln y)'$</li></ul></div></details>
@@ -1089,7 +1091,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=(\sin x)^{\cos x}$</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ จะได้ $\cos x\cdot\ln\sin x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=(\sin x)^{\cos x}\left[-\sin x\ln(\sin x)+\dfrac{\cos^2x}{\sin x}\right]$</p><p class="alt">$\ln y=\cos x\ln\sin x$<br>$\dfrac{y'}{y}=-\sin x\ln\sin x+\cos x\cdot\dfrac{\cos x}{\sin x}$</p></details></div>
 </div></article>
 <article class="q drill" id="p45" data-idx="44">
-<h3><span class="num">45</span> 45 · ข้อ 5.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" rel="noopener" target="_blank">PDF หน้า 17</a></small></h3>
+<h3><span class="num">45</span><span class="ttl">45 · ข้อ 5.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" rel="noopener" target="_blank">PDF หน้า 17</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-44"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-44" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$3y^2t+t^2y=1$</li><li>$\dfrac{dt}{dx}=-\dfrac{2t}{x}$</li></ul><p><b>ต้องหา:</b> $\dfrac{dy}{dx}$ และ $\dfrac{d^2y}{dx^2}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$y$ และ $t$ ต่างเป็นฟังก์ชันของ $x$: ดิฟทั้งคู่ด้วยกฎลูกโซ่/กฎผลคูณ</li><li>หา $y''$ โดยดิฟ $y'$ อีกครั้งแล้วแทน $y',t'$</li></ul></div></details>
@@ -1115,7 +1117,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $yt^2+y^2t=2$ และ $\dfrac{dt}{dx}=-\dfrac tx$ จงหา $\dfrac{dy}{dx}$ และ $\dfrac{d^2y}{dx^2}$</p><details><summary>ใบ้</summary><p>ดิฟด้วยกฎผลคูณแล้วแทน $t'=-t/x$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=\dfrac{y(2t+y)}{x(t+2y)},\quad\dfrac{d^2y}{dx^2}=\dfrac{2y\left(t^3-3t^2y-6ty^2-y^3\right)}{x^2(t+2y)^3}$</p><p class="alt">$y't^2+2tt'y+2yy't+y^2t'=0$ แทน $t'=-t/x$<br>$y'\,t(t+2y)=\frac tx\,y(2t+y)$ ได้ $y'$<br>ดิฟอีกครั้งด้วยกฎผลหาร แทน $y',t'$ แล้วจัดรูป</p></details></div>
 </div></article>
 <article class="q drill" id="p46" data-idx="45">
-<h3><span class="num">46</span> 46 · ข้อ 13 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" rel="noopener" target="_blank">PDF หน้า 17</a></small></h3>
+<h3><span class="num">46</span><span class="ttl">46 · ข้อ 13 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" rel="noopener" target="_blank">PDF หน้า 17</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-45"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-45" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$x^2+xy+y^2=3$</li><li>ที่ $(1,1)$ มี $y'=-1$</li></ul><p><b>ต้องหา:</b> $\dfrac{d^2y}{dx^2}$ ที่ $x=1$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดิฟโดยปริยายสองครั้ง</li><li>แทนค่า $x,y,y'$ ที่จุดแล้วแก้หา $y''$</li></ul></div></details>
@@ -1139,7 +1141,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> ให้ $x^2-xy+y^2=1$ ที่จุด $(1,0)$ จงหา $\dfrac{d^2y}{dx^2}$ ที่จุดนั้น</p><details><summary>ใบ้</summary><p>หา $y'$ ที่จุดก่อน แล้วดิฟอีกครั้ง</p></details><details><summary>ดูคำตอบ</summary><p>$6$</p><p class="alt">$2x-y-xy'+2yy'=0$ ที่ $(1,0)$: $2-y'=0\Rightarrow y'=2$<br>$2-y'-y'-xy''+2(y')^2+2yy''=0$ ได้ $2-4-y''+8=0$ จึง $y''=6$</p></details></div>
 </div></article>
 <article class="q drill" id="p47" data-idx="46">
-<h3><span class="num">47</span> 47 · ข้อ 8 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" rel="noopener" target="_blank">PDF หน้า 17</a></small></h3>
+<h3><span class="num">47</span><span class="ttl">47 · ข้อ 8 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=17" rel="noopener" target="_blank">PDF หน้า 17</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-46"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-46" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=e^x+xe^x$</li></ul><p><b>ต้องหา:</b> $f^{(49)}(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>หารูปแบบจากอนุพันธ์ไม่กี่ตัวแรก</li><li>$(e^x)^{(n)}=e^x$ และ $(xe^x)^{(n)}$ มีรูปทั่วไป</li></ul></div></details>
@@ -1163,7 +1165,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f^{(10)}(x)$ เมื่อ $f(x)=xe^{2x}$</p><details><summary>ใบ้</summary><p>สังเกตรูปของลำดับ $1,2,3$ ว่าสัมประสิทธิ์ของ $x$ เป็น $2^n$</p></details><details><summary>ดูคำตอบ</summary><p>$f^{(10)}(x)=1024(x+5)e^{2x}$</p><p class="alt">$\left(xe^{2x}\right)^{(n)}=\left(2^nx+n2^{n-1}\right)e^{2x}$<br>$n=10$: $\left(1024x+5120\right)e^{2x}=1024(x+5)e^{2x}$</p></details></div>
 </div></article>
 <article class="q drill" id="p48" data-idx="47">
-<h3><span class="num">48</span> 48 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=18" rel="noopener" target="_blank">PDF หน้า 18</a></small></h3>
+<h3><span class="num">48</span><span class="ttl">48 · ข้อ 2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=18" rel="noopener" target="_blank">PDF หน้า 18</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-47"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-47" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=(ax+b)^{-n}$</li></ul><p><b>ต้องหา:</b> อนุพันธ์อันดับ 1 ถึง 4 ในรูป $a,b,n$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่: $\frac{d}{dx}(ax+b)^{m}=ma(ax+b)^{m-1}$</li><li>ทุกครั้งที่ดิฟ ตัวคูณใหม่คือกำลังเดิมคูณ $a$</li></ul></div></details>
@@ -1187,7 +1189,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหาอนุพันธ์อันดับ 1 ถึง 3 ของ $f(x)=(2x+1)^{-3}$</p><details><summary>ใบ้</summary><p>ใช้ตัวคูณ $(-3)\cdot2$, แล้ว $(-4)\cdot2$, แล้ว $(-5)\cdot2$</p></details><details><summary>ดูคำตอบ</summary><p>$f'=-6(2x+1)^{-4},\ f''=48(2x+1)^{-5},\ f'''=-480(2x+1)^{-6}$</p><p class="alt">$f'=-3\cdot2(2x+1)^{-4}=-6(2x+1)^{-4}$<br>$f''=-6\cdot(-4)\cdot2(2x+1)^{-5}=48(2x+1)^{-5}$<br>$f'''=48\cdot(-5)\cdot2(2x+1)^{-6}=-480(2x+1)^{-6}$</p></details></div>
 </div></article>
 <article class="q drill" id="p49" data-idx="48">
-<h3><span class="num">49</span> 49 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=18" rel="noopener" target="_blank">PDF หน้า 18</a></small></h3>
+<h3><span class="num">49</span><span class="ttl">49 · ข้อ 3 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=18" rel="noopener" target="_blank">PDF หน้า 18</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-48"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-48" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$xy+x^3=y+3x$</li></ul><p><b>ต้องหา:</b> ผลต่างเชิงอนุพันธ์ $dy$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>หาผลต่างเชิงอนุพันธ์ทั้งสองข้าง: $d(xy)=y\,dx+x\,dy$</li><li>จัดพจน์ $dy$ ไว้ด้านเดียวแล้วหารออก</li></ul></div></details>
@@ -1211,7 +1213,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $dy$ เมื่อ $x^2y+y^2=3x+2y$</p><details><summary>ใบ้</summary><p>ดิฟแบบ $d$ ทั้งสองข้างแล้วรวมพจน์ $dy$</p></details><details><summary>ดูคำตอบ</summary><p>$dy=\dfrac{3-2xy}{x^2+2y-2}\,dx$</p><p class="alt">$2xy\,dx+x^2\,dy+2y\,dy=3\,dx+2\,dy$<br>$(x^2+2y-2)\,dy=(3-2xy)\,dx$</p></details></div>
 </div></article>
 <article class="q drill" id="p50" data-idx="49">
-<h3><span class="num">50</span> 50 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" rel="noopener" target="_blank">PDF หน้า 19</a></small></h3>
+<h3><span class="num">50</span><span class="ttl">50 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" rel="noopener" target="_blank">PDF หน้า 19</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-49"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-49" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\sqrt[3]{1.1}$</li></ul><p><b>ต้องหา:</b> ค่าประมาณของ $\sqrt[3]{1.1}$ ด้วยผลต่างเชิงอนุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f(a+dx)\approx f(a)+f'(a)\,dx$</li><li>เลือก $a$ ใกล้ค่าที่ต้องการและคิดง่าย</li></ul></div></details>
@@ -1235,7 +1237,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงประมาณ $\sqrt[3]{8.3}$ ด้วยผลต่างเชิงอนุพันธ์</p><details><summary>ใบ้</summary><p>เลือก $a=8$, $dx=0.3$</p></details><details><summary>ดูคำตอบ</summary><p>$\approx2.025$</p><p class="alt">$f(x)=x^{1/3},\ f(8)=2,\ f'(8)=\frac13\cdot8^{-2/3}=\frac1{12}$<br>$f(8.3)\approx2+\frac{0.3}{12}=2.025$</p></details></div>
 </div></article>
 <article class="q drill" id="p51" data-idx="50">
-<h3><span class="num">51</span> 51 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" rel="noopener" target="_blank">PDF หน้า 19</a></small></h3>
+<h3><span class="num">51</span><span class="ttl">51 · ข้อ 1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" rel="noopener" target="_blank">PDF หน้า 19</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-50"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-50" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$2\sqrt{9.02}\left(9.02-\sqrt{9.02}\right)$</li></ul><p><b>ต้องหา:</b> ค่าประมาณเชิงเส้นของนิพจน์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f(a+dx)\approx f(a)+f'(a)\,dx$</li><li>รวมนิพจน์เป็นฟังก์ชันเดียวของ $x$ ก่อน</li></ul></div></details>
@@ -1259,7 +1261,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงประมาณ $3\sqrt{4.04}\left(4.04+\sqrt{4.04}\right)$ โดยการประมาณเชิงเส้น</p><details><summary>ใบ้</summary><p>ให้ $f(x)=3x^{3/2}+3x$ และ $a=4$</p></details><details><summary>ดูคำตอบ</summary><p>$\approx36.48$</p><p class="alt">$f(4)=24+12=36$, $f'(x)=\frac92\sqrt x+3\Rightarrow f'(4)=12$<br>$dx=0.04$ จึง $36+12(0.04)=36.48$</p></details></div>
 </div></article>
 <article class="q drill" id="p52" data-idx="51">
-<h3><span class="num">52</span> 52 · ข้อ 14 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" rel="noopener" target="_blank">PDF หน้า 19</a></small></h3>
+<h3><span class="num">52</span><span class="ttl">52 · ข้อ 14 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=19" rel="noopener" target="_blank">PDF หน้า 19</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-51"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-51" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$2\sqrt{0.998}\left(1.996-\sqrt{3.992}\right)$</li></ul><p><b>ต้องหา:</b> ค่าประมาณเชิงเส้นของนิพจน์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>สังเกตความสัมพันธ์ของตัวเลขกับ $0.998$</li><li>$f(a+dx)\approx f(a)+f'(a)\,dx$</li></ul></div></details>
@@ -1285,7 +1287,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงประมาณ $3\sqrt{1.02}\left(2.04-\sqrt{4.08}\right)$ โดยการประมาณเชิงเส้น</p><details><summary>ใบ้</summary><p>ให้ $x=1.02$ และ $f(x)=3\sqrt x(2x-2\sqrt x)$</p></details><details><summary>ดูคำตอบ</summary><p>$\approx0.06$</p><p class="alt">$f(x)=6x^{3/2}-6x$, $f(1)=0$, $f'(x)=9\sqrt x-6\Rightarrow f'(1)=3$<br>$dx=0.02$ จึง $\approx0+3(0.02)=0.06$</p></details></div>
 </div></article>
 <article class="q drill" id="p53" data-idx="52">
-<h3><span class="num">53</span> 53 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" rel="noopener" target="_blank">PDF หน้า 20</a></small></h3>
+<h3><span class="num">53</span><span class="ttl">53 · ข้อ 4 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" rel="noopener" target="_blank">PDF หน้า 20</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-52"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-52" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to\pi/2}(\tan x)^{\cos x}$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต (ใช้ L'Hôpital)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูปแบบ $\infty^0$ ใส่ $\ln$ เปลี่ยนเป็นผลคูณ/ผลหาร</li><li>L'Hôpital เมื่อได้ $\frac00$ หรือ $\frac\infty\infty$</li></ul></div></details>
@@ -1309,7 +1311,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to\infty}(x^2+1)^{1/\ln x}$</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ แล้ว $\frac{\ln(x^2+1)}{\ln x}$ เป็น $\frac\infty\infty$</p></details><details><summary>ดูคำตอบ</summary><p>$e^2$</p><p class="alt">$\ln y=\dfrac{\ln(x^2+1)}{\ln x}\to\dfrac{2x/(x^2+1)}{1/x}=\dfrac{2x^2}{x^2+1}\to2$<br>จึง $y\to e^2$</p></details></div>
 </div></article>
 <article class="q drill" id="p54" data-idx="53">
-<h3><span class="num">54</span> 54 · ข้อ 6.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" rel="noopener" target="_blank">PDF หน้า 20</a></small></h3>
+<h3><span class="num">54</span><span class="ttl">54 · ข้อ 6.1 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" rel="noopener" target="_blank">PDF หน้า 20</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-53"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-53" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0}\left(\dfrac1x-\cot x\right)$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต (ใช้ L'Hôpital)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $\infty-\infty$ ให้รวมเป็นเศษส่วนเดียว</li><li>L'Hôpital อาจต้องใช้ซ้ำ</li></ul></div></details>
@@ -1333,7 +1335,7 @@
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\lim_{x\to0}\left(\dfrac1{x^2}-\dfrac1{x\tan x}\right)$</p><details><summary>ใบ้</summary><p>รวมเป็นเศษส่วน $\frac{\tan x-x}{x^2\tan x}$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac13$</p><p class="alt">$\dfrac1{x^2}-\dfrac1{x\tan x}=\dfrac{\tan x-x}{x^2\tan x}$ ($\frac00$)<br>L'Hôpital: $\dfrac{\sec^2x-1}{2x\tan x+x^2\sec^2x}=\dfrac{\tan^2x}{2x\tan x+x^2\sec^2x}$<br>หารด้วย $x^2$: $\dfrac{(\tan x/x)^2}{2\tan x/x+\sec^2x}\to\dfrac{1}{2+1}=\dfrac13$</p></details></div>
 </div></article>
 <article class="q drill" id="p55" data-idx="54">
-<h3><span class="num">55</span> 55 · ข้อ 6.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" rel="noopener" target="_blank">PDF หน้า 20</a></small></h3>
+<h3><span class="num">55</span><span class="ttl">55 · ข้อ 6.2 <small><a class="pg" href="Tutorial-Class-M1.pdf#page=20" rel="noopener" target="_blank">PDF หน้า 20</a></small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="tutorial-54"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="tutorial-54" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to3}\left(e^{x-3}+2x-6\right)^{\frac1{x-3}}$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต (ใช้ L'Hôpital)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $1^\infty$ ใส่ $\ln$</li><li>L'Hôpital เมื่อได้ $\frac00$</li></ul></div></details>

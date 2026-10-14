@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ฝึกทำ · คลิป MTH11101 อนุพันธ์ Part 2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],strict:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  main{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 16px}
+  body{line-height:1.95;font-size:17px;margin:0}
+
+  .drill{scroll-margin-top:4.5rem}
+  .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
+  .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
+  .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
+  .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
+  .drill .mine{width:100%;box-sizing:border-box;border:1px dashed var(--line,#ccc);border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 12px;margin:4px 0 8px;resize:vertical}
+  .lv{border:1px solid var(--line,#ddd);border-radius:10px;margin:6px 0;padding:2px 12px}
+  .lv>summary{cursor:pointer;font-weight:600;padding:6px 0;color:var(--accent,#2f6fde)}
+  .lv .lvb{padding:2px 0 8px}
+  .lv.l1{border-left:4px solid #38bdf8}.lv.l2{border-left:4px solid #818cf8}.lv.l3{border-left:4px solid #c084fc}.lv.l4{border-left:4px solid #f59e0b}.lv.l5{border-left:4px solid var(--ok,#1a7f4b)}
+  .stp{margin:6px 0}.stp>summary{cursor:pointer;color:var(--muted,#5b6370)}
+  .after{margin-top:12px;padding-top:8px;border-top:1px dashed var(--line,#ddd)}
+  .prac{background:var(--accentbg,rgba(47,111,222,.08));border-radius:10px;padding:8px 14px;margin-top:8px}
+  .alt{color:var(--muted,#5b6370);font-size:.92rem}
+  .tip{color:var(--muted,#5b6370)}
+  .progress{position:sticky;top:3.2rem;z-index:5;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:999px;padding:4px 14px;display:inline-block;font-size:.9rem;margin:0 0 12px}
+  .katex-display{overflow-x:auto;overflow-y:hidden}
+  @media print{details{display:block}details>*{display:block}.mine{display:none}}
+</style>
+<link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script>
+</head>
+<body>
+<main>
+<h1>ฝึกทำ · คลิป MTH11101 อนุพันธ์ Part 2 (9 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="video-derivative.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
+<article class="q drill" id="p1" data-idx="0">
+<h3><span class="num">1</span><span class="ttl">(คลิป 00:11) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$f(x)=5^{(x^2-1)\sin(x^2+5.5)}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_0.jpg)</summary><img loading="lazy" src="img/vid/mthd2_0.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-0"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=5^{(x^2-1)\sin(x^2+5.5)}$</li><li>ฐานเป็นค่าคงที่ $5$ เลขชี้กำลังเป็นฟังก์ชันของ $x$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}a^u=a^u\ln a\,\frac{du}{dx}$</li><li>กฎผลคูณ $(fg)'=fg'+gf'$</li><li>กฎลูกโซ่ของ $\sin$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้ามองเลขชี้กำลังทั้งก้อนเป็น $u$ ฟังก์ชันนี้มีรูปแบบอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ฐานคงที่ยกกำลังฟังก์ชัน ใช้สูตร $a^u\ln a\cdot u'$ แล้วหา $u'$ ด้วยกฎผลคูณ เพราะ $u$ เป็นผลคูณของสองก้อน</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หาอนุพันธ์ของ $y=2^{x\cos x}$</p><p><b>สาธิต:</b> ให้ $u=x\cos x$ จะได้ $y'=2^{u}\ln2\cdot u'$<br>$u'=x(-\sin x)+\cos x\cdot1$<br>ดังนั้น $y'=2^{x\cos x}\ln 2\,(\cos x-x\sin x)$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: มองเป็น $a^u$</div><p>ให้ $u=(x^2-1)\sin(x^2+5.5)$ และ $a=5$</p>$$\frac{d}{dx}a^u=a^u\ln a\,\frac{du}{dx}\quad\Rightarrow\quad f'(x)=5^u\ln 5\cdot\frac{d}{dx}\Big[(x^2-1)\sin(x^2+5.5)\Big]$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎผลคูณ (หน้าดิฟหลัง + หลังดิฟหน้า)</div>$$\frac{du}{dx}=(x^2-1)\frac{d}{dx}\sin(x^2+5.5)+\sin(x^2+5.5)\frac{d}{dx}(x^2-1)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: กฎลูกโซ่ของ sin</div>$$\frac{d}{dx}\sin(x^2+5.5)=\cos(x^2+5.5)\cdot 2x,\qquad \frac{d}{dx}(x^2-1)=2x$$$$\frac{du}{dx}=(x^2-1)\cos(x^2+5.5)(2x)+\sin(x^2+5.5)(2x)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $u$ กลับ แล้วดึง $2x$ ออก</div><p>อย่าลืมคืนค่า $u$ ในเลขชี้กำลัง แล้วดึงตัวร่วม $2x$ ออกนอกวงเล็บ</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: มองเป็น $a^u$</div><p>ให้ $u=(x^2-1)\sin(x^2+5.5)$ และ $a=5$</p>$$\frac{d}{dx}a^u=a^u\ln a\,\frac{du}{dx}\quad\Rightarrow\quad f'(x)=5^u\ln 5\cdot\frac{d}{dx}\Big[(x^2-1)\sin(x^2+5.5)\Big]$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎผลคูณ (หน้าดิฟหลัง + หลังดิฟหน้า)</div>$$\frac{du}{dx}=(x^2-1)\frac{d}{dx}\sin(x^2+5.5)+\sin(x^2+5.5)\frac{d}{dx}(x^2-1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กฎลูกโซ่ของ sin</div>$$\frac{d}{dx}\sin(x^2+5.5)=\cos(x^2+5.5)\cdot 2x,\qquad \frac{d}{dx}(x^2-1)=2x$$$$\frac{du}{dx}=(x^2-1)\cos(x^2+5.5)(2x)+\sin(x^2+5.5)(2x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $u$ กลับ แล้วดึง $2x$ ออก</div><p>อย่าลืมคืนค่า $u$ ในเลขชี้กำลัง แล้วดึงตัวร่วม $2x$ ออกนอกวงเล็บ</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\,(\ln 5)(2x)\Big[(x^2-1)\cos(x^2+5.5)+\sin(x^2+5.5)\Big]$$<p>(ตรวจด้วย sympy แล้ว ตรงกับที่ผู้สอนเขียน)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมแทน $u$ กลับในเลขชี้กำลังตอนตอบ</li><li>ใช้สูตรผิด: ลืมคูณ $\ln 5$ หรือลืมดิฟไส้ใน $\sin(x^2+5.5)$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$a^u$ → $a^u\ln a\cdot u'$</li><li>ถ้า $u$ เป็นผลคูณ ใช้กฎผลคูณหา $u'$</li><li>เห็นตัวร่วม (เช่น $2x$) ดึงออกให้คำตอบสวย</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หาอนุพันธ์ของ $f(x)=3^{(x^2+1)\cos(x^2-2)}$</p><details><summary>ใบ้</summary><p>ให้ $u=(x^2+1)\cos(x^2-2)$ แล้วใช้ $a^u\ln a\cdot u'$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=3^{(x^2+1)\cos(x^2-2)}(\ln3)(2x)\big[\cos(x^2-2)-(x^2+1)\sin(x^2-2)\big]$</p><p class="alt">$u'=(x^2+1)(-\sin(x^2-2))(2x)+\cos(x^2-2)(2x)$<br>$=2x\big[\cos(x^2-2)-(x^2+1)\sin(x^2-2)\big]$<br>คูณด้วย $3^u\ln3$ แล้วแทน $u$ กลับ</p></details></div>
+</div></article>
+<article class="q drill" id="p2" data-idx="1">
+<h3><span class="num">2</span><span class="ttl">(คลิป 05:45) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_1.jpg)</summary><img loading="lazy" src="img/vid/mthd2_1.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-1"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$</li><li>ตัวแปรคือ $t$</li></ul><p><b>ต้องหา:</b> หา $h'(t)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎผลคูณ</li><li>$\frac{d}{dt}a^u=a^u\ln a\,\frac{du}{dt}$</li><li>$\frac{d}{dt}\ln u=\frac{1}{u}\frac{du}{dt}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฟังก์ชันนี้เป็นสองก้อนอะไรคูณกัน และก้อนหลังมีรูปแบบอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้กฎผลคูณก่อน ก้อน $10^{\ln(t^2+5)}$ ใช้สูตร $a^u$ ที่ $u=\ln(t^2+5)$ ซึ่งต้องดิฟต่อด้วยลูกโซ่ของ $\ln$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หาอนุพันธ์ของ $g(t)=t\cdot 3^{\ln(t+1)}$</p><p><b>สาธิต:</b> $g'=t\cdot\frac{d}{dt}3^{\ln(t+1)}+3^{\ln(t+1)}\cdot1$<br>$\frac{d}{dt}3^{\ln(t+1)}=3^{\ln(t+1)}\ln3\cdot\frac{1}{t+1}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎผลคูณ (ดิฟเทียบ $t$)</div>$$h'(t)=(\ln t+1)\frac{d}{dt}\Big(10^{\ln(t^2+5)}\Big)+10^{\ln(t^2+5)}\frac{d}{dt}(\ln t+1)$$<p>ตัวแปรคือ $t$ จึงเขียน $\frac{d}{dt}$ (ไม่ใช่ $\frac{d}{dx}$)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ $a^u$ โดย $u=\ln(t^2+5)$</div>$$\frac{d}{dt}10^{u}=10^{u}\ln 10\,\frac{du}{dt},\qquad \frac{du}{dt}=\frac{1}{t^2+5}\cdot 2t=\frac{2t}{t^2+5}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟ $\ln t+1$</div>$$\frac{d}{dt}(\ln t+1)=\frac1t$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎผลคูณ (ดิฟเทียบ $t$)</div>$$h'(t)=(\ln t+1)\frac{d}{dt}\Big(10^{\ln(t^2+5)}\Big)+10^{\ln(t^2+5)}\frac{d}{dt}(\ln t+1)$$<p>ตัวแปรคือ $t$ จึงเขียน $\frac{d}{dt}$ (ไม่ใช่ $\frac{d}{dx}$)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ $a^u$ โดย $u=\ln(t^2+5)$</div>$$\frac{d}{dt}10^{u}=10^{u}\ln 10\,\frac{du}{dt},\qquad \frac{du}{dt}=\frac{1}{t^2+5}\cdot 2t=\frac{2t}{t^2+5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟ $\ln t+1$</div>$$\frac{d}{dt}(\ln t+1)=\frac1t$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$h'(t)=\frac{2t\,(\ln t+1)\,10^{\ln(t^2+5)}\ln 10}{t^2+5}+\frac{10^{\ln(t^2+5)}}{t}$$<p>(ตรวจด้วย sympy แล้ว ตรงกับผู้สอน)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ดิฟ $\ln(t^2+5)$ ได้แค่ $\frac{1}{t^2+5}$ ลืมคูณ $2t$</li><li>อ่านโจทย์ผิด: เขียน $\frac{d}{dx}$ ทั้งที่ตัวแปรคือ $t$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ผลคูณ → หน้าดิฟหลัง + หลังดิฟหน้า</li><li>$a^{\ln(\cdot)}$ ใช้สูตร $a^u\ln a\cdot u'$ แล้วต่อด้วยลูกโซ่ของ $\ln$</li><li>ดิฟเทียบตัวแปรที่โจทย์ใช้ ($t$)</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หาอนุพันธ์ของ $g(t)=(\ln t-2)\,2^{\ln(t^2+3)}$</p><details><summary>ใบ้</summary><p>กฎผลคูณ และ $\frac{d}{dt}2^{u}=2^u\ln2\cdot u'$ โดย $u=\ln(t^2+3)$</p></details><details><summary>ดูคำตอบ</summary><p>$g'(t)=\dfrac{2t(\ln t-2)\,2^{\ln(t^2+3)}\ln 2}{t^2+3}+\dfrac{2^{\ln(t^2+3)}}{t}$</p><p class="alt">$g'=(\ln t-2)\cdot2^{\ln(t^2+3)}\ln2\cdot\frac{2t}{t^2+3}+2^{\ln(t^2+3)}\cdot\frac1t$</p></details></div>
+</div></article>
+<article class="q drill" id="p3" data-idx="2">
+<h3><span class="num">3</span><span class="ttl">(คลิป 11:05) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$y=(1+\cos^2 x)^6$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_2.jpg)</summary><img loading="lazy" src="img/vid/mthd2_2.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-2"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=(1+\cos^2x)^6$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎยกกำลัง + ลูกโซ่: $\frac{d}{dx}u^n=nu^{n-1}u'$</li><li>$\cos^2x=(\cos x)^2$</li><li>$\frac{d}{dx}\cos x=-\sin x$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ชั้นนอกสุดของฟังก์ชันนี้คืออะไร และข้างในมีกี่ชั้น?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดิฟชั้นนอก (ยกกำลัง 6) แล้วคูณด้วยอนุพันธ์ของไส้ $1+\cos^2x$ ซึ่งต้องใช้ลูกโซ่อีกชั้นกับ $(\cos x)^2$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หาอนุพันธ์ของ $y=(3+\cos^2x)^2$</p><p><b>สาธิต:</b> $y'=2(3+\cos^2x)\cdot\frac{d}{dx}(\cos x)^2$<br>$\frac{d}{dx}(\cos x)^2=2\cos x(-\sin x)$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎยกกำลัง + ลูกโซ่ (ชั้นนอก)</div>$$y'=6(1+\cos^2x)^5\cdot\frac{d}{dx}(1+\cos^2x)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: มอง $\cos^2x=(\cos x)^2$</div>$$\frac{d}{dx}(\cos x)^2=2\cos x\cdot\frac{d}{dx}\cos x=2\cos x(-\sin x)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: รวม</div>$$y'=6(1+\cos^2x)^5\cdot 2\cos x(-\sin x)=-12(1+\cos^2x)^5\cos x\sin x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎยกกำลัง + ลูกโซ่ (ชั้นนอก)</div>$$y'=6(1+\cos^2x)^5\cdot\frac{d}{dx}(1+\cos^2x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: มอง $\cos^2x=(\cos x)^2$</div>$$\frac{d}{dx}(\cos x)^2=2\cos x\cdot\frac{d}{dx}\cos x=2\cos x(-\sin x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวม</div>$$y'=6(1+\cos^2x)^5\cdot 2\cos x(-\sin x)=-12(1+\cos^2x)^5\cos x\sin x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=-12\sin x\cos x\,(1+\cos^2x)^5=-6\sin 2x\,(1+\cos^2x)^5$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ดิฟ $\cos^2x$ ได้ $-\sin^2x$ (ลืมว่าเป็นลูกโซ่)</li><li>คำนวณผิด: ลืมเครื่องหมายลบจาก $\frac{d}{dx}\cos x$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ลอกชั้นจากนอกเข้าใน</li><li>$\cos^2x$ คือ $(\cos x)^2$ ดิฟได้ $2\cos x\cdot(-\sin x)$</li><li>อาจจัดรูปด้วย $2\sin x\cos x=\sin2x$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หาอนุพันธ์ของ $y=(2+\sin^2x)^5$</p><details><summary>ใบ้</summary><p>ดิฟชั้นยกกำลัง 5 แล้วดิฟ $(\sin x)^2$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=10\sin x\cos x\,(2+\sin^2x)^4=5\sin2x\,(2+\sin^2x)^4$</p><p class="alt">$y'=5(2+\sin^2x)^4\cdot2\sin x\cos x$<br>$=10\sin x\cos x(2+\sin^2x)^4$</p></details></div>
+</div></article>
+<article class="q drill" id="p4" data-idx="3">
+<h3><span class="num">4</span><span class="ttl">(คลิป 14:29) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$y=\sin\left(\tan\sqrt{\sin x}\right)$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_3.jpg)</summary><img loading="lazy" src="img/vid/mthd2_3.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-3"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\sin\left(\tan\sqrt{\sin x}\right)$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น</li><li>$\frac{d}{dx}\tan u=\sec^2u\cdot u'$</li><li>$\frac{d}{dx}u^{1/2}=\frac12u^{-1/2}u'$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฟังก์ชันนี้ซ้อนกันกี่ชั้น เรียงจากนอกเข้าในได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เขียน $\sqrt{\sin x}=(\sin x)^{1/2}$ แล้วดิฟทีละชั้น sin → tan → รากที่สอง → sin x คูณกันทั้งหมด</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หาอนุพันธ์ของ $y=\cos\left(\sqrt{\tan x}\right)$</p><p><b>สาธิต:</b> $y'=-\sin\left(\sqrt{\tan x}\right)\cdot\frac{d}{dx}(\tan x)^{1/2}$<br>$=-\sin\left(\sqrt{\tan x}\right)\cdot\frac12(\tan x)^{-1/2}\sec^2x$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนใหม่ให้เห็นชั้น</div>$$y=\sin\Big(\tan\big((\sin x)^{1/2}\big)\Big)$$<p>ระวัง: $\tan\big((\sin x)^{1/2}\big)\ne\big(\tan(\sin x)\big)^{1/2}$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ sin (ชั้นนอกสุด)</div>$$y'=\cos\big(\tan(\sin x)^{1/2}\big)\cdot\frac{d}{dx}\tan(\sin x)^{1/2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟ tan</div>$$\frac{d}{dx}\tan(\sin x)^{1/2}=\sec^2(\sin x)^{1/2}\cdot\frac{d}{dx}(\sin x)^{1/2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: ดิฟรากที่สอง แล้วดิฟ sin x</div>$$\frac{d}{dx}(\sin x)^{1/2}=\frac12(\sin x)^{-1/2}\cos x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนใหม่ให้เห็นชั้น</div>$$y=\sin\Big(\tan\big((\sin x)^{1/2}\big)\Big)$$<p>ระวัง: $\tan\big((\sin x)^{1/2}\big)\ne\big(\tan(\sin x)\big)^{1/2}$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ sin (ชั้นนอกสุด)</div>$$y'=\cos\big(\tan(\sin x)^{1/2}\big)\cdot\frac{d}{dx}\tan(\sin x)^{1/2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟ tan</div>$$\frac{d}{dx}\tan(\sin x)^{1/2}=\sec^2(\sin x)^{1/2}\cdot\frac{d}{dx}(\sin x)^{1/2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ดิฟรากที่สอง แล้วดิฟ sin x</div>$$\frac{d}{dx}(\sin x)^{1/2}=\frac12(\sin x)^{-1/2}\cos x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=\cos\left(\tan\sqrt{\sin x}\right)\sec^2\!\left(\sqrt{\sin x}\right)\cdot\frac{\cos x}{2\sqrt{\sin x}}$$<p>(ตรวจด้วย sympy แล้ว ตรงกับผู้สอน)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>อ่านโจทย์ผิด: ตีความ $\tan\sqrt{\sin x}$ เป็น $\sqrt{\tan(\sin x)}$</li><li>ใช้สูตรผิด: ลืมดิฟชั้นในสุด ($\sin x$)</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ลูกโซ่หลายชั้น: ดิฟทีละชั้นแล้วคูณต่อกัน</li><li>รากที่สองเขียนเป็นยกกำลัง $\frac12$</li><li>อย่าสับสนลำดับชั้นของฟังก์ชัน</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หาอนุพันธ์ของ $y=\cos\left(\tan\sqrt{\cos x}\right)$</p><details><summary>ใบ้</summary><p>ชั้นนอก cos → tan → รากที่สอง → $\cos x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=\dfrac{\sin x\,\sin\left(\tan\sqrt{\cos x}\right)\sec^2\left(\sqrt{\cos x}\right)}{2\sqrt{\cos x}}$</p><p class="alt">$y'=-\sin(\tan\sqrt{\cos x})\cdot\sec^2(\sqrt{\cos x})\cdot\frac{1}{2\sqrt{\cos x}}\cdot(-\sin x)$<br>ลบคูณลบเป็นบวก</p></details></div>
+</div></article>
+<article class="q drill" id="p5" data-idx="4">
+<h3><span class="num">5</span><span class="ttl">(คลิป 18:17 – 32:40) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$f(x)=x\csc^{-1}\!\left(\frac{5}{x}\right)+\sqrt{5+x^2}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_4.jpg)</summary><img loading="lazy" src="img/vid/mthd2_4.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-4"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$ และจัดรูปให้ง่าย</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\csc^{-1}u=\frac{-1}{|u|\sqrt{u^2-1}}\,u'$</li><li>กฎผลคูณ</li><li>$\sqrt{x^2}=|x|$ และ $|x|^2=x^2$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ก้อนแรกเป็นผลคูณของอะไรกับอะไร และ $u$ ใน $\csc^{-1}u$ คืออะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ก้อนแรกใช้กฎผลคูณร่วมกับสูตร $\csc^{-1}u$ ที่ $u=\frac5x$ จัดรูป $|u|\sqrt{u^2-1}$ ให้เป็นเศษส่วนเดียว ก้อนหลังใช้ลูกโซ่ของรากที่สอง</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หาอนุพันธ์ของ $y=\csc^{-1}\left(\frac{2}{x}\right)$ เมื่อ $0\lt x\lt2$</p><p><b>สาธิต:</b> $u=\frac2x,\ u'=-\frac{2}{x^2}$<br>$|u|\sqrt{u^2-1}=\frac{2}{x}\cdot\frac{\sqrt{4-x^2}}{x}=\frac{2\sqrt{4-x^2}}{x^2}$<br>$y'=\frac{-x^2}{2\sqrt{4-x^2}}\cdot\left(-\frac{2}{x^2}\right)=\frac{1}{\sqrt{4-x^2}}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: สูตรที่ใช้</div>$$\frac{d}{dx}\csc^{-1}u=\frac{-1}{|u|\sqrt{u^2-1}}\,\frac{du}{dx}$$<p>แยกดิฟสองก้อน: $x\csc^{-1}(5/x)$ (กฎผลคูณ) และ $(5+x^2)^{1/2}$ (ลูกโซ่)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ก้อนแรก (กฎผลคูณ)</div>$$\frac{d}{dx}\Big[x\csc^{-1}\tfrac5x\Big]=x\cdot\frac{-1}{\left|\frac5x\right|\sqrt{\frac{25}{x^2}-1}}\cdot\frac{d}{dx}(5x^{-1})+\csc^{-1}\tfrac5x$$<p>โดย $\frac{d}{dx}(5x^{-1})=-\frac{5}{x^2}$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปก้อนแรก</div><p>$\left|\frac5x\right|=\frac{5}{|x|}$ และ $\sqrt{\frac{25-x^2}{x^2}}=\frac{\sqrt{25-x^2}}{|x|}$ ได้ตัวส่วน $\frac{5\sqrt{25-x^2}}{x^2}$ (เพราะ $|x|^2=x^2$)</p>$$x\cdot\frac{-x^2}{5\sqrt{25-x^2}}\cdot\left(-\frac{5}{x^2}\right)=\frac{x}{\sqrt{25-x^2}}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: ก้อนที่สอง</div>$$\frac{d}{dx}(5+x^2)^{1/2}=\frac12(5+x^2)^{-1/2}(2x)=\frac{x}{\sqrt{5+x^2}}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สูตรที่ใช้</div>$$\frac{d}{dx}\csc^{-1}u=\frac{-1}{|u|\sqrt{u^2-1}}\,\frac{du}{dx}$$<p>แยกดิฟสองก้อน: $x\csc^{-1}(5/x)$ (กฎผลคูณ) และ $(5+x^2)^{1/2}$ (ลูกโซ่)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ก้อนแรก (กฎผลคูณ)</div>$$\frac{d}{dx}\Big[x\csc^{-1}\tfrac5x\Big]=x\cdot\frac{-1}{\left|\frac5x\right|\sqrt{\frac{25}{x^2}-1}}\cdot\frac{d}{dx}(5x^{-1})+\csc^{-1}\tfrac5x$$<p>โดย $\frac{d}{dx}(5x^{-1})=-\frac{5}{x^2}$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปก้อนแรก</div><p>$\left|\frac5x\right|=\frac{5}{|x|}$ และ $\sqrt{\frac{25-x^2}{x^2}}=\frac{\sqrt{25-x^2}}{|x|}$ ได้ตัวส่วน $\frac{5\sqrt{25-x^2}}{x^2}$ (เพราะ $|x|^2=x^2$)</p>$$x\cdot\frac{-x^2}{5\sqrt{25-x^2}}\cdot\left(-\frac{5}{x^2}\right)=\frac{x}{\sqrt{25-x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ก้อนที่สอง</div>$$\frac{d}{dx}(5+x^2)^{1/2}=\frac12(5+x^2)^{-1/2}(2x)=\frac{x}{\sqrt{5+x^2}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=\frac{x}{\sqrt{25-x^2}}+\csc^{-1}\!\left(\frac5x\right)+\frac{x}{\sqrt{5+x^2}}\qquad(0\lt|x|\lt5)$$<p>(ตรวจด้วย sympy ที่ทั้ง $x$ บวกและลบ ตรงกับผู้สอน)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ถอด $\sqrt{x^2}$ เป็น $x$ แทน $|x|$ (ระหว่างทางควรเขียนค่าสัมบูรณ์ให้ถูก แม้สุดท้ายจะใช้ $|x|^2=x^2$)</li><li>คำนวณผิด: ลืมเครื่องหมายลบของ $\frac{d}{dx}\frac5x=-\frac5{x^2}$ ทำให้เครื่องหมายผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$\csc^{-1}u$ มี $|u|\sqrt{u^2-1}$ ที่ตัวส่วน ระวังค่าสัมบูรณ์</li><li>ผลคูณ $x\cdot\csc^{-1}(\cdot)$ ใช้หน้าดิฟหลัง + หลังดิฟหน้า</li><li>จัดรูปเศษซ้อน ตัด $x^2$ แล้วคำตอบจะสั้นลงมาก</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หาอนุพันธ์ของ $f(x)=x\sec^{-1}\!\left(\frac3x\right)+\sqrt{4+x^2}$ (สำหรับ $0\lt|x|\lt3$)</p><details><summary>ใบ้</summary><p>$\frac{d}{dx}\sec^{-1}u=\frac{1}{|u|\sqrt{u^2-1}}u'$ ให้ $u=\frac3x$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\sec^{-1}\!\left(\frac3x\right)-\dfrac{x}{\sqrt{9-x^2}}+\dfrac{x}{\sqrt{4+x^2}}$</p><p class="alt">$|u|\sqrt{u^2-1}=\frac{3\sqrt{9-x^2}}{x^2}$, $u'=-\frac3{x^2}$<br>ก้อนแรก: $x\cdot\frac{x^2}{3\sqrt{9-x^2}}\cdot\left(-\frac3{x^2}\right)+\sec^{-1}\frac3x$<br>ก้อนหลัง: $\frac{x}{\sqrt{4+x^2}}$</p></details></div>
+</div></article>
+<article class="q drill" id="p6" data-idx="100">
+<h3><span class="num">6</span><span class="ttl">(คลิป 33:35) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$y=\sinh\left(\tan^{-1} e^{5x-1}\right)$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_100.jpg)</summary><img loading="lazy" src="img/vid/mthd2_100.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_100b.jpg)</summary><img loading="lazy" src="img/vid/mthd2_100b.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-100"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-100" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\sinh\left(\tan^{-1}e^{5x-1}\right)$</li><li>เป็นฟังก์ชันประกอบ 3 ชั้น: hyperbolic, inverse trig, exponential</li></ul><p><b>ต้องหา:</b> อนุพันธ์ $\dfrac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่ (chain rule) ดิฟจากชั้นนอกเข้าชั้นใน</li><li>$\frac{d}{dx}\sinh u=\cosh u\,u'$</li><li>$\frac{d}{dx}\tan^{-1}u=\frac{u'}{1+u^2}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฟังก์ชันนี้มีกี่ชั้น และชั้นนอกสุดคืออะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดิฟชั้นนอกสุดโดยคงข้างในไว้เหมือนเดิม แล้วคูณด้วยอนุพันธ์ของข้างใน ทำซ้ำจนถึงชั้นในสุด อย่าลืมว่า $(e^{u})^2=e^{2u}$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\dfrac{dy}{dx}$ เมื่อ $y=\cosh\left(\sin^{-1}x^{3}\right)$</p><p><b>สาธิต:</b> ชั้นนอก: $y'=\sinh\left(\sin^{-1}x^3\right)\cdot\frac{d}{dx}\sin^{-1}x^3$<br>ชั้นใน: $\frac{d}{dx}\sin^{-1}x^3=\frac{1}{\sqrt{1-x^6}}\cdot 3x^2$<br>จากนั้นนำมาคูณกัน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เตรียมสูตรที่ต้องใช้</div><p>เป็นฟังก์ชันประกอบ 3 ชั้น: $\sinh(\,\cdot\,)$ ครอบ $\tan^{-1}(\,\cdot\,)$ ครอบ $e^{5x-1}$</p>$$\frac{d}{dx}\sinh u=\cosh u\,\frac{du}{dx},\qquad \frac{d}{dx}\tan^{-1}u=\frac{1}{1+u^2}\,\frac{du}{dx},\qquad \frac{d}{dx}e^{u}=e^{u}\frac{du}{dx}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟชั้นนอกสุด (sinh)</div><p>ให้ $u=\tan^{-1}e^{5x-1}$</p>$$y'=\cosh\left(\tan^{-1}e^{5x-1}\right)\cdot\frac{d}{dx}\left(\tan^{-1}e^{5x-1}\right)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟชั้นกลาง (arctan)</div><p>ให้ $u=e^{5x-1}$ และ $(e^{5x-1})^2=e^{10x-2}$</p>$$\frac{d}{dx}\tan^{-1}e^{5x-1}=\frac{1}{1+e^{10x-2}}\cdot\frac{d}{dx}e^{5x-1}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: ดิฟชั้นในสุด (exponential)</div>$$\frac{d}{dx}e^{5x-1}=e^{5x-1}\cdot\frac{d}{dx}(5x-1)=5e^{5x-1}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เตรียมสูตรที่ต้องใช้</div><p>เป็นฟังก์ชันประกอบ 3 ชั้น: $\sinh(\,\cdot\,)$ ครอบ $\tan^{-1}(\,\cdot\,)$ ครอบ $e^{5x-1}$</p>$$\frac{d}{dx}\sinh u=\cosh u\,\frac{du}{dx},\qquad \frac{d}{dx}\tan^{-1}u=\frac{1}{1+u^2}\,\frac{du}{dx},\qquad \frac{d}{dx}e^{u}=e^{u}\frac{du}{dx}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟชั้นนอกสุด (sinh)</div><p>ให้ $u=\tan^{-1}e^{5x-1}$</p>$$y'=\cosh\left(\tan^{-1}e^{5x-1}\right)\cdot\frac{d}{dx}\left(\tan^{-1}e^{5x-1}\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟชั้นกลาง (arctan)</div><p>ให้ $u=e^{5x-1}$ และ $(e^{5x-1})^2=e^{10x-2}$</p>$$\frac{d}{dx}\tan^{-1}e^{5x-1}=\frac{1}{1+e^{10x-2}}\cdot\frac{d}{dx}e^{5x-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ดิฟชั้นในสุด (exponential)</div>$$\frac{d}{dx}e^{5x-1}=e^{5x-1}\cdot\frac{d}{dx}(5x-1)=5e^{5x-1}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=\cosh\left(\tan^{-1}e^{5x-1}\right)\cdot\frac{5e^{5x-1}}{1+e^{10x-2}}$$<p>(ตรวจด้วย sympy แล้ว ตรงกับที่ผู้สอนเขียน)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ดิฟ $\sinh$ แล้วได้ $-\cosh$ (ไม่มีเครื่องหมายลบ ต่างจาก $\cos$)</li><li>ลืมเงื่อนไข: ลืมคูณ $\frac{d}{dx}(5x-1)=5$ ของชั้นในสุด หรือเขียน $(e^{5x-1})^2$ เป็น $e^{(5x-1)^2}$</li><li>แนวคิดผิด: พยายามย่อ $\cosh(\tan^{-1}u)$ เป็น $\sqrt{1+u^2}$ ซึ่งเป็นค่าของ $\sec(\tan^{-1}u)$ ไม่ใช่ $\cosh$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ฟังก์ชันซ้อนหลายชั้น: ดิฟจากนอกเข้าใน คูณต่อกันทีละชั้น</li><li>$\sinh'=\cosh$, $\cosh'=\sinh$ (ไม่มีเครื่องหมายลบ)</li><li>$\frac{d}{dx}\tan^{-1}u=\frac{u'}{1+u^2}$ และ $(e^{u})^2=e^{2u}$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> กำหนด $y=\cosh\left(\tan^{-1}e^{2x+3}\right)$ จงหา $\dfrac{dy}{dx}$ และค่า $\dfrac{dy}{dx}$ ที่ $x=-\tfrac32$</p><details><summary>ใบ้</summary><p>ดิฟ $\cosh$ ได้ $\sinh$ แล้วไล่ chain rule ผ่าน $\tan^{-1}$ และ $e^{2x+3}$ ที่ $x=-\tfrac32$ จะได้ $e^{0}=1$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{dy}{dx}=\sinh\left(\tan^{-1}e^{2x+3}\right)\cdot\dfrac{2e^{2x+3}}{1+e^{4x+6}}$, ที่ $x=-\tfrac32$: $\sinh\frac{\pi}{4}\approx 0.869$</p><p class="alt">$y'=\sinh(\tan^{-1}e^{2x+3})\cdot\frac{1}{1+e^{4x+6}}\cdot 2e^{2x+3}$<br>ที่ $x=-\tfrac32$: $e^{0}=1$, $\tan^{-1}1=\frac{\pi}{4}$<br>$y'=\sinh\frac{\pi}{4}\cdot\frac{2}{2}=\sinh\frac{\pi}{4}\approx 0.869$</p></details></div>
+</div></article>
+<article class="q drill" id="p7" data-idx="200">
+<h3><span class="num">7</span><span class="ttl">การหาอนุพันธ์เชิงลอการิทึม — สรุปรูปแบบและสูตร (คลิป 38:00)<br>สไลด์ให้สูตร $$\frac{d}{dx}\left(u^{v}\right)=v\,u^{v-1}\frac{du}{dx}+u^{v}\ln u\,\frac{dv}{dx}$$ ผู้สอนทบทวน 4 รูปแบบ: ① $\frac{d}{dx}a^{b}$ (ค่าคงที่ เช่น $\frac{d}{dx}2^{2}$) ② $\frac{d}{dx}u^{a}$ ③ $\frac{d}{dx}a^{u}$ ④ $\frac{d}{dx}\big(u(x)\big)^{v(x)}$ (ฐานและเลขชี้กำลังมี $x$ ทั้งคู่) และขั้นตอนของรูปแบบ ④</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_200.jpg)</summary><img loading="lazy" src="img/vid/mthd2_200.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-200"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-200" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>สูตร $\frac{d}{dx}(u^{v})=v\,u^{v-1}u'+u^{v}\ln u\,v'$</li><li>รูปแบบ $a^{b}$, $u^{a}$, $a^{u}$, $u^{v}$</li></ul><p><b>ต้องหา:</b> แยกให้ออกว่าฟังก์ชันยกกำลังแต่ละแบบต้อง diff ด้วยกฎใด และขั้นตอนของวิธีลอการิทึม</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ดูว่า $x$ อยู่ที่ฐาน ที่เลขชี้กำลัง หรือทั้งสองที่</li><li>สมบัติ $\ln a^{n}=n\ln a$ ทำให้เลขชี้กำลังลงมาเป็นตัวคูณ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ใน $u^{v}$ ถ้า $x$ อยู่ทั้งฐานและเลขชี้กำลัง สูตร $n u^{n-1}$ หรือ $a^{u}\ln a$ ยังใช้ได้ไหม?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อ $x$ อยู่ทั้งฐานและเลขชี้กำลัง ให้ take $\ln$ เพื่อดึงเลขชี้กำลังลงมาคูณ แล้ว diff แบบ implicit ($\frac{d}{dx}\ln y=\frac{1}{y}y'$)</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\frac{d}{dx}3^{x^{2}}$ (รูปแบบ ③)</p><p><b>สาธิต:</b> ฐาน 3 คงที่ เลขชี้กำลัง $u=x^{2}$<br>$\frac{d}{dx}3^{u}=3^{u}\ln 3\cdot u'=3^{x^{2}}\ln 3\cdot 2x$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">รูปแบบ ①: ค่าคงที่ยกกำลังค่าคงที่</div><p>$a^{b}$ เป็นค่าคงที่ เช่น $2^{2}=4$ จึงได้</p>$$\frac{d}{dx}a^{b}=0$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">รูปแบบ ②: ฐานมี x เลขชี้กำลังคงที่</div>$$\frac{d}{dx}u^{a}=a\,u^{a-1}\frac{du}{dx}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">รูปแบบ ③: ฐานคงที่ เลขชี้กำลังมี x</div>$$\frac{d}{dx}a^{u}=a^{u}\ln a\cdot\frac{du}{dx}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">รูปแบบ ④: $u(x)^{v(x)}$ — ไม่มีสูตรใน ①–③</div><p>ใช้สูตรลัด $\frac{d}{dx}(u^{v})=v\,u^{v-1}u'+u^{v}\ln u\,v'$ หรือทำวิธีลอการิทึม (วิธีหลักที่ผู้สอนแนะนำ เพราะใช้กับฟังก์ชันผลคูณ/ผลหารซับซ้อนได้ด้วย):</p><p>1) take $\ln$ ทั้งสองข้างของสมการ<br>2) ใช้สมบัติ log แปลงรูป ($\ln x=\log_e x$, $\ln a^{n}=n\ln a$)<br>3) diff ทั้งสองข้าง (ซ้ายได้ $\frac{1}{y}\frac{dy}{dx}$)<br>4) แก้สมการหา $\frac{dy}{dx}$ แล้วแทน $y$ กลับ</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">รูปแบบ ①: ค่าคงที่ยกกำลังค่าคงที่</div><p>$a^{b}$ เป็นค่าคงที่ เช่น $2^{2}=4$ จึงได้</p>$$\frac{d}{dx}a^{b}=0$$</div>
+<div class="step"><div class="step-h">รูปแบบ ②: ฐานมี x เลขชี้กำลังคงที่</div>$$\frac{d}{dx}u^{a}=a\,u^{a-1}\frac{du}{dx}$$</div>
+<div class="step"><div class="step-h">รูปแบบ ③: ฐานคงที่ เลขชี้กำลังมี x</div>$$\frac{d}{dx}a^{u}=a^{u}\ln a\cdot\frac{du}{dx}$$</div>
+<div class="step"><div class="step-h">รูปแบบ ④: $u(x)^{v(x)}$ — ไม่มีสูตรใน ①–③</div><p>ใช้สูตรลัด $\frac{d}{dx}(u^{v})=v\,u^{v-1}u'+u^{v}\ln u\,v'$ หรือทำวิธีลอการิทึม (วิธีหลักที่ผู้สอนแนะนำ เพราะใช้กับฟังก์ชันผลคูณ/ผลหารซับซ้อนได้ด้วย):</p><p>1) take $\ln$ ทั้งสองข้างของสมการ<br>2) ใช้สมบัติ log แปลงรูป ($\ln x=\log_e x$, $\ln a^{n}=n\ln a$)<br>3) diff ทั้งสองข้าง (ซ้ายได้ $\frac{1}{y}\frac{dy}{dx}$)<br>4) แก้สมการหา $\frac{dy}{dx}$ แล้วแทน $y$ กลับ</p></div>
+<div class="step final"><div class="step-h">สรุป:</div><p>สูตรลัดได้มาจากวิธีลอการิทึม: $\ln y=v\ln u\Rightarrow \frac{y'}{y}=v'\ln u+\frac{v\,u'}{u}$ คูณ $y=u^{v}$ กลับ</p>$$\frac{d}{dx}(u^{v})=v\,u^{v-1}u'+u^{v}\ln u\,v'$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: diff $x^{x}$ เป็น $x\cdot x^{x-1}$ (ใช้กฎยกกำลังกับเลขชี้กำลังที่มี $x$)</li><li>แนวคิดผิด: คิดว่า $\frac{d}{dx}2^{2}=2\cdot 2$ ทั้งที่ $2^{2}$ เป็นค่าคงที่ อนุพันธ์ = 0</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$a^{b}$ คงที่ → 0; $u^{a}$ → $a u^{a-1}u'$; $a^{u}$ → $a^{u}\ln a\,u'$</li><li>$u^{v}$ (มี $x$ ทั้งสองที่) → take $\ln$ ก่อน หรือใช้สูตร $v u^{v-1}u'+u^{v}\ln u\,v'$</li><li>ขั้นตอน: take ln → แปลงรูปด้วยสมบัติ log → diff สองข้าง → แก้หา dy/dx แล้วแทน y</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ใช้สูตร $\frac{d}{dx}(u^{v})$ หรือวิธีลอการิทึม หาอนุพันธ์ของ $y=(\sin x)^{x}$ เมื่อ $0\lt x\lt\pi$</p><details><summary>ใบ้</summary><p>ให้ $u=\sin x$, $v=x$ แล้วแทนในสูตร (หรือ $\ln y=x\ln\sin x$)</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{dy}{dx}=(\sin x)^{x}\left(\ln\sin x+x\cot x\right)$</p><p class="alt">$\ln y=x\ln(\sin x)$<br>$\frac{y'}{y}=\ln(\sin x)+x\cdot\frac{\cos x}{\sin x}$<br>$y'=(\sin x)^{x}(\ln\sin x+x\cot x)$</p></details></div>
+</div></article>
+<article class="q drill" id="p8" data-idx="201">
+<h3><span class="num">8</span><span class="ttl">ตัวอย่างอนุพันธ์เชิงลอการิทึม (คลิป 42:30)<br>หาอนุพันธ์ของ $$y=x^{4x}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_201.jpg)</summary><img loading="lazy" src="img/vid/mthd2_201.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-201"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-201" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=x^{4x}$ (ฐาน $x$ เลขชี้กำลัง $4x$)</li></ul><p><b>ต้องหา:</b> หา $\frac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $u(x)^{v(x)}$ → อนุพันธ์เชิงลอการิทึม</li><li>$\ln a^{n}=n\ln a$ และกฎผลคูณ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>หลัง take $\ln$ ทั้งสองข้าง ด้านขวา $\ln x^{4x}$ จะเขียนใหม่ให้ไม่มีเลขชี้กำลังได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อได้ $\ln y=$ (ผลคูณของสองฟังก์ชัน) ให้ diff ซ้ายเป็น $\frac{1}{y}\frac{dy}{dx}$ ขวาใช้กฎผลคูณ แล้วคูณ $y$ กลับ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\frac{dy}{dx}$ ของ $y=x^{x}$</p><p><b>สาธิต:</b> $\ln y=x\ln x$<br>$\frac{1}{y}y'=x\cdot\frac1x+\ln x=1+\ln x$<br>$y'=x^{x}(1+\ln x)$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: take ln ทั้งสองข้าง</div>$$\ln y=\ln x^{4x}=4x\ln x$$<p>(ใช้ $\ln a^{n}=n\ln a$)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: diff ทั้งสองข้าง</div>$$\frac{1}{y}\frac{dy}{dx}=4\frac{d}{dx}(x\ln x)=4\left(x\cdot\frac{1}{x}+\ln x\cdot 1\right)=4(1+\ln x)$$<p>(กฎผลคูณ: หน้า diff หลัง + หลัง diff หน้า)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แก้หา dy/dx แล้วแทน y</div>$$\frac{dy}{dx}=4y(1+\ln x)=4x^{4x}(1+\ln x)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: take ln ทั้งสองข้าง</div>$$\ln y=\ln x^{4x}=4x\ln x$$<p>(ใช้ $\ln a^{n}=n\ln a$)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: diff ทั้งสองข้าง</div>$$\frac{1}{y}\frac{dy}{dx}=4\frac{d}{dx}(x\ln x)=4\left(x\cdot\frac{1}{x}+\ln x\cdot 1\right)=4(1+\ln x)$$<p>(กฎผลคูณ: หน้า diff หลัง + หลัง diff หน้า)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แก้หา dy/dx แล้วแทน y</div>$$\frac{dy}{dx}=4y(1+\ln x)=4x^{4x}(1+\ln x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\frac{dy}{dx}=4x^{4x}\left(1+\ln x\right)$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ได้ $\frac{1}{y}y'=\dots$ แล้วลืมคูณ $y=x^{4x}$ กลับ</li><li>คำนวณผิด: diff $x\ln x$ ได้แค่ $\frac1x$ (ลืมกฎผลคูณ)</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$x^{f(x)}$ → take ln: $\ln y=f(x)\ln x$</li><li>diff ซ้าย $\ln y$ ได้ $\frac{y'}{y}$ ขวาใช้กฎผลคูณ</li><li>คูณ $y$ กลับ และแทน $y$ เป็นฟังก์ชันเดิมในคำตอบ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\frac{dy}{dx}$ ของ $y=x^{x^{2}}$ ($x\gt 0$)</p><details><summary>ใบ้</summary><p>$\ln y=x^{2}\ln x$ แล้วใช้กฎผลคูณ</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{dy}{dx}=x^{x^{2}+1}\left(2\ln x+1\right)$</p><p class="alt">$\ln y=x^{2}\ln x$<br>$\frac{y'}{y}=2x\ln x+x^{2}\cdot\frac1x=x(2\ln x+1)$<br>$y'=x^{x^{2}}\cdot x(2\ln x+1)=x^{x^{2}+1}(2\ln x+1)$</p></details></div>
+</div></article>
+<article class="q drill" id="p9" data-idx="202">
+<h3><span class="num">9</span><span class="ttl">ข้อเพิ่ม (Bonus) ท้ายคลิป (คลิป 47:42)<br>ถ้า $$y=\frac{1}{x^{4x}}$$ จงหา $\frac{dy}{dx}$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_202.jpg)</summary><img loading="lazy" src="img/vid/mthd2_202.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="mthd2-202"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="mthd2-202" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\dfrac{1}{x^{4x}}$</li></ul><p><b>ต้องหา:</b> หา $\frac{dy}{dx}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{1}{a^{n}}=a^{-n}$ ทำให้เป็นรูป $u^{v}$</li><li>อนุพันธ์เชิงลอการิทึม + กฎผลคูณ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เขียน $\frac{1}{x^{4x}}$ ให้อยู่ในรูป $x^{(\dots)}$ ได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อเป็น $x^{v(x)}$ แล้ว ทำเหมือนข้อ $x^{4x}$ ทุกขั้น: take $\ln$ → ดึงเลขชี้กำลังลงมา → diff → คูณ $y$ กลับ ระวังเครื่องหมายลบ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\frac{dy}{dx}$ ของ $y=\frac{1}{x^{x}}$</p><p><b>สาธิต:</b> $y=x^{-x}$, $\ln y=-x\ln x$<br>$\frac{y'}{y}=-(1+\ln x)$<br>$y'=-x^{-x}(1+\ln x)$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนให้อยู่ในรูป u^v</div>$$y=\frac{1}{x^{4x}}=x^{-4x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: take ln แล้ว diff</div>$$\ln y=-4x\ln x\;\Rightarrow\;\frac{1}{y}\frac{dy}{dx}=-4\left(x\cdot\frac1x+\ln x\right)=-4(1+\ln x)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน y กลับ</div>$$\frac{dy}{dx}=-4y(1+\ln x)=-4x^{-4x}(1+\ln x)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนให้อยู่ในรูป u^v</div>$$y=\frac{1}{x^{4x}}=x^{-4x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: take ln แล้ว diff</div>$$\ln y=-4x\ln x\;\Rightarrow\;\frac{1}{y}\frac{dy}{dx}=-4\left(x\cdot\frac1x+\ln x\right)=-4(1+\ln x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน y กลับ</div>$$\frac{dy}{dx}=-4y(1+\ln x)=-4x^{-4x}(1+\ln x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\frac{dy}{dx}=-4x^{-4x}\left(1+\ln x\right)=-\frac{4(1+\ln x)}{x^{4x}}$$<p>ตรงกับที่ผู้สอนเขียนเฉลยไว้บนกระดาน</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ทิ้งเครื่องหมายลบตอนดึง $-4x$ ลงมา</li><li>ใช้สูตรผิด: diff ตัวส่วนด้วยกฎผลหารแล้วยังใช้ $nx^{n-1}$ กับ $x^{4x}$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ส่วนกลับของ $u^{v}$ คือ $u^{-v}$ ใช้วิธีลอการิทึมได้เหมือนเดิม</li><li>หรือมองว่า $\ln y=-\ln(x^{4x})$ ได้ $\frac{y'}{y}$ เป็นลบของข้อเดิม</li><li>ตรวจเครื่องหมายและแทน y กลับก่อนตอบ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\frac{dy}{dx}$ ของ $y=\dfrac{1}{x^{2x}}$ ($x\gt 0$)</p><details><summary>ใบ้</summary><p>$y=x^{-2x}$ แล้ว take $\ln$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{dy}{dx}=-2x^{-2x}\left(1+\ln x\right)$</p><p class="alt">$\ln y=-2x\ln x$<br>$\frac{y'}{y}=-2(1+\ln x)$<br>$y'=-2x^{-2x}(1+\ln x)$</p></details></div>
+</div></article>
+</main>
+<script>
+(function(){
+  var st={};function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('[data-done]')),pg=document.getElementById('prog');
+  function upd(){var n=boxes.filter(function(b){return b.checked}).length;if(pg)pg.textContent='ทำเองได้แล้ว '+n+' / '+boxes.length+' ข้อ'}
+  boxes.forEach(function(b){var k='drill-'+b.dataset.done;b.checked=g(k)==='1';b.addEventListener('change',function(){s(k,b.checked?'1':'0');upd()})});
+  [].slice.call(document.querySelectorAll('[data-note]')).forEach(function(t){var k='note-'+t.dataset.note;var v=g(k);if(v)t.value=v;t.addEventListener('input',function(){s(k,t.value)})});
+  upd();
+})();
+</script>
+</body>
+</html>

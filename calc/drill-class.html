@@ -16,6 +16,8 @@
 
   .drill{scroll-margin-top:4.5rem}
   .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
   .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
   .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
   .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
@@ -39,7 +41,7 @@
 <main>
 <h1>ฝึกทำ · แบบฝึกหัดในคลาส (9 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="class-solutions.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
 <article class="q drill" id="p1" data-idx="0">
-<h3><span class="num">1</span> ข้อ 1 · $\displaystyle\int_1^{\infty}\frac{1}{x^{3/2}}\,dx$ <small>(อินทิกรัลไม่ตรงแบบ แบบที่ 1: ขอบเขตเป็นอนันต์)</small></h3>
+<h3><span class="num">1</span><span class="ttl">ข้อ 1 · $\displaystyle\int_1^{\infty}\frac{1}{x^{3/2}}\,dx$ <small>(อินทิกรัลไม่ตรงแบบ แบบที่ 1: ขอบเขตเป็นอนันต์)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-0"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_1^{\infty}\frac{1}{x^{3/2}}\,dx$</li></ul><p><b>ต้องหา:</b> ค่าอินทิกรัลและสรุปว่าลู่เข้าหรือลู่ออก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลไม่ตรงแบบแบบ 1: $\int_a^\infty f=\lim_{t\to\infty}\int_a^tf$</li><li>$p$-integral: $\int_1^\infty x^{-p}dx$ ลู่เข้าเมื่อ $p\gt1$</li></ul></div></details>
@@ -80,7 +82,7 @@ $$\int_1^{\infty}\frac{1}{x^{3/2}}\,dx=2\quad\text{(ลู่เข้า)}$$</d
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int_4^{\infty}x^{-5/2}\,dx$</p><details><summary>ใบ้</summary><p>ใช้กฎกำลังกับ $x^{-5/2}$ แล้วแทนขอบเขตด้วยลิมิต</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac1{12}$ (ลู่เข้า)</p><p class="alt">$\left[-\frac23x^{-3/2}\right]_4^\infty=0+\frac23\cdot4^{-3/2}=\frac23\cdot\frac18=\frac1{12}$</p></details></div>
 </div></article>
 <article class="q drill" id="p2" data-idx="1">
-<h3><span class="num">2</span> ข้อ 2 · $\displaystyle\int(1-x)e^{-x}\,dx$ <small>(by parts)</small></h3>
+<h3><span class="num">2</span><span class="ttl">ข้อ 2 · $\displaystyle\int(1-x)e^{-x}\,dx$ <small>(by parts)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-1"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int(1-x)e^{-x}\,dx$</li></ul><p><b>ต้องหา:</b> ปริพันธ์ไม่จำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลเป็นส่วน $\int u\,dv=uv-\int v\,du$</li><li>$\int e^{-x}dx=-e^{-x}$</li></ul></div></details>
@@ -123,7 +125,7 @@ $$xe^{-x}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int(1+2x)e^{-x}\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=1+2x,\ dv=e^{-x}dx$ ระวังเครื่องหมายลบ</p></details><details><summary>ดูคำตอบ</summary><p>$-(2x+3)e^{-x}+C$</p><p class="alt">$-(1+2x)e^{-x}+\int2e^{-x}dx=-(1+2x)e^{-x}-2e^{-x}=-(2x+3)e^{-x}+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p3" data-idx="2">
-<h3><span class="num">3</span> ข้อ 3 · $\displaystyle\int_1^{2}\frac{dx}{1-x}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบล่าง)</small></h3>
+<h3><span class="num">3</span><span class="ttl">ข้อ 3 · $\displaystyle\int_1^{2}\frac{dx}{1-x}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบล่าง)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-2"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_1^{2}\frac{dx}{1-x}$</li><li>ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบล่าง</li></ul><p><b>ต้องหา:</b> ลู่เข้าหรือลู่ออก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลไม่ตรงแบบแบบ 2: ใช้ลิมิตที่ขอบที่ตัวส่วนเป็นศูนย์</li><li>$\int\frac{dx}{1-x}=-\ln|1-x|$</li></ul></div></details>
@@ -165,7 +167,7 @@ $$\int_1^{2}\frac{dx}{1-x}\ \text{ลู่ออก (diverges)}$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงพิจารณา $\displaystyle\int_0^{3}\frac{dx}{3-x}$ ลู่เข้าหรือลู่ออก</p><details><summary>ใบ้</summary><p>ตัวส่วนเป็นศูนย์ที่ขอบบน ใช้ $t\to3^-$</p></details><details><summary>ดูคำตอบ</summary><p>ลู่ออก</p><p class="alt">$\int_0^t\frac{dx}{3-x}=\left[-\ln|3-x|\right]_0^t=\ln3-\ln(3-t)$<br>เมื่อ $t\to3^-$ ได้ $+\infty$ จึงลู่ออก</p></details></div>
 </div></article>
 <article class="q drill" id="p4" data-idx="3">
-<h3><span class="num">4</span> ข้อ 4 · $\displaystyle\int_0^{1}\frac{dx}{\sqrt{1-x}}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบบน)</small></h3>
+<h3><span class="num">4</span><span class="ttl">ข้อ 4 · $\displaystyle\int_0^{1}\frac{dx}{\sqrt{1-x}}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบบน)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-3"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int_0^{1}\frac{dx}{\sqrt{1-x}}$</li><li>ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบบน</li></ul><p><b>ต้องหา:</b> ค่าอินทิกรัลและลู่เข้าหรือไม่</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิกรัลไม่ตรงแบบแบบ 2</li><li>$\int(1-x)^{-1/2}dx=-2(1-x)^{1/2}$</li></ul></div></details>
@@ -210,7 +212,7 @@ $$\int_0^{1}\frac{dx}{\sqrt{1-x}}=2\quad\text{(ลู่เข้า)}$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int_0^{1}\frac{dx}{\sqrt[3]{1-x}}$</p><details><summary>ใบ้</summary><p>เขียน $(1-x)^{-1/3}$ แล้วใช้กฎกำลังและลิมิต $t\to1^-$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac32$ (ลู่เข้า)</p><p class="alt">$\int(1-x)^{-1/3}dx=-\frac32(1-x)^{2/3}$<br>$\left[-\frac32(1-x)^{2/3}\right]_0^t=\frac32-\frac32(1-t)^{2/3}\to\frac32$</p></details></div>
 </div></article>
 <article class="q drill" id="p5" data-idx="4">
-<h3><span class="num">5</span> ข้อ 5 · $\displaystyle\int\frac{dx}{\sqrt x\,(x+1)}$ <small>(เปลี่ยนตัวแปร → $\tan^{-1}$)</small></h3>
+<h3><span class="num">5</span><span class="ttl">ข้อ 5 · $\displaystyle\int\frac{dx}{\sqrt x\,(x+1)}$ <small>(เปลี่ยนตัวแปร → $\tan^{-1}$)</small></span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-4"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\displaystyle\int\frac{dx}{\sqrt x\,(x+1)}$</li></ul><p><b>ต้องหา:</b> ปริพันธ์ไม่จำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เปลี่ยนตัวแปรให้รากหายไป: $u=\sqrt x$</li><li>$\int\frac{du}{1+u^2}=\tan^{-1}u$</li></ul></div></details>
@@ -247,7 +249,7 @@ $$2\tan^{-1}\sqrt{x}+C$$</div>
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{dx}{\sqrt x\,(x+4)}$</p><details><summary>ใบ้</summary><p>ให้ $u=\sqrt x$ แล้วเข้าสูตร $\int\frac{du}{u^2+4}$</p></details><details><summary>ดูคำตอบ</summary><p>$\tan^{-1}\!\left(\dfrac{\sqrt x}{2}\right)+C$</p><p class="alt">$\frac{2u\,du}{u(u^2+4)}=\frac{2\,du}{u^2+4}$<br>$\int=2\cdot\frac12\tan^{-1}\frac u2=\tan^{-1}\frac{\sqrt x}{2}+C$</p></details></div>
 </div></article>
 <article class="q drill" id="p6" data-idx="5">
-<h3><span class="num">6</span> ข้อ 6 · เขียนจุด $(-2,\,-\tfrac{\pi}{4})$ ในรูปพิกัดเชิงขั้วแบบอื่น</h3>
+<h3><span class="num">6</span><span class="ttl">ข้อ 6 · เขียนจุด $(-2,\,-\tfrac{\pi}{4})$ ในรูปพิกัดเชิงขั้วแบบอื่น</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-5"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-5" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>จุด $(-2,\,-\tfrac{\pi}{4})$ ในพิกัดเชิงขั้ว</li></ul><p><b>ต้องหา:</b> พิกัดเชิงขั้วแบบอื่นของจุดเดียวกัน</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(r,\theta)=(-r,\theta+\pi)$</li><li>$(r,\theta)=(r,\theta+2\pi k)$</li></ul></div></details>
@@ -294,7 +296,7 @@ $$\left(2,\ \tfrac{3\pi}{4}\right),\qquad\left(2,\ -\tfrac{5\pi}{4}\right),\qqua
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงเขียน $(-4,\,-\tfrac{\pi}{3})$ ในพิกัดเชิงขั้วแบบอื่นอย่างน้อยสามแบบ (หนึ่งแบบให้ $r\gt0$ และ $0\le\theta\lt2\pi$)</p><details><summary>ใบ้</summary><p>เปลี่ยนเครื่องหมาย $r$ แล้วบวก $\pi$ กับมุม</p></details><details><summary>ดูคำตอบ</summary><p>$(4,\tfrac{2\pi}{3}),\ (4,-\tfrac{4\pi}{3}),\ (-4,\tfrac{5\pi}{3})$</p><p class="alt">$(-4,-\frac\pi3)=(4,-\frac\pi3+\pi)=(4,\frac{2\pi}3)$<br>ลบ $2\pi$: $(4,-\frac{4\pi}3)$<br>บวก $2\pi$ กับมุมเดิม: $(-4,\frac{5\pi}3)$<br>ทุกแบบแทนจุด $(-2,\,2\sqrt3)$</p></details></div>
 </div></article>
 <article class="q drill" id="p7" data-idx="6">
-<h3><span class="num">7</span> ข้อ 7 · $r=\dfrac{4}{2\cos\theta+3\sin\theta}$ เปลี่ยนเป็นพิกัดฉากแล้ววาดกราฟ</h3>
+<h3><span class="num">7</span><span class="ttl">ข้อ 7 · $r=\dfrac{4}{2\cos\theta+3\sin\theta}$ เปลี่ยนเป็นพิกัดฉากแล้ววาดกราฟ</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-6"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-6" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$r=\dfrac{4}{2\cos\theta+3\sin\theta}$</li></ul><p><b>ต้องหา:</b> สมการพิกัดฉากและร่างกราฟ</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$x=r\cos\theta,\ y=r\sin\theta$</li><li>คูณข้ามเพื่อให้ได้ $r\cos\theta$ กับ $r\sin\theta$</li></ul></div></details>
@@ -332,7 +334,7 @@ $$2x+3y=4$$
 <div class="prac"><p><b>ข้อฝึกใหม่:</b> จงแปล $r=\dfrac{6}{3\cos\theta-\sin\theta}$ เป็นพิกัดฉาก และหาจุดตัดแกน</p><details><summary>ใบ้</summary><p>คูณตัวส่วนข้ามแล้วแทน $x,y$</p></details><details><summary>ดูคำตอบ</summary><p>$3x-y=6$ ตัดแกน $x$ ที่ $(2,0)$ และแกน $y$ ที่ $(0,-6)$</p><p class="alt">$r(3\cos\theta-\sin\theta)=6\Rightarrow3x-y=6$<br>$y=0\Rightarrow x=2$ และ $x=0\Rightarrow y=-6$</p></details></div>
 </div></article>
 <article class="q drill" id="p8" data-idx="7">
-<h3><span class="num">8</span> ข้อ 8 · ตารางแปลงพิกัดฉาก $(x,y)$ ↔ พิกัดเชิงขั้ว $(r,\theta)$</h3>
+<h3><span class="num">8</span><span class="ttl">ข้อ 8 · ตารางแปลงพิกัดฉาก $(x,y)$ ↔ พิกัดเชิงขั้ว $(r,\theta)$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-7"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-7" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ตารางแปลงพิกัดฉาก $(x,y)\leftrightarrow$ พิกัดเชิงขั้ว $(r,\theta)$ (ตัวเลขในตารางเป็นลายมือ อ่านไม่ชัด)</li></ul><p><b>ต้องหา:</b> เติมตารางโดยแปลงสองทาง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เชิงขั้ว$\to$ฉาก: $x=r\cos\theta,\ y=r\sin\theta$</li><li>ฉาก$\to$เชิงขั้ว: $r=\sqrt{x^2+y^2},\ \tan\theta=\frac yx$ (ดูจตุภาค)</li></ul></div></details>
@@ -348,7 +350,7 @@ $$2x+3y=4$$
 <div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ทั้งสองทางใช้สูตรคู่เดียวกัน</li><li>มุมต้องดูจตุภาค</li><li>ตรวจกลับด้วยการแปลงย้อน</li></ol>
 </div></article>
 <article class="q drill" id="p9" data-idx="8">
-<h3><span class="num">9</span> ข้อ 9 · หาจุดตัดของ $r_1=1+\cos\theta$ กับ $r_2=3\cos\theta$</h3>
+<h3><span class="num">9</span><span class="ttl">ข้อ 9 · หาจุดตัดของ $r_1=1+\cos\theta$ กับ $r_2=3\cos\theta$</span></h3>
 <p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="class-8"> ทำเองได้แล้ว</label></p>
 <textarea class="mine" data-note="class-8" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
 <details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$r_1=1+\cos\theta$ และ $r_2=3\cos\theta$</li></ul><p><b>ต้องหา:</b> จุดตัดทั้งหมดของสองกราฟ</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แก้ $r_1=r_2$ เพื่อหาจุดตัดส่วนหนึ่ง</li><li>ต้องเช็กจุดกำเนิดแยก และสมมาตรของกราฟ</li></ul></div></details>

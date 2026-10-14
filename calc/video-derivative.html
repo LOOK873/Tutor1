@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เฉลย · คลิป MTH11101 อนุพันธ์ Part 2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],strict:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  main{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 16px}
+  body{line-height:1.95;font-size:17px;margin:0}
+
+  .drill{scroll-margin-top:4.5rem}
+  .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .ttl{min-width:0;flex:1}
+  .pgimg>summary{cursor:pointer;color:var(--muted,#5b6370);font-size:.9rem}
+  .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
+  .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
+  .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
+  .drill .mine{width:100%;box-sizing:border-box;border:1px dashed var(--line,#ccc);border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 12px;margin:4px 0 8px;resize:vertical}
+  .lv{border:1px solid var(--line,#ddd);border-radius:10px;margin:6px 0;padding:2px 12px}
+  .lv>summary{cursor:pointer;font-weight:600;padding:6px 0;color:var(--accent,#2f6fde)}
+  .lv .lvb{padding:2px 0 8px}
+  .lv.l1{border-left:4px solid #38bdf8}.lv.l2{border-left:4px solid #818cf8}.lv.l3{border-left:4px solid #c084fc}.lv.l4{border-left:4px solid #f59e0b}.lv.l5{border-left:4px solid var(--ok,#1a7f4b)}
+  .stp{margin:6px 0}.stp>summary{cursor:pointer;color:var(--muted,#5b6370)}
+  .after{margin-top:12px;padding-top:8px;border-top:1px dashed var(--line,#ddd)}
+  .prac{background:var(--accentbg,rgba(47,111,222,.08));border-radius:10px;padding:8px 14px;margin-top:8px}
+  .alt{color:var(--muted,#5b6370);font-size:.92rem}
+  .tip{color:var(--muted,#5b6370)}
+  .progress{position:sticky;top:3.2rem;z-index:5;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:999px;padding:4px 14px;display:inline-block;font-size:.9rem;margin:0 0 12px}
+  .katex-display{overflow-x:auto;overflow-y:hidden}
+  @media print{details{display:block}details>*{display:block}.mine{display:none}}
+</style>
+<link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script>
+</head>
+<body>
+<main>
+<h1>เฉลย · คลิป MTH11101 อนุพันธ์ Part 2 (9 ข้อ)</h1><p class="sub">เฉลยทีละขั้น · ต้นฉบับ: <a href="" target="_blank" rel="noopener"></a> · <a href="drill-video-derivative.html">โหมดฝึกทำ</a></p>
+<article class="q" id="p1"><h3><span class="num">1</span><span class="ttl">(คลิป 00:11) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$f(x)=5^{(x^2-1)\sin(x^2+5.5)}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_0.jpg)</summary><img loading="lazy" src="img/vid/mthd2_0.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: มองเป็น $a^u$</div><p>ให้ $u=(x^2-1)\sin(x^2+5.5)$ และ $a=5$</p>$$\frac{d}{dx}a^u=a^u\ln a\,\frac{du}{dx}\quad\Rightarrow\quad f'(x)=5^u\ln 5\cdot\frac{d}{dx}\Big[(x^2-1)\sin(x^2+5.5)\Big]$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎผลคูณ (หน้าดิฟหลัง + หลังดิฟหน้า)</div>$$\frac{du}{dx}=(x^2-1)\frac{d}{dx}\sin(x^2+5.5)+\sin(x^2+5.5)\frac{d}{dx}(x^2-1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: กฎลูกโซ่ของ sin</div>$$\frac{d}{dx}\sin(x^2+5.5)=\cos(x^2+5.5)\cdot 2x,\qquad \frac{d}{dx}(x^2-1)=2x$$$$\frac{du}{dx}=(x^2-1)\cos(x^2+5.5)(2x)+\sin(x^2+5.5)(2x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $u$ กลับ แล้วดึง $2x$ ออก</div><p>อย่าลืมคืนค่า $u$ ในเลขชี้กำลัง แล้วดึงตัวร่วม $2x$ ออกนอกวงเล็บ</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\,(\ln 5)(2x)\Big[(x^2-1)\cos(x^2+5.5)+\sin(x^2+5.5)\Big]$$<p>(ตรวจด้วย sympy แล้ว ตรงกับที่ผู้สอนเขียน)</p></div>
+</div></details></article>
+<article class="q" id="p2"><h3><span class="num">2</span><span class="ttl">(คลิป 05:45) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_1.jpg)</summary><img loading="lazy" src="img/vid/mthd2_1.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎผลคูณ (ดิฟเทียบ $t$)</div>$$h'(t)=(\ln t+1)\frac{d}{dt}\Big(10^{\ln(t^2+5)}\Big)+10^{\ln(t^2+5)}\frac{d}{dt}(\ln t+1)$$<p>ตัวแปรคือ $t$ จึงเขียน $\frac{d}{dt}$ (ไม่ใช่ $\frac{d}{dx}$)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ $a^u$ โดย $u=\ln(t^2+5)$</div>$$\frac{d}{dt}10^{u}=10^{u}\ln 10\,\frac{du}{dt},\qquad \frac{du}{dt}=\frac{1}{t^2+5}\cdot 2t=\frac{2t}{t^2+5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟ $\ln t+1$</div>$$\frac{d}{dt}(\ln t+1)=\frac1t$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$h'(t)=\frac{2t\,(\ln t+1)\,10^{\ln(t^2+5)}\ln 10}{t^2+5}+\frac{10^{\ln(t^2+5)}}{t}$$<p>(ตรวจด้วย sympy แล้ว ตรงกับผู้สอน)</p></div>
+</div></details></article>
+<article class="q" id="p3"><h3><span class="num">3</span><span class="ttl">(คลิป 11:05) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$y=(1+\cos^2 x)^6$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_2.jpg)</summary><img loading="lazy" src="img/vid/mthd2_2.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กฎยกกำลัง + ลูกโซ่ (ชั้นนอก)</div>$$y'=6(1+\cos^2x)^5\cdot\frac{d}{dx}(1+\cos^2x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: มอง $\cos^2x=(\cos x)^2$</div>$$\frac{d}{dx}(\cos x)^2=2\cos x\cdot\frac{d}{dx}\cos x=2\cos x(-\sin x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวม</div>$$y'=6(1+\cos^2x)^5\cdot 2\cos x(-\sin x)=-12(1+\cos^2x)^5\cos x\sin x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=-12\sin x\cos x\,(1+\cos^2x)^5=-6\sin 2x\,(1+\cos^2x)^5$$</div>
+</div></details></article>
+<article class="q" id="p4"><h3><span class="num">4</span><span class="ttl">(คลิป 14:29) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$y=\sin\left(\tan\sqrt{\sin x}\right)$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_3.jpg)</summary><img loading="lazy" src="img/vid/mthd2_3.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนใหม่ให้เห็นชั้น</div>$$y=\sin\Big(\tan\big((\sin x)^{1/2}\big)\Big)$$<p>ระวัง: $\tan\big((\sin x)^{1/2}\big)\ne\big(\tan(\sin x)\big)^{1/2}$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ sin (ชั้นนอกสุด)</div>$$y'=\cos\big(\tan(\sin x)^{1/2}\big)\cdot\frac{d}{dx}\tan(\sin x)^{1/2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟ tan</div>$$\frac{d}{dx}\tan(\sin x)^{1/2}=\sec^2(\sin x)^{1/2}\cdot\frac{d}{dx}(\sin x)^{1/2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ดิฟรากที่สอง แล้วดิฟ sin x</div>$$\frac{d}{dx}(\sin x)^{1/2}=\frac12(\sin x)^{-1/2}\cos x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=\cos\left(\tan\sqrt{\sin x}\right)\sec^2\!\left(\sqrt{\sin x}\right)\cdot\frac{\cos x}{2\sqrt{\sin x}}$$<p>(ตรวจด้วย sympy แล้ว ตรงกับผู้สอน)</p></div>
+</div></details></article>
+<article class="q" id="p5"><h3><span class="num">5</span><span class="ttl">(คลิป 18:17 – 32:40) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$f(x)=x\csc^{-1}\!\left(\frac{5}{x}\right)+\sqrt{5+x^2}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_4.jpg)</summary><img loading="lazy" src="img/vid/mthd2_4.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สูตรที่ใช้</div>$$\frac{d}{dx}\csc^{-1}u=\frac{-1}{|u|\sqrt{u^2-1}}\,\frac{du}{dx}$$<p>แยกดิฟสองก้อน: $x\csc^{-1}(5/x)$ (กฎผลคูณ) และ $(5+x^2)^{1/2}$ (ลูกโซ่)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ก้อนแรก (กฎผลคูณ)</div>$$\frac{d}{dx}\Big[x\csc^{-1}\tfrac5x\Big]=x\cdot\frac{-1}{\left|\frac5x\right|\sqrt{\frac{25}{x^2}-1}}\cdot\frac{d}{dx}(5x^{-1})+\csc^{-1}\tfrac5x$$<p>โดย $\frac{d}{dx}(5x^{-1})=-\frac{5}{x^2}$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปก้อนแรก</div><p>$\left|\frac5x\right|=\frac{5}{|x|}$ และ $\sqrt{\frac{25-x^2}{x^2}}=\frac{\sqrt{25-x^2}}{|x|}$ ได้ตัวส่วน $\frac{5\sqrt{25-x^2}}{x^2}$ (เพราะ $|x|^2=x^2$)</p>$$x\cdot\frac{-x^2}{5\sqrt{25-x^2}}\cdot\left(-\frac{5}{x^2}\right)=\frac{x}{\sqrt{25-x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ก้อนที่สอง</div>$$\frac{d}{dx}(5+x^2)^{1/2}=\frac12(5+x^2)^{-1/2}(2x)=\frac{x}{\sqrt{5+x^2}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$f'(x)=\frac{x}{\sqrt{25-x^2}}+\csc^{-1}\!\left(\frac5x\right)+\frac{x}{\sqrt{5+x^2}}\qquad(0\lt|x|\lt5)$$<p>(ตรวจด้วย sympy ที่ทั้ง $x$ บวกและลบ ตรงกับผู้สอน)</p></div>
+</div></details></article>
+<article class="q" id="p6"><h3><span class="num">6</span><span class="ttl">(คลิป 33:35) หาอนุพันธ์ของฟังก์ชันต่อไปนี้<br>$$y=\sinh\left(\tan^{-1} e^{5x-1}\right)$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_100.jpg)</summary><img loading="lazy" src="img/vid/mthd2_100.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_100b.jpg)</summary><img loading="lazy" src="img/vid/mthd2_100b.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เตรียมสูตรที่ต้องใช้</div><p>เป็นฟังก์ชันประกอบ 3 ชั้น: $\sinh(\,\cdot\,)$ ครอบ $\tan^{-1}(\,\cdot\,)$ ครอบ $e^{5x-1}$</p>$$\frac{d}{dx}\sinh u=\cosh u\,\frac{du}{dx},\qquad \frac{d}{dx}\tan^{-1}u=\frac{1}{1+u^2}\,\frac{du}{dx},\qquad \frac{d}{dx}e^{u}=e^{u}\frac{du}{dx}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟชั้นนอกสุด (sinh)</div><p>ให้ $u=\tan^{-1}e^{5x-1}$</p>$$y'=\cosh\left(\tan^{-1}e^{5x-1}\right)\cdot\frac{d}{dx}\left(\tan^{-1}e^{5x-1}\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟชั้นกลาง (arctan)</div><p>ให้ $u=e^{5x-1}$ และ $(e^{5x-1})^2=e^{10x-2}$</p>$$\frac{d}{dx}\tan^{-1}e^{5x-1}=\frac{1}{1+e^{10x-2}}\cdot\frac{d}{dx}e^{5x-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ดิฟชั้นในสุด (exponential)</div>$$\frac{d}{dx}e^{5x-1}=e^{5x-1}\cdot\frac{d}{dx}(5x-1)=5e^{5x-1}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$y'=\cosh\left(\tan^{-1}e^{5x-1}\right)\cdot\frac{5e^{5x-1}}{1+e^{10x-2}}$$<p>(ตรวจด้วย sympy แล้ว ตรงกับที่ผู้สอนเขียน)</p></div>
+</div></details></article>
+<article class="q" id="p7"><h3><span class="num">7</span><span class="ttl">การหาอนุพันธ์เชิงลอการิทึม — สรุปรูปแบบและสูตร (คลิป 38:00)<br>สไลด์ให้สูตร $$\frac{d}{dx}\left(u^{v}\right)=v\,u^{v-1}\frac{du}{dx}+u^{v}\ln u\,\frac{dv}{dx}$$ ผู้สอนทบทวน 4 รูปแบบ: ① $\frac{d}{dx}a^{b}$ (ค่าคงที่ เช่น $\frac{d}{dx}2^{2}$) ② $\frac{d}{dx}u^{a}$ ③ $\frac{d}{dx}a^{u}$ ④ $\frac{d}{dx}\big(u(x)\big)^{v(x)}$ (ฐานและเลขชี้กำลังมี $x$ ทั้งคู่) และขั้นตอนของรูปแบบ ④</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_200.jpg)</summary><img loading="lazy" src="img/vid/mthd2_200.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">รูปแบบ ①: ค่าคงที่ยกกำลังค่าคงที่</div><p>$a^{b}$ เป็นค่าคงที่ เช่น $2^{2}=4$ จึงได้</p>$$\frac{d}{dx}a^{b}=0$$</div>
+<div class="step"><div class="step-h">รูปแบบ ②: ฐานมี x เลขชี้กำลังคงที่</div>$$\frac{d}{dx}u^{a}=a\,u^{a-1}\frac{du}{dx}$$</div>
+<div class="step"><div class="step-h">รูปแบบ ③: ฐานคงที่ เลขชี้กำลังมี x</div>$$\frac{d}{dx}a^{u}=a^{u}\ln a\cdot\frac{du}{dx}$$</div>
+<div class="step"><div class="step-h">รูปแบบ ④: $u(x)^{v(x)}$ — ไม่มีสูตรใน ①–③</div><p>ใช้สูตรลัด $\frac{d}{dx}(u^{v})=v\,u^{v-1}u'+u^{v}\ln u\,v'$ หรือทำวิธีลอการิทึม (วิธีหลักที่ผู้สอนแนะนำ เพราะใช้กับฟังก์ชันผลคูณ/ผลหารซับซ้อนได้ด้วย):</p><p>1) take $\ln$ ทั้งสองข้างของสมการ<br>2) ใช้สมบัติ log แปลงรูป ($\ln x=\log_e x$, $\ln a^{n}=n\ln a$)<br>3) diff ทั้งสองข้าง (ซ้ายได้ $\frac{1}{y}\frac{dy}{dx}$)<br>4) แก้สมการหา $\frac{dy}{dx}$ แล้วแทน $y$ กลับ</p></div>
+<div class="step final"><div class="step-h">สรุป:</div><p>สูตรลัดได้มาจากวิธีลอการิทึม: $\ln y=v\ln u\Rightarrow \frac{y'}{y}=v'\ln u+\frac{v\,u'}{u}$ คูณ $y=u^{v}$ กลับ</p>$$\frac{d}{dx}(u^{v})=v\,u^{v-1}u'+u^{v}\ln u\,v'$$</div>
+</div></details></article>
+<article class="q" id="p8"><h3><span class="num">8</span><span class="ttl">ตัวอย่างอนุพันธ์เชิงลอการิทึม (คลิป 42:30)<br>หาอนุพันธ์ของ $$y=x^{4x}$$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_201.jpg)</summary><img loading="lazy" src="img/vid/mthd2_201.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: take ln ทั้งสองข้าง</div>$$\ln y=\ln x^{4x}=4x\ln x$$<p>(ใช้ $\ln a^{n}=n\ln a$)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: diff ทั้งสองข้าง</div>$$\frac{1}{y}\frac{dy}{dx}=4\frac{d}{dx}(x\ln x)=4\left(x\cdot\frac{1}{x}+\ln x\cdot 1\right)=4(1+\ln x)$$<p>(กฎผลคูณ: หน้า diff หลัง + หลัง diff หน้า)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แก้หา dy/dx แล้วแทน y</div>$$\frac{dy}{dx}=4y(1+\ln x)=4x^{4x}(1+\ln x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\frac{dy}{dx}=4x^{4x}\left(1+\ln x\right)$$</div>
+</div></details></article>
+<article class="q" id="p9"><h3><span class="num">9</span><span class="ttl">ข้อเพิ่ม (Bonus) ท้ายคลิป (คลิป 47:42)<br>ถ้า $$y=\frac{1}{x^{4x}}$$ จงหา $\frac{dy}{dx}$</span></h3>
+<details class="pgimg" open><summary>🖼 รูปโจทย์ต้นฉบับ (vid/mthd2_202.jpg)</summary><img loading="lazy" src="img/vid/mthd2_202.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<details><summary>ดูวิธีทำ</summary><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนให้อยู่ในรูป u^v</div>$$y=\frac{1}{x^{4x}}=x^{-4x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: take ln แล้ว diff</div>$$\ln y=-4x\ln x\;\Rightarrow\;\frac{1}{y}\frac{dy}{dx}=-4\left(x\cdot\frac1x+\ln x\right)=-4(1+\ln x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน y กลับ</div>$$\frac{dy}{dx}=-4y(1+\ln x)=-4x^{-4x}(1+\ln x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\frac{dy}{dx}=-4x^{-4x}\left(1+\ln x\right)=-\frac{4(1+\ln x)}{x^{4x}}$$<p>ตรงกับที่ผู้สอนเขียนเฉลยไว้บนกระดาน</p></div>
+</div></details></article>
+</main>
+<script>
+(function(){
+  var st={};function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('[data-done]')),pg=document.getElementById('prog');
+  function upd(){var n=boxes.filter(function(b){return b.checked}).length;if(pg)pg.textContent='ทำเองได้แล้ว '+n+' / '+boxes.length+' ข้อ'}
+  boxes.forEach(function(b){var k='drill-'+b.dataset.done;b.checked=g(k)==='1';b.addEventListener('change',function(){s(k,b.checked?'1':'0');upd()})});
+  [].slice.call(document.querySelectorAll('[data-note]')).forEach(function(t){var k='note-'+t.dataset.note;var v=g(k);if(v)t.value=v;t.addEventListener('input',function(){s(k,t.value)})});
+  upd();
+})();
+</script>
+</body>
+</html>
