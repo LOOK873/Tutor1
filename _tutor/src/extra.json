@@ -1,0 +1,681 @@
+[
+ {
+  "idx": 0,
+  "title": "<span class=\"tag\">กฎลูกโซ่</span>A1. จากตาราง: $f(0)=1,\\ f'(0)=-1,\\ g(0)=1,\\ g'(0)=5,\\ f(1)=\\pi,\\ f'(1)=4,\\ g(1)=2\\pi,\\ g'(1)=-1$<br/>ให้ $H(x)=\\sqrt{f(g(x))+g(f(x))}$ จงหา $H'(0)$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เขียน $H$ ในรูปรากที่สอง",
+    "body": "<p>ให้ $w(x)=f(g(x))+g(f(x))$ จะได้ $H=\\sqrt w$ ใช้ลูกโซ่ $\\left(\\sqrt w\\right)'=\\dfrac{w'}{2\\sqrt w}$</p>\n$$H'(x)=\\frac{w'(x)}{2\\sqrt{w(x)}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หา $w'(x)$ ด้วยกฎลูกโซ่",
+    "body": "<p>ดิฟ $f(g(x))$ ได้ $f'(g(x))\\,g'(x)$ และดิฟ $g(f(x))$ ได้ $g'(f(x))\\,f'(x)$</p>\n$$w'(x)=f'(g(x))\\,g'(x)+g'(f(x))\\,f'(x)$$\n$$H'(x)=\\frac{f'(g(x))\\,g'(x)+g'(f(x))\\,f'(x)}{2\\sqrt{f(g(x))+g(f(x))}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาค่าชั้นในที่ $x=0$",
+    "body": "<p>จากตาราง $g(0)=1$ และ $f(0)=1$ ดังนั้น $f(g(0))=f(1)$ และ $g(f(0))=g(1)$</p>\n$$g(0)=1,\\quad f(0)=1$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทนค่าจากตาราง",
+    "body": "<p>ใช้ $f'(1)=4,\\ g'(0)=5,\\ g'(1)=-1,\\ f'(0)=-1,\\ f(1)=\\pi,\\ g(1)=2\\pi$</p>\n$$H'(0)=\\frac{f'(1)\\cdot g'(0)+g'(1)\\cdot f'(0)}{2\\sqrt{f(1)+g(1)}}$$\n$$=\\frac{4(5)+(-1)(-1)}{2\\sqrt{\\pi+2\\pi}}$$\n$$=\\frac{20+1}{2\\sqrt{3\\pi}}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$H'(0)=\\frac{21}{2\\sqrt{3\\pi}}$$\n<p class=\"alt\">(ตัวเลขในตารางมาจากสไลด์ ควรเปิดสไลด์เช็กอีกรอบ)</p>",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"tag\">จากสไลด์ MTH11101 ตามที่ NotebookLM อ่านได้ ควรเปิดสไลด์เช็กตัวเลขในตารางอีกรอบ</p>"
+  ],
+  "answer_line": ""
+ },
+ {
+  "idx": 1,
+  "title": "<span class=\"tag\">กฎลูกโซ่หลายชั้น</span>A2. $y=e^u,\\ u=\\tan v,\\ v=\\cot3t+\\sin3t,\\ t=\\ln(2s+1)^2,\\ s=\\sqrt{5x+3}$ จงหา $\\dfrac{dy}{dx}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เขียนกฎลูกโซ่หลายชั้น",
+    "body": "<p>ตัวแปรเรียงเป็นสายโซ่ $y\\to u\\to v\\to t\\to s\\to x$ จึงคูณอนุพันธ์ทีละชั้น</p>\n$$\\frac{dy}{dx}=\\frac{dy}{du}\\cdot\\frac{du}{dv}\\cdot\\frac{dv}{dt}\\cdot\\frac{dt}{ds}\\cdot\\frac{ds}{dx}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ดิฟชั้น $y$ และ $u$",
+    "body": "<p>$(e^u)'=e^u$ และ $(\\tan v)'=\\sec^2v$</p>\n$$\\frac{dy}{du}=e^u,\\qquad\\frac{du}{dv}=\\sec^2v$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ดิฟชั้น $v$",
+    "body": "<p>$v=\\cot3t+\\sin3t$ ใช้ $(\\cot w)'=-\\csc^2w\\cdot w'$ และ $(\\sin w)'=\\cos w\\cdot w'$ โดย $w=3t$ ซึ่ง $w'=3$</p>\n$$\\frac{dv}{dt}=-3\\csc^23t+3\\cos3t$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ดิฟชั้น $t$",
+    "body": "<p>ใช้สมบัติ $\\ln a^2=2\\ln a$ ก่อน แล้วดิฟ $\\ln(2s+1)$ ได้ $\\dfrac{2}{2s+1}$</p>\n$$t=\\ln(2s+1)^2=2\\ln(2s+1)$$\n$$\\frac{dt}{ds}=2\\cdot\\frac{2}{2s+1}=\\frac{4}{2s+1}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: ดิฟชั้น $s$",
+    "body": "<p>$s=(5x+3)^{1/2}$ ใช้กฎกำลังและลูกโซ่ $\\frac12(5x+3)^{-1/2}\\cdot5$</p>\n$$\\frac{ds}{dx}=\\frac{5}{2\\sqrt{5x+3}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 6: คูณทุกชั้นเข้าด้วยกัน",
+    "body": "<p>นำผลของทั้ง 5 ชั้นมาคูณกัน</p>\n$$\\frac{dy}{dx}=e^u\\cdot\\sec^2v\\cdot\\left(-3\\csc^23t+3\\cos3t\\right)\\cdot\\frac{4}{2s+1}\\cdot\\frac{5}{2\\sqrt{5x+3}}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\frac{dy}{dx}=e^u\\sec^2v\\,\\left(-3\\csc^23t+3\\cos3t\\right)\\cdot\\frac{4}{2s+1}\\cdot\\frac{5}{2\\sqrt{5x+3}}$$\n<p class=\"alt\">(ถ้าต้องการให้เป็นฟังก์ชันของ $x$ ล้วน ให้แทน $s=\\sqrt{5x+3}$, $t=\\ln(2s+1)^2$, $v=\\cot3t+\\sin3t$, $u=\\tan v$ ย้อนกลับตามลำดับ)</p>",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 2,
+  "title": "<span class=\"tag\">Implicit</span>A3. $5x^3+3xy^2+y^2=11$ จงหา $\\dfrac{dx}{dy}$ (ดิฟเทียบ $y$)",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตั้งต้นว่าดิฟเทียบ $y$",
+    "body": "<p>โจทย์ถาม $\\frac{dx}{dy}$ จึงมอง $x$ เป็นฟังก์ชันของ $y$ ทุกครั้งที่ดิฟ $x$ ให้คูณ $x'=\\frac{dx}{dy}$ ส่วนดิฟ $y$ ได้ตรงๆ</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $y$",
+    "body": "<p>เทอม $3xy^2$ ใช้กฎผลคูณ $(x\\cdot y^2)'=x'y^2+x\\cdot2y$</p>\n$$\\frac{d}{dy}\\left(5x^3\\right)+\\frac{d}{dy}\\left(3xy^2\\right)+\\frac{d}{dy}\\left(y^2\\right)=\\frac{d}{dy}(11)$$\n$$15x^2x'+3\\left(x'y^2+x\\cdot2y\\right)+2y=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: กระจายวงเล็บ",
+    "body": "<p>คูณ $3$ เข้าไปในวงเล็บ</p>\n$$15x^2x'+3y^2x'+6xy+2y=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ย้ายเทอมที่ไม่มี $x'$ ไปอีกข้างและแยกตัวประกอบ",
+    "body": "<p>รวมเทอมที่มี $x'$ ไว้ซ้าย แล้วดึง $x'$ ออกเป็นตัวร่วม</p>\n$$15x^2x'+3y^2x'=-6xy-2y$$\n$$\\left(15x^2+3y^2\\right)x'=-6xy-2y$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: หาร",
+    "body": "<p>หารทั้งสองข้างด้วย $15x^2+3y^2$</p>\n$$x'=\\frac{-6xy-2y}{15x^2+3y^2}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\frac{dx}{dy}=\\frac{-6xy-2y}{15x^2+3y^2}$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 3,
+  "title": "<span class=\"tag\">Improper</span>A4. $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{x^3}$ ลู่เข้าหรือลู่ออก",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาจุดที่มีปัญหา",
+    "body": "<p>ช่วง $(-\\infty,\\infty)$ มีปัญหาที่ปลายอนันต์ทั้งสองด้าน และมีปัญหาที่ $x=0$ ซึ่งตัวส่วน $x^3=0$ อยู่ภายในช่วง</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ผ่าช่วงออกเป็นก้อนย่อย",
+    "body": "<p>ผ่าที่ $-1,0,1$ ให้แต่ละก้อนมีปัญหาที่ปลายเดียว อินทิกรัลจะลู่เข้าก็ต่อเมื่อ<b>ทุกก้อน</b>ลู่เข้า</p>\n$$\\int_{-\\infty}^{\\infty}\\frac{dx}{x^3}=\\int_{-\\infty}^{-1}+\\int_{-1}^{0}+\\int_{0}^{1}+\\int_{1}^{\\infty}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: เลือกก้อนที่น่าสงสัยมาเขียนเป็นลิมิต",
+    "body": "<p>ก้อน $\\int_{-1}^{0}$ มีปัญหาที่ขอบบน $x=0$ จึงใช้ $t\\to0^-$</p>\n$$\\int_{-1}^{0}\\frac{dx}{x^3}=\\lim_{t\\to0^-}\\int_{-1}^{t}x^{-3}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาอินทิกรัลไม่จำกัดเขต",
+    "body": "<p>กฎกำลัง: $\\int x^{-3}dx=\\dfrac{x^{-2}}{-2}$</p>\n$$\\int x^{-3}\\,dx=-\\frac{1}{2x^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: แทนขอบเขต",
+    "body": "<p>แทน $x=t$ และ $x=-1$</p>\n$$\\Big[-\\frac{1}{2x^2}\\Big]_{-1}^{t}=-\\frac{1}{2t^2}-\\left(-\\frac{1}{2(-1)^2}\\right)$$\n$$=-\\frac{1}{2t^2}+\\frac12$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 6: หาค่าลิมิต",
+    "body": "<p>เมื่อ $t\\to0^-$ จะได้ $t^2\\to0^+$ ดังนั้น $\\frac{1}{2t^2}\\to+\\infty$</p>\n$$\\lim_{t\\to0^-}\\left(-\\frac{1}{2t^2}+\\frac12\\right)=-\\infty$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\int_{-\\infty}^{\\infty}\\frac{dx}{x^3}\\ \\text{ลู่ออก}$$\n<p class=\"alt\">(มีก้อนหนึ่งลู่ออก จึงลู่ออกทั้งข้อ แม้กราฟจะสมมาตรก็ห้ามตัดกันเป็น $0$)</p>",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 4,
+  "title": "<span class=\"tag\">โลปิตาล</span>B1. $\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-x}{x^3}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตรวจรูปของลิมิต",
+    "body": "<p>แทน $x=0$ ได้ $\\frac{\\tan0-0}{0}=\\frac00$ จึงใช้กฎโลปิตาลได้</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใช้โลปิตาล",
+    "body": "<p>ดิฟเศษและส่วนแยกกัน: $(\\tan x-x)'=\\sec^2x-1$ และ $(x^3)'=3x^2$</p>\n$$\\lim_{x\\to0}\\frac{\\tan x-x}{x^3}=\\lim_{x\\to0}\\frac{\\sec^2x-1}{3x^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ใช้เอกลักษณ์ตรีโกณ",
+    "body": "<p>$\\sec^2x-1=\\tan^2x$ (เพราะ $1+\\tan^2x=\\sec^2x$)</p>\n$$=\\lim_{x\\to0}\\frac{\\tan^2x}{3x^2}$$\n$$=\\frac13\\left(\\lim_{x\\to0}\\frac{\\tan x}{x}\\right)^2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทนค่าลิมิตมาตรฐาน",
+    "body": "<p>$\\displaystyle\\lim_{x\\to0}\\frac{\\tan x}{x}=1$</p>\n$$=\\frac13(1)^2=\\frac13$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\frac13$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 5,
+  "title": "<span class=\"tag\">$1^\\infty$</span>B2. $\\displaystyle\\lim_{x\\to0^+}(1+2x)^{1/x}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตรวจรูปและตั้งตัวแปร",
+    "body": "<p>แทน $x\\to0^+$ ได้ $1^\\infty$ ซึ่งเป็นรูปที่ต้องใช้ $\\ln$ ให้ $y=(1+2x)^{1/x}$</p>\n$$y=(1+2x)^{1/x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใส่ $\\ln$ ทั้งสองข้าง",
+    "body": "<p>ใช้สมบัติ $\\ln a^b=b\\ln a$ เพื่อดึงเลขชี้กำลังลงมา</p>\n$$\\ln y=\\frac1x\\ln(1+2x)=\\frac{\\ln(1+2x)}{x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ใช้โลปิตาล",
+    "body": "<p>เมื่อ $x\\to0^+$ รูปเป็น $\\frac00$ ดิฟเศษ $\\frac{2}{1+2x}$ และดิฟส่วน $1$</p>\n$$\\lim_{x\\to0^+}\\ln y=\\lim_{x\\to0^+}\\frac{\\frac{2}{1+2x}}{1}=\\frac{2}{1+0}=2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แปลงกลับ",
+    "body": "<p>เพราะ $\\ln y\\to2$ จึงได้ $y\\to e^2$</p>\n$$\\lim_{x\\to0^+}y=e^{2}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$e^2$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 6,
+  "title": "<span class=\"tag\">นิยามอนุพันธ์</span>B3. หา $f'(x)$ ของ $f(x)=2x^2-3x+1$ โดยใช้นิยาม",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เขียนนิยามอนุพันธ์",
+    "body": "<p>ใช้ $f'(x)=\\displaystyle\\lim_{\\Delta x\\to0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}$</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หา $f(x+\\Delta x)$",
+    "body": "<p>แทน $x$ ด้วย $x+\\Delta x$ ใน $f(x)=2x^2-3x+1$</p>\n$$f(x+\\Delta x)=2(x+\\Delta x)^2-3(x+\\Delta x)+1$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: กระจายกำลังสอง",
+    "body": "<p>$(x+\\Delta x)^2=x^2+2x\\Delta x+\\Delta x^2$</p>\n$$f(x+\\Delta x)=2x^2+4x\\Delta x+2\\Delta x^2-3x-3\\Delta x+1$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ลบ $f(x)$",
+    "body": "<p>เทอม $2x^2,\\ -3x,\\ 1$ ตัดกันหมด</p>\n$$f(x+\\Delta x)-f(x)=4x\\Delta x+2\\Delta x^2-3\\Delta x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: แยกตัวประกอบ $\\Delta x$ แล้วตัด",
+    "body": "<p>ดึง $\\Delta x$ ออกจากเศษ แล้วตัดกับตัวส่วน (ทำได้เพราะ $\\Delta x\\ne0$ ขณะหาลิมิต)</p>\n$$f'(x)=\\lim_{\\Delta x\\to0}\\frac{\\Delta x\\,(4x+2\\Delta x-3)}{\\Delta x}$$\n$$=\\lim_{\\Delta x\\to0}(4x+2\\Delta x-3)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 6: แทนค่าลิมิต",
+    "body": "<p>ให้ $\\Delta x\\to0$</p>\n$$f'(x)=4x+0-3=4x-3$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$f'(x)=4x-3$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 7,
+  "title": "<span class=\"tag\">Implicit</span>B4. $x^3+y^3=6xy$ จงหา $\\dfrac{dy}{dx}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ดิฟทั้งสองข้างเทียบ $x$",
+    "body": "<p>ดิฟ $y^3$ ได้ $3y^2y'$ (ลูกโซ่) และดิฟ $6xy$ ด้วยกฎผลคูณได้ $6(y+xy')$</p>\n$$3x^2+3y^2y'=6\\left(y+xy'\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กระจายวงเล็บ",
+    "body": "<p>คูณ $6$ เข้าไป</p>\n$$3x^2+3y^2y'=6y+6xy'$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ย้ายเทอมที่มี $y'$ ไปด้านซ้าย",
+    "body": "<p>ย้าย $6xy'$ ไปซ้าย และย้าย $3x^2$ ไปขวา</p>\n$$3y^2y'-6xy'=6y-3x^2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แยกตัวประกอบ $y'$",
+    "body": "<p>ดึง $y'$ เป็นตัวร่วมของด้านซ้าย</p>\n$$\\left(3y^2-6x\\right)y'=6y-3x^2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: หารและตัดตัวร่วม",
+    "body": "<p>หารทั้งสองข้างด้วย $3y^2-6x$ แล้วหารเศษส่วนด้วย $3$</p>\n$$y'=\\frac{6y-3x^2}{3y^2-6x}=\\frac{2y-x^2}{y^2-2x}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$y'=\\frac{2y-x^2}{y^2-2x}$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 8,
+  "title": "<span class=\"tag\">อันดับ $n$</span>B5. $y=\\ln(x+2)$ จงหา $y^{(n)}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เขียนฟังก์ชันและดิฟหลายครั้ง",
+    "body": "<p>ดิฟทีละครั้ง $\\ln(x+2)\\to(x+2)^{-1}$ แล้วใช้กฎกำลัง</p>\n$$y'=(x+2)^{-1}$$\n$$y''=-(x+2)^{-2}$$\n$$y'''=2(x+2)^{-3}$$\n$$y^{(4)}=-6(x+2)^{-4}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาแบบรูปของเครื่องหมาย",
+    "body": "<p>เครื่องหมายสลับ $+,-,+,-$ โดยเริ่มที่ $+$ ตอน $n=1$ จึงใช้ $(-1)^{n-1}$</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาแบบรูปของตัวเลขหน้า",
+    "body": "<p>ตัวเลขหน้า $1,1,2,6$ คือ $0!,1!,2!,3!$ จึงเป็น $(n-1)!$</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาแบบรูปของตัวส่วน",
+    "body": "<p>กำลังของตัวส่วนคือ $1,2,3,4$ ตรงกับ $n$ จึงได้ $(x+2)^n$</p>",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$y^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{(x+2)^n}$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 9,
+  "title": "<span class=\"tag\">ประมาณค่าเชิงเส้น</span>B6. ประมาณค่า $\\sqrt[3]{8.12}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง",
+    "body": "<p>$8.12$ ใกล้ $8$ ซึ่งหารากที่สามได้พอดี จึงให้ $f(x)=x^{1/3}$, $x_0=8$, $\\Delta x=0.12$ ใช้สูตร $f(x_0+\\Delta x)\\approx f(x_0)+f'(x_0)\\Delta x$</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หา $f(8)$",
+    "body": "<p>รากที่สามของ $8$ คือ $2$</p>\n$$f(8)=8^{1/3}=2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หา $f'(x)$ และ $f'(8)$",
+    "body": "<p>กฎกำลัง $f'(x)=\\frac13x^{-2/3}$ และ $8^{2/3}=(8^{1/3})^2=4$</p>\n$$f'(x)=\\frac13x^{-2/3}$$\n$$f'(8)=\\frac{1}{3\\cdot8^{2/3}}=\\frac{1}{3\\cdot4}=\\frac{1}{12}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทนในสูตรประมาณค่า",
+    "body": "<p>คูณ $f'(8)$ กับ $\\Delta x=0.12$ แล้วบวกกับ $f(8)$</p>\n$$\\sqrt[3]{8.12}\\approx f(8)+f'(8)\\cdot\\Delta x=2+\\frac{1}{12}(0.12)$$\n$$=2+0.01$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\sqrt[3]{8.12}\\approx2.01$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 10,
+  "title": "<span class=\"tag\">$u$-sub</span>B7. $\\displaystyle\\int\\frac{\\sin(\\ln x)}{x}dx$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: กำหนดตัวแปร u",
+    "body": "<p>มี $\\ln x$ อยู่ในไซน์ และ $\\frac1x$ คือดิฟของ $\\ln x$ จึงให้ $u=\\ln x$ ดังนั้น $du=\\frac{dx}{x}$</p>\n$$u=\\ln x,\\qquad du=\\frac{dx}{x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทนค่าในอินทิกรัล",
+    "body": "<p>$\\frac{dx}{x}$ แทนด้วย $du$ และ $\\sin(\\ln x)$ แทนด้วย $\\sin u$</p>\n$$\\int\\frac{\\sin(\\ln x)}{x}\\,dx=\\int\\sin u\\,du$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาอินทิกรัล",
+    "body": "<p>$\\int\\sin u\\,du=-\\cos u+C$</p>\n$$\\int\\sin u\\,du=-\\cos u+C$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทน u กลับ",
+    "body": "<p>แทน $u=\\ln x$</p>\n$$-\\cos u+C=-\\cos(\\ln x)+C$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$-\\cos(\\ln x)+C$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 11,
+  "title": "<span class=\"tag\">by parts</span>B8. $\\displaystyle\\int x^2\\cos x\\,dx$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เลือก u และ dv รอบแรก",
+    "body": "<p>ใช้ by parts $\\int u\\,dv=uv-\\int v\\,du$ เลือก $u=x^2$ (ดิฟแล้วดีกรีลด) และ $dv=\\cos x\\,dx$ ดังนั้น $du=2x\\,dx,\\ v=\\sin x$</p>\n$$\\int x^2\\cos x\\,dx=x^2\\sin x-\\int2x\\sin x\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: เลือก u และ dv รอบสอง",
+    "body": "<p>ก้อน $\\int x\\sin x\\,dx$ ทำ by parts อีกครั้ง ให้ $u=x$, $dv=\\sin x\\,dx$ ดังนั้น $du=dx,\\ v=-\\cos x$</p>\n$$\\int x\\sin x\\,dx=-x\\cos x-\\int(-\\cos x)\\,dx$$\n$$=-x\\cos x+\\int\\cos x\\,dx=-x\\cos x+\\sin x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: รวมผล",
+    "body": "<p>แทนผลรอบสองกลับเข้าไปในรอบแรก ระวังเครื่องหมายลบหน้าวงเล็บ</p>\n$$\\int x^2\\cos x\\,dx=x^2\\sin x-2\\left(-x\\cos x+\\sin x\\right)$$\n$$=x^2\\sin x+2x\\cos x-2\\sin x$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$x^2\\sin x+2x\\cos x-2\\sin x+C$$\n<p class=\"alt\">(วิธีตารางให้ผลเหมือนกัน: ดิฟ $x^2\\to2x\\to2\\to0$ · อินทิเกรต $\\cos x\\to\\sin x\\to-\\cos x\\to-\\sin x$ · เครื่องหมาย $+,-,+$)</p>",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 12,
+  "title": "<span class=\"tag\">หารยาว</span>B9. $\\displaystyle\\int\\frac{x^3+2x}{x^2-4}dx$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตรวจดีกรี",
+    "body": "<p>ดีกรีเศษ $3$ มากกว่าหรือเท่ากับดีกรีส่วน $2$ จึงต้องหารยาวก่อน</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หารยาว",
+    "body": "<p>$x^3+2x\\div(x^2-4)$: ได้ผลหาร $x$ เพราะ $x(x^2-4)=x^3-4x$ แล้วเศษคือ $(x^3+2x)-(x^3-4x)=6x$</p>\n$$\\frac{x^3+2x}{x^2-4}=x+\\frac{6x}{x^2-4}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แยกอินทิกรัล",
+    "body": "<p>อินทิเกรตทีละเทอม</p>\n$$\\int\\frac{x^3+2x}{x^2-4}\\,dx=\\int x\\,dx+\\int\\frac{6x}{x^2-4}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ก้อนที่สองด้วย u-sub",
+    "body": "<p>ให้ $u=x^2-4$ ดังนั้น $du=2x\\,dx$ จึง $6x\\,dx=3\\,du$</p>\n$$\\int\\frac{6x}{x^2-4}\\,dx=3\\int\\frac{du}{u}=3\\ln|u|=3\\ln|x^2-4|$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: รวมผล",
+    "body": "<p>$\\int x\\,dx=\\frac{x^2}{2}$ แล้วบวกก้อนที่สอง</p>\n$$\\int\\frac{x^3+2x}{x^2-4}\\,dx=\\frac{x^2}{2}+3\\ln|x^2-4|+C$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\frac{x^2}{2}+3\\ln|x^2-4|+C$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 13,
+  "title": "<span class=\"tag\">เศษส่วนย่อย</span>B10. $\\displaystyle\\int\\frac{x+1}{x(x^2+1)}dx$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตั้งเศษส่วนย่อย",
+    "body": "<p>ตัวส่วนมีตัวประกอบเชิงเส้น $x$ และกำลังสองที่แยกไม่ได้ $x^2+1$ จึงตั้งรูปนี้</p>\n$$\\frac{x+1}{x(x^2+1)}=\\frac{A}{x}+\\frac{Bx+C}{x^2+1}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: คูณตลอดด้วยตัวส่วน",
+    "body": "<p>คูณทั้งสองข้างด้วย $x(x^2+1)$ แล้วกระจายให้เป็นพหุนาม</p>\n$$x+1=A(x^2+1)+(Bx+C)x$$\n$$x+1=(A+B)x^2+Cx+A$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หา $A,B,C$",
+    "body": "<p>แทน $x=0$ ได้ $A$ แล้วเทียบสัมประสิทธิ์ของ $x^2$ และ $x^1$</p>\n$$x=0:\\ 1=A$$\n$$x^2:\\ 0=A+B\\Rightarrow B=-1$$\n$$x^1:\\ 1=C$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: เขียนอินทิกรัลใหม่",
+    "body": "<p>แทน $A=1,\\ B=-1,\\ C=1$</p>\n$$\\int\\frac{x+1}{x(x^2+1)}\\,dx=\\int\\frac{dx}{x}+\\int\\frac{-x}{x^2+1}\\,dx+\\int\\frac{dx}{x^2+1}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: หาอินทิกรัลทีละก้อน",
+    "body": "<p>ก้อนกลางให้ $u=x^2+1$, $du=2x\\,dx$ ได้ $-\\frac12\\int\\frac{du}{u}$ ส่วนก้อนสุดท้ายใช้สูตร $\\tan^{-1}$</p>\n$$\\int\\frac{dx}{x}=\\ln|x|$$\n$$\\int\\frac{-x}{x^2+1}\\,dx=-\\tfrac12\\ln(x^2+1)$$\n$$\\int\\frac{dx}{x^2+1}=\\tan^{-1}x$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\ln|x|-\\tfrac12\\ln(x^2+1)+\\tan^{-1}x+C$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 14,
+  "title": "<span class=\"tag\">Improper แบบ 1</span>B11. $\\displaystyle\\int_0^\\infty xe^{-x^2}dx$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เปลี่ยนขอบเขตอนันต์เป็นลิมิต",
+    "body": "<p>ขอบบนเป็น $\\infty$ จึงแทนด้วย $t$</p>\n$$\\int_0^\\infty xe^{-x^2}\\,dx=\\lim_{t\\to\\infty}\\int_0^{t}xe^{-x^2}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กำหนดตัวแปร u",
+    "body": "<p>ให้ $u=-x^2$ ดังนั้น $du=-2x\\,dx$ หรือ $x\\,dx=-\\frac12du$</p>\n$$\\int xe^{-x^2}\\,dx=-\\frac12\\int e^u\\,du=-\\frac12e^u=-\\frac12e^{-x^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนขอบเขต",
+    "body": "<p>แทน $x=t$ และ $x=0$ (โดย $e^{0}=1$)</p>\n$$\\Big[-\\tfrac12e^{-x^2}\\Big]_0^{t}=-\\tfrac12e^{-t^2}-\\left(-\\tfrac12e^{0}\\right)$$\n$$=-\\tfrac12e^{-t^2}+\\tfrac12$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาค่าลิมิต",
+    "body": "<p>เมื่อ $t\\to\\infty$ จะได้ $e^{-t^2}\\to0$</p>\n$$\\lim_{t\\to\\infty}\\left(-\\tfrac12e^{-t^2}+\\tfrac12\\right)=0+\\tfrac12$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\frac12\\quad\\text{(ลู่เข้า)}$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 15,
+  "title": "<span class=\"tag\">Improper แบบ 2</span>B12. $\\displaystyle\\int_0^2\\frac{dx}{\\sqrt{2-x}}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาจุดที่มีปัญหา",
+    "body": "<p>ตัวส่วน $\\sqrt{2-x}=0$ เมื่อ $x=2$ ซึ่งเป็นขอบบน จึงใช้ $t\\to2^-$</p>\n$$\\int_0^2\\frac{dx}{\\sqrt{2-x}}=\\lim_{t\\to2^-}\\int_0^{t}(2-x)^{-1/2}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาอินทิกรัลไม่จำกัดเขต",
+    "body": "<p>ให้ $u=2-x$ ดังนั้น $dx=-du$ และ $\\int u^{-1/2}du=2u^{1/2}$</p>\n$$\\int(2-x)^{-1/2}\\,dx=-\\int u^{-1/2}\\,du=-2\\sqrt{u}$$\n$$=-2\\sqrt{2-x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนขอบเขต",
+    "body": "<p>แทน $x=t$ และ $x=0$</p>\n$$\\Big[-2\\sqrt{2-x}\\Big]_0^{t}=-2\\sqrt{2-t}-\\left(-2\\sqrt{2}\\right)$$\n$$=-2\\sqrt{2-t}+2\\sqrt2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาค่าลิมิต",
+    "body": "<p>เมื่อ $t\\to2^-$ จะได้ $\\sqrt{2-t}\\to0$</p>\n$$\\lim_{t\\to2^-}\\left(-2\\sqrt{2-t}+2\\sqrt2\\right)=0+2\\sqrt2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$2\\sqrt2\\quad\\text{(ลู่เข้า)}$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 16,
+  "title": "<span class=\"tag\">Improper ผ่าช่วง</span>B13. $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{1+x^2}$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ผ่าช่วงที่จุดใดจุดหนึ่ง",
+    "body": "<p>ทั้งสองขอบเป็นอนันต์ จึงผ่าที่ $0$ แล้วทำแต่ละก้อนให้มีปัญหาที่ปลายเดียว</p>\n$$\\int_{-\\infty}^{\\infty}\\frac{dx}{1+x^2}=\\int_{-\\infty}^{0}\\frac{dx}{1+x^2}+\\int_{0}^{\\infty}\\frac{dx}{1+x^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: เขียนเป็นลิมิต",
+    "body": "<p>แทนอนันต์ด้วย $t_1$ และ $t_2$</p>\n$$=\\lim_{t_1\\to-\\infty}\\int_{t_1}^{0}\\frac{dx}{1+x^2}+\\lim_{t_2\\to\\infty}\\int_0^{t_2}\\frac{dx}{1+x^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาอินทิกรัลและแทนขอบเขต",
+    "body": "<p>$\\int\\frac{dx}{1+x^2}=\\tan^{-1}x$</p>\n$$=\\lim_{t_1\\to-\\infty}\\Big[\\tan^{-1}x\\Big]_{t_1}^{0}+\\lim_{t_2\\to\\infty}\\Big[\\tan^{-1}x\\Big]_0^{t_2}$$\n$$=\\lim_{t_1\\to-\\infty}\\left(\\tan^{-1}0-\\tan^{-1}t_1\\right)+\\lim_{t_2\\to\\infty}\\left(\\tan^{-1}t_2-\\tan^{-1}0\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาค่าลิมิต",
+    "body": "<p>$\\tan^{-1}0=0$, $\\tan^{-1}t\\to\\frac\\pi2$ เมื่อ $t\\to\\infty$ และ $\\to-\\frac\\pi2$ เมื่อ $t\\to-\\infty$</p>\n$$=\\left(0-\\left(-\\tfrac\\pi2\\right)\\right)+\\left(\\tfrac\\pi2-0\\right)=\\tfrac\\pi2+\\tfrac\\pi2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\pi\\quad\\text{(ลู่เข้า)}$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 17,
+  "title": "<span class=\"tag\">Polar</span>B14. แปลง $r=6\\sin\\theta$ เป็นพิกัดฉาก และบอกว่าเป็นกราฟอะไร",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: คูณ $r$ ทั้งสองข้าง",
+    "body": "<p>เพื่อให้เกิด $r\\sin\\theta$ และ $r^2$ ซึ่งแปลงเป็น $y$ และ $x^2+y^2$ ได้</p>\n$$r^2=6r\\sin\\theta$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทนด้วยพิกัดฉาก",
+    "body": "<p>ใช้ $r^2=x^2+y^2$ และ $r\\sin\\theta=y$</p>\n$$x^2+y^2=6y$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ย้ายข้างแล้วทำให้เป็นกำลังสองสมบูรณ์",
+    "body": "<p>ย้าย $6y$ มาซ้าย แล้วบวก $9$ ทั้งสองข้างเพื่อให้ $y^2-6y+9=(y-3)^2$</p>\n$$x^2+y^2-6y=0$$\n$$x^2+y^2-6y+9=9$$\n$$x^2+(y-3)^2=9$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: อ่านค่าจากรูปมาตรฐานของวงกลม",
+    "body": "<p>รูป $(x-h)^2+(y-k)^2=R^2$ มีจุดศูนย์กลาง $(h,k)$ รัศมี $R$</p>\n$$(h,k)=(0,3),\\qquad R=\\sqrt9=3$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$x^2+(y-3)^2=9$$\n<p class=\"alt\">(เป็นวงกลมจุดศูนย์กลาง $(0,3)$ รัศมี $3$)</p>",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ },
+ {
+  "idx": 18,
+  "title": "<span class=\"tag\">Polar จุดตัด</span>B15. หาจุดตัดทั้งหมดของ $r=2\\sin\\theta$ และ $r=2\\cos\\theta$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตั้งสมการ $r_1=r_2$",
+    "body": "<p>หาจุดตัดที่มุมเดียวกันก่อน</p>\n$$2\\sin\\theta=2\\cos\\theta$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แก้สมการ",
+    "body": "<p>หารทั้งสองข้างด้วย $2\\cos\\theta$ (ที่ $\\cos\\theta\\ne0$)</p>\n$$\\tan\\theta=1\\ \\Rightarrow\\ \\theta=\\frac\\pi4$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หา r",
+    "body": "<p>แทน $\\theta=\\frac\\pi4$ ลงใน $r=2\\sin\\theta$</p>\n$$r=2\\sin\\frac\\pi4=2\\cdot\\frac{\\sqrt2}{2}=\\sqrt2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ตรวจคำตอบอีกมุมหนึ่ง",
+    "body": "<p>$\\theta=\\frac{5\\pi}{4}$ ก็แก้ $\\tan\\theta=1$ ได้ แต่ให้ $r=2\\sin\\frac{5\\pi}4=-\\sqrt2$ ซึ่งเป็นจุดเดียวกับ $(\\sqrt2,\\frac\\pi4)$ จึงไม่นับเป็นจุดใหม่</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: ตรวจจุดกำเนิด (ขั้ว)",
+    "body": "<p>$r=2\\sin\\theta$ เป็น $0$ ที่ $\\theta=0$ และ $r=2\\cos\\theta$ เป็น $0$ ที่ $\\theta=\\frac\\pi2$ ทั้งสองกราฟจึงผ่านจุดกำเนิด</p>\n$$2\\sin\\theta=0\\Rightarrow\\theta=0,\\qquad2\\cos\\theta=0\\Rightarrow\\theta=\\tfrac\\pi2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\left(\\sqrt2,\\ \\tfrac\\pi4\\right)\\ \\text{และจุดกำเนิด }(0,0)$$",
+    "final": true
+   }
+  ],
+  "extras": [],
+  "answer_line": ""
+ }
+]

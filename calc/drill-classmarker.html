@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ฝึกทำ · ClassMarker + ข้อเขียน</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],strict:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  main{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 16px}
+  body{line-height:1.95;font-size:17px;margin:0}
+
+  .drill{scroll-margin-top:4.5rem}
+  .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
+  .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
+  .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
+  .drill .mine{width:100%;box-sizing:border-box;border:1px dashed var(--line,#ccc);border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 12px;margin:4px 0 8px;resize:vertical}
+  .lv{border:1px solid var(--line,#ddd);border-radius:10px;margin:6px 0;padding:2px 12px}
+  .lv>summary{cursor:pointer;font-weight:600;padding:6px 0;color:var(--accent,#2f6fde)}
+  .lv .lvb{padding:2px 0 8px}
+  .lv.l1{border-left:4px solid #38bdf8}.lv.l2{border-left:4px solid #818cf8}.lv.l3{border-left:4px solid #c084fc}.lv.l4{border-left:4px solid #f59e0b}.lv.l5{border-left:4px solid var(--ok,#1a7f4b)}
+  .stp{margin:6px 0}.stp>summary{cursor:pointer;color:var(--muted,#5b6370)}
+  .after{margin-top:12px;padding-top:8px;border-top:1px dashed var(--line,#ddd)}
+  .prac{background:var(--accentbg,rgba(47,111,222,.08));border-radius:10px;padding:8px 14px;margin-top:8px}
+  .alt{color:var(--muted,#5b6370);font-size:.92rem}
+  .tip{color:var(--muted,#5b6370)}
+  .progress{position:sticky;top:3.2rem;z-index:5;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:999px;padding:4px 14px;display:inline-block;font-size:.9rem;margin:0 0 12px}
+  .katex-display{overflow-x:auto;overflow-y:hidden}
+  @media print{details{display:block}details>*{display:block}.mine{display:none}}
+</style>
+<link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script>
+</head>
+<body>
+<main>
+<h1>ฝึกทำ · ClassMarker + ข้อเขียน (42 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="classmarker-vs-written.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
+<article class="q drill" id="p1" data-idx="0">
+<h3><span class="num">1</span> C1. $\displaystyle\int3x^{1/3}(x^3+2)^2dx$ <span class="src">สไลด์ 6 · กระจายก่อน</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-0"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลไม่จำกัดเขต $\int3x^{1/3}(x^3+2)^2dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของฟังก์ชันนี้ในรูปผลรวมของกำลังของ $x$ บวก $C$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กระจายกำลังสองของทวินามได้ด้วย $(a+b)^2=a^2+2ab+b^2$</li><li>กฎเลขชี้กำลัง $x^a\cdot x^b=x^{a+b}$ และกฎกำลัง $\int x^n\,dx=\frac{x^{n+1}}{n+1}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ลองดูว่าถ้าตั้ง $u=x^3+2$ แล้ว $du$ ที่ได้จะเข้ากับ $x^{1/3}$ ที่เหลืออยู่ได้ไหม?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อ $u$-substitution ใช้ไม่ได้ ให้กระจายวงเล็บให้เป็นผลบวกของเทอมกำลังก่อน แล้วอินทิเกรตทีละเทอมด้วยกฎกำลัง อย่าลืมบวกเลขชี้กำลังเมื่อคูณ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int 4x^{1/3}(x+1)^2\,dx$</p><p><b>สาธิต:</b> กระจาย $(x+1)^2=x^2+2x+1$ แล้วคูณ $4x^{1/3}$ จะได้ $4x^{7/3}+8x^{4/3}+4x^{1/3}$ จากนั้นใช้กฎกำลังกับแต่ละเทอม เช่น $\int4x^{7/3}dx=4\cdot\frac{x^{10/3}}{10/3}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจาย $(x^3+2)^2$</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$ ด้วย $a=x^3,\ b=2$</p>
+$$(x^3+2)^2=x^6+4x^3+4$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณ $3x^{1/3}$ เข้าไปทีละเทอม</div><p>ใช้กฎเลขชี้กำลัง $x^a\cdot x^b=x^{a+b}$: $\frac13+6=\frac{19}{3}$, $\frac13+3=\frac{10}{3}$</p>
+$$3x^{1/3}(x^6+4x^3+4)=3x^{19/3}+12x^{10/3}+12x^{1/3}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: อินทิเกรตทีละเทอมด้วยกฎกำลัง</div><p>$\int x^n\,dx=\frac{x^{n+1}}{n+1}$ โดยเลขชี้กำลังใหม่คือ $\frac{22}{3},\ \frac{13}{3},\ \frac43$</p>
+$$\int=3\cdot\frac{x^{22/3}}{22/3}+12\cdot\frac{x^{13/3}}{13/3}+12\cdot\frac{x^{4/3}}{4/3}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณสัมประสิทธิ์</div><p>หารด้วยเศษส่วน คือคูณด้วยส่วนกลับ</p>
+$$3\cdot\frac{3}{22}=\frac{9}{22},\qquad12\cdot\frac{3}{13}=\frac{36}{13},\qquad12\cdot\frac34=9$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจาย $(x^3+2)^2$</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$ ด้วย $a=x^3,\ b=2$</p>
+$$(x^3+2)^2=x^6+4x^3+4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณ $3x^{1/3}$ เข้าไปทีละเทอม</div><p>ใช้กฎเลขชี้กำลัง $x^a\cdot x^b=x^{a+b}$: $\frac13+6=\frac{19}{3}$, $\frac13+3=\frac{10}{3}$</p>
+$$3x^{1/3}(x^6+4x^3+4)=3x^{19/3}+12x^{10/3}+12x^{1/3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: อินทิเกรตทีละเทอมด้วยกฎกำลัง</div><p>$\int x^n\,dx=\frac{x^{n+1}}{n+1}$ โดยเลขชี้กำลังใหม่คือ $\frac{22}{3},\ \frac{13}{3},\ \frac43$</p>
+$$\int=3\cdot\frac{x^{22/3}}{22/3}+12\cdot\frac{x^{13/3}}{13/3}+12\cdot\frac{x^{4/3}}{4/3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณสัมประสิทธิ์</div><p>หารด้วยเศษส่วน คือคูณด้วยส่วนกลับ</p>
+$$3\cdot\frac{3}{22}=\frac{9}{22},\qquad12\cdot\frac{3}{13}=\frac{36}{13},\qquad12\cdot\frac34=9$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{9}{22}x^{22/3}+\frac{36}{13}x^{13/3}+9x^{4/3}+C$$
+<p class="alt">(ข้อนี้ใช้ $u=x^3+2$ ไม่ได้ เพราะ $du=3x^2dx$ แต่ในโจทย์เป็น $x^{1/3}$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: คูณกำลังเดียวกันแล้วเอาเลขชี้กำลังคูณกัน แทนที่จะบวก</li><li>คำนวณผิด: บวกเศษส่วนเลขชี้กำลังผิด หรือลืมหารด้วยเลขชี้กำลังใหม่</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ถ้า $u$-sub ไม่เข้ากัน ให้กระจายพหุนามก่อน</li><li>คูณกำลังเดียวกันให้บวกเลขชี้กำลัง</li><li>อินทิเกรตทีละเทอมด้วยกฎกำลัง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int2x^{1/2}(x^2+3)^2\,dx$</p><details><summary>ใบ้</summary><p>กระจาย $(x^2+3)^2$ ก่อน แล้วคูณ $2x^{1/2}$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{4}{11}x^{11/2}+\frac{24}{7}x^{7/2}+12x^{3/2}+C$</p><p class="alt">$(x^2+3)^2=x^4+6x^2+9$ คูณ $2x^{1/2}$ ได้ $2x^{9/2}+12x^{5/2}+18x^{1/2}$<br>อินทิเกรตทีละเทอม: $\frac{2x^{11/2}}{11/2}+\frac{12x^{7/2}}{7/2}+\frac{18x^{3/2}}{3/2}$</p></details></div>
+</div></article>
+<article class="q drill" id="p2" data-idx="1">
+<h3><span class="num">2</span> C2. $\displaystyle\int(e^x+1)^2dx$ <span class="src">สไลด์ 7 · กระจายก่อน</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-1"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int(e^x+1)^2dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของฟังก์ชันนี้</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(a+b)^2=a^2+2ab+b^2$ และ $(e^x)^2=e^{2x}$</li><li>$\int e^{kx}dx=\frac1ke^{kx}+C$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้าไม่มีสูตรอินทิกรัลของ $(e^x+1)^2$ โดยตรง จะทำให้มันอยู่ในรูปที่อินทิเกรตทีละเทอมได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>กระจายกำลังสองของผลบวกก่อน แล้วอินทิเกรตแต่ละเทอม โดยเทอมที่มี $e^{kx}$ ต้องหารด้วย $k$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int(e^{x}-2)^2\,dx$</p><p><b>สาธิต:</b> กระจาย $(e^x-2)^2=e^{2x}-4e^x+4$ จากนั้น $\int e^{2x}dx=\frac12e^{2x}$ และ $\int e^xdx=e^x$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจายกำลังสอง</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$ ด้วย $a=e^x,\ b=1$ และ $(e^x)^2=e^{2x}$</p>
+$$(e^x+1)^2=e^{2x}+2e^x+1$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: อินทิเกรตทีละเทอม</div><p>$\int e^{2x}dx=\frac12e^{2x}$, $\int e^x dx=e^x$, $\int1\,dx=x$</p>
+$$\int(e^x+1)^2\,dx=\int e^{2x}\,dx+2\int e^x\,dx+\int1\,dx$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กระจายกำลังสอง</div><p>ใช้ $(a+b)^2=a^2+2ab+b^2$ ด้วย $a=e^x,\ b=1$ และ $(e^x)^2=e^{2x}$</p>
+$$(e^x+1)^2=e^{2x}+2e^x+1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: อินทิเกรตทีละเทอม</div><p>$\int e^{2x}dx=\frac12e^{2x}$, $\int e^x dx=e^x$, $\int1\,dx=x$</p>
+$$\int(e^x+1)^2\,dx=\int e^{2x}\,dx+2\int e^x\,dx+\int1\,dx$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac12e^{2x}+2e^x+x+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: คิดว่า $\int f^2dx=\frac{(\int f\,dx)^3}{3}$ ซึ่งไม่เป็นจริง</li><li>คำนวณผิด: ลืมหาร $2$ ตอนอินทิเกรต $e^{2x}$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>กำลังสองของผลบวกต้องกระจายก่อน</li><li>$\int e^{kx}dx$ ต้องหารด้วย $k$</li><li>อย่าลืมบวก $C$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int(e^{2x}+3)^2\,dx$</p><details><summary>ใบ้</summary><p>กระจายกำลังสอง แล้วระวังตัวหาร $4$ และ $2$ ของเทอมเลขชี้กำลัง</p></details><details><summary>ดูคำตอบ</summary><p>$\frac14e^{4x}+3e^{2x}+9x+C$</p><p class="alt">$(e^{2x}+3)^2=e^{4x}+6e^{2x}+9$<br>$\int e^{4x}dx=\frac14e^{4x}$, $\int6e^{2x}dx=3e^{2x}$, $\int9\,dx=9x$</p></details></div>
+</div></article>
+<article class="q drill" id="p3" data-idx="2">
+<h3><span class="num">3</span> C3. $\displaystyle\int\frac{x+1}{x^2+2x+5}dx$ <span class="src">สไลด์ 8</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-2"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{x+1}{x^2+2x+5}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ถ้าเศษเป็นผลคูณคงที่ของอนุพันธ์ตัวส่วน จะได้ $\int\frac{du}{u}=\ln|u|$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ลองดิฟตัวส่วน แล้วดูว่าเกี่ยวข้องกับเศษอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ถ้าอนุพันธ์ของตัวส่วนเป็นค่าคงที่คูณกับเศษ ให้ตั้ง $u$ เป็นตัวส่วน แล้วปรับค่าคงที่ที่ $du$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{x}{x^2+4}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=x^2+4$ จะได้ $du=2x\,dx$ ดังนั้น $x\,dx=\frac12du$ แล้วอินทิกรัลกลายเป็น $\frac12\int\frac{du}{u}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ดิฟตัวส่วนได้ $2x+2=2(x+1)$ ซึ่งเป็นสองเท่าของเศษ จึงให้ $u=x^2+2x+5$</p>
+$$u=x^2+2x+5,\qquad du=(2x+2)\,dx=2(x+1)\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $2$ เพื่อให้ได้ส่วนที่เป็นเศษของโจทย์</p>
+$$(x+1)\,dx=\tfrac12\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>ตัวส่วนเป็น $u$ และเศษ $(x+1)dx$ เป็น $\frac12du$</p>
+$$\int\frac{x+1}{x^2+2x+5}\,dx=\frac12\int\frac{du}{u}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$ และ $x^2+2x+5=(x+1)^2+4\gt0$ เสมอ จึงไม่ต้องใส่ค่าสัมบูรณ์</p>
+$$=\frac12\ln|u|=\frac12\ln\left(x^2+2x+5\right)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ดิฟตัวส่วนได้ $2x+2=2(x+1)$ ซึ่งเป็นสองเท่าของเศษ จึงให้ $u=x^2+2x+5$</p>
+$$u=x^2+2x+5,\qquad du=(2x+2)\,dx=2(x+1)\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $2$ เพื่อให้ได้ส่วนที่เป็นเศษของโจทย์</p>
+$$(x+1)\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>ตัวส่วนเป็น $u$ และเศษ $(x+1)dx$ เป็น $\frac12du$</p>
+$$\int\frac{x+1}{x^2+2x+5}\,dx=\frac12\int\frac{du}{u}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$ และ $x^2+2x+5=(x+1)^2+4\gt0$ เสมอ จึงไม่ต้องใส่ค่าสัมบูรณ์</p>
+$$=\frac12\ln|u|=\frac12\ln\left(x^2+2x+5\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac12\ln(x^2+2x+5)+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมหารด้วย $2$ จาก $du=2(x+1)dx$</li><li>ใช้สูตรผิด: ไปใช้สูตร $\tan^{-1}$ ทั้งที่เศษเป็นอนุพันธ์ของตัวส่วน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เศษเป็นอนุพันธ์ของตัวส่วน แปลว่าผลเป็น $\ln$</li><li>ปรับค่าคงที่ให้ $du$ ตรงกับเศษ</li><li>ตัวส่วนเป็นบวกเสมอจึงไม่ต้องใส่ค่าสัมบูรณ์</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{x-2}{x^2-4x+10}\,dx$</p><details><summary>ใบ้</summary><p>ดิฟตัวส่วนแล้วเทียบกับเศษ</p></details><details><summary>ดูคำตอบ</summary><p>$\frac12\ln(x^2-4x+10)+C$</p><p class="alt">$u=x^2-4x+10,\ du=2(x-2)dx$<br>จะได้ $\frac12\int\frac{du}{u}=\frac12\ln|u|$ และ $x^2-4x+10=(x-2)^2+6\gt0$</p></details></div>
+</div></article>
+<article class="q drill" id="p4" data-idx="3">
+<h3><span class="num">4</span> C4. $\displaystyle\int\cos^22x\,\sin2x\,dx$ <span class="src">สไลด์ 9</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-3"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\cos^22x\,\sin2x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การแทนค่า $u$ เมื่อมีฟังก์ชันและอนุพันธ์อยู่ด้วยกัน</li><li>กฎลูกโซ่: ดิฟ $\cos2x$ ได้ $-2\sin2x$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ในสองส่วน $\cos^22x$ กับ $\sin2x$ ส่วนไหนเป็นอนุพันธ์ของอีกส่วนหนึ่ง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u$ เป็นฟังก์ชันข้างในของกำลัง แล้วดูว่า $du$ ให้ตัวคูณที่เหลืออยู่พอดีหรือไม่ อย่าลืมตัวคูณคงที่จากกฎลูกโซ่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\sin^2 4x\,\cos4x\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=\sin4x$ จะได้ $du=4\cos4x\,dx$ ดังนั้น $\cos4x\,dx=\frac14du$ แล้วอินทิกรัลเป็น $\frac14\int u^2du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\cos2x$ เพราะดิฟแล้วได้ $\sin2x$ ที่คูณอยู่ (ลูกโซ่: ดิฟ $2x$ ได้ $2$)</p>
+$$u=\cos2x,\qquad du=-2\sin2x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $-2$</p>
+$$\sin2x\,dx=-\tfrac12\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\cos^22x=u^2$</p>
+$$\int\cos^22x\,\sin2x\,dx=-\frac12\int u^2\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^2du=\frac{u^3}{3}$</p>
+$$=-\frac12\cdot\frac{u^3}{3}=-\frac{u^3}{6}$$
+$$=-\frac16\cos^32x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\cos2x$ เพราะดิฟแล้วได้ $\sin2x$ ที่คูณอยู่ (ลูกโซ่: ดิฟ $2x$ ได้ $2$)</p>
+$$u=\cos2x,\qquad du=-2\sin2x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $-2$</p>
+$$\sin2x\,dx=-\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\cos^22x=u^2$</p>
+$$\int\cos^22x\,\sin2x\,dx=-\frac12\int u^2\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^2du=\frac{u^3}{3}$</p>
+$$=-\frac12\cdot\frac{u^3}{3}=-\frac{u^3}{6}$$
+$$=-\frac16\cos^32x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$-\frac16\cos^32x+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมตัวคูณ $2$ จากกฎลูกโซ่</li><li>คำนวณผิด: ลืมเครื่องหมายลบตอนดิฟ $\cos$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตั้ง $u$ เป็นฟังก์ชันข้างในแล้วดู $du$</li><li>ดิฟ $\cos$ ได้ลบ ดิฟ $\sin$ ได้บวก</li><li>กฎกำลัง $\int u^n du$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\sin^23x\,\cos3x\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\sin3x$ แล้วดู $du$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac19\sin^33x+C$</p><p class="alt">$u=\sin3x,\ du=3\cos3x\,dx$<br>$\int u^2\cdot\frac13du=\frac{u^3}{9}$</p></details></div>
+</div></article>
+<article class="q drill" id="p5" data-idx="4">
+<h3><span class="num">5</span> C5. $\displaystyle\int\sin2x\sqrt{1-\cos2x}\,dx$ <span class="src">สไลด์ 10</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-4"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\sin2x\sqrt{1-\cos2x}\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-substitution ให้ $u$ เป็นของข้างในรากที่สอง</li><li>$\int u^{1/2}du=\frac23u^{3/2}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ลองดิฟสิ่งที่อยู่ใต้ราก ได้อะไรที่เหมือนกับตัวคูณอีกตัวหรือไม่?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u$ เป็นนิพจน์ใต้ราก แล้วตรวจว่า $du$ เป็นผลคูณคงที่ของตัวคูณที่เหลือ จากนั้นเขียนรากเป็นกำลัง $\frac12$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\cos2x\sqrt{3+\sin2x}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=3+\sin2x$ จะได้ $du=2\cos2x\,dx$ แล้วอินทิกรัลเป็น $\frac12\int u^{1/2}du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u$ เป็นของที่อยู่ใต้รากที่สอง เพราะดิฟแล้วได้ $\sin2x$ ที่คูณอยู่</p>
+$$u=1-\cos2x,\qquad du=2\sin2x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $2$</p>
+$$\sin2x\,dx=\tfrac12\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\sqrt{1-\cos2x}=u^{1/2}$</p>
+$$\int\sin2x\sqrt{1-\cos2x}\,dx=\frac12\int u^{1/2}\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^{1/2}du=\frac{u^{3/2}}{3/2}=\frac23u^{3/2}$</p>
+$$=\frac12\cdot\frac23u^{3/2}=\frac13u^{3/2}$$
+$$=\frac13(1-\cos2x)^{3/2}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u$ เป็นของที่อยู่ใต้รากที่สอง เพราะดิฟแล้วได้ $\sin2x$ ที่คูณอยู่</p>
+$$u=1-\cos2x,\qquad du=2\sin2x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>หารด้วย $2$</p>
+$$\sin2x\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\sqrt{1-\cos2x}=u^{1/2}$</p>
+$$\int\sin2x\sqrt{1-\cos2x}\,dx=\frac12\int u^{1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^{1/2}du=\frac{u^{3/2}}{3/2}=\frac23u^{3/2}$</p>
+$$=\frac12\cdot\frac23u^{3/2}=\frac13u^{3/2}$$
+$$=\frac13(1-\cos2x)^{3/2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac13(1-\cos2x)^{3/2}+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมหารด้วย $2$ จากกฎลูกโซ่</li><li>ใช้สูตรผิด: อินทิเกรต $u^{1/2}$ โดยไม่หารด้วย $\frac32$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตั้ง $u$ เป็นของใต้ราก</li><li>รากคือกำลัง $\frac12$</li><li>แปลงกลับเป็น $x$ ท้ายสุด</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\sin3x\sqrt{2+\cos3x}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=2+\cos3x$ ระวังเครื่องหมายลบจาก $du$</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac29(2+\cos3x)^{3/2}+C$</p><p class="alt">$u=2+\cos3x,\ du=-3\sin3x\,dx$<br>$-\frac13\int u^{1/2}du=-\frac13\cdot\frac23u^{3/2}$</p></details></div>
+</div></article>
+<article class="q drill" id="p6" data-idx="5">
+<h3><span class="num">6</span> C6. $\displaystyle\int\frac{13\sqrt{1-\ln x}}{9x}dx$ <span class="src">สไลด์ 11</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-5"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-5" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{13\sqrt{1-\ln x}}{9x}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\ln x=\frac1x$</li><li>ค่าคงที่ดึงออกนอกอินทิกรัลได้</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>มีตัวคูณ $\frac1x$ ในโจทย์ ซึ่งเป็นอนุพันธ์ของอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดึงค่าคงที่ออกก่อน แล้วตั้ง $u$ เป็นนิพจน์ที่มี $\ln x$ อยู่ใต้ราก ให้ $\frac{dx}{x}$ แทนด้วย $du$ โดยดูเครื่องหมายด้วย</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{7\sqrt{3+\ln x}}{2x}\,dx$</p><p><b>สาธิต:</b> ดึง $\frac72$ ออก แล้วตั้ง $u=3+\ln x$ จะได้ $du=\frac{dx}{x}$ และเหลือ $\frac72\int u^{1/2}du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงค่าคงที่ออก</div><p>$\frac{13}{9}$ เป็นค่าคงที่ ดึงออกนอกอินทิกรัลได้</p>
+$$\int\frac{13\sqrt{1-\ln x}}{9x}\,dx=\frac{13}{9}\int\sqrt{1-\ln x}\cdot\frac{dx}{x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u=1-\ln x$ เพราะดิฟแล้วได้ $\frac1x$ ที่คูณอยู่</p>
+$$u=1-\ln x,\qquad du=-\frac{1}{x}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\frac{dx}{x}=-du$</p>
+$$\frac{13}{9}\int u^{1/2}(-du)=-\frac{13}{9}\int u^{1/2}\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int u^{1/2}du=\frac23u^{3/2}$ แล้วคูณสัมประสิทธิ์ $\frac{13}{9}\cdot\frac23=\frac{26}{27}$</p>
+$$=-\frac{13}{9}\cdot\frac23u^{3/2}=-\frac{26}{27}u^{3/2}$$
+$$=-\frac{26}{27}(1-\ln x)^{3/2}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงค่าคงที่ออก</div><p>$\frac{13}{9}$ เป็นค่าคงที่ ดึงออกนอกอินทิกรัลได้</p>
+$$\int\frac{13\sqrt{1-\ln x}}{9x}\,dx=\frac{13}{9}\int\sqrt{1-\ln x}\cdot\frac{dx}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u=1-\ln x$ เพราะดิฟแล้วได้ $\frac1x$ ที่คูณอยู่</p>
+$$u=1-\ln x,\qquad du=-\frac{1}{x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\frac{dx}{x}=-du$</p>
+$$\frac{13}{9}\int u^{1/2}(-du)=-\frac{13}{9}\int u^{1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int u^{1/2}du=\frac23u^{3/2}$ แล้วคูณสัมประสิทธิ์ $\frac{13}{9}\cdot\frac23=\frac{26}{27}$</p>
+$$=-\frac{13}{9}\cdot\frac23u^{3/2}=-\frac{26}{27}u^{3/2}$$
+$$=-\frac{26}{27}(1-\ln x)^{3/2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$-\frac{26}{27}(1-\ln x)^{3/2}+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมเครื่องหมายลบจาก $du=-\frac1xdx$</li><li>คำนวณผิด: คูณ $\frac{13}{9}\cdot\frac23$ ผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$\frac{dx}{x}$ คือ $d(\ln x)$</li><li>ระวังเครื่องหมายของ $du$</li><li>คูณสัมประสิทธิ์เศษส่วนให้ครบ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{5\sqrt{2+\ln x}}{4x}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=2+\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac56(2+\ln x)^{3/2}+C$</p><p class="alt">$u=2+\ln x,\ du=\frac{dx}{x}$<br>$\frac54\int u^{1/2}du=\frac54\cdot\frac23u^{3/2}=\frac56u^{3/2}$</p></details></div>
+</div></article>
+<article class="q drill" id="p7" data-idx="6">
+<h3><span class="num">7</span> C7. $\displaystyle\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}dx$ <span class="src">สไลด์ 12</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-6"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-6" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่กับรากที่สอง: $\frac{d}{dx}\sqrt{g}=\frac{g'}{2\sqrt g}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้าดิฟ $\sqrt{3x+8}$ จะมี $\sqrt{3x+8}$ อยู่ที่ส่วนด้วยไหม?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u$ เป็นรากทั้งก้อน แล้วดูว่า $du$ ให้ $\frac{dx}{\text{ราก}}$ ที่อยู่ในโจทย์พอดี โดยมีตัวคูณคงที่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{\cos\sqrt{x}}{\sqrt{x}}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=\sqrt x$ จะได้ $du=\frac{dx}{2\sqrt x}$ ดังนั้น $\frac{dx}{\sqrt x}=2du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\sqrt{3x+8}=(3x+8)^{1/2}$ ดิฟโดยลูกโซ่ได้ $\frac12(3x+8)^{-1/2}\cdot3$</p>
+$$u=\sqrt{3x+8},\qquad du=\frac{3}{2\sqrt{3x+8}}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>ย้ายค่าคงที่ให้ได้ $\frac{dx}{\sqrt{3x+8}}$ ซึ่งตรงกับที่อยู่ในโจทย์</p>
+$$\frac{dx}{\sqrt{3x+8}}=\tfrac23\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$e^{\sqrt{3x+8}}=e^u$</p>
+$$\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}\,dx=\frac23\int e^u\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int e^udu=e^u$</p>
+$$=\frac23e^u=\frac23e^{\sqrt{3x+8}}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\sqrt{3x+8}=(3x+8)^{1/2}$ ดิฟโดยลูกโซ่ได้ $\frac12(3x+8)^{-1/2}\cdot3$</p>
+$$u=\sqrt{3x+8},\qquad du=\frac{3}{2\sqrt{3x+8}}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: จัดรูป $du$</div><p>ย้ายค่าคงที่ให้ได้ $\frac{dx}{\sqrt{3x+8}}$ ซึ่งตรงกับที่อยู่ในโจทย์</p>
+$$\frac{dx}{\sqrt{3x+8}}=\tfrac23\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$e^{\sqrt{3x+8}}=e^u$</p>
+$$\int\frac{e^{\sqrt{3x+8}}}{\sqrt{3x+8}}\,dx=\frac23\int e^u\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int e^udu=e^u$</p>
+$$=\frac23e^u=\frac23e^{\sqrt{3x+8}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac23e^{\sqrt{3x+8}}+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ดิฟรากผิด ลืมตัว $2$ ที่ส่วน</li><li>ลืมเงื่อนไข: ลืมแปลง $u$ กลับเป็น $x$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตั้ง $u$ เป็นรากทั้งก้อน</li><li>ดิฟราก ได้ $\frac{g'}{2\sqrt g}$</li><li>ปรับค่าคงที่จาก $du$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{e^{\sqrt{2x+1}}}{\sqrt{2x+1}}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\sqrt{2x+1}$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{\sqrt{2x+1}}+C$</p><p class="alt">$u=\sqrt{2x+1},\ du=\frac{dx}{\sqrt{2x+1}}$<br>$\int e^udu=e^u$</p></details></div>
+</div></article>
+<article class="q drill" id="p8" data-idx="7">
+<h3><span class="num">8</span> C8. $\displaystyle\int\frac{\cos(5x-1)}{7\sin(5x-1)}dx$ <span class="src">สไลด์ 13</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-7"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-7" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{\cos(5x-1)}{7\sin(5x-1)}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\frac{du}{u}=\ln|u|+C$</li><li>ดึงค่าคงที่ออกนอกอินทิกรัลได้</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เศษกับส่วนเกี่ยวข้องกันอย่างไรเมื่อดิฟส่วน?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดึงค่าคงที่ออก แล้วตั้ง $u$ เป็นตัวส่วน $\sin$ ซึ่งดิฟแล้วเป็น $\cos$ คูณกับตัวคูณจากกฎลูกโซ่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{\cos(2x+3)}{4\sin(2x+3)}\,dx$</p><p><b>สาธิต:</b> ดึง $\frac14$ ออก ตั้ง $u=\sin(2x+3)$ จะได้ $du=2\cos(2x+3)dx$ แล้วเหลือ $\frac14\cdot\frac12\int\frac{du}{u}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงค่าคงที่ออก</div><p>$\frac17$ เป็นค่าคงที่ ดึงออกนอกอินทิกรัลได้</p>
+$$\int\frac{\cos(5x-1)}{7\sin(5x-1)}\,dx=\frac17\int\frac{\cos(5x-1)}{\sin(5x-1)}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u$ เป็นตัวส่วน เพราะดิฟแล้วได้ $\cos(5x-1)$ ที่อยู่ในเศษ (ลูกโซ่ ดิฟ $5x-1$ ได้ $5$)</p>
+$$u=\sin(5x-1),\qquad du=5\cos(5x-1)\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป $du$ แล้วแทนค่า</div><p>$\cos(5x-1)dx=\frac15du$</p>
+$$\frac17\int\frac{\frac15\,du}{u}=\frac17\cdot\frac15\int\frac{du}{u}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$</p>
+$$=\frac{1}{35}\ln|u|=\frac{1}{35}\ln|\sin(5x-1)|$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดึงค่าคงที่ออก</div><p>$\frac17$ เป็นค่าคงที่ ดึงออกนอกอินทิกรัลได้</p>
+$$\int\frac{\cos(5x-1)}{7\sin(5x-1)}\,dx=\frac17\int\frac{\cos(5x-1)}{\sin(5x-1)}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u$ เป็นตัวส่วน เพราะดิฟแล้วได้ $\cos(5x-1)$ ที่อยู่ในเศษ (ลูกโซ่ ดิฟ $5x-1$ ได้ $5$)</p>
+$$u=\sin(5x-1),\qquad du=5\cos(5x-1)\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป $du$ แล้วแทนค่า</div><p>$\cos(5x-1)dx=\frac15du$</p>
+$$\frac17\int\frac{\frac15\,du}{u}=\frac17\cdot\frac15\int\frac{du}{u}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$</p>
+$$=\frac{1}{35}\ln|u|=\frac{1}{35}\ln|\sin(5x-1)|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac1{35}\ln|\sin(5x-1)|+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมตัวคูณ $5$ จากกฎลูกโซ่</li><li>ลืมเงื่อนไข: ลืมค่าสัมบูรณ์ใน $\ln|\cdot|$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เศษคืออนุพันธ์ของส่วน ผลเป็น $\ln$</li><li>ปรับตัวคูณคงที่ทั้งสองตัว</li><li>อย่าลืมค่าสัมบูรณ์ใน $\ln$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{\sin(4x+3)}{5\cos(4x+3)}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\cos(4x+3)$ ระวังเครื่องหมายลบ</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac1{20}\ln|\cos(4x+3)|+C$</p><p class="alt">$u=\cos(4x+3),\ du=-4\sin(4x+3)dx$<br>$\frac15\cdot\left(-\frac14\right)\int\frac{du}{u}=-\frac1{20}\ln|u|$</p></details></div>
+</div></article>
+<article class="q drill" id="p9" data-idx="8">
+<h3><span class="num">9</span> C9. $\displaystyle\int_4^8\frac{2x}{\sqrt{x^2-9}}dx$ <span class="src">สไลด์ 14 · จำกัดเขต</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-8"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-8" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลจำกัดเขต $\int_4^8\frac{2x}{\sqrt{x^2-9}}dx$</li></ul><p><b>ต้องหา:</b> หาค่าของอินทิกรัลจำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-sub กับอินทิกรัลจำกัดเขต ต้องเปลี่ยนขอบเขตเป็นค่าของ $u$ ด้วย</li><li>$\int u^{-1/2}du=2\sqrt u$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อเปลี่ยนตัวแปรเป็น $u$ แล้ว ขอบเขต $x=4$ และ $x=8$ จะกลายเป็นอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u$ เป็นของใต้ราก แล้วเปลี่ยนขอบเขตทั้งสองด้านเป็นค่า $u$ จากนั้นแทนค่าในปฏิยานุพันธ์โดยไม่ต้องกลับเป็น $x$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int_0^3\frac{2x}{\sqrt{x^2+16}}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=x^2+16$ จะได้ $du=2x\,dx$ ขอบเขต $x=0\to u=16$ และ $x=3\to u=25$ แล้วเหลือ $\int_{16}^{25}u^{-1/2}du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2-9$ (ใต้ราก) ดิฟแล้วได้ $2x\,dx$ ซึ่งตรงกับเศษ</p>
+$$u=x^2-9,\qquad du=2x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขตให้เป็นของ $u$</div><p>อินทิกรัลจำกัดเขตต้องเปลี่ยนขอบเขตตาม $u$ ด้วย</p>
+$$x=4\Rightarrow u=4^2-9=7$$
+$$x=8\Rightarrow u=8^2-9=55$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\sqrt{x^2-9}=u^{1/2}$ และ $2x\,dx=du$</p>
+$$\int_4^8\frac{2x}{\sqrt{x^2-9}}\,dx=\int_7^{55}u^{-1/2}\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลและแทนขอบเขต</div><p>กฎกำลัง $\int u^{-1/2}du=\frac{u^{1/2}}{1/2}=2\sqrt u$</p>
+$$=\Big[2\sqrt{u}\Big]_7^{55}=2\sqrt{55}-2\sqrt{7}$$
+$$=2\left(\sqrt{55}-\sqrt7\right)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2-9$ (ใต้ราก) ดิฟแล้วได้ $2x\,dx$ ซึ่งตรงกับเศษ</p>
+$$u=x^2-9,\qquad du=2x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขตให้เป็นของ $u$</div><p>อินทิกรัลจำกัดเขตต้องเปลี่ยนขอบเขตตาม $u$ ด้วย</p>
+$$x=4\Rightarrow u=4^2-9=7$$
+$$x=8\Rightarrow u=8^2-9=55$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าในอินทิกรัล</div><p>$\sqrt{x^2-9}=u^{1/2}$ และ $2x\,dx=du$</p>
+$$\int_4^8\frac{2x}{\sqrt{x^2-9}}\,dx=\int_7^{55}u^{-1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลและแทนขอบเขต</div><p>กฎกำลัง $\int u^{-1/2}du=\frac{u^{1/2}}{1/2}=2\sqrt u$</p>
+$$=\Big[2\sqrt{u}\Big]_7^{55}=2\sqrt{55}-2\sqrt{7}$$
+$$=2\left(\sqrt{55}-\sqrt7\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$2\left(\sqrt{55}-\sqrt7\right)\approx9.54$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมเปลี่ยนขอบเขตแล้วแทน $4,8$ ลงใน $u$</li><li>คำนวณผิด: ยกกำลังสองผิดตอนหาค่า $u$ ที่ขอบ</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เปลี่ยนขอบเขตตามตัวแปรใหม่</li><li>แทนขอบเขตใหม่โดยไม่ต้องย้อนเป็น $x$</li><li>$\int u^{-1/2}du=2\sqrt u$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int_0^{\sqrt5}\frac{2x}{\sqrt{x^2+4}}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=x^2+4$ แล้วเปลี่ยนขอบเขต</p></details><details><summary>ดูคำตอบ</summary><p>$2$</p><p class="alt">$u=x^2+4$: $x=0\to4$, $x=\sqrt5\to9$<br>$\int_4^9u^{-1/2}du=[2\sqrt u]_4^9=2(3-2)=2$</p></details></div>
+</div></article>
+<article class="q drill" id="p10" data-idx="9">
+<h3><span class="num">10</span> C10. $\displaystyle\int x^2\ln x\,dx$ <span class="src">สไลด์ 16 · by parts</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-9"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-9" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x^2\ln x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>สูตร by parts $\int u\,dv=uv-\int v\,du$</li><li>LIATE: เลือก $u$ ตามลำดับ Log, Inverse trig, Algebraic, Trig, Exp</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>จะเลือก $u$ เป็น $\ln x$ หรือ $x^2$ ตามลำดับ LIATE เพราะอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ฟังก์ชันลอการิทึมอินทิเกรตตรง ๆ ยาก แต่ดิฟง่าย จึงให้เป็น $u$ ส่วนกำลังของ $x$ เป็น $dv$ แล้วดูว่าอินทิกรัลใหม่ง่ายลงหรือไม่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int x\ln x\,dx$</p><p><b>สาธิต:</b> ให้ $u=\ln x,\ dv=x\,dx$ ได้ $du=\frac{dx}{x},\ v=\frac{x^2}{2}$ แล้วอินทิกรัลใหม่คือ $\int\frac{x^2}{2}\cdot\frac1x\,dx$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv ด้วย LIATE</div><p>$\ln$ (L) มาก่อน Algebraic (A) จึงให้ $u=\ln x$ และ $dv=x^2dx$</p>
+$$u=\ln x\Rightarrow du=\frac{dx}{x},\qquad dv=x^2\,dx\Rightarrow v=\frac{x^3}{3}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x^2\ln x\,dx=\frac{x^3}{3}\ln x-\int\frac{x^3}{3}\cdot\frac1x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปอินทิกรัลที่เหลือ</div><p>$\frac{x^3}{3}\cdot\frac1x=\frac{x^2}{3}$</p>
+$$=\frac{x^3}{3}\ln x-\frac13\int x^2\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลที่เหลือ</div><p>$\int x^2dx=\frac{x^3}{3}$</p>
+$$=\frac{x^3}{3}\ln x-\frac13\cdot\frac{x^3}{3}=\frac{x^3}{3}\ln x-\frac{x^3}{9}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv ด้วย LIATE</div><p>$\ln$ (L) มาก่อน Algebraic (A) จึงให้ $u=\ln x$ และ $dv=x^2dx$</p>
+$$u=\ln x\Rightarrow du=\frac{dx}{x},\qquad dv=x^2\,dx\Rightarrow v=\frac{x^3}{3}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x^2\ln x\,dx=\frac{x^3}{3}\ln x-\int\frac{x^3}{3}\cdot\frac1x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปอินทิกรัลที่เหลือ</div><p>$\frac{x^3}{3}\cdot\frac1x=\frac{x^2}{3}$</p>
+$$=\frac{x^3}{3}\ln x-\frac13\int x^2\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: หาอินทิกรัลที่เหลือ</div><p>$\int x^2dx=\frac{x^3}{3}$</p>
+$$=\frac{x^3}{3}\ln x-\frac13\cdot\frac{x^3}{3}=\frac{x^3}{3}\ln x-\frac{x^3}{9}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{x^3}{3}\ln x-\frac{x^3}{9}+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: เลือก $u=x^2,\ dv=\ln x\,dx$ ทำให้ยากขึ้น</li><li>คำนวณผิด: ลืมหาร $3$ ในอินทิกรัลที่เหลือ</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เลือก $u$ ด้วย LIATE</li><li>$\ln x$ เป็น $u$ เสมอเมื่อมีกำลังของ $x$ คู่กัน</li><li>อินทิกรัลใหม่ต้องง่ายกว่าเดิม</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int x^3\ln x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\ln x$ และ $dv=x^3dx$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{x^4}{4}\ln x-\frac{x^4}{16}+C$</p><p class="alt">$v=\frac{x^4}{4}$, $du=\frac{dx}{x}$<br>$\frac{x^4}{4}\ln x-\frac14\int x^3dx=\frac{x^4}{4}\ln x-\frac{x^4}{16}$</p></details></div>
+</div></article>
+<article class="q drill" id="p11" data-idx="10">
+<h3><span class="num">11</span> C11. $\displaystyle\int x\tan^{-1}x\,dx$ <span class="src">สไลด์ 17 · by parts</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-10"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-10" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x\tan^{-1}x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts กับ LIATE: ตรีโกณผกผันมาก่อน Algebraic</li><li>$\frac{d}{dx}\tan^{-1}x=\frac1{1+x^2}$ และเทคนิคบวกลบ $1$ ในเศษ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้าเลือก $u=\tan^{-1}x$ แล้ว $du$ จะเป็นฟังก์ชันชนิดไหน และทำให้อินทิกรัลใหม่เป็นอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ให้ตรีโกณผกผันเป็น $u$ เพราะดิฟได้ฟังก์ชันตรรกยะ แล้วอินทิกรัลใหม่เป็นเศษส่วน ถ้าดีกรีเศษไม่น้อยกว่าส่วนให้บวกลบเลขในเศษหรือหารยาว</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int \tan^{-1}x\,dx$</p><p><b>สาธิต:</b> ให้ $u=\tan^{-1}x,\ dv=dx$ ได้ $du=\frac{dx}{1+x^2},\ v=x$ อินทิกรัลใหม่คือ $\int\frac{x}{1+x^2}dx$ ซึ่งใช้ $u$-sub ได้</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv ด้วย LIATE</div><p>ตรีโกณผกผัน (I) มาก่อน Algebraic (A) จึงให้ $u=\tan^{-1}x$ และ $dv=x\,dx$</p>
+$$u=\tan^{-1}x\Rightarrow du=\frac{dx}{1+x^2},\qquad dv=x\,dx\Rightarrow v=\frac{x^2}{2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x\tan^{-1}x\,dx=\frac{x^2}{2}\tan^{-1}x-\frac12\int\frac{x^2}{1+x^2}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปเศษส่วนที่เหลือ</div><p>บวกลบ $1$ ในเศษ: $\frac{x^2}{1+x^2}=\frac{(x^2+1)-1}{1+x^2}=1-\frac{1}{1+x^2}$</p>
+$$\int\frac{x^2}{1+x^2}\,dx=\int\left(1-\frac{1}{1+x^2}\right)dx=x-\tan^{-1}x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนกลับและกระจาย</div><p>คูณ $-\frac12$ เข้าไปในวงเล็บ</p>
+$$=\frac{x^2}{2}\tan^{-1}x-\frac12\left(x-\tan^{-1}x\right)$$
+$$=\frac{x^2}{2}\tan^{-1}x-\frac x2+\frac12\tan^{-1}x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv ด้วย LIATE</div><p>ตรีโกณผกผัน (I) มาก่อน Algebraic (A) จึงให้ $u=\tan^{-1}x$ และ $dv=x\,dx$</p>
+$$u=\tan^{-1}x\Rightarrow du=\frac{dx}{1+x^2},\qquad dv=x\,dx\Rightarrow v=\frac{x^2}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x\tan^{-1}x\,dx=\frac{x^2}{2}\tan^{-1}x-\frac12\int\frac{x^2}{1+x^2}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปเศษส่วนที่เหลือ</div><p>บวกลบ $1$ ในเศษ: $\frac{x^2}{1+x^2}=\frac{(x^2+1)-1}{1+x^2}=1-\frac{1}{1+x^2}$</p>
+$$\int\frac{x^2}{1+x^2}\,dx=\int\left(1-\frac{1}{1+x^2}\right)dx=x-\tan^{-1}x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนกลับและกระจาย</div><p>คูณ $-\frac12$ เข้าไปในวงเล็บ</p>
+$$=\frac{x^2}{2}\tan^{-1}x-\frac12\left(x-\tan^{-1}x\right)$$
+$$=\frac{x^2}{2}\tan^{-1}x-\frac x2+\frac12\tan^{-1}x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{x^2}{2}\tan^{-1}x-\frac x2+\frac12\tan^{-1}x+C$$
+<p class="alt">(หรือเขียนในรูปอื่นได้เป็น $\frac12(x^2+1)\tan^{-1}x-\frac x2+C$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: เลือก $u=x$ ทำให้ต้องอินทิเกรต $\tan^{-1}x$</li><li>คำนวณผิด: ลืมเครื่องหมายลบเมื่อกระจายวงเล็บที่มีเครื่องหมายลบนำหน้า</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>LIATE: ตรีโกณผกผันเป็น $u$</li><li>เศษส่วนที่ดีกรีเศษไม่น้อยกว่าส่วนให้บวกลบเลขในเศษ</li><li>ระวังเครื่องหมายตอนกระจายวงเล็บ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int x^2\tan^{-1}x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\tan^{-1}x,\ dv=x^2dx$ แล้วจัด $\frac{x^3}{1+x^2}$ เป็น $x-\frac{x}{1+x^2}$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{x^3}{3}\tan^{-1}x-\frac{x^2}{6}+\frac16\ln(1+x^2)+C$</p><p class="alt">$\int=\frac{x^3}{3}\tan^{-1}x-\frac13\int\frac{x^3}{1+x^2}dx$<br>$\frac{x^3}{1+x^2}=x-\frac{x}{1+x^2}$ จึงได้ $\frac{x^2}{2}-\frac12\ln(1+x^2)$ แล้วคูณ $-\frac13$</p></details></div>
+</div></article>
+<article class="q drill" id="p12" data-idx="11">
+<h3><span class="num">12</span> C12. $\displaystyle\int x^2e^{-3x}dx$ <span class="src">สไลด์ 18 · วิธีตาราง</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-11"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-11" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x^2e^{-3x}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts ซ้ำ หรือวิธีตาราง (ดิฟพหุนามจนเป็น $0$ อินทิเกรต $e^{kx}$ ลงไปคู่กัน)</li><li>$\int e^{kx}dx=\frac1ke^{kx}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้าให้ $u=x^2$ ต้องใช้ by parts กี่รอบจึงจะไม่เหลือ $x$ ในอินทิกรัล?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ให้พหุนามเป็น $u$ เพราะดิฟแล้วดีกรีลดลงทีละหนึ่ง ทำซ้ำจนเหลือค่าคงที่ ระวังเครื่องหมายและตัวหารจาก $e^{kx}$ ทุกรอบ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int xe^{-2x}\,dx$</p><p><b>สาธิต:</b> ให้ $u=x,\ dv=e^{-2x}dx$ ได้ $du=dx,\ v=-\frac12e^{-2x}$ แล้ว $\int=-\frac x2e^{-2x}+\frac12\int e^{-2x}dx$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: by parts รอบแรก</div><p>ให้ $u=x^2$ (ดิฟแล้วลดดีกรี) และ $dv=e^{-3x}dx$ ได้ $du=2x\,dx,\ v=-\frac13e^{-3x}$</p>
+$$\int x^2e^{-3x}\,dx=-\frac{x^2}{3}e^{-3x}+\frac23\int xe^{-3x}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: by parts รอบสอง</div><p>สำหรับ $\int xe^{-3x}dx$ ให้ $u=x$, $dv=e^{-3x}dx$ ได้ $du=dx,\ v=-\frac13e^{-3x}$</p>
+$$\int xe^{-3x}\,dx=-\frac{x}{3}e^{-3x}+\frac13\int e^{-3x}\,dx$$
+$$=-\frac{x}{3}e^{-3x}-\frac19e^{-3x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมผล</div><p>แทนผลรอบสองกลับเข้าไปแล้วคูณ $\frac23$</p>
+$$=-\frac{x^2}{3}e^{-3x}+\frac23\left(-\frac{x}{3}e^{-3x}-\frac19e^{-3x}\right)$$
+$$=-\frac{x^2}{3}e^{-3x}-\frac{2x}{9}e^{-3x}-\frac{2}{27}e^{-3x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: ดึงตัวร่วม</div><p>ดึง $-e^{-3x}$ ออกเป็นตัวร่วม</p>
+$$=-e^{-3x}\left(\frac{x^2}{3}+\frac{2x}{9}+\frac{2}{27}\right)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: by parts รอบแรก</div><p>ให้ $u=x^2$ (ดิฟแล้วลดดีกรี) และ $dv=e^{-3x}dx$ ได้ $du=2x\,dx,\ v=-\frac13e^{-3x}$</p>
+$$\int x^2e^{-3x}\,dx=-\frac{x^2}{3}e^{-3x}+\frac23\int xe^{-3x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: by parts รอบสอง</div><p>สำหรับ $\int xe^{-3x}dx$ ให้ $u=x$, $dv=e^{-3x}dx$ ได้ $du=dx,\ v=-\frac13e^{-3x}$</p>
+$$\int xe^{-3x}\,dx=-\frac{x}{3}e^{-3x}+\frac13\int e^{-3x}\,dx$$
+$$=-\frac{x}{3}e^{-3x}-\frac19e^{-3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมผล</div><p>แทนผลรอบสองกลับเข้าไปแล้วคูณ $\frac23$</p>
+$$=-\frac{x^2}{3}e^{-3x}+\frac23\left(-\frac{x}{3}e^{-3x}-\frac19e^{-3x}\right)$$
+$$=-\frac{x^2}{3}e^{-3x}-\frac{2x}{9}e^{-3x}-\frac{2}{27}e^{-3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ดึงตัวร่วม</div><p>ดึง $-e^{-3x}$ ออกเป็นตัวร่วม</p>
+$$=-e^{-3x}\left(\frac{x^2}{3}+\frac{2x}{9}+\frac{2}{27}\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$-e^{-3x}\left(\frac{x^2}{3}+\frac{2x}{9}+\frac{2}{27}\right)+C$$
+<p class="alt">(วิธีตารางให้ผลเดียวกัน: ดิฟ $x^2\to2x\to2\to0$ · อินทิเกรต $e^{-3x}\to-\frac13e^{-3x}\to\frac19e^{-3x}\to-\frac1{27}e^{-3x}$ · เครื่องหมาย $+,-,+$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: เครื่องหมายสลับ $+,-,+$ ผิดในวิธีตาราง</li><li>ลืมเงื่อนไข: ลืมหารด้วย $-3$ ทุกครั้งที่อินทิเกรต $e^{-3x}$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>พหุนามคูณเอกซ์โพเนนเชียล ใช้ by parts ซ้ำ</li><li>วิธีตารางช่วยจัดเครื่องหมาย</li><li>ดึงตัวร่วม $e^{kx}$ ท้ายสุด</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int x^2e^{2x}\,dx$</p><details><summary>ใบ้</summary><p>ใช้วิธีตาราง: ดิฟ $x^2,2x,2$ อินทิเกรต $e^{2x},\frac12e^{2x},\frac14e^{2x}$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{2x}\left(\frac{x^2}{2}-\frac x2+\frac14\right)+C$</p><p class="alt">ตาราง เครื่องหมาย $+,-,+$:<br>$x^2\cdot\frac12e^{2x}-2x\cdot\frac14e^{2x}+2\cdot\frac18e^{2x}$</p></details></div>
+</div></article>
+<article class="q drill" id="p13" data-idx="12">
+<h3><span class="num">13</span> C13. $\displaystyle\int(x+3)\cos3x\,dx$ <span class="src">สไลด์ 19 · by parts</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-12"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-12" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int(x+3)\cos3x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts $\int u\,dv=uv-\int v\,du$</li><li>$\int\cos kx\,dx=\frac1k\sin kx$ และ $\int\sin kx\,dx=-\frac1k\cos kx$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>จะให้ตัวไหนเป็น $u$ เพื่อให้ $du$ ง่ายขึ้น?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ให้พหุนามเป็น $u$ เพราะดิฟแล้วเป็นค่าคงที่ ส่วนตรีโกณเป็น $dv$ แล้วระวังตัวหารและเครื่องหมายเมื่ออินทิเกรต $\sin,\cos$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int(x+1)\sin2x\,dx$</p><p><b>สาธิต:</b> ให้ $u=x+1,\ dv=\sin2x\,dx$ ได้ $du=dx,\ v=-\frac12\cos2x$ แล้ว $\int=-\frac{x+1}{2}\cos2x+\frac12\int\cos2x\,dx$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=x+3$ (ดิฟแล้วเป็นค่าคงที่) และ $dv=\cos3x\,dx$</p>
+$$du=dx,\qquad v=\frac13\sin3x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int(x+3)\cos3x\,dx=\frac{x+3}{3}\sin3x-\frac13\int\sin3x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int\sin3x\,dx=-\frac13\cos3x$ ลบซ้อนลบจึงเป็นบวก</p>
+$$=\frac{x+3}{3}\sin3x-\frac13\left(-\frac13\cos3x\right)$$
+$$=\frac{x+3}{3}\sin3x+\frac19\cos3x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=x+3$ (ดิฟแล้วเป็นค่าคงที่) และ $dv=\cos3x\,dx$</p>
+$$du=dx,\qquad v=\frac13\sin3x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int(x+3)\cos3x\,dx=\frac{x+3}{3}\sin3x-\frac13\int\sin3x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int\sin3x\,dx=-\frac13\cos3x$ ลบซ้อนลบจึงเป็นบวก</p>
+$$=\frac{x+3}{3}\sin3x-\frac13\left(-\frac13\cos3x\right)$$
+$$=\frac{x+3}{3}\sin3x+\frac19\cos3x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{x+3}{3}\sin3x+\frac19\cos3x+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: เครื่องหมายผิดตอนอินทิเกรต $\sin$</li><li>ลืมเงื่อนไข: ลืมตัวหาร $3$ ทั้งใน $v$ และอินทิกรัลที่เหลือ</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>พหุนามเป็น $u$ ตรีโกณเป็น $dv$</li><li>อินทิเกรต $\sin$ ได้ $-\cos$</li><li>อย่าลืมตัวหาร $k$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int(x-2)\sin2x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=x-2$ และ $dv=\sin2x\,dx$</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac{x-2}{2}\cos2x+\frac14\sin2x+C$</p><p class="alt">$v=-\frac12\cos2x$<br>$-\frac{x-2}{2}\cos2x+\frac12\int\cos2x\,dx=-\frac{x-2}{2}\cos2x+\frac14\sin2x$</p></details></div>
+</div></article>
+<article class="q drill" id="p14" data-idx="13">
+<h3><span class="num">14</span> C14. $\displaystyle\int(2x-1)e^{3x}dx$ <span class="src">สไลด์ 20 · by parts</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-13"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-13" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int(2x-1)e^{3x}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>by parts กับพหุนามดีกรี $1$ คูณเอกซ์โพเนนเชียล</li><li>$\int e^{kx}dx=\frac1ke^{kx}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อให้ $u=2x-1$ แล้ว $du$ และ $v$ ได้อะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ให้พหุนามเป็น $u$ และ $e^{3x}dx$ เป็น $dv$ หลังจากนั้นจะเหลืออินทิกรัลของ $e^{3x}$ ซึ่งง่าย แล้วรวมเทอมโดยดึง $e^{3x}$ เป็นตัวร่วม</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int(3x+1)e^{2x}\,dx$</p><p><b>สาธิต:</b> ให้ $u=3x+1,\ dv=e^{2x}dx$ ได้ $du=3dx,\ v=\frac12e^{2x}$ แล้ว $\int=\frac{3x+1}{2}e^{2x}-\frac32\int e^{2x}dx$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=2x-1$ และ $dv=e^{3x}dx$</p>
+$$du=2\,dx,\qquad v=\frac13e^{3x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int(2x-1)e^{3x}\,dx=\frac{2x-1}{3}e^{3x}-\frac23\int e^{3x}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int e^{3x}dx=\frac13e^{3x}$</p>
+$$=\frac{2x-1}{3}e^{3x}-\frac29e^{3x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: รวมเศษส่วนที่ตัวส่วน 9</div><p>ดึง $e^{3x}$ ออกเป็นตัวร่วม และ $\frac{2x-1}{3}=\frac{3(2x-1)}{9}$</p>
+$$=\frac{3(2x-1)-2}{9}e^{3x}$$
+$$=\frac{(6x-5)e^{3x}}{9}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=2x-1$ และ $dv=e^{3x}dx$</p>
+$$du=2\,dx,\qquad v=\frac13e^{3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int(2x-1)e^{3x}\,dx=\frac{2x-1}{3}e^{3x}-\frac23\int e^{3x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int e^{3x}dx=\frac13e^{3x}$</p>
+$$=\frac{2x-1}{3}e^{3x}-\frac29e^{3x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: รวมเศษส่วนที่ตัวส่วน 9</div><p>ดึง $e^{3x}$ ออกเป็นตัวร่วม และ $\frac{2x-1}{3}=\frac{3(2x-1)}{9}$</p>
+$$=\frac{3(2x-1)-2}{9}e^{3x}$$
+$$=\frac{(6x-5)e^{3x}}{9}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{(6x-5)e^{3x}}{9}+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ลืมคูณ $du=2dx$ ในอินทิกรัลที่เหลือ</li><li>คำนวณผิด: รวมเศษส่วนตัวส่วน $3$ กับ $9$ ผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>พหุนามเป็น $u$</li><li>จัดรูปโดยดึง $e^{kx}$ ออกเป็นตัวร่วม</li><li>รวมเศษส่วนให้ตัวส่วนเท่ากัน</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int(4x+1)e^{-2x}\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=4x+1$ และระวังเครื่องหมายลบจาก $v$</p></details><details><summary>ดูคำตอบ</summary><p>$-\frac{4x+3}{2}e^{-2x}+C$</p><p class="alt">$v=-\frac12e^{-2x},\ du=4dx$<br>$-\frac{4x+1}{2}e^{-2x}+2\int e^{-2x}dx=-\frac{4x+1}{2}e^{-2x}-e^{-2x}$</p></details></div>
+</div></article>
+<article class="q drill" id="p15" data-idx="14">
+<h3><span class="num">15</span> M1. $\displaystyle\int x\sqrt{x^2+1}\,dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-14"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-14" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int x\sqrt{x^2+1}\,dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-substitution: $\int u^{1/2}du=\frac23u^{3/2}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อดิฟ $x^2+1$ ได้อะไร และเกี่ยวกับ $x\,dx$ อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u$ เป็นของใต้ราก ซึ่งดิฟแล้วได้ตัวคูณ $x$ ที่อยู่ในโจทย์ เพียงต้องปรับค่าคงที่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int x\sqrt{x^2+9}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=x^2+9$ จะได้ $du=2x\,dx$ ดังนั้น $x\,dx=\frac12du$ แล้วเหลือ $\frac12\int u^{1/2}du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2+1$ (ใต้ราก) ดิฟแล้วได้ $2x\,dx$ ซึ่งสัมพันธ์กับ $x\,dx$ ที่คูณอยู่</p>
+$$u=x^2+1,\qquad du=2x\,dx\ \Rightarrow\ x\,dx=\tfrac12\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$\sqrt{x^2+1}=u^{1/2}$</p>
+$$\int x\sqrt{x^2+1}\,dx=\frac12\int u^{1/2}\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^{1/2}du=\frac23u^{3/2}$ แล้วคูณ $\frac12$</p>
+$$=\frac12\cdot\frac23u^{3/2}=\frac13u^{3/2}$$
+$$=\frac13(x^2+1)^{3/2}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2+1$ (ใต้ราก) ดิฟแล้วได้ $2x\,dx$ ซึ่งสัมพันธ์กับ $x\,dx$ ที่คูณอยู่</p>
+$$u=x^2+1,\qquad du=2x\,dx\ \Rightarrow\ x\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$\sqrt{x^2+1}=u^{1/2}$</p>
+$$\int x\sqrt{x^2+1}\,dx=\frac12\int u^{1/2}\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^{1/2}du=\frac23u^{3/2}$ แล้วคูณ $\frac12$</p>
+$$=\frac12\cdot\frac23u^{3/2}=\frac13u^{3/2}$$
+$$=\frac13(x^2+1)^{3/2}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ \frac13(x^2+1)^{3/2}+C$$
+<p class="alt">(ตัวลวง (ข) คือลืมคูณ $\frac12$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมคูณ $\frac12$ จาก $du=2x\,dx$</li><li>ใช้สูตรผิด: อินทิเกรตรากโดยไม่เพิ่มเลขชี้กำลัง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตั้ง $u$ ใต้ราก</li><li>ปรับตัวคูณคงที่จาก $du$</li><li>กฎกำลัง $\int u^{1/2}du$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int3x\sqrt{x^2+4}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=x^2+4$ แล้วดูตัวคูณ $3$ กับ $\frac12$</p></details><details><summary>ดูคำตอบ</summary><p>$(x^2+4)^{3/2}+C$</p><p class="alt">$u=x^2+4,\ x\,dx=\frac12du$<br>$3\cdot\frac12\int u^{1/2}du=\frac32\cdot\frac23u^{3/2}=u^{3/2}$</p></details></div>
+</div></article>
+<article class="q drill" id="p16" data-idx="15">
+<h3><span class="num">16</span> M2. $\displaystyle\int\sec^2(3x)\,dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-15"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-15" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\sec^2(3x)\,dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\sec^2u\,du=\tan u+C$</li><li>อินทิกรัลของฟังก์ชันที่มีข้างในเชิงเส้น ต้องหารด้วยสัมประสิทธิ์ของ $x$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>สูตร $\int\sec^2u\,du$ ใช้ได้ทันทีหรือไม่เมื่อข้างในคือ $3x$ ไม่ใช่ $x$?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อข้างในเป็น $kx$ ให้แทน $u=kx$ ซึ่งจะมีตัวหาร $k$ ออกมาหน้าอินทิกรัล</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\csc^2(4x)\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=4x,\ du=4dx$ ได้ $\frac14\int\csc^2u\,du$ และใช้ $\int\csc^2u\,du=-\cot u$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ข้างในเป็นเชิงเส้น $3x$ จึงให้ $u=3x$</p>
+$$u=3x,\qquad du=3\,dx\ \Rightarrow\ dx=\tfrac13\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$\int\sec^2u\,du=\tan u$ จึงเหลือแค่คูณ $\frac13$</p>
+$$\int\sec^2(3x)\,dx=\frac13\int\sec^2u\,du=\frac13\tan u$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน u กลับ</div><p>แทน $u=3x$</p>
+$$=\frac13\tan3x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ข้างในเป็นเชิงเส้น $3x$ จึงให้ $u=3x$</p>
+$$u=3x,\qquad du=3\,dx\ \Rightarrow\ dx=\tfrac13\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$\int\sec^2u\,du=\tan u$ จึงเหลือแค่คูณ $\frac13$</p>
+$$\int\sec^2(3x)\,dx=\frac13\int\sec^2u\,du=\frac13\tan u$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทน u กลับ</div><p>แทน $u=3x$</p>
+$$=\frac13\tan3x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ค)}\ \ \frac13\tan3x+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมตัวหาร $3$ จากสัมประสิทธิ์ของ $x$</li><li>ใช้สูตรผิด: ตอบ $\sec^2$ เป็น $\tan^2$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ข้างในเป็นเชิงเส้นต้องหารด้วยสัมประสิทธิ์</li><li>สูตรตรีโกณพื้นฐานต้องจำ</li><li>ตรวจคำตอบโดยดิฟกลับ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\sec^2\!\left(\frac x2\right)dx$</p><details><summary>ใบ้</summary><p>ข้างในคือ $\frac12x$ จึงหารด้วย $\frac12$</p></details><details><summary>ดูคำตอบ</summary><p>$2\tan\frac x2+C$</p><p class="alt">$u=\frac x2,\ dx=2du$<br>$2\int\sec^2u\,du=2\tan u$</p></details></div>
+</div></article>
+<article class="q drill" id="p17" data-idx="16">
+<h3><span class="num">17</span> M3. $\displaystyle\int_0^1xe^{x^2}dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-16"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-16" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลจำกัดเขต $\int_0^1xe^{x^2}dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาค่าของอินทิกรัลจำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$u$-sub กับขอบเขต: ต้องเปลี่ยนขอบเขตตาม $u$</li><li>$\int e^udu=e^u$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้าตั้ง $u=x^2$ แล้ว $x\,dx$ แทนด้วยอะไร และขอบเขตเป็นเท่าไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u$ เป็นเลขชี้กำลัง เพราะดิฟแล้วได้ตัวคูณ $x$ อยู่พอดี แล้วเปลี่ยนขอบเขตตาม $u$ ก่อนแทนค่า</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int_0^2xe^{x^2/4}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=\frac{x^2}{4}$ จะได้ $du=\frac x2dx$ ดังนั้น $x\,dx=2du$ ขอบเขตเป็น $0$ ถึง $1$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2$ เพราะดิฟแล้วได้ $2x\,dx$</p>
+$$u=x^2,\qquad du=2x\,dx\ \Rightarrow\ x\,dx=\tfrac12\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขต</div><p>เปลี่ยนขอบเขตตาม $u$</p>
+$$x=0\Rightarrow u=0,\qquad x=1\Rightarrow u=1$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int e^udu=e^u$</p>
+$$\int_0^1xe^{x^2}\,dx=\frac12\int_0^1e^u\,du=\frac12\Big[e^u\Big]_0^1$$
+$$=\frac12\left(e^1-e^0\right)=\frac12(e-1)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=x^2$ เพราะดิฟแล้วได้ $2x\,dx$</p>
+$$u=x^2,\qquad du=2x\,dx\ \Rightarrow\ x\,dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขต</div><p>เปลี่ยนขอบเขตตาม $u$</p>
+$$x=0\Rightarrow u=0,\qquad x=1\Rightarrow u=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int e^udu=e^u$</p>
+$$\int_0^1xe^{x^2}\,dx=\frac12\int_0^1e^u\,du=\frac12\Big[e^u\Big]_0^1$$
+$$=\frac12\left(e^1-e^0\right)=\frac12(e-1)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \tfrac12(e-1)$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมคูณ $\frac12$ จาก $du=2x\,dx$</li><li>ลืมเงื่อนไข: ใช้ขอบเขต $x$ กับ $u$ โดยไม่เปลี่ยน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตั้ง $u$ เป็นเลขชี้กำลัง</li><li>เปลี่ยนขอบเขตตาม $u$</li><li>อย่าลืมว่า $e^0=1$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int_0^1xe^{-x^2}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=-x^2$ แล้วระวังเครื่องหมายลบ</p></details><details><summary>ดูคำตอบ</summary><p>$\frac12\left(1-\frac1e\right)$</p><p class="alt">$u=-x^2,\ x\,dx=-\frac12du$, ขอบเขต $0$ ถึง $-1$<br>$-\frac12\int_0^{-1}e^udu=-\frac12(e^{-1}-1)$</p></details></div>
+</div></article>
+<article class="q drill" id="p18" data-idx="17">
+<h3><span class="num">18</span> M4. $\displaystyle\int\frac{e^x}{1+e^x}dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-17"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-17" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{e^x}{1+e^x}dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\frac{du}{u}=\ln|u|+C$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ตัวส่วนดิฟแล้วเทียบกับเศษได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อเศษเป็นอนุพันธ์ของตัวส่วนพอดี ผลคือลอการิทึมของตัวส่วน</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{e^{x}}{4+e^{x}}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=4+e^x$ จะได้ $du=e^xdx$ แล้วอินทิกรัลเป็น $\int\frac{du}{u}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=1+e^x$ (ตัวส่วน) ดิฟแล้วได้ $e^x\,dx$ ซึ่งตรงกับเศษ</p>
+$$u=1+e^x,\qquad du=e^x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>เศษ $e^xdx$ กลายเป็น $du$</p>
+$$\int\frac{e^x}{1+e^x}\,dx=\int\frac{du}{u}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$ และ $1+e^x\gt0$ เสมอ</p>
+$$=\ln|u|=\ln\left(1+e^x\right)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=1+e^x$ (ตัวส่วน) ดิฟแล้วได้ $e^x\,dx$ ซึ่งตรงกับเศษ</p>
+$$u=1+e^x,\qquad du=e^x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>เศษ $e^xdx$ กลายเป็น $du$</p>
+$$\int\frac{e^x}{1+e^x}\,dx=\int\frac{du}{u}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>$\int\frac{du}{u}=\ln|u|$ และ $1+e^x\gt0$ เสมอ</p>
+$$=\ln|u|=\ln\left(1+e^x\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ \ln(1+e^x)+C$$
+<p class="alt">(ตัวลวง (ข) $\tan^{-1}(e^x)$ จะถูกถ้าโจทย์เป็น $\frac{e^x}{1+e^{2x}}$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ไปใช้ $\tan^{-1}$ ทั้งที่เศษเป็นอนุพันธ์ของตัวส่วน</li><li>ลืมเงื่อนไข: ลืมแปลง $u$ กลับเป็น $x$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เศษ = อนุพันธ์ของส่วน ผลเป็น $\ln$</li><li>ตัวส่วนบวกเสมอไม่ต้องใส่ค่าสัมบูรณ์</li><li>แยกรูป $\tan^{-1}$ กับ $\ln$ ให้ออก</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{e^{2x}}{3+e^{2x}}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=3+e^{2x}$ แล้วดู $du$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac12\ln(3+e^{2x})+C$</p><p class="alt">$u=3+e^{2x},\ du=2e^{2x}dx$<br>$\frac12\int\frac{du}{u}=\frac12\ln u$</p></details></div>
+</div></article>
+<article class="q drill" id="p19" data-idx="18">
+<h3><span class="num">19</span> M5. $\displaystyle\int\frac{(\ln x)^2}{x}dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-18"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-18" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{(\ln x)^2}{x}dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\frac{d}{dx}\ln x=\frac1x$</li><li>กฎกำลัง $\int u^ndu=\frac{u^{n+1}}{n+1}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ในโจทย์ มีฟังก์ชันใดที่อนุพันธ์ปรากฏอยู่เป็นตัวคูณ?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $u=\ln x$ เพราะ $\frac{dx}{x}$ ปรากฏคู่อยู่แล้ว จากนั้นใช้กฎกำลังกับ $u$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{\sqrt{\ln x}}{x}\,dx$</p><p><b>สาธิต:</b> ตั้ง $u=\ln x$ ได้ $du=\frac{dx}{x}$ แล้วเหลือ $\int u^{1/2}du$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\ln x$ เพราะดิฟแล้วได้ $\frac{dx}{x}$ ที่คูณอยู่</p>
+$$u=\ln x,\qquad du=\frac{dx}{x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$(\ln x)^2=u^2$</p>
+$$\int\frac{(\ln x)^2}{x}\,dx=\int u^2\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^2du=\frac{u^3}{3}$</p>
+$$=\frac{u^3}{3}=\frac{(\ln x)^3}{3}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\ln x$ เพราะดิฟแล้วได้ $\frac{dx}{x}$ ที่คูณอยู่</p>
+$$u=\ln x,\qquad du=\frac{dx}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>$(\ln x)^2=u^2$</p>
+$$\int\frac{(\ln x)^2}{x}\,dx=\int u^2\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลแล้วแทน u กลับ</div><p>กฎกำลัง $\int u^2du=\frac{u^3}{3}$</p>
+$$=\frac{u^3}{3}=\frac{(\ln x)^3}{3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ \frac{(\ln x)^3}{3}+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ปล่อยตัวส่วน $x$ ไว้ในคำตอบ ทั้งที่ถูกใช้ไปกับ $du$ แล้ว</li><li>ลืมเงื่อนไข: ลืมหารด้วยเลขชี้กำลังใหม่</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$\frac{dx}{x}$ คือ $d(\ln x)$</li><li>กฎกำลังกับ $u$</li><li>แปลงกลับเป็น $x$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{(\ln x)^3}{x}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $u=\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac{(\ln x)^4}{4}+C$</p><p class="alt">$u=\ln x,\ du=\frac{dx}{x}$<br>$\int u^3du=\frac{u^4}{4}$</p></details></div>
+</div></article>
+<article class="q drill" id="p20" data-idx="19">
+<h3><span class="num">20</span> M6. $\displaystyle\int\frac{dx}{1+4x^2}=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-19"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-19" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\frac{dx}{1+4x^2}$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\int\frac{du}{1+u^2}=\tan^{-1}u+C$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ทำให้ตัวส่วนเป็นรูป $1+(\ldots)^2$ ได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เขียน $4x^2$ เป็นกำลังสองของพจน์เชิงเส้น แล้วตั้ง $u$ เป็นพจน์นั้น อย่าลืมตัวคูณจาก $dx$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\frac{dx}{1+9x^2}$</p><p><b>สาธิต:</b> เขียน $9x^2=(3x)^2$ ตั้ง $u=3x$ จะได้ $dx=\frac13du$ แล้วอินทิกรัลเป็น $\frac13\int\frac{du}{1+u^2}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: จัดตัวส่วนให้อยู่ในรูป $1+u^2$</div><p>$4x^2=(2x)^2$ จึงให้ $u=2x$</p>
+$$1+4x^2=1+(2x)^2,\qquad u=2x,\qquad dx=\tfrac12\,du$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>คูณ $\frac12$ ออกมาหน้าอินทิกรัล</p>
+$$\int\frac{dx}{1+4x^2}=\frac12\int\frac{du}{1+u^2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้สูตร $\tan^{-1}$ แล้วแทน u กลับ</div><p>$\int\frac{du}{1+u^2}=\tan^{-1}u$</p>
+$$=\frac12\tan^{-1}u=\frac12\tan^{-1}(2x)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: จัดตัวส่วนให้อยู่ในรูป $1+u^2$</div><p>$4x^2=(2x)^2$ จึงให้ $u=2x$</p>
+$$1+4x^2=1+(2x)^2,\qquad u=2x,\qquad dx=\tfrac12\,du$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่าในอินทิกรัล</div><p>คูณ $\frac12$ ออกมาหน้าอินทิกรัล</p>
+$$\int\frac{dx}{1+4x^2}=\frac12\int\frac{du}{1+u^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้สูตร $\tan^{-1}$ แล้วแทน u กลับ</div><p>$\int\frac{du}{1+u^2}=\tan^{-1}u$</p>
+$$=\frac12\tan^{-1}u=\frac12\tan^{-1}(2x)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \frac12\tan^{-1}2x+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ตอบ $\tan^{-1}(2x)$ โดยไม่หารด้วย $2$</li><li>ใช้สูตรผิด: ไปใช้ $\ln$ แทน $\tan^{-1}$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>รูป $\frac1{1+u^2}$ ให้ $\tan^{-1}$</li><li>ตั้ง $u$ เป็นพจน์ที่ถูกยกกำลังสอง</li><li>ตัวคูณคงที่จาก $dx$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\frac{6\,dx}{1+9x^2}$</p><details><summary>ใบ้</summary><p>ตั้ง $u=3x$ แล้วดูตัวคูณ</p></details><details><summary>ดูคำตอบ</summary><p>$2\tan^{-1}(3x)+C$</p><p class="alt">$u=3x,\ dx=\frac13du$<br>$6\cdot\frac13\int\frac{du}{1+u^2}=2\tan^{-1}u$</p></details></div>
+</div></article>
+<article class="q drill" id="p21" data-idx="20">
+<h3><span class="num">21</span> M7. $\displaystyle\int\tan x\,dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-20"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-20" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\int\tan x\,dx$ (ข้อเลือกตอบ)</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ แล้วเลือกตัวเลือกที่ถูก (ตัวเลือกเขียนด้วย $\sec$ หรือ $\cos$)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$\tan x=\frac{\sin x}{\cos x}$</li><li>$-\ln|a|=\ln|a^{-1}|$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้าเขียน $\tan x$ เป็นเศษส่วนของ $\sin$ กับ $\cos$ จะเห็นรูปอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เขียนเป็น $\sin/\cos$ แล้วตั้ง $u$ เป็นตัวส่วน ระวังเครื่องหมายลบ จากนั้นเขียนผลให้ตรงกับตัวเลือกด้วยสมบัติลอการิทึม</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> หา $\int\cot2x\,dx$</p><p><b>สาธิต:</b> เขียน $\cot2x=\frac{\cos2x}{\sin2x}$ ตั้ง $u=\sin2x$ จะได้ $du=2\cos2x\,dx$ แล้วเหลือ $\frac12\int\frac{du}{u}$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียน $\tan x$ เป็น $\frac{\sin x}{\cos x}$</div><p>เพื่อให้เห็นรูป $\frac{du}{u}$</p>
+$$\int\tan x\,dx=\int\frac{\sin x}{\cos x}\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u=\cos x$ ดังนั้น $du=-\sin x\,dx$ หรือ $\sin x\,dx=-du$</p>
+$$u=\cos x,\qquad du=-\sin x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int\frac{du}{u}=\ln|u|$</p>
+$$\int\frac{\sin x}{\cos x}\,dx=-\int\frac{du}{u}=-\ln|u|=-\ln|\cos x|$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: เขียนให้อยู่ในรูปของตัวเลือก</div><p>ใช้สมบัติ $-\ln a=\ln a^{-1}$ และ $\frac{1}{\cos x}=\sec x$</p>
+$$-\ln|\cos x|=\ln\left|\frac{1}{\cos x}\right|=\ln|\sec x|$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียน $\tan x$ เป็น $\frac{\sin x}{\cos x}$</div><p>เพื่อให้เห็นรูป $\frac{du}{u}$</p>
+$$\int\tan x\,dx=\int\frac{\sin x}{\cos x}\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กำหนดตัวแปร u</div><p>ให้ $u=\cos x$ ดังนั้น $du=-\sin x\,dx$ หรือ $\sin x\,dx=-du$</p>
+$$u=\cos x,\qquad du=-\sin x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int\frac{du}{u}=\ln|u|$</p>
+$$\int\frac{\sin x}{\cos x}\,dx=-\int\frac{du}{u}=-\ln|u|=-\ln|\cos x|$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: เขียนให้อยู่ในรูปของตัวเลือก</div><p>ใช้สมบัติ $-\ln a=\ln a^{-1}$ และ $\frac{1}{\cos x}=\sec x$</p>
+$$-\ln|\cos x|=\ln\left|\frac{1}{\cos x}\right|=\ln|\sec x|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ค)}\ \ \ln|\sec x|+C$$
+<p class="alt">(เป็นสูตรข้อ 12 ในตารางสไลด์ และเท่ากับ $-\ln|\cos x|$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมเครื่องหมายลบจาก $\frac{d}{dx}\cos x$</li><li>ใช้สูตรผิด: ตอบ $\sec^2x$ ซึ่งเป็นอนุพันธ์ ไม่ใช่ปฏิยานุพันธ์</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$\tan x=\frac{\sin x}{\cos x}$</li><li>เปลี่ยนเป็นรูป $\frac{du}{u}$ ได้ผลเป็น $\ln$</li><li>สมบัติลอการิทึมช่วยเปลี่ยนรูปคำตอบ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> หา $\int\cot3x\,dx$</p><details><summary>ใบ้</summary><p>เขียน $\cot3x=\frac{\cos3x}{\sin3x}$ แล้วตั้ง $u=\sin3x$</p></details><details><summary>ดูคำตอบ</summary><p>$\frac13\ln|\sin3x|+C$</p><p class="alt">$u=\sin3x,\ du=3\cos3x\,dx$<br>$\frac13\int\frac{du}{u}=\frac13\ln|u|$</p></details></div>
+</div></article>
+<article class="q drill" id="p22" data-idx="21">
+<h3><span class="num">22</span> M8. $\displaystyle\int_1^e\frac{\ln x}{x}dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-21"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-21" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลจำกัดเขต $\int_1^e \frac{\ln x}{x}dx$</li></ul><p><b>ต้องหา:</b> ค่าของอินทิกรัลจำกัดเขต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การแทนค่าตัวแปร (u-substitution)</li><li>เมื่อเปลี่ยนตัวแปร ต้องเปลี่ยนขอบเขตตามไปด้วย</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ในโจทย์นี้ มีฟังก์ชันตัวไหนที่อนุพันธ์ของมันปรากฏอยู่ในโจทย์อีกตัวหนึ่งหรือไม่?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ถ้ามีฟังก์ชัน $u$ และ $du$ อยู่ในอินทิกรัลครบทั้งคู่ ให้แทนค่า แล้วเปลี่ยนขอบเขตบนและล่างเป็นค่าของ $u$ ก่อนอินทิเกรต</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\int_0^{\pi/2}\sin x\cos x\,dx$</p><p><b>สาธิต:</b> ให้ $u=\sin x$ จะได้ $du=\cos x\,dx$ ขอบเขต $x=0\to u=0$ และ $x=\pi/2\to u=1$ จึงเหลือ $\int u\,du$ ในขอบเขตใหม่</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\ln x$ เพราะดิฟแล้วได้ $\frac{dx}{x}$</p>
+$$u=\ln x,\qquad du=\frac{dx}{x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขต</div><p>$\ln1=0$ และ $\ln e=1$</p>
+$$x=1\Rightarrow u=0,\qquad x=e\Rightarrow u=1$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int u\,du=\frac{u^2}{2}$</p>
+$$\int_1^e\frac{\ln x}{x}\,dx=\int_0^1u\,du=\Big[\frac{u^2}{2}\Big]_0^1$$
+$$=\frac12-0=\frac12$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: กำหนดตัวแปร u</div><p>ให้ $u=\ln x$ เพราะดิฟแล้วได้ $\frac{dx}{x}$</p>
+$$u=\ln x,\qquad du=\frac{dx}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปลี่ยนขอบเขต</div><p>$\ln1=0$ และ $\ln e=1$</p>
+$$x=1\Rightarrow u=0,\qquad x=e\Rightarrow u=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนค่าและหาอินทิกรัล</div><p>$\int u\,du=\frac{u^2}{2}$</p>
+$$\int_1^e\frac{\ln x}{x}\,dx=\int_0^1u\,du=\Big[\frac{u^2}{2}\Big]_0^1$$
+$$=\frac12-0=\frac12$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \frac12$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: เปลี่ยนตัวแปรเป็น $u$ แล้วแต่ยังใช้ขอบเขตเดิมของ $x$</li><li>คำนวณผิด: ลืมว่า $\ln 1=0$ และ $\ln e=1$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เมื่อเห็น $f(g(x))\cdot g'(x)$ ให้ลองแทน $u=g(x)$</li><li>เปลี่ยนขอบเขตเป็นค่าของ $u$ ให้ตรงกัน</li><li>แล้วอินทิเกรตในรูป $u$ ได้เลย ไม่ต้องแทนกลับ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหาค่า $\displaystyle\int_1^{e^3}\frac{\ln x}{x}\,dx$</p><details><summary>ใบ้</summary><p>ลองให้ $u=\ln x$ แล้วเปลี่ยนขอบเขต</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac92$</p><p class="alt">$u=\ln x$, $du=dx/x$; $x=1\to u=0$, $x=e^3\to u=3$<br>$\int_0^3u\,du=\left[\frac{u^2}{2}\right]_0^3=\frac92$</p></details></div>
+</div></article>
+<article class="q drill" id="p23" data-idx="22">
+<h3><span class="num">23</span> M9. $\displaystyle\int\ln x\,dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-22"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-22" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลไม่จำกัดเขต $\int\ln x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของ $\ln x$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิเกรตทีละส่วน $\int u\,dv=uv-\int v\,du$</li><li>ฟังก์ชันที่ดิฟแล้วง่ายขึ้นเหมาะเป็น $u$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ไม่มีสูตรสำเร็จของ $\int\ln x\,dx$ แต่ถ้าเขียนเป็น $\ln x\cdot 1$ จะมองเป็นผลคูณของอะไรกับอะไรได้บ้าง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้การอินทิเกรตทีละส่วน เลือก $u$ เป็นตัวที่ดิฟแล้วง่ายขึ้น และ $dv$ เป็นส่วนที่อินทิเกรตได้ทันที</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\int \ln(2x)\,dx$ โดยมองเป็น $\ln(2x)\cdot1$</p><p><b>สาธิต:</b> เลือก $u=\ln(2x)$ ได้ $du=\frac{dx}{x}$ และ $dv=dx$ ได้ $v=x$ จากนั้นแทนเข้าสูตร $uv-\int v\,du$ แล้วสังเกตว่า $v\,du$ ลดรูปเหลือค่าคงที่</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>เขียนเป็น $\int\ln x\cdot1\,dx$ ให้ $u=\ln x$ และ $dv=dx$</p>
+$$du=\frac{dx}{x},\qquad v=x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int\ln x\,dx=x\ln x-\int x\cdot\frac1x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$x\cdot\frac1x=1$ และ $\int1\,dx=x$</p>
+$$=x\ln x-\int1\,dx=x\ln x-x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>เขียนเป็น $\int\ln x\cdot1\,dx$ ให้ $u=\ln x$ และ $dv=dx$</p>
+$$du=\frac{dx}{x},\qquad v=x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int\ln x\,dx=x\ln x-\int x\cdot\frac1x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$x\cdot\frac1x=1$ และ $\int1\,dx=x$</p>
+$$=x\ln x-\int1\,dx=x\ln x-x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ค)}\ \ x\ln x-x+C$$
+<p class="alt">(อยู่ในตารางสูตรข้อ 9 ของสไลด์ด้วย)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: คิดว่า $\int\ln x\,dx=\frac1x$ (นั่นคือการดิฟ)</li><li>ลืมเงื่อนไข: ลืมบวก $+C$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เมื่อไม่มีสูตรตรง ๆ ให้เขียนเป็นผลคูณกับ $1$</li><li>เลือก $u$ เป็นฟังก์ชันที่ดิฟแล้วง่ายขึ้น</li><li>อินทิเกรตทีละส่วนแล้วเหลือเทอมที่ง่ายกว่าเดิม</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int x\ln x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=\ln x$ และ $dv=x\,dx$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{x^2}{2}\ln x-\dfrac{x^2}{4}+C$</p><p class="alt">$u=\ln x,\ dv=x\,dx\Rightarrow du=\frac{dx}{x},\ v=\frac{x^2}{2}$<br>$=\frac{x^2}{2}\ln x-\int\frac{x}{2}dx=\frac{x^2}{2}\ln x-\frac{x^2}{4}+C$</p></details></div>
+</div></article>
+<article class="q drill" id="p24" data-idx="23">
+<h3><span class="num">24</span> M10. $\displaystyle\int x\sin x\,dx=$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-23"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-23" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัลไม่จำกัดเขต $\int x\sin x\,dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของ $x\sin x$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อินทิเกรตทีละส่วน $\int u\,dv=uv-\int v\,du$</li><li>เลือก $u$ ให้ดิฟแล้วง่ายลง (LIATE)</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ในผลคูณ $x$ กับ $\sin x$ ตัวไหนดิฟแล้วง่ายขึ้น และตัวไหนอินทิเกรตแล้วไม่ยากขึ้น?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ให้ $u$ เป็นพหุนามที่ดิฟแล้วลดดีกรี และ $dv$ เป็นตรีโกณที่อินทิเกรตได้ง่าย แล้วใช้สูตร $uv-\int v\,du$ ระวังเครื่องหมาย</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\int x e^{3x}\,dx$</p><p><b>สาธิต:</b> ให้ $u=x$, $dv=e^{3x}dx$ ได้ $du=dx$, $v=\frac{e^{3x}}{3}$ แทนในสูตรแล้วอินทิกรัลใหม่จะเป็น $\int\frac{e^{3x}}{3}dx$ ซึ่งทำต่อได้ง่าย</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=x$ (ดิฟแล้วเป็น $1$) และ $dv=\sin x\,dx$</p>
+$$du=dx,\qquad v=-\cos x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x\sin x\,dx=x(-\cos x)-\int(-\cos x)\,dx$$
+$$=-x\cos x+\int\cos x\,dx$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int\cos x\,dx=\sin x$</p>
+$$=-x\cos x+\sin x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือก u และ dv</div><p>ให้ $u=x$ (ดิฟแล้วเป็น $1$) และ $dv=\sin x\,dx$</p>
+$$du=dx,\qquad v=-\cos x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนในสูตร by parts</div><p>$\int u\,dv=uv-\int v\,du$</p>
+$$\int x\sin x\,dx=x(-\cos x)-\int(-\cos x)\,dx$$
+$$=-x\cos x+\int\cos x\,dx$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาอินทิกรัลที่เหลือ</div><p>$\int\cos x\,dx=\sin x$</p>
+$$=-x\cos x+\sin x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ -x\cos x+\sin x+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: เครื่องหมายของ $v=-\cos x$ หายไป</li><li>แนวคิดผิด: เลือก $u=\sin x$ ทำให้พหุนามกำลังสูงขึ้น</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ผลคูณของพหุนามกับตรีโกณ/เอกซ์โพเนนเชียลใช้ by parts</li><li>ให้พหุนามเป็น $u$ เพื่อให้ดิฟแล้วลดดีกรี</li><li>ตรวจคำตอบด้วยการดิฟย้อนกลับ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int x\cos 2x\,dx$</p><details><summary>ใบ้</summary><p>ให้ $u=x$ และ $dv=\cos2x\,dx$ อย่าลืมหาร $2$ ตอนหา $v$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{x\sin2x}{2}+\dfrac{\cos2x}{4}+C$</p><p class="alt">$u=x,\ dv=\cos2x\,dx\Rightarrow v=\frac{\sin2x}{2}$<br>$=\frac{x\sin2x}{2}-\int\frac{\sin2x}{2}dx=\frac{x\sin2x}{2}+\frac{\cos2x}{4}+C$</p></details></div>
+</div></article>
+<article class="q drill" id="p25" data-idx="24">
+<h3><span class="num">25</span> M11. $\displaystyle\int\frac{dx}{x^2-1}=$ <span class="src">สัปดาห์ 3</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-24"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-24" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัล $\int\frac{dx}{x^2-1}$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์ของเศษส่วนตัวส่วนกำลังสอง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แยกตัวส่วนเป็นตัวประกอบ</li><li>เศษส่วนย่อย (partial fractions)</li><li>$\int\frac{dx}{x+c}=\ln|x+c|$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ตัวส่วน $x^2-1$ แยกตัวประกอบเป็นอะไรได้บ้าง และเศษส่วนนี้จะแตกเป็นเศษส่วนย่อยรูปไหนได้?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อตัวส่วนแยกเป็นตัวประกอบเชิงเส้นที่ต่างกัน ให้ตั้ง $\frac{A}{\cdot}+\frac{B}{\cdot}$ คูณขจัดส่วน แล้วหา $A,B$ โดยแทนรากของตัวประกอบ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\int\frac{dx}{x^2-4}$</p><p><b>สาธิต:</b> ตั้ง $\frac{1}{(x-2)(x+2)}=\frac{A}{x-2}+\frac{B}{x+2}$ ได้ $1=A(x+2)+B(x-2)$ แทน $x=2$ จะได้ $A$ แทน $x=-2$ จะได้ $B$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกตัวส่วนเป็นตัวประกอบ</div><p>ใช้ผลต่างกำลังสอง $a^2-b^2=(a-b)(a+b)$</p>
+$$\frac{1}{x^2-1}=\frac{1}{(x-1)(x+1)}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งเศษส่วนย่อยและคูณตลอด</div><p>ตั้ง $\frac{A}{x-1}+\frac{B}{x+1}$ แล้วคูณด้วย $(x-1)(x+1)$</p>
+$$1=A(x+1)+B(x-1)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A$ และ $B$ โดยแทนค่าราก</div><p>แทน $x=1$ ตัดเทอมของ $B$ และแทน $x=-1$ ตัดเทอมของ $A$</p>
+$$x=1:\ 1=2A\Rightarrow A=\tfrac12$$
+$$x=-1:\ 1=-2B\Rightarrow B=-\tfrac12$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตทีละเทอม</div><p>$\int\frac{dx}{x\pm1}=\ln|x\pm1|$ แล้วรวมด้วยสมบัติ $\ln a-\ln b=\ln\frac ab$</p>
+$$\int\left(\frac{1/2}{x-1}-\frac{1/2}{x+1}\right)dx=\frac12\ln|x-1|-\frac12\ln|x+1|$$
+$$=\frac12\ln\left|\frac{x-1}{x+1}\right|$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกตัวส่วนเป็นตัวประกอบ</div><p>ใช้ผลต่างกำลังสอง $a^2-b^2=(a-b)(a+b)$</p>
+$$\frac{1}{x^2-1}=\frac{1}{(x-1)(x+1)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตั้งเศษส่วนย่อยและคูณตลอด</div><p>ตั้ง $\frac{A}{x-1}+\frac{B}{x+1}$ แล้วคูณด้วย $(x-1)(x+1)$</p>
+$$1=A(x+1)+B(x-1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A$ และ $B$ โดยแทนค่าราก</div><p>แทน $x=1$ ตัดเทอมของ $B$ และแทน $x=-1$ ตัดเทอมของ $A$</p>
+$$x=1:\ 1=2A\Rightarrow A=\tfrac12$$
+$$x=-1:\ 1=-2B\Rightarrow B=-\tfrac12$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตทีละเทอม</div><p>$\int\frac{dx}{x\pm1}=\ln|x\pm1|$ แล้วรวมด้วยสมบัติ $\ln a-\ln b=\ln\frac ab$</p>
+$$\int\left(\frac{1/2}{x-1}-\frac{1/2}{x+1}\right)dx=\frac12\ln|x-1|-\frac12\ln|x+1|$$
+$$=\frac12\ln\left|\frac{x-1}{x+1}\right|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ข)}\ \ \frac12\ln\left|\frac{x-1}{x+1}\right|+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: คิดว่า $\int\frac{dx}{x^2-1}=\ln|x^2-1|$</li><li>ลืมเงื่อนไข: ลืมค่าสัมบูรณ์ในลอการิทึม</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตัวส่วนแยกตัวประกอบได้ให้ใช้เศษส่วนย่อย</li><li>แทนรากเพื่อหาค่าคงที่อย่างรวดเร็ว</li><li>อินทิเกรตแต่ละเทอมเป็น $\ln|\cdot|$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{dx}{x^2-9}$</p><details><summary>ใบ้</summary><p>แยก $x^2-9=(x-3)(x+3)$ แล้วใช้เศษส่วนย่อย</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac16\ln\left|\dfrac{x-3}{x+3}\right|+C$</p><p class="alt">$\frac{1}{(x-3)(x+3)}=\frac{1/6}{x-3}-\frac{1/6}{x+3}$<br>$\int=\frac16\ln|x-3|-\frac16\ln|x+3|+C=\frac16\ln\left|\frac{x-3}{x+3}\right|+C$</p></details></div>
+</div></article>
+<article class="q drill" id="p26" data-idx="25">
+<h3><span class="num">26</span> M12. $\displaystyle\int\frac{x+5}{(x-1)(x+2)}dx=$ <span class="src">สัปดาห์ 3</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-25"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-25" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>อินทิกรัล $\int\frac{x+5}{(x-1)(x+2)}dx$</li></ul><p><b>ต้องหา:</b> หาปฏิยานุพันธ์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เศษส่วนย่อยเมื่อดีกรีเศษน้อยกว่าส่วน</li><li>หาค่าคงที่ด้วยการแทนราก</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ดีกรีของเศษกับส่วนเป็นเท่าไร และต้องหารยาวก่อนหรือไม่?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ถ้าดีกรีเศษน้อยกว่าส่วน แตกเป็น $\frac{A}{x-a}+\frac{B}{x-b}$ ได้เลย แล้วหา $A,B$ ด้วยการแทน $x=a$ และ $x=b$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\int\frac{3x+1}{(x-1)(x+3)}dx$</p><p><b>สาธิต:</b> ตั้ง $3x+1=A(x+3)+B(x-1)$ แทน $x=1$ ได้ $4=4A$ และแทน $x=-3$ ได้ $-8=-4B$ แล้วอินทิเกรตเป็นลอการิทึมสองเทอม</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งเศษส่วนย่อย</div><p>ตัวส่วนเป็นตัวประกอบเชิงเส้นสองตัวที่ต่างกัน</p>
+$$\frac{x+5}{(x-1)(x+2)}=\frac{A}{x-1}+\frac{B}{x+2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณตลอดด้วยตัวส่วน</div><p>คูณด้วย $(x-1)(x+2)$</p>
+$$x+5=A(x+2)+B(x-1)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A$ และ $B$ โดยแทนค่าราก</div><p>แทน $x=1$ ตัดเทอมของ $B$ และแทน $x=-2$ ตัดเทอมของ $A$</p>
+$$x=1:\ 6=3A\Rightarrow A=2$$
+$$x=-2:\ 3=-3B\Rightarrow B=-1$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตทีละเทอม</div><p>$\int\frac{dx}{x+c}=\ln|x+c|$</p>
+$$\int\left(\frac{2}{x-1}-\frac{1}{x+2}\right)dx=2\ln|x-1|-\ln|x+2|$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งเศษส่วนย่อย</div><p>ตัวส่วนเป็นตัวประกอบเชิงเส้นสองตัวที่ต่างกัน</p>
+$$\frac{x+5}{(x-1)(x+2)}=\frac{A}{x-1}+\frac{B}{x+2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณตลอดด้วยตัวส่วน</div><p>คูณด้วย $(x-1)(x+2)$</p>
+$$x+5=A(x+2)+B(x-1)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $A$ และ $B$ โดยแทนค่าราก</div><p>แทน $x=1$ ตัดเทอมของ $B$ และแทน $x=-2$ ตัดเทอมของ $A$</p>
+$$x=1:\ 6=3A\Rightarrow A=2$$
+$$x=-2:\ 3=-3B\Rightarrow B=-1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: อินทิเกรตทีละเทอม</div><p>$\int\frac{dx}{x+c}=\ln|x+c|$</p>
+$$\int\left(\frac{2}{x-1}-\frac{1}{x+2}\right)dx=2\ln|x-1|-\ln|x+2|$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก)}\ \ 2\ln|x-1|-\ln|x+2|+C$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: แทนค่ารากแล้วคิดเลขเครื่องหมายผิด</li><li>ใช้สูตรผิด: ใช้ $\ln$ ของผลคูณตัวส่วนทั้งก้อน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แตกเป็นเศษส่วนย่อยก่อนอินทิเกรต</li><li>แทนค่ารากเพื่อหา $A,B$</li><li>ผลลัพธ์เป็นผลรวมของ $\ln|x-a|$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\int\frac{5x+1}{(x-1)(x+2)}\,dx$</p><details><summary>ใบ้</summary><p>ตั้ง $5x+1=A(x+2)+B(x-1)$ แล้วแทน $x=1$ และ $x=-2$</p></details><details><summary>ดูคำตอบ</summary><p>$2\ln|x-1|+3\ln|x+2|+C$</p><p class="alt">$x=1:\ 6=3A\Rightarrow A=2$<br>$x=-2:\ -9=-3B\Rightarrow B=3$<br>$\int=2\ln|x-1|+3\ln|x+2|+C$</p></details></div>
+</div></article>
+<article class="q drill" id="p27" data-idx="26">
+<h3><span class="num">27</span> W1. ประมาณค่า $\sin(46^\circ)$ ด้วยการประมาณค่าเชิงเส้น <span class="src">สไลด์ 20</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-26"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-26" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ต้องการประมาณ $\sin 46^\circ$</li><li>ใช้การประมาณค่าเชิงเส้น</li></ul><p><b>ต้องหา:</b> ค่าประมาณของ $\sin46^\circ$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</li><li>ในแคลคูลัสมุมต้องเป็นเรเดียน</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>มุมใดใกล้ $46^\circ$ และรู้ค่าไซน์พอดี และ $\Delta x$ เป็นกี่เรเดียน?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เลือกจุดใกล้เคียงที่รู้ค่าฟังก์ชันและอนุพันธ์ ใช้เส้นสัมผัสประมาณ และแปลงองศาเป็นเรเดียนก่อนแทน</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองประมาณ $\cos 29^\circ$ จาก $30^\circ$</p><p><b>สาธิต:</b> ให้ $f=\cos x$, $x_0=\frac\pi6$, $\Delta x=-\frac\pi{180}$ แล้ว $f'=-\sin x$ แทนลงสูตรโดยระวังว่า $\Delta x$ เป็นลบ</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง</div><p>$46^\circ$ ใกล้ $45^\circ$ ซึ่งรู้ค่าไซน์พอดี ใช้ $f(x)=\sin x$, $x_0=45^\circ=\frac\pi4$ และสูตร $f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แปลง $\Delta x$ เป็นเรเดียน</div><p>การดิฟตรีโกณใช้ได้เฉพาะเมื่อมุมเป็นเรเดียน จึงต้องแปลง $1^\circ$ ก่อน</p>
+$$\Delta x=1^\circ=\frac{\pi}{180}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $f(x_0)$ และ $f'(x_0)$</div><p>$f'(x)=\cos x$</p>
+$$f\left(\tfrac\pi4\right)=\frac{\sqrt2}{2},\qquad f'\left(\tfrac\pi4\right)=\cos\frac\pi4=\frac{\sqrt2}{2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนในสูตรประมาณค่า</div><p>ดึง $\frac{\sqrt2}{2}$ เป็นตัวร่วม</p>
+$$\sin46^\circ\approx\frac{\sqrt2}{2}+\frac{\sqrt2}{2}\cdot\frac{\pi}{180}$$
+$$=\frac{\sqrt2}{2}\left(1+\frac{\pi}{180}\right)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 5</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณเป็นตัวเลข</div><p>$\frac{\sqrt2}{2}\approx0.7071$ และ $\frac\pi{180}\approx0.01745$</p>
+$$\approx0.7071\times1.01745\approx0.7194$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง</div><p>$46^\circ$ ใกล้ $45^\circ$ ซึ่งรู้ค่าไซน์พอดี ใช้ $f(x)=\sin x$, $x_0=45^\circ=\frac\pi4$ และสูตร $f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แปลง $\Delta x$ เป็นเรเดียน</div><p>การดิฟตรีโกณใช้ได้เฉพาะเมื่อมุมเป็นเรเดียน จึงต้องแปลง $1^\circ$ ก่อน</p>
+$$\Delta x=1^\circ=\frac{\pi}{180}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $f(x_0)$ และ $f'(x_0)$</div><p>$f'(x)=\cos x$</p>
+$$f\left(\tfrac\pi4\right)=\frac{\sqrt2}{2},\qquad f'\left(\tfrac\pi4\right)=\cos\frac\pi4=\frac{\sqrt2}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนในสูตรประมาณค่า</div><p>ดึง $\frac{\sqrt2}{2}$ เป็นตัวร่วม</p>
+$$\sin46^\circ\approx\frac{\sqrt2}{2}+\frac{\sqrt2}{2}\cdot\frac{\pi}{180}$$
+$$=\frac{\sqrt2}{2}\left(1+\frac{\pi}{180}\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: คำนวณเป็นตัวเลข</div><p>$\frac{\sqrt2}{2}\approx0.7071$ และ $\frac\pi{180}\approx0.01745$</p>
+$$\approx0.7071\times1.01745\approx0.7194$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\sin46^\circ\approx0.7194$$
+<p class="alt">(ค่าจริง $0.7193$ · ถ้าใช้ $\Delta x=1$ หน่วยองศา จะผิดทันที)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ใช้ $\Delta x=1$ (องศา) โดยไม่แปลงเป็นเรเดียน</li><li>ใช้สูตรผิด: ลืมคูณ $f'(x_0)$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เลือกจุดใกล้เคียงที่ค่าฟังก์ชันรู้ได้ง่าย</li><li>แปลงมุมเป็นเรเดียน</li><li>ใช้ $f(x_0)+f'(x_0)\Delta x$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ประมาณ $\tan 44^\circ$ ด้วยการประมาณค่าเชิงเส้น (ใช้ $x_0=45^\circ$)</p><details><summary>ใบ้</summary><p>$\Delta x=-1^\circ=-\frac{\pi}{180}$ และ $\sec^2\frac\pi4=2$</p></details><details><summary>ดูคำตอบ</summary><p>$1-\dfrac{\pi}{90}\approx0.9651$</p><p class="alt">$f=\tan x$, $f(\frac\pi4)=1$, $f'(\frac\pi4)=\sec^2\frac\pi4=2$<br>$\tan44^\circ\approx1+2\cdot\left(-\frac{\pi}{180}\right)=1-\frac\pi{90}\approx0.9651$</p></details></div>
+</div></article>
+<article class="q drill" id="p28" data-idx="27">
+<h3><span class="num">28</span> W2. $f(x)=5^{(x^2-1)\sin(x^2+5.5)}$ <span class="src">สไลด์ 21</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-27"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-27" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=5^{(x^2-1)\sin(x^2+5.5)}$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(a^u)'=a^u\ln a\cdot u'$</li><li>กฎผลคูณและกฎลูกโซ่</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฟังก์ชันนี้มีฐานคงที่และเลขชี้กำลังเป็นตัวแปร สูตรรูปไหนใช้ได้ และ $u'$ ต้องใช้กฎอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้สูตรดิฟเลขชี้กำลังฐานคงที่ แล้วเลขชี้กำลังซึ่งเป็นผลคูณให้ดิฟด้วยกฎผลคูณ และกฎลูกโซ่กับ $\sin(x^2+5.5)$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $g(x)=4^{x\sin(x^2)}$</p><p><b>สาธิต:</b> ให้ $u=x\sin(x^2)$ ได้ $g'=4^u\ln4\cdot u'$ แล้วหา $u'$ ด้วยกฎผลคูณ โดยดิฟ $\sin(x^2)$ ต้องคูณ $2x$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุรูปของฟังก์ชัน</div><p>เป็นรูป $a^u$ ฐานคงที่ $a=5$ ใช้สูตร $(a^u)'=a^u\ln a\cdot u'$ โดย $u=(x^2-1)\sin(x^2+5.5)$</p>
+$$f'(x)=5^{u}\,\ln5\cdot u'$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $u'$ ด้วยกฎผลคูณ</div><p>$(PQ)'=P'Q+PQ'$ โดย $P=x^2-1$ และ $Q=\sin(x^2+5.5)$</p>
+$$P'=2x,\qquad Q'=\cos(x^2+5.5)\cdot2x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมเป็น $u'$</div><p>แทนลงในกฎผลคูณ แล้วดึง $2x$ เป็นตัวร่วม</p>
+$$u'=2x\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\cdot2x$$
+$$=2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $u'$ ในสูตร</div><p>นำ $u'$ ไปคูณกับ $5^u\ln5$</p>
+$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\ln5\cdot2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุรูปของฟังก์ชัน</div><p>เป็นรูป $a^u$ ฐานคงที่ $a=5$ ใช้สูตร $(a^u)'=a^u\ln a\cdot u'$ โดย $u=(x^2-1)\sin(x^2+5.5)$</p>
+$$f'(x)=5^{u}\,\ln5\cdot u'$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $u'$ ด้วยกฎผลคูณ</div><p>$(PQ)'=P'Q+PQ'$ โดย $P=x^2-1$ และ $Q=\sin(x^2+5.5)$</p>
+$$P'=2x,\qquad Q'=\cos(x^2+5.5)\cdot2x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: รวมเป็น $u'$</div><p>แทนลงในกฎผลคูณ แล้วดึง $2x$ เป็นตัวร่วม</p>
+$$u'=2x\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\cdot2x$$
+$$=2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทน $u'$ ในสูตร</div><p>นำ $u'$ ไปคูณกับ $5^u\ln5$</p>
+$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\ln5\cdot2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=5^{(x^2-1)\sin(x^2+5.5)}\ln5\cdot2x\left[\sin(x^2+5.5)+(x^2-1)\cos(x^2+5.5)\right]$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้ $(a^u)'=u\,a^{u-1}$</li><li>ลืมเงื่อนไข: ลืมคูณ $2x$ จากกฎลูกโซ่ในชั้นใน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>รูป $a^u$ ใช้ $a^u\ln a\cdot u'$</li><li>เลขชี้กำลังที่เป็นผลคูณใช้กฎผลคูณหา $u'$</li><li>ชั้นในของตรีโกณต้องคูณอนุพันธ์ของมัน</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=2^{(x^2+1)\cos(x^2)}$</p><details><summary>ใบ้</summary><p>ให้ $u=(x^2+1)\cos(x^2)$ ใช้ $2^u\ln2\cdot u'$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=2^{(x^2+1)\cos(x^2)}\ln2\cdot2x\left[\cos(x^2)-(x^2+1)\sin(x^2)\right]$</p><p class="alt">$u'=2x\cos(x^2)-(x^2+1)\sin(x^2)\cdot2x$<br>$f'=2^u\ln2\cdot2x[\cos(x^2)-(x^2+1)\sin(x^2)]$</p></details></div>
+</div></article>
+<article class="q drill" id="p29" data-idx="28">
+<h3><span class="num">29</span> W3. $h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$ <span class="src">สไลด์ 22</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-28"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-28" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$h(t)=(\ln t+1)\,10^{\ln(t^2+5)}$</li></ul><p><b>ต้องหา:</b> หา $h'(t)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎผลคูณ $(PQ)'=P'Q+PQ'$</li><li>$(a^w)'=a^w\ln a\cdot w'$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฟังก์ชันนี้เป็นผลคูณของสองก้อน ก้อนไหนต้องใช้กฎลูกโซ่ซ้อนกัน?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เริ่มจากกฎผลคูณ แล้วดิฟแต่ละก้อนแยกกัน ก้อนที่เป็นเลขชี้กำลังฐานคงที่ใช้ $a^w\ln a\cdot w'$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $k(t)=(\sin t+2)\,2^{\ln(t^2+1)}$ ว่าต้องดิฟอย่างไร</p><p><b>สาธิต:</b> ให้ $P=\sin t+2$ และ $Q=2^{\ln(t^2+1)}$ ได้ $Q'=2^{\ln(t^2+1)}\ln2\cdot\frac{2t}{t^2+1}$ แล้วแทนเข้ากฎผลคูณ</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุว่าเป็นผลคูณ</div><p>$h=P\cdot Q$ โดย $P=\ln t+1$ และ $Q=10^{\ln(t^2+5)}$ ใช้ $h'=P'Q+PQ'$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $P'$</div><p>$(\ln t)'=\frac1t$ และค่าคงที่ $1$ ดิฟได้ $0$</p>
+$$P'=\frac1t$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $Q'$</div><p>รูป $a^w$ ฐาน $10$: $(10^w)'=10^w\ln10\cdot w'$ โดย $w=\ln(t^2+5)$ ซึ่ง $w'=\frac{2t}{t^2+5}$</p>
+$$Q'=10^{\ln(t^2+5)}\ln10\cdot\frac{2t}{t^2+5}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนในกฎผลคูณ</div><p>ดึง $10^{\ln(t^2+5)}$ เป็นตัวร่วม</p>
+$$h'(t)=\frac1t\cdot10^{\ln(t^2+5)}+(\ln t+1)\cdot10^{\ln(t^2+5)}\ln10\cdot\frac{2t}{t^2+5}$$
+$$=10^{\ln(t^2+5)}\left[\frac1t+\frac{2t\ln10\,(\ln t+1)}{t^2+5}\right]$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุว่าเป็นผลคูณ</div><p>$h=P\cdot Q$ โดย $P=\ln t+1$ และ $Q=10^{\ln(t^2+5)}$ ใช้ $h'=P'Q+PQ'$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $P'$</div><p>$(\ln t)'=\frac1t$ และค่าคงที่ $1$ ดิฟได้ $0$</p>
+$$P'=\frac1t$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หา $Q'$</div><p>รูป $a^w$ ฐาน $10$: $(10^w)'=10^w\ln10\cdot w'$ โดย $w=\ln(t^2+5)$ ซึ่ง $w'=\frac{2t}{t^2+5}$</p>
+$$Q'=10^{\ln(t^2+5)}\ln10\cdot\frac{2t}{t^2+5}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แทนในกฎผลคูณ</div><p>ดึง $10^{\ln(t^2+5)}$ เป็นตัวร่วม</p>
+$$h'(t)=\frac1t\cdot10^{\ln(t^2+5)}+(\ln t+1)\cdot10^{\ln(t^2+5)}\ln10\cdot\frac{2t}{t^2+5}$$
+$$=10^{\ln(t^2+5)}\left[\frac1t+\frac{2t\ln10\,(\ln t+1)}{t^2+5}\right]$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$h'(t)=10^{\ln(t^2+5)}\left[\frac1t+\frac{2t\ln10\,(\ln t+1)}{t^2+5}\right]$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ดิฟผลคูณเป็น $P'Q'$</li><li>ลืมเงื่อนไข: ลืมคูณ $\ln 10$ ของฐาน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แยกผลคูณก่อนแล้วดิฟทีละก้อน</li><li>เลขชี้กำลังฐานคงที่ต้องมี $\ln a$</li><li>ดึงตัวร่วมช่วยให้คำตอบสั้นลง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $h'(t)$ เมื่อ $h(t)=(\sin t+2)\,3^{\ln(t^2+1)}$</p><details><summary>ใบ้</summary><p>ใช้กฎผลคูณ และ $Q'=3^{w}\ln3\cdot w'$ โดย $w=\ln(t^2+1)$</p></details><details><summary>ดูคำตอบ</summary><p>$h'(t)=3^{\ln(t^2+1)}\left[\cos t+\dfrac{2t\ln3\,(\sin t+2)}{t^2+1}\right]$</p><p class="alt">$P'=\cos t$, $Q'=3^{\ln(t^2+1)}\ln3\cdot\frac{2t}{t^2+1}$<br>$h'=P'Q+PQ'$ แล้วดึง $3^{\ln(t^2+1)}$ เป็นตัวร่วม</p></details></div>
+</div></article>
+<article class="q drill" id="p30" data-idx="29">
+<h3><span class="num">30</span> W4. $y=(1+\cos^2x)^6$ <span class="src">สไลด์ 23</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-29"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-29" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=(1+\cos^2x)^6$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น</li><li>$\frac{d}{dx}\cos^2x=2\cos x\cdot(-\sin x)$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ลอกฟังก์ชันทีละชั้นจากนอกเข้าใน ได้กี่ชั้น และชั้นนอกสุดคืออะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดิฟจากชั้นนอกเข้าใน แล้วคูณอนุพันธ์ของแต่ละชั้นเข้าด้วยกัน อย่าลืม $\cos^2x=(\cos x)^2$ เป็นสองชั้น</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $z=(3+\sin^2x)^4$</p><p><b>สาธิต:</b> ชั้นนอก $w^4\to4w^3$ ถัดมา $\sin^2x\to2\sin x\cos x$ แล้วคูณกัน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>ลอกทีละชั้น: ชั้นนอกคือยกกำลัง $6$ ถัดมาคือ $\cos^2x=(\cos x)^2$ และชั้นในสุดคือ $\cos x$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟชั้นนอก</div><p>กฎกำลัง: $\frac{d}{dw}w^6=6w^5$ โดย $w=1+\cos^2x$</p>
+$$y'=6(1+\cos^2x)^5\cdot\frac{d}{dx}\left(1+\cos^2x\right)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟชั้นกลางและชั้นใน</div><p>$\frac{d}{dx}\cos^2x=2\cos x\cdot(-\sin x)$</p>
+$$\frac{d}{dx}\left(1+\cos^2x\right)=2\cos x\cdot(-\sin x)$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: คูณกัน</div><p>นำมาคูณแล้วรวมเป็นตัวเลขข้างหน้า</p>
+$$y'=6(1+\cos^2x)^5\cdot2\cos x\cdot(-\sin x)$$
+$$=-12\sin x\cos x\,(1+\cos^2x)^5$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 5</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 5: ใช้มุมสองเท่า</div><p>$2\sin x\cos x=\sin2x$</p>
+$$-12\sin x\cos x=-6\cdot2\sin x\cos x=-6\sin2x$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>ลอกทีละชั้น: ชั้นนอกคือยกกำลัง $6$ ถัดมาคือ $\cos^2x=(\cos x)^2$ และชั้นในสุดคือ $\cos x$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟชั้นนอก</div><p>กฎกำลัง: $\frac{d}{dw}w^6=6w^5$ โดย $w=1+\cos^2x$</p>
+$$y'=6(1+\cos^2x)^5\cdot\frac{d}{dx}\left(1+\cos^2x\right)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ดิฟชั้นกลางและชั้นใน</div><p>$\frac{d}{dx}\cos^2x=2\cos x\cdot(-\sin x)$</p>
+$$\frac{d}{dx}\left(1+\cos^2x\right)=2\cos x\cdot(-\sin x)$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คูณกัน</div><p>นำมาคูณแล้วรวมเป็นตัวเลขข้างหน้า</p>
+$$y'=6(1+\cos^2x)^5\cdot2\cos x\cdot(-\sin x)$$
+$$=-12\sin x\cos x\,(1+\cos^2x)^5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ใช้มุมสองเท่า</div><p>$2\sin x\cos x=\sin2x$</p>
+$$-12\sin x\cos x=-6\cdot2\sin x\cos x=-6\sin2x$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=-12\sin x\cos x\,(1+\cos^2x)^5$$
+<p class="alt">(หรือเขียนในรูปอื่นได้เป็น $-6\sin2x\,(1+\cos^2x)^5$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ดิฟ $\cos^2x$ เป็น $-\sin^2x$</li><li>ลืมเงื่อนไข: ลืมคูณอนุพันธ์ของชั้นใน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แยกชั้นแล้วดิฟจากนอกเข้าใน</li><li>$\cos^2x$ ต้องใช้ลูกโซ่อีกชั้น</li><li>รวมตัวคูณด้วยสูตรมุมสองเท่าได้</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=(2+\sin^2x)^5$</p><details><summary>ใบ้</summary><p>ชั้นนอก $5w^4$ แล้วคูณ $2\sin x\cos x$ และใช้ $2\sin x\cos x=\sin2x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=5\sin2x\,(2+\sin^2x)^4$</p><p class="alt">$y'=5(2+\sin^2x)^4\cdot2\sin x\cos x=5\sin2x\,(2+\sin^2x)^4$</p></details></div>
+</div></article>
+<article class="q drill" id="p31" data-idx="30">
+<h3><span class="num">31</span> W5. $y=\sin\big(\tan\sqrt{\sin x}\big)$ <span class="src">สไลด์ 24</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-30"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-30" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\sin\big(\tan\sqrt{\sin x}\big)$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่หลายชั้น</li><li>$(\tan u)'=\sec^2u\cdot u'$, $(\sqrt u)'=\frac{u'}{2\sqrt u}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ลองไล่ชั้นจากนอกเข้าใน ว่ามีฟังก์ชันอะไรซ้อนกันบ้าง และชั้นในสุดคืออะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เขียนอนุพันธ์ของแต่ละชั้นแล้วคูณกัน โดยเก็บฟังก์ชันข้างในไว้เหมือนเดิมจนถึงชั้นสุดท้าย</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\cos\big(\tan\sqrt{x}\big)$ ก่อน (สามชั้น)</p><p><b>สาธิต:</b> ชั้นนอก $-\sin(\cdot)$ ถัดมา $\sec^2(\cdot)$ แล้ว $\frac{1}{2\sqrt x}$ คูณกันตามลำดับ</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>4 ชั้น: $\sin(\cdot)$ แล้ว $\tan(\cdot)$ แล้ว $\sqrt{\cdot}$ แล้ว $\sin x$ ดิฟจากนอกเข้าใน แล้วคูณกัน</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทีละชั้น</div><p>$(\sin A)'=\cos A$, $(\tan B)'=\sec^2B$, $(\sqrt C)'=\frac{1}{2\sqrt C}$ และ $(\sin x)'=\cos x$</p>
+$$y'=\cos\big(\tan\sqrt{\sin x}\big)\cdot\sec^2\sqrt{\sin x}\cdot\frac{1}{2\sqrt{\sin x}}\cdot\cos x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปเป็นเศษส่วนเดียว</div><p>รวมทุกตัวที่เป็นตัวคูณไว้ที่เศษ</p>
+$$y'=\frac{\cos x\,\sec^2\!\sqrt{\sin x}\,\cos\!\big(\tan\sqrt{\sin x}\big)}{2\sqrt{\sin x}}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>4 ชั้น: $\sin(\cdot)$ แล้ว $\tan(\cdot)$ แล้ว $\sqrt{\cdot}$ แล้ว $\sin x$ ดิฟจากนอกเข้าใน แล้วคูณกัน</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทีละชั้น</div><p>$(\sin A)'=\cos A$, $(\tan B)'=\sec^2B$, $(\sqrt C)'=\frac{1}{2\sqrt C}$ และ $(\sin x)'=\cos x$</p>
+$$y'=\cos\big(\tan\sqrt{\sin x}\big)\cdot\sec^2\sqrt{\sin x}\cdot\frac{1}{2\sqrt{\sin x}}\cdot\cos x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปเป็นเศษส่วนเดียว</div><p>รวมทุกตัวที่เป็นตัวคูณไว้ที่เศษ</p>
+$$y'=\frac{\cos x\,\sec^2\!\sqrt{\sin x}\,\cos\!\big(\tan\sqrt{\sin x}\big)}{2\sqrt{\sin x}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=\frac{\cos x\,\sec^2\!\sqrt{\sin x}\,\cos\!\big(\tan\sqrt{\sin x}\big)}{2\sqrt{\sin x}}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ตกชั้นใน เช่น ลืม $\cos x$ ของ $\sin x$</li><li>ใช้สูตรผิด: ดิฟ $\tan$ เป็น $\sec$ ไม่ยกกำลังสอง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แยกชั้นให้ครบก่อนลงมือ</li><li>ดิฟแต่ละชั้นโดยคงด้านในไว้</li><li>คูณทุกชั้นแล้วจัดรูป</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=\cos\big(\sin\sqrt{x^2+1}\big)$</p><details><summary>ใบ้</summary><p>ไล่ 4 ชั้น: $\cos$, $\sin$, $\sqrt{\ }$, $x^2+1$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=-\sin\big(\sin\sqrt{x^2+1}\big)\cos\sqrt{x^2+1}\cdot\dfrac{x}{\sqrt{x^2+1}}$</p><p class="alt">$y'=-\sin(\sin\sqrt{x^2+1})\cdot\cos\sqrt{x^2+1}\cdot\frac{1}{2\sqrt{x^2+1}}\cdot2x$ จัดรูปได้ดังคำตอบ</p></details></div>
+</div></article>
+<article class="q drill" id="p32" data-idx="31">
+<h3><span class="num">32</span> W6. $f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$ <span class="src">สไลด์ 25</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-31"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-31" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=x\csc^{-1}\!\left(\frac5x\right)+\sqrt{5+x^2}$</li></ul><p><b>ต้องหา:</b> หา $f'(x)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎผลคูณ</li><li>อนุพันธ์ของฟังก์ชันตรีโกณผกผัน</li><li>กฎลูกโซ่กับรากที่สอง</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>แต่ละเทอมของผลบวกต้องใช้กฎอะไร และ $\csc^{-1}(5/x)$ มีวิธีทำให้ง่ายขึ้นหรือไม่?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดิฟทีละเทอม เทอมแรกใช้กฎผลคูณกับสูตรตรีโกณผกผัน เทอมสองใช้ลูกโซ่ และลองตรวจว่ารูปของข้างในทำให้เทอมเรียบง่ายได้</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $g(x)=x\sin^{-1}\!\left(\frac{x}{2}\right)$</p><p><b>สาธิต:</b> $(x F)'=F+xF'$ และ $(\sin^{-1}u)'=\frac{u'}{\sqrt{1-u^2}}$ โดย $u=\frac x2$ ทำให้ได้ $\frac{1/2}{\sqrt{1-x^2/4}}$ ซึ่งจัดรูปได้</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุกฎที่ต้องใช้</div><p>เทอมแรกเป็นผลคูณ $x\cdot\csc^{-1}(\frac5x)$ ใช้กฎผลคูณ เทอมหลัง $\sqrt{5+x^2}$ ใช้ลูกโซ่</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ $\csc^{-1}$ ด้วยสูตร</div><p>$(\csc^{-1}u)'=-\dfrac{u'}{|u|\sqrt{u^2-1}}$ โดย $u=\frac5x$ และ $u'=-\frac{5}{x^2}$</p>
+$$\big(\csc^{-1}\tfrac5x\big)'=-\frac{-5/x^2}{\frac5{|x|}\sqrt{\frac{25}{x^2}-1}}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>$\sqrt{\frac{25}{x^2}-1}=\frac{\sqrt{25-x^2}}{|x|}$ และ $|x|\cdot|x|=x^2$</p>
+$$=\frac{5/x^2}{\frac5{|x|}\cdot\frac{\sqrt{25-x^2}}{|x|}}=\frac{5/x^2}{5\sqrt{25-x^2}/x^2}=\frac{1}{\sqrt{25-x^2}}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: ใช้กฎผลคูณกับเทอมแรก</div><p>$(x\cdot F)'=1\cdot F+x\cdot F'$ โดย $F=\csc^{-1}\frac5x$</p>
+$$\left(x\csc^{-1}\tfrac5x\right)'=\csc^{-1}\tfrac5x+\frac{x}{\sqrt{25-x^2}}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 5</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 5: ดิฟเทอมหลัง</div><p>$\left(\sqrt{5+x^2}\right)'=\dfrac{2x}{2\sqrt{5+x^2}}$</p>
+$$\left(\sqrt{5+x^2}\right)'=\frac{x}{\sqrt{5+x^2}}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ระบุกฎที่ต้องใช้</div><p>เทอมแรกเป็นผลคูณ $x\cdot\csc^{-1}(\frac5x)$ ใช้กฎผลคูณ เทอมหลัง $\sqrt{5+x^2}$ ใช้ลูกโซ่</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟ $\csc^{-1}$ ด้วยสูตร</div><p>$(\csc^{-1}u)'=-\dfrac{u'}{|u|\sqrt{u^2-1}}$ โดย $u=\frac5x$ และ $u'=-\frac{5}{x^2}$</p>
+$$\big(\csc^{-1}\tfrac5x\big)'=-\frac{-5/x^2}{\frac5{|x|}\sqrt{\frac{25}{x^2}-1}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>$\sqrt{\frac{25}{x^2}-1}=\frac{\sqrt{25-x^2}}{|x|}$ และ $|x|\cdot|x|=x^2$</p>
+$$=\frac{5/x^2}{\frac5{|x|}\cdot\frac{\sqrt{25-x^2}}{|x|}}=\frac{5/x^2}{5\sqrt{25-x^2}/x^2}=\frac{1}{\sqrt{25-x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ใช้กฎผลคูณกับเทอมแรก</div><p>$(x\cdot F)'=1\cdot F+x\cdot F'$ โดย $F=\csc^{-1}\frac5x$</p>
+$$\left(x\csc^{-1}\tfrac5x\right)'=\csc^{-1}\tfrac5x+\frac{x}{\sqrt{25-x^2}}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 5: ดิฟเทอมหลัง</div><p>$\left(\sqrt{5+x^2}\right)'=\dfrac{2x}{2\sqrt{5+x^2}}$</p>
+$$\left(\sqrt{5+x^2}\right)'=\frac{x}{\sqrt{5+x^2}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=\csc^{-1}\!\left(\frac5x\right)+\frac{x}{\sqrt{25-x^2}}+\frac{x}{\sqrt{5+x^2}}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: จำเครื่องหมายของ $\csc^{-1}$ ผิด</li><li>คำนวณผิด: จัดรูปค่าสัมบูรณ์ $|x|$ ไม่ถูก</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ผลบวกดิฟทีละเทอม</li><li>ผลคูณใช้ $F+xF'$</li><li>สูตรตรีโกณผกผันต้องคูณอนุพันธ์ของข้างใน</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ เมื่อ $f(x)=x\cos^{-1}\!\left(\frac x3\right)+\sqrt{9-x^2}$ (สำหรับ $-3\lt x\lt3$)</p><details><summary>ใบ้</summary><p>$(\cos^{-1}u)'=-\dfrac{u'}{\sqrt{1-u^2}}$ และ $\sqrt{9-x^2}$ ใช้ลูกโซ่</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\cos^{-1}\!\left(\dfrac x3\right)-\dfrac{2x}{\sqrt{9-x^2}}$</p><p class="alt">$(x\cos^{-1}\frac x3)'=\cos^{-1}\frac x3-\frac{x}{\sqrt{9-x^2}}$<br>$(\sqrt{9-x^2})'=-\frac{x}{\sqrt{9-x^2}}$ รวมกันได้ตามคำตอบ</p></details></div>
+</div></article>
+<article class="q drill" id="p33" data-idx="32">
+<h3><span class="num">33</span> W7. $y=\sinh\big(\tan^{-1}e^{5x-1}\big)$ <span class="src">สไลด์ 26</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-32"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-32" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\sinh\big(\tan^{-1}e^{5x-1}\big)$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$(\sinh u)'=\cosh u\cdot u'$</li><li>$(\tan^{-1}u)'=\frac{u'}{1+u^2}$</li><li>$(e^u)'=e^u u'$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ไล่ชั้นฟังก์ชันจากนอกเข้าใน ได้กี่ชั้น และอนุพันธ์ของ $\sinh$ มีเครื่องหมายอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้กฎลูกโซ่ทีละชั้น ชั้นนอกคืออนุพันธ์ของ $\sinh$ ที่ให้ $\cosh$ จากนั้นเป็นตรีโกณผกผัน เอกซ์โพเนนเชียล และเชิงเส้น</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\cosh\big(\tan^{-1}e^{x}\big)$</p><p><b>สาธิต:</b> ชั้นนอก $(\cosh u)'=\sinh u$ ถัดมา $\frac{1}{1+(e^x)^2}$ ถัดมา $e^x$ แล้วคูณกัน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>ชั้นนอก $\sinh$ ถัดมา $\tan^{-1}$ ถัดมา $e^{(\cdot)}$ และชั้นในสุด $5x-1$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟจากนอกเข้าใน</div><p>$(\sinh A)'=+\cosh A$ (ไม่มีลบ), $(\tan^{-1}B)'=\frac{1}{1+B^2}$, $(e^C)'=e^C$ และ $(5x-1)'=5$</p>
+$$y'=\cosh\big(\tan^{-1}e^{5x-1}\big)\cdot\frac{1}{1+(e^{5x-1})^2}\cdot e^{5x-1}\cdot5$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>$(e^{5x-1})^2=e^{10x-2}$ แล้วรวมตัวคูณไว้ที่เศษ</p>
+$$y'=\frac{5e^{5x-1}\cosh\big(\tan^{-1}e^{5x-1}\big)}{1+e^{10x-2}}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกชั้นของฟังก์ชัน</div><p>ชั้นนอก $\sinh$ ถัดมา $\tan^{-1}$ ถัดมา $e^{(\cdot)}$ และชั้นในสุด $5x-1$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟจากนอกเข้าใน</div><p>$(\sinh A)'=+\cosh A$ (ไม่มีลบ), $(\tan^{-1}B)'=\frac{1}{1+B^2}$, $(e^C)'=e^C$ และ $(5x-1)'=5$</p>
+$$y'=\cosh\big(\tan^{-1}e^{5x-1}\big)\cdot\frac{1}{1+(e^{5x-1})^2}\cdot e^{5x-1}\cdot5$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูป</div><p>$(e^{5x-1})^2=e^{10x-2}$ แล้วรวมตัวคูณไว้ที่เศษ</p>
+$$y'=\frac{5e^{5x-1}\cosh\big(\tan^{-1}e^{5x-1}\big)}{1+e^{10x-2}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=\frac{5e^{5x-1}\cosh\big(\tan^{-1}e^{5x-1}\big)}{1+e^{10x-2}}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใส่เครื่องหมายลบให้ $(\sinh)'$ เหมือนตรีโกณ</li><li>คำนวณผิด: $(e^{5x-1})^2$ แปลงเป็น $e^{5x-1}$ ผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ฟังก์ชันไฮเพอร์โบลิกต่างจากตรีโกณตรงเครื่องหมาย</li><li>กฎลูกโซ่ทีละชั้น</li><li>จัดรูปเศษส่วนด้วยกฎเลขยกกำลัง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=\cosh\big(\tan^{-1}e^{2x+1}\big)$</p><details><summary>ใบ้</summary><p>$(\cosh u)'=\sinh u\cdot u'$ และ $(e^{2x+1})^2=e^{4x+2}$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=\dfrac{2e^{2x+1}\sinh\big(\tan^{-1}e^{2x+1}\big)}{1+e^{4x+2}}$</p><p class="alt">$y'=\sinh(\tan^{-1}e^{2x+1})\cdot\frac{1}{1+e^{4x+2}}\cdot e^{2x+1}\cdot2$</p></details></div>
+</div></article>
+<article class="q drill" id="p34" data-idx="33">
+<h3><span class="num">34</span> W8. $y=x^{4x}$ <span class="src">สไลด์ 28 · อนุพันธ์เชิงลอการิทึม</span></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-33"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-33" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=x^{4x}$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อนุพันธ์เชิงลอการิทึม</li><li>$\ln a^b=b\ln a$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฐานและเลขชี้กำลังต่างมี $x$ สูตรกำลังหรือสูตรเอกซ์โพเนนเชียลปกติใช้ได้หรือไม่ และใส่ $\ln$ แล้วได้อะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใส่ $\ln$ ทั้งสองข้างเพื่อดึงเลขชี้กำลังลงมา ดิฟโดยถือว่า $y$ ขึ้นกับ $x$ แล้วคูณ $y$ กลับ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $y=(\sin x)^x$</p><p><b>สาธิต:</b> $\ln y=x\ln(\sin x)$ ดิฟทั้งสองข้าง ได้ $\frac{y'}{y}=\ln(\sin x)+x\cdot\frac{\cos x}{\sin x}$ แล้วคูณ $y$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ ทั้งสองข้าง</div><p>ทั้งฐานและเลขชี้กำลังมี $x$ จึงใช้ $(x^n)'$ หรือ $(a^x)'$ ไม่ได้ ใช้ $\ln a^b=b\ln a$ ดึงเลขชี้กำลังลงมา</p>
+$$y=x^{4x}\ \Rightarrow\ \ln y=\ln x^{4x}=4x\ln x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $x$</div><p>ซ้ายใช้ลูกโซ่ $(\ln y)'=\frac{y'}{y}$ ขวาใช้กฎผลคูณ $(4x\cdot\ln x)'=4\ln x+4x\cdot\frac1x$</p>
+$$\frac{y'}{y}=4\ln x+4x\cdot\frac1x$$
+$$\frac{y'}{y}=4\ln x+4$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ แล้วแทน $y=x^{4x}$ กลับ</div><p>คูณทั้งสองข้างด้วย $y$ และดึง $4$ เป็นตัวร่วม</p>
+$$y'=y\,(4\ln x+4)=x^{4x}\cdot4(\ln x+1)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ ทั้งสองข้าง</div><p>ทั้งฐานและเลขชี้กำลังมี $x$ จึงใช้ $(x^n)'$ หรือ $(a^x)'$ ไม่ได้ ใช้ $\ln a^b=b\ln a$ ดึงเลขชี้กำลังลงมา</p>
+$$y=x^{4x}\ \Rightarrow\ \ln y=\ln x^{4x}=4x\ln x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $x$</div><p>ซ้ายใช้ลูกโซ่ $(\ln y)'=\frac{y'}{y}$ ขวาใช้กฎผลคูณ $(4x\cdot\ln x)'=4\ln x+4x\cdot\frac1x$</p>
+$$\frac{y'}{y}=4\ln x+4x\cdot\frac1x$$
+$$\frac{y'}{y}=4\ln x+4$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ แล้วแทน $y=x^{4x}$ กลับ</div><p>คูณทั้งสองข้างด้วย $y$ และดึง $4$ เป็นตัวร่วม</p>
+$$y'=y\,(4\ln x+4)=x^{4x}\cdot4(\ln x+1)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=4x^{4x}(\ln x+1)$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้ $(x^n)'=nx^{n-1}$ ทั้งที่เลขชี้กำลังมี $x$</li><li>ลืมเงื่อนไข: ลืมคูณ $y$ กลับตอนท้าย</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ฐานและเลขชี้กำลังเป็นตัวแปรทั้งคู่ให้ใช้ $\ln$</li><li>ดิฟทั้งสองข้างแล้วได้ $y'/y$</li><li>คูณ $y$ แล้วแทนกลับ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=x^{x^2}$ ($x\gt0$)</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ จะได้ $\ln y=x^2\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=x^{x^2+1}(2\ln x+1)$</p><p class="alt">$\ln y=x^2\ln x\Rightarrow\frac{y'}{y}=2x\ln x+x$<br>$y'=x^{x^2}\cdot x(2\ln x+1)=x^{x^2+1}(2\ln x+1)$</p></details></div>
+</div></article>
+<article class="q drill" id="p35" data-idx="34">
+<h3><span class="num">35</span> X1. หา $f'(x)$ ของ $f(x)=\sqrt x$ โดยใช้นิยาม</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-34"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-34" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$f(x)=\sqrt x$</li><li>ต้องใช้นิยามของอนุพันธ์</li></ul><p><b>ต้องหา:</b> หา $f'(x)$ จากนิยามลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f'(x)=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$</li><li>คูณสังยุคเพื่อกำจัดราก</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>แทนค่าตรง ๆ แล้วได้รูปอะไร และเศษมีรากลบกันจะกำจัดรากได้ด้วยวิธีใด?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เมื่อเศษเป็นผลต่างของราก ให้คูณทั้งเศษและส่วนด้วยสังยุค เพื่อให้เศษกลายเป็นผลต่างกำลังสองแล้วตัด $\Delta x$ ได้</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองใช้นิยามกับ $g(x)=\sqrt{x+3}$</p><p><b>สาธิต:</b> $\frac{\sqrt{x+3+h}-\sqrt{x+3}}{h}$ คูณสังยุคแล้วเศษเหลือ $h$ ตัด $h$ ได้แล้วค่อยให้ $h\to0$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนนิยามอนุพันธ์</div><p>แทน $f(x)=\sqrt x$</p>
+$$f'(x)=\lim_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt x}{\Delta x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณสังยุค</div><p>เจอรากที่ต้องการให้หายไป จึงคูณทั้งเศษและส่วนด้วยสังยุค $\sqrt{x+\Delta x}+\sqrt x$</p>
+$$=\lim_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt x}{\Delta x}\cdot\frac{\sqrt{x+\Delta x}+\sqrt x}{\sqrt{x+\Delta x}+\sqrt x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้ผลต่างกำลังสองที่เศษ</div><p>$(a-b)(a+b)=a^2-b^2$ จึงได้ $(x+\Delta x)-x=\Delta x$</p>
+$$=\lim_{\Delta x\to0}\frac{\Delta x}{\Delta x\left(\sqrt{x+\Delta x}+\sqrt x\right)}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: ตัด $\Delta x$ แล้วแทนค่าลิมิต</div><p>ตัด $\Delta x$ บนล่าง แล้วให้ $\Delta x\to0$</p>
+$$=\lim_{\Delta x\to0}\frac{1}{\sqrt{x+\Delta x}+\sqrt x}=\frac{1}{\sqrt x+\sqrt x}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนนิยามอนุพันธ์</div><p>แทน $f(x)=\sqrt x$</p>
+$$f'(x)=\lim_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt x}{\Delta x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คูณสังยุค</div><p>เจอรากที่ต้องการให้หายไป จึงคูณทั้งเศษและส่วนด้วยสังยุค $\sqrt{x+\Delta x}+\sqrt x$</p>
+$$=\lim_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt x}{\Delta x}\cdot\frac{\sqrt{x+\Delta x}+\sqrt x}{\sqrt{x+\Delta x}+\sqrt x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้ผลต่างกำลังสองที่เศษ</div><p>$(a-b)(a+b)=a^2-b^2$ จึงได้ $(x+\Delta x)-x=\Delta x$</p>
+$$=\lim_{\Delta x\to0}\frac{\Delta x}{\Delta x\left(\sqrt{x+\Delta x}+\sqrt x\right)}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: ตัด $\Delta x$ แล้วแทนค่าลิมิต</div><p>ตัด $\Delta x$ บนล่าง แล้วให้ $\Delta x\to0$</p>
+$$=\lim_{\Delta x\to0}\frac{1}{\sqrt{x+\Delta x}+\sqrt x}=\frac{1}{\sqrt x+\sqrt x}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$f'(x)=\frac{1}{2\sqrt x}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: แทน $\Delta x=0$ ก่อนจัดรูปแล้วได้ $0/0$</li><li>คำนวณผิด: กระจายสังยุคผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ใช้นิยามเมื่อโจทย์สั่งให้พิสูจน์จากนิยาม</li><li>คูณสังยุคเมื่อมีรากลบกัน</li><li>ตัด $\Delta x$ ก่อนแทนลิมิต</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $f'(x)$ จากนิยาม เมื่อ $f(x)=\sqrt{2x+1}$</p><details><summary>ใบ้</summary><p>คูณสังยุค $\sqrt{2x+2h+1}+\sqrt{2x+1}$ เศษจะเหลือ $2h$</p></details><details><summary>ดูคำตอบ</summary><p>$f'(x)=\dfrac{1}{\sqrt{2x+1}}$</p><p class="alt">$\frac{(2x+2h+1)-(2x+1)}{h(\sqrt{2x+2h+1}+\sqrt{2x+1})}=\frac{2}{\sqrt{2x+2h+1}+\sqrt{2x+1}}$<br>ให้ $h\to0$ ได้ $\frac{2}{2\sqrt{2x+1}}$</p></details></div>
+</div></article>
+<article class="q drill" id="p36" data-idx="35">
+<h3><span class="num">36</span> X2. จากตารางในสไลด์ ($f(0)=1,\ f'(0)=-1,\ g(0)=1,\ g'(0)=5,\ f(1)=\pi,\ f'(1)=4,\ g(1)=2\pi,\ g'(1)=-1$) จงหา<br/>(ก) $(f\circ g)'(0)$   (ข) $(g\circ f)'(0)$   (ค) $\frac{d}{dx}[f(x)g(x)]$ ที่ $x=1$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-35"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-35" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ตารางค่า $f,f',g,g'$ ที่ $x=0$ และ $x=1$</li></ul><p><b>ต้องหา:</b> หา $(f\circ g)'(0)$, $(g\circ f)'(0)$ และ $[fg]'(1)$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎลูกโซ่ $(f\circ g)'(x)=f'(g(x))\,g'(x)$</li><li>กฎผลคูณ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ในการหา $(f\circ g)'(0)$ เราต้องรู้ $g(0)$ เพื่ออะไร และใช้ค่า $f'$ ที่จุดไหน?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้กฎลูกโซ่ โดยหาค่าฟังก์ชันชั้นในก่อน แล้วอ่านอนุพันธ์ของชั้นนอกที่จุดนั้นจากตาราง ส่วนผลคูณใช้ $f'g+fg'$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ถ้า $p(2)=3,\ p'(2)=4,\ q(3)=5,\ q'(3)=-1,\ q(2)=1,\ q'(2)=2$ หา $(q\circ p)'(2)$</p><p><b>สาธิต:</b> $(q\circ p)'(2)=q'(p(2))\,p'(2)=q'(3)\cdot p'(2)$ แล้วอ่านค่าจากตาราง</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ข้อ (ก): $(f\circ g)'(0)$</div><p>กฎลูกโซ่ $(f\circ g)'(x)=f'(g(x))\,g'(x)$ และ $g(0)=1$</p>
+$$(f\circ g)'(0)=f'(g(0))\,g'(0)=f'(1)\cdot g'(0)=4\cdot5=20$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ข้อ (ข): $(g\circ f)'(0)$</div><p>$(g\circ f)'(x)=g'(f(x))\,f'(x)$ และ $f(0)=1$</p>
+$$(g\circ f)'(0)=g'(f(0))\,f'(0)=g'(1)\cdot f'(0)=(-1)(-1)=1$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ข้อ (ค): ผลคูณที่ $x=1$</div><p>กฎผลคูณ $(fg)'=f'g+fg'$</p>
+$$\frac{d}{dx}[f(x)g(x)]\Big|_{x=1}=f'(1)g(1)+f(1)g'(1)$$
+$$=4(2\pi)+\pi(-1)=8\pi-\pi=7\pi$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ข้อ (ก): $(f\circ g)'(0)$</div><p>กฎลูกโซ่ $(f\circ g)'(x)=f'(g(x))\,g'(x)$ และ $g(0)=1$</p>
+$$(f\circ g)'(0)=f'(g(0))\,g'(0)=f'(1)\cdot g'(0)=4\cdot5=20$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ข้อ (ข): $(g\circ f)'(0)$</div><p>$(g\circ f)'(x)=g'(f(x))\,f'(x)$ และ $f(0)=1$</p>
+$$(g\circ f)'(0)=g'(f(0))\,f'(0)=g'(1)\cdot f'(0)=(-1)(-1)=1$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ข้อ (ค): ผลคูณที่ $x=1$</div><p>กฎผลคูณ $(fg)'=f'g+fg'$</p>
+$$\frac{d}{dx}[f(x)g(x)]\Big|_{x=1}=f'(1)g(1)+f(1)g'(1)$$
+$$=4(2\pi)+\pi(-1)=8\pi-\pi=7\pi$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\text{(ก) }20,\qquad\text{(ข) }1,\qquad\text{(ค) }7\pi$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ใช้ $f'(0)$ แทนที่จะเป็น $f'(g(0))$</li><li>ใช้สูตรผิด: ใช้ $(fg)'=f'g'$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ลูกโซ่ต้องหาค่าชั้นในก่อน</li><li>แล้วเอาอนุพันธ์ชั้นนอกที่ค่านั้น</li><li>ผลคูณ $f'g+fg'$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จากตาราง $f(0)=1,\ f'(0)=4,\ g(0)=1,\ g'(0)=2,\ f(1)=3,\ f'(1)=-2,\ g(1)=3,\ g'(1)=5$ จงหา (ก) $(f\circ g)'(0)$ (ข) $(g\circ f)'(0)$ (ค) $\frac{d}{dx}[f(x)g(x)]$ ที่ $x=1$</p><details><summary>ใบ้</summary><p>ใช้ $g(0)=1$ และ $f(0)=1$ เพื่อเลือกค่าอนุพันธ์ชั้นนอก</p></details><details><summary>ดูคำตอบ</summary><p>(ก) $-4$ (ข) $20$ (ค) $9$</p><p class="alt">(ก) $f'(g(0))g'(0)=f'(1)\cdot2=-4$<br>(ข) $g'(f(0))f'(0)=g'(1)\cdot4=20$<br>(ค) $f'(1)g(1)+f(1)g'(1)=-6+15=9$</p></details></div>
+</div></article>
+<article class="q drill" id="p37" data-idx="36">
+<h3><span class="num">37</span> X3. $y=x^{\sin x}$ จงหา $y'$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-36"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-36" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=x^{\sin x}$</li></ul><p><b>ต้องหา:</b> หา $y'$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อนุพันธ์เชิงลอการิทึม</li><li>กฎผลคูณ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ฐานและเลขชี้กำลังเป็นตัวแปรทั้งคู่ จะใช้เทคนิคใดจัดให้เป็นผลคูณ?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใส่ $\ln$ ทั้งสองข้างแล้วดิฟด้วยกฎผลคูณ จากนั้นคูณ $y$ กลับ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $y=(\ln x)^{x}$</p><p><b>สาธิต:</b> $\ln y=x\ln(\ln x)$ ดิฟได้ $\ln(\ln x)+x\cdot\frac{1}{x\ln x}$ แล้วคูณ $y$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ ทั้งสองข้าง</div><p>ฐานและเลขชี้กำลังมี $x$ ทั้งคู่ จึงใช้ $\ln a^b=b\ln a$</p>
+$$y=x^{\sin x}\ \Rightarrow\ \ln y=\sin x\cdot\ln x$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $x$</div><p>ซ้ายได้ $\frac{y'}{y}$ ขวาใช้กฎผลคูณ $(\sin x\cdot\ln x)'=\cos x\ln x+\sin x\cdot\frac1x$</p>
+$$\frac{y'}{y}=\cos x\ln x+\frac{\sin x}{x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ แล้วแทนกลับ</div><p>แทน $y=x^{\sin x}$</p>
+$$y'=x^{\sin x}\left(\cos x\ln x+\frac{\sin x}{x}\right)$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ใส่ $\ln$ ทั้งสองข้าง</div><p>ฐานและเลขชี้กำลังมี $x$ ทั้งคู่ จึงใช้ $\ln a^b=b\ln a$</p>
+$$y=x^{\sin x}\ \Rightarrow\ \ln y=\sin x\cdot\ln x$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟทั้งสองข้างเทียบ $x$</div><p>ซ้ายได้ $\frac{y'}{y}$ ขวาใช้กฎผลคูณ $(\sin x\cdot\ln x)'=\cos x\ln x+\sin x\cdot\frac1x$</p>
+$$\frac{y'}{y}=\cos x\ln x+\frac{\sin x}{x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: คูณ $y$ แล้วแทนกลับ</div><p>แทน $y=x^{\sin x}$</p>
+$$y'=x^{\sin x}\left(\cos x\ln x+\frac{\sin x}{x}\right)$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y'=x^{\sin x}\left(\cos x\ln x+\dfrac{\sin x}{x}\right)$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้ $(a^x)'$ หรือ $(x^n)'$ ตรง ๆ</li><li>ลืมเงื่อนไข: ลืมคูณ $y$ กลับ</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เลขชี้กำลังเป็นตัวแปรใช้ $\ln$ ช่วย</li><li>ดิฟผลคูณทางขวา</li><li>คูณ $y$ แล้วแทนกลับ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y'$ เมื่อ $y=x^{\cos x}$ ($x\gt0$)</p><details><summary>ใบ้</summary><p>ใส่ $\ln$ ได้ $\ln y=\cos x\ln x$</p></details><details><summary>ดูคำตอบ</summary><p>$y'=x^{\cos x}\left(\dfrac{\cos x}{x}-\sin x\ln x\right)$</p><p class="alt">$\frac{y'}{y}=-\sin x\ln x+\frac{\cos x}{x}$ แล้วคูณ $y$</p></details></div>
+</div></article>
+<article class="q drill" id="p38" data-idx="37">
+<h3><span class="num">38</span> X4. $x^2+y^2=25$ จงหา $\frac{dy}{dx}$ และความชันเส้นสัมผัสที่จุด $(3,4)$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-37"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-37" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$x^2+y^2=25$</li><li>จุด $(3,4)$</li></ul><p><b>ต้องหา:</b> หา $\frac{dy}{dx}$ และความชันเส้นสัมผัสที่จุดนั้น</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การดิฟโดยปริยาย</li><li>$\frac{d}{dx}y^2=2y\,y'$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อดิฟ $y^2$ เทียบกับ $x$ ต้องคูณอะไรเพิ่มเพราะ $y$ ขึ้นกับ $x$?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ดิฟทั้งสองข้างเทียบ $x$ โดยถือ $y$ เป็นฟังก์ชันของ $x$ แล้วจัดรูปแก้หา $y'$ แล้วแทนพิกัดของจุด</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $x^2+y^2=17$ ที่จุด $(1,4)$</p><p><b>สาธิต:</b> $2x+2yy'=0$ ได้ $y'=-\frac xy$ จากนั้นแทน $x=1,y=4$ เพื่ออ่านความชัน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ดิฟทั้งสองข้างเทียบ $x$ (implicit)</div><p>ดิฟ $y^2$ ได้ $2y\,y'$ (ลูกโซ่)</p>
+$$2x+2y\,y'=0$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้หา $y'$</div><p>ย้าย $2x$ ไปขวา แล้วหารด้วย $2y$</p>
+$$2y\,y'=-2x$$
+$$y'=-\frac{x}{y}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนจุด $(3,4)$</div><p>ความชันเส้นสัมผัสคือค่า $y'$ ที่จุดนั้น</p>
+$$y'\Big|_{(3,4)}=-\frac34$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ดิฟทั้งสองข้างเทียบ $x$ (implicit)</div><p>ดิฟ $y^2$ ได้ $2y\,y'$ (ลูกโซ่)</p>
+$$2x+2y\,y'=0$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แก้หา $y'$</div><p>ย้าย $2x$ ไปขวา แล้วหารด้วย $2y$</p>
+$$2y\,y'=-2x$$
+$$y'=-\frac{x}{y}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนจุด $(3,4)$</div><p>ความชันเส้นสัมผัสคือค่า $y'$ ที่จุดนั้น</p>
+$$y'\Big|_{(3,4)}=-\frac34$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\frac{dy}{dx}=-\frac xy,\qquad\text{ความชัน}=-\frac34$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืม $y'$ ตอนดิฟ $y^2$</li><li>คำนวณผิด: สลับ $x,y$ ตอนแทนจุด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ดิฟสองข้างเทียบ $x$</li><li>พจน์ที่มี $y$ ต้องคูณ $y'$</li><li>แก้สมการหา $y'$ แล้วแทนจุด</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> เส้นโค้ง $x^2+4y^2=20$ จงหาความชันเส้นสัมผัสที่จุด $(2,2)$</p><details><summary>ใบ้</summary><p>ดิฟโดยปริยายได้ $2x+8yy'=0$</p></details><details><summary>ดูคำตอบ</summary><p>$-\dfrac14$</p><p class="alt">$2x+8yy'=0\Rightarrow y'=-\frac{x}{4y}$<br>ที่ $(2,2)$: $-\frac{2}{8}=-\frac14$</p></details></div>
+</div></article>
+<article class="q drill" id="p39" data-idx="38">
+<h3><span class="num">39</span> X5. $\displaystyle\lim_{x\to0^+}x\ln x$ <small>(รูป $0\cdot\infty$)</small></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-38"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-38" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to0^+}x\ln x$</li></ul><p><b>ต้องหา:</b> ค่าลิมิต</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูป $0\cdot\infty$ ต้องจัดเป็นเศษส่วนก่อนใช้โลปิตาล</li><li>กฎโลปิตาล</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อ $x\to0^+$ รูปของลิมิตเป็นอะไร และจะเขียนผลคูณให้เป็นเศษส่วนอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เปลี่ยนผลคูณรูป $0\cdot\infty$ ให้เป็นเศษส่วนรูป $\frac{\infty}{\infty}$ หรือ $\frac00$ แล้วใช้โลปิตาล</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\lim_{x\to\infty}x\left(e^{1/x}-1\right)$</p><p><b>สาธิต:</b> เขียนเป็น $\frac{e^{1/x}-1}{1/x}$ เป็นรูป $\frac00$ แล้วดิฟเศษและส่วนแยกกัน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูป</div><p>$x\to0^+$ ได้ $0\cdot(-\infty)$ ซึ่งเป็นรูป $0\cdot\infty$ ยังใช้โลปิตาลตรงๆ ไม่ได้</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนเป็นเศษส่วน</div><p>ย้าย $x$ ลงไปเป็น $\frac{1}{1/x}$ ให้เป็นรูป $\frac{-\infty}{\infty}$</p>
+$$x\ln x=\frac{\ln x}{1/x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้โลปิตาล</div><p>ดิฟเศษ $\frac1x$ และดิฟส่วน $-\frac{1}{x^2}$</p>
+$$\lim_{x\to0^+}\frac{\ln x}{1/x}=\lim_{x\to0^+}\frac{1/x}{-1/x^2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: จัดรูปแล้วแทนค่า</div><p>$\frac1x\cdot\left(-x^2\right)=-x$</p>
+$$=\lim_{x\to0^+}(-x)=0$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตรวจรูป</div><p>$x\to0^+$ ได้ $0\cdot(-\infty)$ ซึ่งเป็นรูป $0\cdot\infty$ ยังใช้โลปิตาลตรงๆ ไม่ได้</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เขียนเป็นเศษส่วน</div><p>ย้าย $x$ ลงไปเป็น $\frac{1}{1/x}$ ให้เป็นรูป $\frac{-\infty}{\infty}$</p>
+$$x\ln x=\frac{\ln x}{1/x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: ใช้โลปิตาล</div><p>ดิฟเศษ $\frac1x$ และดิฟส่วน $-\frac{1}{x^2}$</p>
+$$\lim_{x\to0^+}\frac{\ln x}{1/x}=\lim_{x\to0^+}\frac{1/x}{-1/x^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: จัดรูปแล้วแทนค่า</div><p>$\frac1x\cdot\left(-x^2\right)=-x$</p>
+$$=\lim_{x\to0^+}(-x)=0$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\lim_{x\to0^+}x\ln x=0$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้โลปิตาลกับ $0\cdot\infty$ ตรง ๆ</li><li>ใช้สูตรผิด: ดิฟผลคูณแทนที่จะดิฟเศษกับส่วนแยกกัน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>จัดรูป $0\cdot\infty$ เป็นเศษส่วน</li><li>ตรวจว่าเป็น $\frac00$ หรือ $\frac\infty\infty$</li><li>โลปิตาลดิฟเศษและส่วนแยกกัน</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\lim_{x\to\infty}x\sin\frac{\pi}{x}$</p><details><summary>ใบ้</summary><p>เขียนเป็น $\dfrac{\sin(\pi/x)}{1/x}$</p></details><details><summary>ดูคำตอบ</summary><p>$\pi$</p><p class="alt">$\frac{\sin(\pi/x)}{1/x}$ รูป $\frac00$<br>โลปิตาล: $\frac{\cos(\pi/x)\cdot(-\pi/x^2)}{-1/x^2}=\pi\cos(\pi/x)\to\pi$</p></details></div>
+</div></article>
+<article class="q drill" id="p40" data-idx="39">
+<h3><span class="num">40</span> X6. $\displaystyle\lim_{x\to\infty}\left(1+\frac3x\right)^x$ <small>(รูป $1^\infty$)</small></h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-39"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-39" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$\lim_{x\to\infty}\left(1+\frac3x\right)^x$</li></ul><p><b>ต้องหา:</b> ค่าลิมิตรูป $1^\infty$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>รูปไม่กำหนด $1^\infty$ ใช้ $\ln$ ช่วย</li><li>$e^{\lim\ln y}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ใส่ $\ln$ ให้เลขชี้กำลังลงมาแล้ว จะได้ลิมิตรูปอะไรซึ่งใช้โลปิตาลได้?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ตั้ง $y$ เป็นนิพจน์ ใส่ $\ln$ จัดเป็นเศษส่วนรูป $\frac00$ หาลิมิตของ $\ln y$ แล้วยกกลับด้วย $e$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองดู $\lim_{x\to\infty}\left(1+\frac1{2x}\right)^{x}$</p><p><b>สาธิต:</b> $\ln y=\frac{\ln(1+\frac1{2x})}{1/x}$ ใช้โลปิตาลหาลิมิต แล้วคำตอบคือ $e$ ยกกำลังลิมิตนั้น</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งตัวแปรและใส่ $\ln$</div><p>$x\to\infty$ ได้ $1^\infty$ ให้ $y=\left(1+\frac3x\right)^x$ แล้ว $\ln y=x\ln\left(1+\frac3x\right)$</p>
+$$\ln y=x\ln\left(1+\frac3x\right)=\frac{\ln(1+3/x)}{1/x}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ตรวจรูปและใช้โลปิตาล</div><p>เป็นรูป $\frac00$ ดิฟเศษ $\frac{1}{1+3/x}\cdot\left(-\frac{3}{x^2}\right)$ และดิฟส่วน $-\frac{1}{x^2}$</p>
+$$\lim_{x\to\infty}\frac{\frac{-3/x^2}{1+3/x}}{-1/x^2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปแล้วหาค่า</div><p>ตัด $-\frac{1}{x^2}$ ออก เหลือ $\frac{3}{1+3/x}$ และ $\frac3x\to0$</p>
+$$=\lim_{x\to\infty}\frac{3}{1+3/x}=\frac{3}{1+0}=3$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: แปลงกลับด้วย $e$</div><p>เพราะ $\ln y\to3$ จึงได้ $y\to e^3$</p>
+$$\lim_{x\to\infty}y=e^{3}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ตั้งตัวแปรและใส่ $\ln$</div><p>$x\to\infty$ ได้ $1^\infty$ ให้ $y=\left(1+\frac3x\right)^x$ แล้ว $\ln y=x\ln\left(1+\frac3x\right)$</p>
+$$\ln y=x\ln\left(1+\frac3x\right)=\frac{\ln(1+3/x)}{1/x}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตรวจรูปและใช้โลปิตาล</div><p>เป็นรูป $\frac00$ ดิฟเศษ $\frac{1}{1+3/x}\cdot\left(-\frac{3}{x^2}\right)$ และดิฟส่วน $-\frac{1}{x^2}$</p>
+$$\lim_{x\to\infty}\frac{\frac{-3/x^2}{1+3/x}}{-1/x^2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: จัดรูปแล้วหาค่า</div><p>ตัด $-\frac{1}{x^2}$ ออก เหลือ $\frac{3}{1+3/x}$ และ $\frac3x\to0$</p>
+$$=\lim_{x\to\infty}\frac{3}{1+3/x}=\frac{3}{1+0}=3$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: แปลงกลับด้วย $e$</div><p>เพราะ $\ln y\to3$ จึงได้ $y\to e^3$</p>
+$$\lim_{x\to\infty}y=e^{3}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$e^3$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ตอบค่าของ $\ln y$ โดยไม่ยก $e$ กลับ</li><li>ใช้สูตรผิด: คิดว่า $1^\infty=1$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$1^\infty$ เป็นรูปไม่กำหนด</li><li>ใส่ $\ln$ แล้วโลปิตาล</li><li>ยก $e$ กลับตอนท้าย</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $\displaystyle\lim_{x\to\infty}\left(1-\frac2x\right)^x$</p><details><summary>ใบ้</summary><p>$\ln y=\dfrac{\ln(1-2/x)}{1/x}$</p></details><details><summary>ดูคำตอบ</summary><p>$e^{-2}$</p><p class="alt">$\ln y=\frac{\ln(1-2/x)}{1/x}$ รูป $\frac00$<br>โลปิตาล: $\frac{\frac{2/x^2}{1-2/x}}{-1/x^2}=\frac{-2}{1-2/x}\to-2$ ดังนั้น $y\to e^{-2}$</p></details></div>
+</div></article>
+<article class="q drill" id="p41" data-idx="40">
+<h3><span class="num">41</span> X7. $y=\dfrac{1}{2x+1}$ จงหา $y^{(n)}$</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-40"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-40" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$y=\dfrac{1}{2x+1}$</li></ul><p><b>ต้องหา:</b> หาสูตรอนุพันธ์อันดับ $n$ คือ $y^{(n)}$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>เขียนเป็นเลขชี้กำลังลบ</li><li>ดิฟหลายครั้งแล้วหาแบบรูป</li><li>กฎลูกโซ่ทำให้มีตัวคูณ $2$ ทุกครั้ง</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ลองดิฟ 3 ครั้ง สังเกตว่าเครื่องหมาย ตัวเลขข้างหน้า และเลขชี้กำลังเปลี่ยนอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เขียน $y=(ax+b)^{-1}$ ดิฟต่อเนื่องแล้วมองหาแบบรูปของเครื่องหมาย แฟกทอเรียล และกำลังของสัมประสิทธิ์ $a$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองหา $y^{(n)}$ ของ $\frac{1}{x+4}$ (ไม่มีตัวคูณ $2$)</p><p><b>สาธิต:</b> $y'=-(x+4)^{-2}$, $y''=2(x+4)^{-3}$, $y'''=-6(x+4)^{-4}$ สังเกตแบบรูปแล้วเขียนทั่วไป</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนเป็นเลขชี้กำลังลบ</div><p>เพื่อใช้กฎกำลังและลูกโซ่ได้</p>
+$$y=(2x+1)^{-1}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟหลายครั้ง</div><p>ทุกครั้งต้องคูณ $2$ จากการดิฟข้างใน $2x+1$</p>
+$$y'=-1\cdot2\,(2x+1)^{-2}=-2(2x+1)^{-2}$$
+$$y''=-2\cdot(-2)\cdot2\,(2x+1)^{-3}=2!\cdot2^2(2x+1)^{-3}$$
+$$y'''=8\cdot(-3)\cdot2\,(2x+1)^{-4}=-3!\cdot2^3(2x+1)^{-4}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: หาแบบรูป</div><p>เครื่องหมายสลับโดยเริ่มที่ $-$ ตอน $n=1$ จึงเป็น $(-1)^n$ · ตัวเลขคือ $n!$ · มี $2^n$ · ตัวส่วนเป็น $(2x+1)^{n+1}$</p>
+$$y^{(n)}=\frac{(-1)^n\,n!\,2^n}{(2x+1)^{n+1}}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เขียนเป็นเลขชี้กำลังลบ</div><p>เพื่อใช้กฎกำลังและลูกโซ่ได้</p>
+$$y=(2x+1)^{-1}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ดิฟหลายครั้ง</div><p>ทุกครั้งต้องคูณ $2$ จากการดิฟข้างใน $2x+1$</p>
+$$y'=-1\cdot2\,(2x+1)^{-2}=-2(2x+1)^{-2}$$
+$$y''=-2\cdot(-2)\cdot2\,(2x+1)^{-3}=2!\cdot2^2(2x+1)^{-3}$$
+$$y'''=8\cdot(-3)\cdot2\,(2x+1)^{-4}=-3!\cdot2^3(2x+1)^{-4}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: หาแบบรูป</div><p>เครื่องหมายสลับโดยเริ่มที่ $-$ ตอน $n=1$ จึงเป็น $(-1)^n$ · ตัวเลขคือ $n!$ · มี $2^n$ · ตัวส่วนเป็น $(2x+1)^{n+1}$</p>
+$$y^{(n)}=\frac{(-1)^n\,n!\,2^n}{(2x+1)^{n+1}}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$y^{(n)}=\frac{(-1)^n\,n!\,2^n}{(2x+1)^{n+1}}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ลืมคูณ $2$ จากกฎลูกโซ่ทุกครั้ง</li><li>คำนวณผิด: เครื่องหมายสลับผิดตัวแรก</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เขียนเป็นเลขชี้กำลังลบแล้วดิฟซ้ำ</li><li>สังเกตแบบรูป เครื่องหมาย แฟกทอเรียล กำลัง</li><li>ตรวจด้วย $n=1,2$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> จงหา $y^{(n)}$ เมื่อ $y=\dfrac1{3x+2}$</p><details><summary>ใบ้</summary><p>ดิฟทุกครั้งต้องคูณ $3$</p></details><details><summary>ดูคำตอบ</summary><p>$y^{(n)}=\dfrac{(-1)^n\,n!\,3^n}{(3x+2)^{n+1}}$</p><p class="alt">$y'=-3(3x+2)^{-2}$, $y''=2\cdot9(3x+2)^{-3}$, $y'''=-6\cdot27(3x+2)^{-4}$<br>แบบรูป: $(-1)^n n!\,3^n(3x+2)^{-(n+1)}$</p></details></div>
+</div></article>
+<article class="q drill" id="p42" data-idx="41">
+<h3><span class="num">42</span> X8. ประมาณค่า $\cos(61^\circ)$ ด้วยการประมาณค่าเชิงเส้น</h3>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="classmarker-41"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="classmarker-41" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ต้องการประมาณ $\cos61^\circ$</li><li>ใช้การประมาณค่าเชิงเส้น</li></ul><p><b>ต้องหา:</b> ค่าประมาณของ $\cos61^\circ$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</li><li>แปลงองศาเป็นเรเดียน</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>มุมใดใกล้ $61^\circ$ และรู้ค่าโคไซน์พอดี และ $\Delta x$ เป็นกี่เรเดียน?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เลือกจุดอ้างอิงที่รู้ค่าฟังก์ชันและอนุพันธ์ แล้วใช้เส้นสัมผัสโดยให้ $\Delta x$ เป็นเรเดียน</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลองประมาณ $\sin 31^\circ$ จาก $30^\circ$</p><p><b>สาธิต:</b> $f=\sin x$, $x_0=\frac\pi6$, $f'=\cos x$ และ $\Delta x=\frac\pi{180}$ แทนในสูตร</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง</div><p>$61^\circ$ ใกล้ $60^\circ$ ใช้ $f(x)=\cos x$, $x_0=60^\circ=\frac\pi3$ และ $\Delta x=1^\circ=\frac{\pi}{180}$ (ต้องเป็นเรเดียน)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $f(x_0)$ และ $f'(x_0)$</div><p>$f'(x)=-\sin x$</p>
+$$f\left(\tfrac\pi3\right)=\frac12,\qquad f'\left(\tfrac\pi3\right)=-\sin\frac\pi3=-\frac{\sqrt3}{2}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนในสูตรประมาณค่า</div><p>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p>
+$$\cos61^\circ\approx\frac12-\frac{\sqrt3}{2}\cdot\frac{\pi}{180}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณเป็นตัวเลข</div><p>$\frac{\sqrt3}{2}\approx0.8660$ และ $\frac\pi{180}\approx0.017453$ ได้ $0.8660\times0.017453\approx0.01511$</p>
+$$\approx0.5-0.0151=0.4849$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกฟังก์ชันและจุดอ้างอิง</div><p>$61^\circ$ ใกล้ $60^\circ$ ใช้ $f(x)=\cos x$, $x_0=60^\circ=\frac\pi3$ และ $\Delta x=1^\circ=\frac{\pi}{180}$ (ต้องเป็นเรเดียน)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: หา $f(x_0)$ และ $f'(x_0)$</div><p>$f'(x)=-\sin x$</p>
+$$f\left(\tfrac\pi3\right)=\frac12,\qquad f'\left(\tfrac\pi3\right)=-\sin\frac\pi3=-\frac{\sqrt3}{2}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: แทนในสูตรประมาณค่า</div><p>$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$</p>
+$$\cos61^\circ\approx\frac12-\frac{\sqrt3}{2}\cdot\frac{\pi}{180}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 4: คำนวณเป็นตัวเลข</div><p>$\frac{\sqrt3}{2}\approx0.8660$ และ $\frac\pi{180}\approx0.017453$ ได้ $0.8660\times0.017453\approx0.01511$</p>
+$$\approx0.5-0.0151=0.4849$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>
+$$\cos61^\circ\approx0.4849$$
+<p class="alt">(ค่าจริง $0.4848$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ลืมเงื่อนไข: ใช้ $\Delta x=1$ ในหน่วยองศา</li><li>ใช้สูตรผิด: เครื่องหมายของ $(\cos x)'$ ผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เลือกจุดใกล้เคียงที่ค่าฟังก์ชันรู้แน่</li><li>แปลงเป็นเรเดียน</li><li>เส้นสัมผัสประมาณฟังก์ชัน</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ประมาณ $\cos31^\circ$ ด้วยการประมาณค่าเชิงเส้น (ใช้ $x_0=30^\circ$)</p><details><summary>ใบ้</summary><p>$f'(x)=-\sin x$ และ $\Delta x=\frac\pi{180}$</p></details><details><summary>ดูคำตอบ</summary><p>$\dfrac{\sqrt3}{2}-\dfrac{\pi}{360}\approx0.8573$</p><p class="alt">$f(\frac\pi6)=\frac{\sqrt3}2$, $f'(\frac\pi6)=-\frac12$<br>$\cos31^\circ\approx\frac{\sqrt3}2-\frac12\cdot\frac\pi{180}\approx0.8573$</p></details></div>
+</div></article>
+</main>
+<script>
+(function(){
+  var st={};function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('[data-done]')),pg=document.getElementById('prog');
+  function upd(){var n=boxes.filter(function(b){return b.checked}).length;if(pg)pg.textContent='ทำเองได้แล้ว '+n+' / '+boxes.length+' ข้อ'}
+  boxes.forEach(function(b){var k='drill-'+b.dataset.done;b.checked=g(k)==='1';b.addEventListener('change',function(){s(k,b.checked?'1':'0');upd()})});
+  [].slice.call(document.querySelectorAll('[data-note]')).forEach(function(t){var k='note-'+t.dataset.note;var v=g(k);if(v)t.value=v;t.addEventListener('input',function(){s(k,t.value)})});
+  upd();
+})();
+</script>
+</body>
+</html>

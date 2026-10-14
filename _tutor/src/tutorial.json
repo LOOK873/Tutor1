@@ -1,0 +1,1723 @@
+[
+ {
+  "idx": 0,
+  "title": "1 · ข้อ 1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=1\" rel=\"noopener\" target=\"_blank\">PDF หน้า 1</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เงื่อนไขของรากที่สอง",
+    "body": "ในรากต้องไม่ติดลบ $\\ln(x^2-1)\\ge0$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แก้อสมการของ ln",
+    "body": "$\\ln A\\ge0\\iff A\\ge1$ (ซึ่งทำให้ $A>0$ ตามเงื่อนไขของ $\\ln$ ไปด้วยแล้ว)$$x^2-1\\ge1\\ \\Rightarrow\\ x^2\\ge2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ถอดกำลังสอง",
+    "body": "$x^2\\ge2\\iff |x|\\ge\\sqrt2$ จึงได้ $x\\le-\\sqrt2$ หรือ $x\\ge\\sqrt2$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$(-\\infty,-\\sqrt2\\,]\\cup[\\sqrt2,\\infty)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{โดเมนของ } f(x)=\\sqrt{\\ln(x^2-1)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$(-\\infty,-\\sqrt2\\,]\\cup[\\sqrt2,\\infty)$</span></p>",
+   "<p class=\"tip\">ฟังก์ชันซ้อนกัน ให้เขียนเงื่อนไข \"จากนอกเข้าใน\" ทีละชั้น: ราก → ln → ข้างใน</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$(-\\infty,-\\sqrt2\\,]\\cup[\\sqrt2,\\infty)$</span>"
+ },
+ {
+  "idx": 1,
+  "title": "2 · ข้อ 17.1 / ข้อ 6.1 (โจทย์เดียวกัน) <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=1\" rel=\"noopener\" target=\"_blank\">PDF หน้า 1</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: โดเมน",
+    "body": "ตัวส่วนต้องไม่เป็น $0$: $x^2-1\\ne0\\Rightarrow x\\ne\\pm1$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ตั้ง $y=f(x)$ แล้วแก้หา $x^2$",
+    "body": "$$y(x^2-1)=x^2+1\\ \\Rightarrow\\ x^2(y-1)=y+1\\ \\Rightarrow\\ x^2=\\frac{y+1}{y-1}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ให้ $x^2\\ge0$",
+    "body": "ต้องการ $\\dfrac{y+1}{y-1}\\ge0$ และ $y\\ne1$ เพราะตัวส่วนเป็น $0$ ไม่ได้$$y\\le-1\\ \\text{ หรือ }\\ y>1$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ตรวจค่า $x=\\pm1$ ที่ถูกตัดออก",
+    "body": "ถ้า $x^2=1$ จะได้ $\\frac{y+1}{y-1}=1\\Rightarrow y+1=y-1$ เป็นไปไม่ได้ จึงไม่มีค่า $y$ ใดถูกตัดเพิ่ม",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$D_f=\\mathbb R\\setminus\\{\\pm1\\},\\quad R_f=(-\\infty,-1]\\cup(1,\\infty)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\dfrac{x^2+1}{x^2-1}\\ \\text{ หาโดเมนและเรนจ์}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$D_f=\\mathbb R\\setminus\\{\\pm1\\},\\quad R_f=(-\\infty,-1]\\cup(1,\\infty)$</span></p>",
+   "<p class=\"tip\">เรนจ์ของฟังก์ชันตรรกยะ: แก้สมการให้ $x$ (หรือ $x^2$) อยู่ทางซ้าย แล้วใส่เงื่อนไขว่า $x$ ต้องมีค่าจริง</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$D_f=\\mathbb R\\setminus\\{\\pm1\\},\\quad R_f=(-\\infty,-1]\\cup(1,\\infty)$</span>"
+ },
+ {
+  "idx": 2,
+  "title": "3 · ข้อ 10.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=1\" rel=\"noopener\" target=\"_blank\">PDF หน้า 1</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: โดเมน",
+    "body": "$x^2-9\\ne0\\Rightarrow x\\ne\\pm3$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แก้หา $x^2$ ในรูปของ $y$",
+    "body": "$$y(x^2-9)=4x^2-16\\ \\Rightarrow\\ x^2(y-4)=9y-16\\ \\Rightarrow\\ x^2=\\frac{9y-16}{y-4}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ให้ $x^2\\ge0$ (ตารางเครื่องหมาย)",
+    "body": "จุดวิกฤต $y=\\frac{16}{9}$ (ตัวเศษเป็น 0) และ $y=4$ (ตัวส่วนเป็น 0)$$\\begin{array}{c|ccc}y&y<\\frac{16}{9}&\\frac{16}{9}<y<4&y>4\\\\\\hline\\frac{9y-16}{y-4}&+&-&+\\end{array}$$จึงได้ $y\\le\\frac{16}{9}$ (รวมจุด $\\frac{16}{9}$ เพราะได้ $x=0$) หรือ $y>4$ (ไม่รวม $y=4$)",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ตรวจค่า $x=\\pm3$",
+    "body": "ถ้า $x^2=9$ จะได้ $9y-16=9y-36$ เป็นไปไม่ได้ จึงไม่ตัดค่า $y$ เพิ่ม",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$D_f=\\mathbb R\\setminus\\{\\pm3\\},\\quad R_f=\\left(-\\infty,\\tfrac{16}{9}\\right]\\cup(4,\\infty)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\dfrac{4x^2-16}{x^2-9}\\ \\text{ หาโดเมนและเรนจ์}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$D_f=\\mathbb R\\setminus\\{\\pm3\\},\\quad R_f=\\left(-\\infty,\\tfrac{16}{9}\\right]\\cup(4,\\infty)$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$D_f=\\mathbb R\\setminus\\{\\pm3\\},\\quad R_f=\\left(-\\infty,\\tfrac{16}{9}\\right]\\cup(4,\\infty)$</span>"
+ },
+ {
+  "idx": 3,
+  "title": "4 · ข้อ 1.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=2\" rel=\"noopener\" target=\"_blank\">PDF หน้า 2</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ใช้สมบัติลิมิต",
+    "body": "ลิมิตของผลคูณ/ผลหาร/ผลบวก = ผลคูณ/ผลหาร/ผลบวกของลิมิต (เมื่อตัวส่วนไม่เป็น 0)",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทนค่า",
+    "body": "$$\\frac{2(3)+1}{1-(3)(5)}\\cdot5=\\frac{7}{-14}\\cdot5=-\\frac12\\cdot5=-\\frac52$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$-\\dfrac52$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to a}f=3,\\ \\lim g=5,\\ \\lim h=1\\ \\Rightarrow\\ \\lim_{x\\to a}\\left[\\dfrac{2f(x)+1}{1-f(x)g(x)}\\right]g(x)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$-\\dfrac52$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$-\\dfrac52$</span>"
+ },
+ {
+  "idx": 4,
+  "title": "5 · ข้อ 1.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=2\" rel=\"noopener\" target=\"_blank\">PDF หน้า 2</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาลิมิตของเลขชี้กำลัง",
+    "body": "$\\sqrt{g(x)+3}\\to\\sqrt{5+3}=\\sqrt8=2\\sqrt2$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาลิมิตของฐานและตัวส่วน",
+    "body": "ฐาน $f(x)\\to3$ ; ตัวส่วน $g+4h\\to5+4(1)=9$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: รวม",
+    "body": "$$\\frac{3^{2\\sqrt2}}{9}=3^{2\\sqrt2-2}\\approx 3^{0.828}\\approx2.48$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac{3^{2\\sqrt2}}{9}=3^{2\\sqrt2-2}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to a}\\dfrac{[f(x)]^{\\sqrt{g(x)+3}}}{g(x)+4h(x)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac{3^{2\\sqrt2}}{9}=3^{2\\sqrt2-2}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac{3^{2\\sqrt2}}{9}=3^{2\\sqrt2-2}$</span>"
+ },
+ {
+  "idx": 5,
+  "title": "6 · ข้อ 2 (ก–จ) <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=2\" rel=\"noopener\" target=\"_blank\">PDF หน้า 2</a></small>",
+  "steps": [
+   {
+    "head": "ก) $\\lim_{x\\to a}[h-3g+1]$",
+    "body": "$=0-3(-4)+1=13$",
+    "final": false
+   },
+   {
+    "head": "ข) $\\lim_{x\\to+\\infty}[q(x)]^2$",
+    "body": "$=(-5)^2=25$",
+    "final": false
+   },
+   {
+    "head": "ค) $\\lim_{x\\to+\\infty}\\sqrt[3]{5+p(x)}$",
+    "body": "$=\\sqrt[3]{5+3}=\\sqrt[3]{8}=2$",
+    "final": false
+   },
+   {
+    "head": "ง) $\\lim_{x\\to-\\infty}[x^2+v(x)]$",
+    "body": "$x^2\\to+\\infty$ ส่วน $v\\to-6$ (จำนวนจำกัด) ดังนั้น $\\infty+(-6)=+\\infty$",
+    "final": false
+   },
+   {
+    "head": "จ) $\\lim_{x\\to-\\infty}\\sqrt[3]{u(x)v(x)}$",
+    "body": "$=\\sqrt[3]{(7)(-6)}=\\sqrt[3]{-42}=-\\sqrt[3]{42}\\approx-3.48$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\text{ก) }13\\quad\\text{ข) }25\\quad\\text{ค) }2\\quad\\text{ง) }+\\infty\\quad\\text{จ) }-\\sqrt[3]{42}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{กำหนด }\\lim_{x\\to a}g=-4,\\ \\lim_{x\\to a}h=0,\\ \\lim_{x\\to+\\infty}p=3,\\ \\lim_{x\\to+\\infty}q=-5,\\ \\lim_{x\\to+\\infty}r=0,\\ \\lim_{x\\to-\\infty}u=7,\\ \\lim_{x\\to-\\infty}v=-6$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\text{ก) }13\\quad\\text{ข) }25\\quad\\text{ค) }2\\quad\\text{ง) }+\\infty\\quad\\text{จ) }-\\sqrt[3]{42}$</span></p>",
+   "<p class=\"tip\">รากที่ 3 ของจำนวนลบหาได้ (ต่างจากรากที่ 2)</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\text{ก) }13\\quad\\text{ข) }25\\quad\\text{ค) }2\\quad\\text{ง) }+\\infty\\quad\\text{จ) }-\\sqrt[3]{42}$</span>"
+ },
+ {
+  "idx": 6,
+  "title": "7 · ข้อ 1 (ก–จ) อ่านจากกราฟ <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=3\" rel=\"noopener\" target=\"_blank\">PDF หน้า 3</a></small>",
+  "steps": [
+   {
+    "head": "อ่านค่าจากกราฟก่อน",
+    "body": "$f$: ฝั่งซ้ายของ $0$ เป็นเส้นตรงที่เข้าใกล้ $1$ (วงกลมโปร่งที่ $(0,1)$) ; ฝั่งขวาเริ่มที่ $-2$ แล้วขึ้นผ่านวงกลมโปร่ง $(2,0)$ ; มีจุดทึบ $f(2)=1$<br/>$g$: เป็นเส้นตรงต่อเนื่อง ผ่าน $(-1,0),(0,2),(2,0)$ ดังนั้น $g(0)=2,\\ g(2)=0$",
+    "final": false
+   },
+   {
+    "head": "ก) $\\lim_{x\\to2}[f+g]$",
+    "body": "$\\lim_{x\\to2}f=0$ (ไม่สนใจจุดทึบ $f(2)=1$) และ $\\lim_{x\\to2}g=0$ → $0+0=\\mathbf{0}$",
+    "final": false
+   },
+   {
+    "head": "ข) $\\lim_{x\\to0}[f+g]$",
+    "body": "$f$ ซ้าย $\\to1$, ขวา $\\to-2$ ไม่เท่ากัน ดังนั้น $\\lim_{x\\to0}f$ ไม่มี ส่วน $g$ มีลิมิต $2$ → ผลรวม <b>หาค่าไม่ได้ (DNE)</b>",
+    "final": false
+   },
+   {
+    "head": "ค) $\\lim_{x\\to0^+}[f+g]$",
+    "body": "$(-2)+2=\\mathbf{0}$",
+    "final": false
+   },
+   {
+    "head": "ง) $\\lim_{x\\to2}\\dfrac{f(x)}{1+g(x)}$",
+    "body": "$\\dfrac{0}{1+0}=\\mathbf{0}$",
+    "final": false
+   },
+   {
+    "head": "จ) $\\lim_{x\\to0^-}\\sqrt{f(x)}$",
+    "body": "$f\\to1$ จากซ้าย → $\\sqrt1=\\mathbf{1}$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\text{ก) }0\\quad\\text{ข) หาค่าไม่ได้}\\quad\\text{ค) }0\\quad\\text{ง) }0\\quad\\text{จ) }1$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{ใช้กราฟ } f,\\ g \\text{ หาลิมิต}$</p>",
+   "<p><img alt=\"กราฟโจทย์ (PDF หน้า 3)\" src=\"img/tutorial-p3-fg.png\" style=\"max-width:100%;width:420px;height:auto;background:#fff;border:1px solid #8884;border-radius:6px\"/></p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\text{ก) }0\\quad\\text{ข) หาค่าไม่ได้}\\quad\\text{ค) }0\\quad\\text{ง) }0\\quad\\text{จ) }1$</span></p>",
+   "<p class=\"tip\">ลิมิตไม่สนค่าของฟังก์ชันที่จุดนั้น (จุดทึบ) สนเฉพาะค่าที่เส้นกราฟ \"เข้าไปหา\"</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\text{ก) }0\\quad\\text{ข) หาค่าไม่ได้}\\quad\\text{ค) }0\\quad\\text{ง) }0\\quad\\text{จ) }1$</span>"
+ },
+ {
+  "idx": 7,
+  "title": "8 · ข้อ 1.4 อ่านจากกราฟ <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=3\" rel=\"noopener\" target=\"_blank\">PDF หน้า 3</a></small>",
+  "steps": [
+   {
+    "head": "$x\\to-3$",
+    "body": "ทั้งจากซ้ายและจากขวา กราฟเข้าใกล้ $y=4$ (วงกลมโปร่งที่ $(-3,4)$) ส่วนจุดทึบ $f(-3)=2$ ไม่เกี่ยวกับลิมิต$$\\lim_{x\\to-3^-}f=\\lim_{x\\to-3^+}f=4\\ \\Rightarrow\\ \\lim_{x\\to-3}f=4$$",
+    "final": false
+   },
+   {
+    "head": "$x\\to7$",
+    "body": "จากซ้ายกราฟเข้าใกล้ $3$ (วงกลมโปร่งบน) แต่จากขวาเข้าใกล้ $2$ (วงกลมโปร่งล่าง) ส่วนจุดทึบ $f(7)=1$$$\\lim_{x\\to7^-}f=3\\ne2=\\lim_{x\\to7^+}f$$ลิมิตสองข้างไม่เท่ากัน จึง <b>ไม่มีลิมิต</b>",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\lim_{x\\to-3}f=4,\\qquad \\lim_{x\\to7}f\\ \\text{ ไม่มีค่า (DNE)}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to-3}f(x)\\ \\text{ และ }\\ \\lim_{x\\to7}f(x)$</p>",
+   "<p><img alt=\"กราฟโจทย์ (PDF หน้า 3)\" src=\"img/tutorial-p3-14.png\" style=\"max-width:100%;width:420px;height:auto;background:#fff;border:1px solid #8884;border-radius:6px\"/></p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\lim_{x\\to-3}f=4,\\qquad \\lim_{x\\to7}f\\ \\text{ ไม่มีค่า (DNE)}$</span></p>",
+   "<p class=\"tip\">เหตุผลที่ต้องเขียนตอบ: \"ลิมิตซ้าย = ลิมิตขวา\" จึงมีลิมิต / \"ลิมิตซ้าย ≠ ลิมิตขวา\" จึงไม่มี</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\lim_{x\\to-3}f=4,\\qquad \\lim_{x\\to7}f\\ \\text{ ไม่มีค่า (DNE)}$</span>"
+ },
+ {
+  "idx": 8,
+  "title": "9 · ข้อ 3.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=4\" rel=\"noopener\" target=\"_blank\">PDF หน้า 4</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตรวจรูปแบบ",
+    "body": "แทน $x=0$ ได้ $\\frac00$ จึงต้องกำจัดราก",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: คูณคอนจูเกต",
+    "body": "$$\\frac{\\sqrt{2+x}-\\sqrt2}{x}\\cdot\\frac{\\sqrt{2+x}+\\sqrt2}{\\sqrt{2+x}+\\sqrt2}=\\frac{(2+x)-2}{x\\left(\\sqrt{2+x}+\\sqrt2\\right)}=\\frac{1}{\\sqrt{2+x}+\\sqrt2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนค่า",
+    "body": "$$\\lim_{x\\to0}\\frac{1}{\\sqrt{2+x}+\\sqrt2}=\\frac1{2\\sqrt2}=\\frac{\\sqrt2}{4}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac{1}{2\\sqrt2}=\\dfrac{\\sqrt2}{4}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to0}\\dfrac{\\sqrt{2+x}-\\sqrt2}{x}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac{1}{2\\sqrt2}=\\dfrac{\\sqrt2}{4}$</span></p>",
+   "<p class=\"tip\">เห็น √ลบ√ ที่ให้ 0/0 → คูณคอนจูเกต</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac{1}{2\\sqrt2}=\\dfrac{\\sqrt2}{4}$</span>"
+ },
+ {
+  "idx": 9,
+  "title": "10 · ข้อ 3.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=4\" rel=\"noopener\" target=\"_blank\">PDF หน้า 4</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ดึง $x^2$ ออกจากราก",
+    "body": "$x^2>0$ เสมอ จึงไม่ต้องกังวลเครื่องหมาย: $\\sqrt{4x^4+x}=\\sqrt{x^4\\left(4+\\frac1{x^3}\\right)}=x^2\\sqrt{4+\\frac1{x^3}}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ตัดกำลังสูงสุด",
+    "body": "$$\\frac{x^2\\sqrt{4+1/x^3}}{x^2\\left(1-8/x^2\\right)}=\\frac{\\sqrt{4+1/x^3}}{1-8/x^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ให้ $x\\to-\\infty$",
+    "body": "$\\frac1{x^3}\\to0,\\ \\frac8{x^2}\\to0$ → $\\dfrac{\\sqrt4}{1}=2$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$2$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to-\\infty}\\dfrac{\\sqrt{4x^4+x}}{x^2-8}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$2$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$2$</span>"
+ },
+ {
+  "idx": 10,
+  "title": "11 · ข้อ 3.3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=4\" rel=\"noopener\" target=\"_blank\">PDF หน้า 4</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: รูปแบบ $0^0$",
+    "body": "$x^{\\sin x}$ นิยามเฉพาะ $x>0$ จึงหาลิมิตเมื่อ $x\\to0^+$ ; ให้ $y=x^{\\sin x}$ แล้วใส่ $\\ln$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ดัดให้เป็นลิมิตที่รู้จัก",
+    "body": "$$\\ln y=\\sin x\\cdot\\ln x=\\frac{\\sin x}{x}\\cdot x\\ln x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาลิมิต",
+    "body": "$\\frac{\\sin x}{x}\\to1$ และ $x\\ln x=\\dfrac{\\ln x}{1/x}\\xrightarrow{\\text{L'H}}\\dfrac{1/x}{-1/x^2}=-x\\to0$$$\\lim\\ln y=1\\cdot0=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ย้อนกลับ",
+    "body": "$y=e^{\\ln y}\\to e^0=1$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$1$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to0}x^{\\sin x}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$1$</span></p>",
+   "<p class=\"tip\">รูป $0^0,\\ 1^\\infty,\\ \\infty^0$ → ใส่ $\\ln$ ก่อนเสมอ</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$1$</span>"
+ },
+ {
+  "idx": 11,
+  "title": "12 · ข้อ 7.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=5\" rel=\"noopener\" target=\"_blank\">PDF หน้า 5</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ใช้บทนิยามของ $e$",
+    "body": "$\\displaystyle\\lim_{x\\to\\infty}\\left(1+\\frac kx\\right)^{x}=e^k$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ดึงเลขชี้กำลัง",
+    "body": "$$\\left(1+\\frac5x\\right)^{2x}=\\left[\\left(1+\\frac5x\\right)^{x}\\right]^2\\to\\left(e^5\\right)^2=e^{10}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$e^{10}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to\\infty}\\left(1+\\dfrac5x\\right)^{2x}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$e^{10}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$e^{10}$</span>"
+ },
+ {
+  "idx": 12,
+  "title": "13 · ข้อ 7.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=5\" rel=\"noopener\" target=\"_blank\">PDF หน้า 5</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หารด้วย $e^x$",
+    "body": "$$\\frac{e^x+e^{-x}}{e^x-e^{-x}}=\\frac{1+e^{-2x}}{1-e^{-2x}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ให้ $x\\to+\\infty$",
+    "body": "$e^{-2x}\\to0$ → $\\dfrac{1+0}{1-0}=1$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$1$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to+\\infty}\\dfrac{e^x+e^{-x}}{e^x-e^{-x}}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$1$</span></p>",
+   "<p class=\"tip\">นี่คือ $\\coth x\\to1$ เมื่อ $x\\to+\\infty$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$1$</span>"
+ },
+ {
+  "idx": 13,
+  "title": "14 · ข้อ 7.3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=5\" rel=\"noopener\" target=\"_blank\">PDF หน้า 5</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ระวังเครื่องหมาย",
+    "body": "เมื่อ $x\\to-\\infty$ จะได้ $x<0$ ดังนั้น $\\sqrt{x^2}=|x|=-x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ดึง $|x|$ ออกจากราก",
+    "body": "$$\\sqrt{5x^2-1}=|x|\\sqrt{5-\\frac1{x^2}}=-x\\sqrt{5-\\frac1{x^2}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนแล้วตัด",
+    "body": "$$\\frac{-x\\sqrt{5-1/x^2}}{x\\left(1+3/x\\right)}=\\frac{-\\sqrt{5-1/x^2}}{1+3/x}\\to\\frac{-\\sqrt5}{1}=-\\sqrt5$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$-\\sqrt5$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to-\\infty}\\dfrac{\\sqrt{5x^2-1}}{x+3}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$-\\sqrt5$</span></p>",
+   "<p class=\"tip\">ถ้า $x\\to-\\infty$ แล้วหารด้วยรากของ $x^2$ → ต้องได้เครื่องหมายลบออกมา (กับดักข้อสอบ)</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$-\\sqrt5$</span>"
+ },
+ {
+  "idx": 14,
+  "title": "15 · ข้อ 8 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=6\" rel=\"noopener\" target=\"_blank\">PDF หน้า 6</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: รวมเป็นเศษส่วนเดียว",
+    "body": "$$x^{-3}\\sin3x+rx^{-2}+s=\\frac{\\sin3x+rx}{x^3}+s$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หา $r$",
+    "body": "ตัวส่วน $x^3\\to0$ ถ้าลิมิตมีค่าจำกัด ตัวเศษต้องเป็น $0$ ด้วยอัตราอย่างน้อย $x^3$ แต่ $\\sin3x+rx\\approx(3+r)x$ ดังนั้นต้อง $3+r=0\\Rightarrow r=-3$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาลิมิตที่เหลือด้วย L'Hôpital 3 รอบ",
+    "body": "$$\\lim_{x\\to0}\\frac{\\sin3x-3x}{x^3}\\overset{H}{=}\\lim\\frac{3\\cos3x-3}{3x^2}\\overset{H}{=}\\lim\\frac{-9\\sin3x}{6x}\\overset{H}{=}\\lim\\frac{-27\\cos3x}{6}=-\\frac92$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หา $s$",
+    "body": "$-\\frac92+s=3\\Rightarrow s=\\frac{15}2$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$r=-3,\\qquad s=\\dfrac{15}{2}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{หา } r,s \\text{ ที่ทำให้ }\\lim_{x\\to0}\\left(x^{-3}\\sin3x+rx^{-2}+s\\right)=3$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$r=-3,\\qquad s=\\dfrac{15}{2}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$r=-3,\\qquad s=\\dfrac{15}{2}$</span>"
+ },
+ {
+  "idx": 15,
+  "title": "16 · ข้อ 3.4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=6\" rel=\"noopener\" target=\"_blank\">PDF หน้า 6</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: รูป $\\infty\\cdot0$ → เปลี่ยนเป็นเศษส่วน",
+    "body": "ให้ $t=\\frac1x\\to0^+$ : $\\displaystyle x\\ln\\frac{x+1}{x-1}=\\frac{\\ln\\frac{1+t}{1-t}}{t}=\\frac{\\ln(1+t)-\\ln(1-t)}{t}$ (รูป $\\frac00$)",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: L'Hôpital",
+    "body": "$$\\lim_{t\\to0^+}\\frac{\\frac1{1+t}+\\frac1{1-t}}{1}=1+1=2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$2$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to\\infty}x\\ln\\left(\\dfrac{x+1}{x-1}\\right)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$2$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$2$</span>"
+ },
+ {
+  "idx": 16,
+  "title": "17 · ข้อ 2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=6\" rel=\"noopener\" target=\"_blank\">PDF หน้า 6</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: แยกตัวประกอบและรวมเศษส่วน",
+    "body": "$x^2+2x=x(x+2)$ ตัวส่วนร่วม $=x(x+2)$$$\\frac1x-\\frac2{x(x+2)}=\\frac{(x+2)-2}{x(x+2)}=\\frac{x}{x(x+2)}=\\frac1{x+2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทน $x=0$",
+    "body": "$\\dfrac1{0+2}=\\dfrac12$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac12$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to0}\\left(\\dfrac1x-\\dfrac2{x^2+2x}\\right)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac12$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac12$</span>"
+ },
+ {
+  "idx": 17,
+  "title": "18 · ข้อ 3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=7\" rel=\"noopener\" target=\"_blank\">PDF หน้า 7</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ดึง $|x|=-x$ ออก",
+    "body": "$\\sqrt{4x^2+1}=|x|\\sqrt{4+\\frac1{x^2}}=-x\\sqrt{4+\\frac1{x^2}}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ตัด $x$",
+    "body": "$$\\frac{-x\\sqrt{4+1/x^2}}{x\\left(2-5/x\\right)}=\\frac{-\\sqrt{4+1/x^2}}{2-5/x}\\to\\frac{-2}{2}=-1$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$-1$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to-\\infty}\\dfrac{\\sqrt{4x^2+1}}{2x-5}$</p>",
+   "<p class=\"alt\">(เส้นขีดในรูปโจทย์เป็นรอยปากกา ไม่ใช่เลขชี้กำลัง)</p>",
+   "<p>คำตอบ: <span class=\"ans\">$-1$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$-1$</span>"
+ },
+ {
+  "idx": 18,
+  "title": "19 · ข้อ 4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=7\" rel=\"noopener\" target=\"_blank\">PDF หน้า 7</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตรวจรูปแบบ",
+    "body": "ฐาน $\\to\\frac{1+1}2=1$ เลขชี้กำลัง $\\to\\infty$ เป็นรูป $1^\\infty$ → ใส่ $\\ln$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใส่ $\\ln$",
+    "body": "$$\\ln y=\\frac{\\ln\\left(\\frac{2^x+e^x}{2}\\right)}{x}\\quad\\left(\\tfrac00\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: L'Hôpital",
+    "body": "$\\dfrac{d}{dx}2^x=2^x\\ln2$ ดังนั้น$$\\lim\\ln y=\\lim_{x\\to0}\\frac{2^x\\ln2+e^x}{2^x+e^x}=\\frac{\\ln2+1}{2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ย้อนกลับ",
+    "body": "$$y\\to e^{(1+\\ln2)/2}=e^{1/2}\\cdot e^{\\frac12\\ln2}=\\sqrt e\\cdot\\sqrt2=\\sqrt{2e}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$e^{\\frac{1+\\ln2}{2}}=\\sqrt{2e}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to0}\\left(\\dfrac{2^x+e^x}{2}\\right)^{1/x}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$e^{\\frac{1+\\ln2}{2}}=\\sqrt{2e}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$e^{\\frac{1+\\ln2}{2}}=\\sqrt{2e}$</span>"
+ },
+ {
+  "idx": 19,
+  "title": "20 · ข้อ 1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=8\" rel=\"noopener\" target=\"_blank\">PDF หน้า 8</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ดึง $|x^3|$ ออกจากราก",
+    "body": "$\\sqrt{x^6}=|x|^3$ และเมื่อ $x<0$: $|x|^3=-x^3$$$\\sqrt{3x^6+4x^5+1}=-x^3\\sqrt{3+\\frac4x+\\frac1{x^6}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หารตัดกำลังสูงสุด",
+    "body": "$$\\frac{-x^3\\sqrt{3+4/x+1/x^6}}{x^3\\left(1-1/x^3\\right)}=\\frac{-\\sqrt{3+4/x+1/x^6}}{1-1/x^3}\\to-\\sqrt3$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$-\\sqrt3$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to-\\infty}\\dfrac{\\sqrt{3x^6+4x^5+1}}{x^3-1}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$-\\sqrt3$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$-\\sqrt3$</span>"
+ },
+ {
+  "idx": 20,
+  "title": "21 · ข้อ 2 (Squeeze) <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=8\" rel=\"noopener\" target=\"_blank\">PDF หน้า 8</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ขอบเขตของ $\\sin$",
+    "body": "สำหรับ $x\\ne0$: $-1\\le\\sin\\frac1x\\le1$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใส่ $e^{(\\cdot)}$ (เพิ่มค่าตลอดสาย)",
+    "body": "$e^{-1}\\le e^{\\sin(1/x)}\\le e$ และ $e^{\\sin(1/x)}>0$ เสมอ",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: คูณด้วย $|x|^3$ (ไม่เป็นลบ จึงไม่กลับอสมการ)",
+    "body": "$$0\\le\\left|x^3e^{\\sin(1/x)}\\right|\\le e\\,|x|^3$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: Squeeze",
+    "body": "$\\lim_{x\\to0}0=0$ และ $\\lim_{x\\to0}e|x|^3=0$ จึงได้ $\\left|x^3e^{\\sin(1/x)}\\right|\\to0$ ดังนั้น $x^3e^{\\sin(1/x)}\\to0$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$0$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to0}x^3e^{\\sin(1/x)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$0$</span></p>",
+   "<p class=\"tip\">ใช้ค่าสัมบูรณ์ครอบ จะไม่ต้องแยกกรณี $x&gt;0,\\ x&lt;0$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$0$</span>"
+ },
+ {
+  "idx": 21,
+  "title": "22 · ข้อ 9 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=9\" rel=\"noopener\" target=\"_blank\">PDF หน้า 9</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: จุดที่ต้องตรวจ",
+    "body": "แต่ละชิ้นเป็นพหุนาม (ต่อเนื่องอยู่แล้ว) ต้องตรวจเฉพาะรอยต่อ $x=2$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ลิมิตซ้าย = ลิมิตขวา = ค่าฟังก์ชัน",
+    "body": "$$f(2)=\\lim_{x\\to2^-}f=7(2)-2=12,\\qquad\\lim_{x\\to2^+}f=k(2)^2=4k$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แก้สมการ",
+    "body": "$4k=12\\Rightarrow k=3$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$k=3$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\begin{cases}7x-2,&amp;x\\le2\\\\kx^2,&amp;x&gt;2\\end{cases}\\ \\text{ ต่อเนื่องทุกจุด หา }k$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$k=3$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$k=3$</span>"
+ },
+ {
+  "idx": 22,
+  "title": "23 · ข้อ 2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=9\" rel=\"noopener\" target=\"_blank\">PDF หน้า 9</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ลิมิตซ้ายและขวาที่ $x=2$",
+    "body": "$$\\lim_{x\\to2^-}f=a(4)+4=4a+4,\\qquad f(2)=\\lim_{x\\to2^+}f=8+2a$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ให้เท่ากัน",
+    "body": "$4a+4=8+2a\\Rightarrow2a=4\\Rightarrow a=2$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$a=2$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\begin{cases}ax^2+2x,&amp;x&lt;2\\\\x^3+ax,&amp;x\\ge2\\end{cases}\\ \\text{ ต่อเนื่องบน }\\mathbb R\\text{ หา }a$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$a=2$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$a=2$</span>"
+ },
+ {
+  "idx": 23,
+  "title": "24 · ข้อ 7 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=9\" rel=\"noopener\" target=\"_blank\">PDF หน้า 9</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ที่ $x=2$",
+    "body": "ลิมิตซ้าย $=2^2-4=0$ ; ค่า/ลิมิตขวา $=2(2)+b=4+b$$$4+b=0\\Rightarrow b=-4$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ที่ $x=-2$",
+    "body": "ค่า/ลิมิตซ้าย $=-2a+b$ ; ลิมิตขวา $=(-2)^2-4=0$$$-2a+b=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทน $b=-4$",
+    "body": "$-2a-4=0\\Rightarrow a=-2$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$a=-2,\\qquad b=-4$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\begin{cases}ax+b,&amp;x\\le-2\\\\x^2-4,&amp;-2&lt;x&lt;2\\\\2x+b,&amp;x\\ge2\\end{cases}\\ \\text{ ต่อเนื่องที่ }x=\\pm2\\text{ หา }a,b$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$a=-2,\\qquad b=-4$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$a=-2,\\qquad b=-4$</span>"
+ },
+ {
+  "idx": 24,
+  "title": "25 · ข้อ 3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=10\" rel=\"noopener\" target=\"_blank\">PDF หน้า 10</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ลิมิตซ้าย",
+    "body": "$\\lim_{x\\to2^-}\\dfrac{x^2}4=\\dfrac44=1$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ลิมิตขวา",
+    "body": "$\\lim_{x\\to2^+}\\dfrac{b-x^3}{2}=\\dfrac{b-8}{2}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: เงื่อนไขต่อเนื่อง",
+    "body": "ลิมิตซ้าย $=$ ลิมิตขวา $=f(2)=a$$$\\frac{b-8}{2}=1\\Rightarrow b=10,\\qquad a=1$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$a=1,\\qquad b=10$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\begin{cases}\\frac{x^2}{4},&amp;0&lt;x&lt;2\\\\a,&amp;x=2\\\\\\frac{b-x^3}{2},&amp;x&gt;2\\end{cases}\\ \\text{ ต่อเนื่องที่ }x=2\\text{ หา }a,b$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$a=1,\\qquad b=10$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$a=1,\\qquad b=10$</span>"
+ },
+ {
+  "idx": 25,
+  "title": "26 · ข้อ 2.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=10\" rel=\"noopener\" target=\"_blank\">PDF หน้า 10</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ค่าฟังก์ชันที่ $x=-1$",
+    "body": "$f(-1)=b(-1)-\\frac34(1)=-b-\\frac34$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ลิมิตซ้าย (รูป $\\frac00$ → คูณคอนจูเกต)",
+    "body": "$$\\frac{2-\\sqrt{3-x}}{x+1}\\cdot\\frac{2+\\sqrt{3-x}}{2+\\sqrt{3-x}}=\\frac{4-(3-x)}{(x+1)(2+\\sqrt{3-x})}=\\frac{x+1}{(x+1)(2+\\sqrt{3-x})}=\\frac1{2+\\sqrt{3-x}}$$$$\\lim_{x\\to-1^-}=\\frac1{2+\\sqrt4}=\\frac14$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ให้เท่ากัน",
+    "body": "$-b-\\frac34=\\frac14\\Rightarrow -b=1\\Rightarrow b=-1$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$b=-1$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\begin{cases}\\dfrac{2-\\sqrt{3-x}}{x+1},&amp;x&lt;-1\\\\bx-\\frac34x^2,&amp;-1\\le x\\le2\\end{cases}\\ \\text{ ต่อเนื่องที่ }x=-1\\text{ หา }b$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$b=-1$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$b=-1$</span>"
+ },
+ {
+  "idx": 26,
+  "title": "27 · ข้อ 11.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=11\" rel=\"noopener\" target=\"_blank\">PDF หน้า 11</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: กฎลูกโซ่ชั้นนอก",
+    "body": "$\\dfrac{d}{dx}\\arcsin u=\\dfrac{u'}{\\sqrt{1-u^2}}$ โดย $u=x^2+\\cos(\\ln2x)$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หา $u'$",
+    "body": "$\\dfrac d{dx}\\ln2x=\\dfrac{2}{2x}=\\dfrac1x$ ดังนั้น$$u'=2x-\\sin(\\ln2x)\\cdot\\frac1x$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=\\dfrac{2x-\\dfrac{\\sin(\\ln2x)}{x}}{\\sqrt{1-\\left(x^2+\\cos(\\ln2x)\\right)^2}}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\arcsin\\left(x^2+\\cos(\\ln2x)\\right)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=\\dfrac{2x-\\dfrac{\\sin(\\ln2x)}{x}}{\\sqrt{1-\\left(x^2+\\cos(\\ln2x)\\right)^2}}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=\\dfrac{2x-\\dfrac{\\sin(\\ln2x)}{x}}{\\sqrt{1-\\left(x^2+\\cos(\\ln2x)\\right)^2}}$</span>"
+ },
+ {
+  "idx": 27,
+  "title": "28 · ข้อ 11.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=11\" rel=\"noopener\" target=\"_blank\">PDF หน้า 11</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ชั้นนอก $e^E$",
+    "body": "$f'=e^{E}\\cdot E'$ โดย $E=(x^2+1)\\tan\\sqrt{x^2+1}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กฎผลคูณหา $E'$",
+    "body": "$$E'=2x\\tan\\sqrt{x^2+1}+(x^2+1)\\sec^2\\!\\sqrt{x^2+1}\\cdot\\frac{x}{\\sqrt{x^2+1}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ทำให้เรียบ",
+    "body": "$(x^2+1)\\cdot\\dfrac{x}{\\sqrt{x^2+1}}=x\\sqrt{x^2+1}$ จึงได้ผลลัพธ์ตามด้านบน",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=e^{(x^2+1)\\tan\\sqrt{x^2+1}}\\left[2x\\tan\\sqrt{x^2+1}+x\\sqrt{x^2+1}\\,\\sec^2\\sqrt{x^2+1}\\right]$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=e^{(x^2+1)\\tan\\sqrt{x^2+1}}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=e^{(x^2+1)\\tan\\sqrt{x^2+1}}\\left[2x\\tan\\sqrt{x^2+1}+x\\sqrt{x^2+1}\\,\\sec^2\\sqrt{x^2+1}\\right]$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=e^{(x^2+1)\\tan\\sqrt{x^2+1}}\\left[2x\\tan\\sqrt{x^2+1}+x\\sqrt{x^2+1}\\,\\sec^2\\sqrt{x^2+1}\\right]$</span>"
+ },
+ {
+  "idx": 28,
+  "title": "29 · ข้อ 11.3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=11\" rel=\"noopener\" target=\"_blank\">PDF หน้า 11</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ชั้นนอก",
+    "body": "$f'=\\cos(x\\sec4x)\\cdot(x\\sec4x)'$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กฎผลคูณ",
+    "body": "$$(x\\sec4x)'=\\sec4x+x\\cdot4\\sec4x\\tan4x=\\sec4x\\,(1+4x\\tan4x)$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=\\cos(x\\sec4x)\\cdot\\sec4x\\,(1+4x\\tan4x)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\sin(x\\sec4x)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=\\cos(x\\sec4x)\\cdot\\sec4x\\,(1+4x\\tan4x)$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=\\cos(x\\sec4x)\\cdot\\sec4x\\,(1+4x\\tan4x)$</span>"
+ },
+ {
+  "idx": 29,
+  "title": "30 · ข้อ 11.4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=11\" rel=\"noopener\" target=\"_blank\">PDF หน้า 11</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ดึงกำลังสองออกจาก $\\ln$ (ง่ายกว่า)",
+    "body": "$f=2\\ln\\left|\\cos\\sqrt{x^2+4}\\right|$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาอนุพันธ์",
+    "body": "$$f'=2\\cdot\\frac{-\\sin\\sqrt{x^2+4}}{\\cos\\sqrt{x^2+4}}\\cdot\\frac{x}{\\sqrt{x^2+4}}=-\\frac{2x\\tan\\sqrt{x^2+4}}{\\sqrt{x^2+4}}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=-\\dfrac{2x\\tan\\sqrt{x^2+4}}{\\sqrt{x^2+4}}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\ln\\left(\\cos^2\\sqrt{x^2+4}\\right)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=-\\dfrac{2x\\tan\\sqrt{x^2+4}}{\\sqrt{x^2+4}}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=-\\dfrac{2x\\tan\\sqrt{x^2+4}}{\\sqrt{x^2+4}}$</span>"
+ },
+ {
+  "idx": 30,
+  "title": "31 · ข้อ 11.5 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=11\" rel=\"noopener\" target=\"_blank\">PDF หน้า 11</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ทำข้างในให้ง่ายก่อน",
+    "body": "$\\ln\\sqrt{x^2+4}=\\frac12\\ln(x^2+4)=:w$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใช้ $\\frac d{dx}\\cos^2w=-\\sin2w\\cdot w'$",
+    "body": "$w'=\\dfrac12\\cdot\\dfrac{2x}{x^2+4}=\\dfrac{x}{x^2+4}$ และ $2w=\\ln(x^2+4)$$$f'=-\\sin(2w)\\,w'=-\\frac{x\\sin\\left(\\ln(x^2+4)\\right)}{x^2+4}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=-\\dfrac{x\\,\\sin\\left(\\ln(x^2+4)\\right)}{x^2+4}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\cos^2\\left(\\ln\\sqrt{x^2+4}\\right)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=-\\dfrac{x\\,\\sin\\left(\\ln(x^2+4)\\right)}{x^2+4}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=-\\dfrac{x\\,\\sin\\left(\\ln(x^2+4)\\right)}{x^2+4}$</span>"
+ },
+ {
+  "idx": 31,
+  "title": "32 · ข้อ 6.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=12\" rel=\"noopener\" target=\"_blank\">PDF หน้า 12</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ทำรากให้ง่ายก่อน",
+    "body": "$\\sqrt{\\dfrac{x^2}{2\\pi}}=\\dfrac{|x|}{\\sqrt{2\\pi}}$ (ระวังค่าสัมบูรณ์)",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใช้ $\\frac d{dx}\\tan^{-1}u=\\frac{u'}{1+u^2}$",
+    "body": "$u=\\dfrac{|x|}{\\sqrt{2\\pi}},\\ u'=\\dfrac{x/|x|}{\\sqrt{2\\pi}},\\ 1+u^2=1+\\dfrac{x^2}{2\\pi}=\\dfrac{2\\pi+x^2}{2\\pi}$$$f'=\\frac{2\\pi}{2\\pi+x^2}\\cdot\\frac{x}{|x|\\sqrt{2\\pi}}=\\frac{\\sqrt{2\\pi}}{2\\pi+x^2}\\cdot\\frac{x}{|x|}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=\\dfrac{\\sqrt{2\\pi}}{2\\pi+x^2}\\cdot\\dfrac{x}{|x|}\\quad(x\\ne0)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\tan^{-1}\\left(\\sqrt{\\dfrac{x^2}{2\\pi}}\\right)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=\\dfrac{\\sqrt{2\\pi}}{2\\pi+x^2}\\cdot\\dfrac{x}{|x|}\\quad(x\\ne0)$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=\\dfrac{\\sqrt{2\\pi}}{2\\pi+x^2}\\cdot\\dfrac{x}{|x|}\\quad(x\\ne0)$</span>"
+ },
+ {
+  "idx": 32,
+  "title": "33 · ข้อ 6.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=12\" rel=\"noopener\" target=\"_blank\">PDF หน้า 12</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ใส่ $\\ln$ (อนุพันธ์แบบลอการิทึม)",
+    "body": "$$\\ln|g|=2\\ln|2x-1|+\\tfrac12(x^2-x)-6\\ln|x|$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาอนุพันธ์ทั้งสองข้าง",
+    "body": "$$\\frac{g'}{g}=2\\cdot\\frac{2}{2x-1}+\\frac12(2x-1)-\\frac6x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: คูณ $g$ กลับ",
+    "body": "$$g'(x)=\\frac{(2x-1)^2\\sqrt{e^{x^2-x}}}{x^6}\\left[\\frac4{2x-1}+\\frac{2x-1}2-\\frac6x\\right]$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$g'(x)=g(x)\\left[\\dfrac{4}{2x-1}+\\dfrac{2x-1}{2}-\\dfrac{6}{x}\\right]$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$g(x)=\\dfrac{(2x-1)^2\\sqrt{e^{(x^2-x)}}}{x^6}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$g'(x)=g(x)\\left[\\dfrac{4}{2x-1}+\\dfrac{2x-1}{2}-\\dfrac{6}{x}\\right]$</span></p>",
+   "<p class=\"tip\">ผลคูณ/ผลหาร/ยกกำลังหลายชั้น → ใช้ $\\ln$ แล้วหาอนุพันธ์ จะเร็วกว่ากฎผลหารซ้อนกัน</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$g'(x)=g(x)\\left[\\dfrac{4}{2x-1}+\\dfrac{2x-1}{2}-\\dfrac{6}{x}\\right]$</span>"
+ },
+ {
+  "idx": 33,
+  "title": "34 · ข้อ 4.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=12\" rel=\"noopener\" target=\"_blank\">PDF หน้า 12</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ใช้สูตร",
+    "body": "$\\dfrac d{dx}a^u=a^u\\ln a\\cdot u'$ โดย $a=2,\\ u=\\cos3x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: $u'$",
+    "body": "$u'=-3\\sin3x$ จึงได้ $f'=2^{\\cos3x}\\ln2\\cdot(-3\\sin3x)$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=-3\\ln2\\,\\sin3x\\cdot2^{\\cos3x}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=2^{\\cos3x}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=-3\\ln2\\,\\sin3x\\cdot2^{\\cos3x}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=-3\\ln2\\,\\sin3x\\cdot2^{\\cos3x}$</span>"
+ },
+ {
+  "idx": 34,
+  "title": "35 · ข้อ 4.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=12\" rel=\"noopener\" target=\"_blank\">PDF หน้า 12</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ชั้นนอก",
+    "body": "$f'=e^{E}E'$ โดย $E=(x^2-1)\\sin3x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กฎผลคูณ",
+    "body": "$E'=2x\\sin3x+(x^2-1)\\cdot3\\cos3x$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=e^{(x^2-1)\\sin3x}\\left[2x\\sin3x+3(x^2-1)\\cos3x\\right]$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=e^{(x^2-1)\\sin3x}$</p>",
+   "<p class=\"alt\">(อ่านโจทย์ว่า $\\sin3x$ อยู่ในเลขชี้กำลังด้วย: $e^{(x^2-1)\\sin3x}$)</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=e^{(x^2-1)\\sin3x}\\left[2x\\sin3x+3(x^2-1)\\cos3x\\right]$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=e^{(x^2-1)\\sin3x}\\left[2x\\sin3x+3(x^2-1)\\cos3x\\right]$</span>"
+ },
+ {
+  "idx": 35,
+  "title": "36 · ข้อ 4.3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=13\" rel=\"noopener\" target=\"_blank\">PDF หน้า 13</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ใช้สมบัติ log ให้เรียบ",
+    "body": "$f=2\\log_3\\dfrac{e}{\\sin x^2}=2\\left[\\log_3e-\\log_3\\sin(x^2)\\right]$ ($\\log_3e$ เป็นค่าคงที่)",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาอนุพันธ์",
+    "body": "$\\dfrac d{dx}\\log_3u=\\dfrac{u'}{u\\ln3}$$$f'=-2\\cdot\\frac{\\cos(x^2)\\cdot2x}{\\sin(x^2)\\ln3}=-\\frac{4x\\cot(x^2)}{\\ln3}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f'(x)=-\\dfrac{4x\\cot(x^2)}{\\ln3}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=\\log_3\\left(\\dfrac{e}{\\sin x^2}\\right)^2$</p>",
+   "<p class=\"alt\">(ตีความ $\\sin x^2=\\sin(x^2)$ ; ถ้าโจทย์หมายถึง $\\sin^2x$ คำตอบจะเป็น $-\\dfrac{4\\cot x}{\\ln3}$)</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f'(x)=-\\dfrac{4x\\cot(x^2)}{\\ln3}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f'(x)=-\\dfrac{4x\\cot(x^2)}{\\ln3}$</span>"
+ },
+ {
+  "idx": 36,
+  "title": "37 · ข้อ 4.4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=13\" rel=\"noopener\" target=\"_blank\">PDF หน้า 13</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ทำให้เรียบ",
+    "body": "$\\ln(1+t^2)^{1/2}=\\frac12\\ln(1+t^2)$ ให้ $h=2t-\\frac12\\ln(1+t^2)$ ดังนั้น $g=\\dfrac{h^2}{t^2}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: $h'$",
+    "body": "$h'=2-\\dfrac{t}{1+t^2}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: กฎผลหาร",
+    "body": "$$g'=\\frac{2hh'\\cdot t^2-h^2\\cdot2t}{t^4}=\\frac{2h\\,(th'-h)}{t^3}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: คำนวณ $th'-h$",
+    "body": "$$th'-h=2t-\\frac{t^2}{1+t^2}-2t+\\tfrac12\\ln(1+t^2)=\\tfrac12\\ln(1+t^2)-\\frac{t^2}{1+t^2}$$แทนกลับ: $g'=\\dfrac{2h\\left[\\frac12\\ln(1+t^2)-\\frac{t^2}{1+t^2}\\right]}{t^3}$ ซึ่งเท่ากับรูปคำตอบ",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$g'(t)=\\dfrac{\\left[2t-\\frac12\\ln(1+t^2)\\right]\\left[\\ln(1+t^2)-\\frac{2t^2}{1+t^2}\\right]}{t^3}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$g(t)=\\dfrac1{t^2}\\left[2t-\\ln\\left(1+t^2\\right)^{1/2}\\right]^2$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$g'(t)=\\dfrac{\\left[2t-\\frac12\\ln(1+t^2)\\right]\\left[\\ln(1+t^2)-\\frac{2t^2}{1+t^2}\\right]}{t^3}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$g'(t)=\\dfrac{\\left[2t-\\frac12\\ln(1+t^2)\\right]\\left[\\ln(1+t^2)-\\frac{2t^2}{1+t^2}\\right]}{t^3}$</span>"
+ },
+ {
+  "idx": 37,
+  "title": "38 · ข้อ 12 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=13\" rel=\"noopener\" target=\"_blank\">PDF หน้า 13</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: กฎลูกโซ่",
+    "body": "$\\dfrac{dy}{dx}=\\dfrac{dy}{du}\\cdot\\dfrac{du}{dv}\\cdot\\dfrac{dv}{dx}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แต่ละตัว",
+    "body": "$\\dfrac{dy}{du}=2u,\\quad\\dfrac{du}{dv}=\\dfrac{v}{\\sqrt{v^2+2}}=\\dfrac vu,\\quad\\dfrac{dv}{dx}=-2x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: คูณกัน",
+    "body": "$$\\frac{dy}{dx}=2u\\cdot\\frac vu\\cdot(-2x)=-4xv=-4x(2-x^2)$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac{dy}{dx}=-4x(2-x^2)=4x^3-8x$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$y=u^2+1,\\ u=\\sqrt{v^2+2},\\ v=2-x^2\\ \\text{ หา }\\dfrac{dy}{dx}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=-4x(2-x^2)=4x^3-8x$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=-4x(2-x^2)=4x^3-8x$</span>"
+ },
+ {
+  "idx": 38,
+  "title": "39 · ข้อ 9 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=14\" rel=\"noopener\" target=\"_blank\">PDF หน้า 14</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ค่า $t$ ที่ $\\theta=\\frac\\pi8$",
+    "body": "$t=\\tan^2\\left(\\frac\\pi4\\right)=1$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: $\\dfrac{dw}{dt}$",
+    "body": "$$\\frac{dw}{dt}=\\frac{2(2-t^2)-2t(-2t)}{(2-t^2)^2}=\\frac{4+2t^2}{(2-t^2)^2}\\ \\Rightarrow\\ \\left.\\frac{dw}{dt}\\right|_{t=1}=\\frac{6}{1}=6$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: $\\dfrac{dt}{d\\theta}$",
+    "body": "$$\\frac{dt}{d\\theta}=2\\tan2\\theta\\cdot\\sec^22\\theta\\cdot2=4\\tan2\\theta\\sec^22\\theta$$ ที่ $\\theta=\\frac\\pi8$: $\\tan\\frac\\pi4=1,\\ \\sec^2\\frac\\pi4=2$ → $4\\cdot1\\cdot2=8$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: คูณ",
+    "body": "$\\dfrac{dw}{d\\theta}=6\\cdot8=48$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$48$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$w=\\dfrac{2t}{2-t^2},\\ t=\\tan^22\\theta\\ \\text{ หา }\\dfrac{dw}{d\\theta}\\text{ ที่ }\\theta=\\dfrac\\pi8$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$48$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$48$</span>"
+ },
+ {
+  "idx": 39,
+  "title": "40 · ข้อ 5.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=14\" rel=\"noopener\" target=\"_blank\">PDF หน้า 14</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ค่าที่ $x=-1$",
+    "body": "$y=1-1=0,\\quad z=\\sqrt{0+5}=\\sqrt5$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กฎลูกโซ่",
+    "body": "$\\dfrac{dw}{dx}=\\dfrac{dw}{dz}\\cdot\\dfrac{dz}{dy}\\cdot\\dfrac{dy}{dx}=2\\cdot\\dfrac{y}{\\sqrt{y^2+5}}\\cdot(-2x)$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนค่า",
+    "body": "$=2\\cdot\\dfrac{0}{\\sqrt5}\\cdot(2)=0$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$0$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$w=2z+3,\\ z=\\sqrt{y^2+5},\\ y=1-x^2\\ \\text{ หา }\\dfrac{dw}{dx}\\text{ เมื่อ }x=-1$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$0$</span></p>",
+   "<p class=\"tip\">ตัวกลาง $\\frac{dz}{dy}=\\frac{y}{\\sqrt{y^2+5}}$ เป็น $0$ เมื่อ $y=0$ จึงทำให้ทั้งผลคูณเป็น $0$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$0$</span>"
+ },
+ {
+  "idx": 40,
+  "title": "41 · ข้อ 7 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=15\" rel=\"noopener\" target=\"_blank\">PDF หน้า 15</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาอนุพันธ์ทั้งสองข้างเทียบ $x$",
+    "body": "$\\dfrac{d}{dx}\\dfrac1{x-y}=-\\dfrac{1-y'}{(x-y)^2}$$$2yy'-\\frac{1-y'}{(x-y)^2}+2=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: คูณ $(x-y)^2$ ล้างเศษส่วน",
+    "body": "$$2yy'(x-y)^2-(1-y')+2(x-y)^2=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: รวมพจน์ $y'$",
+    "body": "$$y'\\left[2y(x-y)^2+1\\right]=1-2(x-y)^2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac{dy}{dx}=\\dfrac{1-2(x-y)^2}{1+2y(x-y)^2}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$y^2+\\dfrac1{x-y}+2x=0\\ \\text{ หา }\\dfrac{dy}{dx}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=\\dfrac{1-2(x-y)^2}{1+2y(x-y)^2}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=\\dfrac{1-2(x-y)^2}{1+2y(x-y)^2}$</span>"
+ },
+ {
+  "idx": 41,
+  "title": "42 · ข้อ 4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=15\" rel=\"noopener\" target=\"_blank\">PDF หน้า 15</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 0: ตรวจว่าจุดอยู่บนเส้นโค้ง",
+    "body": "ซ้าย $=0\\cdot1+0=0$ ; ขวา $=1-1\\cdot e^0=0$ ✓",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 1: หาอนุพันธ์ implicit",
+    "body": "$$y^2+2xyy'+3x^2\\cos\\pi y-\\pi x^3\\sin\\pi y\\cdot y'=-y'e^x-ye^x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทน $(x,y)=(0,1)$",
+    "body": "$$1+0+0-0=-y'-1\\ \\Rightarrow\\ y'=-2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: $\\dfrac{dx}{dy}$ คือส่วนกลับ",
+    "body": "$\\dfrac{dx}{dy}=\\dfrac1{dy/dx}=-\\dfrac12$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\left.\\dfrac{dy}{dx}\\right|_{(0,1)}=-2,\\qquad\\left.\\dfrac{dx}{dy}\\right|_{(0,1)}=-\\dfrac12$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$xy^2+x^3\\cos\\pi y=1-ye^x\\ \\text{ หา }\\left.\\dfrac{dy}{dx}\\right|_{(0,1)}\\text{ และ }\\left.\\dfrac{dx}{dy}\\right|_{(0,1)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\left.\\dfrac{dy}{dx}\\right|_{(0,1)}=-2,\\qquad\\left.\\dfrac{dx}{dy}\\right|_{(0,1)}=-\\dfrac12$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\left.\\dfrac{dy}{dx}\\right|_{(0,1)}=-2,\\qquad\\left.\\dfrac{dx}{dy}\\right|_{(0,1)}=-\\dfrac12$</span>"
+ },
+ {
+  "idx": 42,
+  "title": "43 · ข้อ 1.2.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=16\" rel=\"noopener\" target=\"_blank\">PDF หน้า 16</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาอนุพันธ์ทั้งสองข้าง",
+    "body": "$$2x+\\left(y+xy'\\right)+2yy'=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: จัด $y'$",
+    "body": "$$y'(x+2y)=-(2x+y)\\ \\Rightarrow\\ y'=-\\frac{2x+y}{x+2y}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac{dy}{dx}=-\\dfrac{2x+y}{x+2y}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$x^2+xy+y^2-3=0\\ \\text{ หา }\\dfrac{dy}{dx}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=-\\dfrac{2x+y}{x+2y}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=-\\dfrac{2x+y}{x+2y}$</span>"
+ },
+ {
+  "idx": 43,
+  "title": "44 · ข้อ 1.2.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=16\" rel=\"noopener\" target=\"_blank\">PDF หน้า 16</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ใส่ $\\ln$",
+    "body": "$\\ln y=\\sin x\\cdot\\ln(\\cos x)$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาอนุพันธ์ (กฎผลคูณ)",
+    "body": "$$\\frac{y'}{y}=\\cos x\\ln(\\cos x)+\\sin x\\cdot\\frac{-\\sin x}{\\cos x}=\\cos x\\ln(\\cos x)-\\sin x\\tan x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: คูณ $y$ กลับ",
+    "body": "$y'=(\\cos x)^{\\sin x}\\left[\\cos x\\ln(\\cos x)-\\sin x\\tan x\\right]$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$y'=(\\cos x)^{\\sin x}\\left[\\cos x\\ln(\\cos x)-\\sin x\\tan x\\right]$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$y=(\\cos x)^{\\sin x}$</p>",
+   "<p class=\"alt\">(อ่านโจทย์ $y=\\cos x^{\\sin x}$ ว่าเป็นเลขยกกำลังที่ฐานคือ $\\cos x$)</p>",
+   "<p>คำตอบ: <span class=\"ans\">$y'=(\\cos x)^{\\sin x}\\left[\\cos x\\ln(\\cos x)-\\sin x\\tan x\\right]$</span></p>",
+   "<p class=\"tip\">ฐานและเลขชี้กำลังเป็นฟังก์ชันของ $x$ ทั้งคู่ → ต้องใช้ $\\ln$ ทั้งสองข้างเสมอ</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$y'=(\\cos x)^{\\sin x}\\left[\\cos x\\ln(\\cos x)-\\sin x\\tan x\\right]$</span>"
+ },
+ {
+  "idx": 44,
+  "title": "45 · ข้อ 5.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=17\" rel=\"noopener\" target=\"_blank\">PDF หน้า 17</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาอนุพันธ์เทียบ $x$ (ทั้ง $y$ และ $t$ ขึ้นกับ $x$)",
+    "body": "$$6yt\\,y'+3y^2t'+2tt'y+t^2y'=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทน $t'=-\\frac{2t}{x}$ แล้วแก้หา $y'$",
+    "body": "$$y'\\,t(6y+t)=-t'\\,y(3y+2t)=\\frac{2t}{x}\\,y(3y+2t)\\ \\Rightarrow\\ y'=\\frac{2y(3y+2t)}{x(6y+t)}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หา $y''$ ด้วยกฎผลหาร",
+    "body": "ให้ $N=6y^2+4ty,\\ D=x(6y+t)$ โดย $t'=-\\frac{2t}x$$$N'=(12y+4t)y'-\\frac{8ty}{x},\\qquad D'=(6y+t)+x(6y'+t')=6y-t+6xy'$$$$y''=\\frac{N'D-ND'}{D^2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทน $y'$ และจัดรูป",
+    "body": "$$y''=\\frac{6ty\\left(2t^2-3ty-36y^2\\right)}{x^2(t+6y)^3}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\dfrac{dy}{dx}=\\dfrac{2y(3y+2t)}{x(6y+t)},\\qquad\\dfrac{d^2y}{dx^2}=\\dfrac{6ty\\left(2t^2-3ty-36y^2\\right)}{x^2(t+6y)^3}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$3y^2t+t^2y=1,\\ \\dfrac{dt}{dx}=-\\dfrac{2t}{x}\\ \\text{ หา }\\dfrac{dy}{dx}\\text{ และ }\\dfrac{d^2y}{dx^2}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=\\dfrac{2y(3y+2t)}{x(6y+t)},\\qquad\\dfrac{d^2y}{dx^2}=\\dfrac{6ty\\left(2t^2-3ty-36y^2\\right)}{x^2(t+6y)^3}$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\dfrac{dy}{dx}=\\dfrac{2y(3y+2t)}{x(6y+t)},\\qquad\\dfrac{d^2y}{dx^2}=\\dfrac{6ty\\left(2t^2-3ty-36y^2\\right)}{x^2(t+6y)^3}$</span>"
+ },
+ {
+  "idx": 45,
+  "title": "46 · ข้อ 13 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=17\" rel=\"noopener\" target=\"_blank\">PDF หน้า 17</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: อนุพันธ์ครั้งที่ 1",
+    "body": "$$2x+y+xy'+2yy'=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: อนุพันธ์ครั้งที่ 2",
+    "body": "$$2+y'+y'+xy''+2(y')^2+2yy''=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทน $x=1,\\ y=1,\\ y'=-1$",
+    "body": "$$2-1-1+y''+2(1)+2y''=0\\ \\Rightarrow\\ 3y''+2=0\\ \\Rightarrow\\ y''=-\\frac23$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$-\\dfrac23$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$x^2+xy+y^2=3,\\ \\left.\\dfrac{dy}{dx}\\right|_{x=1}=-1\\text{ ที่ }(1,1)\\ \\text{ หา }\\left.\\dfrac{d^2y}{dx^2}\\right|_{x=1}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$-\\dfrac23$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$-\\dfrac23$</span>"
+ },
+ {
+  "idx": 46,
+  "title": "47 · ข้อ 8 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=17\" rel=\"noopener\" target=\"_blank\">PDF หน้า 17</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หารูปแบบจากอนุพันธ์ไม่กี่ตัวแรก",
+    "body": "$(xe^x)'=(x+1)e^x,\\ (xe^x)''=(x+2)e^x,\\ (xe^x)'''=(x+3)e^x\\ \\Rightarrow\\ (xe^x)^{(n)}=(x+n)e^x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: $e^x$ ดิฟกี่ครั้งก็เท่าเดิม",
+    "body": "$(e^x)^{(n)}=e^x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: รวมที่ $n=49$",
+    "body": "$$f^{(49)}=e^x+(x+49)e^x=(x+50)e^x$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$f^{(49)}(x)=(x+50)e^x$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=e^x+xe^x\\ \\text{ หา }f^{(49)}(x)$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$f^{(49)}(x)=(x+50)e^x$</span></p>",
+   "<p class=\"tip\">สูตรลัด: $\\left(xe^{x}\\right)^{(n)}=(x+n)e^x$ (จะได้จาก Leibniz rule ก็ได้)</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$f^{(49)}(x)=(x+50)e^x$</span>"
+ },
+ {
+  "idx": 47,
+  "title": "48 · ข้อ 2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=18\" rel=\"noopener\" target=\"_blank\">PDF หน้า 18</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: อันดับ 1",
+    "body": "กฎลูกโซ่ $\\dfrac d{dx}u^{-n}=-nu^{-n-1}u'$ โดย $u'=a$ → $y'=-na(ax+b)^{-n-1}$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: อันดับ 2",
+    "body": "ลดกำลังลง 1 คูณกำลังเดิม $(-n-1)$ และคูณ $a$ → $(-n)(-n-1)a^2=n(n+1)a^2$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: อันดับ 3 และ 4",
+    "body": "คูณ $(-n-2)a$ แล้ว $(-n-3)a$ ต่อเนื่อง เครื่องหมายสลับ $-,+,-,+$ ตามที่แสดงด้านบน",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\begin{aligned}y'&=-na(ax+b)^{-n-1}\\\\y''&=n(n+1)a^2(ax+b)^{-n-2}\\\\y'''&=-n(n+1)(n+2)a^3(ax+b)^{-n-3}\\\\y^{(4)}&=n(n+1)(n+2)(n+3)a^4(ax+b)^{-n-4}\\end{aligned}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$f(x)=(ax+b)^{-n}\\ \\text{ หาอนุพันธ์อันดับ 1–4}$</p>",
+   "<p>คำตอบ:</p>",
+   "<p class=\"tip\">รูปทั่วไป: $f^{(k)}=(-1)^k\\,n(n+1)\\cdots(n+k-1)\\,a^k(ax+b)^{-n-k}$</p>"
+  ],
+  "answer_line": "คำตอบ:"
+ },
+ {
+  "idx": 48,
+  "title": "49 · ข้อ 3 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=18\" rel=\"noopener\" target=\"_blank\">PDF หน้า 18</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาผลต่างเชิงอนุพันธ์ทั้งสองข้าง",
+    "body": "$$y\\,dx+x\\,dy+3x^2\\,dx=dy+3\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: จัดพจน์ $dy$ ไปไว้ด้านเดียว",
+    "body": "$$(x-1)\\,dy=\\left(3-3x^2-y\\right)dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แก้หา $dy$",
+    "body": "$$dy=\\frac{3-3x^2-y}{x-1}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$dy=\\dfrac{3-3x^2-y}{x-1}\\,dx$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{หาผลต่างเชิงอนุพันธ์ (}dy\\text{) ของ }xy+x^3=y+3x$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$dy=\\dfrac{3-3x^2-y}{x-1}\\,dx$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$dy=\\dfrac{3-3x^2-y}{x-1}\\,dx$</span>"
+ },
+ {
+  "idx": 49,
+  "title": "50 · ข้อ 4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=19\" rel=\"noopener\" target=\"_blank\">PDF หน้า 19</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เลือก $f$ และจุด $a$",
+    "body": "$f(x)=x^{1/3},\\ a=1$ (ใกล้ $1.1$ และคิดง่าย), $dx=0.1$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ใช้ $f(a+dx)\\approx f(a)+f'(a)\\,dx$",
+    "body": "$f'(x)=\\frac13x^{-2/3}\\Rightarrow f'(1)=\\frac13$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: คำนวณ",
+    "body": "$$\\sqrt[3]{1.1}\\approx1+\\frac13(0.1)=1.0333$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\sqrt[3]{1.1}\\approx1.0333$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{ประมาณค่า }\\sqrt[3]{1.1}\\ \\text{ด้วยผลต่างเชิงอนุพันธ์}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\sqrt[3]{1.1}\\approx1.0333$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\sqrt[3]{1.1}\\approx1.0333$</span>"
+ },
+ {
+  "idx": 50,
+  "title": "51 · ข้อ 1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=19\" rel=\"noopener\" target=\"_blank\">PDF หน้า 19</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตั้งฟังก์ชัน",
+    "body": "$f(x)=2\\sqrt x\\left(x-\\sqrt x\\right)=2x^{3/2}-2x$ และต้องการ $f(9.02)$ ; เลือก $a=9$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: $f(9),\\ f'(9)$",
+    "body": "$f(9)=2\\cdot27-18=36$ ; $f'(x)=3x^{1/2}-2\\Rightarrow f'(9)=9-2=7$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: $dx=0.02$",
+    "body": "$$f(9.02)\\approx36+7(0.02)=36.14$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\approx36.14$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{ประมาณ }2\\sqrt{9.02}\\left(9.02-\\sqrt{9.02}\\right)\\ \\text{โดยการประมาณเชิงเส้น}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\approx36.14$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\approx36.14$</span>"
+ },
+ {
+  "idx": 51,
+  "title": "52 · ข้อ 14 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=19\" rel=\"noopener\" target=\"_blank\">PDF หน้า 19</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: มองหาความสัมพันธ์ของตัวเลข",
+    "body": "$1.996=2(0.998)$ และ $3.992=4(0.998)$ ให้ $x=0.998$ จะได้ $\\sqrt{3.992}=2\\sqrt x$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ตั้งฟังก์ชัน",
+    "body": "$$f(x)=2\\sqrt x\\left(2x-2\\sqrt x\\right)=4x^{3/2}-4x$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ใช้ $a=1$",
+    "body": "$f(1)=0$ ; $f'(x)=6\\sqrt x-4\\Rightarrow f'(1)=2$ ; $dx=-0.002$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ประมาณ",
+    "body": "$$f(0.998)\\approx0+2(-0.002)=-0.004$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$\\approx-0.004$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\text{ประมาณ }2\\sqrt{0.998}\\left(1.996-\\sqrt{3.992}\\right)\\ \\text{โดยการประมาณเชิงเส้น}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$\\approx-0.004$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$\\approx-0.004$</span>"
+ },
+ {
+  "idx": 52,
+  "title": "53 · ข้อ 4 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=20\" rel=\"noopener\" target=\"_blank\">PDF หน้า 20</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: รูป $\\infty^0$ → ใส่ $\\ln$",
+    "body": "$x\\to\\frac\\pi2^-$ (ฝั่งซ้ายเท่านั้นที่ $\\tan x>0$) ให้ $y=(\\tan x)^{\\cos x}$$$\\ln y=\\cos x\\,\\ln\\tan x=\\frac{\\ln\\tan x}{\\sec x}\\quad\\left(\\tfrac\\infty\\infty\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: L'Hôpital",
+    "body": "$\\dfrac d{dx}\\ln\\tan x=\\dfrac{\\sec^2x}{\\tan x}=\\dfrac{1}{\\sin x\\cos x}$ และ $\\dfrac d{dx}\\sec x=\\sec x\\tan x=\\dfrac{\\sin x}{\\cos^2x}$$$\\lim\\frac{1/(\\sin x\\cos x)}{\\sin x/\\cos^2x}=\\lim_{x\\to\\pi/2^-}\\frac{\\cos x}{\\sin^2x}=\\frac01=0$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ย้อนกลับ",
+    "body": "$y\\to e^0=1$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$1$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to\\pi/2}(\\tan x)^{\\cos x}\\ \\text{ (ใช้ L'Hôpital)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$1$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$1$</span>"
+ },
+ {
+  "idx": 53,
+  "title": "54 · ข้อ 6.1 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=20\" rel=\"noopener\" target=\"_blank\">PDF หน้า 20</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: รูป $\\infty-\\infty$ → รวมเป็นเศษส่วน",
+    "body": "$$\\frac1x-\\frac{\\cos x}{\\sin x}=\\frac{\\sin x-x\\cos x}{x\\sin x}\\quad\\left(\\tfrac00\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: L'Hôpital รอบที่ 1",
+    "body": "$$\\frac{\\cos x-\\cos x+x\\sin x}{\\sin x+x\\cos x}=\\frac{x\\sin x}{\\sin x+x\\cos x}\\quad\\left(\\tfrac00\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: L'Hôpital รอบที่ 2",
+    "body": "$$\\frac{\\sin x+x\\cos x}{\\cos x+\\cos x-x\\sin x}=\\frac{\\sin x+x\\cos x}{2\\cos x-x\\sin x}\\to\\frac{0}{2}=0$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$0$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to0}\\left(\\dfrac1x-\\cot x\\right)\\ \\text{ (ใช้ L'Hôpital)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$0$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$0$</span>"
+ },
+ {
+  "idx": 54,
+  "title": "55 · ข้อ 6.2 <small><a class=\"pg\" href=\"Tutorial-Class-M1.pdf#page=20\" rel=\"noopener\" target=\"_blank\">PDF หน้า 20</a></small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตรวจรูปแบบ",
+    "body": "ฐาน $\\to e^0+0=1$ และเลขชี้กำลัง $\\to\\pm\\infty$ เป็นรูป $1^\\infty$ → ใส่ $\\ln$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: $\\ln y$",
+    "body": "$$\\ln y=\\frac{\\ln\\left(e^{x-3}+2x-6\\right)}{x-3}\\quad\\left(\\tfrac00\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: L'Hôpital",
+    "body": "$$\\lim_{x\\to3}\\frac{\\dfrac{e^{x-3}+2}{e^{x-3}+2x-6}}{1}=\\frac{1+2}{1+0}=3$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: ย้อนกลับ",
+    "body": "$y\\to e^3$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "$$e^3$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p class=\"prob\">$\\lim_{x\\to3}\\left(e^{x-3}+2x-6\\right)^{\\frac1{x-3}}\\ \\text{ (ใช้ L'Hôpital)}$</p>",
+   "<p>คำตอบ: <span class=\"ans\">$e^3$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$e^3$</span>"
+ }
+]

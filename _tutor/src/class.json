@@ -1,0 +1,335 @@
+[
+ {
+  "idx": 0,
+  "title": "ข้อ 1 · $\\displaystyle\\int_1^{\\infty}\\frac{1}{x^{3/2}}\\,dx$ <small>(อินทิกรัลไม่ตรงแบบ แบบที่ 1: ขอบเขตเป็นอนันต์)</small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: เปลี่ยนขอบเขตอนันต์เป็นลิมิต",
+    "body": "<p>อินทิกรัลไม่ตรงแบบแบบที่ 1 (ขอบบนเป็น $\\infty$) ให้แทน $\\infty$ ด้วยตัวแปร $t$ แล้วค่อยให้ $t\\to\\infty$ ภายหลัง</p>\n$$\\int_1^{\\infty}\\frac{1}{x^{3/2}}\\,dx=\\lim_{t\\to\\infty}\\int_1^{t}x^{-3/2}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาอินทิกรัลไม่จำกัดเขต",
+    "body": "<p>ใช้กฎกำลัง $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ โดย $n=-\\tfrac32$ จะได้ $n+1=-\\tfrac12$</p>\n$$\\int x^{-3/2}\\,dx=\\frac{x^{-1/2}}{-1/2}$$\n$$=-2x^{-1/2}=-\\frac{2}{\\sqrt{x}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนขอบเขตบนและขอบเขตล่าง",
+    "body": "<p>ใช้ทฤษฎีบทหลักมูล $\\int_a^b F'(x)\\,dx=F(b)-F(a)$ ด้วย $F(x)=-\\frac{2}{\\sqrt x}$</p>\n$$\\int_1^{t}x^{-3/2}\\,dx=\\left[-\\frac{2}{\\sqrt{x}}\\right]_1^{t}$$\n$$=-\\frac{2}{\\sqrt{t}}-\\left(-\\frac{2}{\\sqrt{1}}\\right)$$\n$$=2-\\frac{2}{\\sqrt{t}}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาค่าลิมิตเมื่อ $t\\to\\infty$",
+    "body": "<p>เมื่อ $t\\to\\infty$ จะได้ $\\sqrt t\\to\\infty$ ดังนั้น $\\frac{2}{\\sqrt t}\\to0$</p>\n$$\\lim_{t\\to\\infty}\\left(2-\\frac{2}{\\sqrt{t}}\\right)=2-0=2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\int_1^{\\infty}\\frac{1}{x^{3/2}}\\,dx=2\\quad\\text{(ลู่เข้า)}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"ans\">$2$ (ลู่เข้า)</span></p>",
+   "<p class=\"tip\">จำ: $\\int_1^\\infty \\frac{dx}{x^p}$ ลู่เข้าเมื่อ $p&gt;1$ (ได้ $\\frac{1}{p-1}$) และลู่ออกเมื่อ $p\\le 1$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$2$ (ลู่เข้า)</span>"
+ },
+ {
+  "idx": 1,
+  "title": "ข้อ 2 · $\\displaystyle\\int(1-x)e^{-x}\\,dx$ <small>(by parts)</small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: แยกอินทิกรัลเป็น 2 ก้อน",
+    "body": "<p>กระจาย $(1-x)e^{-x}$ แล้วใช้สมบัติ $\\int(f-g)=\\int f-\\int g$</p>\n$$\\int(1-x)e^{-x}\\,dx=\\int e^{-x}\\,dx-\\int xe^{-x}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: หาก้อนแรก",
+    "body": "<p>$\\int e^{ax}dx=\\frac1a e^{ax}$ โดย $a=-1$</p>\n$$\\int e^{-x}\\,dx=-e^{-x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาก้อนที่สองด้วย by parts",
+    "body": "<p>ใช้ $\\int u\\,dv=uv-\\int v\\,du$ เลือก $u=x$ (ดิฟแล้วง่ายขึ้น) และ $dv=e^{-x}dx$ ดังนั้น $du=dx,\\ v=-e^{-x}$</p>\n$$\\int xe^{-x}\\,dx=x\\left(-e^{-x}\\right)-\\int\\left(-e^{-x}\\right)dx$$\n$$=-xe^{-x}+\\int e^{-x}\\,dx$$\n$$=-xe^{-x}-e^{-x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: รวมผลของสองก้อน",
+    "body": "<p>นำก้อนแรกลบก้อนที่สอง ระวังเครื่องหมายลบหน้าวงเล็บ</p>\n$$\\int(1-x)e^{-x}\\,dx=-e^{-x}-\\left(-xe^{-x}-e^{-x}\\right)$$\n$$=-e^{-x}+xe^{-x}+e^{-x}$$\n$$=xe^{-x}$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$xe^{-x}+C$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"ans\">$xe^{-x}+C$</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$xe^{-x}+C$</span>"
+ },
+ {
+  "idx": 2,
+  "title": "ข้อ 3 · $\\displaystyle\\int_1^{2}\\frac{dx}{1-x}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบล่าง)</small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาจุดที่ฟังก์ชันมีปัญหา",
+    "body": "<p>ตัวส่วน $1-x=0$ เมื่อ $x=1$ ซึ่งเป็นขอบล่างของช่วง $[1,2]$ จึงเป็นอินทิกรัลไม่ตรงแบบแบบที่ 2</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: เขียนเป็นลิมิต",
+    "body": "<p>ขอบล่างมีปัญหา จึงเข้าหา $1$ จากทางขวา ($t\\to1^+$) เพราะช่วงอยู่ทางขวาของ $1$</p>\n$$\\int_1^{2}\\frac{dx}{1-x}=\\lim_{t\\to1^+}\\int_t^{2}\\frac{dx}{1-x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หาอินทิกรัลไม่จำกัดเขตด้วย u-sub",
+    "body": "<p>ให้ $u=1-x$ ดังนั้น $du=-dx$ หรือ $dx=-du$</p>\n$$\\int\\frac{dx}{1-x}=\\int\\frac{-du}{u}=-\\ln|u|$$\n$$=-\\ln|1-x|$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทนขอบเขต",
+    "body": "<p>แทน $x=2$ และ $x=t$ ใน $-\\ln|1-x|$ โดย $|1-2|=1$ และ $\\ln1=0$</p>\n$$\\Big[-\\ln|1-x|\\Big]_t^{2}=-\\ln|1-2|-\\left(-\\ln|1-t|\\right)$$\n$$=-\\ln1+\\ln|1-t|=\\ln|1-t|$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: หาค่าลิมิต",
+    "body": "<p>เมื่อ $t\\to1^+$ จะได้ $|1-t|\\to0^+$ และ $\\ln$ ของจำนวนที่เข้าใกล้ $0$ จะมีค่าเข้าใกล้ $-\\infty$</p>\n$$\\lim_{t\\to1^+}\\ln|1-t|=-\\infty$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\int_1^{2}\\frac{dx}{1-x}\\ \\text{ลู่ออก (diverges)}$$\n<p class=\"alt\">(ลิมิตไม่เป็นจำนวนจำกัด คือ $-\\infty$ จึงสรุปว่าลู่ออก)</p>",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"div\">ลู่ออก (diverges)</span></p>",
+   "<p class=\"tip\">เช็กเสมอว่าตัวส่วนเป็น 0 ที่ไหนในช่วง ถ้าตรงขอบล่างใช้ $t\\to a^+$ ถ้าตรงขอบบนใช้ $t\\to b^-$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"div\">ลู่ออก (diverges)</span>"
+ },
+ {
+  "idx": 3,
+  "title": "ข้อ 4 · $\\displaystyle\\int_0^{1}\\frac{dx}{\\sqrt{1-x}}$ <small>(แบบที่ 2: ตัวส่วนเป็นศูนย์ที่ $x=1$ ซึ่งเป็นขอบบน)</small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: หาจุดที่ฟังก์ชันมีปัญหา",
+    "body": "<p>ตัวส่วน $\\sqrt{1-x}=0$ เมื่อ $x=1$ ซึ่งเป็นขอบบนของช่วง $[0,1]$ จึงเป็นอินทิกรัลไม่ตรงแบบแบบที่ 2</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: เขียนเป็นลิมิต",
+    "body": "<p>ขอบบนมีปัญหา จึงเข้าหา $1$ จากทางซ้าย ($t\\to1^-$)</p>\n$$\\int_0^{1}\\frac{dx}{\\sqrt{1-x}}=\\lim_{t\\to1^-}\\int_0^{t}(1-x)^{-1/2}\\,dx$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: กำหนดตัวแปร u",
+    "body": "<p>ให้ $u=1-x$ ดังนั้น $du=-dx$ หรือ $dx=-du$</p>\n$$\\int(1-x)^{-1/2}\\,dx=\\int u^{-1/2}\\,(-du)=-\\int u^{-1/2}\\,du$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาอินทิกรัลแล้วแทน u กลับ",
+    "body": "<p>กฎกำลัง: $\\int u^{-1/2}du=\\dfrac{u^{1/2}}{1/2}=2u^{1/2}$</p>\n$$-\\int u^{-1/2}\\,du=-2u^{1/2}$$\n$$=-2\\sqrt{1-x}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: แทนขอบเขต",
+    "body": "<p>แทน $x=t$ และ $x=0$</p>\n$$\\Big[-2\\sqrt{1-x}\\Big]_0^{t}=-2\\sqrt{1-t}-\\left(-2\\sqrt{1-0}\\right)$$\n$$=-2\\sqrt{1-t}+2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 6: หาค่าลิมิต",
+    "body": "<p>เมื่อ $t\\to1^-$ จะได้ $1-t\\to0$ ดังนั้น $\\sqrt{1-t}\\to0$</p>\n$$\\lim_{t\\to1^-}\\left(-2\\sqrt{1-t}+2\\right)=0+2=2$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\int_0^{1}\\frac{dx}{\\sqrt{1-x}}=2\\quad\\text{(ลู่เข้า)}$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"ans\">$2$ (ลู่เข้า)</span></p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$2$ (ลู่เข้า)</span>"
+ },
+ {
+  "idx": 4,
+  "title": "ข้อ 5 · $\\displaystyle\\int\\frac{dx}{\\sqrt x\\,(x+1)}$ <small>(เปลี่ยนตัวแปร → $\\tan^{-1}$)</small>",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: กำหนดตัวแปร u",
+    "body": "<p>มี $\\sqrt x$ อยู่ จึงให้ $u=\\sqrt x$ ดังนั้น $x=u^2$ และดิฟทั้งสองข้างได้ $dx=2u\\,du$</p>\n$$u=\\sqrt{x}\\ \\Rightarrow\\ x=u^2\\ \\Rightarrow\\ dx=2u\\,du$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แทนค่าในอินทิกรัล",
+    "body": "<p>แทน $\\sqrt x=u,\\ x+1=u^2+1,\\ dx=2u\\,du$</p>\n$$\\int\\frac{dx}{\\sqrt{x}\\,(x+1)}=\\int\\frac{2u\\,du}{u\\,(u^2+1)}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ตัดทอนแล้วหาอินทิกรัล",
+    "body": "<p>ตัด $u$ ที่เหมือนกันในเศษและส่วน แล้วใช้สูตร $\\int\\frac{du}{1+u^2}=\\tan^{-1}u+C$</p>\n$$=2\\int\\frac{du}{u^2+1}$$\n$$=2\\tan^{-1}u+C$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทน u กลับเป็น x",
+    "body": "<p>แทน $u=\\sqrt x$</p>\n$$=2\\tan^{-1}\\sqrt{x}+C$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$2\\tan^{-1}\\sqrt{x}+C$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"ans\">$2\\tan^{-1}\\sqrt{x}+C$</span></p>",
+   "<p class=\"tip\">สูตรที่ใช้: $\\int\\frac{du}{1+u^2}=\\tan^{-1}u+C$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$2\\tan^{-1}\\sqrt{x}+C$</span>"
+ },
+ {
+  "idx": 5,
+  "title": "ข้อ 6 · เขียนจุด $(-2,\\,-\\tfrac{\\pi}{4})$ ในรูปพิกัดเชิงขั้วแบบอื่น",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ดูตำแหน่งจุดจากมุมก่อน",
+    "body": "<p>มุมบวกหมุนทวนเข็มนาฬิกา มุมลบหมุนตามเข็ม $\\theta=-\\frac\\pi4$ คือหมุนตามเข็ม $45^\\circ$ จากแกน $x$ บวก ไปอยู่ทิศจตุภาคที่ 4</p>",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: ดูเครื่องหมายของ r",
+    "body": "<p>$r=-2$ เป็นลบ แปลว่าให้วัดระยะ $2$ หน่วยไปทาง<b>ตรงข้าม</b>ทิศของมุม (ต่างกัน $\\pi$) จุดจึงอยู่จตุภาคที่ 2 ที่ทิศ $135^\\circ$ หรือ $\\frac{3\\pi}{4}$</p>\n$$-\\frac\\pi4+\\pi=\\frac{3\\pi}{4}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: ตรวจด้วยพิกัดฉาก",
+    "body": "<p>แปลงจุดเดิมเป็นพิกัดฉากด้วย $x=r\\cos\\theta,\\ y=r\\sin\\theta$ ไว้เทียบกับคำตอบทุกแบบ</p>\n$$x=-2\\cos\\left(-\\tfrac\\pi4\\right)=-2\\cdot\\frac{\\sqrt2}{2}=-\\sqrt2$$\n$$y=-2\\sin\\left(-\\tfrac\\pi4\\right)=-2\\cdot\\left(-\\frac{\\sqrt2}{2}\\right)=\\sqrt2$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แบบที่ 1: $r>0,\\ 0\\le\\theta<2\\pi$",
+    "body": "<p>เปลี่ยน $r$ เป็นบวก ($-2\\to2$) ต้องเลื่อนมุมไป $\\pi$ ได้มุม $\\frac{3\\pi}{4}$ ซึ่งอยู่ในช่วง $[0,2\\pi)$</p>\n$$\\left(-2,\\,-\\tfrac\\pi4\\right)=\\left(2,\\,-\\tfrac\\pi4+\\pi\\right)=\\left(2,\\,\\tfrac{3\\pi}{4}\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: แบบที่ 2: $r>0,\\ -2\\pi<\\theta<0$",
+    "body": "<p>เริ่มจาก $\\frac{3\\pi}{4}$ แล้วลบ $2\\pi$ (หมุนครบรอบตามเข็ม) เพื่อให้อยู่ในช่วง $(-2\\pi,0)$</p>\n$$\\tfrac{3\\pi}{4}-2\\pi=-\\tfrac{5\\pi}{4}$$\n$$\\left(2,\\,-\\tfrac{5\\pi}{4}\\right)$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 6: แบบที่ 3: $r<0,\\ 0<\\theta<2\\pi$",
+    "body": "<p>คง $r=-2$ ไว้ แล้วเลื่อนมุมเดิมไปหนึ่งรอบเต็ม ($+2\\pi$) เพื่อให้อยู่ในช่วง $(0,2\\pi)$</p>\n$$-\\tfrac\\pi4+2\\pi=\\tfrac{7\\pi}{4}$$\n$$\\left(-2,\\,\\tfrac{7\\pi}{4}\\right)$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\left(2,\\ \\tfrac{3\\pi}{4}\\right),\\qquad\\left(2,\\ -\\tfrac{5\\pi}{4}\\right),\\qquad\\left(-2,\\ \\tfrac{7\\pi}{4}\\right)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ:</p>"
+  ],
+  "answer_line": "คำตอบ:"
+ },
+ {
+  "idx": 6,
+  "title": "ข้อ 7 · $r=\\dfrac{4}{2\\cos\\theta+3\\sin\\theta}$ เปลี่ยนเป็นพิกัดฉากแล้ววาดกราฟ",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: คูณตัวส่วนขึ้นไป",
+    "body": "<p>คูณทั้งสองข้างด้วย $2\\cos\\theta+3\\sin\\theta$ เพื่อกำจัดเศษส่วน</p>\n$$r\\,(2\\cos\\theta+3\\sin\\theta)=4$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: กระจาย r เข้าไป",
+    "body": "<p>ใช้สมบัติการแจกแจงให้ $r$ คูณแต่ละเทอม</p>\n$$2r\\cos\\theta+3r\\sin\\theta=4$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: แทนด้วยพิกัดฉาก",
+    "body": "<p>ใช้ $x=r\\cos\\theta$ และ $y=r\\sin\\theta$</p>\n$$2x+3y=4$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: หาจุดตัดแกนเพื่อวาดกราฟ",
+    "body": "<p>สมการเป็นเส้นตรง หาจุดตัดแกน $x$ โดยให้ $y=0$ และจุดตัดแกน $y$ โดยให้ $x=0$</p>\n$$y=0:\\ 2x=4\\Rightarrow x=2\\quad\\Rightarrow\\ (2,0)$$\n$$x=0:\\ 3y=4\\Rightarrow y=\\tfrac43\\quad\\Rightarrow\\ (0,\\tfrac43)$$",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$2x+3y=4$$\n<p class=\"alt\">(เป็นเส้นตรงผ่านจุด $(2,0)$ และ $(0,\\tfrac43)$ ลากเส้นตรงผ่านสองจุดนี้เพื่อวาดกราฟ)</p>",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"ans\">$2x+3y=4$</span> (เส้นตรง ตัดแกน $x$ ที่ $(2,0)$ ตัดแกน $y$ ที่ $(0,\\tfrac43)$)</p>",
+   "<p class=\"tip\">สูตรแปลง: $x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ x^2+y^2=r^2,\\ \\tan\\theta=\\frac yx$</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$2x+3y=4$</span> (เส้นตรง ตัดแกน $x$ ที่ $(2,0)$ ตัดแกน $y$ ที่ $(0,\\tfrac43)$)"
+ },
+ {
+  "idx": 7,
+  "title": "ข้อ 8 · ตารางแปลงพิกัดฉาก $(x,y)$ ↔ พิกัดเชิงขั้ว $(r,\\theta)$",
+  "steps": [],
+  "extras": [
+   "<p>NotebookLM ยืนยันว่าข้อนี้เป็นตารางแปลงพิกัดระหว่างพิกัดฉากกับพิกัดเชิงขั้ว (ตัวเลขในตารางลายมืออ่านไม่ชัด จึงยังเฉลยรายช่องไม่ได้)</p>",
+   "<p><b>วิธีแปลง:</b> เชิงขั้ว → ฉาก ใช้ $x=r\\cos\\theta,\\ y=r\\sin\\theta$ · ฉาก → เชิงขั้ว ใช้ $r=\\sqrt{x^2+y^2}$ และ $\\tan\\theta=\\frac yx$ (ดูจตุภาคด้วย)</p>",
+   "<p>ตัวอย่าง: $(r,\\theta)=(2,\\frac{2\\pi}3)$ → $x=2(-\\frac12)=-1,\\ y=2(\\frac{\\sqrt3}2)=\\sqrt3$ · และ $(x,y)=(-1,-1)$ → $r=\\sqrt2$, อยู่ Q3 จึงได้ $\\theta=\\frac{5\\pi}4$</p>",
+   "<p>ค่าที่ต้องใช้ในการแปลงคือค่า $(\\cos\\theta,\\sin\\theta)$ บนวงกลมหนึ่งหน่วย:</p>",
+   "<p class=\"tip\">เครื่องหมายตามจตุภาค: Q1 $(+,+)$ · Q2 $(-,+)$ · Q3 $(-,-)$ · Q4 $(+,-)$</p>"
+  ],
+  "answer_line": ""
+ },
+ {
+  "idx": 8,
+  "title": "ข้อ 9 · หาจุดตัดของ $r_1=1+\\cos\\theta$ กับ $r_2=3\\cos\\theta$",
+  "steps": [
+   {
+    "head": "ขั้นตอนที่ 1: ตั้งสมการ $r_1=r_2$",
+    "body": "<p>จุดตัดส่วนใหญ่หาได้โดยให้ค่า $r$ ของสองกราฟเท่ากันที่มุมเดียวกัน</p>\n$$1+\\cos\\theta=3\\cos\\theta$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 2: แก้สมการหา $\\cos\\theta$",
+    "body": "<p>ย้าย $\\cos\\theta$ มารวมกันฝั่งเดียว</p>\n$$1=3\\cos\\theta-\\cos\\theta$$\n$$1=2\\cos\\theta\\ \\Rightarrow\\ \\cos\\theta=\\frac12$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 3: หามุม $\\theta$",
+    "body": "<p>$\\cos\\theta=\\frac12$ เมื่อ $\\theta=60^\\circ$ หรือ $\\theta=300^\\circ$ (คือ $-60^\\circ$)</p>\n$$\\theta=\\frac{\\pi}{3}\\quad\\text{หรือ}\\quad\\theta=-\\frac{\\pi}{3}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 4: แทนหา r",
+    "body": "<p>แทน $\\theta$ ลงใน $r_2=3\\cos\\theta$ (และตรวจกับ $r_1$ ด้วย)</p>\n$$r=3\\cos\\frac{\\pi}{3}=3\\cdot\\frac12=\\frac32$$\n$$r_1=1+\\cos\\frac{\\pi}{3}=1+\\frac12=\\frac32\\ \\checkmark$$\n$$\\cos\\left(-\\tfrac\\pi3\\right)=\\tfrac12\\ \\Rightarrow\\ r=\\tfrac32$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 5: ตรวจจุดกำเนิด (ขั้ว) แยกต่างหาก",
+    "body": "<p>จุดกำเนิดมี $r=0$ ซึ่งเกิดที่มุมต่างกันในแต่ละกราฟ จึงหาไม่เจอจากการตั้ง $r_1=r_2$ ต้องตรวจเอง</p>\n$$r_1=0:\\ 1+\\cos\\theta=0\\Rightarrow\\theta=\\pi$$\n$$r_2=0:\\ 3\\cos\\theta=0\\Rightarrow\\theta=\\frac{\\pi}{2}$$",
+    "final": false
+   },
+   {
+    "head": "ขั้นตอนที่ 6: สรุปว่าทั้งสองกราฟผ่านจุดกำเนิด",
+    "body": "<p>เพราะกราฟทั้งสองผ่านจุดกำเนิดทั้งคู่ (แม้คนละมุม) จุดกำเนิดจึงเป็นจุดตัดด้วย</p>",
+    "final": false
+   },
+   {
+    "head": "คำตอบ:",
+    "body": "\n$$\\left(\\tfrac32,\\ \\tfrac{\\pi}{3}\\right),\\qquad\\left(\\tfrac32,\\ -\\tfrac{\\pi}{3}\\right),\\qquad\\text{จุดกำเนิด }(0,0)$$",
+    "final": true
+   }
+  ],
+  "extras": [
+   "<p>คำตอบ: <span class=\"ans\">$(\\tfrac32,\\ \\tfrac{\\pi}{3})$, $(\\tfrac32,\\ -\\tfrac{\\pi}{3})$ และจุดกำเนิด (ขั้ว)</span></p>",
+   "<p class=\"tip\">โน้ตในคลาสหาไว้แค่ $\\theta=60^\\circ$ ถ้าข้อสอบถามจุดตัด<b>ทั้งหมด</b> ให้ตอบครบทั้ง 3 จุด</p>"
+  ],
+  "answer_line": "คำตอบ: <span class=\"ans\">$(\\tfrac32,\\ \\tfrac{\\pi}{3})$, $(\\tfrac32,\\ -\\tfrac{\\pi}{3})$ และจุดกำเนิด (ขั้ว)</span>"
+ }
+]
