@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ฝึกทำ · PHY10101 ข้อสอบจำลอง 25 ข้อ + ข้อเขียน</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],strict:false})"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  main{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 16px}
+  body{line-height:1.95;font-size:17px;margin:0}
+
+  .drill{scroll-margin-top:4.5rem}
+  .drill h3{font-size:1.1rem;margin:0 0 10px!important;display:flex;gap:.6rem;align-items:baseline}
+  .drill .num{flex:none;font-weight:700;color:var(--accent,#2f6fde);background:var(--accentbg,rgba(47,111,222,.1));border-radius:8px;padding:0 .55rem;font-size:.9rem}
+  .drill .try{margin:.3rem 0;color:var(--muted,#5b6370);font-size:.95rem}
+  .drill .done{margin-left:.8rem;white-space:nowrap;cursor:pointer}
+  .drill .mine{width:100%;box-sizing:border-box;border:1px dashed var(--line,#ccc);border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 12px;margin:4px 0 8px;resize:vertical}
+  .lv{border:1px solid var(--line,#ddd);border-radius:10px;margin:6px 0;padding:2px 12px}
+  .lv>summary{cursor:pointer;font-weight:600;padding:6px 0;color:var(--accent,#2f6fde)}
+  .lv .lvb{padding:2px 0 8px}
+  .lv.l1{border-left:4px solid #38bdf8}.lv.l2{border-left:4px solid #818cf8}.lv.l3{border-left:4px solid #c084fc}.lv.l4{border-left:4px solid #f59e0b}.lv.l5{border-left:4px solid var(--ok,#1a7f4b)}
+  .stp{margin:6px 0}.stp>summary{cursor:pointer;color:var(--muted,#5b6370)}
+  .after{margin-top:12px;padding-top:8px;border-top:1px dashed var(--line,#ddd)}
+  .prac{background:var(--accentbg,rgba(47,111,222,.08));border-radius:10px;padding:8px 14px;margin-top:8px}
+  .alt{color:var(--muted,#5b6370);font-size:.92rem}
+  .tip{color:var(--muted,#5b6370)}
+  .progress{position:sticky;top:3.2rem;z-index:5;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:999px;padding:4px 14px;display:inline-block;font-size:.9rem;margin:0 0 12px}
+  .katex-display{overflow-x:auto;overflow-y:hidden}
+  @media print{details{display:block}details>*{display:block}.mine{display:none}}
+</style>
+<link rel="stylesheet" href="../theme.css"><script src="../exams.js"></script><script src="../theme.js"></script>
+</head>
+<body>
+<main>
+<h1>ฝึกทำ · PHY10101 ข้อสอบจำลอง 25 ข้อ + ข้อเขียน (27 ข้อ)</h1><p class="sub">โหมดติวเตอร์: ลองคิดเองก่อน → เปิดคำใบ้ทีละระดับ (0 แยกโจทย์ · 1 คำถามนำ · 2 หลักการ · 3 ตัวอย่างคล้ายกัน · 4 เฉลยทีละขั้น · 5 เฉลยเต็ม) → สรุปหลักการ → ทำข้อฝึกใหม่ · <a href="phy-mock-exam.html">ดูหน้าเฉลยเต็มแบบเดิม</a></p><div class="progress" id="prog"></div>
+<article class="q drill" id="p1" data-idx="0">
+<h3><span class="num">1</span> <b>ข้อ 1.</b> รูปแสดงกราฟระหว่างระยะทาง (Distance) และเวลา (Time) ของการเคลื่อนที่ในแนวเส้นตรงของวัตถุ<br>กราฟ ก เป็นเส้นตรงลาดขึ้น (ความชันคงที่), กราฟ ข เป็นเส้นโค้งที่ชันขึ้นเรื่อย ๆ, กราฟ ค เป็นเส้นโค้งที่ความชันลดลงเรื่อย ๆ<br>กราฟใดแสดงว่าวัตถุมีความเร่ง<br>A. ก เท่านั้น<br>B. ก และ ข<br>C. ข และ ค<br>D. ก และ ค<br>E. ก ข และ ค</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h02.jpg)</summary><img loading="lazy" src="img/mock/h02.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-0"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-0" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>กราฟ ก ความชันคงที่</li><li>กราฟ ข ความชันเพิ่มขึ้น</li><li>กราฟ ค ความชันลดลง</li></ul><p><b>ต้องหา:</b> กราฟใดแสดงว่าวัตถุมีความเร่ง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ความชันของกราฟ $s$–$t$ คือความเร็ว</li><li>ความเร่งคืออัตราการเปลี่ยนแปลงความเร็ว</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ความชันของกราฟระยะทาง–เวลาบอกปริมาณอะไร และถ้าความชันไม่คงที่ แปลว่าปริมาณนั้นเป็นอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ความชันของกราฟ $s$–$t$ คือความเร็ว วัตถุมีความเร่งก็ต่อเมื่อความเร็วเปลี่ยน คือความชันเปลี่ยนไปตามเวลา ลองดูว่ากราฟใดเป็นเส้นตรงและกราฟใดโค้ง</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> กราฟ $s$–$t$ สามกราฟ: ง เป็นเส้นตรงผ่านจุดกำเนิดความชัน 2, จ เป็นเส้นโค้ง $s=t^2$, ฉ เป็นเส้นโค้ง $s=\sqrt{t}$ กราฟใดมีความเร็วคงที่?</p><p><b>สาธิต:</b> เส้นตรงมีความชันเท่ากันทุกจุด ส่วนเส้นโค้งความชันเปลี่ยนไปเรื่อย ๆ จึงแยกกราฟที่ความเร็วเปลี่ยนออกได้ทันทีโดยดูว่าเป็นเส้นตรงหรือไม่</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ความชันของกราฟระยะทาง–เวลา</div><p>ความชันของกราฟ $s$–$t$ คือความเร็ว $v=\dfrac{\Delta s}{\Delta t}$ ถ้าความชันคงที่ แสดงว่าความเร็วคงที่ ความเร่งเป็นศูนย์</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: พิจารณาทีละกราฟ</div><p>กราฟ ก: เส้นตรง ความชันคงที่ แสดงว่า $v$ คงที่ จึง $a=0$<br>กราฟ ข: ความชันเพิ่มขึ้น แสดงว่า $v$ เพิ่ม จึงมีความเร่ง<br>กราฟ ค: ความชันลดลง แสดงว่า $v$ ลด จึงมีความเร่ง (ความหน่วง)</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ความชันของกราฟระยะทาง–เวลา</div><p>ความชันของกราฟ $s$–$t$ คือความเร็ว $v=\dfrac{\Delta s}{\Delta t}$ ถ้าความชันคงที่ แสดงว่าความเร็วคงที่ ความเร่งเป็นศูนย์</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: พิจารณาทีละกราฟ</div><p>กราฟ ก: เส้นตรง ความชันคงที่ แสดงว่า $v$ คงที่ จึง $a=0$<br>กราฟ ข: ความชันเพิ่มขึ้น แสดงว่า $v$ เพิ่ม จึงมีความเร่ง<br>กราฟ ค: ความชันลดลง แสดงว่า $v$ ลด จึงมีความเร่ง (ความหน่วง)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ความเร็วเปลี่ยนแปลงในกราฟ ข และ ค</p>$$\text{ตอบ C. ข และ ค}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: เข้าใจว่ากราฟที่ชันมากหรือกราฟที่ลาดขึ้นแปลว่ามีความเร่ง ทั้งที่ความเร่งดูจากการเปลี่ยนของความชัน</li><li>อ่านโจทย์ผิด: คิดว่ากราฟเป็นกราฟความเร็ว–เวลา ซึ่งความชันจะเป็นความเร่ง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ความชันของกราฟ $s$–$t$ = ความเร็ว</li><li>เส้นตรง = ความเร็วคงที่ ความเร่งเป็นศูนย์</li><li>เส้นโค้ง = ความเร็วเปลี่ยน = มีความเร่ง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> กราฟ $s$–$t$ สามกราฟ: ง เป็นเส้นตรง $s=2t$, จ เป็นเส้นโค้ง $s=t^2$, ฉ เป็นเส้นโค้ง $s=\sqrt{t}$ กราฟใดแสดงว่าวัตถุมีความเร็วคงที่ (ความเร่งเป็นศูนย์)?</p><details><summary>ใบ้</summary><p>ดูว่ากราฟใดมีความชันเท่ากันทุกจุด</p></details><details><summary>ดูคำตอบ</summary><p>กราฟ ง เท่านั้น</p><p class="alt">ความเร็ว $v=\dfrac{ds}{dt}$ ของ ง คือ $2$ คงที่<br>ของ จ คือ $2t$ เพิ่มขึ้น, ของ ฉ คือ $\dfrac{1}{2\sqrt t}$ ลดลง<br>มีเฉพาะ ง ที่ความเร็วคงที่</p></details></div>
+</div></article>
+<article class="q drill" id="p2" data-idx="1">
+<h3><span class="num">2</span> <b>ข้อ 2.</b> รูปแสดงกราฟระหว่างความเร็วและเวลาของการเคลื่อนที่ในแนวเส้นตรงของวัตถุหนึ่งภายในเวลา 7 วินาที: ความเร็วคงที่ 6 m/s ตั้งแต่ $t=0$ ถึง $t=3$ s จากนั้นลดลงเป็นเส้นตรงจนเป็น 0 ที่ $t=7$ s<br>ข้อใดคือค่าของระยะทางที่เคลื่อนที่ได้<br>A. 18 m<br>B. 25 m<br>C. 30 m<br>D. 42 m<br>E. 50 m</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h02.jpg)</summary><img loading="lazy" src="img/mock/h02.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-1"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-1" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$v=6$ m/s คงที่ช่วง 0–3 s</li><li>ช่วง 3–7 s ความเร็วลดเป็นเส้นตรงจาก 6 เป็น 0 m/s</li></ul><p><b>ต้องหา:</b> ระยะทางรวมที่เคลื่อนที่ได้ใน 7 s</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>พื้นที่ใต้กราฟ $v$–$t$ คือการกระจัด/ระยะทาง</li><li>แบ่งกราฟเป็นช่วง ๆ แล้วรวมกัน</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>พื้นที่ใต้กราฟความเร็ว–เวลาแต่ละช่วงเป็นรูปร่างอะไร และแต่ละช่วงให้ระยะทางเท่าใด?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ระยะทางหาได้จากพื้นที่ใต้กราฟ $v$–$t$ ช่วงความเร็วคงที่ได้สี่เหลี่ยมผืนผ้า ช่วงความเร็วลดสม่ำเสมอได้สามเหลี่ยม หรือใช้ $s=ut+\tfrac12at^2$ ก็ได้</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> รถวิ่งด้วย 4 m/s นาน 2 s แล้วเร็วขึ้นเป็นเส้นตรงเป็น 10 m/s ในอีก 3 s ระยะทางช่วงที่สองเป็นเท่าใด?</p><p><b>สาธิต:</b> ช่วงที่สองเป็นรูปสี่เหลี่ยมคางหมู ความเร็วเฉลี่ย $=\dfrac{4+10}{2}=7$ m/s คูณเวลา 3 s ได้ระยะทางช่วงนั้น</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ช่วงความเร็วคงที่ (0–3 s)</div>$$s_1=vt=6\times3=18\ \text{m}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ช่วงความเร่งคงที่ (3–7 s)</div><p>$a=\dfrac{0-6}{7-3}=-1.5\ \text{m/s}^2$, $t=4$ s</p>$$s_2=ut+\tfrac12at^2=6(4)+\tfrac12(-1.5)(4)^2=24-12=12\ \text{m}$$<p>(เท่ากับพื้นที่สามเหลี่ยม $\tfrac12\times6\times4=12$ m)</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ช่วงความเร็วคงที่ (0–3 s)</div>$$s_1=vt=6\times3=18\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ช่วงความเร่งคงที่ (3–7 s)</div><p>$a=\dfrac{0-6}{7-3}=-1.5\ \text{m/s}^2$, $t=4$ s</p>$$s_2=ut+\tfrac12at^2=6(4)+\tfrac12(-1.5)(4)^2=24-12=12\ \text{m}$$<p>(เท่ากับพื้นที่สามเหลี่ยม $\tfrac12\times6\times4=12$ m)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$s=s_1+s_2=18+12=30\ \text{m}$$<p>ตอบ C. 30 m</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ใช้ $s=vt$ ตลอดทั้ง 7 s ทั้งที่ช่วงหลังความเร็วไม่คงที่</li><li>คำนวณผิด: ลืมบวกระยะทางช่วงแรกเข้ากับช่วงหลัง หรือใช้เวลา 7 s แทน 4 s ในช่วงหลัง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ระยะทาง = พื้นที่ใต้กราฟ $v$–$t$</li><li>แบ่งช่วงที่รูปร่างต่างกันแล้วบวกกัน</li><li>ช่วงความเร็วลดสม่ำเสมอใช้ความเร็วเฉลี่ยหรือพื้นที่สามเหลี่ยม</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> กราฟ $v$–$t$ ของวัตถุ: ความเร็วคงที่ 5 m/s ตั้งแต่ $t=0$ ถึง 4 s แล้วลดลงเป็นเส้นตรงจนเป็น 0 ที่ $t=10$ s ระยะทางรวมเป็นเท่าใด?</p><details><summary>ใบ้</summary><p>แบ่งเป็นสี่เหลี่ยมผืนผ้ากับสามเหลี่ยม</p></details><details><summary>ดูคำตอบ</summary><p>$35\ \text{m}$</p><p class="alt">ช่วงแรก $s_1=5\times4=20$ m<br>ช่วงหลัง นาน $10-4=6$ s: $s_2=\tfrac12\times5\times6=15$ m<br>$s=20+15=35$ m</p></details></div>
+</div></article>
+<article class="q drill" id="p3" data-idx="2">
+<h3><span class="num">3</span> <b>ข้อ 3.</b> ข้อใดกล่าวถูกต้องเกี่ยวกับการเคลื่อนที่แบบโปรเจกไทล์ (ไม่คิดแรงต้านอากาศ)<br>A. ที่จุดสูงสุด วัตถุมีความเร็วเป็นศูนย์<br>B. วัตถุมีความเร่งคงที่<br>C. ความเร็วของวัตถุในแนวดิ่งมีค่าคงที่<br>D. ทิศทางของความเร่งขนานกับความเร็ว<br>E. ไม่มีข้อใดกล่าวถูกต้อง</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h02.jpg)</summary><img loading="lazy" src="img/mock/h02.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-2"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-2" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>วัตถุเคลื่อนที่แบบโปรเจกไทล์</li><li>ไม่คิดแรงต้านอากาศ</li></ul><p><b>ต้องหา:</b> ข้อความที่ถูกต้องเกี่ยวกับโปรเจกไทล์</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แยกแกน x และ y ให้เป็นอิสระต่อกัน</li><li>แรงเดียวที่กระทำคือน้ำหนัก</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ระหว่างที่วัตถุลอยอยู่ในอากาศ มีแรงใดกระทำและทำให้ความเร่งเป็นอย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ถ้าไม่คิดแรงต้านอากาศ มีเฉพาะน้ำหนัก ความเร่งจึงเป็น $g$ ลงล่างตลอด ส่วนความเร็วแนวระดับไม่เปลี่ยน ลองตรวจทีละตัวเลือกกับข้อเท็จจริงนี้</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ขว้างลูกบอลขึ้นด้วยความเร็วต้น 20 m/s ทำมุม 60° กับแนวระดับ ความเร็วแนวระดับของลูกบอลที่ตำแหน่งต่าง ๆ ในวิถีเป็นอย่างไร?</p><p><b>สาธิต:</b> $v_x=u\cos\theta=20\cos60^\circ=10$ m/s และไม่มีแรงในแนวระดับ จึงมีค่านี้ตลอดทาง</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกการเคลื่อนที่เป็นสองแกน</div><p>แนวระดับ: ไม่มีแรง จึง $a_x=0$ และ $v_x$ คงที่<br>แนวดิ่ง: มีเพียงน้ำหนัก จึง $a_y=-g$ คงที่</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ตรวจแต่ละข้อ</div><p>A ผิด: ที่จุดสูงสุด $v_y=0$ แต่ยังมี $v_x\neq0$<br>B ถูก: ความเร่ง $=g$ ลงล่างคงที่ตลอดการเคลื่อนที่<br>C ผิด: $v_y$ เปลี่ยนตลอดเวลา<br>D ผิด: ความเร่งชี้ลงตรง ๆ แต่ความเร็วชี้ตามแนวสัมผัสวิถี</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แยกการเคลื่อนที่เป็นสองแกน</div><p>แนวระดับ: ไม่มีแรง จึง $a_x=0$ และ $v_x$ คงที่<br>แนวดิ่ง: มีเพียงน้ำหนัก จึง $a_y=-g$ คงที่</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ตรวจแต่ละข้อ</div><p>A ผิด: ที่จุดสูงสุด $v_y=0$ แต่ยังมี $v_x\neq0$<br>B ถูก: ความเร่ง $=g$ ลงล่างคงที่ตลอดการเคลื่อนที่<br>C ผิด: $v_y$ เปลี่ยนตลอดเวลา<br>D ผิด: ความเร่งชี้ลงตรง ๆ แต่ความเร็วชี้ตามแนวสัมผัสวิถี</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ B. วัตถุมีความเร่งคงที่ ($a=g=10\ \text{m/s}^2$ ทิศลง)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: คิดว่าที่จุดสูงสุดความเร็วเป็นศูนย์ทั้งหมด ทั้งที่ศูนย์เฉพาะแนวดิ่ง</li><li>แนวคิดผิด: คิดว่าความเร่งเป็นศูนย์ที่จุดสูงสุด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>โปรเจกไทล์: $a_x=0$, $a_y=-g$</li><li>ความเร่งคงที่ตลอดวิถี</li><li>ที่จุดสูงสุด $v_y=0$ แต่ $v_x$ ยังอยู่</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ยิงวัตถุด้วยความเร็ว 20 m/s ทำมุม 60° กับแนวระดับ (ไม่คิดแรงต้านอากาศ, $g=10$ m/s²) ที่จุดสูงสุด อัตราเร็วและความเร่งของวัตถุเป็นเท่าใด?</p><details><summary>ใบ้</summary><p>ที่จุดสูงสุดเหลือเฉพาะองค์ประกอบแนวระดับของความเร็ว</p></details><details><summary>ดูคำตอบ</summary><p>อัตราเร็ว $10\ \text{m/s}$ และความเร่ง $10\ \text{m/s}^2$ ทิศลง</p><p class="alt">$v_x=20\cos60^\circ=10$ m/s คงที่<br>ที่จุดสูงสุด $v_y=0$ จึงอัตราเร็ว $=10$ m/s<br>ความเร่ง $=g=10$ m/s² ลงล่าง</p></details></div>
+</div></article>
+<article class="q drill" id="p4" data-idx="3">
+<h3><span class="num">4</span> <b>ข้อ 4.</b> อนุภาคเคลื่อนที่ในแนวเส้นตรงมีระยะทาง $x$ (หน่วยเซนติเมตร) เป็นฟังก์ชันของเวลา $t$ (หน่วยวินาที) ตามสมการ $x=6t^3-3t^2+3t$ ข้อใดคือความเร็วของอนุภาคที่เวลา $t=2.0$ s<br>A. 11 cm/s<br>B. 30 cm/s<br>C. 42 cm/s<br>D. 63 cm/s<br>E. 123 cm/s</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h02.jpg)</summary><img loading="lazy" src="img/mock/h02.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-3"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-3" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$x=6t^3-3t^2+3t$ (cm)</li><li>$t=2.0$ s</li></ul><p><b>ต้องหา:</b> ความเร็วที่ $t=2.0$ s</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$v=\dfrac{dx}{dt}$</li><li>อนุพันธ์ของ $t^n$ คือ $nt^{n-1}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ถ้ารู้ตำแหน่งเป็นฟังก์ชันของเวลา เราจะได้ความเร็วจากตำแหน่งนั้นด้วยการทำอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ความเร็วขณะหนึ่งคืออนุพันธ์ของตำแหน่งเทียบเวลา ให้หาอนุพันธ์ก่อน แล้วค่อยแทนค่า $t$ และเช็กหน่วยให้เป็น cm/s</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> อนุภาคมี $x=4t^2+t$ (m) ความเร็วที่ $t=3$ s เป็นเท่าใด?</p><p><b>สาธิต:</b> $v=\dfrac{dx}{dt}=8t+1$ แล้วแทนค่า $t$ ที่โจทย์กำหนด</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: หาอนุพันธ์ของ $x$</div><p>ความเร็วคืออัตราการเปลี่ยนตำแหน่ง $v=\dfrac{dx}{dt}$</p>$$v=18t^2-6t+3\ \text{cm/s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทน $t=2$</div>$$v=18(4)-6(2)+3=72-12+3=63\ \text{cm/s}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: หาอนุพันธ์ของ $x$</div><p>ความเร็วคืออัตราการเปลี่ยนตำแหน่ง $v=\dfrac{dx}{dt}$</p>$$v=18t^2-6t+3\ \text{cm/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทน $t=2$</div>$$v=18(4)-6(2)+3=72-12+3=63\ \text{cm/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ D. 63 cm/s</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: แทน $t=2$ ลงใน $x$ ได้ตำแหน่งแทนที่จะเป็นความเร็ว</li><li>คำนวณผิด: หาอนุพันธ์ผิด เช่น ลืมคูณเลขชี้กำลังหรือลืมพจน์ $3t$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$v=\dfrac{dx}{dt}$</li><li>หาอนุพันธ์ก่อนแล้วจึงแทนค่าเวลา</li><li>ใช้หน่วยเดียวกับโจทย์ (cm/s)</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> อนุภาคเคลื่อนที่ในแนวเส้นตรงตามสมการ $x=2t^3-5t^2+4t$ (cm, $t$ เป็นวินาที) ความเร็วที่ $t=3$ s เป็นเท่าใด?</p><details><summary>ใบ้</summary><p>หา $\dfrac{dx}{dt}$ ก่อน</p></details><details><summary>ดูคำตอบ</summary><p>$28\ \text{cm/s}$</p><p class="alt">$v=\dfrac{dx}{dt}=6t^2-10t+4$<br>$t=3$: $v=54-30+4=28$ cm/s</p></details></div>
+</div></article>
+<article class="q drill" id="p5" data-idx="4">
+<h3><span class="num">5</span> <b>ข้อ 5.</b> รถยนต์คันหนึ่งเคลื่อนที่ด้วยความเร็ว 20 m/s เมื่อเริ่มเบรกด้วยความเร่งคงที่ หลังจากเคลื่อนที่ไปได้ 64 m ความเร็วลดลงเหลือ 12 m/s ข้อใดคือความเร่งของรถ<br>A. $-1.0\ \text{m/s}^2$<br>B. $-2.0\ \text{m/s}^2$<br>C. $-3.1\ \text{m/s}^2$<br>D. $2.0\ \text{m/s}^2$<br>E. $3.1\ \text{m/s}^2$</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h02.jpg)</summary><img loading="lazy" src="img/mock/h02.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-4"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-4" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$u=20$ m/s</li><li>$v=12$ m/s</li><li>$s=64$ m</li></ul><p><b>ต้องหา:</b> ความเร่งของรถ $a$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>สมการการเคลื่อนที่ความเร่งคงที่</li><li>เลือกสูตรที่ไม่มีเวลาเมื่อโจทย์ไม่ให้เวลา</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>โจทย์ให้ปริมาณใดบ้าง และไม่ได้ให้เวลา สูตรใดที่ไม่ต้องใช้ $t$?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ความเร่งคงที่ ใช้ $v^2=u^2+2as$ ได้เมื่อรู้ $u$, $v$, $s$ ย้ายข้างหา $a$ ระวังเครื่องหมายเพราะรถกำลังเบรก</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> รถเริ่มจาก 10 m/s เร่งสม่ำเสมอ ไปได้ 40 m ความเร็วเป็น 14 m/s ความเร่งเท่าใด?</p><p><b>สาธิต:</b> $v^2=u^2+2as\Rightarrow a=\dfrac{v^2-u^2}{2s}$ แล้วแทนค่าตามโจทย์</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกสูตร</div><p>รู้ $u=20$, $v=12$, $s=64$ ต้องการ $a$ ไม่มีเวลา จึงใช้ $v^2=u^2+2as$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่า</div>$$12^2=20^2+2a(64)\Rightarrow 144=400+128a$$$$a=\dfrac{144-400}{128}=-2.0\ \text{m/s}^2$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เลือกสูตร</div><p>รู้ $u=20$, $v=12$, $s=64$ ต้องการ $a$ ไม่มีเวลา จึงใช้ $v^2=u^2+2as$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่า</div>$$12^2=20^2+2a(64)\Rightarrow 144=400+128a$$$$a=\dfrac{144-400}{128}=-2.0\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ B. $-2.0\ \text{m/s}^2$ (เครื่องหมายลบแสดงว่าลดความเร็ว)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้ $v=u+at$ ทั้งที่ไม่รู้ $t$</li><li>คำนวณผิด: ตอบค่าบวกทั้งที่ความเร็วลดลง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ไม่มีเวลา ใช้ $v^2=u^2+2as$</li><li>ความเร็วลด ความเร่งเป็นลบ</li><li>แทนค่าให้ครบก่อนย้ายข้าง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> รถวิ่งด้วย 25 m/s แล้วเบรกด้วยความเร่งคงที่ เมื่อไปได้ 50 m ความเร็วเหลือ 15 m/s ความเร่งเป็นเท่าใด?</p><details><summary>ใบ้</summary><p>ใช้สูตรที่ไม่มีเวลา</p></details><details><summary>ดูคำตอบ</summary><p>$-4.0\ \text{m/s}^2$</p><p class="alt">$a=\dfrac{v^2-u^2}{2s}=\dfrac{15^2-25^2}{2(50)}=\dfrac{225-625}{100}=-4.0$ m/s²</p></details></div>
+</div></article>
+<article class="q drill" id="p6" data-idx="5">
+<h3><span class="num">6</span> <b>ข้อ 6.</b> รูปแสดงการยิงโปรเจกไทล์ด้วยความเร็วต้นขนาด $u=8.00$ m/s ถ้าเลือกมุมยิงเพื่อให้ได้ Range มากที่สุด ข้อใดคือค่าของ Range และ Time of flight ตามลำดับ ($g=10$ m/s²)<br>A. 6.40 m และ 1.13 s<br>B. 12.8 m และ 1.13 s<br>C. 12.8 m และ 2.26 s<br>D. 3.20 m และ 1.13 s<br>E. 3.20 m และ 2.26 s</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h03.jpg)</summary><img loading="lazy" src="img/mock/h03.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-5"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-5" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$u=8.00$ m/s</li><li>เลือกมุมให้ Range มากสุด</li><li>$g=10$ m/s²</li></ul><p><b>ต้องหา:</b> Range และ Time of flight</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$R=\dfrac{2u^2\sin\theta\cos\theta}{g}$</li><li>$T=\dfrac{2u\sin\theta}{g}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>Range จะมากที่สุดเมื่อยิงที่มุมกี่องศา?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>$R\propto\sin2\theta$ จึงมากสุดเมื่อ $\sin2\theta=1$ เมื่อได้มุมแล้วนำไปแทนในสูตร $R$ และ $T$ ที่ให้มาในสูตรประกอบ ตั้งเครื่องคิดเลขเป็นโหมดองศา</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ยิงด้วยความเร็วต้น 12 m/s ที่มุม 30° ค่า $T=\dfrac{2u\sin\theta}{g}$ เป็นเท่าใด?</p><p><b>สาธิต:</b> $T=\dfrac{2(12)\sin30^\circ}{10}$ ซึ่งเป็นการแทนค่าตรง ๆ ตามสูตร</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: มุมที่ให้ Range มากที่สุด</div><p>$R=\dfrac{2u^2\sin\theta\cos\theta}{g}=\dfrac{u^2\sin2\theta}{g}$ มากที่สุดเมื่อ $\theta=45^\circ$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: Range</div>$$R=\dfrac{2(8)^2\sin45^\circ\cos45^\circ}{10}=\dfrac{64}{10}=6.40\ \text{m}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 3: Time of flight</div>$$T=\dfrac{2u\sin\theta}{g}=\dfrac{2(8)\sin45^\circ}{10}=1.13\ \text{s}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: มุมที่ให้ Range มากที่สุด</div><p>$R=\dfrac{2u^2\sin\theta\cos\theta}{g}=\dfrac{u^2\sin2\theta}{g}$ มากที่สุดเมื่อ $\theta=45^\circ$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: Range</div>$$R=\dfrac{2(8)^2\sin45^\circ\cos45^\circ}{10}=\dfrac{64}{10}=6.40\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 3: Time of flight</div>$$T=\dfrac{2u\sin\theta}{g}=\dfrac{2(8)\sin45^\circ}{10}=1.13\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ A. 6.40 m และ 1.13 s</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ตั้งเครื่องคิดเลขเป็นเรเดียนแทนองศา</li><li>แนวคิดผิด: คิดว่ามุม 90° ให้ Range มากที่สุด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>Range มากสุดที่ $45^\circ$</li><li>$R=\dfrac{u^2}{g}$ เมื่อ $\theta=45^\circ$</li><li>$T=\dfrac{2u\sin\theta}{g}$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ยิงโปรเจกไทล์ด้วยความเร็วต้น 20 m/s เลือกมุมให้ Range มากที่สุด ($g=10$ m/s²) จงหา Range และ Time of flight</p><details><summary>ใบ้</summary><p>มุมที่ให้ Range มากสุดคือ 45°</p></details><details><summary>ดูคำตอบ</summary><p>$R=40\ \text{m}$, $T=2\sqrt2\approx2.83\ \text{s}$</p><p class="alt">$R=\dfrac{u^2}{g}=\dfrac{400}{10}=40$ m<br>$T=\dfrac{2(20)\sin45^\circ}{10}=2\sqrt2\approx2.83$ s</p></details></div>
+</div></article>
+<article class="q drill" id="p7" data-idx="6">
+<h3><span class="num">7</span> <b>ข้อ 7.</b> จากสถานการณ์ในข้อ 6 (ยิงด้วย $u=8.00$ m/s ที่มุม 45°) วัตถุขึ้นไปได้สูงสุดจากพื้นเป็นระยะทางเท่าใด ($g=10$ m/s²)<br>A. 0.80 m<br>B. 1.6 m<br>C. 2.0 m<br>D. 2.5 m<br>E. 3.2 m</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h03.jpg)</summary><img loading="lazy" src="img/mock/h03.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-6"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-6" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$u=8.00$ m/s, $\theta=45^\circ$</li><li>$g=10$ m/s²</li></ul><p><b>ต้องหา:</b> ความสูงสูงสุด $h$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แยกความเร็วเป็นแนวดิ่ง</li><li>ที่จุดสูงสุด $v_y=0$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ที่จุดสูงสุดความเร็วในแนวดิ่งมีค่าเท่าใด และความเร็วต้นแนวดิ่งหาได้อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>พิจารณาเฉพาะแนวดิ่ง เป็นการเคลื่อนที่ความเร่งคงที่ $a=-g$ ใช้ $v^2=u^2+2as$ โดยให้ $v_y=0$ และ $u_y=u\sin\theta$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ขว้างลูกบอลขึ้นตรง ๆ ด้วย 10 m/s จะขึ้นสูงสุดเท่าใด?</p><p><b>สาธิต:</b> $0=10^2+2(-10)h$ จึงแก้สมการหา $h$ ได้ทันที</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ความเร็วแนวดิ่งเริ่มต้น</div>$$u_y=u\sin45^\circ=8\times0.7071=5.66\ \text{m/s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ที่จุดสูงสุด $v_y=0$</div>$$v_y^2=u_y^2+2a h\Rightarrow 0=(5.66)^2+2(-10)h$$$$h=\dfrac{32}{20}=1.6\ \text{m}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ความเร็วแนวดิ่งเริ่มต้น</div>$$u_y=u\sin45^\circ=8\times0.7071=5.66\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ที่จุดสูงสุด $v_y=0$</div>$$v_y^2=u_y^2+2a h\Rightarrow 0=(5.66)^2+2(-10)h$$$$h=\dfrac{32}{20}=1.6\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ B. 1.6 m</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใส่ $u$ ทั้งหมดแทน $u_y$</li><li>คำนวณผิด: ลืมว่า $a=-g$ ทำให้เครื่องหมายผิด</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แยกแกนดิ่งก่อน</li><li>จุดสูงสุด $v_y=0$</li><li>$h=\dfrac{(u\sin\theta)^2}{2g}$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ยิงวัตถุด้วยความเร็ว 20 m/s ทำมุม 30° กับแนวระดับ ($g=10$ m/s²) ขึ้นสูงสุดจากพื้นเท่าใด?</p><details><summary>ใบ้</summary><p>ใช้ $u_y=u\sin30^\circ$</p></details><details><summary>ดูคำตอบ</summary><p>$5\ \text{m}$</p><p class="alt">$u_y=20\sin30^\circ=10$ m/s<br>$0=10^2+2(-10)h$<br>$h=5$ m</p></details></div>
+</div></article>
+<article class="q drill" id="p8" data-idx="7">
+<h3><span class="num">8</span> <b>ข้อ 8.</b> ในการเคลื่อนที่แบบวงกลมในแนวระดับด้วยอัตราเร็วคงที่ เวกเตอร์ P (ชี้เข้าหาจุดศูนย์กลาง) และ Q (สัมผัสวงกลม) แสดงปริมาณอะไรตามลำดับ<br>A. ความเร็ว และความเร่ง<br>B. ความเร็ว และความเร็วเชิงมุม<br>C. ความเร่ง และความเร็ว<br>D. ความเร่ง และความเร็วเชิงมุม<br>E. ความเร่ง และแรงลัพธ์</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h03.jpg)</summary><img loading="lazy" src="img/mock/h03.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-7"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-7" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>วงกลมในแนวระดับ อัตราเร็วคงที่</li><li>P ชี้เข้าสู่ศูนย์กลาง</li><li>Q สัมผัสวงกลม</li></ul><p><b>ต้องหา:</b> P และ Q คือปริมาณใด</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ความเร็วสัมผัสวงกลม</li><li>ความเร่งเข้าสู่ศูนย์กลาง $a_c=v^2/r$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>วัตถุกำลังเคลื่อนที่ไปทางใด ณ ขณะหนึ่ง และความเร็วเชิงเส้นชี้ไปทางนั้นหรือเปล่า?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ความเร็วขณะหนึ่งชี้แนวสัมผัสวิถี ส่วนความเร่งในการเคลื่อนที่วงกลมสม่ำเสมอชี้เข้าสู่ศูนย์กลาง ความเร็วเชิงมุมไม่ได้วาดเป็นลูกศรในระนาบวงกลมแบบนี้</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ก้อนหินผูกเชือกหมุนเป็นวงกลมแนวระดับด้วยอัตราเร็วคงที่ ถ้าเชือกขาด ก้อนหินพุ่งไปทิศใด?</p><p><b>สาธิต:</b> ณ ขณะที่เชือกขาด ก้อนหินยังมีความเร็วในทิศสัมผัสวงกลม และไม่มีแรงดึงเข้า จึงเคลื่อนต่อไปตามแนวนั้น</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: เวกเตอร์ที่สัมผัสวงกลม</div><p>ความเร็วชี้ตามทิศการเคลื่อนที่ ซึ่งเป็นแนวสัมผัสวงกลม ดังนั้น Q คือความเร็ว</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: เวกเตอร์ที่ชี้เข้าศูนย์กลาง</div><p>อัตราเร็วคงที่ แต่ทิศความเร็วเปลี่ยน จึงมีความเร่งเข้าสู่ศูนย์กลาง $a_c=\dfrac{v^2}{r}$ ดังนั้น P คือความเร่ง</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: เวกเตอร์ที่สัมผัสวงกลม</div><p>ความเร็วชี้ตามทิศการเคลื่อนที่ ซึ่งเป็นแนวสัมผัสวงกลม ดังนั้น Q คือความเร็ว</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เวกเตอร์ที่ชี้เข้าศูนย์กลาง</div><p>อัตราเร็วคงที่ แต่ทิศความเร็วเปลี่ยน จึงมีความเร่งเข้าสู่ศูนย์กลาง $a_c=\dfrac{v^2}{r}$ ดังนั้น P คือความเร่ง</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>P = ความเร่ง, Q = ความเร็ว ตอบ C</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: คิดว่าอัตราเร็วคงที่แปลว่าไม่มีความเร่ง</li><li>แนวคิดผิด: สับสนระหว่างความเร็ว (สัมผัส) กับความเร่ง (เข้าสู่ศูนย์กลาง)</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ความเร็ว สัมผัสวงกลม</li><li>ความเร่ง ชี้เข้าสู่ศูนย์กลาง</li><li>อัตราเร็วคงที่ แต่เวกเตอร์ความเร็วเปลี่ยนทิศ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> วัตถุเคลื่อนที่เป็นวงกลมรัศมี 3.0 m ด้วยอัตราเร็วคงที่ 6.0 m/s จงหาขนาดและทิศของความเร่ง</p><details><summary>ใบ้</summary><p>ใช้ $a_c=\dfrac{v^2}{r}$</p></details><details><summary>ดูคำตอบ</summary><p>$12\ \text{m/s}^2$ ชี้เข้าสู่ศูนย์กลาง</p><p class="alt">$a_c=\dfrac{v^2}{r}=\dfrac{6^2}{3}=12$ m/s²<br>ทิศเข้าสู่ศูนย์กลางวงกลม</p></details></div>
+</div></article>
+<article class="q drill" id="p9" data-idx="8">
+<h3><span class="num">9</span> <b>ข้อ 9.</b> กล่องใบหนึ่งมวล $m=15$ kg วางนิ่งอยู่บนพื้นเอียง (มุม $\theta=33^\circ$) โดยมีเชือกผูกติดกับกำแพง สมมติให้พื้นผิวไม่มีความเสียดทาน เมื่อตัดเชือกออก ข้อใดคือค่าความเร่งของกล่อง ($g=10$ m/s²)<br>A. 3.0 m/s²<br>B. 4.5 m/s²<br>C. 5.4 m/s²<br>D. 8.1 m/s²<br>E. 10 m/s²</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h03.jpg)</summary><img loading="lazy" src="img/mock/h03.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-8"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-8" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$m=15$ kg</li><li>$\theta=33^\circ$</li><li>ไม่มีแรงเสียดทาน, ตัดเชือกออก</li></ul><p><b>ต้องหา:</b> ความเร่งของกล่อง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แยกน้ำหนักเป็นแนวขนานและตั้งฉากพื้นเอียง</li><li>$\sum F=ma$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>หลังตัดเชือก แรงใดบ้างที่มีองค์ประกอบตามแนวพื้นเอียง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>แรงปฏิกิริยาตั้งฉากกับพื้นผิวไม่มีองค์ประกอบตามพื้น จึงเหลือองค์ประกอบของน้ำหนักตามพื้นเอียงเท่านั้น ใช้ $\sum F=ma$ ตามแนวพื้นเอียง และสังเกตว่ามวลตัดกันได้</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลูกบอลมวล 2 kg กลิ้งลงพื้นเอียงลื่นมุม 20° ความเร่งเขียนเป็นสูตรได้อย่างไร?</p><p><b>สาธิต:</b> $mg\sin20^\circ=ma$ ตัด $m$ ออกได้ แล้วคำนวณ $g\sin20^\circ$ โดยไม่ต้องใช้ค่ามวล</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แรงตามแนวพื้นเอียง</div><p>เมื่อตัดเชือก แรงที่ทำให้กล่องเคลื่อนที่ตามพื้นเอียงมีเพียงองค์ประกอบของน้ำหนัก $mg\sin\theta$ (ไม่มีเสียดทาน)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎข้อสองของนิวตัน</div>$$mg\sin\theta=ma\Rightarrow a=g\sin\theta=10\sin33^\circ$$$$a=10(0.5446)=5.4\ \text{m/s}^2$$<p>(มวลหักล้างกันได้)</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แรงตามแนวพื้นเอียง</div><p>เมื่อตัดเชือก แรงที่ทำให้กล่องเคลื่อนที่ตามพื้นเอียงมีเพียงองค์ประกอบของน้ำหนัก $mg\sin\theta$ (ไม่มีเสียดทาน)</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: กฎข้อสองของนิวตัน</div>$$mg\sin\theta=ma\Rightarrow a=g\sin\theta=10\sin33^\circ$$$$a=10(0.5446)=5.4\ \text{m/s}^2$$<p>(มวลหักล้างกันได้)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ C. 5.4 m/s²</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้ $g\cos\theta$ แทน $g\sin\theta$</li><li>แนวคิดผิด: นำมวล 15 kg มาคำนวณทั้งที่ตัดกันได้ หรือใช้แรงตึงเชือกต่อทั้งที่ตัดแล้ว</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ตามพื้นเอียง ใช้ $mg\sin\theta$</li><li>ไม่มีเสียดทาน: $a=g\sin\theta$</li><li>ความเร่งไม่ขึ้นกับมวล</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> บล็อกมวล 8 kg อยู่บนพื้นเอียงลื่นมุม 30° ถูกปล่อยจากนิ่ง ($g=10$ m/s²) ความเร่งของบล็อกเป็นเท่าใด?</p><details><summary>ใบ้</summary><p>$a=g\sin\theta$</p></details><details><summary>ดูคำตอบ</summary><p>$5.0\ \text{m/s}^2$</p><p class="alt">$ma=mg\sin30^\circ$<br>$a=10\times0.5=5.0$ m/s² ลงตามพื้นเอียง</p></details></div>
+</div></article>
+<article class="q drill" id="p10" data-idx="9">
+<h3><span class="num">10</span> <b>ข้อ 10.</b> เครื่อง Centrifuge เครื่องหนึ่งสามารถหมุนได้ความเร็วสูงสุด 5,000 รอบต่อนาที ข้อใดคือค่าคาบของการหมุน<br>A. $2.0\times10^{-4}$ s<br>B. $1.2\times10^{-2}$ s<br>C. 0.25 s<br>D. 1.2 s<br>E. 2.5 s</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h03.jpg)</summary><img loading="lazy" src="img/mock/h03.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-9"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-9" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>5,000 รอบต่อนาที</li></ul><p><b>ต้องหา:</b> คาบการหมุน $T$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$T=\dfrac1f$</li><li>แปลงหน่วยรอบ/นาที เป็น Hz</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ความถี่ที่ใช้ในสูตรคาบต้องมีหน่วยอะไร และ 5,000 รอบต่อนาที เทียบเป็นต่อวินาทีได้เท่าใด?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>คาบคือเวลาที่หมุนครบหนึ่งรอบ $T=1/f$ โดยต้องใช้ $f$ ในหน่วยรอบต่อวินาที (Hz) แปลงหน่วยก่อนค่อยกลับค่า</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> พัดลมหมุน 1,200 รอบต่อนาที ความถี่กี่ Hz?</p><p><b>สาธิต:</b> $f=\dfrac{1200}{60}$ Hz จากนั้นนำ $\dfrac1f$ จะได้คาบ</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: แปลงเป็นความถี่ (Hz)</div>$$f=5000\ \text{รอบ/นาที}\times\dfrac{1\ \text{นาที}}{60\ \text{s}}=83.33\ \text{Hz}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: คาบ</div>$$T=\dfrac1f=\dfrac1{83.33}=0.012=1.2\times10^{-2}\ \text{s}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: แปลงเป็นความถี่ (Hz)</div>$$f=5000\ \text{รอบ/นาที}\times\dfrac{1\ \text{นาที}}{60\ \text{s}}=83.33\ \text{Hz}$$</div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: คาบ</div>$$T=\dfrac1f=\dfrac1{83.33}=0.012=1.2\times10^{-2}\ \text{s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ B. $1.2\times10^{-2}$ s</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ลืมแปลงนาทีเป็นวินาที ทำให้ได้คาบเป็น $2\times10^{-4}$ (หน่วยเป็นนาที)</li><li>ใช้สูตรผิด: สับสน $T=f$ หรือ $T=1/\omega$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$T=\dfrac1f$</li><li>รอบ/นาที ÷ 60 = Hz</li><li>ตรวจหน่วยทุกครั้ง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> มอเตอร์หมุน 3,000 รอบต่อนาที จงหาความถี่และคาบของการหมุน</p><details><summary>ใบ้</summary><p>หารด้วย 60 ก่อน</p></details><details><summary>ดูคำตอบ</summary><p>$f=50\ \text{Hz}$, $T=0.020\ \text{s}$</p><p class="alt">$f=\dfrac{3000}{60}=50$ Hz<br>$T=\dfrac1f=\dfrac1{50}=0.020$ s</p></details></div>
+</div></article>
+<article class="q drill" id="p11" data-idx="10">
+<h3><span class="num">11</span> <b>ข้อ 11.</b> รูปแสดงรถวิ่งวนบนรางวงกลมในแนวดิ่ง (ที่จุดต่ำสุดและสูงสุดมีแรง N จากราง ชี้เข้าสู่ศูนย์กลาง) แรงในข้อใดทำหน้าที่เป็นแรงเข้าสู่ศูนย์กลาง<br>A. แรงเสียดทาน<br>B. แรงต้านจากอากาศ<br>C. แรงที่รางกระทำต่อรถ<br>D. แรงเหวี่ยง<br>E. แรงจากเครื่องยนต์ของรถ</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h04.jpg)</summary><img loading="lazy" src="img/mock/h04.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-10"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-10" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>รถวิ่งวนบนรางวงกลมแนวดิ่ง</li><li>แรง $N$ จากรางชี้เข้าสู่ศูนย์กลาง</li></ul><p><b>ต้องหา:</b> แรงใดทำหน้าที่เป็นแรงเข้าสู่ศูนย์กลาง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>แรงเข้าสู่ศูนย์กลางเป็นแรงลัพธ์ที่ชี้เข้าสู่ศูนย์กลาง ไม่ใช่แรงชนิดใหม่</li><li>แรงปฏิกิริยาตั้งฉากจากผิวสัมผัส</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>แรงเข้าสู่ศูนย์กลางชี้ไปทางใด และแรงใดบ้างในตัวเลือกที่ชี้ไปทางนั้นจริง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>แรงเข้าสู่ศูนย์กลางไม่ใช่แรงชนิดใหม่ แต่เป็นแรงจริงที่ชี้เข้าสู่ศูนย์กลาง ให้ดูว่าแรงใดกระทำต่อรถและชี้เข้าหาศูนย์กลาง</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ก้อนหินผูกเชือกหมุนเป็นวงกลมบนโต๊ะลื่น แรงใดทำหน้าที่เป็นแรงเข้าสู่ศูนย์กลาง?</p><p><b>สาธิต:</b> มีแรงเดียวในแนวระดับที่ชี้เข้าสู่ศูนย์กลาง คือแรงที่เชือกดึงก้อนหิน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ทิศของแรงเข้าสู่ศูนย์กลาง</div><p>แรงเข้าสู่ศูนย์กลางต้องชี้จากรถเข้าหาจุดศูนย์กลางวงกลม</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: เปรียบเทียบตัวเลือก</div><p>แรงเสียดทานและแรงจากเครื่องยนต์ชี้ตามแนวสัมผัส แรงต้านอากาศสวนทางการเคลื่อนที่ ส่วนแรงเหวี่ยงไม่ใช่แรงจริงจากการกระทำของวัตถุอื่น แรงปฏิกิริยาตั้งฉากจากรางชี้เข้าสู่ศูนย์กลาง</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ทิศของแรงเข้าสู่ศูนย์กลาง</div><p>แรงเข้าสู่ศูนย์กลางต้องชี้จากรถเข้าหาจุดศูนย์กลางวงกลม</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: เปรียบเทียบตัวเลือก</div><p>แรงเสียดทานและแรงจากเครื่องยนต์ชี้ตามแนวสัมผัส แรงต้านอากาศสวนทางการเคลื่อนที่ ส่วนแรงเหวี่ยงไม่ใช่แรงจริงจากการกระทำของวัตถุอื่น แรงปฏิกิริยาตั้งฉากจากรางชี้เข้าสู่ศูนย์กลาง</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ C. แรงที่รางกระทำต่อรถ (แรงปฏิกิริยาตั้งฉาก $N$)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ตอบแรงเหวี่ยง ทั้งที่ไม่ใช่แรงจริงที่กระทำต่อวัตถุ</li><li>แนวคิดผิด: ถือว่าแรงเข้าสู่ศูนย์กลางเป็นแรงเพิ่มจากแรงจริงอื่น</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แรงเข้าสู่ศูนย์กลางเป็นแรงลัพธ์ที่ชี้เข้าสู่ศูนย์กลาง</li><li>เกิดจากแรงจริง เช่น แรงตึงเชือก แรงตั้งฉาก แรงโน้มถ่วง</li><li>แรงเหวี่ยงไม่ใช่แรงจริงในกรอบนิ่ง</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ดวงจันทร์โคจรรอบโลกเป็นวงกลม แรงใดทำหน้าที่เป็นแรงเข้าสู่ศูนย์กลาง?</p><details><summary>ใบ้</summary><p>ดูแรงที่โลกกระทำต่อดวงจันทร์</p></details><details><summary>ดูคำตอบ</summary><p>แรงโน้มถ่วงที่โลกดึงดูดดวงจันทร์</p><p class="alt">ดวงจันทร์ถูกแรงโน้มถ่วงของโลกดึงเข้าหาโลก ซึ่งชี้เข้าสู่ศูนย์กลางวงโคจร จึงเป็นแรงเข้าสู่ศูนย์กลาง</p></details></div>
+</div></article>
+<article class="q drill" id="p12" data-idx="11">
+<h3><span class="num">12</span> <b>ข้อ 12.</b> ลูกตุ้มมีมวล 1.0 kg เคลื่อนที่เป็นวงกลมด้วยอัตราเร็ว 10 m/s และวงกลมมีรัศมี 1.0 m ข้อใดคือขนาดของแรงเข้าสู่ศูนย์กลาง<br>A. 100 N<br>B. 10 N<br>C. 1 N<br>D. 0.1 N<br>E. 0.01 N</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h04.jpg)</summary><img loading="lazy" src="img/mock/h04.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-11"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-11" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$m=1.0$ kg</li><li>$v=10$ m/s</li><li>$r=1.0$ m</li></ul><p><b>ต้องหา:</b> ขนาดแรงเข้าสู่ศูนย์กลาง $F_c$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$a_c=\dfrac{v^2}{r}$</li><li>$F_c=ma_c$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>แรงเข้าสู่ศูนย์กลางหาได้จากมวลคูณปริมาณใด และปริมาณนั้นใช้ $v$ กับ $r$ อย่างไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้กฎข้อสอง $F=ma$ โดย $a$ คือความเร่งเข้าสู่ศูนย์กลาง $v^2/r$ ระวังกำลังสองของ $v$ ก่อนหารด้วย $r$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> วัตถุ 0.5 kg เคลื่อนที่เป็นวงกลมรัศมี 2 m ด้วยอัตราเร็ว 4 m/s ความเร่งเข้าสู่ศูนย์กลางหาได้อย่างไร?</p><p><b>สาธิต:</b> $a_c=\dfrac{v^2}{r}=\dfrac{4^2}{2}$ แล้วคูณมวลเพื่อหาแรง</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: สูตร</div><p>$a_c=\dfrac{v^2}{r}$ และ $F_c=ma_c=\dfrac{mv^2}{r}$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่า</div>$$F_c=\dfrac{(1.0)(10)^2}{1.0}=100\ \text{N}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: สูตร</div><p>$a_c=\dfrac{v^2}{r}$ และ $F_c=ma_c=\dfrac{mv^2}{r}$</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: แทนค่า</div>$$F_c=\dfrac{(1.0)(10)^2}{1.0}=100\ \text{N}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ A. 100 N (หมายเหตุ: ลายมือเฉลยวงกลมที่ B แต่วิธีทำในลายมือเองได้ 100 N จึงควรเป็น A)</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ลืมยกกำลังสองของ $v$ ทำให้ได้ 10 N</li><li>ใช้สูตรผิด: ใช้ $mv/r$ แทน $mv^2/r$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$F_c=\dfrac{mv^2}{r}$</li><li>ความเร็วถูกยกกำลังสอง</li><li>ตรวจหน่วย: kg·m/s²/m = N</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> วัตถุมวล 2.0 kg เคลื่อนที่เป็นวงกลมรัศมี 1.5 m ด้วยอัตราเร็ว 3.0 m/s จงหาขนาดแรงเข้าสู่ศูนย์กลาง</p><details><summary>ใบ้</summary><p>ใช้ $F=\dfrac{mv^2}{r}$</p></details><details><summary>ดูคำตอบ</summary><p>$12\ \text{N}$</p><p class="alt">$F_c=\dfrac{mv^2}{r}=\dfrac{2.0(3.0)^2}{1.5}=\dfrac{18}{1.5}=12$ N</p></details></div>
+</div></article>
+<article class="q drill" id="p13" data-idx="12">
+<h3><span class="num">13</span> <b>ข้อ 13.</b> คนขี่จักรยาน (หรือมอเตอร์ไซค์) จะเอียงตัวขณะทำการเลี้ยว เป็นเพราะสาเหตุใด<br>A. เพื่อลดแรงต้านจากอากาศ<br>B. เพื่อเพิ่มแรงเข้าสู่ศูนย์กลาง<br>C. เพื่อเพิ่มแรงเสียดทาน<br>D. เพื่อเพิ่ม/ลดแรงที่ใช้ในการถีบ<br>E. เพื่อรักษาความเร็ว</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h04.jpg)</summary><img loading="lazy" src="img/mock/h04.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-12"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-12" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>คนขี่จักรยานเลี้ยวโค้ง</li><li>ลำตัวเอียงเข้าด้านใน</li></ul><p><b>ต้องหา:</b> เหตุผลที่ต้องเอียงตัว</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>การเลี้ยวต้องมีแรงเข้าสู่ศูนย์กลาง</li><li>แรงที่พื้นกระทำต่อล้อมีองค์ประกอบแนวระดับ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ขณะเลี้ยวโค้ง ต้องมีแรงชี้ไปทางใด และแรงนั้นมาจากอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>แรงเข้าสู่ศูนย์กลางมาจากแรงที่พื้นถนนกระทำต่อยาง การเอียงตัวทำให้แรงนั้นเอียงเข้าด้านใน จึงมีองค์ประกอบแนวระดับเข้าสู่ศูนย์กลางมากพอ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> นักสเก็ตความเร็วเลี้ยวโค้งแคบ ทำไมต้องเอียงตัวมากขึ้นเมื่อโค้งแคบขึ้น ($r$ เล็กลง)?</p><p><b>สาธิต:</b> แรงเข้าสู่ศูนย์กลางที่ต้องการ $F_c=\dfrac{mv^2}{r}$ เพิ่มเมื่อ $r$ ลดลง จึงต้องมีองค์ประกอบแนวระดับของแรงจากพื้นมากขึ้น</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 1: ต้องการอะไรขณะเลี้ยว</div><p>การเลี้ยวต้องมีแรงลัพธ์ชี้เข้าสู่ศูนย์กลางของโค้ง $F_c=\dfrac{mv^2}{r}$ ซึ่งมาจากแรงที่พื้นถนนกระทำต่อล้อ</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นตอนที่ 2: ผลของการเอียงตัว</div><p>เมื่อเอียงตัว แรงที่ถนนกระทำ (แรงปฏิกิริยาตั้งฉากรวมเสียดทาน) จะชี้เอียงเข้าหาศูนย์กลางโค้ง ทำให้มีองค์ประกอบในแนวระดับเข้าสู่ศูนย์กลางตามที่ต้องการ และสมดุลโมเมนต์ไม่ให้ล้ม</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นตอนที่ 1: ต้องการอะไรขณะเลี้ยว</div><p>การเลี้ยวต้องมีแรงลัพธ์ชี้เข้าสู่ศูนย์กลางของโค้ง $F_c=\dfrac{mv^2}{r}$ ซึ่งมาจากแรงที่พื้นถนนกระทำต่อล้อ</p></div>
+<div class="step"><div class="step-h">ขั้นตอนที่ 2: ผลของการเอียงตัว</div><p>เมื่อเอียงตัว แรงที่ถนนกระทำ (แรงปฏิกิริยาตั้งฉากรวมเสียดทาน) จะชี้เอียงเข้าหาศูนย์กลางโค้ง ทำให้มีองค์ประกอบในแนวระดับเข้าสู่ศูนย์กลางตามที่ต้องการ และสมดุลโมเมนต์ไม่ให้ล้ม</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div><p>ตอบ B. เพื่อเพิ่มแรงเข้าสู่ศูนย์กลาง</p></div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: เอียงตัวเพื่อลดแรงต้านอากาศ</li><li>แนวคิดผิด: ถือว่าเอียงเพื่อเพิ่มแรงเสียดทาน ทั้งที่เป็นการจัดทิศทางของแรงจากพื้น</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>เลี้ยวต้องมีแรงเข้าสู่ศูนย์กลาง</li><li>เอียงตัวทำให้แรงจากพื้นมีองค์ประกอบแนวระดับเข้าสู่ศูนย์กลาง</li><li>โค้งแคบหรือเร็วขึ้น ต้องเอียงมากขึ้น</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> รถวิ่งโค้งแนวระดับด้วยอัตราเร็ว $v$ รัศมี $r$ ถ้าเพิ่มอัตราเร็วเป็น $2v$ ต้องใช้รัศมีโค้งกี่เท่าของ $r$ จึงจะใช้แรงเข้าสู่ศูนย์กลางเท่าเดิม?</p><details><summary>ใบ้</summary><p>ใช้ $F=\dfrac{mv^2}{r}$</p></details><details><summary>ดูคำตอบ</summary><p>$4r$ (4 เท่า)</p><p class="alt">$\dfrac{mv^2}{r}=\dfrac{m(2v)^2}{r'}\Rightarrow r'=4r$</p></details></div>
+</div></article>
+<article class="q drill" id="p14" data-idx="13">
+<h3><span class="num">14</span> ข้อ 14. รูปแสดงกราฟอัตราเร็ว $v$ กับเวลา $t$ ของการเคลื่อนที่ของวัตถุหนึ่ง (เส้นโค้งเพิ่มขึ้นเร็วในตอนแรก แล้วค่อย ๆ โค้งเข้าหาค่าคงที่ $v_t$ และราบไปตามเส้นประ $v_t$) กราฟนี้น่าจะแสดงอัตราเร็วในเหตุการณ์ใด<br>A. อัตราเร็วของวัตถุที่กลิ้งลงบนพื้นเอียง<br>B. อัตราเร็วของรถที่เบรกอย่างกะทันหัน<br>C. อัตราเร็วของวัตถุที่ถูกโยนขึ้นไปในอากาศ<br>D. อัตราเร็วของการเคลื่อนที่แบบโปรเจกไทล์<br>E. อัตราเร็วของวัตถุตกภายใต้สนามโน้มถ่วง และมีแรงต้านอากาศ</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h04.jpg)</summary><img loading="lazy" src="img/mock/h04.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-13"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-13" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>กราฟ $v$–$t$ เพิ่มขึ้นแล้วโค้งเข้าหาค่าคงที่ $v_t$</li><li>ความชันของกราฟลดลงเรื่อย ๆ จนเป็นศูนย์</li></ul><p><b>ต้องหา:</b> เหตุการณ์ใดที่ให้กราฟอัตราเร็วแบบนี้</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ความชันของกราฟ $v$–$t$ = ความเร่ง $a$</li><li>แรงต้านอากาศเพิ่มตามอัตราเร็ว ทำให้ความเร่งลดลงจนได้อัตราเร็วปลาย</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ความชันของกราฟตอนต้นกับตอนท้ายต่างกันอย่างไร และบอกอะไรเกี่ยวกับความเร่ง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ถ้าความเร่งเปลี่ยนแปลงตามเวลา ต้องคิดถึงแรงลัพธ์ที่เปลี่ยนไป ลองดูว่าเหตุการณ์ไหนมีแรงที่ขึ้นกับอัตราเร็ว</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ฝนตกลงมาจากเมฆสูง กราฟ $v$–$t$ ของเม็ดฝนควรมีรูปร่างแบบใด ความเร่งตอนเริ่มต้นและตอนใกล้พื้นเป็นอย่างไร</p><p><b>สาธิต:</b> ตอนเริ่ม $v\approx0$ แรงต้านน้อย $a\approx g$ ความชันมาก เมื่อ $v$ เพิ่ม แรงต้านเพิ่ม $a$ ลดลง กราฟจึงโค้งเข้าหาค่าคงที่</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: อ่านกราฟ</div><p>ความชันของกราฟ $v$–$t$ คือความเร่ง $a$ ในกราฟนี้ความชันมากตอนต้น แล้วลดลงเรื่อย ๆ จนเป็นศูนย์ที่ $v=v_t$ แสดงว่า <b>ความเร่งไม่คงที่ ค่อย ๆ ลดลงเป็น 0</b> และอัตราเร็วเพิ่มขึ้นจนคงที่ (อัตราเร็วปลาย)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: ตัดตัวเลือก</div><p>A กลิ้งลงพื้นเอียง: $a$ คงที่ กราฟเป็นเส้นตรง<br>B เบรก: อัตราเร็วลดลง<br>C โยนขึ้น: อัตราเร็วลดลงแล้วกลับทิศ ($a=g$ คงที่)<br>D โปรเจกไทล์: $a=g$ คงที่ ไม่มีค่าคงที่ปลายแบบนี้</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 3: ตัวเลือก E</div><p>ตกอิสระมีแรงต้านอากาศ $f$ เพิ่มตาม $v$: $a=\dfrac{mg-f}{m}$ เมื่อ $v$ เพิ่ม $f$ เพิ่ม $a$ จึงลดลงจนเป็น 0 ที่ $f=mg$ ได้อัตราเร็วปลาย $v_t$</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: อ่านกราฟ</div><p>ความชันของกราฟ $v$–$t$ คือความเร่ง $a$ ในกราฟนี้ความชันมากตอนต้น แล้วลดลงเรื่อย ๆ จนเป็นศูนย์ที่ $v=v_t$ แสดงว่า <b>ความเร่งไม่คงที่ ค่อย ๆ ลดลงเป็น 0</b> และอัตราเร็วเพิ่มขึ้นจนคงที่ (อัตราเร็วปลาย)</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 2: ตัดตัวเลือก</div><p>A กลิ้งลงพื้นเอียง: $a$ คงที่ กราฟเป็นเส้นตรง<br>B เบรก: อัตราเร็วลดลง<br>C โยนขึ้น: อัตราเร็วลดลงแล้วกลับทิศ ($a=g$ คงที่)<br>D โปรเจกไทล์: $a=g$ คงที่ ไม่มีค่าคงที่ปลายแบบนี้</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 3: ตัวเลือก E</div><p>ตกอิสระมีแรงต้านอากาศ $f$ เพิ่มตาม $v$: $a=\dfrac{mg-f}{m}$ เมื่อ $v$ เพิ่ม $f$ เพิ่ม $a$ จึงลดลงจนเป็น 0 ที่ $f=mg$ ได้อัตราเร็วปลาย $v_t$</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ E}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: เข้าใจว่าโปรเจกไทล์ก็มีกราฟแบบนี้ ทั้งที่ไม่มีแรงต้านความเร่งคงที่ $g$</li><li>อ่านโจทย์ผิด: ดูแค่ว่าอัตราเร็วเพิ่มขึ้นโดยไม่ดูความชัน ทำให้เลือกพื้นเอียงซึ่งความเร่งคงที่</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ความชันกราฟ $v$–$t$ คือความเร่ง</li><li>กราฟโค้งเข้าหาค่าคงที่ = ความเร่งลดลงจนเป็นศูนย์</li><li>เกิดจากแรงต้านอากาศที่เพิ่มตามอัตราเร็วจนสมดุลกับน้ำหนัก</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> วัตถุมวล $2.0\ \text{kg}$ ตกในอากาศ ขณะหนึ่งแรงต้านอากาศเท่ากับ $8.0\ \text{N}$ ($g=10\ \text{m/s}^2$) ความเร่งของวัตถุขณะนั้นเป็นเท่าใด และมีค่าเท่าไรเมื่อถึงอัตราเร็วปลาย</p><details><summary>ใบ้</summary><p>ใช้ $ma = mg - f$</p></details><details><summary>ดูคำตอบ</summary><p>$6.0\ \text{m/s}^2$ (ลงล่าง) และ $0$ เมื่อถึงอัตราเร็วปลาย</p><p class="alt">$mg=20\ \text{N}$<br>$a=(20-8)/2=6.0\ \text{m/s}^2$<br>อัตราเร็วปลาย $f=mg$ จึง $a=0$</p></details></div>
+</div></article>
+<article class="q drill" id="p15" data-idx="14">
+<h3><span class="num">15</span> ข้อ 15. ข้อใดคือ <b>งาน</b>ในความหมายทางฟิสิกส์<br>A. แรงต่อเวลา<br>B. แรงต่อระยะทาง<br>C. พลังงานที่เปลี่ยนไป<br>D. พลังงานต่อเวลา<br>E. กำลังต่อเวลา</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h04.jpg)</summary><img loading="lazy" src="img/mock/h04.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-14"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-14" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ถามความหมายของงานทางฟิสิกส์</li><li>ตัวเลือกเป็นอัตราส่วนระหว่างแรง เวลา ระยะทาง และพลังงาน</li></ul><p><b>ต้องหา:</b> ปริมาณใดตรงกับนิยามของงาน</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$W=Fs\cos\theta$ หน่วย J (N$\cdot$m)</li><li>$W=\Delta E$ (ทฤษฎีงาน–พลังงาน)</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>งานมีหน่วยเป็นอะไร และหน่วยนั้นเทียบได้กับปริมาณใดบ้าง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ลองเทียบหน่วยของแต่ละตัวเลือก: งานมีหน่วยเดียวกับพลังงาน ส่วนอัตราส่วนต่อเวลาเป็นกำลังหรือแรงลัพธ์</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> กำลัง ($P$) ตามนิยามคืออะไรเมื่อเทียบกับงานและเวลา</p><p><b>สาธิต:</b> กำลังคือ $W/\Delta t$ หรือ $\Delta E/\Delta t$ หน่วย W = J/s ต่างจากงานที่มีหน่วย J</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: นิยาม</div><p>$W=\vec F\cdot\vec s=Fs\cos\theta$ หน่วย J และจากทฤษฎีงาน–พลังงาน $W=\Delta E$ งานคือพลังงานที่ถ่ายโอน/เปลี่ยนไป</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: ตรวจตัวเลือก</div><p>A แรง/เวลา = อัตราการเปลี่ยนโมเมนตัม ($\Delta p/\Delta t$)<br>B แรง/ระยะทาง ไม่ใช่งาน (หน่วย N/m เช่น ค่าคงที่สปริง)<br>D พลังงาน/เวลา = กำลัง<br>E กำลัง/เวลา ไม่มีความหมายนี้</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: นิยาม</div><p>$W=\vec F\cdot\vec s=Fs\cos\theta$ หน่วย J และจากทฤษฎีงาน–พลังงาน $W=\Delta E$ งานคือพลังงานที่ถ่ายโอน/เปลี่ยนไป</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 2: ตรวจตัวเลือก</div><p>A แรง/เวลา = อัตราการเปลี่ยนโมเมนตัม ($\Delta p/\Delta t$)<br>B แรง/ระยะทาง ไม่ใช่งาน (หน่วย N/m เช่น ค่าคงที่สปริง)<br>D พลังงาน/เวลา = กำลัง<br>E กำลัง/เวลา ไม่มีความหมายนี้</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ C: พลังงานที่เปลี่ยนไป } (W=\Delta E)$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: สับสนระหว่างงานกับกำลัง (ตัวเลือก D)</li><li>ใช้สูตรผิด: คิดว่างาน = แรงต่อระยะทาง แทนที่จะเป็นแรงคูณระยะทาง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>งาน $W=Fs\cos\theta$ หน่วย J</li><li>งานคือพลังงานที่ถ่ายโอนหรือเปลี่ยนไป $W=\Delta E$</li><li>กำลัง = งาน/เวลา</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> แรง $40\ \text{N}$ ทำมุม $60^\circ$ กับแนวการเคลื่อนที่ ผลักกล่องไป $5.0\ \text{m}$ งานที่แรงนี้ทำเป็นเท่าใด</p><details><summary>ใบ้</summary><p>ใช้ $W=Fs\cos\theta$</p></details><details><summary>ดูคำตอบ</summary><p>$100\ \text{J}$</p><p class="alt">$W=40\times5.0\times\cos60^\circ=40\times5.0\times0.5=100\ \text{J}$</p></details></div>
+</div></article>
+<article class="q drill" id="p16" data-idx="15">
+<h3><span class="num">16</span> ข้อ 16. รถไฟความเร็วสูงเคลื่อนที่ด้วยความเร็วคงที่ $220$ กิโลเมตรต่อชั่วโมง ขณะนั้นมีแรงต้านทั้งหมดเท่ากับ $1.5\times10^5$ นิวตัน ข้อใดคือกำลังของรถไฟในหน่วยเมกะวัตต์ (MW)<br>A. 6.8<br>B. 1.5<br>C. 9.2<br>D. 0.02<br>E. 0.03</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h04.jpg)</summary><img loading="lazy" src="img/mock/h04.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-15"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-15" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$v=220\ \text{km/h}$ คงที่</li><li>แรงต้านทั้งหมด $f=1.5\times10^5\ \text{N}$</li></ul><p><b>ต้องหา:</b> กำลังของรถไฟในหน่วย MW</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$P=Fv$</li><li>ความเร็วคงที่ แรงขับ = แรงต้าน</li><li>$1\ \text{km/h}=1/3.6\ \text{m/s}$, $1\ \text{MW}=10^6\ \text{W}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ความเร็วคงที่หมายความว่าแรงขับของรถไฟมีขนาดเท่าใดเมื่อเทียบกับแรงต้าน?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>กำลังขณะเคลื่อนที่ด้วยความเร็ว $v$ คือ $P=Fv$ ต้องแปลง km/h เป็น m/s และ W เป็น MW ให้ครบก่อนเทียบตัวเลือก</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> รถยนต์เคลื่อนที่ด้วยความเร็วคงที่ $54\ \text{km/h}$ มีแรงต้านรวม $2.0\times10^3\ \text{N}$ ขั้นเตรียมคือแปลงหน่วยและหาแรงขับ</p><p><b>สาธิต:</b> $v=54/3.6=15\ \text{m/s}$ และเพราะ $v$ คงที่ $F=f=2.0\times10^3\ \text{N}$ แล้วจึงนำไปคูณตามสูตรกำลัง</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: แรงขับ</div><p>ความเร็วคงที่ แรงลัพธ์เป็นศูนย์ จึงแรงขับ $F$ เท่ากับแรงต้านทั้งหมด $f$: $F=1.5\times10^5\ \text{N}$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: แปลงหน่วย</div>$$v=220\ \text{km/h}=\frac{220\times10^3}{3600}=61.1\ \text{m/s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 3: กำลัง</div>$$P=Fv=(1.5\times10^5)(61.1)=9.17\times10^6\ \text{W}=9.2\ \text{MW}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: แรงขับ</div><p>ความเร็วคงที่ แรงลัพธ์เป็นศูนย์ จึงแรงขับ $F$ เท่ากับแรงต้านทั้งหมด $f$: $F=1.5\times10^5\ \text{N}$</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 2: แปลงหน่วย</div>$$v=220\ \text{km/h}=\frac{220\times10^3}{3600}=61.1\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 3: กำลัง</div>$$P=Fv=(1.5\times10^5)(61.1)=9.17\times10^6\ \text{W}=9.2\ \text{MW}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ C: } 9.2\ \text{MW}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ลืมแปลง km/h เป็น m/s ทำให้ได้ค่าผิดไป 3.6 เท่า</li><li>ลืมเงื่อนไข: ไม่ใช้ว่าความเร็วคงที่ทำให้แรงขับเท่ากับแรงต้าน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ความเร็วคงที่ → แรงขับ = แรงต้าน</li><li>$P=Fv$ ต้องใช้ SI</li><li>แปลงหน่วยก่อนเทียบกับตัวเลือก (MW = $10^6$ W)</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> รถยนต์วิ่งด้วยความเร็วคงที่ $72\ \text{km/h}$ มีแรงต้านรวม $1.2\times10^3\ \text{N}$ เครื่องยนต์ให้กำลังกี่กิโลวัตต์</p><details><summary>ใบ้</summary><p>$72\ \text{km/h}=20\ \text{m/s}$ และ $F=f$</p></details><details><summary>ดูคำตอบ</summary><p>$24\ \text{kW}$</p><p class="alt">$v=72/3.6=20\ \text{m/s}$<br>$F=f=1200\ \text{N}$<br>$P=Fv=1200\times20=24000\ \text{W}=24\ \text{kW}$</p></details></div>
+</div></article>
+<article class="q drill" id="p17" data-idx="16">
+<h3><span class="num">17</span> ข้อ 17. นักกีฬายกน้ำหนัก <b>900 นิวตัน</b> ขึ้นสูง $2.04$ เมตร (จากพื้นขึ้นเหนือศีรษะ) ข้อใดคือค่าประมาณของงานที่ทำในหน่วยจูล<br>A. $9.0\times10^2$<br>B. $1.8\times10^3$<br>C. $9.0\times10^3$<br>D. $1.8\times10^4$<br>E. $2.0\times10^4$</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h05.jpg)</summary><img loading="lazy" src="img/mock/h05.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-16"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-16" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>น้ำหนักของที่ยก $mg=900\ \text{N}$</li><li>ความสูงที่ยก $h=2.04\ \text{m}$</li></ul><p><b>ต้องหา:</b> งานที่ทำในการยก (J)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$W=\Delta E=mgh$</li><li>น้ำหนัก $=mg$ ถ้าโจทย์ให้เป็นนิวตันแล้ว ไม่ต้องคูณ $g$ ซ้ำ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>โจทย์ให้ 'น้ำหนัก 900 นิวตัน' ต้องคูณ $g$ อีกหรือไม่?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>งานที่ทำเพื่อยกวัตถุขึ้นเท่ากับพลังงานศักย์โน้มถ่วงที่เพิ่ม $mgh$ โดย $mg$ คือน้ำหนัก</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ยกกล่องหนัก $300\ \text{N}$ ขึ้นสูง $1.5\ \text{m}$ งานที่ทำคือกี่จูล</p><p><b>สาธิต:</b> น้ำหนัก $mg=300\ \text{N}$ ใช้ได้ตรง ๆ ดังนั้น $W=\Delta E=(mg)h$ แล้วแทนค่าที่ให้</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: ใช้ทฤษฎีงาน–พลังงาน</div><p>ยกขึ้นอย่างช้า ๆ งานที่ทำ = พลังงานศักย์ที่เพิ่ม ($E_i=0$ ที่พื้น)</p>$$W=\Delta E=E_f-E_i=mgh-0$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: แทนค่า</div><p>น้ำหนัก $mg=900\ \text{N}$ อยู่แล้ว ไม่ต้องคูณ $g$ อีก</p>$$W=900\times2.04=1836\ \text{J}\approx1.8\times10^3\ \text{J}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: ใช้ทฤษฎีงาน–พลังงาน</div><p>ยกขึ้นอย่างช้า ๆ งานที่ทำ = พลังงานศักย์ที่เพิ่ม ($E_i=0$ ที่พื้น)</p>$$W=\Delta E=E_f-E_i=mgh-0$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 2: แทนค่า</div><p>น้ำหนัก $mg=900\ \text{N}$ อยู่แล้ว ไม่ต้องคูณ $g$ อีก</p>$$W=900\times2.04=1836\ \text{J}\approx1.8\times10^3\ \text{J}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ B: } 1.8\times10^3\ \text{J}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: นำ 900 ไปคูณ $g=10$ อีก ได้ $1.8\times10^4$ (ตัวเลือก D)</li><li>คำนวณผิด: ลืมคูณความสูงแล้วตอบ $9.0\times10^2$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>งานยกขึ้นช้า ๆ $=\Delta E=mgh$</li><li>โจทย์ให้น้ำหนัก (N) = $mg$ อยู่แล้ว</li><li>ตรวจลำดับขนาดของคำตอบกับตัวเลือก</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ยกกล่องมวล $20\ \text{kg}$ ขึ้นสูง $1.5\ \text{m}$ อย่างช้า ๆ ($g=10\ \text{m/s}^2$) งานที่ทำเป็นเท่าใด</p><details><summary>ใบ้</summary><p>น้ำหนัก $=mg$</p></details><details><summary>ดูคำตอบ</summary><p>$300\ \text{J}$</p><p class="alt">$mg=20\times10=200\ \text{N}$<br>$W=mgh=200\times1.5=300\ \text{J}$</p></details></div>
+</div></article>
+<article class="q drill" id="p18" data-idx="17">
+<h3><span class="num">18</span> ข้อ 18. รูปแสดงวัตถุทรงสี่เหลี่ยมมวล $0.50\ \text{kg}$ ถูกอัดเข้ากับสปริงจากตำแหน่งสมดุลเป็นระยะ $15\ \text{cm}$ กำหนดให้ค่า $k$ ของสปริงเท่ากับ $1{,}500\ \text{N/m}$ สมมติให้ไม่มีแรงเสียดทานหรือแรงต้าน ข้อใดคือความเร็วของวัตถุหลังจากที่หลุดพ้นจากอิทธิพลของสปริง<br>A. 7.1 m/s<br>B. 8.2 m/s<br>C. 10 m/s<br>D. 12 m/s<br>E. 17 m/s</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h05.jpg)</summary><img loading="lazy" src="img/mock/h05.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-17"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-17" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$m=0.50\ \text{kg}$</li><li>$x=15\ \text{cm}=0.15\ \text{m}$</li><li>$k=1500\ \text{N/m}$</li><li>ไม่มีแรงเสียดทาน</li></ul><p><b>ต้องหา:</b> ความเร็วของวัตถุหลังหลุดจากสปริง</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>พลังงานศักย์ยืดหยุ่น $E=\tfrac12kx^2$</li><li>พลังงานจลน์ $E=\tfrac12mv^2$</li><li>ไม่มีแรงเสียดทาน → $E_i=E_f$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อไม่มีแรงเสียดทาน พลังงานที่สะสมในสปริงไปอยู่ในรูปใดเมื่อวัตถุหลุดจากสปริง?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้การอนุรักษ์พลังงานกล ตั้ง $\tfrac12kx^2=\tfrac12mv^2$ และต้องแปลง cm เป็น m ก่อนแทนค่า</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> สปริง $k=200\ \text{N/m}$ ถูกอัด $0.20\ \text{m}$ ดันบล็อกมวล $0.25\ \text{kg}$ บนพื้นลื่น ตั้งสมการพลังงานแล้วหา $v$ ของบล็อก (ขั้นตั้งสมการ)</p><p><b>สาธิต:</b> $\tfrac12(200)(0.20)^2=\tfrac12(0.25)v^2$ ทางซ้ายคือพลังงานที่สะสม ทางขวาคือพลังงานจลน์ จากนั้นแก้หา $v$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: เลือกหลักการ</div><p>ไม่มีแรงเสียดทาน พลังงานกลอนุรักษ์: พลังงานยืดหยุ่นที่สะสมในสปริงกลายเป็นพลังงานจลน์ทั้งหมด $E_i=E_f$</p>$$\tfrac12kx^2=\tfrac12mv^2$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: แก้หา $v$</div>$$v=x\sqrt{\frac{k}{m}}=0.15\sqrt{\frac{1500}{0.50}}=0.15\times54.77=8.22\ \text{m/s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">หมายเหตุ</div><p>ลายมือคำนวณได้ 8.23 m/s (ปัดต่าง) ค่าที่ถูกคือ 8.216 ≈ 8.2 m/s ตรงกับตัวเลือก B</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: เลือกหลักการ</div><p>ไม่มีแรงเสียดทาน พลังงานกลอนุรักษ์: พลังงานยืดหยุ่นที่สะสมในสปริงกลายเป็นพลังงานจลน์ทั้งหมด $E_i=E_f$</p>$$\tfrac12kx^2=\tfrac12mv^2$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 2: แก้หา $v$</div>$$v=x\sqrt{\frac{k}{m}}=0.15\sqrt{\frac{1500}{0.50}}=0.15\times54.77=8.22\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">หมายเหตุ</div><p>ลายมือคำนวณได้ 8.23 m/s (ปัดต่าง) ค่าที่ถูกคือ 8.216 ≈ 8.2 m/s ตรงกับตัวเลือก B</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ B: } v\approx8.2\ \text{m/s}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ลืมแปลง 15 cm เป็น 0.15 m</li><li>ใช้สูตรผิด: ลืมกำลังสองของ $x$ หรือลืมตัว $\tfrac12$ ทั้งสองข้าง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>ไม่มีแรงเสียดทาน → พลังงานกลคงที่</li><li>$\tfrac12kx^2=\tfrac12mv^2$ จึง $v=x\sqrt{k/m}$</li><li>แปลงหน่วย cm → m ก่อนเสมอ</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> สปริง $k=400\ \text{N/m}$ ถูกอัด $0.10\ \text{m}$ แล้วดันก้อนมวล $1.0\ \text{kg}$ บนพื้นลื่น ความเร็วเมื่อหลุดจากสปริงคือเท่าใด</p><details><summary>ใบ้</summary><p>$\tfrac12kx^2=\tfrac12mv^2$</p></details><details><summary>ดูคำตอบ</summary><p>$2.0\ \text{m/s}$</p><p class="alt">$\tfrac12(400)(0.10)^2=2.0\ \text{J}$<br>$2.0=\tfrac12(1.0)v^2$<br>$v=2.0\ \text{m/s}$</p></details></div>
+</div></article>
+<article class="q drill" id="p19" data-idx="18">
+<h3><span class="num">19</span> ข้อ 19. รูปแสดงระบบที่ประกอบด้วยอนุภาค 4 ตัว ในระนาบ $xy$: $5\ \text{kg}$ ที่ $(-4,\,4)$, $4\ \text{kg}$ ที่ $(3,\,3)$, $1\ \text{kg}$ ที่ $(0,\,0)$ และ $2\ \text{kg}$ ที่ $(3,\,-1)$ ข้อใดคือพิกัดของจุดศูนย์กลางมวลของระบบ<br>A. $(-0.17,\ 2.5)$<br>B. $(2.5,\ -0.17)$<br>C. $(-1.9,\ 2.7)$<br>D. $(2.0,\ -1.5)$<br>E. $(-3.0,\ 1.0)$</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h05.jpg)</summary><img loading="lazy" src="img/mock/h05.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-18"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-18" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$5\ \text{kg}$ ที่ $(-4,4)$</li><li>$4\ \text{kg}$ ที่ $(3,3)$</li><li>$1\ \text{kg}$ ที่ $(0,0)$</li><li>$2\ \text{kg}$ ที่ $(3,-1)$</li></ul><p><b>ต้องหา:</b> พิกัดจุดศูนย์กลางมวล $(x_{cm},y_{cm})$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ค่าเฉลี่ยถ่วงน้ำหนัก $x_{cm}=\sum m_ix_i/\sum m_i$</li><li>คำนวณแยกแกน $x$ และ $y$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เริ่มจากอ่านพิกัดและมวลของแต่ละอนุภาคจากกราฟ แล้วมวลรวมเท่าไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>จุดศูนย์กลางมวลคือค่าเฉลี่ยของตำแหน่งโดยถ่วงด้วยมวล คิดแกน $x$ และแกน $y$ แยกกัน ระวังเครื่องหมายลบของพิกัด</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> มวล $1\ \text{kg}$ ที่ $(0,0)$ และ $3\ \text{kg}$ ที่ $(4,0)$ จุดศูนย์กลางมวลอยู่ที่ใด</p><p><b>สาธิต:</b> $x_{cm}=(1\cdot0+3\cdot4)/4=3$ ใกล้ตัวที่หนักกว่า $y_{cm}=0$ เพราะทั้งสองอยู่บนแกน $x$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: สูตร</div>$$x_{cm}=\frac{\sum m_ix_i}{\sum m_i},\quad y_{cm}=\frac{\sum m_iy_i}{\sum m_i},\quad \sum m=5+1+4+2=12\ \text{kg}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: พิกัด $x$</div>$$x_{cm}=\frac{5(-4)+1(0)+4(3)+2(3)}{12}=\frac{-2}{12}=-0.167\ \text{m}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 3: พิกัด $y$</div>$$y_{cm}=\frac{5(4)+1(0)+4(3)+2(-1)}{12}=\frac{30}{12}=2.5\ \text{m}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: สูตร</div>$$x_{cm}=\frac{\sum m_ix_i}{\sum m_i},\quad y_{cm}=\frac{\sum m_iy_i}{\sum m_i},\quad \sum m=5+1+4+2=12\ \text{kg}$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 2: พิกัด $x$</div>$$x_{cm}=\frac{5(-4)+1(0)+4(3)+2(3)}{12}=\frac{-2}{12}=-0.167\ \text{m}$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 3: พิกัด $y$</div>$$y_{cm}=\frac{5(4)+1(0)+4(3)+2(-1)}{12}=\frac{30}{12}=2.5\ \text{m}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ A: }(x_{cm},y_{cm})=(-0.17,\ 2.5)\ \text{m}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ลืมเครื่องหมายลบของ $x=-4$ หรือ $y=-1$</li><li>อ่านโจทย์ผิด: สลับค่า $x$ กับ $y$ ทำให้ตอบเป็น $(2.5,-0.17)$ (ตัวเลือก B)</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>$x_{cm}=\sum m_ix_i/\sum m_i$</li><li>แกน $x$ และ $y$ คิดแยกกัน</li><li>ระวังเครื่องหมายของพิกัด</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> มวล $2\ \text{kg}$ ที่ $(0,0)$, $3\ \text{kg}$ ที่ $(4,0)$ และ $1\ \text{kg}$ ที่ $(0,6)$ จงหาพิกัดจุดศูนย์กลางมวล</p><details><summary>ใบ้</summary><p>มวลรวม $6\ \text{kg}$</p></details><details><summary>ดูคำตอบ</summary><p>$(2.0,\ 1.0)\ \text{m}$</p><p class="alt">$x_{cm}=(0+12+0)/6=2.0$<br>$y_{cm}=(0+0+6)/6=1.0$</p></details></div>
+</div></article>
+<article class="q drill" id="p20" data-idx="19">
+<h3><span class="num">20</span> ข้อ 20. รูปแสดงกราฟระหว่างแรงและเวลา แรง $F$ เพิ่มเชิงเส้นจาก $0$ ที่ $t=0$ เป็น $10\ \text{N}$ ที่ $t=2\ \text{s}$ คงที่ $10\ \text{N}$ จนถึง $t=5\ \text{s}$ แล้วลดเชิงเส้นเป็น $0$ ที่ $t=8\ \text{s}$ และเป็น $0$ ต่อไปถึง $t=10\ \text{s}$ ข้อใดคือค่าของการดล (impulse) ในหน่วย kg$\cdot$m/s<br>A. 10<br>B. 20<br>C. 35<br>D. 40<br>E. 55</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h05.jpg)</summary><img loading="lazy" src="img/mock/h05.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-19"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-19" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>กราฟ $F$–$t$ รูปสี่เหลี่ยมคางหมู</li><li>$F_{max}=10\ \text{N}$ ช่วง $t=2$ ถึง $5\ \text{s}$</li><li>เริ่มที่ $t=0$ จบที่ $t=8\ \text{s}$</li></ul><p><b>ต้องหา:</b> การดล (impulse) ในหน่วย kg m/s</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>$I=\int F\,dt=\Delta p$</li><li>การดล = พื้นที่ใต้กราฟ $F$–$t$</li><li>$1\ \text{N s}=1\ \text{kg m/s}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>การดลบนกราฟ $F$–$t$ คือส่วนใดของกราฟ?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>การดลคือพื้นที่ใต้กราฟ แบ่งรูปเป็นสามเหลี่ยมและสี่เหลี่ยม หรือใช้สูตรคางหมู $\tfrac12(\text{ด้านขนานรวม})\times\text{สูง}$ แล้วนับเฉพาะช่วงที่มีแรง</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> แรงคงที่ $5\ \text{N}$ ตั้งแต่ $t=0$ ถึง $4\ \text{s}$ แล้วลดเชิงเส้นเป็น $0$ ที่ $t=6\ \text{s}$ การดลหาจากพื้นที่อย่างไร</p><p><b>สาธิต:</b> สี่เหลี่ยม $5\times4$ บวกสามเหลี่ยม $\tfrac12\times2\times5$ แล้วรวมกัน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: หลักการ</div><p>การดล $I=\int F\,dt=\Delta p$ ซึ่งเท่ากับ <b>พื้นที่ใต้กราฟ</b> $F$–$t$</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: แบ่งพื้นที่</div>$$\tfrac12(2)(10)=10,\quad (5-2)(10)=30,\quad \tfrac12(8-5)(10)=15$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 3: รวม</div>$$I=10+30+15=55\ \text{N s}=55\ \text{kg m/s}$$<p>หรือสี่เหลี่ยมคางหมู $\tfrac12(8+3)(10)=55$</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: หลักการ</div><p>การดล $I=\int F\,dt=\Delta p$ ซึ่งเท่ากับ <b>พื้นที่ใต้กราฟ</b> $F$–$t$</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 2: แบ่งพื้นที่</div>$$\tfrac12(2)(10)=10,\quad (5-2)(10)=30,\quad \tfrac12(8-5)(10)=15$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 3: รวม</div>$$I=10+30+15=55\ \text{N s}=55\ \text{kg m/s}$$<p>หรือสี่เหลี่ยมคางหมู $\tfrac12(8+3)(10)=55$</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ E: } 55\ \text{kg m/s}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้พื้นที่สามเหลี่ยมฐาน 8 สูง 10 โดยไม่หักส่วนที่เป็นที่ราบ</li><li>อ่านโจทย์ผิด: อ่านช่วงเวลาผิดจากกราฟ (ลืมว่าที่ราบเริ่ม $t=2$ จบ $t=5$)</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>การดล = พื้นที่ใต้กราฟ $F$–$t$</li><li>$I=\Delta p$</li><li>แบ่งรูปเป็นรูปพื้นฐานแล้วบวกพื้นที่</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> แรงคงที่ $6\ \text{N}$ ตั้งแต่ $t=0$ ถึง $4\ \text{s}$ แล้วลดเชิงเส้นเป็น $0$ ที่ $t=8\ \text{s}$ การดลของแรงนี้เป็นกี่ kg m/s</p><details><summary>ใบ้</summary><p>สี่เหลี่ยม + สามเหลี่ยม</p></details><details><summary>ดูคำตอบ</summary><p>$36\ \text{kg m/s}$</p><p class="alt">สี่เหลี่ยม $6\times4=24$<br>สามเหลี่ยม $\tfrac12\times4\times6=12$<br>$I=36\ \text{N s}$</p></details></div>
+</div></article>
+<article class="q drill" id="p21" data-idx="20">
+<h3><span class="num">21</span> ข้อ 21. ข้อใดหมายถึง<b>การชนแบบยืดหยุ่น</b>ของวัตถุ 2 ชิ้น<br>A. เมื่อชนแล้วติดกันไป<br>B. เมื่อชนแล้วหยุด<br>C. เมื่อชนแล้วแตกเป็นส่วนเล็ก ๆ<br>D. การชนที่ไม่มีการเปลี่ยนรูปร่างของวัตถุ<br>E. การชนโดยไม่มีการเสียพลังงาน</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h06.jpg)</summary><img loading="lazy" src="img/mock/h06.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-20"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-20" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>ถามนิยามการชนแบบยืดหยุ่น</li><li>ตัวเลือกคือลักษณะการชนต่าง ๆ</li></ul><p><b>ต้องหา:</b> ข้อที่ตรงกับการชนแบบยืดหยุ่น</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>ชนยืดหยุ่น: โมเมนตัมและพลังงานจลน์รวมคงที่</li><li>ชนไม่ยืดหยุ่น: โมเมนตัมคงที่ แต่พลังงานจลน์ลดลง</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>เมื่อชนกันแล้ว ปริมาณใดที่อนุรักษ์เสมอ และปริมาณใดที่เป็นตัวแยกยืดหยุ่นกับไม่ยืดหยุ่น?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>โมเมนตัมอนุรักษ์ในการชนทุกแบบ (ไม่มีแรงภายนอก) สิ่งที่แยกประเภทคือพลังงานจลน์รวมก่อนและหลังชนว่าเท่ากันหรือไม่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ลูกบิลเลียดสองลูกมวลเท่ากัน ชนกันแล้วแยกออกจากกันโดยพลังงานจลน์รวมเท่าเดิม การชนนี้เป็นแบบใด</p><p><b>สาธิต:</b> เทียบ $E_k$ รวมก่อนกับหลัง ถ้าเท่ากันเรียกชนแบบยืดหยุ่น ถ้าลดลงเรียกไม่ยืดหยุ่น</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: นิยาม</div><p>การชนแบบยืดหยุ่น: <b>พลังงานจลน์รวมคงที่</b> (นอกจากโมเมนตัมที่อนุรักษ์เสมอ) ไม่มีการสูญเสียเป็นความร้อนหรือเสียง</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: ตัดตัวเลือก</div><p>A ชนแล้วติดกัน = ไม่ยืดหยุ่นอย่างสมบูรณ์ (เสียพลังงานมากสุด)<br>B, C เสียพลังงานจลน์<br>D การไม่เปลี่ยนรูปร่างเป็นคนละเรื่องกับการอนุรักษ์พลังงาน</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: นิยาม</div><p>การชนแบบยืดหยุ่น: <b>พลังงานจลน์รวมคงที่</b> (นอกจากโมเมนตัมที่อนุรักษ์เสมอ) ไม่มีการสูญเสียเป็นความร้อนหรือเสียง</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 2: ตัดตัวเลือก</div><p>A ชนแล้วติดกัน = ไม่ยืดหยุ่นอย่างสมบูรณ์ (เสียพลังงานมากสุด)<br>B, C เสียพลังงานจลน์<br>D การไม่เปลี่ยนรูปร่างเป็นคนละเรื่องกับการอนุรักษ์พลังงาน</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ E: ไม่มีการเสียพลังงานจลน์}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: เชื่อว่า 'ไม่เสียรูปร่าง' = ยืดหยุ่น (ตัวเลือก D)</li><li>แนวคิดผิด: คิดว่าการชนแล้วติดกัน (A) เป็นยืดหยุ่น ทั้งที่เป็นแบบไม่ยืดหยุ่นอย่างสมบูรณ์</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>โมเมนตัมอนุรักษ์ในการชนทุกแบบ</li><li>ชนยืดหยุ่น = พลังงานจลน์รวมคงที่</li><li>ชนติดกัน = ไม่ยืดหยุ่นสมบูรณ์ พลังงานจลน์เสียมากสุด</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> มวล $2.0\ \text{kg}$ เคลื่อนที่ $6.0\ \text{m/s}$ ชนมวล $2.0\ \text{kg}$ ที่หยุดนิ่งแล้วติดกันไป พลังงานจลน์ที่สูญเสียกี่จูล</p><details><summary>ใบ้</summary><p>หา $v$ ร่วมจากโมเมนตัม แล้วเทียบ $E_k$</p></details><details><summary>ดูคำตอบ</summary><p>$18\ \text{J}$</p><p class="alt">$2(6)=4v\Rightarrow v=3.0\ \text{m/s}$<br>$E_i=\tfrac12(2)(36)=36\ \text{J}$, $E_f=\tfrac12(4)(9)=18\ \text{J}$<br>สูญเสีย $18\ \text{J}$</p></details></div>
+</div></article>
+<article class="q drill" id="p22" data-idx="21">
+<h3><span class="num">22</span> ข้อ 22. คุณพี่มวล $70\ \text{kg}$ ยืนอยู่บนพื้นลื่น รับลูกบอลมวล $4.5\ \text{kg}$ ที่เคลื่อนที่เข้ามาในแนวระดับด้วยความเร็ว $5.0\ \text{m/s}$ ข้อใดคือขนาดความเร็วของคุณพี่หลังจากรับลูกบอล<br>A. 0.10 m/s<br>B. 0.20 m/s<br>C. 0.30 m/s<br>D. 0.40 m/s<br>E. 0.50 m/s</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h06.jpg)</summary><img loading="lazy" src="img/mock/h06.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-21"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-21" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$M=70\ \text{kg}$ หยุดนิ่ง บนพื้นลื่น</li><li>ลูกบอล $m=4.5\ \text{kg}$, $v=5.0\ \text{m/s}$</li><li>รับบอลแล้วเคลื่อนที่ไปด้วยกัน</li></ul><p><b>ต้องหา:</b> ความเร็วของคนหลังรับลูกบอล</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>โมเมนตัมรวมก่อนชน = หลังชน</li><li>ชนแล้วติดกัน: $m_1u_1+m_2u_2=(m_1+m_2)V$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>หลังรับบอลแล้ว คนกับบอลเคลื่อนที่ไปด้วยกัน มวลรวมของระบบหลังชนเป็นเท่าใด?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>พื้นลื่น แรงภายนอกในแนวระดับเป็นศูนย์ ใช้การอนุรักษ์โมเมนตัม โดยหลังชนมวลทั้งสองเคลื่อนไปด้วยความเร็วเดียวกัน</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> เด็กมวล $30\ \text{kg}$ บนสเก็ตน้ำแข็งหยุดนิ่ง รับลูกบอลมวล $2.0\ \text{kg}$ ที่ความเร็ว $6.0\ \text{m/s}$</p><p><b>สาธิต:</b> โมเมนตัมก่อน $=2.0(6.0)+30(0)$ และหลัง $=(2.0+30)V$ แล้วแก้สมการหา $V$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: อนุรักษ์โมเมนตัม</div><p>พื้นลื่น ไม่มีแรงภายนอกในแนวระดับ รับบอลแล้วติดไปด้วยกัน (การชนแบบติดกัน): $p_i=p_f$</p>$$m v_b+M(0)=(m+M)V$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: แทนค่า</div>$$(4.5)(5.0)=(4.5+70)V\Rightarrow V=\frac{22.5}{74.5}=0.30\ \text{m/s}$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: อนุรักษ์โมเมนตัม</div><p>พื้นลื่น ไม่มีแรงภายนอกในแนวระดับ รับบอลแล้วติดไปด้วยกัน (การชนแบบติดกัน): $p_i=p_f$</p>$$m v_b+M(0)=(m+M)V$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 2: แทนค่า</div>$$(4.5)(5.0)=(4.5+70)V\Rightarrow V=\frac{22.5}{74.5}=0.30\ \text{m/s}$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ C: } 0.30\ \text{m/s}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ใช้มวลคนอย่างเดียวหลังชน ลืมรวมมวลลูกบอล</li><li>คำนวณผิด: ใช้ 70 แทน 74.5 หรือสลับ $4.5$ กับ $70$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>พื้นลื่น → โมเมนตัมระบบคงที่</li><li>ชนแล้วติดกัน ใช้มวลรวมหลังชน</li><li>$V=\dfrac{m v}{m+M}$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> นักสเก็ตมวล $57\ \text{kg}$ หยุดนิ่งบนน้ำแข็ง รับลูกบอลมวล $3.0\ \text{kg}$ ที่เคลื่อนมาด้วย $10\ \text{m/s}$ ความเร็วหลังรับบอลคือเท่าใด</p><details><summary>ใบ้</summary><p>มวลรวม $60\ \text{kg}$</p></details><details><summary>ดูคำตอบ</summary><p>$0.50\ \text{m/s}$</p><p class="alt">$3.0(10)=(57+3.0)V$<br>$V=30/60=0.50\ \text{m/s}$</p></details></div>
+</div></article>
+<article class="q drill" id="p23" data-idx="22">
+<h3><span class="num">23</span> ข้อ 23. รถเข็นมวล $2.0\ \text{kg}$ เคลื่อนที่ด้วยความเร็ว $6.0\ \text{m/s}$ ชนกับรถเข็นมวล $4.0\ \text{kg}$ ที่หยุดนิ่ง หลังชนทั้งสองแยกจากกัน โดยรถเข็นมวล $2.0\ \text{kg}$ เคลื่อนที่ย้อนกลับด้วยความเร็ว $2.0\ \text{m/s}$ สมมติให้การชนเป็นแบบยืดหยุ่น ความเร็วของรถเข็นมวล $4.0\ \text{kg}$ หลังชนเท่ากับข้อใด<br>A. 2.0 m/s<br>B. 4.0 m/s<br>C. 6.0 m/s<br>D. 8.0 m/s<br>E. 10 m/s</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h06.jpg)</summary><img loading="lazy" src="img/mock/h06.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-22"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-22" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$m_1=2.0\ \text{kg}$, $u_1=6.0\ \text{m/s}$</li><li>$m_2=4.0\ \text{kg}$ หยุดนิ่ง</li><li>หลังชน $m_1$ ย้อนกลับ $2.0\ \text{m/s}$</li></ul><p><b>ต้องหา:</b> ความเร็วของรถ $4.0\ \text{kg}$ หลังชน</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>โมเมนตัมรวมคงที่ (เวกเตอร์ ต้องกำหนดทิศบวก)</li><li>ความเร็วย้อนกลับมีเครื่องหมายลบ</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>รถ 2 kg ย้อนกลับ ความเร็วหลังชนของมันควรใส่เครื่องหมายอะไรเมื่อกำหนดทิศเดิมเป็นบวก?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>เขียนสมการโมเมนตัมก่อนชน = หลังชน โดยกำหนดทิศบวก 1 ทิศ แล้วระวังเครื่องหมายของความเร็วที่ย้อนกลับ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> รถ $1.0\ \text{kg}$ เคลื่อนที่ $5.0\ \text{m/s}$ ชนรถ $2.0\ \text{kg}$ ที่หยุดนิ่ง หลังชนรถ $1.0\ \text{kg}$ ย้อนกลับด้วย $1.0\ \text{m/s}$</p><p><b>สาธิต:</b> ตั้ง $1(5)+2(0)=1(-1)+2V$ สังเกตเครื่องหมายลบของความเร็วย้อนกลับ แล้วแก้หา $V$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: อนุรักษ์โมเมนตัม</div><p>กำหนดทิศขวาเป็นบวก รถ 2 kg ย้อนกลับจึงมีความเร็ว $-2.0\ \text{m/s}$</p>$$p_i=p_f:\ (2)(6)+(4)(0)=(2)(-2)+(4)V$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: แก้หา $V$</div>$$12=-4+4V\Rightarrow V=\frac{16}{4}=4.0\ \text{m/s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ตรวจสอบ</div><p>$E_k$ ก่อน $=\tfrac12(2)(36)=36\ \text{J}$, หลัง $=\tfrac12(2)(4)+\tfrac12(4)(16)=36\ \text{J}$ สอดคล้องกับชนยืดหยุ่น</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: อนุรักษ์โมเมนตัม</div><p>กำหนดทิศขวาเป็นบวก รถ 2 kg ย้อนกลับจึงมีความเร็ว $-2.0\ \text{m/s}$</p>$$p_i=p_f:\ (2)(6)+(4)(0)=(2)(-2)+(4)V$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 2: แก้หา $V$</div>$$12=-4+4V\Rightarrow V=\frac{16}{4}=4.0\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ตรวจสอบ</div><p>$E_k$ ก่อน $=\tfrac12(2)(36)=36\ \text{J}$, หลัง $=\tfrac12(2)(4)+\tfrac12(4)(16)=36\ \text{J}$ สอดคล้องกับชนยืดหยุ่น</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ B: } 4.0\ \text{m/s}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>คำนวณผิด: ใส่ $+2.0$ แทน $-2.0$ ได้ $V=2.0$ (ตัวเลือก A)</li><li>ลืมเงื่อนไข: ไม่คำนึงว่าความเร็วเป็นเวกเตอร์ที่มีทิศทาง</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>โมเมนตัมเป็นเวกเตอร์ ต้องกำหนดทิศบวก</li><li>ความเร็วย้อนกลับ = ค่าลบ</li><li>ตรวจสอบได้ด้วยพลังงานจลน์ถ้าเป็นชนยืดหยุ่น</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> มวล $3.0\ \text{kg}$ เคลื่อนที่ $4.0\ \text{m/s}$ ชนมวล $5.0\ \text{kg}$ ที่หยุดนิ่ง หลังชนมวล $3.0\ \text{kg}$ ย้อนกลับที่ $1.0\ \text{m/s}$ มวล $5.0\ \text{kg}$ มีความเร็วเท่าใด</p><details><summary>ใบ้</summary><p>ความเร็วย้อนกลับเป็นลบ</p></details><details><summary>ดูคำตอบ</summary><p>$3.0\ \text{m/s}$</p><p class="alt">$3(4)=3(-1)+5V$<br>$12+3=5V\Rightarrow V=3.0\ \text{m/s}$</p></details></div>
+</div></article>
+<article class="q drill" id="p24" data-idx="23">
+<h3><span class="num">24</span> ข้อ 24. รูปแสดงคน 2 คน <b>มีมวลไม่เท่ากัน</b> นั่งบนเก้าอี้ล้อเลื่อน กำลังถีบตัวออกจากกัน ขณะที่ถีบตัวออกจากกัน ข้อใดกล่าว<b>ผิด</b><br>A. ทั้ง 2 คนได้รับแรงขนาดเท่ากัน<br>B. เป็นไปตามกฎข้อที่ 3 ของนิวตัน<br>C. เป็นไปตามกฎอนุรักษ์โมเมนตัม<br>D. ทั้ง 2 คนมีความเร็วขนาดเท่ากัน<br>E. โมเมนตัมรวมเป็นศูนย์</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h06.jpg)</summary><img loading="lazy" src="img/mock/h06.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-23"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-23" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>คน 2 คนมวลไม่เท่ากัน $m_1\neq m_2$</li><li>เริ่มนิ่ง แล้วถีบตัวออกจากกัน</li><li>เก้าอี้ล้อเลื่อน (ไม่มีแรงภายนอกในแนวระดับ)</li></ul><p><b>ต้องหา:</b> ข้อที่ผิด</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎข้อ 3: แรงคู่กิริยา–ปฏิกิริยาขนาดเท่ากัน</li><li>อนุรักษ์โมเมนตัม: $p_i=p_f=0$ ดังนั้น $m_1v_1=m_2v_2$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>แรงที่คนแต่ละคนได้รับเป็นคู่แรงแบบใด และโมเมนตัมรวมก่อนถีบเป็นเท่าใด?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ถ้าโมเมนตัมรวมเป็นศูนย์และมวลต่างกัน ผลคูณ $mv$ ของทั้งสองต้องมีขนาดเท่ากัน ลองดูว่าความเร็วจึงเท่ากันได้หรือไม่</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> เด็ก $30\ \text{kg}$ กับผู้ใหญ่ $60\ \text{kg}$ ถีบตัวออกจากกันบนน้ำแข็ง ใครมีความเร็วมากกว่า</p><p><b>สาธิต:</b> จาก $30v_1=60v_2$ เทียบอัตราส่วน $v_1:v_2$ เพื่อบอกว่าใครเร็วกว่า</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: ตรวจแต่ละข้อ</div><p>A, B: แรงคู่กิริยา–ปฏิกิริยามีขนาดเท่ากันทิศตรงข้าม (กฎข้อ 3) ถูก<br>C, E: ไม่มีแรงภายนอกในแนวระดับ โมเมนตัมรวมเริ่มต้น 0 จึงเป็น 0 ตลอด ถูก</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: ตรวจข้อ D</div>$$0=m_1(-v_1)+m_2v_2\Rightarrow m_1v_1=m_2v_2$$<p>เมื่อ $m_1\neq m_2$ จะได้ $v_1\neq v_2$ คนที่เบากว่าจะเคลื่อนที่เร็วกว่า ข้อ D จึงผิด</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: ตรวจแต่ละข้อ</div><p>A, B: แรงคู่กิริยา–ปฏิกิริยามีขนาดเท่ากันทิศตรงข้าม (กฎข้อ 3) ถูก<br>C, E: ไม่มีแรงภายนอกในแนวระดับ โมเมนตัมรวมเริ่มต้น 0 จึงเป็น 0 ตลอด ถูก</p></div>
+<div class="step"><div class="step-h">ขั้นที่ 2: ตรวจข้อ D</div>$$0=m_1(-v_1)+m_2v_2\Rightarrow m_1v_1=m_2v_2$$<p>เมื่อ $m_1\neq m_2$ จะได้ $v_1\neq v_2$ คนที่เบากว่าจะเคลื่อนที่เร็วกว่า ข้อ D จึงผิด</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$\text{ข้อ D}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: สับสนระหว่างขนาดแรง (เท่ากัน) กับความเร็ว (ไม่เท่ากันเมื่อมวลต่างกัน)</li><li>อ่านโจทย์ผิด: ถามข้อที่ <b>ผิด</b> แต่เลือกข้อที่ถูก</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แรงคู่กิริยา–ปฏิกิริยา ขนาดเท่ากัน</li><li>โมเมนตัมรวมเป็นศูนย์ → $m_1v_1=m_2v_2$</li><li>มวลต่างกัน ความเร็วต่างกัน (เบากว่าเร็วกว่า)</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> คนมวล $40\ \text{kg}$ กับ $60\ \text{kg}$ บนเก้าอี้ล้อเลื่อนที่เริ่มนิ่ง ถีบตัวออกจากกัน ถ้าคน $40\ \text{kg}$ มีความเร็ว $3.0\ \text{m/s}$ คน $60\ \text{kg}$ มีความเร็วเท่าใด</p><details><summary>ใบ้</summary><p>$m_1v_1=m_2v_2$</p></details><details><summary>ดูคำตอบ</summary><p>$2.0\ \text{m/s}$ (ทิศตรงข้าม)</p><p class="alt">$40(3.0)=60v\Rightarrow v=120/60=2.0\ \text{m/s}$</p></details></div>
+</div></article>
+<article class="q drill" id="p25" data-idx="24">
+<h3><span class="num">25</span> ข้อ 25. ชายคนหนึ่งมวล $65\ \text{kg}$ อยู่นิ่งบนพื้น (ในรูปเป็นน้ำแข็งลื่น) เขาขว้างวัตถุมวล $2.0\ \text{kg}$ ออกไปในแนวระดับทางขวาด้วยอัตราเร็ว $10\ \text{m/s}$ พบว่าตัวเขาเองเคลื่อนที่ไปในทิศตรงข้าม ข้อใดคือค่าของความเร็วของชายคนนี้<br>A. 0.13 m/s<br>B. 0.22 m/s<br>C. 0.25 m/s<br>D. 0.31 m/s<br>E. 0.50 m/s<br><br><b>ส่วนต่อยอด:</b> ถ้าต่อมาชายคนนี้ไถลต่อไปบนพื้นที่มีแรงเสียดทานเป็นเวลา $10\ \text{s}$ แล้วหยุดพอดี จงหา 1) แรงเสียดทาน $f$ 2) สัมประสิทธิ์ความเสียดทาน $\mu$ 3) ระยะทางที่ไถล $S$ 4) ความเร่ง $a$ ($g=10\ \text{m/s}^2$)</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h07.jpg)</summary><img loading="lazy" src="img/mock/h07.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-24"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-24" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$M=65\ \text{kg}$ เริ่มนิ่ง</li><li>วัตถุ $m=2.0\ \text{kg}$, $v=10\ \text{m/s}$</li><li>ส่วนต่อยอด: ไถลต่อ $t=10\ \text{s}$ แล้วหยุด, $g=10\ \text{m/s}^2$</li></ul><p><b>ต้องหา:</b> ความเร็วถอยหลังของชาย และ (ส่วนต่อยอด) $f$, $\mu$, $S$, $a$</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>อนุรักษ์โมเมนตัม $0=mv-Mu$</li><li>$a=\Delta v/t$, $S=\tfrac{u+v}{2}t$</li><li>$f=Ma$ และ $f=\mu N=\mu Mg$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ก่อนขว้าง โมเมนตัมรวมเป็นเท่าใด และหลังขว้างโมเมนตัมของชายต้องมีทิศใดเทียบกับวัตถุ?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>ใช้อนุรักษ์โมเมนตัมหา $u$ ก่อน จากนั้นช่วงไถลจนหยุดใช้สมการการเคลื่อนที่ (ความเร่งคงที่) และ $f=\mu N$ ตามลำดับ</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ผู้หญิง $50\ \text{kg}$ นิ่งบนน้ำแข็ง ขว้างก้อนหิน $1.0\ \text{kg}$ ด้วย $6.0\ \text{m/s}$ ถามความเร็วถอยหลังของเธอ</p><p><b>สาธิต:</b> ตั้ง $0=1.0(6.0)-50u$ แล้วแก้หา $u$ ซึ่งมีทิศตรงข้ามกับก้อนหิน</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 1: อนุรักษ์โมเมนตัม</div><p>ก่อนขว้าง $p_i=0$ ทิศขวาเป็นบวก ชายเคลื่อนที่ไปทางซ้าย ความเร็ว $-u$</p>$$0=mv+M(-u)\Rightarrow Mu=mv$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ขั้นที่ 2: คำนวณ</div>$$u=\frac{mv}{M}=\frac{2.0\times10}{65}=0.3077\approx0.31\ \text{m/s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ส่วนต่อยอด 4) ความเร่ง</div><p>หยุดใน $t=10\ \text{s}$ จาก $u=0.3077\ \text{m/s}$ ถึง $v=0$:</p>$$a=\frac{0-u}{t}=\frac{-0.3077}{10}=-0.031\ \text{m/s}^2$$<p>(ขนาด $0.031\ \text{m/s}^2$ ทิศตรงข้ามการเคลื่อนที่)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ส่วนต่อยอด 1) และ 2) แรงเสียดทาน $f$ และ $\mu$</div>$$f=M|a|=65\times0.03077=2.0\ \text{N}$$$$\mu=\frac{f}{N}=\frac{f}{Mg}=\frac{2.0}{650}=0.0031$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 5</summary><div class="steps"><div class="step"><div class="step-h">ส่วนต่อยอด 3) ระยะทาง $S$</div>$$S=\frac{u+v}{2}t=\frac{0.3077+0}{2}(10)=1.54\ \text{m}$$<p>หรือ $S=ut+\tfrac12at^2=3.077-1.538=1.54\ \text{m}$ (ถ้าใช้ $u=0.31$ ได้ $1.55\ \text{m}$ ตามลายมือ)</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ขั้นที่ 1: อนุรักษ์โมเมนตัม</div><p>ก่อนขว้าง $p_i=0$ ทิศขวาเป็นบวก ชายเคลื่อนที่ไปทางซ้าย ความเร็ว $-u$</p>$$0=mv+M(-u)\Rightarrow Mu=mv$$</div>
+<div class="step"><div class="step-h">ขั้นที่ 2: คำนวณ</div>$$u=\frac{mv}{M}=\frac{2.0\times10}{65}=0.3077\approx0.31\ \text{m/s}$$</div>
+<div class="step"><div class="step-h">ส่วนต่อยอด 4) ความเร่ง</div><p>หยุดใน $t=10\ \text{s}$ จาก $u=0.3077\ \text{m/s}$ ถึง $v=0$:</p>$$a=\frac{0-u}{t}=\frac{-0.3077}{10}=-0.031\ \text{m/s}^2$$<p>(ขนาด $0.031\ \text{m/s}^2$ ทิศตรงข้ามการเคลื่อนที่)</p></div>
+<div class="step"><div class="step-h">ส่วนต่อยอด 1) และ 2) แรงเสียดทาน $f$ และ $\mu$</div>$$f=M|a|=65\times0.03077=2.0\ \text{N}$$$$\mu=\frac{f}{N}=\frac{f}{Mg}=\frac{2.0}{650}=0.0031$$</div>
+<div class="step"><div class="step-h">ส่วนต่อยอด 3) ระยะทาง $S$</div>$$S=\frac{u+v}{2}t=\frac{0.3077+0}{2}(10)=1.54\ \text{m}$$<p>หรือ $S=ut+\tfrac12at^2=3.077-1.538=1.54\ \text{m}$ (ถ้าใช้ $u=0.31$ ได้ $1.55\ \text{m}$ ตามลายมือ)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$u\approx0.31\ \text{m/s (D)};\ f=2.0\ \text{N},\ \mu=0.0031,\ S=1.54\ \text{m},\ a=-0.031\ \text{m/s}^2$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ใช้ทิศเดียวกันทำให้โมเมนตัมไม่เป็นศูนย์</li><li>คำนวณผิด: ใช้ค่ารอบ $0.31$ แล้วคำนวณซ้ำหลายขั้น ทำให้ค่าระยะทางคลาดเคลื่อน</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>โมเมนตัมเริ่มต้นเป็นศูนย์ → $Mu=mv$</li><li>หยุดใน $t$: $a=-u/t$, $S=ut/2$</li><li>$f=Ma$, $\mu=f/(Mg)$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> เด็ก $40\ \text{kg}$ นิ่งบนน้ำแข็ง ขว้างลูกบอล $1.0\ \text{kg}$ ด้วย $8.0\ \text{m/s}$ เด็กถอยหลังแล้วไถลบนพื้นหยาบอีก $5.0\ \text{s}$ จึงหยุด ($g=10\ \text{m/s}^2$) จงหา $u$, $a$, $f$, $\mu$, $S$</p><details><summary>ใบ้</summary><p>หา $u$ จากโมเมนตัมก่อน</p></details><details><summary>ดูคำตอบ</summary><p>$u=0.20\ \text{m/s}$, $a=0.040\ \text{m/s}^2$, $f=1.6\ \text{N}$, $\mu=0.004$, $S=0.50\ \text{m}$</p><p class="alt">$40u=1.0(8.0)\Rightarrow u=0.20$<br>$a=0.20/5.0=0.040$<br>$f=40(0.040)=1.6\ \text{N}$, $\mu=1.6/400=0.004$<br>$S=\tfrac{0.20}{2}(5.0)=0.50\ \text{m}$</p></details></div>
+</div></article>
+<article class="q drill" id="p26" data-idx="25">
+<h3><span class="num">26</span> <b>ตอนที่ 2 ข้อ 1.</b> ชายคนหนึ่งออกแรงดึงกล่องมวล $m$ ด้วยแรง $F$ ในทิศทางทำมุม $\theta$ กับแนวระดับให้กล่องเคลื่อนที่ กำหนดให้ผิวสัมผัสระหว่างกล่องกับพื้นมีสัมประสิทธิ์ความเสียดทานจลน์เท่ากับ $\mu$<br>a) จงเขียนเวกเตอร์แรงทั้งหมดที่กระทำต่อกล่อง [1]<br>b) จงแสดงว่าความเร่งของกล่องมีขนาดเท่ากับ $a=\dfrac{F\cos\theta-\mu(mg-F\sin\theta)}{m}$ [2]<br>กำหนดให้ $m=5.0\ \text{kg}$, $F=18\ \text{N}$, $\theta=20^\circ$ และ $\mu=0.25$<br>c) จงคำนวณหา $a$ [1]<br>d) ถ้าให้ $\theta$ คงที่ จงหา $F$ ที่ทำให้กล่องเริ่มลอยขึ้นจากพื้น และขณะนั้นกล่องจะมีความเร่งเท่าใด [3]<br>e) ถ้าให้ $F$ คงที่ จงหามุม $\theta$ ที่ทำให้เกิดความเร่งมากที่สุด และขณะนั้นกล่องจะมีความเร่งเท่าใด [3] ($g=10\ \text{m/s}^2$)</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h08.jpg)</summary><img loading="lazy" src="img/mock/h08.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-25"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-25" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$m=5.0\ \text{kg}$, $F=18\ \text{N}$, $\theta=20^\circ$, $\mu=0.25$</li><li>$g=10\ \text{m/s}^2$</li></ul><p><b>ต้องหา:</b> ความเร่ง $a$ (c); $F$ ที่ทำให้กล่องลอยและ $a$ ขณะนั้น (d); $\theta$ ที่ทำให้ $a$ มากสุดและค่า $a$ (e)</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>กฎข้อ 2 ของนิวตัน แยกแกนระดับและแนวดิ่ง</li><li>$f=\mu N$ โดย $N$ ต้องหาจากสมดุลแนวดิ่ง (ไม่ใช่ $mg$ เสมอไป)</li><li>จุดสูงสุดของ $a(\theta)$: $da/d\theta=0$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>แรงดึงเฉียงขึ้นทำให้แรงปกติ $N$ มากหรือน้อยกว่า $mg$?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>แยก $F$ เป็นองค์ประกอบแนวระดับและแนวดิ่ง ใช้สมดุลแนวดิ่งหา $N$ ก่อน แล้วค่อยหา $f=\mu N$ และใช้ $\sum F_x=ma$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ดึงกล่องมวล $4.0\ \text{kg}$ ด้วยแรง $20\ \text{N}$ ทำมุม $30^\circ$ เหนือแนวระดับ $\mu=0.30$ ขั้นหา $N$ และ $f$</p><p><b>สาธิต:</b> แนวดิ่ง: $N=mg-F\sin30^\circ=40-10=30\ \text{N}$ แล้ว $f=\mu N=9.0\ \text{N}$ จากนั้นเขียน $F\cos\theta-f=ma$</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ข้อ a) แรงที่กระทำต่อกล่อง</div><p>1) น้ำหนัก $m\vec g$ ลงล่าง ขนาด $mg$<br>2) แรงปกติ $\vec N$ ขึ้นบน<br>3) แรงดึง $\vec F$ ทำมุม $\theta$ เหนือแนวระดับ (แยกเป็น $F\cos\theta$ ตามแนวระดับ, $F\sin\theta$ ขึ้นบน)<br>4) แรงเสียดทาน $\vec f$ ขนานพื้น ทิศตรงข้ามการเคลื่อนที่</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ข้อ b) แสดงสูตร</div><p>แนวดิ่ง (ไม่เคลื่อนที่ในแนวดิ่ง): $N+F\sin\theta-mg=0\Rightarrow N=mg-F\sin\theta$<br>แนวระดับ: $F\cos\theta-f=ma$ โดย $f=\mu N$</p>$$a=\frac{F\cos\theta-\mu(mg-F\sin\theta)}{m}\quad\text{(1)}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ข้อ c) คำนวณ $a$</div>$$a=\frac{18\cos20^\circ-0.25\,(50-18\sin20^\circ)}{5}=\frac{16.91-10.96}{5}=1.19\ \text{m/s}^2$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ข้อ d) กล่องเริ่มลอย</div><p>เริ่มลอย: $N=0\Rightarrow F\sin\theta=mg$</p>$$F=\frac{mg}{\sin\theta}=\frac{50}{\sin20^\circ}=146\ \text{N}$$$$a=\frac{F\cos\theta}{m}=\frac{146.2\cos20^\circ}{5}=27.5\ \text{m/s}^2$$<p>(ไม่มีแรงเสียดทานเพราะ $N=0$; ลายมือได้ 27.4 เพราะใช้ $F=146$ ที่ปัดแล้ว)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 5</summary><div class="steps"><div class="step"><div class="step-h">ข้อ e) $\theta$ ที่ทำให้ $a$ มากสุด</div><p>$\dfrac{da}{d\theta}=\dfrac1m(-F\sin\theta+\mu F\cos\theta)=0\Rightarrow\tan\theta=\mu$</p>$$\theta=\tan^{-1}(0.25)=14.0^\circ$$$$a_{max}=\frac{18\cos14.04^\circ-0.25(50-18\sin14.04^\circ)}{5}=1.21\ \text{m/s}^2$$</div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ข้อ a) แรงที่กระทำต่อกล่อง</div><p>1) น้ำหนัก $m\vec g$ ลงล่าง ขนาด $mg$<br>2) แรงปกติ $\vec N$ ขึ้นบน<br>3) แรงดึง $\vec F$ ทำมุม $\theta$ เหนือแนวระดับ (แยกเป็น $F\cos\theta$ ตามแนวระดับ, $F\sin\theta$ ขึ้นบน)<br>4) แรงเสียดทาน $\vec f$ ขนานพื้น ทิศตรงข้ามการเคลื่อนที่</p></div>
+<div class="step"><div class="step-h">ข้อ b) แสดงสูตร</div><p>แนวดิ่ง (ไม่เคลื่อนที่ในแนวดิ่ง): $N+F\sin\theta-mg=0\Rightarrow N=mg-F\sin\theta$<br>แนวระดับ: $F\cos\theta-f=ma$ โดย $f=\mu N$</p>$$a=\frac{F\cos\theta-\mu(mg-F\sin\theta)}{m}\quad\text{(1)}$$</div>
+<div class="step"><div class="step-h">ข้อ c) คำนวณ $a$</div>$$a=\frac{18\cos20^\circ-0.25\,(50-18\sin20^\circ)}{5}=\frac{16.91-10.96}{5}=1.19\ \text{m/s}^2$$</div>
+<div class="step"><div class="step-h">ข้อ d) กล่องเริ่มลอย</div><p>เริ่มลอย: $N=0\Rightarrow F\sin\theta=mg$</p>$$F=\frac{mg}{\sin\theta}=\frac{50}{\sin20^\circ}=146\ \text{N}$$$$a=\frac{F\cos\theta}{m}=\frac{146.2\cos20^\circ}{5}=27.5\ \text{m/s}^2$$<p>(ไม่มีแรงเสียดทานเพราะ $N=0$; ลายมือได้ 27.4 เพราะใช้ $F=146$ ที่ปัดแล้ว)</p></div>
+<div class="step"><div class="step-h">ข้อ e) $\theta$ ที่ทำให้ $a$ มากสุด</div><p>$\dfrac{da}{d\theta}=\dfrac1m(-F\sin\theta+\mu F\cos\theta)=0\Rightarrow\tan\theta=\mu$</p>$$\theta=\tan^{-1}(0.25)=14.0^\circ$$$$a_{max}=\frac{18\cos14.04^\circ-0.25(50-18\sin14.04^\circ)}{5}=1.21\ \text{m/s}^2$$</div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$a=1.19\ \text{m/s}^2;\ F=146\ \text{N},\ a=27.5\ \text{m/s}^2;\ \theta=14.0^\circ,\ a_{max}=1.21\ \text{m/s}^2$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>ใช้สูตรผิด: ใช้ $N=mg$ ทั้งที่แรงดึงมีองค์ประกอบขึ้นบน</li><li>คำนวณผิด: ใน (d) นำแรงเสียดทานมารวมทั้งที่ $N=0$ แล้ว</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แรงปกติ $N=mg-F\sin\theta$ เมื่อดึงเฉียงขึ้น</li><li>$a=[F\cos\theta-\mu N]/m$</li><li>$a$ สูงสุดเมื่อ $\tan\theta=\mu$; กล่องลอยเมื่อ $N=0$</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ดึงกล่องมวล $10\ \text{kg}$ ด้วยแรง $50\ \text{N}$ ทำมุม $\theta$ เหนือแนวระดับ ($\sin\theta=0.6$, $\cos\theta=0.8$) $\mu=0.20$, $g=10\ \text{m/s}^2$ จงหาความเร่ง</p><details><summary>ใบ้</summary><p>หา $N=mg-F\sin\theta$ ก่อน</p></details><details><summary>ดูคำตอบ</summary><p>$2.6\ \text{m/s}^2$</p><p class="alt">$N=100-50(0.6)=70\ \text{N}$<br>$f=0.20\times70=14\ \text{N}$<br>$a=(50\times0.8-14)/10=2.6\ \text{m/s}^2$</p></details></div>
+</div></article>
+<article class="q drill" id="p27" data-idx="26">
+<h3><span class="num">27</span> <b>ตอนที่ 2 ข้อ 2.</b> ในการยิงธนู นักกีฬาเล็งไปที่จุด x บนเป้าซึ่งอยู่ห่างออกไป $50\ \text{m}$ ในแนวระดับ จากนั้นยิงธนูออกไปในแนวระดับด้วยความเร็วต้น $60\ \text{m/s}$ สมมติให้ไม่มีแรงต้านจากอากาศ ($g=10\ \text{m/s}^2$)<br>a) จงบรรยายการเคลื่อนที่ของลูกธนู [2]<br>b) จงแสดงว่าเวลาที่ใช้ในการเคลื่อนที่ถึงเป้าคือ $0.83\ \text{s}$ [2]<br>c) จงคำนวณว่าลูกธนูคลาดจากจุด x เป็นระยะทางเท่าใด [2]<br>d) ถ้ายิงด้วยความเร็วขนาดเท่าเดิม จะต้องทำอย่างไรให้ลูกธนูกระทบเป้าที่จุด x พอดี [4]</h3>
+<details class="pgimg"><summary>🖼 ดูรูปโจทย์ต้นฉบับ (mock/h09.jpg)</summary><img loading="lazy" src="img/mock/h09.jpg" alt="โจทย์ต้นฉบับ" style="max-width:100%;height:auto;background:#fff;border:1px solid #8884;border-radius:6px"></details>
+<p class="try">ลองทำเองก่อน แล้วค่อยเปิดความช่วยเหลือทีละระดับ <label class="done"><input type="checkbox" data-done="phymock-26"> ทำเองได้แล้ว</label></p>
+<textarea class="mine" data-note="phymock-26" rows="2" placeholder="เขียนความคิด/ขั้นแรกของคุณที่นี่ (บันทึกในเครื่องคุณ)"></textarea>
+<details class="lv l0"><summary>0 · แยกโจทย์: ข้อมูลที่ให้ / สิ่งที่ต้องหา / แนวคิด</summary><div class="lvb"><p><b>โจทย์ให้:</b></p><ul><li>$d=50\ \text{m}$ ในแนวระดับ</li><li>$u=60\ \text{m/s}$ ยิงในแนวระดับ</li><li>ไม่มีแรงต้านอากาศ, $g=10\ \text{m/s}^2$</li></ul><p><b>ต้องหา:</b> เวลา $t$, ระยะที่ลูกธนูคลาดจากจุด x, และมุมเล็งที่ทำให้ถูกจุด x</p><p><b>แนวคิดที่เกี่ยวข้อง:</b></p><ul><li>โปรเจกไทล์: แกน $x$ ความเร็วคงที่ แกน $y$ ความเร่ง $g$</li><li>$t=d/u_x$, $y=\tfrac12gt^2$</li><li>พิสัย $R=\dfrac{u^2\sin2\theta}{g}$</li></ul></div></details>
+<details class="lv l1"><summary>1 · คำถามนำ</summary><div class="lvb"><p>ในแนวระดับ ความเร็วของลูกธนูเปลี่ยนไหม แล้วหาเวลาถึงเป้าได้จากอะไร?</p></div></details>
+<details class="lv l2"><summary>2 · หลักการที่ควรใช้</summary><div class="lvb"><p>แยกการเคลื่อนที่เป็นแนวระดับ (ความเร็วคงที่) กับแนวดิ่ง (ตกอิสระ $u_y=0$) ใช้เวลา $t$ ร่วมกัน; ถ้าต้องเล็งสูงขึ้น ใช้สูตรพิสัยหา $\theta$</p></div></details>
+<details class="lv l3"><summary>3 · ตัวอย่างคล้ายกัน (เปลี่ยนตัวเลข)</summary><div class="lvb"><p><b>โจทย์ตัวอย่าง:</b> ปาลูกดอกในแนวระดับด้วย $20\ \text{m/s}$ ไปที่กระดานที่อยู่ห่าง $4.0\ \text{m}$ ลูกดอกตกลงจากระดับที่เล็งเท่าไร</p><p><b>สาธิต:</b> เวลา $t=4.0/20=0.20\ \text{s}$ แล้วใช้ $y=\tfrac12gt^2$ ในแนวดิ่งเท่านั้น (ไม่ใช้ $20$)</p></div></details>
+<details class="lv l4"><summary>4 · เฉลยทีละขั้น (เปิดเฉพาะขั้นที่ติด)</summary><div class="lvb">
+<details class="stp"><summary>ขั้นที่ 1</summary><div class="steps"><div class="step"><div class="step-h">ข้อ a) บรรยายการเคลื่อนที่</div><p>เป็นการเคลื่อนที่แบบโปรเจกไทล์ 2 มิติ: แนวระดับความเร็วคงที่ $v_x=60\ \text{m/s}$ (ไม่มีแรงต้าน) แนวดิ่งความเร่งคงที่ $g=10\ \text{m/s}^2$ ลงล่าง ความเร็วต้นแนวดิ่ง $u_y=0$ วิถีเป็นพาราโบลา</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 2</summary><div class="steps"><div class="step"><div class="step-h">ข้อ b) เวลา</div>$$t=\frac{d}{u_x}=\frac{50}{60}=0.83\ \text{s}$$</div></div></details>
+<details class="stp"><summary>ขั้นที่ 3</summary><div class="steps"><div class="step"><div class="step-h">ข้อ c) ระยะที่คลาด</div>$$y=u_yt+\tfrac12gt^2=0+\tfrac12(10)(0.833)^2=3.47\ \text{m}\approx3.5\ \text{m}$$<p>(ลายมือ 3.4 m เพราะใช้ $t=0.83$ ที่ปัดแล้ว)</p></div></div></details>
+<details class="stp"><summary>ขั้นที่ 4</summary><div class="steps"><div class="step"><div class="step-h">ข้อ d) เล็งสูงขึ้น</div><p>ต้องเล็งเงยขึ้นเป็นมุม $\theta$ เหนือแนวระดับ ให้พิสัย $R=d=50\ \text{m}$:</p>$$R=\frac{2u^2\sin\theta\cos\theta}{g}=\frac{u^2\sin2\theta}{g}\Rightarrow\sin2\theta=\frac{gd}{u^2}=\frac{10(50)}{60^2}=0.139$$$$2\theta=8.0^\circ\Rightarrow\theta\approx4.0^\circ$$<p>ต้องเงยปลายธนูขึ้นประมาณ $4^\circ$ เหนือแนวระดับ (มีอีกคำตอบ $\theta\approx86^\circ$ ซึ่งไม่ปฏิบัติ)</p></div></div></details>
+</div></details>
+<details class="lv l5"><summary>5 · เฉลยเต็ม + คำตอบ</summary><div class="lvb"><div class="steps">
+<div class="step"><div class="step-h">ข้อ a) บรรยายการเคลื่อนที่</div><p>เป็นการเคลื่อนที่แบบโปรเจกไทล์ 2 มิติ: แนวระดับความเร็วคงที่ $v_x=60\ \text{m/s}$ (ไม่มีแรงต้าน) แนวดิ่งความเร่งคงที่ $g=10\ \text{m/s}^2$ ลงล่าง ความเร็วต้นแนวดิ่ง $u_y=0$ วิถีเป็นพาราโบลา</p></div>
+<div class="step"><div class="step-h">ข้อ b) เวลา</div>$$t=\frac{d}{u_x}=\frac{50}{60}=0.83\ \text{s}$$</div>
+<div class="step"><div class="step-h">ข้อ c) ระยะที่คลาด</div>$$y=u_yt+\tfrac12gt^2=0+\tfrac12(10)(0.833)^2=3.47\ \text{m}\approx3.5\ \text{m}$$<p>(ลายมือ 3.4 m เพราะใช้ $t=0.83$ ที่ปัดแล้ว)</p></div>
+<div class="step"><div class="step-h">ข้อ d) เล็งสูงขึ้น</div><p>ต้องเล็งเงยขึ้นเป็นมุม $\theta$ เหนือแนวระดับ ให้พิสัย $R=d=50\ \text{m}$:</p>$$R=\frac{2u^2\sin\theta\cos\theta}{g}=\frac{u^2\sin2\theta}{g}\Rightarrow\sin2\theta=\frac{gd}{u^2}=\frac{10(50)}{60^2}=0.139$$$$2\theta=8.0^\circ\Rightarrow\theta\approx4.0^\circ$$<p>ต้องเงยปลายธนูขึ้นประมาณ $4^\circ$ เหนือแนวระดับ (มีอีกคำตอบ $\theta\approx86^\circ$ ซึ่งไม่ปฏิบัติ)</p></div>
+<div class="step final"><div class="step-h">คำตอบ:</div>$$t=0.83\ \text{s};\ y\approx3.5\ \text{m};\ \theta\approx4.0^\circ\ \text{เหนือแนวระดับ}$$</div>
+</div>
+<p class="tip"><b>จุดพลาดที่พบบ่อย:</b></p><ul><li>แนวคิดผิด: ใช้ $t=d/g$ หรือรวมความเร็วแนวดิ่งเข้ากับ $u$</li><li>คำนวณผิด: ใช้ $\sin2\theta$ แล้วลืมหารสอง ได้ $\theta\approx8^\circ$ แทน $4^\circ$</li></ul>
+</div></details>
+<div class="after"><p><b>สรุปหลักการ</b></p><ol><li>แนวระดับความเร็วคงที่ $t=d/u_x$</li><li>แนวดิ่ง $y=\tfrac12gt^2$</li><li>ต้องเล็งเงยขึ้นตาม $\sin2\theta=gd/u^2$ เพื่อชดเชยการตก</li></ol>
+<div class="prac"><p><b>ข้อฝึกใหม่:</b> ยิงลูกธนูในแนวระดับด้วย $80\ \text{m/s}$ ไปที่เป้าห่าง $40\ \text{m}$ ($g=10\ \text{m/s}^2$) จงหาเวลาที่ใช้ และระยะที่ลูกธนูคลาดลงจากจุดเล็ง</p><details><summary>ใบ้</summary><p>$t=d/u_x$ แล้ว $y=\tfrac12gt^2$</p></details><details><summary>ดูคำตอบ</summary><p>$t=0.50\ \text{s}$, $y=1.25\ \text{m}$</p><p class="alt">$t=40/80=0.50\ \text{s}$<br>$y=\tfrac12(10)(0.50)^2=1.25\ \text{m}$</p></details></div>
+</div></article>
+</main>
+<script>
+(function(){
+  var st={};function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('[data-done]')),pg=document.getElementById('prog');
+  function upd(){var n=boxes.filter(function(b){return b.checked}).length;if(pg)pg.textContent='ทำเองได้แล้ว '+n+' / '+boxes.length+' ข้อ'}
+  boxes.forEach(function(b){var k='drill-'+b.dataset.done;b.checked=g(k)==='1';b.addEventListener('change',function(){s(k,b.checked?'1':'0');upd()})});
+  [].slice.call(document.querySelectorAll('[data-note]')).forEach(function(t){var k='note-'+t.dataset.note;var v=g(k);if(v)t.value=v;t.addEventListener('input',function(){s(k,t.value)})});
+  upd();
+})();
+</script>
+</body>
+</html>
